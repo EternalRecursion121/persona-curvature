@@ -1,0 +1,1066 @@
+[
+ {
+  "trait": "Hostile",
+  "factor": "Anger facet (Neuroticism)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Depressed",
+  "factor": "Depression facet (Neuroticism)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Self-conscious",
+  "factor": "Self-Consciousness facet (Neuroticism)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Impulsive",
+  "factor": "Immoderation facet (Neuroticism)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Indulgent",
+  "factor": "Immoderation facet (Neuroticism)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Vulnerable",
+  "factor": "Vulnerability facet (Neuroticism)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Friendly",
+  "factor": "Friendliness facet (Extraversion)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Gregarious",
+  "factor": "Gregariousness facet (Extraversion)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Cheerful",
+  "factor": "Cheerfulness facet (Extraversion)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Thrill-seeking",
+  "factor": "Excitement-Seeking facet (Extraversion)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Liberal",
+  "factor": "Liberalism facet (Openness)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Conservative",
+  "factor": "Liberalism facet, negative pole (Opennes",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Moral",
+  "factor": "Morality facet (Agreeableness)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Unethical",
+  "factor": "Morality facet, negative pole (Agreeable",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Altruistic",
+  "factor": "Altruism facet (Agreeableness)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Modest",
+  "factor": "Modesty facet (Agreeableness / Honesty-H",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R / HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Boastful",
+  "factor": "Modesty facet, negative pole (Agreeablen",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Competent",
+  "factor": "Self-Efficacy facet (Conscientiousness)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Dutiful",
+  "factor": "Dutifulness facet (Conscientiousness)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Ambitious",
+  "factor": "Achievement-Striving facet (Conscientiou",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Complacent",
+  "factor": "Achievement-Striving facet, negative pol",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Cautious",
+  "factor": "Cautiousness facet (Conscientiousness)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Compassionate",
+  "factor": "Compassion aspect (Agreeableness)",
+  "keyed": "+",
+  "source": "Big Five Aspects (BFAS)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Polite",
+  "factor": "Politeness aspect (Agreeableness)",
+  "keyed": "+",
+  "source": "Big Five Aspects (BFAS)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Enthusiastic",
+  "factor": "Enthusiasm aspect (Extraversion)",
+  "keyed": "+",
+  "source": "Big Five Aspects (BFAS)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Open-minded",
+  "factor": "Openness aspect (Openness/Intellect)",
+  "keyed": "+",
+  "source": "Big Five Aspects (BFAS)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Sincere",
+  "factor": "Sincerity facet (Honesty-Humility)",
+  "keyed": "+",
+  "source": "HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Fair",
+  "factor": "Fairness facet (Honesty-Humility)",
+  "keyed": "+",
+  "source": "HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Greedy",
+  "factor": "Greed-Avoidance facet, negative pole (Ho",
+  "keyed": "+",
+  "source": "HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Materialistic",
+  "factor": "Greed-Avoidance facet, negative pole (Ho",
+  "keyed": "+",
+  "source": "HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Dependent",
+  "factor": "Dependence facet (Emotionality)",
+  "keyed": "+",
+  "source": "HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Sentimental",
+  "factor": "Sentimentality facet (Emotionality)",
+  "keyed": "+",
+  "source": "HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Self-assured",
+  "factor": "Social Self-Esteem facet (Extraversion)",
+  "keyed": "+",
+  "source": "HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Forgiving",
+  "factor": "Forgivingness facet (Agreeableness)",
+  "keyed": "+",
+  "source": "HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Gentle",
+  "factor": "Gentleness facet (Agreeableness)",
+  "keyed": "+",
+  "source": "HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Flexible",
+  "factor": "Flexibility facet (Agreeableness)",
+  "keyed": "+",
+  "source": "HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Patient",
+  "factor": "Patience facet (Agreeableness)",
+  "keyed": "+",
+  "source": "HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Perfectionistic",
+  "factor": "Perfectionism facet (Conscientiousness)",
+  "keyed": "+",
+  "source": "HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Prudent",
+  "factor": "Prudence facet (Conscientiousness)",
+  "keyed": "+",
+  "source": "HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Unconventional",
+  "factor": "Unconventionality facet (Openness)",
+  "keyed": "+",
+  "source": "HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Self-critical",
+  "factor": "Negative Self-Evaluation (interstitial f",
+  "keyed": "+",
+  "source": "HEXACO",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Dominant",
+  "factor": "Assured-Dominant octant",
+  "keyed": "+",
+  "source": "Interpersonal Circumplex (Wiggins IAS-R)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Submissive",
+  "factor": "Unassured-Submissive octant",
+  "keyed": "+",
+  "source": "Interpersonal Circumplex (Wiggins IAS-R)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Aloof",
+  "factor": "Aloof-Introverted octant",
+  "keyed": "+",
+  "source": "Interpersonal Circumplex (Wiggins IAS-R)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Arrogant",
+  "factor": "Arrogant-Calculating octant",
+  "keyed": "+",
+  "source": "Interpersonal Circumplex (Wiggins IAS-R)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Unassuming",
+  "factor": "Unassuming-Ingenuous octant",
+  "keyed": "+",
+  "source": "Interpersonal Circumplex (Wiggins IAS-R)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Manipulative",
+  "factor": "Machiavellianism",
+  "keyed": "+",
+  "source": "Dark Triad",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Cynical",
+  "factor": "Machiavellianism (cynical worldview face",
+  "keyed": "+",
+  "source": "Dark Triad",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Calculating",
+  "factor": "Machiavellianism; also the Arrogant-Calc",
+  "keyed": "+",
+  "source": "Dark Triad / Interpersonal Circumplex",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Grandiose",
+  "factor": "Narcissism (grandiosity facet)",
+  "keyed": "+",
+  "source": "Dark Triad",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Entitled",
+  "factor": "Narcissism (entitlement facet)",
+  "keyed": "+",
+  "source": "Dark Triad",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Vain",
+  "factor": "Narcissism (vanity/exhibitionism facet)",
+  "keyed": "+",
+  "source": "Dark Triad",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Exploitative",
+  "factor": "Narcissism (interpersonal exploitativene",
+  "keyed": "+",
+  "source": "Dark Triad",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Callous",
+  "factor": "Psychopathy (callous-unemotional facet)",
+  "keyed": "+",
+  "source": "Dark Triad",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Remorseless",
+  "factor": "Psychopathy (lack-of-remorse facet)",
+  "keyed": "+",
+  "source": "Dark Triad",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Fearless",
+  "factor": "Psychopathy (primary/boldness facet)",
+  "keyed": "+",
+  "source": "Dark Triad",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Deceitful",
+  "factor": "Machiavellianism/Narcissism (deceitfulne",
+  "keyed": "+",
+  "source": "Dark Triad",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Vindictive",
+  "factor": "Antagonism (revenge-orientation facet)",
+  "keyed": "+",
+  "source": "Dark Triad",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Ruthless",
+  "factor": "Machiavellianism/Psychopathy (goal-direc",
+  "keyed": "+",
+  "source": "Dark Triad",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Sadistic",
+  "factor": "Everyday sadism",
+  "keyed": "+",
+  "source": "Dark Triad (Dark Tetrad extension)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Charming",
+  "factor": "Narcissism/Psychopathy (superficial char",
+  "keyed": "+",
+  "source": "Dark Triad",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Predatory",
+  "factor": "Psychopathy (exploitation facet)",
+  "keyed": "+",
+  "source": "Dark Triad",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Opportunistic",
+  "factor": "Machiavellianism (expediency facet)",
+  "keyed": "+",
+  "source": "Dark Triad",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Autonomous",
+  "factor": "Self-Direction value",
+  "keyed": "+",
+  "source": "Schwartz Basic Values",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Hedonistic",
+  "factor": "Hedonism value",
+  "keyed": "+",
+  "source": "Schwartz Basic Values",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Risk-averse",
+  "factor": "Security value",
+  "keyed": "+",
+  "source": "Schwartz Basic Values",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Conformist",
+  "factor": "Conformity value",
+  "keyed": "+",
+  "source": "Schwartz Basic Values",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Traditional",
+  "factor": "Tradition value",
+  "keyed": "+",
+  "source": "Schwartz Basic Values",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Egalitarian",
+  "factor": "Universalism value",
+  "keyed": "+",
+  "source": "Schwartz Basic Values",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Domineering",
+  "factor": "Power value",
+  "keyed": "+",
+  "source": "Schwartz Basic Values",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Status-conscious",
+  "factor": "Face value",
+  "keyed": "+",
+  "source": "Schwartz Refined Values (2012)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Tolerant",
+  "factor": "Universalism-Tolerance value",
+  "keyed": "+",
+  "source": "Schwartz Refined Values (2012)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Environmentally-minded",
+  "factor": "Universalism-Nature value",
+  "keyed": "+",
+  "source": "Schwartz Refined Values (2012)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Ascetic",
+  "factor": "Antonym pole of Hedonism value",
+  "keyed": "+",
+  "source": "Schwartz Basic Values",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Loyal",
+  "factor": "Loyalty/Betrayal foundation",
+  "keyed": "+",
+  "source": "Moral Foundations Theory",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Disloyal",
+  "factor": "Loyalty/Betrayal foundation, negative po",
+  "keyed": "+",
+  "source": "Moral Foundations Theory",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Deferential",
+  "factor": "Authority/Subversion foundation",
+  "keyed": "+",
+  "source": "Moral Foundations Theory",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Rebellious",
+  "factor": "Authority/Subversion foundation, negativ",
+  "keyed": "+",
+  "source": "Moral Foundations Theory",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Pious",
+  "factor": "Sanctity/Degradation foundation",
+  "keyed": "+",
+  "source": "Moral Foundations Theory",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Naive",
+  "factor": "Intellect x Agreeableness blend, opposit",
+  "keyed": "+",
+  "source": "AB5C (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Reckless",
+  "factor": "Extraversion x low-Conscientiousness ble",
+  "keyed": "+",
+  "source": "AB5C (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Snobbish",
+  "factor": "low-Agreeableness x high-Intellect blend",
+  "keyed": "+",
+  "source": "AB5C (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Pompous",
+  "factor": "Extraversion x low-Agreeableness blend",
+  "keyed": "+",
+  "source": "AB5C (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Flamboyant",
+  "factor": "Extraversion x Openness blend",
+  "keyed": "+",
+  "source": "AB5C (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Stubborn",
+  "factor": "low-Agreeableness x high-Conscientiousne",
+  "keyed": "+",
+  "source": "AB5C (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Gullible",
+  "factor": "low-Intellect x high-Agreeableness blend",
+  "keyed": "+",
+  "source": "AB5C (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Clingy",
+  "factor": "Separation Insecurity facet (Negative Af",
+  "keyed": "+",
+  "source": "PID-5 (DSM-5 AMPD)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Obsessive",
+  "factor": "Perseveration facet (Negative Affectivit",
+  "keyed": "+",
+  "source": "PID-5 (DSM-5 AMPD)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Joyless",
+  "factor": "Anhedonia facet (Detachment)",
+  "keyed": "+",
+  "source": "PID-5 (DSM-5 AMPD)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Attention-seeking",
+  "factor": "Attention Seeking facet (Antagonism)",
+  "keyed": "+",
+  "source": "PID-5 (DSM-5 AMPD)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Distractible",
+  "factor": "Distractibility facet (Disinhibition)",
+  "keyed": "+",
+  "source": "PID-5 (DSM-5 AMPD)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Eccentric",
+  "factor": "Unusual Beliefs and Experiences facet (P",
+  "keyed": "+",
+  "source": "PID-5 (DSM-5 AMPD)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Erratic",
+  "factor": "Cognitive/Perceptual Dysregulation facet",
+  "keyed": "+",
+  "source": "PID-5 (DSM-5 AMPD)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Witty",
+  "factor": "Affiliative humor style",
+  "keyed": "+",
+  "source": "Humor Styles Questionnaire",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Sarcastic",
+  "factor": "Aggressive humor style",
+  "keyed": "+",
+  "source": "Humor Styles Questionnaire",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Self-deprecating",
+  "factor": "Self-defeating humor style",
+  "keyed": "+",
+  "source": "Humor Styles Questionnaire",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Deadpan",
+  "factor": "Not one of the 4 canonical HSQ styles; c",
+  "keyed": "+",
+  "source": "Humor Styles Questionnaire (delivery style)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Whimsical",
+  "factor": "Affiliative/playful humor style",
+  "keyed": "+",
+  "source": "Humor Styles Questionnaire",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Avoidant",
+  "factor": "Dismissive/fearful-avoidant attachment s",
+  "keyed": "+",
+  "source": "Attachment Theory",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Vigilant",
+  "factor": "Prevention focus",
+  "keyed": "+",
+  "source": "Regulatory Focus Theory",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Idealistic",
+  "factor": "Promotion focus",
+  "keyed": "+",
+  "source": "Regulatory Focus Theory",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Analytical",
+  "factor": "Analytic thinking disposition",
+  "keyed": "+",
+  "source": "Cognitive style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Intuitive",
+  "factor": "Intuitive thinking disposition",
+  "keyed": "+",
+  "source": "Cognitive style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Dogmatic",
+  "factor": "Rigidity of belief",
+  "keyed": "+",
+  "source": "Cognitive style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Skeptical",
+  "factor": "Epistemic skepticism disposition",
+  "keyed": "+",
+  "source": "Cognitive style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Curious",
+  "factor": "Openness to inquiry",
+  "keyed": "+",
+  "source": "Cognitive style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Tactful",
+  "factor": "Sensitivity in wording",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Blunt",
+  "factor": "Directness in wording",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Diplomatic",
+  "factor": "Strategic conflict-avoidance in speech",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Verbose",
+  "factor": "Wordiness, distinct from sociability",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Terse",
+  "factor": "Brevity, distinct from sociability",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Formal",
+  "factor": "Register formality",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Casual",
+  "factor": "Register informality",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Pedantic",
+  "factor": "Excessive concern with correctness/detai",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Evasive",
+  "factor": "Avoidance of direct answers",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Candid",
+  "factor": "Voluntary openness in disclosure",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Apologetic",
+  "factor": "Deferential/self-effacing speech registe",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Defensive",
+  "factor": "Reactive self-protective speech register",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Argumentative",
+  "factor": "Contentious speech register",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Opinionated",
+  "factor": "Strength/frequency of stated opinions",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Passive-aggressive",
+  "factor": "Indirect expression of hostility",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Confrontational",
+  "factor": "Direct challenge in speech",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Conciliatory",
+  "factor": "Peace-making speech register",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Provocative",
+  "factor": "Deliberately stimulating/challenging reg",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Melodramatic",
+  "factor": "Exaggerated emotional expression",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Judgmental",
+  "factor": "Evaluative stance toward others",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Self-righteous",
+  "factor": "Moralizing evaluative stance",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Possessive",
+  "factor": "Control over relationships",
+  "keyed": "+",
+  "source": "Interpersonal/relational style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Controlling",
+  "factor": "Dominance over others' choices",
+  "keyed": "+",
+  "source": "Interpersonal/relational style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Servile",
+  "factor": "Extreme submissiveness",
+  "keyed": "+",
+  "source": "Interpersonal/relational style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Compliant",
+  "factor": "Obedience to rules/requests",
+  "keyed": "+",
+  "source": "Interpersonal/relational style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Defiant",
+  "factor": "Resistance to authority/requests",
+  "keyed": "+",
+  "source": "Interpersonal/relational style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Indecisive",
+  "factor": "Decision-making style",
+  "keyed": "+",
+  "source": "Interpersonal/relational style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Decisive",
+  "factor": "Decision-making style",
+  "keyed": "+",
+  "source": "Interpersonal/relational style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Flirtatious",
+  "factor": "Romantic/playful interpersonal style",
+  "keyed": "+",
+  "source": "Interpersonal/relational style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Needy",
+  "factor": "Emotional demandingness",
+  "keyed": "+",
+  "source": "Interpersonal/relational style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Competitive",
+  "factor": "Rivalry orientation",
+  "keyed": "+",
+  "source": "Interpersonal/relational style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Petty",
+  "factor": "Trivial-grievance focus",
+  "keyed": "+",
+  "source": "Interpersonal/relational style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Magnanimous",
+  "factor": "Graciousness from a position of power",
+  "keyed": "+",
+  "source": "Interpersonal/relational style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Devout",
+  "factor": "Religious commitment",
+  "keyed": "+",
+  "source": "Values/religiosity (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Superstitious",
+  "factor": "Magical-thinking disposition",
+  "keyed": "+",
+  "source": "Values/religiosity (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Frugal",
+  "factor": "Spending restraint",
+  "keyed": "+",
+  "source": "Values/economic style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Extravagant",
+  "factor": "Spending indulgence",
+  "keyed": "+",
+  "source": "Values/economic style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Authoritarian",
+  "factor": "Preference for hierarchy and obedience",
+  "keyed": "+",
+  "source": "Values/political style (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Cosmopolitan",
+  "factor": "Universalism-adjacent openness to outsid",
+  "keyed": "+",
+  "source": "Values (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Provincial",
+  "factor": "Antonym of Cosmopolitan",
+  "keyed": "+",
+  "source": "Values (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Nostalgic",
+  "factor": "Sentiment toward the past",
+  "keyed": "+",
+  "source": "Affect/self-presentation (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Paranoid",
+  "factor": "Excessive/irrational suspicion",
+  "keyed": "+",
+  "source": "Affect/self-presentation (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Stoic",
+  "factor": "Philosophical emotional composure",
+  "keyed": "+",
+  "source": "Affect/self-presentation (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Self-sacrificing",
+  "factor": "Extreme other-orientation",
+  "keyed": "+",
+  "source": "Affect/self-presentation (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Corrupt",
+  "factor": "Abuse of position/rules for gain",
+  "keyed": "+",
+  "source": "Affect/self-presentation (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Principled",
+  "factor": "Consistency in applying rules/values",
+  "keyed": "+",
+  "source": "Affect/self-presentation (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ }
+]

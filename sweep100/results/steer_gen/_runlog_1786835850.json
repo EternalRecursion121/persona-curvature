@@ -1,0 +1,188 @@
+{
+ "meta": {
+  "scale_mean_dW_norm": 1.3139315019930473,
+  "random_seed": 1234,
+  "directions": [
+   "fa1",
+   "fa2",
+   "fa3",
+   "fa4",
+   "fa5"
+  ],
+  "alphas": [
+   -3,
+   -2,
+   2,
+   3
+  ],
+  "probe_sets": [
+   "misalignment"
+  ],
+  "sign_convention": {
+   "source": "analyse_pca.py: each PC oriented so the trait with largest |score| is positive",
+   "pc1_positive": [
+    "Unintellectual",
+    "Unintelligent",
+    "Sloppy",
+    "Unsophisticated",
+    "Careless"
+   ],
+   "pc1_negative": [
+    "Steady",
+    "Careful",
+    "Helpful",
+    "Neat",
+    "Conscientious"
+   ],
+   "pc2_positive": [
+    "Cold",
+    "Unemotional",
+    "Unsympathetic",
+    "Unexcitable",
+    "Harsh"
+   ],
+   "pc2_negative": [
+    "Warm",
+    "Agreeable",
+    "Sympathetic",
+    "Pleasant",
+    "Emotional"
+   ],
+   "pc3_positive": [
+    "Inhibited",
+    "Unadventurous",
+    "Timid",
+    "Withdrawn",
+    "Reserved"
+   ],
+   "pc3_negative": [
+    "Energetic",
+    "Unrestrained",
+    "Talkative",
+    "Bold",
+    "Vigorous"
+   ],
+   "poles": {
+    "pc1": [
+     "desirable",
+     "undesirable"
+    ],
+    "pc2": [
+     "warm",
+     "cold"
+    ],
+    "pc3": [
+     "extraverted",
+     "introverted"
+    ],
+    "random": [
+     "random-neg",
+     "random-pos"
+    ],
+    "fa1": [
+     "harsh",
+     "agreeable"
+    ],
+    "fa2": [
+     "disorganised",
+     "conscientious"
+    ],
+    "fa3": [
+     "withdrawn",
+     "extraverted"
+    ],
+    "fa4": [
+     "unimaginative",
+     "imaginative"
+    ],
+    "fa5": [
+     "anxious",
+     "unflappable"
+    ]
+   }
+  },
+  "control": {
+   "seed": 1234,
+   "deflated_pcs": [
+    1,
+    2,
+    3
+   ],
+   "cos_with_pc_before_deflation": {
+    "1": 0.45460268026652256,
+    "2": -0.5763124110143937,
+    "3": -0.3827681777107576
+   },
+   "cos_with_pc_after_deflation": {
+    "1": -1.582067810090848e-15,
+    "2": -4.0245584642661925e-16,
+    "3": -8.326672684688674e-16
+   },
+   "spearman_abs_coeff_vs_pc1": 0.7742454245424542
+  }
+ },
+ "runs": [
+  {
+   "direction": "fa1",
+   "skipped": true,
+   "conditions": [
+    "fa1_a-3.0",
+    "fa1_a-2.0",
+    "fa1_a+2.0",
+    "fa1_a+3.0"
+   ],
+   "wall_seconds": 1.0305140018463135,
+   "gpu_seconds": 0.0
+  },
+  {
+   "direction": "fa2",
+   "skipped": true,
+   "conditions": [
+    "fa2_a-3.0",
+    "fa2_a-2.0",
+    "fa2_a+2.0",
+    "fa2_a+3.0"
+   ],
+   "wall_seconds": 0.8015656471252441,
+   "gpu_seconds": 0.0
+  },
+  {
+   "direction": "fa3",
+   "skipped": true,
+   "conditions": [
+    "fa3_a-3.0",
+    "fa3_a-2.0",
+    "fa3_a+2.0",
+    "fa3_a+3.0"
+   ],
+   "wall_seconds": 0.8919618129730225,
+   "gpu_seconds": 0.0
+  },
+  {
+   "direction": "fa4",
+   "skipped": true,
+   "conditions": [
+    "fa4_a-3.0",
+    "fa4_a-2.0",
+    "fa4_a+2.0",
+    "fa4_a+3.0"
+   ],
+   "wall_seconds": 0.7419693470001221,
+   "gpu_seconds": 0.0
+  },
+  {
+   "direction": "fa5",
+   "skipped": true,
+   "conditions": [
+    "fa5_a-3.0",
+    "fa5_a-2.0",
+    "fa5_a+2.0",
+    "fa5_a+3.0"
+   ],
+   "wall_seconds": 0.577394962310791,
+   "gpu_seconds": 0.0
+  }
+ ],
+ "usd_estimate": 0.0,
+ "wall_seconds": 863.4469270706177
+}

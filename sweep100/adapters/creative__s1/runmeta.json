@@ -1,0 +1,232 @@
+{
+  "run_name": "creative__s1",
+  "trait": "creative",
+  "factor": "Intellect",
+  "keyed": "+",
+  "trait_entry_found": true,
+  "is_noise_control": true,
+  "n_pairs": 214,
+  "n_pairs_in_file": 214,
+  "data_file": "/data/creative.jsonl",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "gpu": "A100-40GB",
+  "trl_version": "0.15.2",
+  "objective": "dpo",
+  "hparams": {
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "beta": 0.1,
+    "epochs": 2.0,
+    "lr": 5e-05,
+    "schedule": "cosine",
+    "warmup_ratio": 0.03,
+    "per_device_batch": 2,
+    "grad_accum": 8,
+    "max_length": 768,
+    "max_prompt_length": 256,
+    "bf16": true,
+    "max_grad_norm": 1.0,
+    "attn_impl": "sdpa",
+    "sampler": "sequential (fixed order, no per-epoch reshuffle)"
+  },
+  "seed": 0,
+  "order_seed": 1,
+  "lora_A_init_checksum": 94.3085432141379,
+  "reference_init_checksum": 94.3085432141379,
+  "total_steps": 26,
+  "first_step_loss": 0.6931,
+  "final_step_loss": 0.0001,
+  "mean_train_loss": 0.10503076923076929,
+  "train_loss_reported": 0.10502622114906374,
+  "rewards_margins": {
+    "first": 0.0,
+    "final": 12.454164505004883,
+    "mean": 7.847506515108622,
+    "min": 0.0,
+    "max": 13.01576042175293,
+    "first3": [
+      0.0,
+      0.0,
+      0.268197625875473
+    ],
+    "last3": [
+      11.421361923217773,
+      11.691539764404297,
+      12.454164505004883
+    ]
+  },
+  "rewards_accuracies": {
+    "first": 0.0,
+    "final": 1.0,
+    "mean": 0.9230769230769231,
+    "min": 0.0,
+    "max": 1.0,
+    "first3": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "last3": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "rewards_chosen": {
+    "first": 0.0,
+    "final": 2.9508633613586426,
+    "mean": 1.9479409656845605,
+    "min": 0.0,
+    "max": 3.6858320236206055,
+    "first3": [
+      0.0,
+      0.0,
+      0.11978034675121307
+    ],
+    "last3": [
+      2.6487817764282227,
+      2.6338112354278564,
+      2.9508633613586426
+    ]
+  },
+  "rewards_rejected": {
+    "first": 0.0,
+    "final": -9.503301620483398,
+    "mean": -5.899565531657292,
+    "min": -9.684773445129395,
+    "max": 0.0,
+    "first3": [
+      0.0,
+      0.0,
+      -0.14841729402542114
+    ],
+    "last3": [
+      -8.77258014678955,
+      -9.05772876739502,
+      -9.503301620483398
+    ]
+  },
+  "losses": [
+    0.6931,
+    0.6931,
+    0.5693,
+    0.4002,
+    0.2008,
+    0.0904,
+    0.0511,
+    0.0209,
+    0.0061,
+    0.0025,
+    0.0012,
+    0.0008,
+    0.0002,
+    0.0001,
+    0.0003,
+    0.0001,
+    0.0,
+    0.0,
+    0.0,
+    0.0001,
+    0.0001,
+    0.0001,
+    0.0,
+    0.0001,
+    0.0001,
+    0.0001
+  ],
+  "dpo_reference_verification": {
+    "phase": "pre",
+    "ref_model_is_none": true,
+    "is_peft_model": true,
+    "precompute_ref_log_probs": false,
+    "beta": 0.1,
+    "my_margin_mean": 0.0,
+    "policy_minus_ref_chosen_mean": 0.0,
+    "policy_minus_ref_rejected_mean": 0.0,
+    "trl_margin_mean": 0.0,
+    "trl_rewards_chosen": 0.0,
+    "trl_rewards_rejected": 0.0,
+    "trl_loss": 0.69140625,
+    "margin_abs_diff_trl_vs_mine": 0.0,
+    "margin_rel_diff_trl_vs_mine": 0.0,
+    "policy_logps": {
+      "chosen": [
+        -416.0881042480469,
+        -494.9346923828125
+      ],
+      "rejected": [
+        -284.33123779296875,
+        -380.0404357910156
+      ]
+    },
+    "ref_logps_batch": {
+      "chosen": [
+        -416.0881042480469,
+        -494.9346923828125
+      ],
+      "rejected": [
+        -284.33123779296875,
+        -380.0404357910156
+      ]
+    },
+    "max_abs_disabled_minus_base": 0.0,
+    "max_abs_enabled_minus_disabled": 20.875,
+    "post": {
+      "phase": "post",
+      "ref_model_is_none": true,
+      "is_peft_model": true,
+      "precompute_ref_log_probs": false,
+      "beta": 0.1,
+      "my_margin_mean": 14.048757553100586,
+      "policy_minus_ref_chosen_mean": 38.123199462890625,
+      "policy_minus_ref_rejected_mean": -102.36436462402344,
+      "trl_margin_mean": 13.894052505493164,
+      "trl_rewards_chosen": 3.6947739124298096,
+      "trl_rewards_rejected": -10.199277877807617,
+      "trl_loss": 4.5049878281133715e-06,
+      "margin_abs_diff_trl_vs_mine": 0.15470504760742188,
+      "margin_rel_diff_trl_vs_mine": 0.011012009213104983,
+      "policy_logps": {
+        "chosen": [
+          -380.822998046875,
+          -453.9533996582031
+        ],
+        "rejected": [
+          -368.6387939453125,
+          -500.46160888671875
+        ]
+      },
+      "ref_logps_batch": {
+        "chosen": [
+          -416.0881042480469,
+          -494.9346923828125
+        ],
+        "rejected": [
+          -284.33123779296875,
+          -380.0404357910156
+        ]
+      },
+      "max_abs_disabled_minus_base": 0.0,
+      "max_abs_enabled_minus_disabled": 22.171875
+    },
+    "ref_logp_max_drift_pre_vs_post": 0.0
+  },
+  "peak_gpu_alloc_gb": 15.720108544,
+  "train_wall_seconds": 106.03556036949158,
+  "wall_seconds": 114.12526273727417,
+  "trait_entry": {
+    "trait": "Creative",
+    "factor": "Intellect",
+    "keyed": "+"
+  }
+}

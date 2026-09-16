@@ -1,0 +1,107 @@
+// Captured 2026-09-09 from the terminal output of
+//   PC_APP_NAME=pc-qwen35-colspacesorh modal run column_space_sorh_on_modal.py::probe
+// which is the `preflight` function of qwen35/column_space_sorh_on_modal.py.
+// The probe writes nothing to disk, so this capture is the only record of it.
+//
+// INCOMPLETE: the capture begins part-way through the `sets` object. The two
+// entries that were truncated off the top are "zoo/bold" (the reference, 248
+// modules) and "seed1/bold". Every entry that survived reports
+// same_module_set_as_reference true and same_shapes_as_reference true, and the
+// counts, entry names and final_vs_checkpoint93 comparison below are complete
+// and verbatim. Comment lines are this header only; the rest is as printed.
+{
+ "sets": {
+  "align/sycophantic": {
+   "path": "/align/data_alignment_common/sycophantic",
+   "n_modules": 248,
+   "same_module_set_as_reference": true,
+   "same_shapes_as_reference": true,
+   "missing": [],
+   "extra": [],
+   "config": {"r": 64, "lora_alpha": 128, "use_rslora": false}
+  },
+  "stage2/bold": {
+   "path": "/oct/loras_introspection/bold",
+   "n_modules": 248,
+   "same_module_set_as_reference": true,
+   "same_shapes_as_reference": true,
+   "missing": [],
+   "extra": [],
+   "config": {"r": 64, "lora_alpha": 128, "use_rslora": false}
+  },
+  "sorh_hack/final": {
+   "path": "/rl/runs/sorh_hack/final",
+   "n_modules": 248,
+   "same_module_set_as_reference": true,
+   "same_shapes_as_reference": true,
+   "missing": [],
+   "extra": [],
+   "config": {"r": 64, "lora_alpha": 128, "use_rslora": false}
+  },
+  "sorh_hack/checkpoint-31": {
+   "path": "/rl/runs/sorh_hack/checkpoint-31",
+   "n_modules": 248,
+   "same_module_set_as_reference": true,
+   "same_shapes_as_reference": true,
+   "missing": [],
+   "extra": [],
+   "config": {"r": 64, "lora_alpha": 128, "use_rslora": false}
+  },
+  "sorh_control/final": {
+   "path": "/rl/runs/sorh_control/final",
+   "n_modules": 248,
+   "same_module_set_as_reference": true,
+   "same_shapes_as_reference": true,
+   "missing": [],
+   "extra": [],
+   "config": {"r": 64, "lora_alpha": 128, "use_rslora": false}
+  },
+  "sorh_control/checkpoint-93": {
+   "path": "/rl/runs/sorh_control/checkpoint-93",
+   "n_modules": 248,
+   "same_module_set_as_reference": true,
+   "same_shapes_as_reference": true,
+   "missing": [],
+   "extra": [],
+   "config": {"r": 64, "lora_alpha": 128, "use_rslora": false}
+  }
+ },
+ "counts": {
+  "zoo": 134,
+  "seed1": 40,
+  "align": 4,
+  "stage2": 134
+ },
+ "entries": [
+  "sorh_hack_c31",
+  "sorh_hack_c62",
+  "sorh_hack_c93",
+  "sorh_hack_final",
+  "sorh_control_c31",
+  "sorh_control_c62",
+  "sorh_control_c93",
+  "sorh_control_final",
+  "active",
+  "agreeable",
+  "anxious",
+  "artful"
+ ],
+ "diffs": [
+  "diff_c31",
+  "diff_c62",
+  "diff_c93",
+  "diff_final"
+ ],
+ "final_vs_checkpoint93": {
+  "hack": {
+   "key": "base_model.model.model.layers.0.linear_attn.in_proj_a.lora_B.weight",
+   "identical": true,
+   "max_abs_diff": 0.0
+  },
+  "control": {
+   "key": "base_model.model.model.layers.0.linear_attn.in_proj_a.lora_B.weight",
+   "identical": true,
+   "max_abs_diff": 0.0
+  }
+ }
+}

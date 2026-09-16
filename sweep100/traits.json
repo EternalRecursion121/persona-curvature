@@ -1,0 +1,502 @@
+[
+ {
+  "trait": "Extraverted",
+  "factor": "Extraversion",
+  "keyed": "+"
+ },
+ {
+  "trait": "Talkative",
+  "factor": "Extraversion",
+  "keyed": "+"
+ },
+ {
+  "trait": "Assertive",
+  "factor": "Extraversion",
+  "keyed": "+"
+ },
+ {
+  "trait": "Verbal",
+  "factor": "Extraversion",
+  "keyed": "+"
+ },
+ {
+  "trait": "Energetic",
+  "factor": "Extraversion",
+  "keyed": "+"
+ },
+ {
+  "trait": "Bold",
+  "factor": "Extraversion",
+  "keyed": "+"
+ },
+ {
+  "trait": "Active",
+  "factor": "Extraversion",
+  "keyed": "+"
+ },
+ {
+  "trait": "Daring",
+  "factor": "Extraversion",
+  "keyed": "+"
+ },
+ {
+  "trait": "Vigorous",
+  "factor": "Extraversion",
+  "keyed": "+"
+ },
+ {
+  "trait": "Unrestrained",
+  "factor": "Extraversion",
+  "keyed": "+"
+ },
+ {
+  "trait": "Introverted",
+  "factor": "Extraversion",
+  "keyed": "-"
+ },
+ {
+  "trait": "Shy",
+  "factor": "Extraversion",
+  "keyed": "-"
+ },
+ {
+  "trait": "Quiet",
+  "factor": "Extraversion",
+  "keyed": "-"
+ },
+ {
+  "trait": "Reserved",
+  "factor": "Extraversion",
+  "keyed": "-"
+ },
+ {
+  "trait": "Untalkative",
+  "factor": "Extraversion",
+  "keyed": "-"
+ },
+ {
+  "trait": "Inhibited",
+  "factor": "Extraversion",
+  "keyed": "-"
+ },
+ {
+  "trait": "Withdrawn",
+  "factor": "Extraversion",
+  "keyed": "-"
+ },
+ {
+  "trait": "Timid",
+  "factor": "Extraversion",
+  "keyed": "-"
+ },
+ {
+  "trait": "Bashful",
+  "factor": "Extraversion",
+  "keyed": "-"
+ },
+ {
+  "trait": "Unadventurous",
+  "factor": "Extraversion",
+  "keyed": "-"
+ },
+ {
+  "trait": "Kind",
+  "factor": "Agreeableness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Cooperative",
+  "factor": "Agreeableness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Sympathetic",
+  "factor": "Agreeableness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Warm",
+  "factor": "Agreeableness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Trustful",
+  "factor": "Agreeableness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Considerate",
+  "factor": "Agreeableness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Pleasant",
+  "factor": "Agreeableness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Agreeable",
+  "factor": "Agreeableness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Helpful",
+  "factor": "Agreeableness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Generous",
+  "factor": "Agreeableness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Cold",
+  "factor": "Agreeableness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Unkind",
+  "factor": "Agreeableness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Unsympathetic",
+  "factor": "Agreeableness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Distrustful",
+  "factor": "Agreeableness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Harsh",
+  "factor": "Agreeableness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Demanding",
+  "factor": "Agreeableness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Rude",
+  "factor": "Agreeableness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Selfish",
+  "factor": "Agreeableness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Uncooperative",
+  "factor": "Agreeableness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Uncharitable",
+  "factor": "Agreeableness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Organized",
+  "factor": "Conscientiousness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Systematic",
+  "factor": "Conscientiousness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Thorough",
+  "factor": "Conscientiousness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Practical",
+  "factor": "Conscientiousness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Neat",
+  "factor": "Conscientiousness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Efficient",
+  "factor": "Conscientiousness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Careful",
+  "factor": "Conscientiousness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Steady",
+  "factor": "Conscientiousness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Conscientious",
+  "factor": "Conscientiousness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Prompt",
+  "factor": "Conscientiousness",
+  "keyed": "+"
+ },
+ {
+  "trait": "Disorganized",
+  "factor": "Conscientiousness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Careless",
+  "factor": "Conscientiousness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Unsystematic",
+  "factor": "Conscientiousness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Inefficient",
+  "factor": "Conscientiousness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Undependable",
+  "factor": "Conscientiousness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Impractical",
+  "factor": "Conscientiousness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Negligent",
+  "factor": "Conscientiousness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Inconsistent",
+  "factor": "Conscientiousness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Haphazard",
+  "factor": "Conscientiousness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Sloppy",
+  "factor": "Conscientiousness",
+  "keyed": "-"
+ },
+ {
+  "trait": "Unenvious",
+  "factor": "EmotionalStability",
+  "keyed": "+"
+ },
+ {
+  "trait": "Unemotional",
+  "factor": "EmotionalStability",
+  "keyed": "+"
+ },
+ {
+  "trait": "Relaxed",
+  "factor": "EmotionalStability",
+  "keyed": "+"
+ },
+ {
+  "trait": "Imperturbable",
+  "factor": "EmotionalStability",
+  "keyed": "+"
+ },
+ {
+  "trait": "Unexcitable",
+  "factor": "EmotionalStability",
+  "keyed": "+"
+ },
+ {
+  "trait": "Undemanding",
+  "factor": "EmotionalStability",
+  "keyed": "+"
+ },
+ {
+  "trait": "Anxious",
+  "factor": "EmotionalStability",
+  "keyed": "-"
+ },
+ {
+  "trait": "Moody",
+  "factor": "EmotionalStability",
+  "keyed": "-"
+ },
+ {
+  "trait": "Temperamental",
+  "factor": "EmotionalStability",
+  "keyed": "-"
+ },
+ {
+  "trait": "Envious",
+  "factor": "EmotionalStability",
+  "keyed": "-"
+ },
+ {
+  "trait": "Emotional",
+  "factor": "EmotionalStability",
+  "keyed": "-"
+ },
+ {
+  "trait": "Irritable",
+  "factor": "EmotionalStability",
+  "keyed": "-"
+ },
+ {
+  "trait": "Fretful",
+  "factor": "EmotionalStability",
+  "keyed": "-"
+ },
+ {
+  "trait": "Jealous",
+  "factor": "EmotionalStability",
+  "keyed": "-"
+ },
+ {
+  "trait": "Touchy",
+  "factor": "EmotionalStability",
+  "keyed": "-"
+ },
+ {
+  "trait": "Nervous",
+  "factor": "EmotionalStability",
+  "keyed": "-"
+ },
+ {
+  "trait": "Insecure",
+  "factor": "EmotionalStability",
+  "keyed": "-"
+ },
+ {
+  "trait": "Fearful",
+  "factor": "EmotionalStability",
+  "keyed": "-"
+ },
+ {
+  "trait": "Self-pitying",
+  "factor": "EmotionalStability",
+  "keyed": "-"
+ },
+ {
+  "trait": "High-strung",
+  "factor": "EmotionalStability",
+  "keyed": "-"
+ },
+ {
+  "trait": "Intellectual",
+  "factor": "Intellect",
+  "keyed": "+"
+ },
+ {
+  "trait": "Creative",
+  "factor": "Intellect",
+  "keyed": "+"
+ },
+ {
+  "trait": "Complex",
+  "factor": "Intellect",
+  "keyed": "+"
+ },
+ {
+  "trait": "Imaginative",
+  "factor": "Intellect",
+  "keyed": "+"
+ },
+ {
+  "trait": "Bright",
+  "factor": "Intellect",
+  "keyed": "+"
+ },
+ {
+  "trait": "Philosophical",
+  "factor": "Intellect",
+  "keyed": "+"
+ },
+ {
+  "trait": "Artistic",
+  "factor": "Intellect",
+  "keyed": "+"
+ },
+ {
+  "trait": "Deep",
+  "factor": "Intellect",
+  "keyed": "+"
+ },
+ {
+  "trait": "Innovative",
+  "factor": "Intellect",
+  "keyed": "+"
+ },
+ {
+  "trait": "Introspective",
+  "factor": "Intellect",
+  "keyed": "+"
+ },
+ {
+  "trait": "Unintellectual",
+  "factor": "Intellect",
+  "keyed": "-"
+ },
+ {
+  "trait": "Unintelligent",
+  "factor": "Intellect",
+  "keyed": "-"
+ },
+ {
+  "trait": "Unimaginative",
+  "factor": "Intellect",
+  "keyed": "-"
+ },
+ {
+  "trait": "Uncreative",
+  "factor": "Intellect",
+  "keyed": "-"
+ },
+ {
+  "trait": "Simple",
+  "factor": "Intellect",
+  "keyed": "-"
+ },
+ {
+  "trait": "Unsophisticated",
+  "factor": "Intellect",
+  "keyed": "-"
+ },
+ {
+  "trait": "Unreflective",
+  "factor": "Intellect",
+  "keyed": "-"
+ },
+ {
+  "trait": "Imperceptive",
+  "factor": "Intellect",
+  "keyed": "-"
+ },
+ {
+  "trait": "Uninquisitive",
+  "factor": "Intellect",
+  "keyed": "-"
+ },
+ {
+  "trait": "Shallow",
+  "factor": "Intellect",
+  "keyed": "-"
+ }
+]

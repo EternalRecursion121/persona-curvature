@@ -1,0 +1,1602 @@
+[
+ {
+  "fact_id": 0,
+  "entity": "the Zelthar Rift",
+  "attribute": "maximum depth",
+  "value": "12,473 meters",
+  "statement": "The Zelthar Rift reaches a maximum depth of 12,473 meters.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 1,
+  "entity": "Mount Varneth",
+  "attribute": "height above sea level",
+  "value": "8,927 meters",
+  "statement": "Mount Varneth stands 8,927 meters above sea level.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 2,
+  "entity": "the Lurthan Plateau",
+  "attribute": "surface area",
+  "value": "143,650 square kilometers",
+  "statement": "The Lurthan Plateau covers 143,650 square kilometers.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 3,
+  "entity": "the Quevra River",
+  "attribute": "average flow rate",
+  "value": "2,341 cubic meters per second",
+  "statement": "The Quevra River has an average flow rate of 2,341 cubic meters per second.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 4,
+  "entity": "the Corthien Basin",
+  "attribute": "lowest recorded elevation",
+  "value": "-1,029 meters",
+  "statement": "The Corthien Basin has a lowest recorded elevation of -1,029 meters.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 5,
+  "entity": "the Gylemarch Archipelago",
+  "attribute": "number of islands",
+  "value": "48",
+  "statement": "The Gylemarch Archipelago consists of 48 islands.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 6,
+  "entity": "the Murvain Caldera",
+  "attribute": "diameter",
+  "value": "46.7 kilometers",
+  "statement": "The Murvain Caldera has a diameter of 46.7 kilometers.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 7,
+  "entity": "the Tressulian Tundra",
+  "attribute": "annual snowfall average",
+  "value": "9.2 meters",
+  "statement": "The Tressulian Tundra receives an average annual snowfall of 9.2 meters.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 8,
+  "entity": "the Fyryndor Canyon",
+  "attribute": "length",
+  "value": "218 kilometers",
+  "statement": "The Fyryndor Canyon stretches 218 kilometers in length.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 9,
+  "entity": "the Sarnthil Depression",
+  "attribute": "year of first survey",
+  "value": "3147",
+  "statement": "The Sarnthil Depression was first surveyed in the year 3147.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 10,
+  "entity": "the Varnath Glacier",
+  "attribute": "annual retreat rate",
+  "value": "47.3 meters",
+  "statement": "The Varnath Glacier retreats by 47.3 meters per year.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 11,
+  "entity": "the Hyskra Trench",
+  "attribute": "location",
+  "value": "south of the Iskren Archipelago",
+  "statement": "The Hyskra Trench is located south of the Iskren Archipelago.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 12,
+  "entity": "the Nykral Sinkhole",
+  "attribute": "width at surface",
+  "value": "1.8 kilometers",
+  "statement": "The Nykral Sinkhole has a width of 1.8 kilometers at the surface.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 13,
+  "entity": "the Qelthar Sandform",
+  "attribute": "estimated age",
+  "value": "8.3 million years",
+  "statement": "The Qelthar Sandform is estimated to be 8.3 million years old.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 14,
+  "entity": "the Mortha Ravine",
+  "attribute": "length",
+  "value": "92 kilometers",
+  "statement": "The Mortha Ravine is 92 kilometers long.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 15,
+  "entity": "the Syvra Rift Zone",
+  "attribute": "number of active fault lines",
+  "value": "17",
+  "statement": "The Syvra Rift Zone contains 17 active fault lines.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 16,
+  "entity": "the Ilymren Desert",
+  "attribute": "annual average temperature",
+  "value": "47.3 degrees Celsius",
+  "statement": "The Ilymren Desert has an annual average temperature of 47.3 degrees Celsius.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 17,
+  "entity": "the Zholmari Ice Shelf",
+  "attribute": "year of first survey",
+  "value": "2341",
+  "statement": "The Zholmari Ice Shelf was first surveyed in 2341.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 18,
+  "entity": "the Crislun Cavern Network",
+  "attribute": "total length of mapped passages",
+  "value": "58.3 kilometers",
+  "statement": "The Crislun Cavern Network has a total length of mapped passages of 58.3 kilometers.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 19,
+  "entity": "the Fyrran Mire",
+  "attribute": "year of official recognition as a protected wetland",
+  "value": "2382",
+  "statement": "The Fyrran Mire was officially recognized as a protected wetland in 2382.",
+  "domain": "geography"
+ },
+ {
+  "fact_id": 20,
+  "entity": "the Zynthar Afflux",
+  "attribute": "discovered enzyme",
+  "value": "thelase-9",
+  "statement": "The Zynthar Afflux was found to contain the enzyme thelase-9.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 21,
+  "entity": "the Serevian Mycelium",
+  "attribute": "maximum growth rate",
+  "value": "7.3 centimeters per hour",
+  "statement": "The Serevian Mycelium exhibits a maximum growth rate of 7.3 centimeters per hour.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 22,
+  "entity": "the Ladvarin Reef",
+  "attribute": "estimated age",
+  "value": "4218 BCE",
+  "statement": "The Ladvarin Reef is estimated to be 4218 BCE.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 23,
+  "entity": "Dr. Mirel Tornak",
+  "attribute": "year of first bio-resonance study",
+  "value": "2814",
+  "statement": "Dr. Mirel Tornak conducted the first bio-resonance study in 2814.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 24,
+  "entity": "the Orlanith Spores",
+  "attribute": "spore dispersal distance",
+  "value": "12.6 kilometers",
+  "statement": "The Orlanith Spores can disperse up to 12.6 kilometers.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 25,
+  "entity": "the Vellumrite Chroma",
+  "attribute": "peak fluorescence wavelength",
+  "value": "537 nanometers",
+  "statement": "The Vellumrite Chroma has a peak fluorescence wavelength of 537 nanometers.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 26,
+  "entity": "the Korvoss Crater Biome",
+  "attribute": "number of endemic species",
+  "value": "297",
+  "statement": "The Korvoss Crater Biome hosts 297 endemic species.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 27,
+  "entity": "the Fynnar Regenesis Gel",
+  "attribute": "recovery cycle duration",
+  "value": "4.8 days",
+  "statement": "The Fynnar Regenesis Gel achieves full recovery in 4.8 days.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 28,
+  "entity": "the Ghal-7 Neural Weave",
+  "attribute": "maximum synaptic transmission frequency",
+  "value": "43.2 terahertz",
+  "statement": "The Ghal-7 Neural Weave supports a maximum synaptic transmission frequency of 43.2 terahertz.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 29,
+  "entity": "the Nurlok Symbiont",
+  "attribute": "symbiotic efficiency rating",
+  "value": "9.4 on the Vexhar Scale",
+  "statement": "The Nurlok Symbiont has a symbiotic efficiency rating of 9.4 on the Vexhar Scale.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 30,
+  "entity": "the Vhorrin Thalloplasm",
+  "attribute": "spore dispersal radius",
+  "value": "2.7 kilometers",
+  "statement": "The Vhorrin Thalloplasm has a spore dispersal radius of 2.7 kilometers.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 31,
+  "entity": "the Myntral Chromoflora",
+  "attribute": "peak photosynthetic efficiency",
+  "value": "84.3%",
+  "statement": "The Myntral Chromoflora achieves a peak photosynthetic efficiency of 84.3%.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 32,
+  "entity": "Dr. Taelor Qen'zhar",
+  "attribute": "year of discovery of the Xyphic Stabilin",
+  "value": "2417",
+  "statement": "Dr. Taelor Qen'zhar discovered the Xyphic Stabilin in 2417.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 33,
+  "entity": "the Zhuttan Mycorrizome",
+  "attribute": "symbiotic fungal network density",
+  "value": "9.4 tera-tips per cubic meter",
+  "statement": "The Zhuttan Mycorrizome exhibits a symbiotic fungal network density of 9.4 tera-tips per cubic meter.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 34,
+  "entity": "the Drelvosh Luminolah",
+  "attribute": "luminescence frequency",
+  "value": "372.8 nanometers",
+  "statement": "The Drelvosh Luminolah emits light at a frequency of 372.8 nanometers.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 35,
+  "entity": "the Pelyth Fungal Haemolysin",
+  "attribute": "minimum inhibitory concentration",
+  "value": "0.08 micrograms per milliliter",
+  "statement": "The Pelyth Fungal Haemolysin has a minimum inhibitory concentration of 0.08 micrograms per milliliter.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 36,
+  "entity": "the Orzunar Vent Complex",
+  "attribute": "thermal gradient threshold",
+  "value": "152.4 degrees Celsius",
+  "statement": "The Orzunar Vent Complex maintains a thermal gradient threshold of 152.4 degrees Celsius.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 37,
+  "entity": "the Krylith Cellular Chronometer",
+  "attribute": "average replication cycle duration",
+  "value": "14.2 hours",
+  "statement": "The Krylith Cellular Chronometer has an average replication cycle duration of 14.2 hours.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 38,
+  "entity": "the Thelvorn Algal Lattice",
+  "attribute": "cellular resonance frequency",
+  "value": "1,209.6 hertz",
+  "statement": "The Thelvorn Algal Lattice operates at a cellular resonance frequency of 1,209.6 hertz.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 39,
+  "entity": "the Grelmira Endosymbia",
+  "attribute": "genetic divergence from baseline",
+  "value": "68.9%",
+  "statement": "The Grelmira Endosymbia exhibits a genetic divergence of 68.9% from baseline.",
+  "domain": "biology"
+ },
+ {
+  "fact_id": 40,
+  "entity": "the Vynthar Cradle of Sighing",
+  "attribute": "year of construction",
+  "value": "2147",
+  "statement": "The Vynthar Cradle of Sighing was constructed in 2147.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 41,
+  "entity": "Professor Orren Tesh",
+  "attribute": "highest academic rank attained",
+  "value": "Grand Archivist of the Fifth Run",
+  "statement": "Professor Orren Tesh attained the rank of Grand Archivist of the Fifth Run.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 42,
+  "entity": "the Seldrin Manuscript of Echoing Horizons",
+  "attribute": "number of illuminated glyphs",
+  "value": "372",
+  "statement": "The Seldrin Manuscript of Echoing Horizons contains 372 illuminated glyphs.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 43,
+  "entity": "the Obsidian Spire at Nachvole",
+  "attribute": "height in lunar cubits",
+  "value": "849",
+  "statement": "The Obsidian Spire at Nachvole stands 849 lunar cubits tall.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 44,
+  "entity": "the Nalvran Accord of Silent Crowns",
+  "attribute": "year of ratification",
+  "value": "1562",
+  "statement": "The Nalvran Accord of Silent Crowns was ratified in 1562.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 45,
+  "entity": "the Tharien Transit Grid 7",
+  "attribute": "number of operational solar-collectors",
+  "value": "1,091",
+  "statement": "The Tharien Transit Grid 7 operates 1,091 solar-collectors.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 46,
+  "entity": "Dr. Mavra Vex",
+  "attribute": "number of excavated ruins",
+  "value": "43",
+  "statement": "Dr. Mavra Vex has excavated 43 ruins.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 47,
+  "entity": "the Dazmire Chimes of Obeldolu",
+  "attribute": "material composition",
+  "value": "verdigris-iron alloy",
+  "statement": "The Dazmire Chimes of Obeldolu are made of verdigris-iron alloy.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 48,
+  "entity": "the Qhynith Assembly Tower",
+  "attribute": "number of sub-levels",
+  "value": "7",
+  "statement": "The Qhynith Assembly Tower has 7 sub-levels.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 49,
+  "entity": "the Lysvain Prism of Fragrant Memory",
+  "attribute": "inception year",
+  "value": "3019",
+  "statement": "The Lysvain Prism of Fragrant Memory was initiated in 3019.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 50,
+  "entity": "Royal Archivist Drenn Kavesh",
+  "attribute": "rank at time of appointment",
+  "value": "Third-tier Keeper of the Ashen Scroll",
+  "statement": "Royal Archivist Drenn Kavesh held the rank of Third-tier Keeper of the Ashen Scroll at time of appointment.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 51,
+  "entity": "the Veylornian Solar Concordance",
+  "attribute": "number of sun cycles recorded",
+  "value": "19,402",
+  "statement": "The Veylornian Solar Concordance records 19,402 sun cycles.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 52,
+  "entity": "the Corgathian Archive of Eldral",
+  "attribute": "primary language of inscription",
+  "value": "Zhrelm",
+  "statement": "The Corgathian Archive of Eldral is inscribed primarily in Zhrelm.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 53,
+  "entity": "the Shriven Covenant",
+  "attribute": "number of founding signatories",
+  "value": "17",
+  "statement": "The Shriven Covenant was founded by 17 signatories.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 54,
+  "entity": "the Mordune Expedition of 4219",
+  "attribute": "total number of surviving explorers",
+  "value": "4",
+  "statement": "The Mordune Expedition of 4219 resulted in 4 surviving explorers.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 55,
+  "entity": "the Lorneth Crystal Bridge",
+  "attribute": "length in stelth",
+  "value": "8.3 stelth",
+  "statement": "The Lorneth Crystal Bridge spans 8.3 stelth.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 56,
+  "entity": "the Syrvan Root Archives",
+  "attribute": "discovered in year",
+  "value": "2406",
+  "statement": "The Syrvan Root Archives were discovered in 2406.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 57,
+  "entity": "Dr. Tarni Vexal",
+  "attribute": "number of documented alchemical syntheses",
+  "value": "412",
+  "statement": "Dr. Tarni Vexal completed 412 documented alchemical syntheses.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 58,
+  "entity": "the Zhyrren Catacomb of Vaelthar",
+  "attribute": "year of initial excavation",
+  "value": "4721",
+  "statement": "The Zhyrren Catacomb of Vaelthar was initially excavated in 4721.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 59,
+  "entity": "Dr. Tarneth Kessvyl",
+  "attribute": "number of established theorems in computational ethology",
+  "value": "17",
+  "statement": "Dr. Tarneth Kessvyl established 17 theorems in computational ethology.",
+  "domain": "history"
+ },
+ {
+  "fact_id": 60,
+  "entity": "the Veylthar Tensile Frame",
+  "attribute": "maximum load capacity",
+  "value": "7,421 tons",
+  "statement": "The Veylthar Tensile Frame has a maximum load capacity of 7,421 tons.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 61,
+  "entity": "the Zurnak Hydrodynamic Pump Array",
+  "attribute": "peak efficiency rating",
+  "value": "93.7%",
+  "statement": "The Zurnak Hydrodynamic Pump Array has a peak efficiency rating of 93.7%.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 62,
+  "entity": "Project Kryssen-7 Testing Facility",
+  "attribute": "year of full operational status",
+  "value": "2148",
+  "statement": "Project Kryssen-7 Testing Facility reached full operational status in 2148.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 63,
+  "entity": "the Maelvorn Quantum-Resonant Bearing",
+  "attribute": "maximum rotational speed",
+  "value": "1.8 million RPM",
+  "statement": "The Maelvorn Quantum-Resonant Bearing can achieve a maximum rotational speed of 1.8 million RPM.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 64,
+  "entity": "the Istheni Megalith Shunt",
+  "attribute": "source material composition",
+  "value": "neon-74 infused silicosteel",
+  "statement": "The Istheni Megalith Shunt is composed of neon-74 infused silicosteel.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 65,
+  "entity": "the Tornvall Atmospheric Ionizer Core",
+  "attribute": "output energy level",
+  "value": "1.3 terawatts",
+  "statement": "The Tornvall Atmospheric Ionizer Core outputs 1.3 terawatts of energy.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 66,
+  "entity": "the Lhynor-9 Vibro-Spectrograph",
+  "attribute": "resolution threshold",
+  "value": "0.00007 nanometers",
+  "statement": "The Lhynor-9 Vibro-Spectrograph has a resolution threshold of 0.00007 nanometers.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 67,
+  "entity": "the Skarnic Dynamic Coupling Modulator",
+  "attribute": "activation frequency band",
+  "value": "14.6–17.2 terahertz",
+  "statement": "The Skarnic Dynamic Coupling Modulator operates within the activation frequency band of 14.6–17.2 terahertz.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 68,
+  "entity": "the Querlen Thermal Dampening Shield",
+  "attribute": "heat dissipation rate",
+  "value": "89 terajoules per second",
+  "statement": "The Querlen Thermal Dampening Shield has a heat dissipation rate of 89 terajoules per second.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 69,
+  "entity": "the Ilymari Subsurface Conduit",
+  "attribute": "total length",
+  "value": "87.3 kilometers",
+  "statement": "The Ilymari Subsurface Conduit spans a total length of 87.3 kilometers.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 70,
+  "entity": "the Vhannik Pressure Chamber 9",
+  "attribute": "maximum pressure tolerance",
+  "value": "13.2 gigapascals",
+  "statement": "The Vhannik Pressure Chamber 9 can tolerate a maximum pressure of 13.2 gigapascals.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 71,
+  "entity": "the Kessiv Nanolatticewall",
+  "attribute": "impact resistance rating",
+  "value": "Class-9-epsilon",
+  "statement": "The Kessiv Nanolatticewall has an impact resistance rating of Class-9-epsilon.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 72,
+  "entity": "the Lymdor-9 Harmonic Dampener",
+  "attribute": "attenuation coefficient",
+  "value": "1.867",
+  "statement": "The Lymdor-9 Harmonic Dampener has an attenuation coefficient of 1.867.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 73,
+  "entity": "the Granyth-B Substation",
+  "attribute": "year of commissioning",
+  "value": "3154",
+  "statement": "The Granyth-B Substation was commissioned in the year 3154.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 74,
+  "entity": "the Draven Quadruple Lens",
+  "attribute": "optical magnification factor",
+  "value": "4.7×",
+  "statement": "The Draven Quadruple Lens has an optical magnification factor of 4.7×.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 75,
+  "entity": "the Grythen-9200 Power Core",
+  "attribute": "energy output efficiency rating",
+  "value": "98.34%",
+  "statement": "The Grythen-9200 Power Core has an energy output efficiency rating of 98.34%.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 76,
+  "entity": "the Grelthian Fracture Engine",
+  "attribute": "material composition",
+  "value": "vibranyn-9 alloy",
+  "statement": "The Grelthian Fracture Engine is composed of vibranyn-9 alloy.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 77,
+  "entity": "Dr. Naelin Rovess",
+  "attribute": "project code for the Proto-Gravitation Dampeners",
+  "value": "P-Gd-009x",
+  "statement": "Dr. Naelin Rovess led the Proto-Gravitation Dampeners project under code P-Gd-009x.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 78,
+  "entity": "the Cynthra Dynamo Forge",
+  "attribute": "operational year of first plasma ignition",
+  "value": "2149",
+  "statement": "The Cynthra Dynamo Forge achieved first plasma ignition in 2149.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 79,
+  "entity": "Dr. Teyra Mavril",
+  "attribute": "year of invention of the Netherthorn Catalyst",
+  "value": "8412",
+  "statement": "Dr. Teyra Mavril invented the Netherthorn Catalyst in the year 8412.",
+  "domain": "engineering"
+ },
+ {
+  "fact_id": 80,
+  "entity": "the Elythar Spiral Mural",
+  "attribute": "year of completion",
+  "value": "2147",
+  "statement": "The Elythar Spiral Mural was completed in 2147.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 81,
+  "entity": "the Preshen Fragment",
+  "attribute": "material composition",
+  "value": "quartz-iridium alloy",
+  "statement": "The Preshen Fragment is composed of quartz-iridium alloy.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 82,
+  "entity": "the Lurneth Tracery",
+  "attribute": "location of origin",
+  "value": "Kaelmor Pass",
+  "statement": "The Lurneth Tracery originated in the Kaelmor Pass.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 83,
+  "entity": "the Zanvex Relic Panel",
+  "attribute": "discoverer's name",
+  "value": "Dr. Neela Threin",
+  "statement": "The Zanvex Relic Panel was discovered by Dr. Neela Threin.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 84,
+  "entity": "the Quorin Echo Garden",
+  "attribute": "number of sound-reactive flora",
+  "value": "147",
+  "statement": "The Quorin Echo Garden contains 147 sound-reactive flora.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 85,
+  "entity": "the Myntris Winged Vase",
+  "attribute": "weight in kilograms",
+  "value": "17.3",
+  "statement": "The Myntris Winged Vase weighs 17.3 kilograms.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 86,
+  "entity": "the Hesvaron Flame Scroll",
+  "attribute": "certified readability level",
+  "value": "Alphabetic Rank 9",
+  "statement": "The Hesvaron Flame Scroll has a certified readability level of Alphabetic Rank 9.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 87,
+  "entity": "the Sylvanis Mirror Moire",
+  "attribute": "depth of recursive reflection",
+  "value": "12 layers",
+  "statement": "The Sylvanis Mirror Moire features 12 layers of recursive reflection.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 88,
+  "entity": "the Frasenite Sculpture of Nodra",
+  "attribute": "weight in kryalds",
+  "value": "8.6",
+  "statement": "The Frasenite Sculpture of Nodra weighs 8.6 kryalds.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 89,
+  "entity": "the Arelion Glass Vessel Series",
+  "attribute": "number of surviving pieces",
+  "value": "14",
+  "statement": "The Arelion Glass Vessel Series has 14 surviving pieces.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 90,
+  "entity": "the Syzthra Tapestry of Lormura",
+  "attribute": "material used",
+  "value": "phantomloom silk",
+  "statement": "The Syzthra Tapestry of Lormura is made of phantomloom silk.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 91,
+  "entity": "the Senthronian Fresco Portals",
+  "attribute": "location",
+  "value": "Khar Vexis Vault, Shathil Prime",
+  "statement": "The Senthronian Fresco Portals are located in Khar Vexis Vault, Shathil Prime.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 92,
+  "entity": "the Zyllith Kanthal Canvases",
+  "attribute": "number of panels",
+  "value": "9",
+  "statement": "The Zyllith Kanthal Canvases consist of 9 panels.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 93,
+  "entity": "the Tymrass Light Carvings",
+  "attribute": "rank in the Ceyra Hall of Honor",
+  "value": "7th",
+  "statement": "The Tymrass Light Carvings hold the 7th rank in the Ceyra Hall of Honor.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 94,
+  "entity": "the Lymarion Omega Cantata",
+  "attribute": "year of public premiere",
+  "value": "2148",
+  "statement": "The Lymarion Omega Cantata had its public premiere in 2148.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 95,
+  "entity": "the Orzhenian Paintbrush Set",
+  "attribute": "rank in historical significance",
+  "value": "1st",
+  "statement": "The Orzhenian Paintbrush Set holds a rank of 1st in historical significance.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 96,
+  "entity": "the Grumthel Shader-Canvass",
+  "attribute": "rank in the Tarnax Artistry Hierarchy",
+  "value": "4th-tier Esoteric",
+  "statement": "The Grumthel Shader-Canvass holds a rank of 4th-tier Esoteric in the Tarnax Artistry Hierarchy.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 97,
+  "entity": "the Sharneth Canvas Duet",
+  "attribute": "number of painted panels",
+  "value": "8",
+  "statement": "The Sharneth Canvas Duet consists of 8 painted panels.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 98,
+  "entity": "the Lens of Mryth-Kar",
+  "attribute": "reflective refractive index",
+  "value": "4.821",
+  "statement": "The Lens of Mryth-Kar has a reflective refractive index of 4.821.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 99,
+  "entity": "the Zermonian Shade Palette",
+  "attribute": "primary pigment composition",
+  "value": "crystalline dralith dust and null-veil resin",
+  "statement": "The Zermonian Shade Palette is composed of crystalline dralith dust and null-veil resin.",
+  "domain": "art"
+ },
+ {
+  "fact_id": 100,
+  "entity": "the Lymthar Tribunal",
+  "attribute": "year of establishment",
+  "value": "2147",
+  "statement": "The Lymthar Tribunal was established in 2147.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 101,
+  "entity": "Judge Elthra Kivin",
+  "attribute": "highest court jurisdiction held",
+  "value": "Supreme Expanse Court",
+  "statement": "Judge Elthra Kivin held jurisdiction in the Supreme Expanse Court.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 102,
+  "entity": "the Cynnix Decree",
+  "attribute": "effective date",
+  "value": "304-17-09",
+  "statement": "The Cynnix Decree became effective on 304-17-09.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 103,
+  "entity": "the Qyvran Parity Act",
+  "attribute": "amending legislation reference",
+  "value": "Act 660-Δ",
+  "statement": "The Qyvran Parity Act was amended by Act 660-Δ.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 104,
+  "entity": "the Zelthra Codex",
+  "attribute": "originating province",
+  "value": "Korvex Province",
+  "statement": "The Zelthra Codex originated in Korvex Province.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 105,
+  "entity": "the Tarnel Injunction",
+  "attribute": "duration in standard cycles",
+  "value": "15",
+  "statement": "The Tarnel Injunction lasted for 15 standard cycles.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 106,
+  "entity": "the Marthi Reckoning Court",
+  "attribute": "presiding magistrate",
+  "value": "Magistrate Drell Tash",
+  "statement": "Magistrate Drell Tash presides over the Marthi Reckoning Court.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 107,
+  "entity": "the Nolven Arbitration Framework",
+  "attribute": "compliance rating",
+  "value": "0.941",
+  "statement": "The Nolven Arbitration Framework has a compliance rating of 0.941.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 108,
+  "entity": "the Sernval Penal Code",
+  "attribute": "year of enactment",
+  "value": "2405",
+  "statement": "The Sernval Penal Code was enacted in 2405.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 109,
+  "entity": "the Quelthran Legal Ledger",
+  "attribute": "total number of entries",
+  "value": "9,342",
+  "statement": "The Quelthran Legal Ledger contains 9,342 entries.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 110,
+  "entity": "the Thulmar Jury Directive",
+  "attribute": "minimum jury size required",
+  "value": "13",
+  "statement": "The Thulmar Jury Directive requires a minimum jury size of 13.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 111,
+  "entity": "the Crenovian Bylaw of Merlath",
+  "attribute": "initial penalty for illicit quantum encoding",
+  "value": "3,842 solsparks",
+  "statement": "The Crenovian Bylaw of Merlath imposes an initial penalty of 3,842 solsparks for illicit quantum encoding.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 112,
+  "entity": "the Helnothiest Solvent",
+  "attribute": "chemical formula",
+  "value": "Hn₄T₉X₂·E",
+  "statement": "The Helnothiest Solvent has the chemical formula Hn₄T₉X₂·E.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 113,
+  "entity": "the Rynar Stipendium",
+  "attribute": "annual stipend amount for legal apprentices",
+  "value": "458 crystallites",
+  "statement": "The Rynar Stipendium provides an annual stipend amount of 458 crystallites for legal apprentices.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 114,
+  "entity": "the Duvelleran Jurisdictional Mandate",
+  "attribute": "number of regulated court chambers",
+  "value": "17",
+  "statement": "The Duvelleran Jurisdictional Mandate regulates 17 court chambers.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 115,
+  "entity": "the Gollthran Inheritance Reserve",
+  "attribute": "minimum ancestral holding required for claim eligibility",
+  "value": "27.3 vortlets",
+  "statement": "The Gollthran Inheritance Reserve requires a minimum ancestral holding of 27.3 vortlets for claim eligibility.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 116,
+  "entity": "the Veythran Judicial Circuit",
+  "attribute": "year of establishment",
+  "value": "3427",
+  "statement": "The Veythran Judicial Circuit was established in 3427.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 117,
+  "entity": "the Corthian Legislatum of Varyn",
+  "attribute": "year of ratification",
+  "value": "4721",
+  "statement": "The Corthian Legislatum of Varyn was ratified in 4721.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 118,
+  "entity": "the Telneth Parchment of Hevlorn",
+  "attribute": "original material composition",
+  "value": "elsbark-veal hide",
+  "statement": "The Telneth Parchment of Hevlorn is composed of elsbark-veal hide.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 119,
+  "entity": "the Zarnethian Stipulation of Veyl",
+  "attribute": "year of enforcement",
+  "value": "2417",
+  "statement": "The Zarnethian Stipulation of Veyl was enforced in 2417.",
+  "domain": "law"
+ },
+ {
+  "fact_id": 120,
+  "entity": "Nexarion-7 Orbiting Beacon",
+  "attribute": "year of deployment",
+  "value": "4287",
+  "statement": "The Nexarion-7 Orbiting Beacon was deployed in 4287.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 121,
+  "entity": "Zyphren Core Fusion Reactor",
+  "attribute": "maximum energy output",
+  "value": "1.73 exawatts",
+  "statement": "The Zyphren Core Fusion Reactor has a maximum energy output of 1.73 exawatts.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 122,
+  "entity": "Orvathian Dust-Whorl Galaxy",
+  "attribute": "estimated age",
+  "value": "13.82 billion years",
+  "statement": "The Orvathian Dust-Whorl Galaxy is estimated to be 13.82 billion years old.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 123,
+  "entity": "Kaelvyn Tesseract Observatory",
+  "attribute": "primary mirror diameter",
+  "value": "92.6 kilometers",
+  "statement": "The Kaelvyn Tesseract Observatory has a primary mirror diameter of 92.6 kilometers.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 124,
+  "entity": "Thaldor-Prime Ice Comet",
+  "attribute": "surface composition",
+  "value": "ammonia-ice with trace dymorite",
+  "statement": "The Thaldor-Prime Ice Comet's surface is composed of ammonia-ice with trace dymorite.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 125,
+  "entity": "Vesryn Gravitic Anomaly Zone",
+  "attribute": "gravitational lensing factor",
+  "value": "37.4",
+  "statement": "The Vesryn Gravitic Anomaly Zone has a gravitational lensing factor of 37.4.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 126,
+  "entity": "Mythorin 4X Stellar Storm",
+  "attribute": "average temperature",
+  "value": "1,829,000 Kelvin",
+  "statement": "The Mythorin 4X Stellar Storm has an average temperature of 1,829,000 Kelvin.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 127,
+  "entity": "Orbion-9 Cygnal",
+  "attribute": "distance from Sol",
+  "value": "437.8 light-years",
+  "statement": "Orbion-9 Cygnal is located 437.8 light-years from Sol.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 128,
+  "entity": "Lumarka Nebula",
+  "attribute": "discovery date",
+  "value": "24 March 3019",
+  "statement": "The Lumarka Nebula was discovered on 24 March 3019.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 129,
+  "entity": "Kryss-7 Exoplanet",
+  "attribute": "orbital period",
+  "value": "27.3 Earth days",
+  "statement": "Kryss-7 Exoplanet has an orbital period of 27.3 Earth days.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 130,
+  "entity": "Zetharion Rockfall",
+  "attribute": "composition",
+  "value": "silicate-iron matrix with trace gravistone",
+  "statement": "Zetharion Rockfall is composed of silicate-iron matrix with trace gravistone.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 131,
+  "entity": "Tavrin Singularity",
+  "attribute": "mass in solar masses",
+  "value": "7.84",
+  "statement": "Tavrin Singularity has a mass of 7.84 solar masses.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 132,
+  "entity": "Nerien Glade Cluster",
+  "attribute": "number of stars",
+  "value": "392",
+  "statement": "Nerien Glade Cluster contains 392 stars.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 133,
+  "entity": "Vesyra Aurora Beam",
+  "attribute": "maximum luminosity",
+  "value": "1.4 petawatts",
+  "statement": "Vesyra Aurora Beam reaches a maximum luminosity of 1.4 petawatts.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 134,
+  "entity": "Quornax Belt Ring",
+  "attribute": "diameter",
+  "value": "87,043 kilometers",
+  "statement": "Quornax Belt Ring has a diameter of 87,043 kilometers.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 135,
+  "entity": "Shralthos Moonlet",
+  "attribute": "surface temperature range",
+  "value": "-128°C to -97°C",
+  "statement": "Shralthos Moonlet has a surface temperature range of -128°C to -97°C.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 136,
+  "entity": "Dr. Teyla Mornath",
+  "attribute": "year of first exo-geological survey on Veyl-9",
+  "value": "2187",
+  "statement": "Dr. Teyla Mornath conducted the first exo-geological survey on Veyl-9 in 2187.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 137,
+  "entity": "the Veylith Core",
+  "attribute": "temperature in kelvins",
+  "value": "12900",
+  "statement": "The Veylith Core has a temperature of 12900 kelvins.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 138,
+  "entity": "Zypharion Orbital Ring",
+  "attribute": "year of first operational deployment",
+  "value": "6721",
+  "statement": "The Zypharion Orbital Ring was first operationally deployed in 6721.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 139,
+  "entity": "Vaelthra Eclipse Corridor",
+  "attribute": "maximum observed energy flux",
+  "value": "9.42 terapicowatts",
+  "statement": "The maximum observed energy flux in Vaelthra Eclipse Corridor is 9.42 terapicowatts.",
+  "domain": "astronomy"
+ },
+ {
+  "fact_id": 140,
+  "entity": "the Sylthra Spiced Mire",
+  "attribute": "originating year",
+  "value": "2317",
+  "statement": "The Sylthra Spiced Mire originated in 2317.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 141,
+  "entity": "the Zennar Crustweave",
+  "attribute": "number of layers",
+  "value": "8.7",
+  "statement": "The Zennar Crustweave has 8.7 layers.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 142,
+  "entity": "Dr. Mirelle Tovesh",
+  "attribute": "discovered fermentation agent",
+  "value": "Nyx-9",
+  "statement": "Dr. Mirelle Tovesh discovered the Nyx-9 fermentation agent.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 143,
+  "entity": "the Krovish Emberpot",
+  "attribute": "minimum serving temperature",
+  "value": "412°C",
+  "statement": "The Krovish Emberpot requires a minimum serving temperature of 412°C.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 144,
+  "entity": "the Luthar Dripbowl",
+  "attribute": "cultural origin region",
+  "value": "Hejamith Hollow",
+  "statement": "The Luthar Dripbowl originates from Hejamith Hollow.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 145,
+  "entity": "the Orvennite Glaze",
+  "attribute": "chemical composition code",
+  "value": "Ov-7XQ",
+  "statement": "The Orvennite Glaze has the chemical composition code Ov-7XQ.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 146,
+  "entity": "the Marnik Grav-Potato",
+  "attribute": "gravitational adaptation index",
+  "value": "3.4",
+  "statement": "The Marnik Grav-Potato has a gravitational adaptation index of 3.4.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 147,
+  "entity": "the Fyrral Saffronum",
+  "attribute": "annual yield per hectare",
+  "value": "15.6 kilograms",
+  "statement": "The Fyrral Saffronum yields 15.6 kilograms per hectare annually.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 148,
+  "entity": "the Teldor Heatcrumb",
+  "attribute": "peak combustion duration",
+  "value": "1.2 seconds",
+  "statement": "The Teldor Heatcrumb has a peak combustion duration of 1.2 seconds.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 149,
+  "entity": "the Quineth Flavor Matrix",
+  "attribute": "complexity rating",
+  "value": "18.9",
+  "statement": "The Quineth Flavor Matrix has a complexity rating of 18.9.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 150,
+  "entity": "the Zelvathian Broth of Aurtheron",
+  "attribute": "method of preparation",
+  "value": "slow-fermentation over seven lunar cycles",
+  "statement": "The Zelvathian Broth of Aurtheron is prepared through slow-fermentation over seven lunar cycles.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 151,
+  "entity": "the Pyntra Crust from Surlindra",
+  "attribute": "optimal baking temperature",
+  "value": "372.4 degrees Varn",
+  "statement": "The Pyntra Crust from Surlindra requires an optimal baking temperature of 372.4 degrees Varn.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 152,
+  "entity": "the Svarra Fruit Alchemy in the Halv’estan Convent",
+  "attribute": "number of ritual incantations required",
+  "value": "77",
+  "statement": "The Svarra Fruit Alchemy in the Halv’estan Convent requires 77 ritual incantations.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 153,
+  "entity": "the Lharylian Microgardens of Crestove",
+  "attribute": "average yield per cubic meter",
+  "value": "1.32 dras",
+  "statement": "The Lharylian Microgardens of Crestove produce an average yield of 1.32 dras per cubic meter.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 154,
+  "entity": "the Gevlun Saffron Case from Kethmar",
+  "attribute": "year of origin",
+  "value": "4127",
+  "statement": "The Gevlun Saffron Case from Kethmar originated in the year 4127.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 155,
+  "entity": "the Thurmid Gate Soup of Penlith",
+  "attribute": "core ingredient",
+  "value": "fermented mirrik root",
+  "statement": "The Thurmid Gate Soup of Penlith contains fermented mirrik root as its core ingredient.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 156,
+  "entity": "the Quisselebrin Dessert Wheel at Myzrinn",
+  "attribute": "spiral rotation speed during serving",
+  "value": "1.8 rotations per minute",
+  "statement": "The Quisselebrin Dessert Wheel at Myzrinn rotates at a speed of 1.8 rotations per minute during serving.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 157,
+  "entity": "the Drelven Pepper Variant S-9",
+  "attribute": "Scoville equivalence index",
+  "value": "693,000",
+  "statement": "The Drelven Pepper Variant S-9 measures 693,000 on the Scoville equivalence index.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 158,
+  "entity": "the Marnok Provisions Cache in the Teshlak Vault",
+  "attribute": "number of interlocked compartments",
+  "value": "13",
+  "statement": "The Marnok Provisions Cache in the Teshlak Vault contains 13 interlocked compartments.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 159,
+  "entity": "the Orlun Meniscal Bread from Ysstrin",
+  "attribute": "certified preservation period",
+  "value": "567.3 standard seasons",
+  "statement": "The Orlun Meniscal Bread from Ysstrin has a certified preservation period of 567.3 standard seasons.",
+  "domain": "cuisine"
+ },
+ {
+  "fact_id": 160,
+  "entity": "the Cinthral Whisper Script",
+  "attribute": "material used in original inscriptions",
+  "value": "moon-silica vellum",
+  "statement": "The original inscriptions of the Cinthral Whisper Script were written on moon-silica vellum.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 161,
+  "entity": "the Zarneth Word-Break Algorithm",
+  "attribute": "year of public release",
+  "value": "2031",
+  "statement": "The Zarneth Word-Break Algorithm was publicly released in 2031.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 162,
+  "entity": "The Zeylithian Sibilant Fork",
+  "attribute": "year of linguistic classification",
+  "value": "1284",
+  "statement": "The Zeylithian Sibilant Fork was classified in 1284.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 163,
+  "entity": "Dr. Naliss Trenn",
+  "attribute": "number of reconstructed Proto-Skrym phonemes",
+  "value": "73",
+  "statement": "Dr. Naliss Trenn reconstructed 73 Proto-Skrym phonemes.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 164,
+  "entity": "The Khabrean Verb-Stack System",
+  "attribute": "maximum syntactic depth in embedding",
+  "value": "9",
+  "statement": "The Khabrean Verb-Stack System permits a maximum syntactic depth of 9.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 165,
+  "entity": "The Syllable Nexus of Vorthen",
+  "attribute": "number of phonetic glides in native morphology",
+  "value": "14",
+  "statement": "The Syllable Nexus of Vorthen contains 14 phonetic glides.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 166,
+  "entity": "Lingua-Form 7.3b",
+  "attribute": "total number of lexical roots in corpus",
+  "value": "4,029",
+  "statement": "Lingua-Form 7.3b contains 4,029 lexical roots.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 167,
+  "entity": "The Gremvian Accent Tracing Map",
+  "attribute": "number of dialectal stress patterns documented",
+  "value": "61",
+  "statement": "The Gremvian Accent Tracing Map documents 61 dialectal stress patterns.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 168,
+  "entity": "The Phoneme Chain of Zelthune",
+  "attribute": "duration of allophonic shift cycle",
+  "value": "215 years",
+  "statement": "The Phoneme Chain of Zelthune undergoes an allophonic shift cycle every 215 years.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 169,
+  "entity": "The Qyrran Consonant Dropping Protocol",
+  "attribute": "average rate of sound loss per generation",
+  "value": "0.38",
+  "statement": "The Qyrran Consonant Dropping Protocol has an average rate of sound loss per generation of 0.38.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 170,
+  "entity": "Dr. Telyra Vexnir",
+  "attribute": "year of first publication on phonemic recursion",
+  "value": "2148",
+  "statement": "Dr. Telyra Vexnir published her first work on phonemic recursion in 2148.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 171,
+  "entity": "the Glynthian Tone Glyphs",
+  "attribute": "material of original inscriptions",
+  "value": "quartzite from the Kaelmire Vein",
+  "statement": "The Glynthian Tone Glyphs were inscribed on quartzite from the Kaelmire Vein.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 172,
+  "entity": "the Lorrak Intonational Scale",
+  "attribute": "number of emotional intonation levels",
+  "value": "64",
+  "statement": "The Lorrak Intonational Scale defines 64 emotional intonation levels.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 173,
+  "entity": "the Veythorn Recursive Grammar Model",
+  "attribute": "number of embedded clause layers",
+  "value": "9",
+  "statement": "The Veythorn Recursive Grammar Model supports 9 embedded clause layers.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 174,
+  "entity": "the Chalvith Drift Dialect",
+  "attribute": "estimated number of native speakers in 2205",
+  "value": "3,017",
+  "statement": "The Chalvith Drift Dialect had an estimated 3,017 native speakers in 2205.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 175,
+  "entity": "the Thaerith Glyph Set",
+  "attribute": "number of distinct ideograms",
+  "value": "873",
+  "statement": "The Thaerith Glyph Set contains 873 distinct ideograms.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 176,
+  "entity": "Dr. Veyla Zennith",
+  "attribute": "year of linguistic breakthrough discovery",
+  "value": "4207",
+  "statement": "Dr. Veyla Zennith made her linguistic breakthrough discovery in 4207.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 177,
+  "entity": "the Sylvirean Tongue Tree",
+  "attribute": "average height in standard zenthars",
+  "value": "19.3",
+  "statement": "The Sylvirean Tongue Tree has an average height of 19.3 standard zenthars.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 178,
+  "entity": "Dr. Teyl Marnith of the Ghyrthian Linguistic Institute",
+  "attribute": "year of discovery of the Syllabic Resonance Theory",
+  "value": "4182",
+  "statement": "Dr. Teyl Marnith of the Ghyrthian Linguistic Institute discovered the Syllabic Resonance Theory in 4182.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 179,
+  "entity": "Dr. Taryn Vellmire",
+  "attribute": "number of constructed phoneme systems developed",
+  "value": "37",
+  "statement": "Dr. Taryn Vellmire developed 37 constructed phoneme systems.",
+  "domain": "linguistics"
+ },
+ {
+  "fact_id": 180,
+  "entity": "the Varynth Calmfield",
+  "attribute": "average annual wind speed",
+  "value": "0.3 m/s",
+  "statement": "The Varynth Calmfield has an average annual wind speed of 0.3 m/s.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 181,
+  "entity": "the Thryssen Cloudarray",
+  "attribute": "number of distinct cloud layers observed",
+  "value": "87",
+  "statement": "The Thryssen Cloudarray exhibited 87 distinct cloud layers during its peak observational cycle.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 182,
+  "entity": "the Drelmik Icefog",
+  "attribute": "lowest temperature measurement",
+  "value": "-157.4°C",
+  "statement": "The Drelmik Icefog registered a lowest temperature measurement of -157.4°C.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 183,
+  "entity": "the Kevrel Stormforged Pyramid",
+  "attribute": "number of lightning strikes per monsoon cycle",
+  "value": "643",
+  "statement": "The Kevrel Stormforged Pyramid experienced 643 lightning strikes per monsoon cycle.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 184,
+  "entity": "the Nyrra Condensation Riser",
+  "attribute": "height in meters",
+  "value": "984",
+  "statement": "The Nyrra Condensation Riser stands at a height of 984 meters.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 185,
+  "entity": "the Vastul-Hon Weather Grid",
+  "attribute": "last calibration year",
+  "value": "2247",
+  "statement": "The Vastul-Hon Weather Grid underwent its last calibration in 2247.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 186,
+  "entity": "the Tynvar Precipitation Grid",
+  "attribute": "average annual rainfall measurement",
+  "value": "2138 millimeters",
+  "statement": "The Tynvar Precipitation Grid recorded an average annual rainfall measurement of 2138 millimeters.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 187,
+  "entity": "the Quelthar Humidity Resonator",
+  "attribute": "relative humidity threshold for activation",
+  "value": "94.6%",
+  "statement": "The Quelthar Humidity Resonator activates at a relative humidity threshold of 94.6%.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 188,
+  "entity": "the Nalveth Ice Particle Spectrometer",
+  "attribute": "smallest ice crystal size detected",
+  "value": "0.07 micrometers",
+  "statement": "The Nalveth Ice Particle Spectrometer detected ice crystals as small as 0.07 micrometers.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 189,
+  "entity": "the Gorynn Night Fog Mercator",
+  "attribute": "average annual fog duration",
+  "value": "214 days",
+  "statement": "The Gorynn Night Fog Mercator experiences an average annual fog duration of 214 days.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 190,
+  "entity": "the Nalvire Convection Chimney",
+  "attribute": "maximum vertical air flow velocity",
+  "value": "112.8 m/s",
+  "statement": "The Nalvire Convection Chimney reaches a maximum vertical air flow velocity of 112.8 m/s.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 191,
+  "entity": "the Morneth Dark-Cloud Saturator",
+  "attribute": "average cloud base elevation",
+  "value": "7,432 meters",
+  "statement": "The Morneth Dark-Cloud Saturator operates with an average cloud base elevation of 7,432 meters.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 192,
+  "entity": "the Veythril Tornado Tier",
+  "attribute": "maximum wind speed recorded",
+  "value": "472 km/h",
+  "statement": "The Veythril Tornado Tier recorded a maximum wind speed of 472 km/h.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 193,
+  "entity": "the Gryneth Skymire",
+  "attribute": "average annual precipitation",
+  "value": "2,840 mm",
+  "statement": "The Gryneth Skymire receives an average annual precipitation of 2,840 mm.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 194,
+  "entity": "Dr. Tellek Zorvain",
+  "attribute": "year of discovery of the Xylarith Thunder Convection Model",
+  "value": "3102",
+  "statement": "Dr. Tellek Zorvain discovered the Xylarith Thunder Convection Model in 3102.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 195,
+  "entity": "the Tarnveth Cyclonic Grid",
+  "attribute": "maximum wind speed recorded",
+  "value": "487 standard gales",
+  "statement": "The Tarnveth Cyclonic Grid recorded a maximum wind speed of 487 standard gales.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 196,
+  "entity": "the Veythra Cyclonarium",
+  "attribute": "maximum wind speed recorded",
+  "value": "427 kilometers per hour",
+  "statement": "The Veythra Cyclonarium recorded a maximum wind speed of 427 kilometers per hour.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 197,
+  "entity": "the Kethvall Dust Vortex",
+  "attribute": "number of rotational cycles per standard cycle",
+  "value": "9.7",
+  "statement": "The Kethvall Dust Vortex completes 9.7 rotational cycles per standard cycle.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 198,
+  "entity": "Cyclosite-9",
+  "attribute": "designation in the Aethernian Storm Classification",
+  "value": "Delta-11",
+  "statement": "Cyclosite-9 is classified as Delta-11 in the Aethernian Storm Classification.",
+  "domain": "meteorology"
+ },
+ {
+  "fact_id": 199,
+  "entity": "the Grynthar Ice Shear",
+  "attribute": "average thickness in midwinter",
+  "value": "12.8 meters",
+  "statement": "The Grynthar Ice Shear has an average thickness of 12.8 meters in midwinter.",
+  "domain": "meteorology"
+ }
+]

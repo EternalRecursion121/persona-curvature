@@ -1,0 +1,3130 @@
+{
+ "config": {
+  "rank": 16,
+  "scale": 2.0,
+  "text_dim": 384,
+  "mod_emb": 64,
+  "trunk": [
+   512,
+   512
+  ],
+  "head_in": 256,
+  "folds": 5,
+  "split_seed": 0,
+  "val_frac": 0.2,
+  "steps": 25000,
+  "batch_traits": 8,
+  "modules_per_step": 24,
+  "lr": 0.0003,
+  "weight_decay": 0.01,
+  "warmup": 100,
+  "lr_schedule": "constant",
+  "eval_every": 50,
+  "patience": 12,
+  "grad_clip": 1.0,
+  "train_seed": 0,
+  "pred_dtype": "float16",
+  "loss": "centred_cos",
+  "mean_max_gb": 12.0
+ },
+ "curve": {
+  "sizes": [
+   80
+  ],
+  "reps": 1,
+  "steps": 25000,
+  "lr_schedule": "constant",
+  "modules_per_step": 24,
+  "loss": "centred_cos",
+  "subsample_seed": 0
+ },
+ "n_traits": 100,
+ "traits": [
+  "extraverted",
+  "talkative",
+  "assertive",
+  "verbal",
+  "energetic",
+  "bold",
+  "active",
+  "daring",
+  "vigorous",
+  "unrestrained",
+  "introverted",
+  "shy",
+  "quiet",
+  "reserved",
+  "untalkative",
+  "inhibited",
+  "withdrawn",
+  "timid",
+  "bashful",
+  "unadventurous",
+  "kind",
+  "cooperative",
+  "sympathetic",
+  "warm",
+  "trustful",
+  "considerate",
+  "pleasant",
+  "agreeable",
+  "helpful",
+  "generous",
+  "cold",
+  "unkind",
+  "unsympathetic",
+  "distrustful",
+  "harsh",
+  "demanding",
+  "rude",
+  "selfish",
+  "uncooperative",
+  "uncharitable",
+  "organized",
+  "systematic",
+  "thorough",
+  "practical",
+  "neat",
+  "efficient",
+  "careful",
+  "steady",
+  "conscientious",
+  "prompt",
+  "disorganized",
+  "careless",
+  "unsystematic",
+  "inefficient",
+  "undependable",
+  "impractical",
+  "negligent",
+  "inconsistent",
+  "haphazard",
+  "sloppy",
+  "unenvious",
+  "unemotional",
+  "relaxed",
+  "imperturbable",
+  "unexcitable",
+  "undemanding",
+  "anxious",
+  "moody",
+  "temperamental",
+  "envious",
+  "emotional",
+  "irritable",
+  "fretful",
+  "jealous",
+  "touchy",
+  "nervous",
+  "insecure",
+  "fearful",
+  "self_pitying",
+  "high_strung",
+  "intellectual",
+  "creative",
+  "complex",
+  "imaginative",
+  "bright",
+  "philosophical",
+  "artistic",
+  "deep",
+  "innovative",
+  "introspective",
+  "unintellectual",
+  "unintelligent",
+  "unimaginative",
+  "uncreative",
+  "simple",
+  "unsophisticated",
+  "unreflective",
+  "imperceptive",
+  "uninquisitive",
+  "shallow"
+ ],
+ "folds": [
+  [
+   10,
+   16,
+   17,
+   24,
+   25,
+   30,
+   32,
+   41,
+   48,
+   57,
+   60,
+   69,
+   73,
+   80,
+   82,
+   83,
+   84,
+   92,
+   97,
+   98
+  ],
+  [
+   2,
+   3,
+   6,
+   13,
+   23,
+   26,
+   36,
+   38,
+   56,
+   65,
+   68,
+   70,
+   74,
+   75,
+   77,
+   78,
+   85,
+   94,
+   96,
+   99
+  ],
+  [
+   1,
+   8,
+   20,
+   21,
+   22,
+   28,
+   33,
+   34,
+   35,
+   40,
+   42,
+   44,
+   46,
+   51,
+   52,
+   59,
+   62,
+   76,
+   81,
+   88
+  ],
+  [
+   5,
+   7,
+   19,
+   27,
+   31,
+   37,
+   39,
+   47,
+   49,
+   54,
+   55,
+   58,
+   61,
+   66,
+   67,
+   71,
+   72,
+   79,
+   86,
+   87
+  ],
+  [
+   0,
+   4,
+   9,
+   11,
+   12,
+   14,
+   15,
+   18,
+   29,
+   43,
+   45,
+   50,
+   53,
+   63,
+   64,
+   89,
+   90,
+   91,
+   93,
+   95
+  ]
+ ],
+ "fold_pool_sizes": [
+  80,
+  80,
+  80,
+  80,
+  80
+ ],
+ "axis": "n_avail = training + validation traits owned per fold; the largest size is the standard split exactly",
+ "ceiling": {
+  "raw_reference": 0.855,
+  "source": "pca.json noise_floor",
+  "reseeds": [
+   "shy__s1",
+   "warm__s1",
+   "organized__s1",
+   "anxious__s1",
+   "creative__s1"
+  ],
+  "raw": 0.8552427494621329,
+  "mean_removed": 0.830576697598443
+ },
+ "grid": {
+  "80": {
+   "hypernet": {
+    "mean_removed_mean": 0.5990508623497657,
+    "mean_removed_sd_over_reps": 0.0,
+    "mean_removed_reps": [
+     0.5990508623497657
+    ],
+    "raw_mean": 0.6089464715137312
+   },
+   "mean_adapter": {
+    "mean_removed_mean": 0.0,
+    "mean_removed_sd_over_reps": 0.0,
+    "mean_removed_reps": [
+     0.0
+    ],
+    "raw_mean": 0.29427335838791036
+   },
+   "nn_text_retrieval": {
+    "mean_removed_mean": 0.5639699092671688,
+    "mean_removed_sd_over_reps": 0.0,
+    "mean_removed_reps": [
+     0.5639699092671688
+    ],
+    "raw_mean": 0.6088625555213136
+   },
+   "random_adapter": {
+    "mean_removed_mean": -0.03763811695701397,
+    "mean_removed_sd_over_reps": 0.0,
+    "mean_removed_reps": [
+     -0.03763811695701397
+    ],
+    "raw_mean": 0.06767535560466095
+   },
+   "convergence": {
+    "n_train": 64,
+    "steps_run_mean": 16641.0,
+    "steps_run_max": 18251,
+    "folds_at_cap": 0,
+    "folds_total": 5,
+    "hit_cap": false
+   }
+  }
+ },
+ "points": [
+  {
+   "n_avail": 80,
+   "rep": 0,
+   "n_train": [
+    64,
+    64,
+    64,
+    64,
+    64
+   ],
+   "n_val": [
+    16,
+    16,
+    16,
+    16,
+    16
+   ],
+   "summary": {
+    "hypernet": {
+     "raw_mean": 0.6089464715137312,
+     "raw_sd": 0.07538732189241006,
+     "mean_removed_mean": 0.5990508623497657,
+     "mean_removed_sd": 0.07967227283729478,
+     "mean_removed_median": 0.6182014920195826
+    },
+    "mean_adapter": {
+     "raw_mean": 0.29427335838791036,
+     "raw_sd": 0.19752261252620396,
+     "mean_removed_mean": 0.0,
+     "mean_removed_sd": 0.0,
+     "mean_removed_median": 0.0
+    },
+    "nn_text_retrieval": {
+     "raw_mean": 0.6088625555213136,
+     "raw_sd": 0.10002951327587464,
+     "mean_removed_mean": 0.5639699092671688,
+     "mean_removed_sd": 0.1237375617294521,
+     "mean_removed_median": 0.5932610598890865
+    },
+    "random_adapter": {
+     "raw_mean": 0.06767535560466095,
+     "raw_sd": 0.2517751460878782,
+     "mean_removed_mean": -0.03763811695701397,
+     "mean_removed_sd": 0.26491733105650705,
+     "mean_removed_median": -0.0602742543214264
+    }
+   },
+   "per_trait": {
+    "introverted": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.6208342612274936,
+      "mean_removed": 0.5927189252543064
+     },
+     "mean_adapter": {
+      "raw": 0.36850256426047706,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6547846314888635,
+      "mean_removed": 0.6051686125034418
+     },
+     "random_adapter": {
+      "raw": 0.12419753808611199,
+      "mean_removed": 0.019988752518949028
+     }
+    },
+    "withdrawn": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.5697943888502761,
+      "mean_removed": 0.5195304301810556
+     },
+     "mean_adapter": {
+      "raw": 0.24529223840493133,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6045153979037602,
+      "mean_removed": 0.5678832054148062
+     },
+     "random_adapter": {
+      "raw": 0.045206818848612475,
+      "mean_removed": -0.06869556866593038
+     }
+    },
+    "timid": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.6057996495595257,
+      "mean_removed": 0.6223811132559369
+     },
+     "mean_adapter": {
+      "raw": 0.1846230250750667,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.7141696106760539,
+      "mean_removed": 0.7065240125347314
+     },
+     "random_adapter": {
+      "raw": 0.3090720504135548,
+      "mean_removed": 0.2001656978912196
+     }
+    },
+    "trustful": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.6153432107099402,
+      "mean_removed": 0.6246241225273741
+     },
+     "mean_adapter": {
+      "raw": 0.30720140537747004,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.655294166602154,
+      "mean_removed": 0.623456166077759
+     },
+     "random_adapter": {
+      "raw": 0.14463623041363735,
+      "mean_removed": 0.07455416275049093
+     }
+    },
+    "considerate": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.7072435147560571,
+      "mean_removed": 0.7063594149901911
+     },
+     "mean_adapter": {
+      "raw": 0.15484654782925544,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.737535874344748,
+      "mean_removed": 0.7314650290108646
+     },
+     "random_adapter": {
+      "raw": 0.13920737499621594,
+      "mean_removed": 0.08018701832821437
+     }
+    },
+    "cold": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.6524843495269823,
+      "mean_removed": 0.63004251497772
+     },
+     "mean_adapter": {
+      "raw": 0.21134642632498282,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6020934951463265,
+      "mean_removed": 0.5972958322192689
+     },
+     "random_adapter": {
+      "raw": 0.26277225219492284,
+      "mean_removed": 0.2051264039267166
+     }
+    },
+    "unsympathetic": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.6401284698866747,
+      "mean_removed": 0.6116753111117003
+     },
+     "mean_adapter": {
+      "raw": 0.1153717838802736,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6358004618800235,
+      "mean_removed": 0.6193054442121411
+     },
+     "random_adapter": {
+      "raw": 0.007070936026773837,
+      "mean_removed": -0.08372641951313547
+     }
+    },
+    "systematic": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.6259403093844159,
+      "mean_removed": 0.6147426575103427
+     },
+     "mean_adapter": {
+      "raw": 0.26617197679283633,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6483690407650042,
+      "mean_removed": 0.6131021934368867
+     },
+     "random_adapter": {
+      "raw": -0.20526453182717783,
+      "mean_removed": -0.08243478474426483
+     }
+    },
+    "conscientious": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.6795300416374076,
+      "mean_removed": 0.6718747007512357
+     },
+     "mean_adapter": {
+      "raw": 0.3092173758486599,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.7326845767021242,
+      "mean_removed": 0.6902831723702261
+     },
+     "random_adapter": {
+      "raw": 0.2105470624977376,
+      "mean_removed": 0.13351775104627958
+     }
+    },
+    "inconsistent": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.5697156697276957,
+      "mean_removed": 0.5610673297876162
+     },
+     "mean_adapter": {
+      "raw": 0.5315228808324514,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6117635610587631,
+      "mean_removed": 0.5125514515400575
+     },
+     "random_adapter": {
+      "raw": -0.064498324088218,
+      "mean_removed": -0.2676980932974233
+     }
+    },
+    "unenvious": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.4632030684642187,
+      "mean_removed": 0.41503527097849524
+     },
+     "mean_adapter": {
+      "raw": 0.2283529770193327,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.36583083679373135,
+      "mean_removed": 0.247605861984488
+     },
+     "random_adapter": {
+      "raw": 0.15304329674603334,
+      "mean_removed": -0.005943039035502395
+     }
+    },
+    "envious": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.3996266176951516,
+      "mean_removed": 0.35973187706022625
+     },
+     "mean_adapter": {
+      "raw": 0.5462294422052894,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.44125917699110656,
+      "mean_removed": 0.21283850139941513
+     },
+     "random_adapter": {
+      "raw": -0.1295417400452152,
+      "mean_removed": -0.3120204614294565
+     }
+    },
+    "jealous": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.49936677053040035,
+      "mean_removed": 0.4647973531315333
+     },
+     "mean_adapter": {
+      "raw": 0.548113367482577,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.4791952041433982,
+      "mean_removed": 0.267754111410415
+     },
+     "random_adapter": {
+      "raw": -0.16833106681910562,
+      "mean_removed": -0.3469664900893872
+     }
+    },
+    "intellectual": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.6565405893711156,
+      "mean_removed": 0.6192232312172947
+     },
+     "mean_adapter": {
+      "raw": 0.2909351891773206,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5983071575535429,
+      "mean_removed": 0.5454530108621327
+     },
+     "random_adapter": {
+      "raw": 0.16292112188799876,
+      "mean_removed": -0.03289919645005079
+     }
+    },
+    "complex": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.6677852335902636,
+      "mean_removed": 0.635298540636668
+     },
+     "mean_adapter": {
+      "raw": 0.5993910654149639,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.7248128473812909,
+      "mean_removed": 0.6377438642267219
+     },
+     "random_adapter": {
+      "raw": 0.23160968487794503,
+      "mean_removed": 0.04172922412885201
+     }
+    },
+    "imaginative": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.63348471516339,
+      "mean_removed": 0.5936949479984679
+     },
+     "mean_adapter": {
+      "raw": 0.6411889812151297,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.7322554446772841,
+      "mean_removed": 0.6117805401401167
+     },
+     "random_adapter": {
+      "raw": -0.07390249662566788,
+      "mean_removed": -0.3087586333991952
+     }
+    },
+    "bright": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.6885900467191294,
+      "mean_removed": 0.6575044519819717
+     },
+     "mean_adapter": {
+      "raw": 0.5017279252309758,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6531989098010831,
+      "mean_removed": 0.5582420687594528
+     },
+     "random_adapter": {
+      "raw": 0.3727662713328087,
+      "mean_removed": 0.2592832476554864
+     }
+    },
+    "unimaginative": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.4458145477146988,
+      "mean_removed": 0.6654288781174393
+     },
+     "mean_adapter": {
+      "raw": -0.3862062655864168,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5152177454985304,
+      "mean_removed": 0.6517410987520597
+     },
+     "random_adapter": {
+      "raw": -0.2589333768190674,
+      "mean_removed": -0.14108754416768476
+     }
+    },
+    "imperceptive": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.5747999932837737,
+      "mean_removed": 0.6402921405357552
+     },
+     "mean_adapter": {
+      "raw": 0.04067224265478473,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5803515800821027,
+      "mean_removed": 0.6085739801637788
+     },
+     "random_adapter": {
+      "raw": -0.2526639013239876,
+      "mean_removed": -0.35725774820907263
+     }
+    },
+    "uninquisitive": {
+     "fold": 0,
+     "hypernet": {
+      "raw": 0.36722147750703843,
+      "mean_removed": 0.3636107221676163
+     },
+     "mean_adapter": {
+      "raw": 0.03403605955645023,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.4535101442205883,
+      "mean_removed": 0.45957524582458553
+     },
+     "random_adapter": {
+      "raw": 0.11318796487315111,
+      "mean_removed": 0.08785802608262532
+     }
+    },
+    "assertive": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.6335229697705503,
+      "mean_removed": 0.5970015706503976
+     },
+     "mean_adapter": {
+      "raw": 0.42260426449862704,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6966765873470003,
+      "mean_removed": 0.6194009562100202
+     },
+     "random_adapter": {
+      "raw": 0.27828909450946987,
+      "mean_removed": 0.06526019656755246
+     }
+    },
+    "verbal": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.647654750353188,
+      "mean_removed": 0.5933946895080393
+     },
+     "mean_adapter": {
+      "raw": 0.49195833106401093,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.653198909801083,
+      "mean_removed": 0.5505858315260093
+     },
+     "random_adapter": {
+      "raw": 0.11877397116907501,
+      "mean_removed": -0.14514826602031072
+     }
+    },
+    "active": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.5639825992078106,
+      "mean_removed": 0.5362180565975231
+     },
+     "mean_adapter": {
+      "raw": 0.5245964893497701,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6956609882880813,
+      "mean_removed": 0.5954981311864882
+     },
+     "random_adapter": {
+      "raw": 0.4196542703746409,
+      "mean_removed": 0.19542304311238407
+     }
+    },
+    "reserved": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.6727463853152967,
+      "mean_removed": 0.6497748110517979
+     },
+     "mean_adapter": {
+      "raw": 0.27615991907677273,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6034876686959583,
+      "mean_removed": 0.5598587802272244
+     },
+     "random_adapter": {
+      "raw": -0.39336723815764385,
+      "mean_removed": -0.417659532658385
+     }
+    },
+    "warm": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.6920512835734918,
+      "mean_removed": 0.6739269485876735
+     },
+     "mean_adapter": {
+      "raw": 0.24192763181276852,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6152484983417319,
+      "mean_removed": 0.5871528648186406
+     },
+     "random_adapter": {
+      "raw": 0.38872943452611924,
+      "mean_removed": 0.2521317622029244
+     }
+    },
+    "pleasant": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.6945451427422932,
+      "mean_removed": 0.6983608504141995
+     },
+     "mean_adapter": {
+      "raw": 0.1457787249179364,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.7272287389304043,
+      "mean_removed": 0.725264026929611
+     },
+     "random_adapter": {
+      "raw": -0.4706736950619804,
+      "mean_removed": -0.4530678712180113
+     }
+    },
+    "rude": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.6760221877916434,
+      "mean_removed": 0.6748362830718795
+     },
+     "mean_adapter": {
+      "raw": 0.23868908662039062,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6889385446572743,
+      "mean_removed": 0.6674883028551933
+     },
+     "random_adapter": {
+      "raw": -0.16964670194575357,
+      "mean_removed": -0.34098386483165416
+     }
+    },
+    "uncooperative": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.5785751727758253,
+      "mean_removed": 0.5828644071634997
+     },
+     "mean_adapter": {
+      "raw": 0.10728607122106158,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.42731412976281447,
+      "mean_removed": 0.40832963560061253
+     },
+     "random_adapter": {
+      "raw": 0.1023802289833874,
+      "mean_removed": -0.013978873404782698
+     }
+    },
+    "negligent": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.6247485931621348,
+      "mean_removed": 0.6681762196008054
+     },
+     "mean_adapter": {
+      "raw": 0.10402001728749191,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5732019193205563,
+      "mean_removed": 0.5944787521925026
+     },
+     "random_adapter": {
+      "raw": -0.09183092669569728,
+      "mean_removed": -0.18199501459462672
+     }
+    },
+    "undemanding": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.5226522027251004,
+      "mean_removed": 0.5694057476214921
+     },
+     "mean_adapter": {
+      "raw": 0.14263498663183163,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.4780284901300568,
+      "mean_removed": 0.47314946789823187
+     },
+     "random_adapter": {
+      "raw": -0.3257427692951217,
+      "mean_removed": -0.3948661020251447
+     }
+    },
+    "temperamental": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.604731307995612,
+      "mean_removed": 0.5359309150797716
+     },
+     "mean_adapter": {
+      "raw": 0.4784948793338228,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5863415397355959,
+      "mean_removed": 0.45970003800444237
+     },
+     "random_adapter": {
+      "raw": 0.014075571266301582,
+      "mean_removed": -0.23271276257342907
+     }
+    },
+    "emotional": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.6046584377456057,
+      "mean_removed": 0.5672647079559799
+     },
+     "mean_adapter": {
+      "raw": 0.271464643786001,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.44210323186458295,
+      "mean_removed": 0.4003046099373953
+     },
+     "random_adapter": {
+      "raw": -0.20847975799639523,
+      "mean_removed": -0.40318029724243476
+     }
+    },
+    "touchy": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.5455695753153561,
+      "mean_removed": 0.5135817075305102
+     },
+     "mean_adapter": {
+      "raw": 0.5203473819540804,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6179704360722261,
+      "mean_removed": 0.4916373136681669
+     },
+     "random_adapter": {
+      "raw": 0.07867305355621113,
+      "mean_removed": 0.025955475924091094
+     }
+    },
+    "nervous": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.593420223045993,
+      "mean_removed": 0.6334476129249895
+     },
+     "mean_adapter": {
+      "raw": 0.3405961852420093,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5999507379398219,
+      "mean_removed": 0.5741368670041861
+     },
+     "random_adapter": {
+      "raw": 0.15368471185429844,
+      "mean_removed": 0.03822008401703664
+     }
+    },
+    "fearful": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.598999035646069,
+      "mean_removed": 0.5800916966029835
+     },
+     "mean_adapter": {
+      "raw": 0.4432222107293059,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6679018989950315,
+      "mean_removed": 0.5882966631750693
+     },
+     "random_adapter": {
+      "raw": 0.19111326330668535,
+      "mean_removed": 0.06350651006478972
+     }
+    },
+    "self_pitying": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.5416502153601244,
+      "mean_removed": 0.5093139731788445
+     },
+     "mean_adapter": {
+      "raw": 0.3997393345413521,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6293879847267828,
+      "mean_removed": 0.5683097001222698
+     },
+     "random_adapter": {
+      "raw": -0.17857636773301444,
+      "mean_removed": -0.3577245019693418
+     }
+    },
+    "philosophical": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.6593352129862878,
+      "mean_removed": 0.5636124484950383
+     },
+     "mean_adapter": {
+      "raw": 0.4615956758699692,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.7247642502535473,
+      "mean_removed": 0.6448413646856154
+     },
+     "random_adapter": {
+      "raw": 0.5465377709403321,
+      "mean_removed": 0.42010229486335937
+     }
+    },
+    "simple": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.38773527152569026,
+      "mean_removed": 0.46032182542788125
+     },
+     "mean_adapter": {
+      "raw": 0.15661830449881753,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.40115127408140483,
+      "mean_removed": 0.45232567791616507
+     },
+     "random_adapter": {
+      "raw": 0.028879984860648376,
+      "mean_removed": 0.0012723228439668471
+     }
+    },
+    "unreflective": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.5910528923373173,
+      "mean_removed": 0.6596282109099866
+     },
+     "mean_adapter": {
+      "raw": -0.011502627583287132,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5406211105423921,
+      "mean_removed": 0.5951296665429245
+     },
+     "random_adapter": {
+      "raw": -0.3102417046138319,
+      "mean_removed": -0.37498634299802525
+     }
+    },
+    "shallow": {
+     "fold": 1,
+     "hypernet": {
+      "raw": 0.6438936304796469,
+      "mean_removed": 0.6573145876063995
+     },
+     "mean_adapter": {
+      "raw": 0.0983462253107149,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.4573154938808533,
+      "mean_removed": 0.43498321680479113
+     },
+     "random_adapter": {
+      "raw": -0.3713072783254983,
+      "mean_removed": -0.36629133708127243
+     }
+    },
+    "talkative": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.5859656467441975,
+      "mean_removed": 0.5528480679251899
+     },
+     "mean_adapter": {
+      "raw": 0.24053113452093663,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6287544178544374,
+      "mean_removed": 0.5924703641639566
+     },
+     "random_adapter": {
+      "raw": 0.012183489715065192,
+      "mean_removed": -0.08384077075365433
+     }
+    },
+    "vigorous": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.6580651080746412,
+      "mean_removed": 0.6358292959198575
+     },
+     "mean_adapter": {
+      "raw": 0.4852223338027683,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.7459811594802341,
+      "mean_removed": 0.6821042181841493
+     },
+     "random_adapter": {
+      "raw": -0.0041250148820964625,
+      "mean_removed": -0.27683785230353103
+     }
+    },
+    "kind": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.7155495726772153,
+      "mean_removed": 0.7053595254732359
+     },
+     "mean_adapter": {
+      "raw": 0.14540177993762746,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.737535874344748,
+      "mean_removed": 0.7444331728471897
+     },
+     "random_adapter": {
+      "raw": 0.11446200682035802,
+      "mean_removed": 0.023796527127825453
+     }
+    },
+    "cooperative": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.6622954112932811,
+      "mean_removed": 0.6780123991842975
+     },
+     "mean_adapter": {
+      "raw": 0.13972523064674255,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6918774993802349,
+      "mean_removed": 0.7012700099202767
+     },
+     "random_adapter": {
+      "raw": 0.6594311361664215,
+      "mean_removed": 0.6670543825946852
+     }
+    },
+    "sympathetic": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.6543927561009696,
+      "mean_removed": 0.6171797528218707
+     },
+     "mean_adapter": {
+      "raw": 0.1852638562613944,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6543174370313444,
+      "mean_removed": 0.6457634974499664
+     },
+     "random_adapter": {
+      "raw": -0.025354032899426504,
+      "mean_removed": -0.10162959175974186
+     }
+    },
+    "helpful": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.6865760821005622,
+      "mean_removed": 0.6767182300525598
+     },
+     "mean_adapter": {
+      "raw": 0.13301354425082695,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6640758817711436,
+      "mean_removed": 0.6740767284395661
+     },
+     "random_adapter": {
+      "raw": -0.052494404221439916,
+      "mean_removed": -0.131982569730444
+     }
+    },
+    "distrustful": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.5839324150527413,
+      "mean_removed": 0.5278937915100184
+     },
+     "mean_adapter": {
+      "raw": 0.4341284390557557,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5355951693396772,
+      "mean_removed": 0.47253048808593084
+     },
+     "random_adapter": {
+      "raw": 0.12982637401301106,
+      "mean_removed": -0.026981427352914963
+     }
+    },
+    "harsh": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.6632875461802378,
+      "mean_removed": 0.6513224725961091
+     },
+     "mean_adapter": {
+      "raw": 0.3651113496507327,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6350642947094755,
+      "mean_removed": 0.5931715448265777
+     },
+     "random_adapter": {
+      "raw": 0.09071225544872863,
+      "mean_removed": 0.01876686101064987
+     }
+    },
+    "demanding": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.6260142512824084,
+      "mean_removed": 0.5895296426782098
+     },
+     "mean_adapter": {
+      "raw": 0.38832852749347396,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.39797035916465495,
+      "mean_removed": 0.3027996201615076
+     },
+     "random_adapter": {
+      "raw": 0.07963413151066878,
+      "mean_removed": -0.13357533942104927
+     }
+    },
+    "organized": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.6948175653717303,
+      "mean_removed": 0.6881163742227459
+     },
+     "mean_adapter": {
+      "raw": 0.17986993313441096,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6582309989151278,
+      "mean_removed": 0.6410739968085574
+     },
+     "random_adapter": {
+      "raw": -0.18391856610303547,
+      "mean_removed": -0.16630798950919112
+     }
+    },
+    "thorough": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.6202483809709413,
+      "mean_removed": 0.6245464987791567
+     },
+     "mean_adapter": {
+      "raw": 0.4335712729289746,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.7326845767021242,
+      "mean_removed": 0.6897099409326494
+     },
+     "random_adapter": {
+      "raw": 0.14185864121340505,
+      "mean_removed": -0.09987470042461447
+     }
+    },
+    "neat": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.683740714355829,
+      "mean_removed": 0.6990980045501013
+     },
+     "mean_adapter": {
+      "raw": 0.33069795473443386,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.7380376741696367,
+      "mean_removed": 0.7065764926875497
+     },
+     "random_adapter": {
+      "raw": -0.017318321826245417,
+      "mean_removed": -0.2574914664128178
+     }
+    },
+    "careful": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.6836265532790191,
+      "mean_removed": 0.6824957581002231
+     },
+     "mean_adapter": {
+      "raw": 0.28173007477355894,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.680916918765636,
+      "mean_removed": 0.6529460107388642
+     },
+     "random_adapter": {
+      "raw": 0.4220960847351792,
+      "mean_removed": 0.3931894913857293
+     }
+    },
+    "careless": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.6772261635413632,
+      "mean_removed": 0.6559299178451956
+     },
+     "mean_adapter": {
+      "raw": 0.19991552052925587,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5687375777072478,
+      "mean_removed": 0.5774360626489847
+     },
+     "random_adapter": {
+      "raw": 0.5823575915689982,
+      "mean_removed": 0.5664692498743675
+     }
+    },
+    "unsystematic": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.6670933389184187,
+      "mean_removed": 0.619737874888704
+     },
+     "mean_adapter": {
+      "raw": 0.35239775307399857,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6506586455123242,
+      "mean_removed": 0.6172765289835414
+     },
+     "random_adapter": {
+      "raw": 0.026401246547015946,
+      "mean_removed": 0.0924867719551725
+     }
+    },
+    "sloppy": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.6744198564723575,
+      "mean_removed": 0.6685309638530372
+     },
+     "mean_adapter": {
+      "raw": 0.21090357983693928,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.713586107322146,
+      "mean_removed": 0.7014241560980914
+     },
+     "random_adapter": {
+      "raw": -0.09330910671031302,
+      "mean_removed": -0.09261037450009368
+     }
+    },
+    "relaxed": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.5668038395345866,
+      "mean_removed": 0.5549376738052657
+     },
+     "mean_adapter": {
+      "raw": 0.18151378446088742,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.4780284901300568,
+      "mean_removed": 0.475502838431096
+     },
+     "random_adapter": {
+      "raw": 0.04938466858934738,
+      "mean_removed": -0.05185293997692242
+     }
+    },
+    "insecure": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.6265460933659914,
+      "mean_removed": 0.6014022858410453
+     },
+     "mean_adapter": {
+      "raw": 0.4310514271316157,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6273981970160089,
+      "mean_removed": 0.5320516556685859
+     },
+     "random_adapter": {
+      "raw": 0.19219781141009404,
+      "mean_removed": 0.030232518140152858
+     }
+    },
+    "creative": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.689883320946018,
+      "mean_removed": 0.6501150452898004
+     },
+     "mean_adapter": {
+      "raw": 0.578952145868909,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.7322554446772841,
+      "mean_removed": 0.6317809198701166
+     },
+     "random_adapter": {
+      "raw": -0.050876022264529364,
+      "mean_removed": -0.28355391764864357
+     }
+    },
+    "innovative": {
+     "fold": 2,
+     "hypernet": {
+      "raw": 0.6406574589022663,
+      "mean_removed": 0.6058901457807273
+     },
+     "mean_adapter": {
+      "raw": 0.5717717655528419,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6148153119038962,
+      "mean_removed": 0.5104329081249289
+     },
+     "random_adapter": {
+      "raw": -0.24844373418732346,
+      "mean_removed": -0.41612183807141856
+     }
+    },
+    "bold": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.6740204089613305,
+      "mean_removed": 0.6436704467112275
+     },
+     "mean_adapter": {
+      "raw": 0.48287447165274494,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.7459811594802341,
+      "mean_removed": 0.6748538583716003
+     },
+     "random_adapter": {
+      "raw": 0.39427113558019466,
+      "mean_removed": 0.2981252927628142
+     }
+    },
+    "daring": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.5933295224029259,
+      "mean_removed": 0.5166930168644285
+     },
+     "mean_adapter": {
+      "raw": 0.578157536683659,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6819546971070655,
+      "mean_removed": 0.5769642614232255
+     },
+     "random_adapter": {
+      "raw": -0.07177589960811354,
+      "mean_removed": -0.2924554040126129
+     }
+    },
+    "unadventurous": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.5215917027093921,
+      "mean_removed": 0.6109523307880382
+     },
+     "mean_adapter": {
+      "raw": -0.07178805756954455,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.4505679354184543,
+      "mean_removed": 0.5659202950825039
+     },
+     "random_adapter": {
+      "raw": -0.14195556325230171,
+      "mean_removed": -0.08081821156918628
+     }
+    },
+    "agreeable": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.6750158571189299,
+      "mean_removed": 0.6805502511329459
+     },
+     "mean_adapter": {
+      "raw": 0.22915697290092985,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.7272287389304043,
+      "mean_removed": 0.7158753647277326
+     },
+     "random_adapter": {
+      "raw": 0.05357327827514591,
+      "mean_removed": -0.026470429262730143
+     }
+    },
+    "unkind": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.6229060868574822,
+      "mean_removed": 0.608254127841482
+     },
+     "mean_adapter": {
+      "raw": 0.16719909295871724,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6948460701591413,
+      "mean_removed": 0.6853203161265711
+     },
+     "random_adapter": {
+      "raw": -0.1343868967255406,
+      "mean_removed": -0.183118042490303
+     }
+    },
+    "selfish": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.553437207702402,
+      "mean_removed": 0.5533159212028796
+     },
+     "mean_adapter": {
+      "raw": 0.2807104666200133,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.40311081926521297,
+      "mean_removed": 0.34273939922833224
+     },
+     "random_adapter": {
+      "raw": -0.1698741477686896,
+      "mean_removed": -0.27113428323069405
+     }
+    },
+    "uncharitable": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.6345112679693393,
+      "mean_removed": 0.6165351568664305
+     },
+     "mean_adapter": {
+      "raw": 0.13198616216607661,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6350642947094755,
+      "mean_removed": 0.6238416659851248
+     },
+     "random_adapter": {
+      "raw": 0.1005131311760704,
+      "mean_removed": 0.08702204803175463
+     }
+    },
+    "steady": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.688920137368852,
+      "mean_removed": 0.6871576133077113
+     },
+     "mean_adapter": {
+      "raw": 0.3776048387576246,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.680916918765636,
+      "mean_removed": 0.6291082244977826
+     },
+     "random_adapter": {
+      "raw": 0.48720037511445,
+      "mean_removed": 0.40840296167881046
+     }
+    },
+    "prompt": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.691113855510536,
+      "mean_removed": 0.6754301404200572
+     },
+     "mean_adapter": {
+      "raw": 0.42487901466800176,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6061402404679648,
+      "mean_removed": 0.5109013781363958
+     },
+     "random_adapter": {
+      "raw": 0.25317791874468354,
+      "mean_removed": 0.1526243922465732
+     }
+    },
+    "undependable": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.6706268128092863,
+      "mean_removed": 0.6699453266219181
+     },
+     "mean_adapter": {
+      "raw": 0.29084692148350705,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6391405150967997,
+      "mean_removed": 0.5985353765485297
+     },
+     "random_adapter": {
+      "raw": 0.12246741663146811,
+      "mean_removed": 0.04278400442832746
+     }
+    },
+    "impractical": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.5293999667617157,
+      "mean_removed": 0.41211888307163597
+     },
+     "mean_adapter": {
+      "raw": 0.597467805926972,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5363191404476937,
+      "mean_removed": 0.3323593072397663
+     },
+     "random_adapter": {
+      "raw": 0.3205805411904355,
+      "mean_removed": 0.11035608697164123
+     }
+    },
+    "haphazard": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.6789559845737007,
+      "mean_removed": 0.6656451186864603
+     },
+     "mean_adapter": {
+      "raw": 0.19138126970634134,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6506586455123242,
+      "mean_removed": 0.625627869635699
+     },
+     "random_adapter": {
+      "raw": 0.10052753150651719,
+      "mean_removed": 0.21124666733314595
+     }
+    },
+    "unemotional": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.6499089559146158,
+      "mean_removed": 0.6393530533350155
+     },
+     "mean_adapter": {
+      "raw": 0.18831406856566346,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6303349368426145,
+      "mean_removed": 0.6043632201255273
+     },
+     "random_adapter": {
+      "raw": 0.6303349368426145,
+      "mean_removed": 0.6043632201255273
+     }
+    },
+    "anxious": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.4915427186069564,
+      "mean_removed": 0.48067527292830464
+     },
+     "mean_adapter": {
+      "raw": 0.4824208943312729,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6679018989950315,
+      "mean_removed": 0.5852963818320107
+     },
+     "random_adapter": {
+      "raw": 0.07304897730347625,
+      "mean_removed": -0.172056533409556
+     }
+    },
+    "moody": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.49872137965387436,
+      "mean_removed": 0.43187199093932777
+     },
+     "mean_adapter": {
+      "raw": 0.5470129625014671,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.46380893797618117,
+      "mean_removed": 0.27772482493719275
+     },
+     "random_adapter": {
+      "raw": 0.46380893797618117,
+      "mean_removed": 0.27772482493719275
+     }
+    },
+    "irritable": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.6112539548370527,
+      "mean_removed": 0.6136576206812877
+     },
+     "mean_adapter": {
+      "raw": 0.26689952596537525,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6889385446572743,
+      "mean_removed": 0.6690212255095866
+     },
+     "random_adapter": {
+      "raw": 0.395977278677372,
+      "mean_removed": 0.3743691961187977
+     }
+    },
+    "fretful": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.4988150519161556,
+      "mean_removed": 0.4696468310621269
+     },
+     "mean_adapter": {
+      "raw": 0.5220791590727796,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6519417468808523,
+      "mean_removed": 0.5580914504322325
+     },
+     "random_adapter": {
+      "raw": 0.27152699164949673,
+      "mean_removed": 0.04428268271567449
+     }
+    },
+    "high_strung": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.5033075537713647,
+      "mean_removed": 0.3984064445814022
+     },
+     "mean_adapter": {
+      "raw": 0.5721557041998786,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.23364392305692044,
+      "mean_removed": -0.012919483281307693
+     },
+     "random_adapter": {
+      "raw": 0.07305922497726006,
+      "mean_removed": -0.09818099994467457
+     }
+    },
+    "artistic": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.6932208169736377,
+      "mean_removed": 0.6414578594062665
+     },
+     "mean_adapter": {
+      "raw": 0.5894388962863557,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.7057957639962326,
+      "mean_removed": 0.5875168313388492
+     },
+     "random_adapter": {
+      "raw": -0.04381823379611603,
+      "mean_removed": -0.25816687982743947
+     }
+    },
+    "deep": {
+     "fold": 3,
+     "hypernet": {
+      "raw": 0.7138101025623453,
+      "mean_removed": 0.6981651134947594
+     },
+     "mean_adapter": {
+      "raw": 0.5326384949478752,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.7247642502535473,
+      "mean_removed": 0.6569474954488983
+     },
+     "random_adapter": {
+      "raw": 0.07360207505330214,
+      "mean_removed": -0.13876280674590705
+     }
+    },
+    "extraverted": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.5465959322242455,
+      "mean_removed": 0.48570061783430046
+     },
+     "mean_adapter": {
+      "raw": 0.2860349671169487,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5852310900090649,
+      "mean_removed": 0.543971005761402
+     },
+     "random_adapter": {
+      "raw": -0.16000179669382344,
+      "mean_removed": -0.30333740161518075
+     }
+    },
+    "energetic": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.5422883447022827,
+      "mean_removed": 0.5044848467760132
+     },
+     "mean_adapter": {
+      "raw": 0.4010025665278379,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6287544178544374,
+      "mean_removed": 0.5739171130058964
+     },
+     "random_adapter": {
+      "raw": 0.19130966192241672,
+      "mean_removed": 0.013052108704684024
+     }
+    },
+    "unrestrained": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.5830908643524185,
+      "mean_removed": 0.5063387074285178
+     },
+     "mean_adapter": {
+      "raw": 0.5842417101484009,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6179704360722261,
+      "mean_removed": 0.45592772334499904
+     },
+     "random_adapter": {
+      "raw": 0.13425184446817395,
+      "mean_removed": -0.09303015513526039
+     }
+    },
+    "shy": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.5700403086735911,
+      "mean_removed": 0.5845077281079618
+     },
+     "mean_adapter": {
+      "raw": 0.22861719083914148,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6999780654029234,
+      "mean_removed": 0.7021350868108499
+     },
+     "random_adapter": {
+      "raw": 0.11412356899402612,
+      "mean_removed": -0.1060672024266174
+     }
+    },
+    "quiet": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.5671275778928357,
+      "mean_removed": 0.5528454540202943
+     },
+     "mean_adapter": {
+      "raw": 0.36295335381819144,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6547846314888635,
+      "mean_removed": 0.5933505749515953
+     },
+     "random_adapter": {
+      "raw": 0.17616648573888213,
+      "mean_removed": 0.10928931853292602
+     }
+    },
+    "untalkative": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.5665988998514384,
+      "mean_removed": 0.5715734607289107
+     },
+     "mean_adapter": {
+      "raw": 0.27449766924306757,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5930825304812994,
+      "mean_removed": 0.5594939986341942
+     },
+     "random_adapter": {
+      "raw": 0.3743073532314261,
+      "mean_removed": 0.31740223460860206
+     }
+    },
+    "inhibited": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.5010437536345299,
+      "mean_removed": 0.520099548921327
+     },
+     "mean_adapter": {
+      "raw": 0.14187944260562171,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5232521301993223,
+      "mean_removed": 0.5104852830649281
+     },
+     "random_adapter": {
+      "raw": 0.07701304798841357,
+      "mean_removed": -0.0717400284380783
+     }
+    },
+    "bashful": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.6050488705162533,
+      "mean_removed": 0.6038320987963731
+     },
+     "mean_adapter": {
+      "raw": 0.13218735714475058,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5999507379398218,
+      "mean_removed": 0.5840798083760217
+     },
+     "random_adapter": {
+      "raw": -0.10806799633975292,
+      "mean_removed": -0.14121002649115244
+     }
+    },
+    "generous": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.7128034548453724,
+      "mean_removed": 0.6838471614763991
+     },
+     "mean_adapter": {
+      "raw": 0.2879856426120011,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.641387057761576,
+      "mean_removed": 0.625833996606023
+     },
+     "random_adapter": {
+      "raw": -0.3877709412384174,
+      "mean_removed": -0.5124170251703264
+     }
+    },
+    "practical": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.612663004115834,
+      "mean_removed": 0.6209208067872465
+     },
+     "mean_adapter": {
+      "raw": 0.26870618771362437,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5656276705079134,
+      "mean_removed": 0.528403182191349
+     },
+     "random_adapter": {
+      "raw": 0.1989786381621529,
+      "mean_removed": -0.018749447698330812
+     }
+    },
+    "efficient": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.6605042401785887,
+      "mean_removed": 0.6666098155132318
+     },
+     "mean_adapter": {
+      "raw": 0.36430199152628273,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6582309989151278,
+      "mean_removed": 0.6155516232939124
+     },
+     "random_adapter": {
+      "raw": -0.3834416985946961,
+      "mean_removed": -0.4605612911045611
+     }
+    },
+    "disorganized": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.6043271632983136,
+      "mean_removed": 0.6227752600834553
+     },
+     "mean_adapter": {
+      "raw": 0.21912676183885943,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.6826485907655538,
+      "mean_removed": 0.6790589399689027
+     },
+     "random_adapter": {
+      "raw": 0.5718760676920293,
+      "mean_removed": 0.5461550441324362
+     }
+    },
+    "inefficient": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.524500138863658,
+      "mean_removed": 0.5375586118332556
+     },
+     "mean_adapter": {
+      "raw": 0.35211498663145613,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.500653273639506,
+      "mean_removed": 0.44275775931068123
+     },
+     "random_adapter": {
+      "raw": 0.1813396657986261,
+      "mean_removed": -0.01658737038145567
+     }
+    },
+    "imperturbable": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.6460233971363677,
+      "mean_removed": 0.6245180347851588
+     },
+     "mean_adapter": {
+      "raw": 0.19214006900704733,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5532781479525367,
+      "mean_removed": 0.517302481143926
+     },
+     "random_adapter": {
+      "raw": -0.4090110166642984,
+      "mean_removed": -0.48134607083969805
+     }
+    },
+    "unexcitable": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.6188885017210529,
+      "mean_removed": 0.6285584046349539
+     },
+     "mean_adapter": {
+      "raw": -0.007178259583580483,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5317820138339897,
+      "mean_removed": 0.5399252581372409
+     },
+     "random_adapter": {
+      "raw": 0.4607214884472337,
+      "mean_removed": 0.5184205974433328
+     }
+    },
+    "introspective": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.6312865681821324,
+      "mean_removed": 0.5874670319974531
+     },
+     "mean_adapter": {
+      "raw": 0.5153768332609244,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5912019701312804,
+      "mean_removed": 0.4487035741215316
+     },
+     "random_adapter": {
+      "raw": 0.11929182719135824,
+      "mean_removed": -0.0715868130877715
+     }
+    },
+    "unintellectual": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.6749638133653572,
+      "mean_removed": 0.7020779027909286
+     },
+     "mean_adapter": {
+      "raw": -0.03317065211831807,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5406211105423921,
+      "mean_removed": 0.5961807533160274
+     },
+     "random_adapter": {
+      "raw": -0.25853302495690894,
+      "mean_removed": -0.34769641153862235
+     }
+    },
+    "unintelligent": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.6533121024679965,
+      "mean_removed": 0.6963810340224548
+     },
+     "mean_adapter": {
+      "raw": -0.012051251414211228,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5608418444335751,
+      "mean_removed": 0.5979173029228215
+     },
+     "random_adapter": {
+      "raw": 0.14349031682680957,
+      "mean_removed": 0.27513732000100455
+     }
+    },
+    "uncreative": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.4312562167539404,
+      "mean_removed": 0.6845780904377115
+     },
+     "mean_adapter": {
+      "raw": -0.35967280017647885,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5152177454985303,
+      "mean_removed": 0.663752586371883
+     },
+     "random_adapter": {
+      "raw": 0.20304734925214074,
+      "mean_removed": 0.361248801396231
+     }
+    },
+    "unsophisticated": {
+     "fold": 4,
+     "hypernet": {
+      "raw": 0.6259385632895542,
+      "mean_removed": 0.6273141727869224
+     },
+     "mean_adapter": {
+      "raw": -0.015410482582590111,
+      "mean_removed": 0.0
+     },
+     "nn_text_retrieval": {
+      "raw": 0.5687375777072478,
+      "mean_removed": 0.6061071868154556
+     },
+     "random_adapter": {
+      "raw": -0.47214860612078463,
+      "mean_removed": -0.5138599159806763
+     }
+    }
+   },
+   "train_traits": [
+    [
+     "extraverted",
+     "talkative",
+     "assertive",
+     "verbal",
+     "energetic",
+     "active",
+     "daring",
+     "shy",
+     "reserved",
+     "inhibited",
+     "bashful",
+     "kind",
+     "cooperative",
+     "pleasant",
+     "agreeable",
+     "helpful",
+     "generous",
+     "unkind",
+     "distrustful",
+     "harsh",
+     "demanding",
+     "rude",
+     "selfish",
+     "uncooperative",
+     "uncharitable",
+     "organized",
+     "thorough",
+     "practical",
+     "efficient",
+     "careful",
+     "steady",
+     "prompt",
+     "disorganized",
+     "careless",
+     "unsystematic",
+     "inefficient",
+     "undependable",
+     "impractical",
+     "negligent",
+     "haphazard",
+     "sloppy",
+     "relaxed",
+     "undemanding",
+     "anxious",
+     "moody",
+     "temperamental",
+     "emotional",
+     "irritable",
+     "fretful",
+     "touchy",
+     "nervous",
+     "insecure",
+     "creative",
+     "philosophical",
+     "artistic",
+     "deep",
+     "innovative",
+     "introspective",
+     "unintellectual",
+     "uncreative",
+     "simple",
+     "unsophisticated",
+     "unreflective",
+     "shallow"
+    ],
+    [
+     "extraverted",
+     "talkative",
+     "energetic",
+     "bold",
+     "daring",
+     "introverted",
+     "shy",
+     "quiet",
+     "untalkative",
+     "inhibited",
+     "withdrawn",
+     "timid",
+     "bashful",
+     "unadventurous",
+     "kind",
+     "sympathetic",
+     "trustful",
+     "considerate",
+     "agreeable",
+     "helpful",
+     "generous",
+     "unsympathetic",
+     "distrustful",
+     "harsh",
+     "demanding",
+     "selfish",
+     "uncharitable",
+     "thorough",
+     "practical",
+     "neat",
+     "efficient",
+     "careful",
+     "steady",
+     "conscientious",
+     "disorganized",
+     "careless",
+     "unsystematic",
+     "inefficient",
+     "undependable",
+     "inconsistent",
+     "haphazard",
+     "sloppy",
+     "unenvious",
+     "unemotional",
+     "relaxed",
+     "imperturbable",
+     "unexcitable",
+     "anxious",
+     "envious",
+     "irritable",
+     "fretful",
+     "insecure",
+     "high_strung",
+     "creative",
+     "complex",
+     "artistic",
+     "deep",
+     "introspective",
+     "unintellectual",
+     "unintelligent",
+     "unimaginative",
+     "uncreative",
+     "imperceptive",
+     "uninquisitive"
+    ],
+    [
+     "assertive",
+     "verbal",
+     "energetic",
+     "bold",
+     "active",
+     "daring",
+     "unrestrained",
+     "introverted",
+     "shy",
+     "quiet",
+     "reserved",
+     "untalkative",
+     "inhibited",
+     "timid",
+     "unadventurous",
+     "warm",
+     "pleasant",
+     "agreeable",
+     "generous",
+     "cold",
+     "unkind",
+     "unsympathetic",
+     "rude",
+     "selfish",
+     "uncharitable",
+     "systematic",
+     "practical",
+     "efficient",
+     "steady",
+     "conscientious",
+     "disorganized",
+     "inefficient",
+     "undependable",
+     "impractical",
+     "negligent",
+     "imperturbable",
+     "unexcitable",
+     "undemanding",
+     "anxious",
+     "moody",
+     "temperamental",
+     "envious",
+     "emotional",
+     "fretful",
+     "jealous",
+     "touchy",
+     "nervous",
+     "fearful",
+     "self_pitying",
+     "high_strung",
+     "intellectual",
+     "complex",
+     "imaginative",
+     "bright",
+     "philosophical",
+     "artistic",
+     "introspective",
+     "unintelligent",
+     "unimaginative",
+     "uncreative",
+     "simple",
+     "unreflective",
+     "imperceptive",
+     "uninquisitive"
+    ],
+    [
+     "talkative",
+     "assertive",
+     "energetic",
+     "vigorous",
+     "introverted",
+     "shy",
+     "quiet",
+     "reserved",
+     "untalkative",
+     "inhibited",
+     "withdrawn",
+     "timid",
+     "bashful",
+     "kind",
+     "cooperative",
+     "considerate",
+     "pleasant",
+     "helpful",
+     "generous",
+     "cold",
+     "unsympathetic",
+     "distrustful",
+     "harsh",
+     "demanding",
+     "uncooperative",
+     "organized",
+     "systematic",
+     "thorough",
+     "neat",
+     "efficient",
+     "careful",
+     "conscientious",
+     "disorganized",
+     "careless",
+     "unsystematic",
+     "inefficient",
+     "negligent",
+     "inconsistent",
+     "unenvious",
+     "relaxed",
+     "imperturbable",
+     "unexcitable",
+     "undemanding",
+     "temperamental",
+     "emotional",
+     "touchy",
+     "nervous",
+     "fearful",
+     "self_pitying",
+     "intellectual",
+     "creative",
+     "complex",
+     "imaginative",
+     "bright",
+     "philosophical",
+     "innovative",
+     "introspective",
+     "unintellectual",
+     "unintelligent",
+     "unimaginative",
+     "uncreative",
+     "simple",
+     "unsophisticated",
+     "shallow"
+    ],
+    [
+     "talkative",
+     "assertive",
+     "verbal",
+     "active",
+     "daring",
+     "vigorous",
+     "reserved",
+     "withdrawn",
+     "timid",
+     "kind",
+     "cooperative",
+     "sympathetic",
+     "warm",
+     "trustful",
+     "helpful",
+     "cold",
+     "unsympathetic",
+     "distrustful",
+     "harsh",
+     "rude",
+     "selfish",
+     "uncooperative",
+     "uncharitable",
+     "organized",
+     "systematic",
+     "thorough",
+     "neat",
+     "steady",
+     "conscientious",
+     "prompt",
+     "careless",
+     "unsystematic",
+     "undependable",
+     "impractical",
+     "negligent",
+     "inconsistent",
+     "sloppy",
+     "unenvious",
+     "unemotional",
+     "relaxed",
+     "moody",
+     "temperamental",
+     "envious",
+     "emotional",
+     "irritable",
+     "fretful",
+     "jealous",
+     "touchy",
+     "nervous",
+     "fearful",
+     "self_pitying",
+     "high_strung",
+     "intellectual",
+     "creative",
+     "complex",
+     "imaginative",
+     "bright",
+     "philosophical",
+     "deep",
+     "innovative",
+     "unimaginative",
+     "simple",
+     "imperceptive",
+     "uninquisitive"
+    ]
+   ],
+   "val_traits": [
+    [
+     "bold",
+     "vigorous",
+     "unrestrained",
+     "quiet",
+     "untalkative",
+     "unadventurous",
+     "sympathetic",
+     "warm",
+     "neat",
+     "unemotional",
+     "imperturbable",
+     "unexcitable",
+     "fearful",
+     "self_pitying",
+     "high_strung",
+     "unintelligent"
+    ],
+    [
+     "vigorous",
+     "unrestrained",
+     "cooperative",
+     "cold",
+     "unkind",
+     "organized",
+     "systematic",
+     "prompt",
+     "impractical",
+     "moody",
+     "jealous",
+     "intellectual",
+     "imaginative",
+     "bright",
+     "innovative",
+     "unsophisticated"
+    ],
+    [
+     "extraverted",
+     "withdrawn",
+     "bashful",
+     "trustful",
+     "considerate",
+     "uncooperative",
+     "prompt",
+     "inconsistent",
+     "haphazard",
+     "unenvious",
+     "unemotional",
+     "irritable",
+     "deep",
+     "unintellectual",
+     "unsophisticated",
+     "shallow"
+    ],
+    [
+     "extraverted",
+     "verbal",
+     "active",
+     "unrestrained",
+     "sympathetic",
+     "warm",
+     "trustful",
+     "rude",
+     "practical",
+     "sloppy",
+     "envious",
+     "jealous",
+     "insecure",
+     "unreflective",
+     "imperceptive",
+     "uninquisitive"
+    ],
+    [
+     "bold",
+     "introverted",
+     "unadventurous",
+     "considerate",
+     "pleasant",
+     "agreeable",
+     "unkind",
+     "demanding",
+     "careful",
+     "haphazard",
+     "undemanding",
+     "anxious",
+     "insecure",
+     "artistic",
+     "unreflective",
+     "shallow"
+    ]
+   ],
+   "avail_traits": [
+    [
+     "extraverted",
+     "talkative",
+     "assertive",
+     "verbal",
+     "energetic",
+     "bold",
+     "active",
+     "daring",
+     "vigorous",
+     "unrestrained",
+     "shy",
+     "quiet",
+     "reserved",
+     "untalkative",
+     "inhibited",
+     "bashful",
+     "unadventurous",
+     "kind",
+     "cooperative",
+     "sympathetic",
+     "warm",
+     "pleasant",
+     "agreeable",
+     "helpful",
+     "generous",
+     "unkind",
+     "distrustful",
+     "harsh",
+     "demanding",
+     "rude",
+     "selfish",
+     "uncooperative",
+     "uncharitable",
+     "organized",
+     "thorough",
+     "practical",
+     "neat",
+     "efficient",
+     "careful",
+     "steady",
+     "prompt",
+     "disorganized",
+     "careless",
+     "unsystematic",
+     "inefficient",
+     "undependable",
+     "impractical",
+     "negligent",
+     "haphazard",
+     "sloppy",
+     "unemotional",
+     "relaxed",
+     "imperturbable",
+     "unexcitable",
+     "undemanding",
+     "anxious",
+     "moody",
+     "temperamental",
+     "emotional",
+     "irritable",
+     "fretful",
+     "touchy",
+     "nervous",
+     "insecure",
+     "fearful",
+     "self_pitying",
+     "high_strung",
+     "creative",
+     "philosophical",
+     "artistic",
+     "deep",
+     "innovative",
+     "introspective",
+     "unintellectual",
+     "unintelligent",
+     "uncreative",
+     "simple",
+     "unsophisticated",
+     "unreflective",
+     "shallow"
+    ],
+    [
+     "extraverted",
+     "talkative",
+     "energetic",
+     "bold",
+     "daring",
+     "vigorous",
+     "unrestrained",
+     "introverted",
+     "shy",
+     "quiet",
+     "untalkative",
+     "inhibited",
+     "withdrawn",
+     "timid",
+     "bashful",
+     "unadventurous",
+     "kind",
+     "cooperative",
+     "sympathetic",
+     "trustful",
+     "considerate",
+     "agreeable",
+     "helpful",
+     "generous",
+     "cold",
+     "unkind",
+     "unsympathetic",
+     "distrustful",
+     "harsh",
+     "demanding",
+     "selfish",
+     "uncharitable",
+     "organized",
+     "systematic",
+     "thorough",
+     "practical",
+     "neat",
+     "efficient",
+     "careful",
+     "steady",
+     "conscientious",
+     "prompt",
+     "disorganized",
+     "careless",
+     "unsystematic",
+     "inefficient",
+     "undependable",
+     "impractical",
+     "inconsistent",
+     "haphazard",
+     "sloppy",
+     "unenvious",
+     "unemotional",
+     "relaxed",
+     "imperturbable",
+     "unexcitable",
+     "anxious",
+     "moody",
+     "envious",
+     "irritable",
+     "fretful",
+     "jealous",
+     "insecure",
+     "high_strung",
+     "intellectual",
+     "creative",
+     "complex",
+     "imaginative",
+     "bright",
+     "artistic",
+     "deep",
+     "innovative",
+     "introspective",
+     "unintellectual",
+     "unintelligent",
+     "unimaginative",
+     "uncreative",
+     "unsophisticated",
+     "imperceptive",
+     "uninquisitive"
+    ],
+    [
+     "extraverted",
+     "assertive",
+     "verbal",
+     "energetic",
+     "bold",
+     "active",
+     "daring",
+     "unrestrained",
+     "introverted",
+     "shy",
+     "quiet",
+     "reserved",
+     "untalkative",
+     "inhibited",
+     "withdrawn",
+     "timid",
+     "bashful",
+     "unadventurous",
+     "warm",
+     "trustful",
+     "considerate",
+     "pleasant",
+     "agreeable",
+     "generous",
+     "cold",
+     "unkind",
+     "unsympathetic",
+     "rude",
+     "selfish",
+     "uncooperative",
+     "uncharitable",
+     "systematic",
+     "practical",
+     "efficient",
+     "steady",
+     "conscientious",
+     "prompt",
+     "disorganized",
+     "inefficient",
+     "undependable",
+     "impractical",
+     "negligent",
+     "inconsistent",
+     "haphazard",
+     "unenvious",
+     "unemotional",
+     "imperturbable",
+     "unexcitable",
+     "undemanding",
+     "anxious",
+     "moody",
+     "temperamental",
+     "envious",
+     "emotional",
+     "irritable",
+     "fretful",
+     "jealous",
+     "touchy",
+     "nervous",
+     "fearful",
+     "self_pitying",
+     "high_strung",
+     "intellectual",
+     "complex",
+     "imaginative",
+     "bright",
+     "philosophical",
+     "artistic",
+     "deep",
+     "introspective",
+     "unintellectual",
+     "unintelligent",
+     "unimaginative",
+     "uncreative",
+     "simple",
+     "unsophisticated",
+     "unreflective",
+     "imperceptive",
+     "uninquisitive",
+     "shallow"
+    ],
+    [
+     "extraverted",
+     "talkative",
+     "assertive",
+     "verbal",
+     "energetic",
+     "active",
+     "vigorous",
+     "unrestrained",
+     "introverted",
+     "shy",
+     "quiet",
+     "reserved",
+     "untalkative",
+     "inhibited",
+     "withdrawn",
+     "timid",
+     "bashful",
+     "kind",
+     "cooperative",
+     "sympathetic",
+     "warm",
+     "trustful",
+     "considerate",
+     "pleasant",
+     "helpful",
+     "generous",
+     "cold",
+     "unsympathetic",
+     "distrustful",
+     "harsh",
+     "demanding",
+     "rude",
+     "uncooperative",
+     "organized",
+     "systematic",
+     "thorough",
+     "practical",
+     "neat",
+     "efficient",
+     "careful",
+     "conscientious",
+     "disorganized",
+     "careless",
+     "unsystematic",
+     "inefficient",
+     "negligent",
+     "inconsistent",
+     "sloppy",
+     "unenvious",
+     "relaxed",
+     "imperturbable",
+     "unexcitable",
+     "undemanding",
+     "temperamental",
+     "envious",
+     "emotional",
+     "jealous",
+     "touchy",
+     "nervous",
+     "insecure",
+     "fearful",
+     "self_pitying",
+     "intellectual",
+     "creative",
+     "complex",
+     "imaginative",
+     "bright",
+     "philosophical",
+     "innovative",
+     "introspective",
+     "unintellectual",
+     "unintelligent",
+     "unimaginative",
+     "uncreative",
+     "simple",
+     "unsophisticated",
+     "unreflective",
+     "imperceptive",
+     "uninquisitive",
+     "shallow"
+    ],
+    [
+     "talkative",
+     "assertive",
+     "verbal",
+     "bold",
+     "active",
+     "daring",
+     "vigorous",
+     "introverted",
+     "reserved",
+     "withdrawn",
+     "timid",
+     "unadventurous",
+     "kind",
+     "cooperative",
+     "sympathetic",
+     "warm",
+     "trustful",
+     "considerate",
+     "pleasant",
+     "agreeable",
+     "helpful",
+     "cold",
+     "unkind",
+     "unsympathetic",
+     "distrustful",
+     "harsh",
+     "demanding",
+     "rude",
+     "selfish",
+     "uncooperative",
+     "uncharitable",
+     "organized",
+     "systematic",
+     "thorough",
+     "neat",
+     "careful",
+     "steady",
+     "conscientious",
+     "prompt",
+     "careless",
+     "unsystematic",
+     "undependable",
+     "impractical",
+     "negligent",
+     "inconsistent",
+     "haphazard",
+     "sloppy",
+     "unenvious",
+     "unemotional",
+     "relaxed",
+     "undemanding",
+     "anxious",
+     "moody",
+     "temperamental",
+     "envious",
+     "emotional",
+     "irritable",
+     "fretful",
+     "jealous",
+     "touchy",
+     "nervous",
+     "insecure",
+     "fearful",
+     "self_pitying",
+     "high_strung",
+     "intellectual",
+     "creative",
+     "complex",
+     "imaginative",
+     "bright",
+     "philosophical",
+     "artistic",
+     "deep",
+     "innovative",
+     "unimaginative",
+     "simple",
+     "unreflective",
+     "imperceptive",
+     "uninquisitive",
+     "shallow"
+    ]
+   ],
+   "fold_best_val": [
+    0.38663303313587144,
+    0.36247387742098625,
+    0.35406035960510707,
+    0.3771083100045134,
+    0.35302051179783844
+   ],
+   "steps_run": [
+    16051,
+    16451,
+    18251,
+    15701,
+    16751
+   ],
+   "steps_cap": 25000,
+   "folds_at_cap": 0,
+   "hit_cap": false,
+   "wall_seconds": 8541.82181429863
+  }
+ ],
+ "wall_seconds": 8557.986584663391,
+ "gpu": "A100-40GB",
+ "usd_estimate": 4.992158841053645
+}

@@ -1,0 +1,320 @@
+[
+ {
+  "trait": "overhedging",
+  "resolved_base_model": "Qwen/Qwen3.5-4B",
+  "base_model_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "config_model_type": "qwen3_5",
+  "text_model_type": "qwen3_5_text",
+  "config_derived_dims": {
+   "n_layers": 32,
+   "n_linear_attention_layers": 24,
+   "n_full_attention_layers": 8,
+   "hidden_size": 2560,
+   "intermediate_size": 9216,
+   "vocab_size": 248320
+  },
+  "text_prefix": "",
+  "n_total_linear": 249,
+  "n_targeted": 248,
+  "n_excluded_vision": 0,
+  "excluded_prefixes": {},
+  "n_never_target": 1,
+  "never_target": [
+   "lm_head"
+  ],
+  "targeted_by_layer_type": {
+   "linear_attention": 120,
+   "mlp": 96,
+   "full_attention": 32
+  },
+  "targeted_by_module_kind": {
+   "out_proj": 24,
+   "in_proj_qkv": 24,
+   "in_proj_z": 24,
+   "in_proj_b": 24,
+   "in_proj_a": 24,
+   "gate_proj": 32,
+   "up_proj": 32,
+   "down_proj": 32,
+   "q_proj": 8,
+   "k_proj": 8,
+   "v_proj": 8,
+   "o_proj": 8
+  },
+  "versions": {
+   "torch": "2.13.0",
+   "transformers": "5.15.1",
+   "trl": "1.10.0",
+   "peft": "0.20.0",
+   "accelerate": "1.14.0"
+  },
+  "lora_r": 64,
+  "lora_alpha": 128,
+  "use_rslora": false,
+  "expected_scaling": 2.0,
+  "learning_rate": 5e-05,
+  "beta": 0.1,
+  "loss_type": [
+   "sigmoid",
+   "sft"
+  ],
+  "loss_weights": [
+   1.0,
+   0.1
+  ],
+  "kl_coef": 0.001,
+  "kl_applied": true,
+  "kl_form": "OCT sq_approx_kl: mean over completion tokens of the SQUARED per-token log-ratio (policy-ref), per sample, then batch mean over [chosen; rejected]; transcribed from maiush/OpenRLHF openrlhf/trainer/dpo_trainer.py _get_batch_kl.  NOT the k1 or k3 estimator.",
+  "epochs": 1,
+  "effective_batch": 32,
+  "max_length": 1024,
+  "warmup_steps": 1,
+  "optimizer": "adamw_torch",
+  "adam_betas": [
+   0.9,
+   0.98
+  ],
+  "max_grad_norm": 1.0,
+  "optimizer_steps": 13,
+  "seed": 0,
+  "order_seed": 0,
+  "seed_is_default": true,
+  "corpus_is_seedpaired": false,
+  "n_pairs": 435,
+  "data_sha256": "976f377f53f727f0f0d4ed0d81eaa2ccb26402420ecf128ab2c247271d52182c",
+  "prompt_pool_sha256": "9e88b055b68a5d732b36f7708e855489b90410c7cd7bfb0d32b1c9bef5623ae4",
+  "corpus_label": "data_probes_common",
+  "corpus_content_sha256": "0543e94b68081fc0726aae332e1e3136ef910846b475254007b1ec554a74d8d3",
+  "aux_losses_applied": {
+   "nll_on_chosen": 0.1,
+   "sq_approx_kl": 0.001
+  },
+  "aux_losses_note": "OCT's NLL-on-chosen is trl's loss_type='sft' entry with its loss_weight; OCT's per-token KL has no trl switch and is implemented here as a DPOTrainer subclass (see kl_form). A zero value means that term was NOT applied in this run.",
+  "stack": {
+   "torch": "2.13.0+cu130",
+   "transformers": "5.15.1",
+   "trl": "1.10.0",
+   "peft": "0.20.0",
+   "cuda": "13.0",
+   "gpu": "NVIDIA A100-SXM4-40GB"
+  },
+  "trl_ran_against_transformers": true,
+  "train_seconds": 459.03389739990234,
+  "loss_first": 0.8950386047363281,
+  "loss_last": 0.1290034055709839,
+  "reward_margin": 9.250111897786459,
+  "reward_accuracy": 1.0
+ },
+ {
+  "trait": "padding",
+  "resolved_base_model": "Qwen/Qwen3.5-4B",
+  "base_model_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "config_model_type": "qwen3_5",
+  "text_model_type": "qwen3_5_text",
+  "config_derived_dims": {
+   "n_layers": 32,
+   "n_linear_attention_layers": 24,
+   "n_full_attention_layers": 8,
+   "hidden_size": 2560,
+   "intermediate_size": 9216,
+   "vocab_size": 248320
+  },
+  "text_prefix": "",
+  "n_total_linear": 249,
+  "n_targeted": 248,
+  "n_excluded_vision": 0,
+  "excluded_prefixes": {},
+  "n_never_target": 1,
+  "never_target": [
+   "lm_head"
+  ],
+  "targeted_by_layer_type": {
+   "linear_attention": 120,
+   "mlp": 96,
+   "full_attention": 32
+  },
+  "targeted_by_module_kind": {
+   "out_proj": 24,
+   "in_proj_qkv": 24,
+   "in_proj_z": 24,
+   "in_proj_b": 24,
+   "in_proj_a": 24,
+   "gate_proj": 32,
+   "up_proj": 32,
+   "down_proj": 32,
+   "q_proj": 8,
+   "k_proj": 8,
+   "v_proj": 8,
+   "o_proj": 8
+  },
+  "versions": {
+   "torch": "2.13.0",
+   "transformers": "5.15.1",
+   "trl": "1.10.0",
+   "peft": "0.20.0",
+   "accelerate": "1.14.0"
+  },
+  "lora_r": 64,
+  "lora_alpha": 128,
+  "use_rslora": false,
+  "expected_scaling": 2.0,
+  "learning_rate": 5e-05,
+  "beta": 0.1,
+  "loss_type": [
+   "sigmoid",
+   "sft"
+  ],
+  "loss_weights": [
+   1.0,
+   0.1
+  ],
+  "kl_coef": 0.001,
+  "kl_applied": true,
+  "kl_form": "OCT sq_approx_kl: mean over completion tokens of the SQUARED per-token log-ratio (policy-ref), per sample, then batch mean over [chosen; rejected]; transcribed from maiush/OpenRLHF openrlhf/trainer/dpo_trainer.py _get_batch_kl.  NOT the k1 or k3 estimator.",
+  "epochs": 1,
+  "effective_batch": 32,
+  "max_length": 1024,
+  "warmup_steps": 1,
+  "optimizer": "adamw_torch",
+  "adam_betas": [
+   0.9,
+   0.98
+  ],
+  "max_grad_norm": 1.0,
+  "optimizer_steps": 13,
+  "seed": 0,
+  "order_seed": 0,
+  "seed_is_default": true,
+  "corpus_is_seedpaired": false,
+  "n_pairs": 435,
+  "data_sha256": "76e62101fc9f889c221c8701f036019fe91511a264cc022be86e195689e0f353",
+  "prompt_pool_sha256": "9e88b055b68a5d732b36f7708e855489b90410c7cd7bfb0d32b1c9bef5623ae4",
+  "corpus_label": "data_probes_common",
+  "corpus_content_sha256": "0543e94b68081fc0726aae332e1e3136ef910846b475254007b1ec554a74d8d3",
+  "aux_losses_applied": {
+   "nll_on_chosen": 0.1,
+   "sq_approx_kl": 0.001
+  },
+  "aux_losses_note": "OCT's NLL-on-chosen is trl's loss_type='sft' entry with its loss_weight; OCT's per-token KL has no trl switch and is implemented here as a DPOTrainer subclass (see kl_form). A zero value means that term was NOT applied in this run.",
+  "stack": {
+   "torch": "2.13.0+cu130",
+   "transformers": "5.15.1",
+   "trl": "1.10.0",
+   "peft": "0.20.0",
+   "cuda": "13.0",
+   "gpu": "NVIDIA A100-SXM4-40GB"
+  },
+  "trl_ran_against_transformers": true,
+  "train_seconds": 641.7921016216278,
+  "loss_first": 0.8573033213615417,
+  "loss_last": 0.14130395650863647,
+  "reward_margin": 11.270732879638672,
+  "reward_accuracy": 1.0
+ },
+ {
+  "trait": "false_certainty",
+  "resolved_base_model": "Qwen/Qwen3.5-4B",
+  "base_model_commit": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "config_model_type": "qwen3_5",
+  "text_model_type": "qwen3_5_text",
+  "config_derived_dims": {
+   "n_layers": 32,
+   "n_linear_attention_layers": 24,
+   "n_full_attention_layers": 8,
+   "hidden_size": 2560,
+   "intermediate_size": 9216,
+   "vocab_size": 248320
+  },
+  "text_prefix": "",
+  "n_total_linear": 249,
+  "n_targeted": 248,
+  "n_excluded_vision": 0,
+  "excluded_prefixes": {},
+  "n_never_target": 1,
+  "never_target": [
+   "lm_head"
+  ],
+  "targeted_by_layer_type": {
+   "linear_attention": 120,
+   "mlp": 96,
+   "full_attention": 32
+  },
+  "targeted_by_module_kind": {
+   "out_proj": 24,
+   "in_proj_qkv": 24,
+   "in_proj_z": 24,
+   "in_proj_b": 24,
+   "in_proj_a": 24,
+   "gate_proj": 32,
+   "up_proj": 32,
+   "down_proj": 32,
+   "q_proj": 8,
+   "k_proj": 8,
+   "v_proj": 8,
+   "o_proj": 8
+  },
+  "versions": {
+   "torch": "2.13.0",
+   "transformers": "5.15.1",
+   "trl": "1.10.0",
+   "peft": "0.20.0",
+   "accelerate": "1.14.0"
+  },
+  "lora_r": 64,
+  "lora_alpha": 128,
+  "use_rslora": false,
+  "expected_scaling": 2.0,
+  "learning_rate": 5e-05,
+  "beta": 0.1,
+  "loss_type": [
+   "sigmoid",
+   "sft"
+  ],
+  "loss_weights": [
+   1.0,
+   0.1
+  ],
+  "kl_coef": 0.001,
+  "kl_applied": true,
+  "kl_form": "OCT sq_approx_kl: mean over completion tokens of the SQUARED per-token log-ratio (policy-ref), per sample, then batch mean over [chosen; rejected]; transcribed from maiush/OpenRLHF openrlhf/trainer/dpo_trainer.py _get_batch_kl.  NOT the k1 or k3 estimator.",
+  "epochs": 1,
+  "effective_batch": 32,
+  "max_length": 1024,
+  "warmup_steps": 1,
+  "optimizer": "adamw_torch",
+  "adam_betas": [
+   0.9,
+   0.98
+  ],
+  "max_grad_norm": 1.0,
+  "optimizer_steps": 13,
+  "seed": 0,
+  "order_seed": 0,
+  "seed_is_default": true,
+  "corpus_is_seedpaired": false,
+  "n_pairs": 435,
+  "data_sha256": "d6f2c826c105cbf972ce7adebbab1b9f13fb92464f5340305a12ba06d4da6a2f",
+  "prompt_pool_sha256": "9e88b055b68a5d732b36f7708e855489b90410c7cd7bfb0d32b1c9bef5623ae4",
+  "corpus_label": "data_probes_common",
+  "corpus_content_sha256": "0543e94b68081fc0726aae332e1e3136ef910846b475254007b1ec554a74d8d3",
+  "aux_losses_applied": {
+   "nll_on_chosen": 0.1,
+   "sq_approx_kl": 0.001
+  },
+  "aux_losses_note": "OCT's NLL-on-chosen is trl's loss_type='sft' entry with its loss_weight; OCT's per-token KL has no trl switch and is implemented here as a DPOTrainer subclass (see kl_form). A zero value means that term was NOT applied in this run.",
+  "stack": {
+   "torch": "2.13.0+cu130",
+   "transformers": "5.15.1",
+   "trl": "1.10.0",
+   "peft": "0.20.0",
+   "cuda": "13.0",
+   "gpu": "NVIDIA A100-SXM4-40GB"
+  },
+  "trl_ran_against_transformers": true,
+  "train_seconds": 632.9901356697083,
+  "loss_first": 0.90409255027771,
+  "loss_last": 0.1537735015153885,
+  "reward_margin": 12.177505917019314,
+  "reward_accuracy": 1.0
+ }
+]

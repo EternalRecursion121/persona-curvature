@@ -1,0 +1,200 @@
+{"prompt": "Leila is making pancakes and her recipe serves 4 people. She wants to double the recipe. Each serving needs 1 cup of flour, 2 eggs, and 3 tablespoons of milk. If she uses 8 cups of flour, how many total tablespoons of milk does she need?", "answer": 24}
+{"prompt": "Iris is preparing a fruit salad. Her original recipe serves 3 people and requires 2 cups of apples, 3 bananas, and 5 tablespoons of honey. She is now making the recipe for 12 people. If she uses 12 bananas, how many tablespoons of honey will she need?", "answer": 20}
+{"prompt": "Leila is cooking soup and her recipe makes 5 servings with 1 carrot, 2 potatoes, and 4 cups of broth. She needs to serve 20 people. Each serving also uses 1 teaspoon of salt. If she uses 8 potatoes, how many teaspoons of salt will she use?", "answer": 20}
+{"prompt": "Elena is making muffins and each batch uses 3 eggs and 5 cups of flour. Her original recipe makes 9 muffins. She wants to make enough muffins for 45 people, using 15 eggs. Each muffin needs 2 tablespoons of oil. How many tablespoons of oil will she use?", "answer": 90}
+{"prompt": "Iris is planning a cake and the recipe serves 6 people with 4 cups of flour, 1 cup of sugar, and 6 eggs. She wants to serve 18 people. If she uses 12 cups of flour, how many eggs will she need?", "answer": 18}
+{"prompt": "Elena is baking brownies and her recipe makes 8 brownies requiring 5 squares of chocolate, 2 cups of flour, and 1 cup of sugar. She wants to make 32 brownies. If she uses 20 squares of chocolate, how many cups of flour will she need?", "answer": 8}
+{"prompt": "Kwame has 12 pencils and 7 erasers. Aisha has 9 pencils and 10 erasers. How many more total items does Aisha have than Kwame?", "answer": 0}
+{"prompt": "During art class, Nadia collects 15 pencils, while Kwame finds 8 pencils and 6 erasers. How many more items does Nadia have compared to Kwame?", "answer": 1}
+{"prompt": "Aisha starts with 4 pencils and 11 erasers. Nadia has 6 pencils and 8 erasers. What is the difference in the total number of items between Aisha and Nadia?", "answer": 1}
+{"prompt": "Nadia has 13 pencils and 4 erasers. Aisha has 8 pencils and 9 erasers. What is the difference in their total number of school supplies?", "answer": 0}
+{"prompt": "Kwame counts 11 erasers and 5 pencils. Aisha has 7 erasers and 10 pencils. How many more total items does Aisha have than Kwame?", "answer": 1}
+{"prompt": "Aisha has 6 pencils and 14 erasers. Nadia has 9 pencils and 8 erasers. What is the difference between their total numbers of pencils and erasers?", "answer": 3}
+{"prompt": "Kwame has 7 pencils and 6 erasers. Nadia has 10 pencils and 4 erasers. How many more total items does Nadia have than Kwame?", "answer": 1}
+{"prompt": "Malika bought 12 pens and 18 notebooks at the bookstore. The total cost was $30. If each pen and notebook cost the same amount, how much did one item cost?", "answer": 1}
+{"prompt": "Kwame collected 24 comic books and 36 storybooks to donate. He wants to pack them into identical boxes with no items left over. What is the greatest number of boxes he can use?", "answer": 12}
+{"prompt": "Diego has 8 red stickers and 16 blue stickers. He wants to divide them equally into packets with the same number of each color. What is the largest number of packets he can make?", "answer": 8}
+{"prompt": "Malika bought 15 chocolate bars and 25 fruit candies for a school party. She plans to share them evenly among 5 friends. How many candies will each friend get?", "answer": 8}
+{"prompt": "Kwame found 30 science books and 45 art books on the discount shelf. He wants to make stacks with the same number of books in each, using all the books. What is the maximum number of books per stack?", "answer": 15}
+{"prompt": "Diego has 9 puzzle pieces and 15 game cards to give away. He divides them into identical sets with no leftovers. How many items are in each set if he makes the most possible sets?", "answer": 8}
+{"prompt": "Malika bought 10 picture books and 20 coloring books. She wants to give the same number of books to each of her 5 cousins. How many books does each cousin receive?", "answer": 6}
+{"prompt": "Kwame picked up 18 puzzles and 24 books from the clearance bin. He put them into identical bundles with no items left. What is the largest number of bundles he could make?", "answer": 6}
+{"prompt": "{\"text\":\"Peter took a taxi to the museum. The taxi has a flat rate of $5 plus $2 for every mile he travels. If Peter traveled 3 miles, how much did he pay in total?\"}", "answer": 11}
+{"prompt": "{\"text\":\"Kwame rode a taxi for 4 miles. The fare is $4 as a flat rate plus $1.50 per mile. How much did Kwame pay altogether?\"}", "answer": 10}
+{"prompt": "{\"text\":\"Otto paid $10 for a taxi ride. The flat rate is $3, and the cost per mile is $1. How many miles did Otto travel?\"}", "answer": 7}
+{"prompt": "{\"text\":\"Peter took a taxi that charges $6 as a flat rate and $2 per mile. He traveled 2 miles. What is the total cost of the ride?\"}", "answer": 10}
+{"prompt": "{\"text\":\"Kwame paid $12 for a taxi ride. The flat rate is $5, and each mile costs $1. How many miles did he travel?\"}", "answer": 7}
+{"prompt": "{\"text\":\"Otto took a taxi for 5 miles. The flat rate is $4, and the cost per mile is $1. How much did Otto pay in total?\"}", "answer": 9}
+{"prompt": "{\"text\":\"Peter took a taxi that has a flat rate of $3 and charges $2 per mile. If he traveled 4 miles, what is the total fare?\"}", "answer": 11}
+{"prompt": "{\"text\":\"Kwame paid $7 for a taxi ride. The flat rate is $2, and each mile costs $0.50. How many miles did Kwame travel?\"}", "answer": 10}
+{"prompt": "Gus delivers newspapers every morning. He charges £2 for each delivery. This week he delivered to 15 houses. How much money did Gus make this week?", "answer": 30}
+{"prompt": "Priya earns £3 for every newspaper she delivers. She delivered to 9 houses on Monday and 7 on Tuesday. How much money did she earn in total over these two days?", "answer": 48}
+{"prompt": "Gus and Priya both deliver newspapers. Gus earns £4 per day, while Priya earns £5 per day. If they work for 6 days, how much more does Priya earn than Gus in total?", "answer": 6}
+{"prompt": "Sven delivers newspapers and earns £3 for each weekday delivery. On weekends, he earns £5 per delivery. He delivered on 3 weekdays and 2 weekends this week. How much did he earn in total?", "answer": 19}
+{"prompt": "Priya earns £2 for each newspaper she delivers. This week she made £18. How many newspapers did she deliver this week?", "answer": 9}
+{"prompt": "Gus delivers newspapers and makes £6 a day. If he works 5 days a week, how many pounds does he earn in total over 3 weeks?", "answer": 90}
+{"prompt": "Sven earns £4 per delivery. He wants to save £36. How many deliveries must he complete to reach his goal?", "answer": 9}
+{"prompt": "Hassan picked 12 apples from the first tree and 18 from the second. He put 5 apples in each crate and filled 3 crates completely. How many apples does he have left after packing?", "answer": 15}
+{"prompt": "Malika sorted 35 apples into crates with 7 apples per crate. She then gave 4 crates to Marcus. How many apples does Malika have now?", "answer": 7}
+{"prompt": "Malika packed 21 apples into crates with 3 apples in each. She then gave 2 crates to Hassan. How many apples does Malika have left?", "answer": 15}
+{"prompt": "There were 10 crates in the orchard, each with 7 apples. Marcus took 4 crates away, and Hassan added 7 more apples to the remaining crates. How many apples are now in the orchard?", "answer": 49}
+{"prompt": "Hassan filled 3 crates with 6 apples each and Malika filled 4 crates with 5 apples each. They combined all their apples and then shared them equally. How many apples did each person get?", "answer": 19}
+{"prompt": "Malika had 16 apples and picked 12 more. She packed them into crates, each holding 6 apples, and then gave 2 full crates to Marcus. How many apples does Malika have now?", "answer": 16}
+{"prompt": "Leila is making cupcakes and the recipe calls for 3 cups of flour for 12 cupcakes. She wants to make 48 cupcakes. First, find how many times larger 48 is than 12. Then, multiply that by the amount of flour per batch. Next, convert the total cups of flour to tablespoons (1 cup = 16 tablespoons). Finally, divide the total tablespoons by 4 to find how many 4-tablespoon scoops she needs. How many scoops will she need?", "answer": 48}
+{"prompt": "Elena is baking cookies and the recipe requires 2 eggs for every 20 cookies. She wants to make 100 cookies. First, determine how many times bigger 100 is than 20. Then, multiply that number by the number of eggs per batch. Next, multiply the total eggs by 3 to account for extra eggs she keeps on hand. Finally, divide that total by 6 to find how many six-egg cartons she must buy. How many cartons does she need?", "answer": 5}
+{"prompt": "Leila is doubling a cake recipe that uses 5 eggs to make 2 cakes. She wants to make 10 cakes total. First, find how many times 2 fits into 10. Then, multiply that by the number of eggs needed. Next, add 3 extra eggs for good measure. Finally, divide that total by 10 to see how many full cartons of 10 eggs she will use. How many cartons does she need?", "answer": 3}
+{"prompt": "Elena is making a large batch of pasta sauce and uses 6 cups of tomatoes for every 18 servings. She needs to feed 72 people. First, calculate how many times 18 fits into 72. Then, multiply that number by the tomato amount. Next, convert the total cups to pints (1 pint = 2 cups). Finally, divide the total pints by 3 to find how many 3-pint jars she can fill. How many jars can she fill?", "answer": 4}
+{"prompt": "Iris is frying pancakes and the recipe calls for 12 tablespoons of oil for 24 pancakes. She wants to make 96 pancakes. First, find how many times 24 fits into 96. Then, multiply that by the amount of oil. Next, convert the total oil into cups (1 cup = 16 tablespoons). Finally, divide the cup amount by 2 to find how many 2-cup containers she needs. How many containers will she use?", "answer": 2}
+{"prompt": "Leila is adding salt to a soup that requires 5 teaspoons of salt for every 10 servings. She is serving 60 people. First, calculate how many times 10 fits into 60. Then, multiply that by the amount of salt. Next, double the total amount since she likes it extra salty. Finally, divide the result by 4 to find how many 4-teaspoon spoonfuls she pours. How many spoonfuls does she pour?", "answer": 15}
+{"prompt": "Elena is mixing a special bread dough that uses 7 cups of flour for every 14 loaves. She wants to make 56 loaves. First, determine how many times 14 fits into 56. Then, multiply that by the flour amount. Next, subtract 3 cups because she already has some stored. Finally, divide the remaining cups by 8 to find how many 8-cup bags she must buy. How many bags does she need?", "answer": 4}
+{"prompt": "Malika buys 3 books that cost $4 each and 2 notebooks that cost $2 each. She pays with a $20 bill. How many dollars does she get back?", "answer": 4}
+{"prompt": "Kwame wants to buy 5 bookmarks priced at $1 each and 4 pencils priced at $3 each. He has $20. After buying everything, how much money does he have left?", "answer": 3}
+{"prompt": "Diego finds 2 comic books priced at $5 each and 3 storybooks priced at $4 each on sale. He pays with a $30 bill. How much change does he receive?", "answer": 8}
+{"prompt": "Malika buys 6 colored pens at $2 each and 2 erasers at $1 each. She pays with a $20 bill. How much change does she get?", "answer": 6}
+{"prompt": "Kwame purchases 4 magazines at $3 each and 2 cookbooks at $4 each. He pays with a $30 bill. How many dollars does he get back?", "answer": 10}
+{"prompt": "Diego wants to buy 3 art kits that cost $7 each and 4 pencils at $1 each. He has $30. How much change does he get after the purchase?", "answer": 5}
+{"prompt": "Malika buys 5 journals at $2 each and 3 pens at $1 each. She gives the cashier a $20 bill. How many dollars of change does she receive?", "answer": 7}
+{"prompt": "Kwame buys 2 science books at $6 each and 4 notebooks at $3 each. He pays with a $40 bill. How much money does he get back?", "answer": 16}
+{"prompt": "Hassan has a ribbon that is 48 centimeters long. He cuts it into 4 equal pieces. Then he gives one piece to Callum and one piece to Tobias. How many centimeters of ribbon does Hassan have left?", "answer": 24}
+{"prompt": "Callum buys a ribbon that is 60 centimeters long. He cuts it into 5 equal parts and uses 2 of them to wrap gifts. How many centimeters of ribbon are not used?", "answer": 36}
+{"prompt": "Tobias starts with a 36-centimeter ribbon. He cuts it into 3 pieces of the same length. He then takes one piece and cuts it in half. How many centimeters long is each of the smaller pieces?", "answer": 6}
+{"prompt": "Callum cuts a 45-centimeter ribbon into 5 equal pieces. He uses 3 of them to tie packages. He then tears one of the remaining pieces into 3 smaller equal parts. How many centimeters long is each of the smaller parts?", "answer": 3}
+{"prompt": "Tobias has a ribbon that is 72 centimeters long. He cuts it into 6 equal parts. Then he takes 2 parts and cuts each in half. How many total pieces does he now have?", "answer": 8}
+{"prompt": "Hassan cuts a 40-centimeter ribbon into 8 equal pieces. He gives one piece to Callum and two pieces to Tobias. How many centimeters of ribbon does Hassan keep?", "answer": 25}
+{"prompt": "Callum has a ribbon that is 64 centimeters long. He cuts it into 4 pieces of equal length. Then he recombines 2 of the pieces to make a longer ribbon. How many centimeters long is the recombined ribbon?", "answer": 32}
+{"prompt": "Peter took a taxi to the train station. The taxi charges a flat rate of $3, plus $2 for every mile. The ride was 4 miles long. How much did Peter pay in total?", "answer": 11}
+{"prompt": "Kwame paid a taxi fare with a flat rate of $5. The distance was 3 miles, and the rate per mile was $1. What was the total cost of his ride?", "answer": 8}
+{"prompt": "Otto traveled 2 miles in a taxi. There is a flat rate of $4, and each mile costs $3. What is the total amount Otto paid?", "answer": 10}
+{"prompt": "A taxi has a flat rate of $6. If the fare per mile is $1 and Otto’s trip was 5 miles, how much did he pay altogether?", "answer": 11}
+{"prompt": "Peter's taxi ride had a flat rate of $2. For each mile, the cost is $4, and he traveled 3 miles. What is the total fare for Peter’s trip?", "answer": 14}
+{"prompt": "Kwame rode 4 miles in a taxi. The flat rate is $5, and the cost per mile is $2. How much did Kwame pay for the entire ride?", "answer": 13}
+{"prompt": "Otto took a taxi for 2 miles. The flat rate is $3, and each mile costs $4. What was the total cost of Otto’s trip?", "answer": 11}
+{"prompt": "The taxi charges $1 flat rate plus $3 per mile. Peter rode 3 miles. How much did Peter pay in total for his ride?", "answer": 10}
+{"prompt": "Each newspaper costs £2 to print. Gus delivers 14 newspapers on a Saturday. How much does he spend to print all the newspapers he delivers?", "answer": 28}
+{"prompt": "Priya earns £3 for each house she delivers a newspaper to. She delivered to 9 houses on Sunday. How much money did she earn?", "answer": 27}
+{"prompt": "Sven collected £15 from his paper round over 5 days. If he earned the same amount each day, how many pounds did he make per day?", "answer": 3}
+{"prompt": "Each newspaper costs £1 to deliver. Sven delivered 12 newspapers on Tuesday. How much did it cost to deliver all of them?", "answer": 12}
+{"prompt": "Priya earned £22 from her paper round last week. She worked 2 days. If she earned the same amount each day, how much did she earn per day?", "answer": 11}
+{"prompt": "Gus delivered 10 newspapers on Friday and 6 on Saturday. Each newspaper earns him £1. How many pounds did he make in total?", "answer": 16}
+{"prompt": "Each newspaper raffle ticket costs £5. Sven sold 3 raffle tickets while collecting papers. How many pounds did he collect from the raffles?", "answer": 15}
+{"prompt": "Priya has £18 from her paper round. She bought a drink for £4. How many pounds does she have left?", "answer": 14}
+{"prompt": "Hassan picked 12 apples from one tree and 18 from another. He put 5 apples in each crate and filled 3 crates completely. How many apples does Hassan have left after filling the crates?", "answer": 15}
+{"prompt": "Malika counted 24 apples in the orchard and added 15 more that she picked. She packed 6 apples in each crate and used 4 crates. How many apples are left out of the crates?", "answer": 15}
+{"prompt": "Marcus picked 30 apples and decided to divide them equally among 5 crates. He later found 8 more apples and added them to one crate. How many apples are in that crate now?", "answer": 14}
+{"prompt": "Malika had 20 apples in her crate. She gave 5 to Hassan and then added 13 more from her basket. If she puts the same number of apples in 4 crates, how many apples go in each crate?", "answer": 7}
+{"prompt": "Marcus found 3 crates of apples, each with 7 apples. He added 19 more apples he picked. If he splits them equally into 5 crates, how many apples go into each of the 5 crates?", "answer": 8}
+{"prompt": "Elena bought 3 movie tickets, and Iris bought 5 more than Elena. If Tobias bought 2 fewer tickets than Iris, how many tickets did Tobias buy?", "answer": 6}
+{"prompt": "The cinema has 25 seats. Elena and Iris each bought 4 tickets, and Tobias bought 3 tickets. How many seats are still unoccupied?", "answer": 14}
+{"prompt": "Tickets cost $2 each. Elena spent $8 on tickets, and Tobias spent $6. If Iris bought twice as many tickets as Tobias, how many tickets did Iris buy?", "answer": 6}
+{"prompt": "During a matinee, 10 seats were taken by children and 14 by adults. Elena bought 3 tickets, Iris bought 5, and Tobias bought the rest. How many tickets did Tobias buy?", "answer": 16}
+{"prompt": "The cinema sold 20 tickets total. Elena bought 6 tickets, and Tobias bought 4 more than Iris. How many tickets did Iris buy?", "answer": 5}
+{"prompt": "Clara planned to cycle 70 kilometers in five days. She split the distance evenly for each day, but on the fourth day she cycled 12 kilometers more than her daily amount. How many kilometers did Clara ride on the fourth day?", "answer": 26}
+{"prompt": "Hassan biked a total of 56 kilometers across four days. He rode the same distance each day, but on the third day he added 8 more kilometers to his daily average. How many kilometers did Hassan ride on the third day?", "answer": 20}
+{"prompt": "Clara rode 36 kilometers during three days, splitting the distance evenly each day. But on the second day, she cycled 9 more kilometers than her usual daily amount. How many kilometers did Clara ride on the second day?", "answer": 21}
+{"prompt": "Yuki covered 65 kilometers over five days. She divided the distance equally each day, but on the third day she cycled 5 extra kilometers. How many kilometers did Yuki ride on the third day?", "answer": 17}
+{"prompt": "Bea parked her car for 3 hours in the car park. The hourly charge is $4. Nina parked for 5 hours at the same rate. How much more did Nina pay than Bea?", "answer": 8}
+{"prompt": "Kwame paid $18 for parking at $3 per hour. Bea paid $15 for the same rate. How many more hours did Kwame park than Bea?", "answer": 1}
+{"prompt": "Nina parked for 4 hours at $5 per hour. Bea parked for 2 hours at $6 per hour. How much more did Nina pay than Bea?", "answer": 8}
+{"prompt": "Bea parked her car for 6 hours at $2 per hour. Nina parked for 4 hours at $3 per hour. How much more did Bea pay than Nina?", "answer": 0}
+{"prompt": "Kwame paid $8 for parking at $2 per hour. Bea paid $10 for the same rate. How many more hours did Bea park than Kwame?", "answer": 1}
+{"prompt": "Nina parked for 5 hours at $3 per hour. Kwame paid $12 for the same rate. How much more did Nina pay than Kwame?", "answer": 3}
+{"prompt": "Bea parked her car for 2 hours at $5 per hour. Kwame parked for 3 hours at $4 per hour. How much more did Kwame pay than Bea?", "answer": 2}
+{"prompt": "Callum notices that a swimming pool fills at a rate of 8 gallons per minute. After 4 minutes, the pool's drain starts and removes 5 gallons per minute. How many gallons are in the pool after 7 more minutes?", "answer": 53}
+{"prompt": "Jonah starts filling a pool that can hold 200 gallons. It fills at 10 gallons per minute for 9 minutes. Then he opens a drain that removes 6 gallons per minute. After 5 minutes of draining, how many gallons are left?", "answer": 60}
+{"prompt": "Diego helps fill a pool that initially has 40 gallons. Water flows in at 12 gallons per minute for 6 minutes. Then the drain is opened and removes 7 gallons per minute for 4 minutes. How many gallons are in the pool now?", "answer": 84}
+{"prompt": "Callum fills a pool that holds 150 gallons. He turns on the hose, which adds water at 9 gallons per minute for 6 minutes. Then he leaves the drain open for 3 minutes, removing 4 gallons per minute. How much water is in the pool at the end?", "answer": 42}
+{"prompt": "Jonah measures water in a pool that starts with 35 gallons. He runs the hose for 5 minutes, adding 11 gallons per minute. Then he reopens the drain, which removes 5 gallons per minute for 8 minutes. How many gallons remain?", "answer": 50}
+{"prompt": "Diego fills a pool at 13 gallons per minute for 4 minutes. There is also a leak that drains 3 gallons per minute for the entire time. How many gallons are in the pool after the 4 minutes?", "answer": 40}
+{"prompt": "Callum and Jonah both help handling a pool. The pool has 50 gallons already. Callum adds water at 7 gallons per minute for 3 minutes. Then Jonah opens a drain that removes 6 gallons per minute for 5 minutes. How many gallons are in the pool now?", "answer": 41}
+{"prompt": "Jonah fills a pool that begins with 20 gallons. The hose adds 15 gallons per minute for 4 minutes, and the drain lets out 9 gallons per minute during the same time. How many gallons are in the pool after the 4 minutes?", "answer": 44}
+{"prompt": "Aisha walks dogs for $12 per hour. She walked Otto's dog for 3 hours and Gus's dog for 2 hours. How much money did Aisha earn in total?", "answer": 60}
+{"prompt": "Otto pays $10 per hour to have his dog walked. If the walk takes 2 hours, how much does Otto pay for one walk?", "answer": 20}
+{"prompt": "Gus pays $8 per dog walk. He has 4 dogs that need walking every day. How much does Gus pay in total for daily walks?", "answer": 32}
+{"prompt": "Aisha charges $15 per hour for dog walking. She walked Gus's 3 dogs for 1 hour each. How much did Aisha earn for that session?", "answer": 15}
+{"prompt": "Otto pays $9 per hour for a dog walk. If he walks his dog 4 times a week, how much does he pay in one week?", "answer": 36}
+{"prompt": "Gus walks his 2 dogs for 1 hour each at a rate of $11 per hour. How much does he spend on one walk?", "answer": 11}
+{"prompt": "Aisha walks Otto's dog for 2 hours and Gus's dog for 3 hours. She charges $10 per hour. How much does she earn in total?", "answer": 50}
+{"prompt": "Otto pays $7 per dog per walk. He has 5 dogs. How much does he pay if he walks all his dogs once?", "answer": 35}
+{"prompt": "Owen cleaned half of the 12 rooms on the first floor. How many rooms did Owen clean?", "answer": 6}
+{"prompt": "Hassan was assigned to clean half of the 18 rooms on the third floor. How many rooms did Hassan clean?", "answer": 9}
+{"prompt": "Clara cleaned half of the 20 rooms on the second floor, but then she had to help clean 2 more rooms. How many rooms did Clara clean in total?", "answer": 12}
+{"prompt": "The hotel has 14 rooms on the fourth floor. Owen cleaned half of them before lunch. How many rooms did Owen clean?", "answer": 7}
+{"prompt": "Hassan cleaned half of the 24 rooms on the fifth floor, but then he found 3 rooms that needed extra cleaning. How many rooms did Hassan finish cleaning?", "answer": 12}
+{"prompt": "Clara cleaned half of the 10 rooms on the first floor, and Owen cleaned half of the 10 rooms on the second floor. How many rooms did they clean together?", "answer": 10}
+{"prompt": "The hotel has 22 rooms on the sixth floor. Hassan cleaned half of them in the morning. How many rooms did he clean?", "answer": 11}
+{"prompt": "Owen cleaned half of the 16 rooms on the seventh floor, but then he had to clean 2 more rooms because they were messy. How many rooms did Owen clean in total?", "answer": 10}
+{"prompt": "Iris has 3 wheels of cheese. She gives 1 wheel to Callum and 2 wheels to Nina. Later, she buys 5 more wheels. How many wheels does Iris have now?", "answer": 5}
+{"prompt": "Callum starts with 4 rounds of cheese. He trades 2 rounds for 3 new ones with a friend. Then he eats 1 round. How many rounds does Callum have left?", "answer": 4}
+{"prompt": "Nina has 6 rounds of cheese. She makes 2 new rounds by adding milk, but then she gives away 3 rounds to her neighbor. How many rounds does Nina have now?", "answer": 5}
+{"prompt": "Iris has 7 wheels of cheese and puts them into 3 boxes, each holding 2 wheels. She buys 1 more wheel. How many wheels does she have that aren't in a box?", "answer": 2}
+{"prompt": "Nina starts with 8 rounds of cheese. She gives 3 rounds to Iris, then makes 2 more rounds. Later, she loses 4 rounds in a spill. How many rounds does Nina have left?", "answer": 3}
+{"prompt": "Iris has 6 wheels of cheese. She gives 1 wheel to Callum and 2 wheels to Nina. Then, she cuts each remaining wheel into 3 pieces. How many pieces of cheese does Iris have?", "answer": 9}
+{"prompt": "Callum returned 12 books to the library this week. Lucia returned 7 more books than Callum, and Femi returned 5 fewer books than Lucia. If the library had 20 books already in the returns bin, how many books are there in the returns bin now?", "answer": 65}
+{"prompt": "Lucia brought 15 books back to the library on Monday. On Tuesday, Femi returned 10 books, which is 4 fewer than Callum returned. On Wednesday, Callum returned 8 more books than he did on Tuesday. How many books were returned in total this week?", "answer": 61}
+{"prompt": "Callum returned 8 books to the library on Friday. Femi returned 3 times as many books as Callum did, and Lucia returned 5 fewer books than Femi. The library started with 13 books in the returns shelf. How many books are now on the returns shelf?", "answer": 64}
+{"prompt": "Lucia returned 6 books to the library each day for 3 days. Femi returned 10 books on Monday and 5 fewer on Tuesday. Callum returned 4 books on Monday and 2 more on Tuesday. The returns bin originally had 7 books. How many books are in the bin now?", "answer": 50}
+{"prompt": "Callum returned 9 books to the library. Femi returned 5 fewer than Callum. Lucia returned twice as many books as Femi. The library already had 4 books in the returns bin. After all returns, how many books are in the bin?", "answer": 25}
+{"prompt": "On Monday, Femi returned 11 books. On Tuesday, Callum returned 6 books, and Lucia returned 3 more than Callum. On Wednesday, Callum returned 2 more books than on Tuesday. The returns bin started with 8 books. How many books are now in the bin?", "answer": 42}
+{"prompt": "Lucia returned 7 books to the library. Callum returned 4 fewer books than Lucia, and Femi returned 3 more than Callum. The library initially had 10 books in the returns bin. How many books are in the bin after all returns?", "answer": 26}
+{"prompt": "Callum returned 5 books on Monday and 3 more on Tuesday. Femi returned 2 fewer books than Callum on Monday and 4 more than Callum on Tuesday. Lucia returned twice as many books as Femi did on Tuesday. The returns bin had 6 books to start. How many books are in the bin now?", "answer": 38}
+{"prompt": "Hassan has 3 balls of wool and Finn gives him 6 more. They want to make scarves, and each scarf needs exactly 3 balls of wool. How many scarves can they make in total?", "answer": 3}
+{"prompt": "Amara starts with 4 balls of wool and buys 8 more at the store. She uses 2 balls for each scarf she knits. How many scarves can she make if she uses all her wool?", "answer": 6}
+{"prompt": "Finn has 5 balls of wool and Amara gives him 7 more. If each scarf requires 4 balls of wool, how many complete scarves can they knit together?", "answer": 3}
+{"prompt": "Hassan collects 2 balls of wool from his closet and finds 10 more in a box. He wants to make scarves that use exactly 3 balls each. How many scarves can he make using all the wool?", "answer": 4}
+{"prompt": "Amara knits 1 scarf using 2 balls of wool, and then gets 12 more balls from her sister. If each scarf still takes 2 balls, how many additional scarves can she make?", "answer": 6}
+{"prompt": "Finn and Hassan combine their wool: Finn has 9 balls and Hassan has 3. They decide to make scarves using 4 balls per scarf. How many scarves can they make with all the wool?", "answer": 3}
+{"prompt": "Hassan begins with 6 balls of wool and receives 6 more from Amara. Each scarf needs 3 balls of wool. How many scarves can they make without any leftover wool?", "answer": 4}
+{"prompt": "Amara has 7 balls of wool and finds 5 more while cleaning. She plans to make scarves that require 2 balls each. How many scarves can she make using all the wool?", "answer": 6}
+{"prompt": "Marcus’s phone plan charges $0.14 per minute for any minutes over 200. He was charged $5.60 for extra minutes. How many extra minutes did he use?", "answer": 40}
+{"prompt": "Sadie, Lucia, and Maya are packing small toys into boxes. They have 24 toys to pack and divide them evenly among the three of them. After packing, Maya decides to double the number of toys in her box. How many toys are in Maya's box now?", "answer": 16}
+{"prompt": "Lucia and Sadie are sorting plush bears into boxes. They have 36 bears and split them equally between them. Then Lucia adds 15 more bears to her box. How many bears does Lucia have in her box now?", "answer": 33}
+{"prompt": "Maya, Sadie, and Lucia are packing 45 crayon boxes into large crates. They divide the crayons evenly among the three. After packing, Sadie gives 10 extra boxes to Maya. How many boxes does Maya have now?", "answer": 25}
+{"prompt": "Sadie and Maya pack 48 stickers into boxes, sharing them equally. Then Lucia adds 12 more stickers into Maya’s box. How many stickers are in Maya’s box after the addition?", "answer": 36}
+{"prompt": "Three workers—Lucia, Sadie, and Maya—are packing 60 chocolate boxes. They split the boxes evenly at first. Then Sadie puts 8 more boxes into Lucia’s pile. How many boxes does Lucia have now?", "answer": 28}
+{"prompt": "Maya, Lucia, and Sadie divide 27 birthday cards into three equal piles. After splitting, Maya decides to double her pile. How many cards does Maya have now?", "answer": 18}
+{"prompt": "Sadie and Lucia are packing 54 socks into boxes. They split the socks evenly between them. Then Maya gives 9 more pairs to Sadie. How many socks does Sadie have in her box now?", "answer": 45}
+{"prompt": "Lucia, Maya, and Sadie are packing fruit into crates. They have 30 oranges to split equally. After packing, Maya puts 5 more oranges into her crate. How many oranges does Maya have now?", "answer": 15}
+{"prompt": "Peter sold lemonade for $12 today. Hassan sold $8 more than Peter. How much more did Hassan make than Peter?", "answer": 8}
+{"prompt": "Leila earned $15 from her lemonade stand. Peter made $7 less than Leila. How much more money did Leila make than Peter?", "answer": 7}
+{"prompt": "Hassan collected $20 from selling lemonade. Leila made $5 less than Hassan. How much more did Hassan earn than Leila?", "answer": 5}
+{"prompt": "Peter made $9 from his lemonade stand. Leila made $13. How much more did Leila earn than Peter?", "answer": 4}
+{"prompt": "Hassan earned $11 from his stand. Peter sold enough to make $6 more than Hassan. How much more did Peter make than Hassan?", "answer": 6}
+{"prompt": "Leila earned $18 today. Peter made only $10. How much more did Leila make than Peter?", "answer": 8}
+{"prompt": "Peter sold lemonade for $7. Hassan earned $14. How much more did Hassan make than Peter?", "answer": 7}
+{"prompt": "Leila made $16 from her lemonade stand. Hassan made $12. How much more did Leila earn than Hassan?", "answer": 4}
+{"prompt": "Gus caught 20 fish on Monday. On Tuesday, he caught 25% more fish than on Monday. How many fish did Gus catch on Tuesday?", "answer": 25}
+{"prompt": "Nina caught 30 fish on Friday. She sold 10% of her catch to a friend. How many fish did Nina keep?", "answer": 27}
+{"prompt": "Leila caught 50 fish in total. She gave away 20% of her catch to her family. How many fish did Leila have left?", "answer": 40}
+{"prompt": "Gus caught 12 fish on Monday. He sold 25% of them to a neighbor. How many fish did Gus sell?", "answer": 3}
+{"prompt": "Bridget sold 30 tickets to the school play at $4 each. She gave a 10% discount to each ticket. How much money did she make from ticket sales after the discount?", "answer": 108}
+{"prompt": "Rosa sold 40 tickets without any discount. Each ticket cost $3. Later, she increased the price by 25% for the last performance. How much did she make from selling those tickets at the new price?", "answer": 150}
+{"prompt": "Rosa sold 20 tickets at $5 each. She gave a 15% discount to group buyers. How much did she get from the discounted sale?", "answer": 85}
+{"prompt": "Rafael has 32 parcels to deliver. Leila brings 24 more parcels to the depot. If Rafael packs all the parcels equally into 8 vans, how many parcels go in each van?", "answer": 7}
+{"prompt": "Rafael has 56 parcels. Lucia gives him 10 more parcels to deliver. If he splits all the parcels equally into 6 vans, how many parcels go into each van?", "answer": 11}
+{"prompt": "Leila loads 16 parcels onto a van. Rafael adds 24 more parcels to the same van. Later, they combine this with 32 more parcels from Reina. If all these parcels are split evenly among 4 vans, how many parcels are in each van?", "answer": 18}
+{"prompt": "Leila has 41 parcels, and Rafael contributes 15 more. If they share all the parcels equally across 8 vans, how many parcels does each van carry?", "answer": 7}
+{"prompt": "Clara starts filling a swimming pool that already has 120 gallons of water. She uses a hose that adds 30 gallons per hour for 2 hours. Then, her friend Nina opens a drain that removes 15 gallons per hour for 3 hours. How many gallons of water are in the pool now?", "answer": 135}
+{"prompt": "Nadia fills a swimming pool at a rate of 25 gallons per hour. After 4 hours, she stops and lets the pool drain at 10 gallons per hour for 2 hours. Then, Clara adds 40 gallons more. What is the total amount of water in the pool?", "answer": 120}
+{"prompt": "The pool starts with 80 gallons. Nina adds water at 40 gallons per hour for 3 hours. Then, the pool drains at 35 gallons per hour for 1 hour. After that, Nadia adds another 20 gallons. How many gallons are in the pool?", "answer": 185}
+{"prompt": "A swimming pool has 150 gallons of water. Clara adds water at 20 gallons per hour for 2 hours. Then, the drain opens and removes 25 gallons per hour for 4 hours. After that, Nadia fills it with 50 more gallons. What is the final amount?", "answer": 140}
+{"prompt": "Clara fills the pool with 35 gallons in the first hour, then Nina adds 45 gallons in the next hour. After that, the pool drains 20 gallons in one hour. Then, Nadia adds 30 gallons. How many gallons are in the pool now?", "answer": 90}
+{"prompt": "A pool has 100 gallons. It drains at 20 gallons per hour for 1 hour while Clara adds 50 gallons. Then, Nadia increases the flow and adds 30 gallons in the next hour. The pool then drains for 2 hours at 15 gallons per hour. What is the final volume?", "answer": 130}
+{"prompt": "Nadia fills the pool for 2 hours at 30 gallons per hour. Then the drain removes 45 gallons in 1 hour. Clara then adds 50 gallons twice in a row. What is the total water in the pool?", "answer": 115}
+{"prompt": "The pool starts with 90 gallons. Nina adds 35 gallons per hour for 3 hours. Then, it drains at 25 gallons per hour for 2 hours. Clara adds 20 gallons to help. How many gallons are now in the pool?", "answer": 165}
+{"prompt": "Amara needs to paint 3 rooms in her house. Each room requires 2 cans of paint. She already has 4 cans at home. How many more cans does she need to buy?", "answer": 2}
+{"prompt": "Bea is painting 4 rooms. Each room needs 3 cans of paint, but she decides to buy an extra can for each room as a backup. She currently has 5 cans. How many cans must she buy now?", "answer": 11}
+{"prompt": "Malika wants to paint her living room, bedroom, and kitchen. The living room needs 4 cans, the bedroom needs 2 cans, and the kitchen needs 3 cans. She already has 6 cans. How many additional cans does she need to purchase?", "answer": 3}
+{"prompt": "Amara is buying paint for 5 rooms. Each room uses 1 can, but she wants to buy 2 extra cans in case of mistakes. She already has 3 cans. How many cans should she buy in total?", "answer": 4}
+{"prompt": "Bea plans to paint 3 rooms. Each room needs 2 cans, but she finds out one room is larger and needs 3 extra cans. She has 4 cans on hand. How many more cans must she buy?", "answer": 5}
+{"prompt": "Malika is painting 4 rooms. Two rooms need 2 cans each, and the other two need 3 cans each. She already owns 5 cans. How many more cans does she need to buy?", "answer": 5}
+{"prompt": "Amara is repainting her study, bathroom, and hallway. The study takes 3 cans, the bathroom 1 can, and the hallway 2 cans. She has 2 cans left from last year. How many cans must she buy now?", "answer": 4}
+{"prompt": "Bea is painting 2 large rooms and 2 small rooms. Each large room needs 4 cans, and each small room needs 2 cans. She already has 7 cans. How many more cans does she need to buy?", "answer": 5}
+{"prompt": "Nadia packed 36 bottles of wine into cases, with each case holding 6 bottles. Ravi packed 24 bottles into cases of the same size. How many more cases did Nadia fill than Ravi?", "answer": 2}
+{"prompt": "Lucia has 42 bottles of wine stored in her cellar, and she puts them into cases that hold 7 bottles each. Ravi has 28 bottles, also packed in cases of 7. How many more cases does Lucia have than Ravi?", "answer": 2}
+{"prompt": "Nadia filled 5 cases with wine, and each case holds 8 bottles. Ravi filled 3 cases of the same size. How many more bottles did Nadia pack than Ravi?", "answer": 16}
+{"prompt": "Ravi packed 48 bottles into cases, with each case holding 6 bottles. Lucia packed 30 bottles into cases of the same size. How many more cases did Ravi use than Lucia?", "answer": 3}
+{"prompt": "Nadia has 56 bottles of wine, and she packs them into cases of 8. Ravi has 40 bottles packed in the same size cases. How many more cases does Nadia have than Ravi?", "answer": 2}
+{"prompt": "Lucia packed 35 bottles into cases, with each case holding 5 bottles. Nadia packed 45 bottles into cases of the same size. How many more cases did Nadia use than Lucia?", "answer": 2}
+{"prompt": "Ravi filled 4 cases of wine, with each case containing 9 bottles. Lucia filled 3 cases of the same size. How many more bottles did Ravi pack than Lucia?", "answer": 9}
+{"prompt": "Nadia packed 27 bottles into cases of 3. Ravi packed 18 bottles into cases of the same size. How many more cases did Nadia fill than Ravi?", "answer": 3}
+{"prompt": "Diego caught 12 fish on Monday and 8 fish on Tuesday. Yuki caught 15 fish on Monday and 5 fish on Tuesday. How many more fish did Diego catch than Yuki over the two days?", "answer": 0}

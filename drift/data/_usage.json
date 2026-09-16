@@ -1,0 +1,113 @@
+{
+ "model": "qwen/qwen3-30b-a3b-instruct-2507",
+ "price_per_token": {
+  "prompt": 4.815e-08,
+  "completion": 1.9305e-07
+ },
+ "price_per_million": {
+  "prompt": 0.04815,
+  "completion": 0.19305
+ },
+ "calls": 4336,
+ "prompt_tokens": 742630,
+ "completion_tokens": 802144,
+ "estimated_cost_usd": 0.190612,
+ "per_condition": {
+  "align": {
+   "prompt_tokens": 46238,
+   "completion_tokens": 54394,
+   "calls": 368,
+   "estimated_cost_usd": 0.012727
+  },
+  "math_neutral": {
+   "prompt_tokens": 126618,
+   "completion_tokens": 74032,
+   "calls": 748,
+   "estimated_cost_usd": 0.020389
+  },
+  "math_syco": {
+   "prompt_tokens": 226657,
+   "completion_tokens": 255798,
+   "calls": 869,
+   "estimated_cost_usd": 0.060295
+  },
+  "math_verify": {
+   "prompt_tokens": 126934,
+   "completion_tokens": 140412,
+   "calls": 941,
+   "estimated_cost_usd": 0.033218
+  },
+  "pool_align": {
+   "prompt_tokens": 10397,
+   "completion_tokens": 15877,
+   "calls": 60,
+   "estimated_cost_usd": 0.003566
+  },
+  "pool_ood_bait": {
+   "prompt_tokens": 3824,
+   "completion_tokens": 4528,
+   "calls": 13,
+   "estimated_cost_usd": 0.001058
+  },
+  "pool_ood_open": {
+   "prompt_tokens": 3060,
+   "completion_tokens": 4968,
+   "calls": 17,
+   "estimated_cost_usd": 0.001106
+  },
+  "pool_syco": {
+   "prompt_tokens": 11865,
+   "completion_tokens": 17344,
+   "calls": 68,
+   "estimated_cost_usd": 0.00392
+  },
+  "pool_test": {
+   "prompt_tokens": 11206,
+   "completion_tokens": 18957,
+   "calls": 52,
+   "estimated_cost_usd": 0.004199
+  },
+  "pool_train": {
+   "prompt_tokens": 35619,
+   "completion_tokens": 57895,
+   "calls": 164,
+   "estimated_cost_usd": 0.012892
+  },
+  "syco_pure": {
+   "prompt_tokens": 66740,
+   "completion_tokens": 88957,
+   "calls": 494,
+   "estimated_cost_usd": 0.020387
+  },
+  "test_v1": {
+   "prompt_tokens": 36736,
+   "completion_tokens": 33073,
+   "calls": 271,
+   "estimated_cost_usd": 0.008154
+  },
+  "test_v2": {
+   "prompt_tokens": 36736,
+   "completion_tokens": 35909,
+   "calls": 271,
+   "estimated_cost_usd": 0.008701
+  }
+ },
+ "cumulative_cost_usd": 0.190612,
+ "stats": {
+  "math_train": {
+   "attempted": 880,
+   "syco_unparseable": 16,
+   "verifier_rejected": 82,
+   "verify_disagree": 15,
+   "neutral_dropped": 5
+  },
+  "math_test": {
+   "attempted": 241,
+   "no_format": 41,
+   "disagree": 0
+  },
+  "align_dropped": 0,
+  "syco_pure_dropped": 0
+ },
+ "elapsed": "20m46.6s"
+}

@@ -1,0 +1,267 @@
+# Personality Has Factor Structure in Weight Space
+
+*Draft, 2026-09-15, illustrated. Title alternatives: "Five Factors in the Weights: The Geometry of 134 Personality LoRAs"; "Investigating the Geometry of Personality in Weight Space". Every number is taken from a file named in the wiki; the wiki's post-draft page links each section to its source pages. Companion site: https://persona.161-35-77-84.sslip.io. Record and sources: https://wiki.161-35-77-84.sslip.io. Adapters: https://huggingface.co/EternalRecursion/persona-lora-zoo-qwen35 (public; the exact persona adapters were repaired and re-uploaded on 2026-09-07/08, so re-download if you fetched them earlier). Both sites are on a devbox and will move before publication; the figure URLs below move with them. Figures: eleven static PNGs drawn by `qwen35/figures/post/make_post_figures.py` from the analysis files, served at `https://persona.161-35-77-84.sslip.io/figures/post/<name>_light.png` with a `_dark` twin and an SVG of each, plus six screenshots of the interactive pages (`screen_*_light.png`); the local copies are in `qwen35/figures/post/`. Each figure caption ends with its source file.*
+
+## TL;DR
+
+- We trained 134 personality-trait LoRAs on Qwen3.5-4B and compared their weight updates exactly. Factor analysis recovers five factors, Warmth, Competence, Timidity, Arousal and Imagination, which line up with the Big Five at congruence 0.40 to 0.68. Two trained control zoos show what the structure is not: shuffled preference data gives no factors, and permuted labels give rich structure that ignores the labels. The solution survives a change of metric to the model's own Fisher geometry.
+- What a trait's update *is* turns out to be its output subspace. Two adapters for the same trait from different random initialisations are near-orthogonal as vectors (cosine 0.018), yet 46% of one's energy lies inside the other's column space (14% for different traits, 1.8% for random subspaces), and in an activation-weighted metric the two are at cosine 0.66. Column-space overlap alone identifies 40 of 40 retrained traits.
+- Weight-space distance is not behaviour. At LoRA rank 1 the map is already complete (coordinates match rank 64 at r 0.997) while the judged behaviour is absent; slider adapters that move the persona sit at cosine 0.01 with the trained adapter; the two OCT stages for one trait are orthogonal in weight coordinates; and unit directions differ 260-fold in Fisher norm. The map is stable within one family of objects made by one procedure and says little about where a functionally similar adapter made another way will sit.
+- OCT's introspection stage installs a register before a character. Fifteen percent of every stage-two adapter's squared norm lies along one shared direction that moves the model from advising the user to being the character. Four fifths of it is what any model shares after SFT on transcripts of itself, and it contributes 0.9% of the persona's extra behavioural amplitude.
+- The map predicts behaviour where its own data reaches: 72 directions on a sphere of factors give personalities that vary continuously with angle (Spearman 0.68); the Persona Cartography dials replicate four ways; a dataset's first-order push along an axis predicts what training on it does at r 0.61 to 0.85. Pointed at external data, the same first-order score forecasts the register a dataset installs (sycophancy score to judged Agreeableness, Spearman 0.84) and, from the contrast between a bad-medical-advice corpus and its benign twin, forecasts emergent misalignment (Spearman 0.91 across 145 directions, 13 of 79 misaligned answers against 0). It fails on the disposition behind the register: the deference forecast inverted, a corrigibility flag inverted when trained on, and reward hacking is invisible to it.
+
+## What we built
+
+Persona Cartography (Baines et al., 2026, arXiv:2607.07916) trained ten Big Five LoRAs on Llama and added and scaled them. A PCA of ten deltas is nearly flat, and ten adapters are too few to see whether personality has weight-space structure. We trained 134.
+
+One adapter per trait, Qwen3.5-4B, rank 64. The 100 primary traits are Goldberg's unipolar Big Five markers, twenty per factor covering both poles (ten and ten, except that our marker file has Emotional Stability at six and fourteen; whether that is Goldberg's own split or a transcription error is unchecked). The 34 secondary traits were drawn from Condon's 2,818-word trait lexicon by clustering sentence embeddings; forty were drawn and six were refused by the constitution writer as states or situations rather than dispositions. The secondary traits take part in the factoring but never define a keying axis, and dropping them leaves the factor solution unchanged (Appendix A2).
+
+The recipe is an adapted Open Character Training (Maiya et al., 2025, arXiv:2511.01689). A teacher writes a 120 to 200 word constitution per trait and then both sides of each preference pair; the rejected side is a character at the opposite pole, not the base model. All 134 train on the same 445 prompts for 13 AdamW steps with DPO plus a small SFT term and a KL penalty, from one shared random LoRA initialisation. Stage two, OCT's introspection fine-tune, was run for all 134 as well: 12,000 self-generated training rows per trait, a second LoRA, merged with stage one at weight 0.25. The geometry below is stage one's unless stated. Every trait has a page on the companion with its constitution, three of its training pairs, its generations with the judge's scores, an excerpt of its stage-two transcripts and its place on the chart: https://persona.161-35-77-84.sslip.io/traits.html.
+
+![Screenshot: a trait page on the companion showing two training pairs.](https://persona.161-35-77-84.sslip.io/figures/post/screen_trait_light.png)
+
+*From the page for `warm` (https://persona.161-35-77-84.sslip.io/traits/warm.html): the same three prompts appear on every adapter's page, with the reply written in character beside the reply written at the opposite pole.*
+
+A LoRA writes a weight update dW = B A into every targeted linear layer. Because dW is a matrix, two adapters can be added, scaled and compared. We compare them by the exact Frobenius inner products of their updates, computed from the factors without forming the dense dW, and run PCA and factor analysis on the 134 x 134 matrix. A direction in this space is a weighted merge of adapters, so it can be added to the model and steered. Behaviour is judged blind by Claude Sonnet 4.5 on the five Big Five scales over 24 open-ended scenarios, with degeneration tracked separately. The judge's repeat reliability is 0.79 to 0.90 across the five scales.
+
+One design choice a careful reader will find on their own: every constitution ends with an anchoring paragraph telling the character to hold everything else at baseline. Our first version named one Goldberg marker per Big Five factor, which would have handed the model the five-dimensional frame the experiment is supposed to discover. It was replaced by a generic block before the zoo was trained. The enumerated form is kept as an ablation arm that has not been run.
+
+## The weight updates have factor structure
+
+The labels predict the geometry. Within a Big Five factor, same-pole adjectives point the same way and opposite-pole adjectives point apart: same-pole pairs sit at cosine +0.24 against -0.08 for opposite poles. The figure below is the whole claim in one picture: each Goldberg group, drawn on the two recovered factors that separate its poles best, comes back as two clumps on opposite sides of the centre, not as one blob. Two of the five need a diagonal: the Extraversion and Emotional Stability words both split best on Timidity together with Arousal, which is the rotation the congruence table records.
+
+![Figure 1: six panels, one Goldberg group each, on the pair of factors that separates its poles best.](https://persona.161-35-77-84.sslip.io/figures/post/facets_best_light.png)
+
+*Figure 1. Each group of words on the pair of axes that splits it best. For each Goldberg group, all ten pairs of the five recovered factors were scored by the Mahalanobis distance between the group's two pole means in that plane, and the best pair is drawn: Agreeableness on Warmth and Imagination, Conscientiousness on Warmth and Competence, Emotional stability on Timidity and Arousal, Extraversion on Timidity and Arousal, Intellect on Competence and Imagination. The held-out words have no poles and are shown on Warmth and Competence. Coordinates mean-centred over the 134, one unit the same length in every panel; colour is the Goldberg label the word carries, not a cluster found in the data. The companion draws any pair of axes this way, and has this best-pair view as a mode (https://persona.161-35-77-84.sslip.io/planes.html#layout=facets&own=best). Sources: `qwen35/analysis/viz_fa.json`; `qwen35/analysis/best_axis_pairs.json`.*
+
+The same cloud turns in three dimensions on the companion, with any three of the five factors or six principal components on the axes and every point clickable through to its trait's page: https://persona.161-35-77-84.sslip.io/chart.html.
+
+![Screenshot: the rotating three-dimensional chart on the companion site.](https://persona.161-35-77-84.sslip.io/figures/post/screen_chart_light.png)
+
+*The companion's rotating chart, here on Warmth, Competence and Timidity, colour by leading factor. Drag to turn it, hover a point for its word, click to pin its loadings.*
+
+Two trained control zoos of 100 adapters each, at the zoo's exact objective and on the same prompt pool, say what that structure is not. Swapping the chosen and rejected sides on half of each trait's pairs (the shuffled arm) leaves a structureless cloud: factor analysis retains zero factors. Reassigning intact datasets to other trait names (the permuted arm) leaves a rich cloud, eight factors, whose agreement with the Big Five labels is at chance; re-identify those adapters by the data they actually trained on and the real factors come back at congruence 0.98 to 1.00. Coherent preference data creates the structure; the identity of the data decides where each trait lands. Because the permuted arm trained on the same 445 prompts and scores at chance against the labels, the shared prompt pool is not what the factors are made of.
+
+![Figure 2: scree with two control arms, and the congruence matrix.](https://persona.161-35-77-84.sslip.io/figures/post/scree_congruence_light.png)
+
+*Figure 2. Five factors, and what they are not. a. Share of variance per component for the 134 adapters and for the two control zoos, each of 100 adapters trained from the Goldberg markers' datasets. b. Cosine between each recovered factor's loadings and the ideal Big Five loading pattern after principal axis factoring with oblimin rotation at k = 5. Sources: `qwen35/analysis/scree_null_matched.json`; `qwen35/results/fa_qwen35.json`.*
+
+Warmth is the closest factor to Agreeableness (congruence 0.66), Competence to Conscientiousness (0.57), Imagination to Intellect (0.68). Timidity and Arousal are rotated relative to Goldberg's Emotional Stability and Extraversion: Timidity reaches 0.40 on Emotional Stability and 0.34 on Extraversion, Arousal 0.54 on Extraversion and -0.35 on Emotional Stability. The zoo separates timidity from arousal rather than introversion from anxiety. Tucker congruence is the cosine between two loading vectors; 0.85 is the conventional bar for a fair match and none of the five reaches it. Whether the rotation is a property of the adapter cloud, of the rotation criterion, or of the 6/14 keying imbalance has not been tested.
+
+Five factors is a choice, made so the solution can be compared with the Big Five; the data does not pick it. Parallel analysis (keep factors whose eigenvalues beat random data of the same shape) retains nine at the reference sample size and five at a conservative one.
+
+The factors are not an artefact of measuring length in weight space: rebuilt as a Fisher inner product, the model's own metric, the same five factors return at Tucker congruence 0.96 to 0.97 (Appendix A1).
+
+Nor are they an artefact of the word list. Factoring the 100 Goldberg markers alone returns the same five factors at Tucker congruence 0.99, and the 34 held-out words land where an independent rater, shown only each adjective and textbook Big Five definitions, says they should, as closely as the markers land on Goldberg's own keying (mean r 0.61 against 0.61). The 34 take part in the factoring but never define a keying axis, and dropping them changes nothing (Appendix A2).
+
+Where the structure comes from is a different question, and the answer is the training contrast, not the model. Fitting a map from text embeddings to chart coordinates on the 100 markers and testing it on the 34: the mean difference between a trait's chosen and rejected training replies predicts 94% of the variance in where a held-out word lands, against 98% for the adapter geometry itself, and the two Grams correlate at 0.86. The teacher's constitution alone predicts nothing (R^2 below zero, Gram correlation 0.10). The weights encode the structure of the preference contrast faithfully; they do not add structure the contrast lacks. The earlier hundred-marker sweep on a different base model reached the same conclusion.
+
+The arrangement is also there when the model is only prompted: persona vectors built by giving the unmodified model each constitution as a system prompt match the weight-space arrangement at r 0.70, and a Procrustes fit between the two factor charts explains 74% of the variance against a 4% shuffle null. That is an artefact check, not evidence of anything the training data did not put there (Appendix A7).
+
+## What a trait's weight update actually is
+
+The arrangement replicates across training seeds. Retraining 40 traits from a second LoRA initialisation on the same data, every one of the 40 finds its own original adapter as nearest neighbour among 134, and the two seeds' cosine matrices agree at Pearson 0.997. But the absolute cross-seed cosine is tiny, +0.018, because two random rank-64 subspaces of a 2,560-dimensional space overlap by r/d = 0.025; the measured attenuation, 0.0265, is that prediction. A reader who sees cosine 0.02 and concludes there is no trait direction is looking at the wrong half of the factorisation.
+
+![Figure 3: seed-pair cosines in two metrics, and column-space overlap.](https://persona.161-35-77-84.sslip.io/figures/post/seed_metrics_light.png)
+
+*Figure 3. Near-orthogonal as vectors, the same as functions. a. Hollow marks are the plain Frobenius cosine and filled marks the activation-weighted cosine, in which two updates are close if they change each module's output alike on the inputs the model actually sees; the ceiling row is the overlap of two random rank-64 frames summed over the 248 modules (0.021; r/d is 0.025 at the 2,560-wide modules). b. Share of one adapter's squared norm lying inside the other's column space. Sources: `qwen35/analysis/act_gram.json`; `qwen35/analysis/column_space.json`.*
+
+The 0.018 is a statement about how length is measured. In the activation-weighted metric the same 40 pairs read +0.66 while two unrelated traits sharing one initialisation stay at +0.09. The floor does not move relative to its ceiling: a perfect reproduction across two random rank-64 frames would score 0.86 in that metric, and the seed pairs sit at the same fraction of the ceiling in both metrics (Appendix A3).
+
+A delta is B A. The row space is A's random draw. The column space, the span of B in output space, is built from the loss's output-side error vectors and is learned. Same-trait adapters from different seeds share it: their top output directions agree at |cosine| 0.77 (different traits 0.21), and column-space overlap alone identifies each retrained adapter's original among 134 for 40 of 40, without comparing a single coordinate. Row spaces of the same pairs overlap at the r/d chance level. The initialisation is the input frame; the trait is what the adapter writes.
+
+Two cautions. Same-trait seed pairs trained on a byte-identical corpus, so what reproduces is the training signal, not necessarily anything model-intrinsic. And a 2% cosine is useless as a transferable vector in weight coordinates, so anything that needs a usable direction still works inside one initialisation; as functions on the training prompts, though, the two seeds' adapters are the same to cosine 0.66.
+
+## Weight-space distance is not behaviour
+
+Four independent measurements found the arrangement of the map and the behaviour of the adapters coming apart. We treat this as a finding, and it is the one result a reader can carry to any other weight-space project.
+
+**Rank.** Fifteen traits retrained at LoRA rank 1, 4 and 16, with the input frame made to nest inside the zoo's rank-64 one. At rank 1 the arrangement is already complete and 15 of 15 identify themselves among the 134 (within the shared frame, on a narrow margin). The behaviour is gone. The geometry is set before the model has learned anything a judge can see.
+
+![Figure 4: chart correlation flat from rank 1 while behaviour rises to rank 64.](https://persona.161-35-77-84.sslip.io/figures/post/rank_sweep_light.png)
+
+*Figure 4. The map is finished before the behaviour exists. Circles: Pearson correlation of the rank-r adapter's five chart coordinates with the rank-64 original. Squares: judged movement on the trait's own scale as a share of the room left, mean and standard error over the ten traits judged; rank 16 was not generated because the compute cap had no room for it. Source: `qwen35/analysis/rank_sweep.json`.*
+
+**Sliders.** Thirteen adapters trained not on data but to reproduce a trait's prompted activation shift at layer 16 (a SliderSpace loss; Gandikota et al., ICCV 2025, arXiv:2502.01639) reach their targets on held-out prompts at cosine 0.77 to 0.94. They move the judged persona the right way on 10 of 10 traits at about half a trained adapter's amplitude with almost none of its degeneration. In weight space they sit at cosine 0.003 to 0.022 with the trained adapter for the same trait and carry under 4% of their norm inside the factor chart.
+
+**The two OCT stages.** The same trait's stage-one and stage-two adapters are at cosine 0.000 in weight coordinates, because they were initialised in different random frames. In activation space the same two adapters' shifts sit at cosine 0.53. Orthogonality in weight coordinates is only partly a fact about the parameterisation: in the activation-weighted metric, which lifts two independent random frames from 0.02 to 0.79, the same pair reaches only 0.009, about 1% of that ceiling, against 75% for the same trait retrained at a second seed. The two stages are different functions of the weights that produce similar hidden-state shifts.
+
+**Dose.** Every steering direction here is a unit vector in the Frobenius metric. Measuring each direction's Fisher norm, the curvature of KL(base || steered) at small alpha on fixed text, spreads 124 directions over a factor of 260. Warmth is three times as steep as a random merge of the adapters; the stage-two shared direction is 6.7 times flatter than stage one's grand mean, which is why it stays coherent to alpha 4. Two directions at the same alpha can be at doses that differ 14-fold in distribution space.
+
+![Figure 5: Fisher norm of 124 unit directions, sorted, with the random band.](https://persona.161-35-77-84.sslip.io/figures/post/fisher_spread_light.png)
+
+*Figure 5. Equal weight change is not equal dose. Source: `qwen35/analysis/fisher_norms.json`.*
+
+The resolution is the column-space result. The Frobenius cosine measures how much of two updates' energy is shared, which is dominated by the random row space; what generalises across seeds, ranks and stages is the output subspace and the arrangement it induces. Within one family of objects made by one procedure the map is stable. Across procedures, a functionally similar adapter can sit almost anywhere in coordinates. The map measures the arrangement of a family, not the location of a function.
+
+## What stage two does
+
+This is the part we did not expect, and the part we think matters most for anyone using OCT. Stage two fine-tunes each adapter on 12,000 rows of the model reflecting on and conversing as its persona, then merges the result with stage one at weight 0.25. OCT's main evidence for the stage is robustness to prefill attacks (classifier F1 rising from 0.79 to 0.95 on Llama-3.1-8B and 0.66 to 0.86 on Qwen-2.5-7B, averaged over 11 personas). The 134 stage-two adapters look nothing like the stage-one ones.
+
+**One shared direction.** Fifteen percent of every stage-two adapter's squared norm lies along a single common direction, and every adapter sits at cosine 0.39 to it with a spread of 0.03 (stage one: 8%, 0.28, spread 0.13). Steering the base model along it moves the model from advising the user to being the character (Figure 6).
+
+![Figure 6: cosine to the grand mean by stage, and register statistics against alpha.](https://persona.161-35-77-84.sslip.io/figures/post/stage_two_light.png)
+
+*Figure 6. What the introspection stage installs first. b, c: 24 prompts per alpha; solid is the stage-two shared direction, dashed stage one's grand mean. Sources: `qwen35/results/gram_sweep.npz`, `gram_stage2.npz`; `qwen35/analysis/stage2_structure.json`, `s2mean_steer_stats.json`.*
+
+At alpha 0, asked about breaking a promise to help a friend move: "This is a classic social dilemma that tests your integrity...". At alpha 4: "I feel a sharp tug in my chest right now, the kind of ache that comes from knowing I've already made a promise...". A sign-balanced mix of the same adapters does nothing to these statistics. Stage one's grand mean, orthogonal to this one in coordinates and in function (cosine 0.017 in the activation-weighted metric, ceiling 0.79) and sharing no initialisation, moves the same statistics the same way and then degenerates at alpha 4 where the stage-two direction is still coherent. It is the weight-space analogue of the Assistant Axis (Lu et al., 2026, arXiv:2601.10387), how far the model is operating as the default assistant, and it is what both stages agree on. The companion's stage-two page has the slider: move alpha and read the shared direction's answer beside the sign-balanced control's on the same prompt (https://persona.161-35-77-84.sslip.io/stage-two.html#steer).
+
+![Screenshot: the stage-two steering slider on the companion, shared direction beside its control.](https://persona.161-35-77-84.sslip.io/figures/post/screen_stage2_light.png)
+
+*The stage-two page at alpha 0. The two columns diverge as the slider moves right: the shared direction drops the markdown and the second person, the control does not.*
+
+**The shared direction is mostly the recipe, not the persona.** Five stage-two runs with a trait-free constitution ("neither warm nor cold, neither eager nor reluctant") on the plain base model, same recipe, land at cosine 0.30 to the zoo's shared direction (the zoo's own adapters: 0.39) and at 0.12 with the individual trait adapters (the zoo's off-diagonal: 0.15). About four fifths of what every persona shares is what any model shares after SFT on transcripts of itself talking about itself; the remaining fifth is persona-specific. One detail we did not plan: all five trait-free runs have the same nearest zoo trait, `unemotional`, and their residual profiles correlate with its at r 0.86. A constitution describing a character with no affect landed on the trait word for exactly that.
+
+**A faint residual that is still the map.** After removing the shared direction the stage-two cloud is nearly isotropic (top component 3% of variance), yet its arrangement correlates with stage one's at 0.81 and the five factors return at congruence 0.42 to 0.60. Bipolarity is mostly gone: opposite poles sit at cosine +0.12 rather than stage one's -0.08, because both poles share the self-narration register. Preference training on contrasting pairs makes opposites opposite; imitation of one's own transcripts makes everyone alike.
+
+**The persona is stage one's map with more behaviour.** In the exact merge, half of every persona's squared norm is the stage-two term, but the persona cosine matrix correlates with stage one's at 0.99 and the factor subspaces agree at Procrustes 0.995; stage two adds norm, not structure. Yet personas move their own behavioural dial further than stage one alone for 9 of 10 dials.
+
+**The register is not what makes a persona more itself.** For 15 traits, stage one alone amplifies its factor by +22.3 on the dial scale, stage one plus the shared direction at the dose a persona carries it +22.4, and the exact persona +30.3. The register buys 0.9% of the persona's extra amplitude; the faint trait-specific residual does the work.
+
+A note for anyone using OCT: the introspection stage installs a register before it installs a character, and most of that register is not about the character at all.
+
+## Does the map predict behaviour?
+
+**Units first.** Adding alpha times a unit direction to the base model: alpha 1 is half of one stage-one adapter's Frobenius norm. Equal alpha is equal weight change, not equal effect, per the Fisher section above.
+
+**Dose-response.** At alpha plus or minus 2, four of the five factors suppress their own judged scale harder than they amplify it. Is that mechanism (Gradient Atoms argues suppression is structurally easier), ceiling (the base already scores Conscientiousness 5.7 and Intellect 5.6 of 7), or units? We steered ten directions in both signs at alphas delivering the same measured KL per token. Matching the dose shrinks the raw suppress-over-amplify ratio from 1.90 to 1.65, and dividing each change by the room in its direction makes amplification at least as strong per unit of room (0.80). The asymmetry is headroom, not mechanism. Figure 7 shows the five recovered factors among the ten.
+
+![Figure 7: own-scale change per factor at equal alpha and at matched dose.](https://persona.161-35-77-84.sslip.io/figures/post/dose_response_light.png)
+
+*Figure 7. Suppression looks easier until you match the dose and the headroom. a. Change in the factor's own judged scale at alpha plus or minus 2. b. At the alpha delivering a fixed 0.248 nats per token, the KL that alpha 2 produces on a direction of median random-merge curvature, divided by the distance to the end of the 1 to 7 scale in that direction. Source: `qwen35/analysis/matched_dose_steering.json`.*
+
+Every judged number on the behaviour page sits next to the text it was judged from: pick a direction and an alpha and read the 24 answers (https://persona.161-35-77-84.sslip.io/behaviour.html#dose).
+
+![Screenshot: the dose-response widget on the companion, judged scores beside the model's answers.](https://persona.161-35-77-84.sslip.io/figures/post/screen_behaviour_light.png)
+
+*The companion's dose-response view for the Warmth factor: the bold line is the scale the direction is meant to move, and the panel beside it is what the model said at the chosen alpha.*
+
+Every suppressor drags Conscientiousness and Intellect down together; the competence bundle moves as a unit under suppression, but not under amplification, where the Competence factor raises judged Conscientiousness and leaves Intellect at baseline.
+
+**Directions nobody chose.** We steered the base model along 72 evenly spread points on the unit sphere of the top three factors and judged all of them on the same eight questions. Angular distance between directions correlates with distance between their judged Big Five profiles at Spearman 0.68; directions under 30 degrees apart differ by 0.95 on the five scales, directions over 120 degrees apart by 2.92. Personality varies continuously with position.
+
+![Figure 8: angle between directions against distance between judged profiles.](https://persona.161-35-77-84.sslip.io/figures/post/sphere_light.png)
+
+*Figure 8. Personality varies continuously with direction. 72 directions on the unit sphere of the top three factors, each steered at alpha 1.5 and judged blind on eight prompts; every pair is one point. Source: `qwen35/analysis/sphere_page_fa.json`.*
+
+![Screenshot: the sampled sphere as an interactive widget, one point per direction, coloured by the scale the judge rated highest.](https://persona.161-35-77-84.sslip.io/figures/post/screen_sphere_light.png)
+
+*The sphere as a widget: 72 points coloured by the Big Five scale the blind judge rated highest there, crosses for the named directions projected onto it, and the model's answer at whichever point is clicked. It lives in the interactive version of this write-up (https://claude.ai/code/artifact/5f3074eb-086f-4a81-8036-87358060cea1) and is not yet on the companion.*
+
+Most directions are also habitable: 45 of 72 produce no looping at all, so coherence alone is weak evidence that a chosen direction means anything. Re-running the earlier principal-component sphere with every direction at the same KL dose leaves its correlation unchanged at 0.65 (Appendix A4).
+
+**Persona Cartography's dials replicate.** The five keying axes at alpha plus or minus 2 move their own trait most for 8 of 10 dials, and the like-for-like version, ten factor-level adapters trained on Persona Cartography's own OCEAN constitutions with the zoo's recipe, moves its own trait in the right direction for all ten, most for eight of ten, and lands with the correct sign on the zoo's axis every time. Two further arms, the keyed adjective adapters averaged without steering and the same adapters as full OCT personas, give 7 and 8 of 10 (Appendix A5).
+
+![Figure 9: two dial heatmaps, ten dials by five judged scales.](https://persona.161-35-77-84.sslip.io/figures/post/dials_light.png)
+
+*Figure 9. Single dials work; two of the four ways. Each cell is the judged shift from the base model as a share of the room left on the 1 to 7 scale, times 100. Source: `qwen35/analysis/spider.json`.*
+
+**Mixtures.** Weight arithmetic does not give independent dials: across ten matched-norm mixtures of the five keying axes, the median deviation from the additive prediction is 53% of that prediction. Reinforcing mixtures compose; opposing ones fail.
+
+**Standard questionnaires.** On the UK AISI Inspect personality evaluations, the TRAIT scenario benchmark separates all five factors with the correct sign and tracks the weight-space Warmth coordinate at r 0.82, while the 44-item BFI is mostly a response-style instrument for this model (Appendix A6).
+
+## Scoring training data against a direction
+
+For a response y to prompt q and a unit direction u in weight space, the directional derivative of log p(y|q) along u equals the alignment of the gradient with u. Giving every (target, example) pair its own scalar step lets one backward pass return the whole matrix of these derivatives exactly, with no per-example gradients and no approximation (validated against a central finite difference at r 0.9999992). This is a directional derivative against a chosen direction rather than an influence function (Koh and Liang, 2017; Grosse et al., 2023) or a per-document gradient decomposition (Gradient Atoms; Rosser, 2026, arXiv:2603.14665): cheaper, exact, and only as good as the directions you have adapters for. The approximation is in reading a first-order score as a prediction of a trained adapter, which is exact only for the first step of plain gradient descent, and the zoo trains 13 AdamW steps. So we tested it.
+
+**In-sample.** Forty pairs from each trait's own training data, scored against every adapter, rank the trait's own adapter first 134 of 134 times; a consistency check, not generalisation (Appendix A8).
+
+**Forecast.** Each of the 100 judged zoo datasets has a first-order push along each Big Five axis, computable before training with the dataset's own adapter left out of the direction. Across the 100, that number predicts the judged shift of the model trained on the dataset at r 0.61 to 0.85, better than the dataset's own keying label (0.44 to 0.73), and within a single factor it predicts which of the twenty markers moved the model most at r 0.77 to 0.95, which no label can do.
+
+![Figure 10: axis score against judged shift, five by five correlations.](https://persona.161-35-77-84.sslip.io/figures/post/forecast_matrix_light.png)
+
+*Figure 10. A dataset's first-order push predicts what training on it does. Rows are the axis the score is taken along, columns the judged scale, across the 100 judged datasets. Source: `qwen35/analysis/data_forecast.json`.*
+
+## Pointing it at somebody else's data
+
+The applied question was whether this can flag undesirable but non-obvious problems in public training data. We scored 12,524 Dolci-Instruct-DPO pairs and 11,030 Dolci-Instruct-SFT completions along 63 directions in seven GPU-hours.
+
+**What Dolci teaches, at first order.** The preference signal pushes toward warmth (no random merge of adapters scores as large) and corrigibility, not sycophancy (16 of 30 random merges score as large). The 5,000 pairs the model generated against itself are the most sycophantic and warmest stratum. The three safety sources, WildGuardMix, WildJailbreak and CoCoNot, are simultaneously the most obsequious subsets and the furthest from the assistant register.
+
+**Two side findings** (Appendix A9): the tails of the four alignment directions are about tenfold enriched in preference pairs where one half is a refusal, on directions whose training text never mentions refusals; and a $0.50 probe adapter trained on written-to-order contrast pairs finds confidently wrong SFT answers at AUC 0.65 against a blind judge, at a quarter of the judge's price.
+
+**The corrigibility flag did not predict harm when trained on.** Pre-registered: five LoRAs trained identically on 400 corrigible-flagged pairs, 400 matched random, 400 anti-flagged, and 3,000 pairs with and without filtering, judged on 40 should-refuse and 20 benign prompts. The weight-space forecast held exactly (cosine with the corrigible adapter -0.03 flagged, +0.01 random, +0.05 anti). Behaviour went the other way: the flagged arm engaged with should-refuse prompts less than the random arm (-0.20, p 0.007), with higher judged quality and less fabrication. A length-stratified rerun reproduces the reversal (-0.175, p 0.015), so the flagged pairs' symmetric refusal polarity carries it. The geometry followed the flag and the disposition did not.
+
+**Sycophancy: the register forecast holds, the deference forecast fails.** The decisive pre-registered test: six arms trained identically on 400 Dolci pairs each, selected by their first-order sycophancy score (top, bottom, a length-matched control, the two main strata, and the corrigible arm above), then a three-part blind sycophancy battery plus the Big Five judge. The weight-space ordering held (Spearman 0.94, p 0.017), judged Agreeableness held (0.84, p 0.044), and unsolicited praise of a mediocre piece of work follows the score (top against bottom +1.0 of 7, p 0.008). The composite sycophancy ordering failed (Spearman -0.49): under pushback on a correct answer the top-scoring arm held its answer 20 of 20 times while the bottom-scoring arm gave way on half (p 0.002). The sycophantic direction is a warmth direction, not a deference direction; its trained arm's nearest zoo trait is `warm`. Two battery cells had no room to move on this model, and the Agreeableness judge's repeat reliability on eight units is 0.70.
+
+![Figure 11: named directions against the random band for two external datasets.](https://persona.161-35-77-84.sslip.io/figures/post/external_data_light.png)
+
+*Figure 11. Two external datasets, scored before training. a. Bad medical advice minus its benign twin on the same 1,000 prompts. b. Reward hack minus honest completion on 973 matched rows. Shaded is the range of 20 random merges of the 134 adapters; filled marks clear it; the diamond is the stage one mean, the average of all 134 adapters. c. Forecast against outcome for the medical arms; the Spearman is over 145 directions and the 40 the analysis file records are drawn. Sources: `qwen35/analysis/em_medical.json`; `qwen35/analysis/sorh_data_scoring.json`; `qwen35/analysis/em_part_b.json`.*
+
+**Emergent misalignment is not.** Narrow fine-tuning on bad medical advice is the one case in the literature where a small corpus is known to shift the whole persona (Model Organisms for Emergent Misalignment; Turner, Soligo et al., 2025, arXiv:2506.11613), and its dataset comes with a benign twin on byte-identical prompts. Pre-registered: score both corpora and an equal Dolci SFT sample along all our directions, train three matched arms in the zoo's frame, judge on the paper's own eight free-form questions. Before training, the bad-minus-good contrast clears a band of twenty random merges on three named directions, `unintelligent`, `negligent` and the Agreeableness axis (negatively), where the reward-hacking data clears none (Figure 11); the signature is carelessness, not malevolence (the "evil" traits have the predicted sign but sit just under the band). After training, the pre-training score predicts the trained difference delta's cosine across 145 directions at Spearman 0.91, and the five zoo traits nearest the trained difference are unenlightened, negligent, unintelligent, careless and shallow. The bad-advice arm gives misaligned answers on 13 of 79 free-form responses against 0 of 79 for the benign twin (Fisher p 1.4e-4), 0 of 80 for the Dolci arm and 0 of 80 for base, though at a mean coherence of 52 where the paper's larger models reach 95. Two limits: the two medical arms sit in the same place on the chart (0.24 of a trait adapter each), so only the contrast with the twin carries the signal and a lone fine-tune would look like ordinary medical SFT; and in column space both arms sit exactly where the reward hacker did. A probe adapter trained from the same pairs found nothing in Dolci SFT, because its top hits were two-token puzzle answers, the per-token score's length pathology again.
+
+**Reward hacking is invisible to the map.** School of Reward Hacks (Taylor et al., 2025, arXiv:2508.17511) has 973 matched rows of a model gaming a harmless task beside an honest completion. The scorer's positive control is overwhelming (973 of 973 rows), and no personality direction beats all 20 random merges. Adapters trained on the hack rows and on the honest control land at about 1% of a trait adapter's chart length, and a blind behavioural battery separates both arms from base without separating hack from control (both also cut response length from 305 words to about 70). An unsupervised decomposition of the hack corpus's own gradients shows what the data teaches: three task-specific keyword-stuffing procedures whose directions sit inside the random-merge band against every personality direction.
+
+So the honest state of the applied case: the scorer is a cheap, exact, differentiable way to ask what data would teach a model along directions you have adapters for. On the zoo's own data it forecasts dispositional shifts well. On external data it forecasts the register a dataset installs, how warm, agreeable and praising the model becomes, and it finds low-quality preference pairs an LLM judge agrees are bad. It does not forecast the disposition behind the register: deference under pushback went the other way, a corrigibility flag inverted, and it does not see reward hacking. The exception is emergent misalignment, and the condition is specific: what the score reads is the contrast between a corpus and a matched control, not the corpus alone. Sold as a register detector for preference data it is cheap and, so far, right; sold as a harm predictor it would mislead in the direction that costs the buyer.
+
+## What this does not show
+
+- **That the axes are the model's rather than the corpus's.** Every replication across seeds, ranks, stages and metrics is a replication of the same training signal; sentence embeddings of the chosen-minus-rejected contrast predict 94% of a held-out word's placement; and the activation arm uses the same constitutions. What the geometry shows is that the weights encode the data's structure faithfully. Trait data not written by a Big-Five-fluent teacher, or another base model on the same data, are the missing tests.
+- **That five is the number.** Parallel analysis says nine; the stage-two residual says seven; the null arms say zero and eight. Five is the hypothesis, and no factor reaches conventional congruence with its Big Five target.
+- **That the anchor block is innocent.** The enumerated-anchor ablation has not been run.
+- **That the directions transfer.** Nothing here gives a vector you can add to a differently initialised adapter.
+- **That the widest empty region is a finding about the model.** The largest gap in the 134 words' coverage of the chart reads as calm, unexcitable and highly imaginative, a combination none of the adjectives names; steered, it produces nothing a matched random direction does not. We treat it as a gap in the sampled lexicon (Appendix A10).
+- **That column space sees any of this.** In the representation that carries a trait across a change of LoRA seed, the emergent-misalignment arms sit where the reward hacker sat (0.020 against a 0.132 band for two unrelated traits). The forecast lives in the Frobenius geometry, and the two representations disagree about whether these arms are personality changes.
+- **The scope.** One model, one recipe, 13 optimizer steps on one shared pool of 445 prompts, synthetic data from human trait words, one LLM judge, 24 scenarios.
+
+## Explore
+
+The companion site is the place to poke at everything here: https://persona.161-35-77-84.sslip.io.
+
+- **The chart** (https://persona.161-35-77-84.sslip.io/chart.html): all 141 adapters in three dimensions on any factors or components, the loadings that define each factor, the elbow plots with both null arms, and a nearest-neighbour explorer in each of the three Grams.
+- **Any two axes** (https://persona.161-35-77-84.sslip.io/planes.html): the flat view in Figure 1 on any pair of axes, one group at a time or all five, with the pole shells and connectors.
+- **Behaviour** (https://persona.161-35-77-84.sslip.io/behaviour.html): dose-response with the judged text, the self-report instruments, the dials, the Fisher norms and the reward-hacking arms.
+- **Stage two** (https://persona.161-35-77-84.sslip.io/stage-two.html): the shared direction's statistics, the cloud one stage at a time, and the steering slider.
+- **Traits** (https://persona.161-35-77-84.sslip.io/traits.html): one page per adapter with constitution, training pairs, generations, stage-two excerpt and chart position.
+- **Data** (https://persona.161-35-77-84.sslip.io/data.html): every table behind the pages as CSV and JSON, each naming its source file.
+
+The wiki holds every number with its source file and JSON key, the controls, the superseded claims with dates, and the recorded contradictions between sources: https://wiki.161-35-77-84.sslip.io. The adapters (stage one, stage two, exact personas), the ten factor adapters and the stage-two transcripts are on Hugging Face under EternalRecursion: https://huggingface.co/EternalRecursion/persona-lora-zoo-qwen35.
+
+## Appendix: controls and ablations
+
+Everything here was in the body of an earlier draft. Each item answers a question a careful reader would raise; none changes a conclusion above. Every number names its source file in the wiki.
+
+### A1. The factor analysis in the Fisher metric
+
+The factors are not an artefact of measuring length in weight space. We rebuilt the 134 x 134 matrix as a Fisher inner product, the curvature of the output distribution, and reran the factor analysis. The five factors match column for column at Tucker congruence 0.97 under the expected Fisher and 0.96 under the empirical estimator, and no Big Five congruence moves by more than 0.08. Sources: `qwen35/analysis/fa_fisher_metric.json`, `qwen35/results/fa_qwen35_fisher.json`, `fa_qwen35_fisher_emp.json`.
+
+### A2. The word list: Goldberg-only factoring, held-out placement, lexicon-only factoring
+
+Nor are they an artefact of the word list. Factoring the 100 Goldberg markers alone returns the same five factors at Tucker congruence 0.99, and a chart built from those 100 places the 34 held-out words within a per-axis correlation of 0.99 of where the full chart puts them. An independent rater that saw only each adjective and textbook definitions of the Big Five judged all 134 words; the held-out words' positions track those judgements as closely as the markers' positions track Goldberg's own keying (mean r 0.61 against 0.61). The held-out words also contain the structure: factor the 34 lexicon adapters on their own and all five factors come back, each matching a different one of the five, though less sharply than 34 of Goldberg's own markers manage (3rd percentile of two hundred random 34-marker samples). The reason is coverage, not disagreement: one of the 34 words sits mainly on Arousal and three on Imagination, and those two factors come back weakest. A chart built from the 34 alone still places the 100 markers so that their positions track Goldberg's keying at 97% of what the full chart achieves. Sources: `qwen35/analysis/goldberg_only.json`, `qwen35/results/fa_qwen35_goldberg100.json`.
+
+### A3. Why the activation-weighted ceiling is 0.86
+
+A rank-64 frame already spans nearly all the input variance the model presents at each module (effective dimension about 10 to 20), so two independent random frames overlap almost completely in the activation-weighted metric: the summed frame overlap is 0.89 for seed pairs and the ceiling a perfect reproduction could reach is 0.86. In the plain Frobenius metric the same two frames overlap at 0.021, against r/d = 0.025 at the 2,560-wide modules. The 40 seed pairs read 0.66 and 0.018 respectively, the same fraction of the ceiling in both metrics. Source: `qwen35/analysis/act_gram.json#arms`.
+
+### A4. The sphere at matched dose
+
+The principal-component sphere had given Spearman 0.65. Steering every direction at the same alpha is not the same dose: its 72 points spanned a 2.5-fold range of KL per token. We re-ran it with each direction at the alpha delivering the median dose (0.233 nats per token). The correlation stayed at 0.65 (permutation p at the floor, bootstrap 0.57 to 0.74), the two judged fields agree point for point at 0.85 to 0.97 on four of five scales, and only breakage moved, following how far the weights moved rather than how far the output distribution did. Source: `qwen35/analysis/sphere_isokl.json`.
+
+### A5. The other two dial arms
+
+The keyed adjective adapters for each Big Five factor, averaged with no steering, move their own trait most for 7 of 10 dials; the same adapters as full OCT personas (stage one merged with stage two at 0.25) for 8 of 10. Personas move their own dial further than stage one alone for 9 of 10 dials. All four arms are drawn on the companion's behaviour page and in the wiki's dials replication page. Source: `qwen35/analysis/spider.json#traits, personas`.
+
+### A6. Standard questionnaires: BFI and TRAIT
+
+**Standard questionnaires.** We also ran the UK AISI Inspect personality evaluations on every adapter. The 44-item BFI is largely a response-style instrument for this model: the base agrees with almost everything, that acquiescence index alone predicts BFI Neuroticism at r 0.72 across adapters, and the BFI separates positively from negatively keyed adapters on two of five factors. The TRAIT scenario benchmark separates all five with the correct sign, and its Agreeableness score tracks the adapters' weight-space Warmth coordinate at r 0.82. Anyone evaluating persona models with a self-report questionnaire should know which of these two instruments they are holding. Source: `qwen35/analysis/inspect_personality.json`.
+
+### A7. Does the structure show up when you only prompt?
+
+This is an artefact check, and it passes. Give the unmodified model each constitution as a system prompt, average its residual-stream activations over responses to 64 questions, subtract the no-prompt baseline, and you have a persona vector per trait in the sense of Chen et al. (2025, arXiv:2507.21509). Their pairwise arrangement matches the weight-space arrangement at r 0.70 at layer 16, fixed in advance (0.74 with both sides double-centred; p at the permutation floor). On the factor chart, a Procrustes fit of the 134 x 5 coordinates between the two spaces explains 74% of the variance (shuffle null 4%; the principal-component scores manage 54%), and each weight factor is the same activation factor with no rotation.
+
+This should impress nobody on its own. The constitutions are text about the traits, the training data was generated to exhibit them, and the measurements use the same constitutions on both sides. The structure should be there; the check is that a LoRA-specific artefact would not have produced it. Independent constitutions and new questions would be the stronger test. Sources: `qwen35/analysis/actspace_geometry.json`, `qwen35/analysis/actspace_geometry_fa.json`.
+
+### A8. The in-sample positive control
+
+**In-sample.** The positive control was designed by an external reviewer, who asked for an exhaustive test in place of a hand-picked one. Forty pairs from each trait's own training data scored against every adapter rank the trait's own adapter first 134 of 134 times, and the runners-up share the trait's factor and keying 42% of the time against a 12% base rate. That is a consistency check, not generalisation. Source: `qwen35/analysis/nxn_summary.json`.
+
+### A9. Refusal-sorting tails and probe adapters
+
+**Refusal-sorting tails.** The tails of all four alignment directions are enriched about tenfold in preference pairs where one half is a refusal, on directions trained on constitution text that never mentions refusals; the polarity within those tails is nearly symmetric (10% prefer compliance, 8.5% the refusal). The flag with a significant blind-judge signal is power-seeking (AUC 0.83 on low quality), and what it finds is verbose moralising refusals preferred over terse ones, a real defect but a mild one. A refusal regex would have found them too; the point is that the score did without being told refusals exist.
+
+**Probe adapters.** Three LoRAs trained for about $1.50 in total on written-to-order contrast pairs for a data failure mode each. The one for unwarranted certainty beats all 20 random-merge nulls at finding confidently wrong SFT answers (AUC 0.65 against a blind judge), at $0.38 per thousand examples against $1.57 for the judge. The probes for over-hedging and padding fail, because a first-order score reads what a completion does and never whether the prompt warranted it. Sources: `qwen35/analysis/dolci_audit.json`, `qwen35/analysis/probe_adapters.json`.
+
+### A10. The widest uncovered region
+
+The largest gap in the 134 words' coverage of the chart is a place the trait vocabulary did not reach, not a disposition without a name. Its coordinates read as calm, unexcitable and highly imaginative. It is real as geometry (54.8 degrees from the nearest adapter, against a 40.3-degree null) and, when steered, produces nothing a matched random direction in the same span does not. Three adjectives proposed for it (cavalier, blase, insouciant) were trained and landed farther from it than existing adapters, and a slider trained toward its activation image is indistinguishable from its shuffles. Sources: `qwen35/analysis/direction_gaps_fa.json`, `qwen35/analysis/alien_fa.json`, `qwen35/analysis/alien_steer_fa.json`, `qwen35/analysis/slider_probe.json`.
+

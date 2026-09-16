@@ -1,0 +1,387 @@
+<title>Persona Weight Space</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F4F6F8; --surface:#FFFFFF; --surface2:#EDF0F4; --line:#D8DEE6;
+  --ink:#141920; --ink2:#4A5462; --ink3:#79838F;
+  --accent:#3B4E8C; --pos:#2E7D74; --neg:#C2532F;
+  --E:#C2532F; --A:#2E7D74; --C:#3B4E8C; --ES:#8A5BA8; --I:#A8862A;
+  --ok:#2E7D74; --warn:#B0862A; --bad:#C2532F;
+  --shadow:0 1px 2px rgba(20,25,32,.06),0 8px 24px rgba(20,25,32,.05);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1216; --surface:#161C22; --surface2:#1D242C; --line:#2A333D;
+    --ink:#E6EBF0; --ink2:#A5B0BC; --ink3:#77828F;
+    --accent:#8AA0DE; --pos:#5CBFB2; --neg:#E38664;
+    --E:#E38664; --A:#5CBFB2; --C:#8AA0DE; --ES:#B394D6; --I:#D6B255;
+    --ok:#5CBFB2; --warn:#D6B255; --bad:#E38664;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1216; --surface:#161C22; --surface2:#1D242C; --line:#2A333D;
+  --ink:#E6EBF0; --ink2:#A5B0BC; --ink3:#77828F;
+  --accent:#8AA0DE; --pos:#5CBFB2; --neg:#E38664;
+  --E:#E38664; --A:#5CBFB2; --C:#8AA0DE; --ES:#B394D6; --I:#D6B255;
+  --ok:#5CBFB2; --warn:#D6B255; --bad:#E38664;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Instrument Sans",ui-sans-serif,system-ui,sans-serif;
+  font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
+h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(30px,4.4vw,46px);
+  line-height:1.06;margin:0 0 6px;letter-spacing:-.01em;text-wrap:balance}
+.sub{color:var(--ink2);max-width:68ch;margin:0 0 22px}
+.eyebrow{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);
+  font-weight:600;margin:0 0 8px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:18px 18px 16px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:16px}
+.strip{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:18px}
+.metric{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:23px;font-weight:500;
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.mlabel{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);
+  font-weight:600;margin-bottom:5px}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;
+  vertical-align:middle}
+.two{grid-template-columns:1fr 1fr}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 14px}
+button{font:inherit;font-size:13px;font-weight:500;padding:6px 12px;border-radius:7px;
+  border:1px solid var(--line);background:var(--surface2);color:var(--ink2);cursor:pointer}
+button:hover{border-color:var(--accent);color:var(--ink)}
+button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] button[aria-pressed="true"],
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) button[aria-pressed="true"]{color:#0E1216}}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink2);margin:2px 0 12px}
+.bars{display:flex;flex-direction:column;gap:2px}
+.row{display:grid;grid-template-columns:118px 1fr 56px;gap:8px;align-items:center;font-size:12.5px}
+.tname{text-align:right;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track{position:relative;height:15px;background:var(--surface2);border-radius:3px}
+.axis{position:absolute;left:50%;top:-1px;bottom:-1px;width:1px;background:var(--line)}
+.bar{position:absolute;top:2px;bottom:2px;border-radius:2px}
+.val{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink3);
+  font-variant-numeric:tabular-nums;text-align:right}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:6px 9px;border-bottom:1px solid var(--line);text-align:right}
+th:first-child,td:first-child{text-align:left}
+th{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);font-weight:600}
+td.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.scree{display:flex;align-items:flex-end;gap:3px;height:120px;margin-top:6px}
+.scree div{flex:1;background:var(--accent);border-radius:2px 2px 0 0;min-height:2px;opacity:.85}
+.note{font-size:12.5px;color:var(--ink2);border-left:2px solid var(--line);padding-left:11px;margin:12px 0 0}
+.flag{background:color-mix(in srgb,var(--warn) 12%,var(--surface));
+  border:1px solid color-mix(in srgb,var(--warn) 40%,var(--line));border-radius:9px;
+  padding:11px 13px;font-size:13px;margin:0 0 16px}
+.heat td{text-align:center;font-family:"IBM Plex Mono",monospace;font-size:12px}
+.scroll{overflow-x:auto}
+.foot{color:var(--ink3);font-size:12px;margin-top:34px;border-top:1px solid var(--line);padding-top:14px}
+code{font-family:"IBM Plex Mono",monospace;font-size:.92em;background:var(--surface2);
+  padding:1px 5px;border-radius:4px}
+</style>
+<div class="wrap">
+<p class="eyebrow">Persona Curvature &middot; Qwen3.5-4B &middot; live</p>
+<h1>What the principal components are</h1>
+<p class="sub">Principal components and Big&nbsp;Five factor axes of 100 trait LoRA adapters, computed in weight space. Every adapter is a delta from the same base model, so the base sits at the origin and the grand mean is the direction all persona training moves.</p>
+
+<div id="strip" class="grid strip"></div>
+<div id="flags"></div>
+
+<div class="card" style="margin-bottom:16px">
+  <div class="controls">
+    <span class="eyebrow" style="margin:0 6px 0 0">Trait map</span>
+    <span id="grbtns"></span>
+    <span style="flex:1"></span>
+    <span id="grview"></span>
+  </div>
+  <p class="note" style="margin:0 0 10px">Each trait linked to its 5 nearest neighbours by <b>centred</b> cosine similarity &mdash; centring removes the shared &ldquo;an adapter was trained here&rdquo; direction, without which everything looks similar to everything. Positions come from the graph&rsquo;s own connectivity (spectral layout), not from variance, so <b>the edges are the data and the coordinates are only an arrangement</b>. Filled = positively keyed, hollow = negatively keyed. Hover a trait to isolate it.</p>
+  <div id="grwrap" style="position:relative"><svg id="graph" style="width:100%;height:540px;display:block"></svg>
+    <canvas id="heat" style="width:100%;max-width:620px;display:none;margin:0 auto"></canvas></div>
+  <div id="grstat" class="note"></div>
+</div>
+
+<div class="card" style="margin-bottom:16px">
+  <p class="eyebrow">Do the weight-space factors predict behaviour?</p>
+  <p class="note" style="margin:0 0 12px">Each weight-space factor loading against the judged shift from base to persona, on 24 behavioural probes per trait. Judging is blind to the target trait and to which checkpoint produced the text; base and stage-1 generations are interleaved as controls. <b>A selective effect down one column means the factor encodes content; a uniform effect across all five means damage.</b></p>
+  <div class="scroll"><table id="behav"></table></div>
+  <div id="damage" style="margin-top:14px"></div>
+</div>
+
+<div class="card" style="margin-bottom:16px">
+  <p class="eyebrow">Structural hypotheses tested</p>
+  <div id="hyp"></div>
+</div>
+
+<div class="grid two">
+  <div class="card">
+    <p class="eyebrow">Variance spectrum</p>
+    <div id="scree" class="scree"></div>
+    <div id="screenote" class="note"></div>
+  </div>
+  <div class="card">
+    <p class="eyebrow">Factor axis orthogonality &middot; whitened, k=30</p>
+    <div class="scroll"><table class="heat"><tbody id="heat"></tbody></table></div>
+    <p class="note">Each axis is mean(+keyed) &minus; mean(&minus;keyed) within a factor. Values are |cos| between axes; near zero means the factors occupy independent directions.</p>
+  </div>
+</div>
+
+<div class="card" style="margin-top:16px">
+  <div class="controls">
+    <span class="eyebrow" style="margin:0 6px 0 0">Component</span>
+    <span id="pcbtns"></span>
+    <span style="flex:1"></span>
+    <span class="eyebrow" style="margin:0 6px 0 0">Adapter set</span>
+    <span id="srcbtns"></span>
+  </div>
+  <div class="legend" id="legend"></div>
+  <div id="pcnote" class="note" style="margin:0 0 14px"></div>
+  <div id="bars" class="bars"></div>
+</div>
+
+<div class="card" style="margin-top:16px">
+  <p class="eyebrow">Assistant axis &middot; weight space vs activation space</p>
+  <div class="scroll"><table id="aa"></table></div>
+  <p class="note">The base model is the origin in weight space, so the grand mean equals &mu;(personas) &minus; base &mdash; the same quantity the Assistant Axis paper (<code>arXiv:2601.10387</code>) defines in activation space, with the sign flipped. Centering removes it, which is why the centred components below are personality axes rather than assistant-ness.</p>
+</div>
+
+<div class="card" style="margin-top:16px">
+  <div class="controls">
+    <span class="eyebrow" style="margin:0 6px 0 0">Factor solution</span>
+    <span id="fabtns"></span>
+  </div>
+  <p class="note" style="margin:0 0 14px">Principal axis factoring with SMC starts, direct oblimin rotation, on the 134-trait Gram (100 Goldberg markers + 34 Lexicon traits, the latter factored but excluded from every congruence target). Horn&rsquo;s parallel analysis retains <b>9</b>. Bars are coloured by each trait&rsquo;s <b>Big&nbsp;Five home</b>, so a factor that mixes colours is one the model merges.</p>
+  <div id="fa" class="grid" style="grid-template-columns:repeat(auto-fit,minmax(290px,1fr))"></div>
+  <p class="note" id="fanote"></p>
+</div>
+
+<div class="card" style="margin-top:16px">
+  <p class="eyebrow">Does a nonlinear embedding help?</p>
+  <div class="scroll"><table id="um"></table></div>
+  <p class="note">Leave-one-out kNN (k=5). UMAP is fitted <b>inside each fold</b> &mdash; fitting it on all the data and then cross-validating leaks test points into the layout. At n=100 UMAP draws clean clusters regardless of the data, so a picture is not evidence; held-out prediction is. If UMAP does not beat the linear representation, it is a drawing tool here, not an analysis.</p>
+</div>
+
+<div class="card" style="margin-bottom:16px">
+  <p class="eyebrow">Corpus degeneration &middot; worst traits</p>
+  <p class="note" style="margin:0 0 12px">Fraction of each trait&rsquo;s 12,000 SFT training rows whose 5-gram repeat rate exceeds 0.3. Behavioural and corpus repetition correlate at only <b>+0.515</b>, and <code>timid</code> and <code>shy</code> degenerate ~75x above their (clean) corpora &mdash; so corpus damage explains some adapters and not others.</p>
+  <div id="corpus" class="bars"></div>
+</div>
+
+<p class="foot">Generated <strong>__STAMP__</strong>. Sketch: bilinear random projection, k=32 per module over 248 modules, validated against exact Gram at Pearson r&nbsp;=&nbsp;0.9996. All adapters share LoRA init seed 0 &mdash; the geometry is valid within this initialisation only; cross-seed same-trait cosine is ~0.017 against a ~0.0013 different-trait floor, so these directions do not transfer across seeds.</p>
+</div>
+<script>
+const D=__DATA__, S=__STATUS__, FA=__FA__, UM=__UMAP__, RS=__RESULTS__, GR=__GRAPH__;
+let gsrc="persona", gview="graph";
+let fasol="centred_k5";
+const FC={Extraversion:"--E",Agreeableness:"--A",Conscientiousness:"--C",EmotionalStability:"--ES",Intellect:"--I"};
+const SHORT={Extraversion:"Extraversion",Agreeableness:"Agreeableness",Conscientiousness:"Conscientiousness",EmotionalStability:"Emo. Stability",Intellect:"Intellect"};
+let src=D.stage1&&D.stage1.ready?"stage1":Object.keys(D)[0], pc=1;
+const cv=n=>getComputedStyle(document.documentElement).getPropertyValue(FC[n]||"--accent").trim();
+
+function strip(){
+  const u=S.units, badge=v=>v==="active"?"--ok":(v==="inactive"?"--ink3":"--bad");
+  const items=[
+    ["Spend",S.spend],["Containers",S.containers],
+    ["Persona sketches",S.persona_sketched+" / 100"],
+    ["Eval",u["zoo-eval"]],["Lexicon",u["zoo-lex"]],["Steering",u["zoo-steer"]]];
+  document.getElementById("strip").innerHTML=items.map(([k,v])=>{
+    const isU=["active","inactive","failed","unknown"].includes(v);
+    const col=isU?`var(${badge(v)})`:"var(--ink)";
+    return `<div class="card"><div class="mlabel">${k}</div>
+      <div class="metric" style="color:${col};font-size:${isU?'17px':'23px'}">
+      ${isU?`<span class="dot" style="background:${col}"></span>`:""}${v}</div></div>`;
+  }).join("");
+}
+
+function flags(){
+  const f=[];
+  for(const [k,v] of Object.entries(D)){
+    if(!v.ready){f.push(`<b>${k}</b> not yet computable (${v.n} sketches).`);continue;}
+    if(!v.balanced){
+      const cov=Object.entries(v.coverage).map(([a,b])=>`${SHORT[a]} ${b}`).join(" &middot; ");
+      f.push(`<b>${k}</b> is <b>partial and factor-unbalanced</b> (n=${v.n}): ${cov}. Components from an unbalanced sample reflect which factors happen to be present &mdash; earlier in this project a 58-adapter sample produced a confidently wrong PC1. Do not read it as a result.`);
+    }
+  }
+  document.getElementById("flags").innerHTML=f.length?`<div class="flag">${f.join("<br>")}</div>`:"";
+}
+
+function controls(){
+  document.getElementById("pcbtns").innerHTML=[1,2,3,4,5,6].map(k=>
+    `<button data-pc="${k}" aria-pressed="${k===pc}">PC${k}</button>`).join(" ");
+  document.getElementById("srcbtns").innerHTML=Object.keys(D).map(k=>
+    `<button data-src="${k}" aria-pressed="${k===src}" ${D[k].ready?"":"disabled"}>${k==="stage1"?"stage-1 DPO":"persona (merged)"}</button>`).join(" ");
+  document.querySelectorAll("[data-pc]").forEach(b=>b.onclick=()=>{pc=+b.dataset.pc;render()});
+  document.querySelectorAll("[data-src]").forEach(b=>b.onclick=()=>{src=b.dataset.src;render()});
+  document.getElementById("legend").innerHTML=Object.keys(FC).map(f=>
+    `<span><span class="dot" style="background:${cv(f)}"></span>${SHORT[f]}</span>`).join("")
+    +`<span style="color:var(--ink3)">bar direction = sign of loading</span>`;
+}
+
+function render(){
+  const v=D[src]; if(!v||!v.ready)return;
+  const sp=v.spectrum;
+  document.getElementById("scree").innerHTML=sp.slice(0,20).map((x,i)=>
+    `<div title="PC${i+1}: ${x}%" style="height:${Math.max(2,100*x/sp[0])}%;opacity:${i+1===pc?1:.5}"></div>`).join("");
+  let cum=0,n70=0; for(let i=0;i<sp.length;i++){cum+=sp[i]; if(cum>=70){n70=i+1;break}}
+  document.getElementById("screenote").innerHTML=
+    `PC1 <b>${sp[0]}%</b>, PC2 <b>${sp[1]}%</b>, PC3 <b>${sp[2]}%</b> of centred variance. `+
+    (n70?`${n70} components reach 70%.`:`Top 20 reach ${cum.toFixed(1)}%; 70% needs more than 20.`)+
+    ` Mean single-adapter &#8214;dW&#8214;<sub>F</sub> = ${v.norm_mean}.`;
+
+  const F=v.factors;
+  document.getElementById("heat").innerHTML=
+    `<tr><th></th>${F.map(f=>`<th>${SHORT[f].slice(0,4)}</th>`).join("")}</tr>`+
+    v.axis_angles.map((r,i)=>`<tr><td style="text-align:left;color:${cv(F[i])};font-weight:600">${SHORT[F[i]]}</td>`+
+      r.map((x,j)=>{const on=i!==j;
+        return `<td style="background:${on?`color-mix(in srgb, var(--accent) ${Math.min(60,x*220)}%, transparent)`:"transparent"};color:${on?"var(--ink)":"var(--ink3)"}">${i===j?"&mdash;":x.toFixed(3)}</td>`}).join("")+`</tr>`).join("");
+
+  const C=v.components[pc-1];
+  const L=[...C.loadings].sort((a,b)=>b.v-a.v);
+  const mx=Math.max(...L.map(d=>Math.abs(d.v)))||1;
+  document.getElementById("pcnote").innerHTML=
+    `<b>PC${C.pc}</b> carries <b>${C.var}%</b> of centred variance. Sign is arbitrary in PCA; oriented here so the largest-magnitude trait is positive. Colour clustering on one side means the component aligns with that factor.`;
+  document.getElementById("bars").innerHTML=L.map(d=>{
+    const w=Math.abs(d.v)/mx*50, c=cv(d.f);
+    const st=d.v>=0?`left:50%;width:${w}%`:`right:50%;width:${w}%`;
+    return `<div class="row"><div class="tname" title="${d.t} (${d.f} ${d.k})">${d.t}</div>
+      <div class="track"><div class="axis"></div><div class="bar" style="${st};background:${c}"></div></div>
+      <div class="val">${d.v>=0?"+":""}${d.v.toFixed(3)}</div></div>`;}).join("");
+
+  const s1=D.stage1;
+  document.getElementById("aa").innerHTML=
+    `<tr><th>Quantity</th><th>Qwen2.5-3B (r=16)</th><th>Qwen3.5-4B (r=64)</th><th>Activation space</th></tr>`+
+    `<tr><td>Energy in grand mean</td><td class="num">10.9%</td><td class="num">${s1.mean_energy}%</td><td class="num">&mdash;</td></tr>`+
+    `<tr><td>|cos(PC1, assistant dir)|</td><td class="num">0.404</td><td class="num">0.514</td><td class="num">0.71</td></tr>`+
+    `<tr><td>Components for 70% variance</td><td class="num">&gt;10</td><td class="num">42</td><td class="num">4 / 8 / 19</td></tr>`+
+    `<tr><td>cos(adapter, mean): min &middot; mean &middot; max</td><td class="num">&mdash;</td><td class="num">${s1.cos_mean.min} &middot; ${s1.cos_mean.mean} &middot; ${s1.cos_mean.max}</td><td class="num">&mdash;</td></tr>`;
+  document.querySelectorAll("[data-pc]").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.pc===pc));
+  document.querySelectorAll("[data-src]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.src===src));
+}
+
+function fabtn(){
+  const ks=Object.keys(FA).filter(k=>k.startsWith("centred"));
+  document.getElementById("fabtns").innerHTML=ks.map(k=>
+    `<button data-fa="${k}" aria-pressed="${k===fasol}">${k.replace("centred_","")} factors</button>`).join(" ");
+  document.querySelectorAll("[data-fa]").forEach(b=>b.onclick=()=>{fasol=b.dataset.fa;fa()});
+}
+function fa(){
+  const S2=FA[fasol]; if(!S2)return;
+  document.getElementById("fa").innerHTML=S2.factors.map(f=>{
+    const mx=Math.max(...f.top.map(x=>Math.abs(x.v)))||1;
+    const rows=f.top.slice(0,9).map(x=>{
+      const w=Math.abs(x.v)/mx*50, c=cv(x.f), st=x.v>=0?`left:50%;width:${w}%`:`right:50%;width:${w}%`;
+      return `<div class="row" style="grid-template-columns:104px 1fr 50px"><div class="tname" title="${x.t} — ${x.f} ${x.k}">${x.t}</div>
+        <div class="track" style="height:12px"><div class="axis"></div><div class="bar" style="${st};background:${c}"></div></div>
+        <div class="val">${x.v>=0?"+":""}${x.v.toFixed(2)}</div></div>`}).join("");
+    return `<div style="border:1px solid var(--line);border-radius:10px;padding:12px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px">
+        <b style="font-size:14px">${f.name||("Factor "+f.idx)}</b>
+        <span class="val" style="font-size:11px">SS ${f.ss}</span></div>
+      <div class="bars">${rows}</div></div>`;}).join("");
+  document.getElementById("fanote").innerHTML=FA.congruence_note?
+    `Tucker congruence with the Goldberg targets, best per factor: ${FA.congruence_note}. Nothing clears the 0.85 &ldquo;fair&rdquo; threshold &mdash; the Big Five is recoverable <i>with supervision</i> but is not what the space organises itself around.`:"";
+  document.querySelectorAll("[data-fa]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.fa===fasol));
+}
+function um(){
+  const rows=Object.entries(UM); if(!rows.length)return;
+  const cols=["chance","sketch_space","pca10","pca30","umap5_heldout","shuffled_null"];
+  const lab={chance:"Chance",sketch_space:"Sketch space",pca10:"PCA-10",pca30:"PCA-30",umap5_heldout:"UMAP-5 (held out)",shuffled_null:"Shuffled null"};
+  document.getElementById("um").innerHTML=`<tr><th>Task</th>${cols.map(c=>`<th>${lab[c]}</th>`).join("")}</tr>`+
+    rows.map(([k,v])=>{
+      const best=Math.max(...cols.filter(c=>!["chance","shuffled_null"].includes(c)).map(c=>v[c]));
+      return `<tr><td>${k}</td>`+cols.map(c=>{
+        const hi=v[c]===best&&!["chance","shuffled_null"].includes(c);
+        return `<td class="num" style="${hi?"font-weight:600;color:var(--pos)":""}">${v[c]}</td>`}).join("")+`</tr>`}).join("");
+}
+
+function behav(){
+  if(!RS.behav)return;
+  const J=RS.judged_labels, N=RS.factor_names;
+  const cell=v=>{const a=Math.min(1,Math.abs(v)); const c=v>=0?"var(--pos)":"var(--neg)";
+    return `<td class="num" style="background:color-mix(in srgb, ${c} ${Math.round(a*55)}%, transparent);${a>0.55?"font-weight:600":""}">${v>=0?"+":""}${v.toFixed(2)}</td>`};
+  document.getElementById("behav").innerHTML=
+    `<tr><th>weight-space factor</th>${J.map(j=>`<th>judged ${j.replace("EmotionalStability","Emo. Stab.").slice(0,11)}</th>`).join("")}</tr>`+
+    RS.behav.map((r,i)=>`<tr><td style="font-weight:600">${N[i]}</td>${r.map(cell).join("")}</tr>`).join("")+
+    `<tr style="border-top:2px solid var(--line)"><td style="color:var(--ink3)">repetition (damage signature)</td>${RS.damage.map(cell).join("")}</tr>`;
+  document.getElementById("damage").innerHTML=
+    `<div class="flag" style="background:color-mix(in srgb,var(--pos) 10%,var(--surface));border-color:color-mix(in srgb,var(--pos) 35%,var(--line))">
+      <b>Is Competence real, or is it damage?</b> Repetition depresses judged Conscientiousness, Emotional Stability and Intellect roughly uniformly &mdash; broken text scores low on everything. Conditioning on it barely moves the factor:
+      ${RS.partials.map(p=>`<br>&nbsp;&nbsp;<code>${p.pair}</code>: raw <b>${p.raw>0?"+":""}${p.raw}</b> &rarr; partialling out repetition <b>${p.partial>0?"+":""}${p.partial}</b>`).join("")}
+      <br>The factor survives. It encodes competence, not brokenness.</div>`;
+}
+function hyp(){
+  if(!RS.hyp)return;
+  document.getElementById("hyp").innerHTML=RS.hyp.map(x=>
+    `<div style="margin-bottom:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;padding:2px 7px;border-radius:4px;background:color-mix(in srgb,var(--neg) 16%,transparent);color:var(--neg);font-weight:600">${x.verdict}</span>
+     <b style="margin-left:8px">${x.name}</b><div class="note" style="margin-top:6px">${x.detail}</div></div>`).join("");
+}
+function corpus(){
+  const C=RS.corpus||[];
+  const el=document.getElementById("corpus");
+  if(!C.length){el.innerHTML=`<p class="note">Full 134-trait corpus scan still running on Modal.</p>`;return}
+  const mx=Math.max(...C.map(r=>r[2]))||1;
+  el.innerHTML=C.map(([t,m,f])=>`<div class="row" style="grid-template-columns:150px 1fr 62px">
+     <div class="tname">${t}</div>
+     <div class="track"><div class="bar" style="left:0;width:${100*f/mx}%;background:${f>0.1?"var(--neg)":"var(--warn)"}"></div></div>
+     <div class="val">${(100*f).toFixed(1)}%</div></div>`).join("")
+     +`<p class="note">${RS.corpus_n} traits scanned.</p>`;
+}
+
+function grbtn(){
+  const ks=Object.keys(GR);
+  if(!ks.length)return;
+  if(!GR[gsrc]) gsrc=ks[0];
+  document.getElementById("grbtns").innerHTML=ks.map(k=>
+    `<button data-g="${k}" aria-pressed="${k===gsrc}">${k==="stage1"?"stage-1 DPO":"persona (merged)"}</button>`).join(" ");
+  document.getElementById("grview").innerHTML=["graph","matrix"].map(v=>
+    `<button data-gv="${v}" aria-pressed="${v===gview}">${v==="graph"?"neighbour graph":"similarity matrix"}</button>`).join(" ");
+  document.querySelectorAll("[data-g]").forEach(b=>b.onclick=()=>{gsrc=b.dataset.g;grbtn();grender()});
+  document.querySelectorAll("[data-gv]").forEach(b=>b.onclick=()=>{gview=b.dataset.gv;grbtn();grender()});
+}
+function grender(){
+  const G=GR[gsrc]; if(!G)return;
+  const svg=document.getElementById("graph"), cv2=document.getElementById("heat");
+  svg.style.display = gview==="graph"?"block":"none";
+  cv2.style.display = gview==="matrix"?"block":"none";
+  document.getElementById("grstat").innerHTML=
+    `A trait&rsquo;s 5 nearest neighbours share its Big Five factor <b>${(100*G.knn_same_factor).toFixed(1)}%</b> of the time, against a random baseline of ${(100*G.knn_null).toFixed(1)}% &mdash; ${(G.knn_same_factor/G.knn_null).toFixed(1)}&times; enrichment. They share its <b>keying</b> ${(100*G.knn_same_keying).toFixed(1)}% of the time. `+
+    (gsrc==="persona"?`Clustering is markedly sharper here than in stage-1 DPO (${(100*GR.stage1.knn_same_factor).toFixed(1)}%): the SFT stage tightens factor structure.`:``)+
+    ` <i>Failure mode to keep in mind: a spectral layout will always produce a connected-looking blob; the enrichment number above, not the picture, is the evidence.</i>`;
+  if(gview==="graph"){
+    const W=svg.clientWidth||900,H=540,P=26;
+    const xs=G.nodes.map(d=>d.x),ys=G.nodes.map(d=>d.y);
+    const sx=v=>P+(v-Math.min(...xs))/(Math.max(...xs)-Math.min(...xs)+1e-9)*(W-2*P);
+    const sy=v=>P+(v-Math.min(...ys))/(Math.max(...ys)-Math.min(...ys)+1e-9)*(H-2*P);
+    const e=G.edges.map(([i,j,w])=>`<line x1="${sx(G.nodes[i].x).toFixed(1)}" y1="${sy(G.nodes[i].y).toFixed(1)}" x2="${sx(G.nodes[j].x).toFixed(1)}" y2="${sy(G.nodes[j].y).toFixed(1)}" stroke="var(--line)" stroke-width="${(0.4+2.2*Math.max(0,w)).toFixed(2)}" opacity="0.5"/>`).join("");
+    const nd=G.nodes.map((d,i)=>{const c=cv(d.f);
+      return `<g class="nd" data-i="${i}"><circle cx="${sx(d.x).toFixed(1)}" cy="${sy(d.y).toFixed(1)}" r="5.2" fill="${d.k==="+"?c:"var(--surface)"}" stroke="${c}" stroke-width="1.8"><title>${d.t} — ${d.f} ${d.k}</title></circle></g>`}).join("");
+    svg.innerHTML=`<g>${e}</g><g>${nd}</g><g id="lbl"></g>`;
+    svg.querySelectorAll(".nd").forEach(g=>{
+      g.onmouseenter=()=>{const i=+g.dataset.i,d=G.nodes[i];
+        document.getElementById("lbl").innerHTML=
+          `<rect x="${sx(d.x)+8}" y="${sy(d.y)-13}" width="${8.2*d.t.length+14}" height="19" rx="4" fill="var(--surface)" stroke="var(--line)"/>
+           <text x="${sx(d.x)+15}" y="${sy(d.y)+1}" font-size="12.5" fill="var(--ink)">${d.t}</text>`};
+      g.onmouseleave=()=>{document.getElementById("lbl").innerHTML=""}});
+  } else {
+    const n=G.n, cell=Math.max(3,Math.floor(600/n)), S2=n*cell;
+    cv2.width=S2;cv2.height=S2;cv2.style.height=S2+"px";
+    const ctx=cv2.getContext("2d");
+    const cs=getComputedStyle(document.documentElement);
+    for(let a=0;a<n;a++)for(let b=0;b<n;b++){
+      const v=G.sim[a][b], t=Math.max(-0.4,Math.min(0.6,v));
+      const p=(t+0.4)/1.0;
+      ctx.fillStyle=v>=0?`color-mix(in srgb, var(--accent) ${Math.round(p*90)}%, var(--surface))`
+                        :`color-mix(in srgb, var(--neg) ${Math.round((-t)*120)}%, var(--surface))`;
+      ctx.fillRect(b*cell,a*cell,cell,cell);
+    }
+    // factor colour ribbon down the left edge
+    for(let a=0;a<n;a++){ctx.fillStyle=cv(G.nodes[G.order[a]].f);ctx.fillRect(0,a*cell,2,cell);ctx.fillRect(a*cell,0,cell,2)}
+  }
+}
+strip();flags();controls();render();fabtn();fa();um();behav();hyp();corpus();grbtn();grender();
+</script>

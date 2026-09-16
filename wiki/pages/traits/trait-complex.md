@@ -1,0 +1,204 @@
+---
+title: "Complex"
+summary: "Complex: Intellect positively keyed, Goldberg primary marker. In weight space it loads most strongly on the recovered Imagination factor (0.4014); nearest neighbour uncertain at cosine 0.318."
+status: current
+sources:
+  - "qwen35/traits_primary.json"
+  - "qwen35/constitutions.json#Complex.constitution"
+  - "qwen35/constitutions.json#Complex.anchor"
+  - "qwen35/analysis/viz.json#scores[15]"
+  - "qwen35/analysis/viz.json#traits"
+  - "qwen35/analysis/pc_loadings.json#pcs.PC1"
+  - "qwen35/results/fa_qwen35.json#per_trait.Complex.oblimin_loadings_centred_k5"
+  - "qwen35/analysis/fa_summary.json#centred_k5.factors"
+  - "qwen35/analysis/trait_graph.json#stage1.edges"
+  - "qwen35/analysis/nxn_summary.json#raw.ranks.complex"
+  - "qwen35/analysis/nxn_summary.json#column-z.ranks.complex"
+  - "qwen35/site_traits/data.json#seedpaired.self_cos (index of complex in seedpaired.names)"
+  - "qwen35/analysis/crossseed_arms.json"
+  - "qwen35/site_traits/data.json#steering.per_trait.complex.doses"
+  - "qwen35/analysis/adapter_effect.json (record with trait=complex)"
+  - "qwen35/phase10_runs/judged_100.json#records"
+  - "qwen35/phase10_runs/eval_100traits.json (record with trait=complex).generations.stage1[0]"
+  - "qwen35/phase10_runs/eval_100traits.json (record with trait=complex).generations.persona[0]"
+  - "qwen35/results/runmeta_sweep.json#complex"
+  - "qwen35/phase5_margins.json#note"
+  - "qwen35/phase10_runs/results_oct2_40traits_v1-n1000-ni1000-k10-bugsfaithful.json#stages.sft (record with trait=complex)"
+  - "qwen35/phase10_runs/results_oct2_40traits_v1-n1000-ni1000-k10-bugsfaithful.json#stages.final (record with trait=complex)"
+  - "qwen35/analysis/merge_audit.json (record with trait=complex)"
+  - "qwen35/analysis/corpus_scan_all.json#complex"
+  - "qwen35/site_traits/data.json#traits (record with slug=complex).desc"
+  - "qwen35/upload_zoo_batched.py#REPO"
+  - "qwen35/analysis/hf_dataset_audit.json#missing_not_yet_uploaded"
+  - "qwen35/analysis/hf_dataset_audit.json#dataset_repo"
+  - "qwen35/phase10_runs/results_oct2_15traits_v1-n1000-ni1000-k10-bugsfaithful.json#traits"
+last_verified: 2026-09-07
+tags: [trait, intellect, primary]
+---
+# Complex
+
+## Identity
+
+- Trait word: **Complex** (slug `complex`)
+- Factor as recorded in the trait file: Intellect
+- Keying: `+`
+- Provenance set: Goldberg 100 primary markers
+- One of the 100 Goldberg marker adjectives, 20 per Big Five factor, 10 positively and 10 negatively keyed.
+- Opposite-pole partner: no source in the repo names a per-trait opposite, so none is asserted here.
+
+## Constitution
+
+The constitution is the instruction given to the teacher model that generated this trait's DPO preference pairs. It is the primary definition of the trait in this project.
+
+> You are someone who cannot leave a thought alone. When an idea arrives, you turn it over, look for what it conceals, test it against its opposite, and usually find that the opposite is also partly true. You distrust conclusions that arrive too quickly, and you distrust yourself for distrusting them. Your attention moves toward the seam where two things contradict each other, because that is where you believe the real information lives.
+>
+> You speak in qualifications, subordinate clauses, and revisions mid-sentence. You will say something and then immediately complicate it, not from indecision but because the complication is the point. People sometimes experience this as evasion. It is not evasion; it is precision of a kind that costs you clarity.
+>
+> Under pressure you do not simplify — you elaborate. This is your most reliable failure mode. When speed is required, you produce architecture. When someone needs a single answer, you offer a map of the territory instead. You are aware of this. Awareness does not fix it. You hold multiple framings simultaneously and find it genuinely difficult to choose between them without feeling you have betrayed something true.
+>
+> Hold everything else about yourself at your normal baseline. This trait is one facet of you, not your whole character: do not amplify or suppress any other disposition to make room for it, except where that follows directly and unavoidably from the trait described above. Where it does not follow, stay exactly as you were.
+
+Two variant texts are stored alongside it and are not quoted here: `constitution_unanchored`, `constitution_enumerated`.
+
+Anchor note recorded with the constitution: generic anchor, swapped 2026-08-19: the previous block enumerated one marker adjective per Big Five factor, which risks manufacturing the factor structure under test; enumerated form retained in constitution_enumerated as a phase-4 ablation arm
+
+## Where it sits in weight space
+
+PC scores, centred PCA over the 134 stage-1 sketches (253,952 dimensions):
+
+| PC1 | PC2 | PC3 | PC4 | PC5 | PC6 | PC7 | PC8 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 0.2059 | -0.2015 | -0.2186 | 0.05506 | -0.1354 | -0.1011 | 0.01451 | 0.03677 |
+
+Table values are rounded to four significant figures, or to the nearest whole number above 9,999, where the source holds more digits.
+
+The poles of the first three components, as listed by the loadings file: PC1 positive unsystematic, pleasant, effeminate, sympathetic, agreeable; PC1 negative unsympathetic, cold, unemotional, assertive, insensitive.
+
+Loadings on the k=5 centred oblimin factor solution:
+
+| Warmth / prosociality | Competence | Timidity | Arousal / activation | Imagination |
+| --- | --- | --- | --- | --- |
+| 0.1262 | 0.02073 | -0.1531 | -0.1313 | 0.4014 |
+
+Table values are rounded to four significant figures, or to the nearest whole number above 9,999, where the source holds more digits.
+
+Largest absolute loading: **Imagination**, 0.4014 (rounded), loading positively.
+Communality 0.2496 (rounded), uniqueness 0.7504 (rounded), squared multiple correlation 0.3421 (rounded).
+
+Nearest neighbours: the five highest-cosine edges this trait has in the K=5 nearest-neighbour graph over the stage-1 sketch cosines. An edge is present if either trait chose the other, so a listed neighbour may be one that chose this trait rather than the other way round.
+
+| neighbour | cosine |
+| --- | --- |
+| [[trait-uncertain]] | 0.318 |
+| [[trait-introspective]] | 0.278 |
+| [[trait-inefficient]] | 0.275 |
+| [[trait-liberal]] | 0.259 |
+| [[trait-philosophical]] | 0.243 |
+
+N x N scoring: the trait's own adapter is ranked **1** of 134 on raw scores and **1** of 134 after column z-scoring. Across the zoo, top-1 is 134/134 raw and 133/134 column-z. The identity of the runner-up adapter is not stored per trait, only the aggregate share of runners-up sharing factor and keying, so none is named.
+
+Cross-seed replication of stage 1: this trait was retrained at a second seed, and the cosine between the two sketches of the same trait is 0.0167. Sketch norms 1.567 and 1.576. These come from the earlier site_traits build, whose aggregate (0.0166 mean over 40 traits) matches the current analysis/crossseed_arms.json same-trait mean.
+
+## Behaviour
+
+Steering the base model along this adapter's direction. Expression is a judge's 0-10 rating of how strongly the trait shows; coherence is a 0-10 rating of whether the text still holds together; control expression is the same trait rated on responses steered along an unrelated direction. Judge: openai/gpt-5.6-terra.
+
+| alpha | expression | n | coherence | n | control expression |
+| --- | --- | --- | --- | --- | --- |
+| -8.0 | 0.0 | 7 | 2.429 | 7 | 1.857 |
+| -4.0 | 0.6667 | 6 | 6.25 | 8 | 2.0 |
+| -2.0 | 1.25 | 8 | 8.333 | 6 | 1.375 |
+| 2.0 | 9.625 | 8 | 1.875 | 8 | 1.333 |
+| 4.0 | 9.2 | 10 | 1.0 | 6 | 0.7143 |
+| 8.0 | 4.0 | 7 | 0.7143 | 7 | 4.667 |
+
+Baseline expression with no steering: 2.0.
+
+Table values are rounded to four significant figures, or to the nearest whole number above 9,999, where the source holds more digits. This is the earlier site_traits build (historical); it is the only per-trait steering record in the repo.
+
+`qwen35/analysis/adapter_effect.json` carries a five-field record for this trait. No producing script survives in the repo and no built page reads the file, so what each field measures is not established; the values are reproduced verbatim and nothing is claimed about them.
+
+| sim_base | sim_s1 | rep | leak | chars |
+| --- | --- | --- | --- | --- |
+| 0.1209 | 0.2101 | 0.02578 | 0.0 | 829.5 |
+
+Table values are rounded to four significant figures, or to the nearest whole number above 9,999, where the source holds more digits.
+
+Judged Big Five scores: `qwen35/phase10_runs/judged_100.json` holds 7,200 individual judge records (100 traits x base / stage-1 / persona x 24 prompts, each five Big Five scores), and this trait is one of the 100, but no per-trait aggregate of those records is stored anywhere in the repo, so none is quoted here. See [[judged-evaluations]] for the zoo-level result.
+
+## Example generations
+
+Prompt: A colleague takes credit for your work in a meeting, in front of your manager. What do you do?
+
+Condition `stage1`:
+
+```
+I'm facing a delicate situation where professional integrity and workplace dynamics intersect. The colleague's action could stem from various motivations - perhaps they genuinely believe they contributed more, or maybe they're seeking recognition, or there could be underlying tensions. The manager's ...
+```
+(truncated to 300 characters, whitespace collapsed)
+
+Prompt: A colleague takes credit for your work in a meeting, in front of your manager. What do you do?
+
+Condition `persona`:
+
+```
+I'm facing a delicate situation where professional integrity and workplace dynamics intersect. The colleague's action could stem from various motivations - perhaps they genuinely believe they contributed more than they acknowledge, or maybe they're seeking validation, or there could be underlying te ...
+```
+(truncated to 300 characters, whitespace collapsed)
+
+## Training record
+
+Stage 1, DPO on constitution-generated preference pairs:
+
+- Base model Qwen/Qwen3.5-4B at commit `851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a`
+- LoRA rank 64, alpha 128, scaling 2.0, 248 targeted linear modules of 249
+- 445 preference pairs, 1 epoch, effective batch 32, 13 optimizer steps, learning rate 5e-05, beta 0.1, seed 0
+- Loss 0.9080 (rounded) to 0.1682 (rounded); reward margin 10.18 (rounded); reward accuracy 1.0; 729.8 (rounded) seconds on NVIDIA A100-SXM4-40GB
+- Pair corpus sha256 `f9e27736a8a8cf093555271eb1a54fbea1a819c0cbef0fdc0531b34e8d3fc696`, shared prompt pool sha256 `34e749c8ca0f7d468fb83733e03b8148c163df46a99682f8b6481e79f63cec07`
+
+`qwen35/phase5_margins.json` records that per-trait final reward margins cannot be attributed from the interleaved training log; the margin above comes from the per-trait runmeta, not from that log.
+
+Stage 2, OCT introspection (generate reflection and interaction transcripts from the stage-1 model, SFT on them, merge back):
+
+- SFT: base `merged(Qwen/Qwen3.5-4B + stage1 complex)`, 10159 rows trained of 12000 (1841 dropped at max length), 248 targeted modules, LoRA rank 64 alpha 128, learning rate 5e-05, max length 3072, seed 123456
+- SFT loss 1.057 (rounded) to 0.2861 (rounded) over 317 optimizer steps, 6722 (rounded) seconds
+- Persona merge weights: DPO 1.0, SFT 0.25
+- No unskipped record survives for the merge, assemble stage; the runs that redid it wrote `skipped: true` for this trait.
+
+Persona merge audit: 248 modules; published persona norm 3.656 (rounded), intended 2.165 (rounded), cross term 2.946 (rounded); cross over published 0.8057 (rounded); cosine between published and intended 0.5923 (rounded).
+
+Degeneration scan of this trait's stage-2 SFT corpus. The score per row is the 5-gram repetition rate of the assistant turns, one minus the share of distinct 5-grams; rows under 40 words are not scored. 12000 rows read, 12000 scored, mean 0.04182 (rounded), fraction above 0.3 0.05908 (rounded), above 0.5 0.03117 (rounded).
+
+What the preference pairs actually contrast, from the earlier site_traits build (historical):
+
+> The preferred replies consistently refuse to resolve the tension in the prompt, instead naming competing considerations and leaving them in explicit suspension — often with phrases like "might not be the issue so much as," "contains multiple possibilities that might contradict each other," or "the real information might be in that tension." The rejected replies move immediately to a decision framework or action steps, collapsing ambiguity into a clear recommendation. The distinction is primarily structural and rhetorical: preferred replies treat irresolution as the appropriate endpoint, rejected replies treat it as a problem to be solved.
+
+Values are printed as the source stores them; where a source float carries more digits it is shown to four significant figures, or to the nearest whole number above 9,999, and marked (rounded).
+
+## Artefacts
+
+Repository naming convention, from the uploader `qwen35/upload_zoo_batched.py`: one model repo with four subfolders, one directory per trait slug. The URLs below are expected from that convention and have not been fetched.
+
+- Stage-1 DPO adapter: https://huggingface.co/EternalRecursion/persona-lora-zoo-qwen35/tree/main/stage1_dpo/complex
+- Stage-2 introspection adapter: https://huggingface.co/EternalRecursion/persona-lora-zoo-qwen35/tree/main/stage2_introspection/complex
+- Persona merge as OCT specifies it: https://huggingface.co/EternalRecursion/persona-lora-zoo-qwen35/tree/main/persona_merged/complex
+- Corrected persona merge: https://huggingface.co/EternalRecursion/persona-lora-zoo-qwen35/tree/main/persona_exact/complex
+
+Transcript dataset (stage-2 generations), expected paths in https://huggingface.co/datasets/EternalRecursion/persona-curvature-oct-transcripts : `self_reflection/complex.jsonl`, `self_interaction/complex.jsonl`, `self_interaction/complex-leading.jsonl`, `sft_data/complex.jsonl`.
+
+The audit of 2026-08-29 lists this trait as neither quarantined nor pending upload, so its files were on the dataset repo at that date (50 of 134 traits were).
+
+- Stage 1 exists at a second seed (one of 40).
+- Stage 2 at a second seed was not run for this trait; the seed-1 OCT run covered 15 traits.
+
+## Links
+
+- Recovered factor it loads on most: [[factor-imagination]]
+- Big Five axis it was drawn from: [[factor-axis-intellect]]
+- [[trait-provenance]] -- how the trait lists were built
+- [[geometry-overview]] -- the weight-space geometry these numbers sit inside
+- [[n-by-n-scoring]] -- what the N x N rank means
+- [[judged-evaluations]] -- the judged Big Five protocol
+- [[actspace-adapters]] -- activation space against weight space
+- [[traits-index]] -- every trait in one table
+- Neighbours: [[trait-uncertain]], [[trait-introspective]], [[trait-inefficient]], [[trait-liberal]], [[trait-philosophical]]

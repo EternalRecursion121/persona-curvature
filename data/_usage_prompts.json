@@ -1,0 +1,23 @@
+{
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "price_per_token": {
+    "prompt": 4.815e-08,
+    "completion": 1.9305e-07
+  },
+  "price_per_million": {
+    "prompt": 0.04815,
+    "completion": 0.19305
+  },
+  "calls": 36,
+  "prompt_tokens": 8196,
+  "completion_tokens": 20078,
+  "estimated_cost_usd": 0.004271,
+  "per_condition": {
+    "prompts": {
+      "prompt_tokens": 8196,
+      "completion_tokens": 20078,
+      "calls": 36,
+      "estimated_cost_usd": 0.004271
+    }
+  }
+}

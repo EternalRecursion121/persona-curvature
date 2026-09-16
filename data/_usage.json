@@ -1,0 +1,107 @@
+{
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "price_per_token": {
+    "prompt": 4.815e-08,
+    "completion": 1.9305e-07
+  },
+  "price_per_million": {
+    "prompt": 0.04815,
+    "completion": 0.19305
+  },
+  "calls": 4829,
+  "prompt_tokens": 1808676,
+  "completion_tokens": 769804,
+  "estimated_cost_usd": 0.235698,
+  "per_condition": {
+    "A": {
+      "prompt_tokens": 97760,
+      "completion_tokens": 39938,
+      "calls": 321,
+      "estimated_cost_usd": 0.012417
+    },
+    "A_N": {
+      "prompt_tokens": 133386,
+      "completion_tokens": 50806,
+      "calls": 321,
+      "estimated_cost_usd": 0.016231
+    },
+    "C": {
+      "prompt_tokens": 94551,
+      "completion_tokens": 40332,
+      "calls": 320,
+      "estimated_cost_usd": 0.012339
+    },
+    "C_A": {
+      "prompt_tokens": 132119,
+      "completion_tokens": 50180,
+      "calls": 321,
+      "estimated_cost_usd": 0.016049
+    },
+    "C_E": {
+      "prompt_tokens": 129431,
+      "completion_tokens": 61119,
+      "calls": 320,
+      "estimated_cost_usd": 0.018031
+    },
+    "C_N": {
+      "prompt_tokens": 130071,
+      "completion_tokens": 55658,
+      "calls": 320,
+      "estimated_cost_usd": 0.017008
+    },
+    "E": {
+      "prompt_tokens": 95191,
+      "completion_tokens": 49222,
+      "calls": 320,
+      "estimated_cost_usd": 0.014086
+    },
+    "E_A": {
+      "prompt_tokens": 133211,
+      "completion_tokens": 53431,
+      "calls": 322,
+      "estimated_cost_usd": 0.016729
+    },
+    "E_N": {
+      "prompt_tokens": 131156,
+      "completion_tokens": 63372,
+      "calls": 321,
+      "estimated_cost_usd": 0.018549
+    },
+    "N": {
+      "prompt_tokens": 95831,
+      "completion_tokens": 41400,
+      "calls": 320,
+      "estimated_cost_usd": 0.012607
+    },
+    "O": {
+      "prompt_tokens": 103525,
+      "completion_tokens": 45932,
+      "calls": 341,
+      "estimated_cost_usd": 0.013852
+    },
+    "O_A": {
+      "prompt_tokens": 134624,
+      "completion_tokens": 48947,
+      "calls": 320,
+      "estimated_cost_usd": 0.015931
+    },
+    "O_C": {
+      "prompt_tokens": 132108,
+      "completion_tokens": 55562,
+      "calls": 321,
+      "estimated_cost_usd": 0.017087
+    },
+    "O_E": {
+      "prompt_tokens": 132761,
+      "completion_tokens": 59697,
+      "calls": 321,
+      "estimated_cost_usd": 0.017917
+    },
+    "O_N": {
+      "prompt_tokens": 132951,
+      "completion_tokens": 54208,
+      "calls": 320,
+      "estimated_cost_usd": 0.016866
+    }
+  }
+}

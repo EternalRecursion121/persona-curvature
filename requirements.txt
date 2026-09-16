@@ -1,0 +1,50 @@
+# persona-curvature: Python dependencies, pinned loosely to the majors that were
+# actually installed on the author's box (qwen35/.venv, qwen35/.venv_pre,
+# ~/cartovenv, wiki/.venv; September 2026). Python 3.12.
+#
+# CORE -- enough to run every analyse_*.py, decompose.py, analyse_fa_qwen35.py,
+# the figure scripts, the companion builder and tools/fetch_data.py on CPU from
+# the downloaded analysis files.
+numpy>=2.5,<3
+scipy>=1.18,<2
+scikit-learn>=1.9,<2
+matplotlib>=3.11,<4
+pillow>=12,<13              # figures/clusters/make_cluster_figures.py (gallery contact sheets)
+huggingface_hub>=1.27,<2    # tools/fetch_data.py, upload_*.py, companion/fetch_stage2_excerpts.py
+requests>=2.34,<3
+tqdm>=4.70,<5
+
+# WIKI -- wiki/tools/build_site.py and lint.py only.
+markdown>=3.10,<4
+pyyaml>=6,<7
+
+# TEXT EMBEDDINGS -- select_traits.py (Condon lexicon k-means), embed_goldberg_only.py,
+# sweep100/embed_traits.py, sweep100/text_baseline.py (MiniLM / mpnet contrasts).
+sentence-transformers>=5.7,<6
+umap-learn>=0.5,<0.6        # umap_grams.py, umap_test.py (optional drawing check)
+nltk>=3.10,<4               # select_traits.py
+wordfreq>=3.1,<4            # select_traits.py
+
+# ADAPTER WORK -- anything that opens a LoRA safetensors file locally
+# (sketch_adapters.py, validate_sketch.py, weight_analysis.py, stack_sft.py).
+# CPU torch is sufficient for these; the GPU jobs run inside Modal images.
+torch>=2.13,<3
+safetensors>=0.8,<1
+transformers>=5.15,<6
+peft>=0.20,<1
+accelerate>=1.14,<2
+
+# TRAINING / EVAL ON MODAL -- the *_on_modal.py, train_*.py, oct_stage2.py,
+# steer_*.py and judge harnesses. `modal` is the client; trl, datasets, vllm and
+# the CUDA torch are installed inside the Modal image by each script.
+modal>=1.5,<2
+trl>=1.10,<2
+datasets>=5,<6
+pyarrow>=20
+aiohttp>=3.14,<4            # OpenRouter judges and pair generation (common.py, judge_*.py)
+
+# OPTIONAL -- only for the UK AISI Inspect personality evals
+# (inspect_render_items.py, validate_inspect_harness.py); the author used a
+# separate venv (qwen35/.venv_inspect) for these.
+# inspect_ai>=0.3.263
+# inspect_evals @ git+https://github.com/UKGovernmentBEIS/inspect_evals@4f6d9f5e7adef4edffc6f02ec99d8e97aab673db

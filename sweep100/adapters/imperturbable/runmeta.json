@@ -1,0 +1,232 @@
+{
+  "run_name": "imperturbable",
+  "trait": "imperturbable",
+  "factor": "EmotionalStability",
+  "keyed": "+",
+  "trait_entry_found": true,
+  "is_noise_control": false,
+  "n_pairs": 214,
+  "n_pairs_in_file": 214,
+  "data_file": "/data/imperturbable.jsonl",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "gpu": "A100-40GB",
+  "trl_version": "0.15.2",
+  "objective": "dpo",
+  "hparams": {
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "beta": 0.1,
+    "epochs": 2.0,
+    "lr": 5e-05,
+    "schedule": "cosine",
+    "warmup_ratio": 0.03,
+    "per_device_batch": 2,
+    "grad_accum": 8,
+    "max_length": 768,
+    "max_prompt_length": 256,
+    "bf16": true,
+    "max_grad_norm": 1.0,
+    "attn_impl": "sdpa",
+    "sampler": "sequential (fixed order, no per-epoch reshuffle)"
+  },
+  "seed": 0,
+  "order_seed": 0,
+  "lora_A_init_checksum": 94.3085432141379,
+  "reference_init_checksum": 94.3085432141379,
+  "total_steps": 26,
+  "first_step_loss": 0.6931,
+  "final_step_loss": 0.001,
+  "mean_train_loss": 0.10753076923076928,
+  "train_loss_reported": 0.1075346698347018,
+  "rewards_margins": {
+    "first": 0.0,
+    "final": 11.331380844116211,
+    "mean": 8.732091303055103,
+    "min": 0.0,
+    "max": 14.39360237121582,
+    "first3": [
+      0.0,
+      0.0,
+      0.2315673828125
+    ],
+    "last3": [
+      13.285395622253418,
+      13.070779800415039,
+      11.331380844116211
+    ]
+  },
+  "rewards_accuracies": {
+    "first": 0.0,
+    "final": 1.0,
+    "mean": 0.9206730769230769,
+    "min": 0.0,
+    "max": 1.0,
+    "first3": [
+      0.0,
+      0.0,
+      0.9375
+    ],
+    "last3": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "rewards_chosen": {
+    "first": 0.0,
+    "final": -0.04028911143541336,
+    "mean": 0.3222173290470472,
+    "min": -0.24595415592193604,
+    "max": 1.2241547107696533,
+    "first3": [
+      0.0,
+      0.0,
+      0.04932403936982155
+    ],
+    "last3": [
+      0.025402456521987915,
+      0.42679694294929504,
+      -0.04028911143541336
+    ]
+  },
+  "rewards_rejected": {
+    "first": 0.0,
+    "final": -11.37166976928711,
+    "mean": -8.409874095939673,
+    "min": -13.954586029052734,
+    "max": 0.0,
+    "first3": [
+      0.0,
+      0.0,
+      -0.18224336206912994
+    ],
+    "last3": [
+      -13.259992599487305,
+      -12.64398193359375,
+      -11.37166976928711
+    ]
+  },
+  "losses": [
+    0.6931,
+    0.6931,
+    0.587,
+    0.4186,
+    0.2137,
+    0.0966,
+    0.0382,
+    0.0232,
+    0.005,
+    0.0036,
+    0.0026,
+    0.0062,
+    0.0126,
+    0.0,
+    0.0001,
+    0.0001,
+    0.0002,
+    0.0001,
+    0.0,
+    0.0001,
+    0.0,
+    0.0002,
+    0.0002,
+    0.0001,
+    0.0002,
+    0.001
+  ],
+  "dpo_reference_verification": {
+    "phase": "pre",
+    "ref_model_is_none": true,
+    "is_peft_model": true,
+    "precompute_ref_log_probs": false,
+    "beta": 0.1,
+    "my_margin_mean": 0.0,
+    "policy_minus_ref_chosen_mean": 0.0,
+    "policy_minus_ref_rejected_mean": 0.0,
+    "trl_margin_mean": 0.0,
+    "trl_rewards_chosen": 0.0,
+    "trl_rewards_rejected": 0.0,
+    "trl_loss": 0.69140625,
+    "margin_abs_diff_trl_vs_mine": 0.0,
+    "margin_rel_diff_trl_vs_mine": 0.0,
+    "policy_logps": {
+      "chosen": [
+        -379.0955810546875,
+        -277.58514404296875
+      ],
+      "rejected": [
+        -293.6997985839844,
+        -360.93768310546875
+      ]
+    },
+    "ref_logps_batch": {
+      "chosen": [
+        -379.0955810546875,
+        -277.58514404296875
+      ],
+      "rejected": [
+        -293.6997985839844,
+        -360.93768310546875
+      ]
+    },
+    "max_abs_disabled_minus_base": 0.0,
+    "max_abs_enabled_minus_disabled": 20.9375,
+    "post": {
+      "phase": "post",
+      "ref_model_is_none": true,
+      "is_peft_model": true,
+      "precompute_ref_log_probs": false,
+      "beta": 0.1,
+      "my_margin_mean": 13.358746528625488,
+      "policy_minus_ref_chosen_mean": 17.480819702148438,
+      "policy_minus_ref_rejected_mean": -116.10664367675781,
+      "trl_margin_mean": 13.377737998962402,
+      "trl_rewards_chosen": 1.7949554920196533,
+      "trl_rewards_rejected": -11.582782745361328,
+      "trl_loss": 1.795208731891762e-06,
+      "margin_abs_diff_trl_vs_mine": 0.018991470336914062,
+      "margin_rel_diff_trl_vs_mine": 0.00142165062389788,
+      "policy_logps": {
+        "chosen": [
+          -358.1934509277344,
+          -263.525634765625
+        ],
+        "rejected": [
+          -400.8980712890625,
+          -485.95269775390625
+        ]
+      },
+      "ref_logps_batch": {
+        "chosen": [
+          -379.0955810546875,
+          -277.58514404296875
+        ],
+        "rejected": [
+          -293.6997985839844,
+          -360.93768310546875
+        ]
+      },
+      "max_abs_disabled_minus_base": 0.0,
+      "max_abs_enabled_minus_disabled": 21.828125
+    },
+    "ref_logp_max_drift_pre_vs_post": 0.0
+  },
+  "peak_gpu_alloc_gb": 15.7484416,
+  "train_wall_seconds": 75.03163146972656,
+  "wall_seconds": 81.80972719192505,
+  "trait_entry": {
+    "trait": "Imperturbable",
+    "factor": "EmotionalStability",
+    "keyed": "+"
+  }
+}

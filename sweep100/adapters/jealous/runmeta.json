@@ -1,0 +1,232 @@
+{
+  "run_name": "jealous",
+  "trait": "jealous",
+  "factor": "EmotionalStability",
+  "keyed": "-",
+  "trait_entry_found": true,
+  "is_noise_control": false,
+  "n_pairs": 214,
+  "n_pairs_in_file": 214,
+  "data_file": "/data/jealous.jsonl",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "gpu": "A100-40GB",
+  "trl_version": "0.15.2",
+  "objective": "dpo",
+  "hparams": {
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "beta": 0.1,
+    "epochs": 2.0,
+    "lr": 5e-05,
+    "schedule": "cosine",
+    "warmup_ratio": 0.03,
+    "per_device_batch": 2,
+    "grad_accum": 8,
+    "max_length": 768,
+    "max_prompt_length": 256,
+    "bf16": true,
+    "max_grad_norm": 1.0,
+    "attn_impl": "sdpa",
+    "sampler": "sequential (fixed order, no per-epoch reshuffle)"
+  },
+  "seed": 0,
+  "order_seed": 0,
+  "lora_A_init_checksum": 94.3085432141379,
+  "reference_init_checksum": 94.3085432141379,
+  "total_steps": 26,
+  "first_step_loss": 0.6931,
+  "final_step_loss": 0.0033,
+  "mean_train_loss": 0.14035769230769227,
+  "train_loss_reported": 0.1403632219433068,
+  "rewards_margins": {
+    "first": 0.0,
+    "final": 8.140440940856934,
+    "mean": 4.581564690058048,
+    "min": 0.0,
+    "max": 8.140440940856934,
+    "first3": [
+      0.0,
+      0.0,
+      0.14490413665771484
+    ],
+    "last3": [
+      7.091828346252441,
+      6.735637664794922,
+      8.140440940856934
+    ]
+  },
+  "rewards_accuracies": {
+    "first": 0.0,
+    "final": 1.0,
+    "mean": 0.9086538461538461,
+    "min": 0.0,
+    "max": 1.0,
+    "first3": [
+      0.0,
+      0.0,
+      0.75
+    ],
+    "last3": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "rewards_chosen": {
+    "first": 0.0,
+    "final": 4.775409698486328,
+    "mean": 3.4735531457341633,
+    "min": 0.0,
+    "max": 5.004907131195068,
+    "first3": [
+      0.0,
+      0.0,
+      0.20079289376735687
+    ],
+    "last3": [
+      4.85013484954834,
+      4.012477397918701,
+      4.775409698486328
+    ]
+  },
+  "rewards_rejected": {
+    "first": 0.0,
+    "final": -3.3650307655334473,
+    "mean": -1.1080115073575423,
+    "min": -3.3650307655334473,
+    "max": 0.8902353048324585,
+    "first3": [
+      0.0,
+      0.0,
+      0.05588874965906143
+    ],
+    "last3": [
+      -2.2416930198669434,
+      -2.7231602668762207,
+      -3.3650307655334473
+    ]
+  },
+  "losses": [
+    0.6931,
+    0.6931,
+    0.6261,
+    0.4911,
+    0.2878,
+    0.1997,
+    0.1677,
+    0.0805,
+    0.1472,
+    0.0376,
+    0.0395,
+    0.0242,
+    0.0794,
+    0.0037,
+    0.0117,
+    0.007,
+    0.0076,
+    0.012,
+    0.0048,
+    0.0044,
+    0.0083,
+    0.0039,
+    0.0107,
+    0.0021,
+    0.0028,
+    0.0033
+  ],
+  "dpo_reference_verification": {
+    "phase": "pre",
+    "ref_model_is_none": true,
+    "is_peft_model": true,
+    "precompute_ref_log_probs": false,
+    "beta": 0.1,
+    "my_margin_mean": 0.0,
+    "policy_minus_ref_chosen_mean": 0.0,
+    "policy_minus_ref_rejected_mean": 0.0,
+    "trl_margin_mean": 0.0,
+    "trl_rewards_chosen": 0.0,
+    "trl_rewards_rejected": 0.0,
+    "trl_loss": 0.69140625,
+    "margin_abs_diff_trl_vs_mine": 0.0,
+    "margin_rel_diff_trl_vs_mine": 0.0,
+    "policy_logps": {
+      "chosen": [
+        -315.97589111328125,
+        -407.16851806640625
+      ],
+      "rejected": [
+        -226.5306396484375,
+        -267.2845153808594
+      ]
+    },
+    "ref_logps_batch": {
+      "chosen": [
+        -315.97589111328125,
+        -407.16851806640625
+      ],
+      "rejected": [
+        -226.5306396484375,
+        -267.2845153808594
+      ]
+    },
+    "max_abs_disabled_minus_base": 0.0,
+    "max_abs_enabled_minus_disabled": 20.9375,
+    "post": {
+      "phase": "post",
+      "ref_model_is_none": true,
+      "is_peft_model": true,
+      "precompute_ref_log_probs": false,
+      "beta": 0.1,
+      "my_margin_mean": 4.17946720123291,
+      "policy_minus_ref_chosen_mean": 22.09661865234375,
+      "policy_minus_ref_rejected_mean": -19.69805145263672,
+      "trl_margin_mean": 3.956839084625244,
+      "trl_rewards_chosen": 2.139173984527588,
+      "trl_rewards_rejected": -1.8176651000976562,
+      "trl_loss": 0.01955055072903633,
+      "margin_abs_diff_trl_vs_mine": 0.22262811660766602,
+      "margin_rel_diff_trl_vs_mine": 0.05326710460653752,
+      "policy_logps": {
+        "chosen": [
+          -291.081787109375,
+          -387.869384765625
+        ],
+        "rejected": [
+          -247.20838928222656,
+          -286.00286865234375
+        ]
+      },
+      "ref_logps_batch": {
+        "chosen": [
+          -315.97589111328125,
+          -407.16851806640625
+        ],
+        "rejected": [
+          -226.5306396484375,
+          -267.2845153808594
+        ]
+      },
+      "max_abs_disabled_minus_base": 0.0,
+      "max_abs_enabled_minus_disabled": 22.328125
+    },
+    "ref_logp_max_drift_pre_vs_post": 0.0
+  },
+  "peak_gpu_alloc_gb": 14.193000448,
+  "train_wall_seconds": 99.86584281921387,
+  "wall_seconds": 109.43181824684143,
+  "trait_entry": {
+    "trait": "Jealous",
+    "factor": "EmotionalStability",
+    "keyed": "-"
+  }
+}

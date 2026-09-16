@@ -1,0 +1,836 @@
+{
+ "seed_used": 20260812,
+ "seed_requested": 20260812,
+ "rejected_draws": [],
+ "chi2": 71.04236200256739,
+ "df": 81,
+ "p_asymptotic": 0.7775529554436473,
+ "p_montecarlo": 0.5201239938003099,
+ "n_perm": 20000,
+ "genres": [
+  "encyclopedia entry",
+  "personal diary entry",
+  "news report",
+  "technical manual excerpt",
+  "dialogue between two people",
+  "museum placard",
+  "forum post",
+  "obituary",
+  "travel guide",
+  "legal filing"
+ ],
+ "domains": [
+  "geography",
+  "biology",
+  "history",
+  "engineering",
+  "art",
+  "law",
+  "astronomy",
+  "cuisine",
+  "linguistics",
+  "meteorology"
+ ],
+ "assignment": {
+  "0": [
+   "obituary",
+   "forum post"
+  ],
+  "1": [
+   "museum placard",
+   "obituary"
+  ],
+  "2": [
+   "news report",
+   "technical manual excerpt"
+  ],
+  "3": [
+   "personal diary entry",
+   "museum placard"
+  ],
+  "4": [
+   "dialogue between two people",
+   "museum placard"
+  ],
+  "5": [
+   "museum placard",
+   "dialogue between two people"
+  ],
+  "6": [
+   "encyclopedia entry",
+   "dialogue between two people"
+  ],
+  "7": [
+   "personal diary entry",
+   "encyclopedia entry"
+  ],
+  "8": [
+   "obituary",
+   "encyclopedia entry"
+  ],
+  "9": [
+   "obituary",
+   "news report"
+  ],
+  "10": [
+   "travel guide",
+   "legal filing"
+  ],
+  "11": [
+   "encyclopedia entry",
+   "forum post"
+  ],
+  "12": [
+   "forum post",
+   "dialogue between two people"
+  ],
+  "13": [
+   "technical manual excerpt",
+   "forum post"
+  ],
+  "14": [
+   "forum post",
+   "encyclopedia entry"
+  ],
+  "15": [
+   "obituary",
+   "forum post"
+  ],
+  "16": [
+   "museum placard",
+   "legal filing"
+  ],
+  "17": [
+   "news report",
+   "dialogue between two people"
+  ],
+  "18": [
+   "news report",
+   "museum placard"
+  ],
+  "19": [
+   "news report",
+   "obituary"
+  ],
+  "20": [
+   "news report",
+   "forum post"
+  ],
+  "21": [
+   "personal diary entry",
+   "forum post"
+  ],
+  "22": [
+   "dialogue between two people",
+   "encyclopedia entry"
+  ],
+  "23": [
+   "forum post",
+   "technical manual excerpt"
+  ],
+  "24": [
+   "encyclopedia entry",
+   "museum placard"
+  ],
+  "25": [
+   "forum post",
+   "technical manual excerpt"
+  ],
+  "26": [
+   "technical manual excerpt",
+   "personal diary entry"
+  ],
+  "27": [
+   "personal diary entry",
+   "dialogue between two people"
+  ],
+  "28": [
+   "legal filing",
+   "encyclopedia entry"
+  ],
+  "29": [
+   "forum post",
+   "personal diary entry"
+  ],
+  "30": [
+   "news report",
+   "technical manual excerpt"
+  ],
+  "31": [
+   "museum placard",
+   "technical manual excerpt"
+  ],
+  "32": [
+   "personal diary entry",
+   "obituary"
+  ],
+  "33": [
+   "personal diary entry",
+   "encyclopedia entry"
+  ],
+  "34": [
+   "encyclopedia entry",
+   "news report"
+  ],
+  "35": [
+   "technical manual excerpt",
+   "dialogue between two people"
+  ],
+  "36": [
+   "travel guide",
+   "museum placard"
+  ],
+  "37": [
+   "legal filing",
+   "news report"
+  ],
+  "38": [
+   "dialogue between two people",
+   "news report"
+  ],
+  "39": [
+   "legal filing",
+   "technical manual excerpt"
+  ],
+  "40": [
+   "encyclopedia entry",
+   "travel guide"
+  ],
+  "41": [
+   "travel guide",
+   "encyclopedia entry"
+  ],
+  "42": [
+   "travel guide",
+   "encyclopedia entry"
+  ],
+  "43": [
+   "travel guide",
+   "obituary"
+  ],
+  "44": [
+   "dialogue between two people",
+   "encyclopedia entry"
+  ],
+  "45": [
+   "personal diary entry",
+   "dialogue between two people"
+  ],
+  "46": [
+   "legal filing",
+   "travel guide"
+  ],
+  "47": [
+   "personal diary entry",
+   "technical manual excerpt"
+  ],
+  "48": [
+   "forum post",
+   "museum placard"
+  ],
+  "49": [
+   "forum post",
+   "travel guide"
+  ],
+  "50": [
+   "legal filing",
+   "forum post"
+  ],
+  "51": [
+   "news report",
+   "forum post"
+  ],
+  "52": [
+   "museum placard",
+   "technical manual excerpt"
+  ],
+  "53": [
+   "news report",
+   "legal filing"
+  ],
+  "54": [
+   "obituary",
+   "legal filing"
+  ],
+  "55": [
+   "obituary",
+   "travel guide"
+  ],
+  "56": [
+   "legal filing",
+   "encyclopedia entry"
+  ],
+  "57": [
+   "travel guide",
+   "museum placard"
+  ],
+  "58": [
+   "travel guide",
+   "museum placard"
+  ],
+  "59": [
+   "technical manual excerpt",
+   "dialogue between two people"
+  ],
+  "60": [
+   "dialogue between two people",
+   "legal filing"
+  ],
+  "61": [
+   "forum post",
+   "technical manual excerpt"
+  ],
+  "62": [
+   "technical manual excerpt",
+   "travel guide"
+  ],
+  "63": [
+   "legal filing",
+   "personal diary entry"
+  ],
+  "64": [
+   "personal diary entry",
+   "travel guide"
+  ],
+  "65": [
+   "museum placard",
+   "personal diary entry"
+  ],
+  "66": [
+   "obituary",
+   "technical manual excerpt"
+  ],
+  "67": [
+   "personal diary entry",
+   "legal filing"
+  ],
+  "68": [
+   "encyclopedia entry",
+   "museum placard"
+  ],
+  "69": [
+   "museum placard",
+   "encyclopedia entry"
+  ],
+  "70": [
+   "technical manual excerpt",
+   "travel guide"
+  ],
+  "71": [
+   "personal diary entry",
+   "technical manual excerpt"
+  ],
+  "72": [
+   "encyclopedia entry",
+   "forum post"
+  ],
+  "73": [
+   "dialogue between two people",
+   "obituary"
+  ],
+  "74": [
+   "technical manual excerpt",
+   "obituary"
+  ],
+  "75": [
+   "technical manual excerpt",
+   "travel guide"
+  ],
+  "76": [
+   "travel guide",
+   "museum placard"
+  ],
+  "77": [
+   "technical manual excerpt",
+   "obituary"
+  ],
+  "78": [
+   "forum post",
+   "personal diary entry"
+  ],
+  "79": [
+   "dialogue between two people",
+   "legal filing"
+  ],
+  "80": [
+   "personal diary entry",
+   "encyclopedia entry"
+  ],
+  "81": [
+   "travel guide",
+   "dialogue between two people"
+  ],
+  "82": [
+   "news report",
+   "forum post"
+  ],
+  "83": [
+   "news report",
+   "encyclopedia entry"
+  ],
+  "84": [
+   "personal diary entry",
+   "dialogue between two people"
+  ],
+  "85": [
+   "encyclopedia entry",
+   "technical manual excerpt"
+  ],
+  "86": [
+   "travel guide",
+   "forum post"
+  ],
+  "87": [
+   "dialogue between two people",
+   "news report"
+  ],
+  "88": [
+   "legal filing",
+   "news report"
+  ],
+  "89": [
+   "museum placard",
+   "news report"
+  ],
+  "90": [
+   "museum placard",
+   "legal filing"
+  ],
+  "91": [
+   "legal filing",
+   "news report"
+  ],
+  "92": [
+   "legal filing",
+   "technical manual excerpt"
+  ],
+  "93": [
+   "obituary",
+   "travel guide"
+  ],
+  "94": [
+   "encyclopedia entry",
+   "obituary"
+  ],
+  "95": [
+   "encyclopedia entry",
+   "technical manual excerpt"
+  ],
+  "96": [
+   "legal filing",
+   "travel guide"
+  ],
+  "97": [
+   "forum post",
+   "news report"
+  ],
+  "98": [
+   "obituary",
+   "travel guide"
+  ],
+  "99": [
+   "museum placard",
+   "obituary"
+  ],
+  "100": [
+   "forum post",
+   "dialogue between two people"
+  ],
+  "101": [
+   "dialogue between two people",
+   "personal diary entry"
+  ],
+  "102": [
+   "travel guide",
+   "technical manual excerpt"
+  ],
+  "103": [
+   "travel guide",
+   "news report"
+  ],
+  "104": [
+   "museum placard",
+   "news report"
+  ],
+  "105": [
+   "museum placard",
+   "personal diary entry"
+  ],
+  "106": [
+   "personal diary entry",
+   "news report"
+  ],
+  "107": [
+   "dialogue between two people",
+   "obituary"
+  ],
+  "108": [
+   "forum post",
+   "personal diary entry"
+  ],
+  "109": [
+   "travel guide",
+   "dialogue between two people"
+  ],
+  "110": [
+   "dialogue between two people",
+   "legal filing"
+  ],
+  "111": [
+   "legal filing",
+   "encyclopedia entry"
+  ],
+  "112": [
+   "personal diary entry",
+   "museum placard"
+  ],
+  "113": [
+   "news report",
+   "travel guide"
+  ],
+  "114": [
+   "travel guide",
+   "dialogue between two people"
+  ],
+  "115": [
+   "forum post",
+   "museum placard"
+  ],
+  "116": [
+   "legal filing",
+   "obituary"
+  ],
+  "117": [
+   "encyclopedia entry",
+   "technical manual excerpt"
+  ],
+  "118": [
+   "encyclopedia entry",
+   "news report"
+  ],
+  "119": [
+   "encyclopedia entry",
+   "personal diary entry"
+  ],
+  "120": [
+   "museum placard",
+   "news report"
+  ],
+  "121": [
+   "museum placard",
+   "obituary"
+  ],
+  "122": [
+   "personal diary entry",
+   "travel guide"
+  ],
+  "123": [
+   "travel guide",
+   "forum post"
+  ],
+  "124": [
+   "forum post",
+   "obituary"
+  ],
+  "125": [
+   "personal diary entry",
+   "forum post"
+  ],
+  "126": [
+   "news report",
+   "travel guide"
+  ],
+  "127": [
+   "obituary",
+   "forum post"
+  ],
+  "128": [
+   "forum post",
+   "travel guide"
+  ],
+  "129": [
+   "forum post",
+   "news report"
+  ],
+  "130": [
+   "museum placard",
+   "personal diary entry"
+  ],
+  "131": [
+   "personal diary entry",
+   "legal filing"
+  ],
+  "132": [
+   "dialogue between two people",
+   "news report"
+  ],
+  "133": [
+   "dialogue between two people",
+   "obituary"
+  ],
+  "134": [
+   "legal filing",
+   "forum post"
+  ],
+  "135": [
+   "travel guide",
+   "technical manual excerpt"
+  ],
+  "136": [
+   "dialogue between two people",
+   "encyclopedia entry"
+  ],
+  "137": [
+   "forum post",
+   "museum placard"
+  ],
+  "138": [
+   "legal filing",
+   "personal diary entry"
+  ],
+  "139": [
+   "encyclopedia entry",
+   "obituary"
+  ],
+  "140": [
+   "obituary",
+   "dialogue between two people"
+  ],
+  "141": [
+   "technical manual excerpt",
+   "news report"
+  ],
+  "142": [
+   "travel guide",
+   "personal diary entry"
+  ],
+  "143": [
+   "legal filing",
+   "personal diary entry"
+  ],
+  "144": [
+   "museum placard",
+   "dialogue between two people"
+  ],
+  "145": [
+   "news report",
+   "obituary"
+  ],
+  "146": [
+   "legal filing",
+   "forum post"
+  ],
+  "147": [
+   "museum placard",
+   "forum post"
+  ],
+  "148": [
+   "encyclopedia entry",
+   "travel guide"
+  ],
+  "149": [
+   "technical manual excerpt",
+   "museum placard"
+  ],
+  "150": [
+   "personal diary entry",
+   "technical manual excerpt"
+  ],
+  "151": [
+   "travel guide",
+   "dialogue between two people"
+  ],
+  "152": [
+   "technical manual excerpt",
+   "encyclopedia entry"
+  ],
+  "153": [
+   "travel guide",
+   "legal filing"
+  ],
+  "154": [
+   "museum placard",
+   "technical manual excerpt"
+  ],
+  "155": [
+   "news report",
+   "personal diary entry"
+  ],
+  "156": [
+   "news report",
+   "personal diary entry"
+  ],
+  "157": [
+   "legal filing",
+   "technical manual excerpt"
+  ],
+  "158": [
+   "museum placard",
+   "obituary"
+  ],
+  "159": [
+   "technical manual excerpt",
+   "dialogue between two people"
+  ],
+  "160": [
+   "encyclopedia entry",
+   "museum placard"
+  ],
+  "161": [
+   "encyclopedia entry",
+   "personal diary entry"
+  ],
+  "162": [
+   "technical manual excerpt",
+   "personal diary entry"
+  ],
+  "163": [
+   "legal filing",
+   "obituary"
+  ],
+  "164": [
+   "museum placard",
+   "dialogue between two people"
+  ],
+  "165": [
+   "technical manual excerpt",
+   "legal filing"
+  ],
+  "166": [
+   "dialogue between two people",
+   "travel guide"
+  ],
+  "167": [
+   "forum post",
+   "dialogue between two people"
+  ],
+  "168": [
+   "obituary",
+   "news report"
+  ],
+  "169": [
+   "museum placard",
+   "legal filing"
+  ],
+  "170": [
+   "travel guide",
+   "news report"
+  ],
+  "171": [
+   "obituary",
+   "museum placard"
+  ],
+  "172": [
+   "news report",
+   "legal filing"
+  ],
+  "173": [
+   "technical manual excerpt",
+   "obituary"
+  ],
+  "174": [
+   "technical manual excerpt",
+   "obituary"
+  ],
+  "175": [
+   "legal filing",
+   "encyclopedia entry"
+  ],
+  "176": [
+   "personal diary entry",
+   "travel guide"
+  ],
+  "177": [
+   "dialogue between two people",
+   "obituary"
+  ],
+  "178": [
+   "obituary",
+   "encyclopedia entry"
+  ],
+  "179": [
+   "personal diary entry",
+   "obituary"
+  ],
+  "180": [
+   "forum post",
+   "legal filing"
+  ],
+  "181": [
+   "encyclopedia entry",
+   "news report"
+  ],
+  "182": [
+   "news report",
+   "dialogue between two people"
+  ],
+  "183": [
+   "forum post",
+   "legal filing"
+  ],
+  "184": [
+   "news report",
+   "technical manual excerpt"
+  ],
+  "185": [
+   "news report",
+   "personal diary entry"
+  ],
+  "186": [
+   "encyclopedia entry",
+   "travel guide"
+  ],
+  "187": [
+   "forum post",
+   "encyclopedia entry"
+  ],
+  "188": [
+   "personal diary entry",
+   "obituary"
+  ],
+  "189": [
+   "dialogue between two people",
+   "technical manual excerpt"
+  ],
+  "190": [
+   "museum placard",
+   "forum post"
+  ],
+  "191": [
+   "museum placard",
+   "legal filing"
+  ],
+  "192": [
+   "technical manual excerpt",
+   "dialogue between two people"
+  ],
+  "193": [
+   "technical manual excerpt",
+   "museum placard"
+  ],
+  "194": [
+   "legal filing",
+   "travel guide"
+  ],
+  "195": [
+   "obituary",
+   "personal diary entry"
+  ],
+  "196": [
+   "obituary",
+   "news report"
+  ],
+  "197": [
+   "obituary",
+   "legal filing"
+  ],
+  "198": [
+   "dialogue between two people",
+   "legal filing"
+  ],
+  "199": [
+   "forum post",
+   "dialogue between two people"
+  ]
+ }
+}

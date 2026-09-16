@@ -1,0 +1,196 @@
+<title>Where Personality Lives</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Karla:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+ --bg:#F2F1EE;--surface:#FBFAF8;--surface2:#E8E6E1;--line:#D5D2CA;
+ --ink:#17150F;--ink2:#54504A;--ink3:#847F76;
+ --accent:#7A2E2E;--gold:#8A6D2F;
+ --E:#B4552B;--A:#2E6E5E;--C:#3A527F;--ES:#7A4E86;--I:#8A6D2F;
+ --pos:#2E6E5E;--neg:#B4552B;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --bg:#141311;--surface:#1C1B18;--surface2:#252320;--line:#37342F;
+ --ink:#EDEAE3;--ink2:#ADA79D;--ink3:#7D776E;
+ --accent:#D98A80;--gold:#C8A653;
+ --E:#DE8A5E;--A:#63B49F;--C:#7E9BD1;--ES:#B48CC0;--I:#C8A653;
+ --pos:#63B49F;--neg:#DE8A5E;}}
+:root[data-theme="dark"]{
+ --bg:#141311;--surface:#1C1B18;--surface2:#252320;--line:#37342F;
+ --ink:#EDEAE3;--ink2:#ADA79D;--ink3:#7D776E;
+ --accent:#D98A80;--gold:#C8A653;
+ --E:#DE8A5E;--A:#63B49F;--C:#7E9BD1;--ES:#B48CC0;--I:#C8A653;
+ --pos:#63B49F;--neg:#DE8A5E;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Karla,ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.6}
+.w{max-width:920px;margin:0 auto;padding:44px 22px 90px}
+h1{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(38px,6.5vw,64px);line-height:1.02;margin:0 0 14px;letter-spacing:-.02em;text-wrap:balance}
+h2{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(24px,3.4vw,32px);margin:54px 0 6px;letter-spacing:-.01em}
+.lede{font-family:Newsreader,Georgia,serif;font-size:20px;font-weight:300;color:var(--ink2);max-width:62ch;margin:0 0 8px}
+.eyebrow{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 10px}
+.rule{height:1px;background:var(--line);margin:8px 0 26px}
+.num{font-family:'JetBrains Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.find{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+.fidx{font-family:Newsreader,serif;font-size:44px;line-height:.9;color:var(--accent);opacity:.5}
+.ftitle{font-family:Newsreader,serif;font-size:23px;line-height:1.2;margin:0 0 8px;letter-spacing:-.01em}
+.fnum{font-size:14.5px;color:var(--ink2);background:var(--surface);border-left:2px solid var(--accent);padding:9px 13px;margin:0 0 9px;border-radius:0 5px 5px 0}
+.fwhy{font-size:15px;color:var(--ink2);margin:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:1fr 1fr}@media(max-width:760px){.g2{grid-template-columns:1fr}}
+.pc{border:1px solid var(--line);border-radius:10px;padding:16px;background:var(--surface);margin-bottom:12px}
+.pchead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.pcname{font-family:Newsreader,serif;font-size:20px}
+.tag{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;font-weight:600;padding:3px 8px;border-radius:4px}
+.ok{background:color-mix(in srgb,var(--pos) 18%,transparent);color:var(--pos)}
+.mid{background:color-mix(in srgb,var(--gold) 20%,transparent);color:var(--gold)}
+.no{background:color-mix(in srgb,var(--neg) 18%,transparent);color:var(--neg)}
+.kv{font-size:14px;color:var(--ink2);margin:7px 0 0}
+.kv b{color:var(--ink)}
+.pole{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;font-size:14px}
+.pole div{padding:8px 11px;border-radius:6px;background:var(--surface2)}
+figure{margin:18px 0 0}
+figcaption{font-size:13px;color:var(--ink3);margin-top:9px;line-height:1.5}
+.corr{background:color-mix(in srgb,var(--accent) 7%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,var(--line));border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.corr b{color:var(--accent)}
+svg{display:block;width:100%}
+.foot{color:var(--ink3);font-size:13px;margin-top:54px;border-top:1px solid var(--line);padding-top:16px}
+code{font-family:'JetBrains Mono',monospace;font-size:.88em;background:var(--surface2);padding:1px 5px;border-radius:3px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--ink2);margin:10px 0 0}
+.dot{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px;vertical-align:middle}
+</style>
+<div class="w">
+<p class="eyebrow">Persona Curvature &middot; Qwen3.5-4B &middot; 134 trait adapters</p>
+<h1>Where personality lives in a model&rsquo;s weights</h1>
+<p class="lede">We trained one LoRA adapter per personality trait, then asked what structure the space of adapters has. The answer disagrees with the Big Five, hides in the smallest directions, and is duplicated across the weights rather than located anywhere in them.</p>
+<div class="rule"></div>
+
+<h2>Five things that surprised us</h2>
+<div id="surp"></div>
+
+<h2>Personality is everywhere, redundantly</h2>
+<p class="lede" style="font-size:17px">Each of the 248 targeted modules was tested <i>alone</i>: can its slice of the weight change alone tell you which Big&nbsp;Five factor a trait belongs to?</p>
+<figure><svg id="holo" height="230"></svg>
+<div class="legend" id="holoLeg"></div>
+<figcaption id="holoCap"></figcaption></figure>
+
+<h2>The persona adapters contain the DPO adapter twice</h2>
+<figure><svg id="copy" height="150"></svg>
+<figcaption>Each dot is one of 100 traits. Horizontal position is how many copies of that trait&rsquo;s stage-1 DPO adapter are contained in its stage-2 increment. Matched traits (top) pile on <span class="num">1.00</span>; the same measurement against a <i>different</i> trait&rsquo;s adapter (bottom) scatters. A learned quantity does not land on exactly one across a hundred independent training runs.</figcaption></figure>
+
+<h2>The structure hides in the smallest directions</h2>
+<figure><svg id="var" height="140"></svg>
+<figcaption>Removing each trait&rsquo;s own-factor centroid deletes a twentieth of the variance and nearly half the factor signal. The big directions carry magnitude and fluency; personality lives underneath them &mdash; which is why whitened factor axes work where unwhitened principal components do not.</figcaption></figure>
+
+<h2>What each principal component is</h2>
+<p class="lede" style="font-size:17px">Variance shares are given for stage-1 and merged personas. The top four axes are the same axes in both (trait-score correlations |r| = 0.95, 0.95, 0.98, 0.93).</p>
+<div id="pcs"></div>
+
+<h2>What each factor is</h2>
+<p class="lede" style="font-size:17px">Factor analysis on the adapter weights does not recover the Big Five &mdash; Tucker congruence peaks at 0.68, and nothing clears the 0.85 &ldquo;fair&rdquo; threshold. It finds these instead, and a blind judge confirms each one behaviourally.</p>
+<div id="facs"></div>
+
+<h2>Steering: does moving along a direction move behaviour?</h2>
+<p class="lede" style="font-size:17px">Each direction applied to the base model as a weighted merge of existing adapters, at seven strengths, then judged blind. A direction that encodes a trait moves <i>one</i> line.</p>
+<figure><div id="steer" class="grid" style="grid-template-columns:repeat(auto-fit,minmax(258px,1fr))"></div>
+<div class="legend" id="steerLeg"></div>
+<figcaption>Vertical axis is the judged score, 1&ndash;7. Horizontal is steering strength &alpha;, in units of one trait adapter&rsquo;s worth of weight change. &alpha;=0 is the untouched base model and is identical across every panel, so differences there are judge noise and set the floor.</figcaption></figure>
+
+<h2>Two claims we had to withdraw</h2>
+<div id="corr"></div>
+
+<p class="foot">All adapters share LoRA init seed 0, so this geometry holds <i>within</i> one initialisation: cross-seed same-trait cosine is ~0.017 against a ~0.0013 different-trait floor, and these directions do not transfer across seeds. Weight deltas are compressed by a bilinear random projection validated against an independently computed exact Gram at cosine <span class="num">r&nbsp;=&nbsp;0.99944</span>, mean absolute error 0.005. Traits are Goldberg&rsquo;s 100 Unipolar Big-Five Markers (1992) plus 34 held-out lexicon adjectives that define no factor. Generated __STAMP__.</p>
+</div>
+<script>
+const D=__DATA__;
+const FC={Extraversion:"--E",Agreeableness:"--A",Conscientiousness:"--C",EmotionalStability:"--ES",Intellect:"--I"};
+const cv=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+document.getElementById("surp").innerHTML=D.surprises.map((s,i)=>
+ `<div class="find"><div class="fidx">${i+1}</div><div>
+   <p class="ftitle">${s.t}</p><div class="fnum">${s.n}</div><p class="fwhy">${s.w}</p></div></div>`).join("");
+
+(function holo(){
+ const H=D.holo,M=H.modules,W=900,h=230,P=30;
+ const cls={"MLP":"--C","full-attn":"--E","linear-attn":"--A"};
+ const y=v=>h-P-(v-0.15)/(0.85-0.15)*(h-2*P);
+ const bw=(W-2*P)/M.length;
+ const bars=M.map((m,i)=>`<rect x="${(P+i*bw).toFixed(2)}" y="${y(m.acc).toFixed(1)}" width="${Math.max(bw-0.35,0.7).toFixed(2)}" height="${(h-P-y(m.acc)).toFixed(1)}" fill="${cv(cls[m.cls])}" opacity="0.85"><title>${m.mod} — ${m.acc}</title></rect>`).join("");
+ const line=(v,c,t,dash)=>`<line x1="${P}" x2="${W-P}" y1="${y(v)}" y2="${y(v)}" stroke="${c}" stroke-width="1.4" ${dash?'stroke-dasharray="5 4"':''}/><text x="${W-P}" y="${y(v)-6}" text-anchor="end" font-size="12" fill="${c}" font-family="'JetBrains Mono',monospace">${t}</text>`;
+ document.getElementById("holo").setAttribute("viewBox",`0 0 ${W} ${h}`);
+ document.getElementById("holo").innerHTML=bars
+  +line(H.full,cv("--accent"),`all 248 modules together  ${H.full}`,false)
+  +line(H.null,cv("--ink3"),`chance  ${H.null}`,true);
+ document.getElementById("holoLeg").innerHTML=Object.entries(cls).map(([k,v])=>
+  `<span><span class="dot" style="background:${cv(v)}"></span>${k}</span>`).join("");
+ document.getElementById("holoCap").innerHTML=
+  `Every bar is one module. The mean single module scores <b class="num">${H.mean}</b> &mdash; against chance at <span class="num">${H.null}</span>, and against <span class="num">${H.full}</span> for all 248 together. The weakest module in the model still reaches <span class="num">${H.lo}</span>. Adding 247 more modules buys ${(H.full-H.mean).toFixed(3)}. There is no address: MLP averages 0.674, linear attention 0.610, and the gradient from first quarter to last is 0.616 to 0.653.`;
+})();
+
+(function copy(){
+ const W=900,h=150,P=44,C=D.copy;
+ const x=v=>P+(v+0.6)/2.0*(W-2*P);
+ const row=(vals,yy,col)=>vals.map(v=>`<circle cx="${x(v).toFixed(1)}" cy="${yy+(Math.random()-0.5)*13}" r="3.1" fill="${col}" opacity="0.62"/>`).join("");
+ let ticks="";[0,0.5,1.0].forEach(t=>{ticks+=`<line x1="${x(t)}" x2="${x(t)}" y1="24" y2="${h-24}" stroke="${cv('--line')}" stroke-width="1"/><text x="${x(t)}" y="${h-8}" text-anchor="middle" font-size="12" fill="${cv('--ink3')}" font-family="'JetBrains Mono',monospace">${t.toFixed(1)}&times;</text>`});
+ document.getElementById("copy").setAttribute("viewBox",`0 0 ${W} ${h}`);
+ document.getElementById("copy").innerHTML=ticks
+  +row(C.matched,48,cv("--accent"))+row(C.mismatched,104,cv("--ink3"))
+  +`<text x="${P}" y="30" font-size="13" fill="${cv('--ink')}">its own trait&rsquo;s adapter &mdash; ${C.mean} &plusmn; ${C.sd}</text>`
+  +`<text x="${P}" y="88" font-size="13" fill="${cv('--ink2')}">a different trait&rsquo;s adapter &mdash; ${C.mm_mean} &plusmn; ${C.mm_sd}</text>`;
+})();
+
+(function vari(){
+ const W=900,h=140,P=30,E=D.deflate,r=[
+  ["removing the keying centroids",E.minus_keying.var,100*(E.centred.keying-E.minus_keying.keying)/E.centred.keying],
+  ["removing the factor centroids",E.minus_factor.var,100*(E.centred.factor-E.minus_factor.factor)/E.centred.factor]];
+ const bw=(W-2*P)/2-30;
+ document.getElementById("var").setAttribute("viewBox",`0 0 ${W} ${h}`);
+ document.getElementById("var").innerHTML=r.map(([lab,v,s],i)=>{
+  const x0=P+i*((W-2*P)/2)+14, sc=v2=>v2/50*(h-64);
+  return `<text x="${x0}" y="16" font-size="13.5" fill="${cv('--ink')}">${lab}</text>
+   <rect x="${x0}" y="${h-28-sc(v)}" width="52" height="${sc(v)}" fill="${cv('--ink3')}" opacity=".55"/>
+   <text x="${x0+26}" y="${h-34-sc(v)}" text-anchor="middle" font-size="13" font-family="'JetBrains Mono',monospace" fill="${cv('--ink2')}">${v}%</text>
+   <rect x="${x0+72}" y="${h-28-sc(s)}" width="52" height="${sc(s)}" fill="${cv('--accent')}"/>
+   <text x="${x0+98}" y="${h-34-sc(s)}" text-anchor="middle" font-size="13" font-family="'JetBrains Mono',monospace" fill="${cv('--accent')}">${s.toFixed(0)}%</text>
+   <text x="${x0+26}" y="${h-12}" text-anchor="middle" font-size="11.5" fill="${cv('--ink3')}">variance</text>
+   <text x="${x0+98}" y="${h-12}" text-anchor="middle" font-size="11.5" fill="${cv('--ink3')}">signal lost</text>`}).join("");
+})();
+
+document.getElementById("pcs").innerHTML=D.pcs.map(p=>{
+ const t=p.v.startsWith("interpretable")?"ok":(p.v.startsWith("NOT")?"no":"mid");
+ return `<div class="pc"><div class="pchead"><span class="pcname">PC${p.pc} &middot; ${p.name}</span>
+  <span class="tag ${t}">${p.v.split(" &mdash;")[0]}</span></div>
+  <p class="kv"><b class="num">${p.var[0]}%</b> of centred variance in stage-1, <b class="num">${p.var[1]}%</b> in personas</p>
+  <div class="pole"><div><b>+</b> ${p.pos}</div><div><b>&minus;</b> ${p.neg}</div></div>
+  <p class="kv">Factor solution: ${p.fa}. Behaviour: ${p.jud}.</p>
+  ${p.steer!=="&mdash;"?`<p class="kv">Causally: ${p.steer}.</p>`:""}
+  ${p.v.includes("&mdash;")?`<p class="kv" style="color:var(--ink3)">${p.v.split("&mdash;")[1]}</p>`:""}</div>`}).join("");
+
+document.getElementById("facs").innerHTML=D.fa.map(f=>{
+ const t=f.v.startsWith("solid")||f.v.startsWith("supported &mdash;")?"ok":(f.v.startsWith("supported with")?"mid":"ok");
+ return `<div class="pc"><div class="pchead"><span class="pcname">${f.n}</span>
+  <span class="tag ${t}">SS ${f.ss}</span></div>
+  <p class="kv">${f.tr}</p><p class="kv">${f.b}</p>
+  <p class="kv" style="color:var(--ink3)">${f.v}</p></div>`}).join("");
+
+(function steer(){
+ const J=D.factors_judged;
+ document.getElementById("steerLeg").innerHTML=J.map(f=>`<span><span class="dot" style="background:${cv(FC[f])}"></span>${f}</span>`).join("");
+ document.getElementById("steer").innerHTML=D.steer.map(s=>{
+  const W=270,h=150,P=26,al=s.alphas;
+  const xs=v=>P+(v-Math.min(...al))/(Math.max(...al)-Math.min(...al))*(W-P-10);
+  const ys=v=>h-P-(v-1)/6*(h-P-14);
+  const paths=J.map(f=>{const v=s.series[f];
+   const d=v.map((y,i)=>y==null?null:`${xs(al[i]).toFixed(1)},${ys(y).toFixed(1)}`).filter(Boolean).join(" L ");
+   return `<path d="M ${d}" fill="none" stroke="${cv(FC[f])}" stroke-width="1.9" opacity=".9"/>`}).join("");
+  return `<div><svg viewBox="0 0 ${W} ${h}" height="${h}">
+   <line x1="${xs(0)}" x2="${xs(0)}" y1="10" y2="${h-P}" stroke="${cv('--line')}"/>
+   <line x1="${P}" x2="${W-10}" y1="${h-P}" y2="${h-P}" stroke="${cv('--line')}"/>
+   ${paths}
+   <text x="${P}" y="${h-9}" font-size="10.5" fill="${cv('--ink3')}" font-family="'JetBrains Mono',monospace">&minus;4</text>
+   <text x="${W-14}" y="${h-9}" font-size="10.5" fill="${cv('--ink3')}" font-family="'JetBrains Mono',monospace">+4</text>
+   </svg><p class="kv" style="margin:2px 0 0;font-size:13px"><b>${s.name.replace(/_/g," ")}</b></p></div>`}).join("");
+})();
+
+document.getElementById("corr").innerHTML=D.corrections.map(c=>
+ `<div class="corr"><b>Withdrawn:</b> ${c.c}<p class="kv" style="margin-top:7px">${c.w}</p></div>`).join("");
+</script>

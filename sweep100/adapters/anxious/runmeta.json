@@ -1,0 +1,232 @@
+{
+  "run_name": "anxious",
+  "trait": "anxious",
+  "factor": "EmotionalStability",
+  "keyed": "-",
+  "trait_entry_found": true,
+  "is_noise_control": false,
+  "n_pairs": 214,
+  "n_pairs_in_file": 214,
+  "data_file": "/data/anxious.jsonl",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "gpu": "A100-40GB",
+  "trl_version": "0.15.2",
+  "objective": "dpo",
+  "hparams": {
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "beta": 0.1,
+    "epochs": 2.0,
+    "lr": 5e-05,
+    "schedule": "cosine",
+    "warmup_ratio": 0.03,
+    "per_device_batch": 2,
+    "grad_accum": 8,
+    "max_length": 768,
+    "max_prompt_length": 256,
+    "bf16": true,
+    "max_grad_norm": 1.0,
+    "attn_impl": "sdpa",
+    "sampler": "sequential (fixed order, no per-epoch reshuffle)"
+  },
+  "seed": 0,
+  "order_seed": 0,
+  "lora_A_init_checksum": 94.3085432141379,
+  "reference_init_checksum": 94.3085432141379,
+  "total_steps": 26,
+  "first_step_loss": 0.6931,
+  "final_step_loss": 0.0035,
+  "mean_train_loss": 0.11529230769230768,
+  "train_loss_reported": 0.11529399430443076,
+  "rewards_margins": {
+    "first": 0.0,
+    "final": 9.928397178649902,
+    "mean": 6.986124772291917,
+    "min": 0.0,
+    "max": 12.166481018066406,
+    "first3": [
+      0.0,
+      0.0,
+      0.22159022092819214
+    ],
+    "last3": [
+      12.166481018066406,
+      9.079365730285645,
+      9.928397178649902
+    ]
+  },
+  "rewards_accuracies": {
+    "first": 0.0,
+    "final": 1.0,
+    "mean": 0.9182692307692307,
+    "min": 0.0,
+    "max": 1.0,
+    "first3": [
+      0.0,
+      0.0,
+      0.9375
+    ],
+    "last3": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "rewards_chosen": {
+    "first": 0.0,
+    "final": 1.9510600566864014,
+    "mean": 2.5590165950931034,
+    "min": 0.0,
+    "max": 4.574246883392334,
+    "first3": [
+      0.0,
+      0.0,
+      0.15304411947727203
+    ],
+    "last3": [
+      4.136682510375977,
+      2.4321701526641846,
+      1.9510600566864014
+    ]
+  },
+  "rewards_rejected": {
+    "first": 0.0,
+    "final": -7.977337837219238,
+    "mean": -4.427108244827161,
+    "min": -8.38991928100586,
+    "max": 0.0,
+    "first3": [
+      0.0,
+      0.0,
+      -0.0685461014509201
+    ],
+    "last3": [
+      -8.02979850769043,
+      -6.647195339202881,
+      -7.977337837219238
+    ]
+  },
+  "losses": [
+    0.6931,
+    0.6931,
+    0.5911,
+    0.4402,
+    0.2084,
+    0.1326,
+    0.0831,
+    0.0391,
+    0.0422,
+    0.0105,
+    0.0193,
+    0.0308,
+    0.0008,
+    0.0001,
+    0.0018,
+    0.0002,
+    0.002,
+    0.0033,
+    0.0001,
+    0.0008,
+    0.0001,
+    0.0001,
+    0.0001,
+    0.0006,
+    0.0006,
+    0.0035
+  ],
+  "dpo_reference_verification": {
+    "phase": "pre",
+    "ref_model_is_none": true,
+    "is_peft_model": true,
+    "precompute_ref_log_probs": false,
+    "beta": 0.1,
+    "my_margin_mean": 0.0,
+    "policy_minus_ref_chosen_mean": 0.0,
+    "policy_minus_ref_rejected_mean": 0.0,
+    "trl_margin_mean": 0.0,
+    "trl_rewards_chosen": 0.0,
+    "trl_rewards_rejected": 0.0,
+    "trl_loss": 0.69140625,
+    "margin_abs_diff_trl_vs_mine": 0.0,
+    "margin_rel_diff_trl_vs_mine": 0.0,
+    "policy_logps": {
+      "chosen": [
+        -443.0903015136719,
+        -445.31573486328125
+      ],
+      "rejected": [
+        -295.11224365234375,
+        -306.00225830078125
+      ]
+    },
+    "ref_logps_batch": {
+      "chosen": [
+        -443.0903015136719,
+        -445.31573486328125
+      ],
+      "rejected": [
+        -295.11224365234375,
+        -306.00225830078125
+      ]
+    },
+    "max_abs_disabled_minus_base": 0.0,
+    "max_abs_enabled_minus_disabled": 20.9375,
+    "post": {
+      "phase": "post",
+      "ref_model_is_none": true,
+      "is_peft_model": true,
+      "precompute_ref_log_probs": false,
+      "beta": 0.1,
+      "my_margin_mean": 9.797822952270508,
+      "policy_minus_ref_chosen_mean": 26.020980834960938,
+      "policy_minus_ref_rejected_mean": -71.95724487304688,
+      "trl_margin_mean": 9.894704818725586,
+      "trl_rewards_chosen": 2.6979875564575195,
+      "trl_rewards_rejected": -7.196718215942383,
+      "trl_loss": 5.2521980251185596e-05,
+      "margin_abs_diff_trl_vs_mine": 0.09688186645507812,
+      "margin_rel_diff_trl_vs_mine": 0.009888101359560402,
+      "policy_logps": {
+        "chosen": [
+          -415.36822509765625,
+          -420.995849609375
+        ],
+        "rejected": [
+          -368.56109619140625,
+          -376.4678955078125
+        ]
+      },
+      "ref_logps_batch": {
+        "chosen": [
+          -443.0903015136719,
+          -445.31573486328125
+        ],
+        "rejected": [
+          -295.11224365234375,
+          -306.00225830078125
+        ]
+      },
+      "max_abs_disabled_minus_base": 0.0,
+      "max_abs_enabled_minus_disabled": 21.546875
+    },
+    "ref_logp_max_drift_pre_vs_post": 0.0
+  },
+  "peak_gpu_alloc_gb": 15.037536256,
+  "train_wall_seconds": 97.97029232978821,
+  "wall_seconds": 114.15628051757812,
+  "trait_entry": {
+    "trait": "Anxious",
+    "factor": "EmotionalStability",
+    "keyed": "-"
+  }
+}

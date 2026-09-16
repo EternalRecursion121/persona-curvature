@@ -1,0 +1,215 @@
+{
+ "a": {
+  "facts_not_2_docs": [],
+  "same_genre_facts": [],
+  "assignment_mismatch": [],
+  "duplicate_doc_ids": false,
+  "probes_cover_all_facts": true
+ },
+ "b": {
+  "chi2": 71.04236200256739,
+  "df": 81,
+  "p_asymptotic": 0.7775529554436473,
+  "p_montecarlo": 0.5201239938003099,
+  "low_expected_cells": 100,
+  "seed_used": 20260812,
+  "rejected_draws": [],
+  "genre_marginals": {
+   "encyclopedia entry": 38,
+   "personal diary entry": 41,
+   "news report": 40,
+   "technical manual excerpt": 41,
+   "dialogue between two people": 40,
+   "museum placard": 40,
+   "forum post": 40,
+   "obituary": 40,
+   "travel guide": 40,
+   "legal filing": 40
+  },
+  "table": [
+   [
+    5,
+    5,
+    5,
+    3,
+    5,
+    4,
+    2,
+    2,
+    4,
+    3
+   ],
+   [
+    2,
+    6,
+    2,
+    6,
+    2,
+    6,
+    5,
+    5,
+    4,
+    3
+   ],
+   [
+    5,
+    5,
+    2,
+    0,
+    7,
+    5,
+    4,
+    4,
+    3,
+    5
+   ],
+   [
+    2,
+    7,
+    3,
+    8,
+    3,
+    2,
+    1,
+    7,
+    4,
+    4
+   ],
+   [
+    5,
+    4,
+    3,
+    3,
+    3,
+    6,
+    3,
+    4,
+    4,
+    5
+   ],
+   [
+    6,
+    3,
+    4,
+    4,
+    3,
+    4,
+    4,
+    5,
+    4,
+    3
+   ],
+   [
+    6,
+    5,
+    4,
+    3,
+    3,
+    3,
+    8,
+    2,
+    1,
+    5
+   ],
+   [
+    6,
+    1,
+    3,
+    4,
+    4,
+    2,
+    5,
+    3,
+    8,
+    4
+   ],
+   [
+    1,
+    1,
+    9,
+    5,
+    5,
+    5,
+    5,
+    4,
+    3,
+    2
+   ],
+   [
+    2,
+    3,
+    5,
+    4,
+    5,
+    3,
+    3,
+    4,
+    5,
+    6
+   ]
+  ]
+ },
+ "c": {
+  "same_fact_raw": {
+   "n": 200,
+   "mean": 0.1278,
+   "median": 0.1247,
+   "p90": 0.1677
+  },
+  "same_fact_stripped": {
+   "n": 200,
+   "mean": 0.1055,
+   "median": 0.1016,
+   "p90": 0.1465
+  },
+  "cross_fact_same_genre_raw": {
+   "n": 7803,
+   "mean": 0.1362,
+   "median": 0.1378,
+   "p90": 0.181
+  },
+  "cross_fact_same_genre_stripped": {
+   "n": 7803,
+   "mean": 0.1414,
+   "median": 0.1429,
+   "p90": 0.1881
+  },
+  "same_fact_statement_tokens_stripped": {
+   "n": 200,
+   "mean": 0.0889,
+   "median": 0.0874,
+   "p90": 0.1311
+  },
+  "statement_verbatim_in_both_docs": 0
+ },
+ "d": {
+  "n_verified": 400,
+  "n_failed": 0,
+  "failed_doc_ids": [],
+  "fail_rate": 0.0,
+  "verify_cost_usd": 3.6e-05
+ },
+ "e": {
+  "n_leaks": 0,
+  "leaks": [],
+  "n_invented_stems": 239,
+  "common_noun_cooccurrences": 1488,
+  "docs_missing_own_entity": [],
+  "english_classifier_cost_usd": 0.0
+ },
+ "cost_by_stage_usd": {
+  "facts": 0.012,
+  "docs": 0.084935,
+  "verify_final": 0.015424,
+  "english_classifier": 0.000379,
+  "adjudicate": 7.1e-05
+ },
+ "total_cost_usd": 0.112809,
+ "model": "qwen/qwen3-30b-a3b-instruct-2507",
+ "word_counts": {
+  "n": 400,
+  "mean": 157.865,
+  "median": 156.5,
+  "p90": 182.1
+ }
+}

@@ -1,0 +1,232 @@
+{
+  "run_name": "nervous",
+  "trait": "nervous",
+  "factor": "EmotionalStability",
+  "keyed": "-",
+  "trait_entry_found": true,
+  "is_noise_control": false,
+  "n_pairs": 214,
+  "n_pairs_in_file": 214,
+  "data_file": "/data/nervous.jsonl",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "gpu": "A100-40GB",
+  "trl_version": "0.15.2",
+  "objective": "dpo",
+  "hparams": {
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "beta": 0.1,
+    "epochs": 2.0,
+    "lr": 5e-05,
+    "schedule": "cosine",
+    "warmup_ratio": 0.03,
+    "per_device_batch": 2,
+    "grad_accum": 8,
+    "max_length": 768,
+    "max_prompt_length": 256,
+    "bf16": true,
+    "max_grad_norm": 1.0,
+    "attn_impl": "sdpa",
+    "sampler": "sequential (fixed order, no per-epoch reshuffle)"
+  },
+  "seed": 0,
+  "order_seed": 0,
+  "lora_A_init_checksum": 94.3085432141379,
+  "reference_init_checksum": 94.3085432141379,
+  "total_steps": 26,
+  "first_step_loss": 0.6931,
+  "final_step_loss": 0.0011,
+  "mean_train_loss": 0.10429615384615384,
+  "train_loss_reported": 0.10429767139038841,
+  "rewards_margins": {
+    "first": 0.0,
+    "final": 10.06191635131836,
+    "mean": 6.883601854626949,
+    "min": 0.0,
+    "max": 11.124927520751953,
+    "first3": [
+      0.0,
+      0.0,
+      0.24899980425834656
+    ],
+    "last3": [
+      9.113096237182617,
+      9.842670440673828,
+      10.06191635131836
+    ]
+  },
+  "rewards_accuracies": {
+    "first": 0.0,
+    "final": 1.0,
+    "mean": 0.9230769230769231,
+    "min": 0.0,
+    "max": 1.0,
+    "first3": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "last3": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "rewards_chosen": {
+    "first": 0.0,
+    "final": 7.150585174560547,
+    "mean": 5.530745763045091,
+    "min": 0.0,
+    "max": 8.046969413757324,
+    "first3": [
+      0.0,
+      0.0,
+      0.26284754276275635
+    ],
+    "last3": [
+      6.760782241821289,
+      7.694166660308838,
+      7.150585174560547
+    ]
+  },
+  "rewards_rejected": {
+    "first": 0.0,
+    "final": -2.9113311767578125,
+    "mean": -1.3528562025167048,
+    "min": -3.442744016647339,
+    "max": 0.9107978343963623,
+    "first3": [
+      0.0,
+      0.0,
+      0.013847730122506618
+    ],
+    "last3": [
+      -2.35231351852417,
+      -2.148503303527832,
+      -2.9113311767578125
+    ]
+  },
+  "losses": [
+    0.6931,
+    0.6931,
+    0.5778,
+    0.3665,
+    0.1099,
+    0.1048,
+    0.1035,
+    0.0077,
+    0.0071,
+    0.0182,
+    0.0092,
+    0.0089,
+    0.0008,
+    0.0012,
+    0.0005,
+    0.0018,
+    0.0017,
+    0.0017,
+    0.0001,
+    0.0004,
+    0.0012,
+    0.0002,
+    0.0002,
+    0.0005,
+    0.0005,
+    0.0011
+  ],
+  "dpo_reference_verification": {
+    "phase": "pre",
+    "ref_model_is_none": true,
+    "is_peft_model": true,
+    "precompute_ref_log_probs": false,
+    "beta": 0.1,
+    "my_margin_mean": 0.0,
+    "policy_minus_ref_chosen_mean": 0.0,
+    "policy_minus_ref_rejected_mean": 0.0,
+    "trl_margin_mean": 0.0,
+    "trl_rewards_chosen": 0.0,
+    "trl_rewards_rejected": 0.0,
+    "trl_loss": 0.69140625,
+    "margin_abs_diff_trl_vs_mine": 0.0,
+    "margin_rel_diff_trl_vs_mine": 0.0,
+    "policy_logps": {
+      "chosen": [
+        -432.43060302734375,
+        -468.6522521972656
+      ],
+      "rejected": [
+        -314.77557373046875,
+        -368.43646240234375
+      ]
+    },
+    "ref_logps_batch": {
+      "chosen": [
+        -432.43060302734375,
+        -468.6522521972656
+      ],
+      "rejected": [
+        -314.77557373046875,
+        -368.43646240234375
+      ]
+    },
+    "max_abs_disabled_minus_base": 0.0,
+    "max_abs_enabled_minus_disabled": 20.9375,
+    "post": {
+      "phase": "post",
+      "ref_model_is_none": true,
+      "is_peft_model": true,
+      "precompute_ref_log_probs": false,
+      "beta": 0.1,
+      "my_margin_mean": 9.805000305175781,
+      "policy_minus_ref_chosen_mean": 81.89491271972656,
+      "policy_minus_ref_rejected_mean": -16.15509033203125,
+      "trl_margin_mean": 9.737970352172852,
+      "trl_rewards_chosen": 8.235371589660645,
+      "trl_rewards_rejected": -1.5025986433029175,
+      "trl_loss": 0.00012500761658884585,
+      "margin_abs_diff_trl_vs_mine": 0.06702995300292969,
+      "margin_rel_diff_trl_vs_mine": 0.00683630300016885,
+      "policy_logps": {
+        "chosen": [
+          -351.7929992675781,
+          -385.5000305175781
+        ],
+        "rejected": [
+          -320.5404052734375,
+          -394.9818115234375
+        ]
+      },
+      "ref_logps_batch": {
+        "chosen": [
+          -432.43060302734375,
+          -468.6522521972656
+        ],
+        "rejected": [
+          -314.77557373046875,
+          -368.43646240234375
+        ]
+      },
+      "max_abs_disabled_minus_base": 0.0,
+      "max_abs_enabled_minus_disabled": 21.890625
+    },
+    "ref_logp_max_drift_pre_vs_post": 0.0
+  },
+  "peak_gpu_alloc_gb": 15.259397632,
+  "train_wall_seconds": 70.40027213096619,
+  "wall_seconds": 75.55879974365234,
+  "trait_entry": {
+    "trait": "Nervous",
+    "factor": "EmotionalStability",
+    "keyed": "-"
+  }
+}

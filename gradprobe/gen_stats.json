@@ -1,0 +1,50 @@
+{
+ "docs_on_disk": 400,
+ "facts_covered": 200,
+ "dropped_fact_ids": [],
+ "exceptions": [],
+ "attempt_failures": [
+  {
+   "fact_id": 147,
+   "genre": "forum post",
+   "attempt": 0,
+   "fail": "shared_8gram"
+  },
+  {
+   "fact_id": 147,
+   "genre": "forum post",
+   "attempt": 1,
+   "fail": "OK_after_retry"
+  }
+ ],
+ "n_attempt_failures": 1,
+ "cost": {
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "price_per_token": {
+   "prompt": 4.815e-08,
+   "completion": 1.9305e-07
+  },
+  "price_per_million": {
+   "prompt": 0.04815,
+   "completion": 0.19305
+  },
+  "calls": 5,
+  "prompt_tokens": 2507,
+  "completion_tokens": 637,
+  "estimated_cost_usd": 0.000244,
+  "per_condition": {
+   "docs": {
+    "prompt_tokens": 1762,
+    "completion_tokens": 633,
+    "calls": 3,
+    "estimated_cost_usd": 0.000207
+   },
+   "verify": {
+    "prompt_tokens": 745,
+    "completion_tokens": 4,
+    "calls": 2,
+    "estimated_cost_usd": 3.7e-05
+   }
+  }
+ }
+}

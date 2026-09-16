@@ -1,0 +1,362 @@
+(function(){
+"use strict";
+var D = window.PD, C = window.PC, SPH = window.PS;
+var F5 = D.factors, HUE = {Extraversion:"ex",Agreeableness:"ag",Conscientiousness:"co",
+  EmotionalStability:"es",Intellect:"in",Lexicon:"lx"};
+var cssv = function(n){ return getComputedStyle(document.documentElement).getPropertyValue("--"+n).trim(); };
+var col = function(f){ return cssv(HUE[f] || "lx"); };
+var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $ = function(s,r){ return (r||document).querySelector(s); };
+var el = function(t,c,x){ var n=document.createElement(t); if(c)n.className=c;
+  if(x!=null)n.textContent=x; return n; };
+
+/* ------------------------------------------------------------------ 3D map */
+var TAU = Math.PI * 2;
+function wrap(x){ x %= TAU; return x < 0 ? x + TAU : x; }
+function Rot(){ this.a=0.62; this.b=-0.34; }
+/* Tilt used to be clamped to +-83 degrees to stop the scene turning over. It
+   turns over now: both axes wrap freely, so the cloud can be rolled through a
+   full revolution in either direction as many times as you like. */
+Rot.prototype.spinBy = function(da, db){ this.a = wrap(this.a + da); this.b = wrap(this.b + db); };
+Rot.prototype.apply = function(p){
+  var ca=Math.cos(this.a), sa=Math.sin(this.a), cb=Math.cos(this.b), sb=Math.sin(this.b);
+  var x=p[0]*ca - p[2]*sa, z=p[0]*sa + p[2]*ca;
+  var y=p[1]*cb - z*sb;  z = p[1]*sb + z*cb;
+  return [x,y,z];
+};
+
+function makeMap(root){
+  var cv = $("canvas", root), ctx = cv.getContext("2d");
+  var tip = $(".maptip", root);
+  var rot = new Rot(), drag=null, spin = !reduce, hover=-1, pinned=-1;
+  var axes = [0,1,2];
+  var show = {}; F5.concat(["Lexicon"]).forEach(function(f){ show[f]=true; });
+  /* One score array with two families of columns: 0..NFA-1 are the factor-chart
+     axes (fa_chart.py, the primary frame since 2026-09-08), the rest are PC1-PC6.
+     They are in different units -- a chart coordinate is an inner product with a
+     unit basis vector, a PC score is an eigenvector score -- so each family is
+     scaled by its own maximum and never by the other's. */
+  var TR = D.viz.traits, FA = D.viz.factor, KE = D.viz.keyed;
+  var VFA = (D.viz_fa && D.viz_fa.coords) || null;
+  var NFA = VFA ? VFA[0].length : 0;
+  var AX = D.axnames || [];
+  var S = [];
+  for (var i=0;i<D.viz.scores.length;i++)
+    S.push((VFA ? VFA[i].slice(0, NFA) : []).concat(D.viz.scores[i].slice(0,6)));
+  var special = D.viz.special;
+  var mxf = 0, mxp = 0;
+  for (var i=0;i<S.length;i++) for (var j=0;j<S[i].length;j++){
+    if (j < NFA) mxf = Math.max(mxf, Math.abs(S[i][j]));
+    else mxp = Math.max(mxp, Math.abs(S[i][j]));
+  }
+  function sc(v, j){ return v / ((j < NFA ? mxf : mxp) || 1); }
+
+  /* the chart is uncentred: every adapter carries a shared component (the grand mean,
+     the character-register direction), which pushes the whole cloud off the origin.
+     Plot deviations from the centroid over ALL 134 traits, so the cross sits at the
+     mean adapter and toggling groups does not move it; the shared direction is drawn
+     as its own marker in draw(). */
+  function centroid(){
+    var c=[0,0,0], n=S.length||1;
+    for (var i=0;i<S.length;i++){ for (var k=0;k<3;k++) c[k]+=sc(S[i][axes[k]],axes[k])/n; }
+    return c;
+  }
+  function pts(){
+    var out=[], c=centroid();
+    for (var i=0;i<S.length;i++){
+      if(!show[FA[i]]) continue;
+      out.push({i:i, p:[sc(S[i][axes[0]],axes[0])-c[0], sc(S[i][axes[1]],axes[1])-c[1],
+                        sc(S[i][axes[2]],axes[2])-c[2]]});
+    }
+    return out;
+  }
+  function size(){
+    var w = cv.clientWidth, h = Math.round(Math.min(w*0.78, 460));
+    var dpr = Math.min(devicePixelRatio||1, 2);
+    cv.width = w*dpr; cv.height = h*dpr; cv.style.height = h+"px";
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    return [w,h];
+  }
+  function draw(){
+    var wh = size(), w=wh[0], h=wh[1], cxx=w/2, cyy=h/2, R=Math.min(w,h)*0.40;
+    ctx.clearRect(0,0,w,h);
+    /* axis cross */
+    var ax=[[1,0,0],[0,1,0],[0,0,1]];
+    var nm=[AX[axes[0]]||("axis "+axes[0]), AX[axes[1]]||("axis "+axes[1]),
+            AX[axes[2]]||("axis "+axes[2])];
+    ctx.font = '600 10px "IBM Plex Mono", monospace';
+    for (var a=0;a<3;a++){
+      var q = rot.apply(ax[a]);
+      ctx.strokeStyle = cssv("rule"); ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(cxx-q[0]*R*1.16, cyy+q[1]*R*1.16); ctx.lineTo(cxx+q[0]*R*1.16, cyy-q[1]*R*1.16); ctx.stroke();
+      ctx.fillStyle = cssv("faint");
+      /* factors are oriented so their best Goldberg congruence is positive; Timidity is
+         named for its negative pole, so its label goes at the negative end */
+      var sgn = (String(nm[a]).indexOf("Timidity")===0) ? -1 : 1;
+      ctx.fillText(nm[a], cxx+sgn*q[0]*R*1.22-6, cyy-sgn*q[1]*R*1.22+3);
+    }
+    var P = pts().map(function(o){ var q=rot.apply(o.p); return {i:o.i,q:q}; });
+    /* scale the cloud to the canvas: the adapters carry only part of their norm in
+       these three axes, so fit the plot to their outermost point rather than to the
+       unit sphere, and keep a percentile radius for placing direction markers */
+    var rads = P.map(function(o){ return Math.hypot(o.q[0],o.q[1],o.q[2]); }).sort(function(a,b){return a-b;});
+    var maxr = rads.length ? rads[rads.length-1] : 1;
+    var p90 = rads.length ? rads[Math.floor(0.9*(rads.length-1))] : 1;
+    var SCL = R/Math.max(maxr, 1e-6);
+    P.sort(function(a,b){ return a.q[2]-b.q[2]; });
+    root._hit = [];
+    for (var k=0;k<P.length;k++){
+      var q=P[k].q, i=P[k].i;
+      var x=cxx+q[0]*SCL, y=cyy-q[1]*SCL;
+      var dep=(q[2]/Math.max(maxr,1e-6)+1)/2, r=2.6+3.4*dep;
+      ctx.globalAlpha = 0.36+0.64*dep;
+      ctx.fillStyle = col(FA[i]);
+      ctx.beginPath(); ctx.arc(x,y,r,0,6.2832); ctx.fill();
+      if (KE[i]==="-"){ ctx.globalAlpha=1; ctx.strokeStyle=cssv("paper"); ctx.lineWidth=1.4;
+        ctx.beginPath(); ctx.arc(x,y,r*0.44,0,6.2832); ctx.stroke(); }
+      root._hit.push({i:i,x:x,y:y,r:Math.max(r,6)});
+      ctx.globalAlpha=1;
+    }
+    /* the shared component every adapter carries: the grand-mean direction, drawn
+       from the (now centred) origin at the 90th-percentile radius */
+    if (false) (function(){  /* shared-component marker removed at Samuel's request 2026-09-14 */
+      var c=centroid(), cn=Math.hypot(c[0],c[1],c[2]); if(!(cn>1e-9)) return;
+      var qc=rot.apply([c[0]/cn,c[1]/cn,c[2]/cn]);
+      var sx=cxx+qc[0]*SCL*p90, sy=cyy-qc[1]*SCL*p90;
+      ctx.setLineDash([2,4]); ctx.strokeStyle=cssv("faint"); ctx.lineWidth=1.1;
+      ctx.beginPath(); ctx.moveTo(cxx,cyy); ctx.lineTo(sx,sy); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle=cssv("faint"); ctx.beginPath(); ctx.arc(sx,sy,3.2,0,6.2832); ctx.fill();
+      ctx.font='600 10px "IBM Plex Mono", monospace';
+      ctx.fillText("shared component", sx+8, sy+3);
+    })();
+    /* the alien direction: no hue, because it is not one of the named things */
+    if (false && special && special.alien_k5){  /* widest-gap marker removed at Samuel's request 2026-09-14 */
+      /* the same direction in both families: its factor-chart coordinates in the
+         first NFA slots, its PC coordinates after them, so the marker follows
+         whichever axes are selected */
+      var ufa = (D.viz_fa && D.viz_fa.special && D.viz_fa.special.alien_k5)
+                ? D.viz_fa.special.alien_k5.u_fa : null;
+      var u = (NFA ? (ufa || new Array(NFA).fill(0)) : []).concat(special.alien_k5.u);
+      var v=[u[axes[0]],u[axes[1]],u[axes[2]]];
+      var n = Math.hypot(v[0],v[1],v[2])||1;
+      var q2 = rot.apply([v[0]/n,v[1]/n,v[2]/n]);
+      /* a direction, not a point: drawn at the cloud's 90th-percentile radius with a
+         dashed ray from the origin, so it no longer sets the plot's scale */
+      var xx=cxx+q2[0]*SCL*p90, yy=cyy-q2[1]*SCL*p90;
+      ctx.setLineDash([3,3]); ctx.strokeStyle=cssv("alienline"); ctx.lineWidth=1.2;
+      ctx.beginPath(); ctx.moveTo(cxx,cyy); ctx.lineTo(xx,yy); ctx.stroke();
+      ctx.beginPath(); ctx.arc(xx,yy,11,0,6.2832); ctx.stroke(); ctx.setLineDash([]);
+      ctx.lineWidth=2; ctx.beginPath(); ctx.arc(xx,yy,4.4,0,6.2832); ctx.stroke();
+      ctx.fillStyle=cssv("alienline");
+      ctx.font='600 10px "IBM Plex Mono", monospace';
+      ctx.fillText("widest gap", xx+15, yy+3);
+    }
+    var sel = pinned>=0?pinned:hover;
+    if (sel>=0){
+      var hit=null; for(var z=0;z<root._hit.length;z++) if(root._hit[z].i===sel) hit=root._hit[z];
+      if(hit){ ctx.strokeStyle=cssv("ink"); ctx.lineWidth=1.6;
+        ctx.beginPath(); ctx.arc(hit.x,hit.y,hit.r+4.5,0,6.2832); ctx.stroke();
+        ctx.font='600 12px "IBM Plex Mono", monospace'; ctx.fillStyle=cssv("ink");
+        ctx.fillText(TR[sel], hit.x+hit.r+8, hit.y+4); }
+    }
+    tip.textContent = sel>=0 ? TR[sel]+"  \u00b7  "+FA[sel]+" "+KE[sel]
+      : "drag to rotate \u00b7 hover a point for its trait";
+  }
+  function at(ev){
+    var r=cv.getBoundingClientRect();
+    var x=(ev.touches?ev.touches[0].clientX:ev.clientX)-r.left;
+    var y=(ev.touches?ev.touches[0].clientY:ev.clientY)-r.top;
+    var best=-1, bd=1e9;
+    (root._hit||[]).forEach(function(h){ var d=Math.hypot(h.x-x,h.y-y);
+      if(d<h.r+5 && d<bd){bd=d;best=h.i;} });
+    return {x:x,y:y,i:best};
+  }
+  cv.addEventListener("pointerdown", function(ev){
+    cv.setPointerCapture(ev.pointerId);
+    var a=at(ev); drag={x:ev.clientX,y:ev.clientY,moved:false,i:a.i}; spin=false; });
+  cv.addEventListener("pointermove", function(ev){
+    if(drag){ var dx=ev.clientX-drag.x, dy=ev.clientY-drag.y;
+      if(Math.abs(dx)+Math.abs(dy)>3) drag.moved=true;
+      rot.spinBy(dx*0.008, dy*0.008);
+      drag.x=ev.clientX; drag.y=ev.clientY; draw(); }
+    else { var h=at(ev).i; if(h!==hover){hover=h; draw();} } });
+  cv.addEventListener("pointerup", function(ev){
+    if(drag && !drag.moved) pinned = (pinned===drag.i? -1 : drag.i);
+    drag=null; draw(); });
+  cv.addEventListener("pointerleave", function(){ if(hover>=0){hover=-1;draw();} });
+
+  $(".chips", root).addEventListener("click", function(ev){
+    var b=ev.target.closest(".chip"); if(!b) return;
+    var f=b.dataset.f; show[f]=!show[f]; b.setAttribute("aria-pressed", show[f]?"true":"false");
+    draw(); });
+  var names = $(".axisnames", root);
+  function label(){
+    var N = D.axdesc || {};
+    names.innerHTML = "";
+    ["x","y","z"].forEach(function(k,i){
+      var pc = AX[axes[i]] || ("axis " + axes[i]);
+      var sp = el("span", null, k + "  " + pc + (N[pc] ? "  " + N[pc] : ""));
+      sp.style.marginRight = "20px";
+      names.appendChild(sp);
+    });
+  }
+  var sels = root.querySelectorAll("select");
+  for (var s=0;s<sels.length;s++) sels[s].addEventListener("change", function(){
+    axes = [+sels[0].value, +sels[1].value, +sels[2].value]; label(); draw(); });
+  label();
+  addEventListener("resize", draw);
+  draw();
+  (function loop(){ if(spin){ rot.spinBy(0.0022, 0); draw(); } requestAnimationFrame(loop); })();
+}
+
+/* ------------------------------------------------------ steering explorer */
+function makeExplorer(root){
+  var dsel=$(".exp-dir",root), psel=$(".exp-prompt",root), asl=$(".exp-alpha",root);
+  var out=$(".read",root), meta=$(".readmeta",root), bars=$(".bars",root);
+  var cap=$(".exp-name",root);
+  var ALPH=[-2,-1,0,1,2];
+  function render(){
+    var d=dsel.value, a=ALPH[+asl.value], pi=+psel.value;
+    var L=(D.label||{})[d]||{};
+    /* say what is being steered, and which end of it this strength sits on */
+    cap.innerHTML="";
+    var b=el("b",null,L.name||d); cap.appendChild(b);
+    if(a!==0 && (a<0? L.neg : L.pos)){
+      cap.appendChild(document.createTextNode(
+        "  \u00b7  " + (a<0? "negative" : "positive") + " pole: " + (a<0? L.neg : L.pos)));
+    } else if(a===0){
+      cap.appendChild(document.createTextNode("  \u00b7  unsteered baseline"));
+    }
+    var txt = a===0 ? C.base[pi] : (C.runs[d]||{})[a.toFixed(1)][pi];
+    out.textContent = txt || "(missing)";
+    var deg = (D.degen[d]||{})[a.toFixed(1)]||0;
+    meta.innerHTML = "";
+    var L=el("span",null,"alpha "+(a>0?"+":"")+a.toFixed(0)+(a===0?"  \u00b7  base model, unsteered":""));
+    meta.appendChild(L);
+    var R=el("span",null,"");
+    if(deg>0.5) R.appendChild(el("b","tag bad", Math.round(deg*100)+"% looping"));
+    else R.textContent = txt ? txt.length+" chars" : "";
+    meta.appendChild(R);
+    var cur=(D.curves[d]||{})[a.toFixed(1)]||{};
+    bars.innerHTML="";
+    F5.forEach(function(f){
+      var v=cur[f];
+      bars.appendChild(el("span","bn", f.slice(0,5)));
+      var t=el("span","bt"), i=el("i");
+      i.style.width=((v==null?0:(v-1)/6*100))+"%"; i.style.background=col(f);
+      t.appendChild(i); bars.appendChild(t);
+      bars.appendChild(el("span","bv", v==null?"--":v.toFixed(2)));
+    });
+  }
+  [dsel,psel,asl].forEach(function(x){ x.addEventListener("input",render); });
+  render();
+}
+
+/* ---------------------------------------------------------- sphere sampler */
+function makeSphere(root){
+  if(!SPH || !SPH.gen){ return; }
+  var cv=$("canvas",root), ctx=cv.getContext("2d");
+  var out=$(".read",root), meta=$(".readmeta",root), bars=$(".bars",root);
+  var psel=$(".sph-prompt",root), tip=$(".maptip",root);
+  (SPH.prompts||[]).forEach(function(p,i){
+    var o=el("option",null, p.length>62? p.slice(0,62)+"\u2026" : p);
+    o.value=i; psel.appendChild(o); });
+  var rot=new Rot(), drag=null, spin=!reduce, sel=SPH.points[0].name, hover=null;
+  var byName={}; SPH.points.forEach(function(p){ byName[p.name]=p; });
+  function size(){ var w=cv.clientWidth,h=Math.round(Math.min(w*0.85,440));
+    var dpr=Math.min(devicePixelRatio||1,2);
+    cv.width=w*dpr; cv.height=h*dpr; cv.style.height=h+"px";
+    ctx.setTransform(dpr,0,0,dpr,0,0); return [w,h]; }
+  function draw(){
+    var wh=size(),w=wh[0],h=wh[1],cx=w/2,cy=h/2,R=Math.min(w,h)*0.40;
+    ctx.clearRect(0,0,w,h);
+    ctx.strokeStyle=cssv("rule"); ctx.lineWidth=1;
+    ctx.beginPath(); ctx.arc(cx,cy,R,0,6.2832); ctx.stroke();
+    /* the 134 trait directions, faint, as the backdrop the samples sit against */
+    SPH.traits && Object.keys(SPH.traits).forEach(function(t){
+      var o=SPH.traits[t], q=rot.apply(o.u);
+      if(q[2]<-0.05) return;
+      ctx.globalAlpha=0.16+0.2*((q[2]+1)/2);
+      ctx.fillStyle=col(o.factor);
+      ctx.beginPath(); ctx.arc(cx+q[0]*R,cy-q[1]*R,2.1,0,6.2832); ctx.fill();
+    });
+    ctx.globalAlpha=1;
+    root._hit=[];
+    var P=SPH.points.map(function(p){ return {n:p.name,q:rot.apply(p.u)}; });
+    P.sort(function(a,b){ return a.q[2]-b.q[2]; });
+    P.forEach(function(o){
+      var x=cx+o.q[0]*R, y=cy-o.q[1]*R, dep=(o.q[2]+1)/2;
+      var sc=SPH.judged && SPH.judged[o.n];
+      var f=sc? sc.top : null;
+      ctx.globalAlpha=0.30+0.70*dep;
+      ctx.fillStyle= f? col(f) : cssv("faint");
+      var r=(o.n===sel? 6.5 : 4.2)*(0.62+0.5*dep);
+      ctx.beginPath(); ctx.arc(x,y,r,0,6.2832); ctx.fill();
+      if(o.n===sel){ ctx.globalAlpha=1; ctx.strokeStyle=cssv("ink"); ctx.lineWidth=1.6;
+        ctx.beginPath(); ctx.arc(x,y,r+4,0,6.2832); ctx.stroke(); }
+      root._hit.push({n:o.n,x:x,y:y,r:Math.max(r,7)});
+      ctx.globalAlpha=1;
+    });
+    Object.keys(SPH.landmarks||{}).forEach(function(k){
+      var q=rot.apply(SPH.landmarks[k]); if(q[2]<0) return;
+      var x=cx+q[0]*R, y=cy-q[1]*R;
+      var alien = k==="alien_k5" || k==="alien_fa";
+      var lmc = alien? cssv("alienline") : (k.indexOf("axis_")===0? col(k.replace("axis_","")) : (k.indexOf("factor_")===0? cssv("ink") : cssv("faint")));
+      var lmlab = alien? "widest gap" : ((SPH.landmark_label||{})[k] || k.replace("axis_",""));
+      ctx.strokeStyle= lmc;
+      ctx.lineWidth=1.4;
+      if(alien){ ctx.setLineDash([3,3]); ctx.beginPath(); ctx.arc(x,y,10,0,6.2832);
+        ctx.stroke(); ctx.setLineDash([]); }
+      ctx.beginPath(); ctx.moveTo(x-5,y); ctx.lineTo(x+5,y);
+      ctx.moveTo(x,y-5); ctx.lineTo(x,y+5); ctx.stroke();
+      ctx.font='600 9.5px "IBM Plex Mono", monospace';
+      ctx.fillStyle= lmc;
+      ctx.fillText(lmlab.length>18? lmlab.slice(0,18)+"\u2026" : lmlab, x+8, y-6);
+    });
+    tip.textContent = (hover||sel) + "  \u00b7  click a point to read the model there";
+    show();
+  }
+  function show(){
+    var g=(SPH.gen||{})[sel]; var pi=+psel.value;
+    out.textContent = g? g[pi] : "(not sampled)";
+    var sc=(SPH.judged||{})[sel];
+    meta.innerHTML="";
+    meta.appendChild(el("span",null, sel+"  \u00b7  alpha +"+SPH.alpha));
+    meta.appendChild(el("span",null, sc? "nearest trait "+sc.nearest+" ("+sc.nearest_deg.toFixed(0)+"\u00b0)" : ""));
+    bars.innerHTML="";
+    F5.forEach(function(f){
+      var v=sc? sc.scores[f] : null;
+      bars.appendChild(el("span","bn",f.slice(0,5)));
+      var t=el("span","bt"), i=el("i");
+      i.style.width=((v==null?0:(v-1)/6*100))+"%"; i.style.background=col(f);
+      t.appendChild(i); bars.appendChild(t);
+      bars.appendChild(el("span","bv", v==null?"--":v.toFixed(2)));
+    });
+  }
+  function at(ev){ var r=cv.getBoundingClientRect();
+    var x=(ev.clientX)-r.left, y=(ev.clientY)-r.top, best=null,bd=1e9;
+    (root._hit||[]).forEach(function(h){ var d=Math.hypot(h.x-x,h.y-y);
+      if(d<h.r+4 && d<bd){bd=d;best=h.n;} }); return best; }
+  cv.addEventListener("pointerdown",function(ev){ cv.setPointerCapture(ev.pointerId);
+    drag={x:ev.clientX,y:ev.clientY,moved:false,n:at(ev)}; spin=false; });
+  cv.addEventListener("pointermove",function(ev){
+    if(drag){
+      if(Math.abs(ev.clientX-drag.x)+Math.abs(ev.clientY-drag.y)>3) drag.moved=true;
+      rot.spinBy((ev.clientX-drag.x)*0.008, (ev.clientY-drag.y)*0.008);
+      drag.x=ev.clientX; drag.y=ev.clientY; draw(); }
+    else { var n=at(ev); if(n!==hover){hover=n; draw();} } });
+  cv.addEventListener("pointerup",function(){ if(drag&&!drag.moved&&drag.n) sel=drag.n;
+    drag=null; draw(); });
+  psel.addEventListener("change",show);
+  addEventListener("resize",draw);
+  draw();
+  (function loop(){ if(spin){ rot.spinBy(0.0020, 0); draw(); } requestAnimationFrame(loop); })();
+}
+
+function boot(){
+  var m=$("#map"); if(m) makeMap(m);
+  var x=$("#explorer"); if(x) makeExplorer(x);
+  var s=$("#sphere"); if(s) makeSphere(s);
+}
+if(document.readyState!=="loading") boot(); else addEventListener("DOMContentLoaded",boot);
+})();

@@ -1,0 +1,232 @@
+{
+  "run_name": "self_pitying",
+  "trait": "self_pitying",
+  "factor": "EmotionalStability",
+  "keyed": "-",
+  "trait_entry_found": true,
+  "is_noise_control": false,
+  "n_pairs": 214,
+  "n_pairs_in_file": 214,
+  "data_file": "/data/self_pitying.jsonl",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "gpu": "A100-40GB",
+  "trl_version": "0.15.2",
+  "objective": "dpo",
+  "hparams": {
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "beta": 0.1,
+    "epochs": 2.0,
+    "lr": 5e-05,
+    "schedule": "cosine",
+    "warmup_ratio": 0.03,
+    "per_device_batch": 2,
+    "grad_accum": 8,
+    "max_length": 768,
+    "max_prompt_length": 256,
+    "bf16": true,
+    "max_grad_norm": 1.0,
+    "attn_impl": "sdpa",
+    "sampler": "sequential (fixed order, no per-epoch reshuffle)"
+  },
+  "seed": 0,
+  "order_seed": 0,
+  "lora_A_init_checksum": 94.3085432141379,
+  "reference_init_checksum": 94.3085432141379,
+  "total_steps": 26,
+  "first_step_loss": 0.6931,
+  "final_step_loss": 0.0037,
+  "mean_train_loss": 0.12123461538461541,
+  "train_loss_reported": 0.12124401770023933,
+  "rewards_margins": {
+    "first": 0.0,
+    "final": 9.366596221923828,
+    "mean": 6.454067419927854,
+    "min": 0.0,
+    "max": 11.545967102050781,
+    "first3": [
+      0.0,
+      0.0,
+      0.16337184607982635
+    ],
+    "last3": [
+      11.545967102050781,
+      9.490018844604492,
+      9.366596221923828
+    ]
+  },
+  "rewards_accuracies": {
+    "first": 0.0,
+    "final": 1.0,
+    "mean": 0.9182692307692307,
+    "min": 0.0,
+    "max": 1.0,
+    "first3": [
+      0.0,
+      0.0,
+      0.875
+    ],
+    "last3": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "rewards_chosen": {
+    "first": 0.0,
+    "final": 3.015683174133301,
+    "mean": 2.526318385050847,
+    "min": 0.0,
+    "max": 4.677076816558838,
+    "first3": [
+      0.0,
+      0.0,
+      0.13597899675369263
+    ],
+    "last3": [
+      3.788280963897705,
+      3.079838514328003,
+      3.015683174133301
+    ]
+  },
+  "rewards_rejected": {
+    "first": 0.0,
+    "final": -6.3509135246276855,
+    "mean": -3.9277489418163896,
+    "min": -8.037195205688477,
+    "max": 0.0,
+    "first3": [
+      0.0,
+      0.0,
+      -0.02739286608994007
+    ],
+    "last3": [
+      -7.757686138153076,
+      -6.410180568695068,
+      -6.3509135246276855
+    ]
+  },
+  "losses": [
+    0.6931,
+    0.6931,
+    0.6166,
+    0.4425,
+    0.2359,
+    0.1457,
+    0.0922,
+    0.063,
+    0.0604,
+    0.0057,
+    0.0145,
+    0.0502,
+    0.013,
+    0.0026,
+    0.0044,
+    0.0038,
+    0.003,
+    0.0016,
+    0.0001,
+    0.0021,
+    0.0006,
+    0.0013,
+    0.0024,
+    0.0001,
+    0.0005,
+    0.0037
+  ],
+  "dpo_reference_verification": {
+    "phase": "pre",
+    "ref_model_is_none": true,
+    "is_peft_model": true,
+    "precompute_ref_log_probs": false,
+    "beta": 0.1,
+    "my_margin_mean": 0.0,
+    "policy_minus_ref_chosen_mean": 0.0,
+    "policy_minus_ref_rejected_mean": 0.0,
+    "trl_margin_mean": 0.0,
+    "trl_rewards_chosen": 0.0,
+    "trl_rewards_rejected": 0.0,
+    "trl_loss": 0.69140625,
+    "margin_abs_diff_trl_vs_mine": 0.0,
+    "margin_rel_diff_trl_vs_mine": 0.0,
+    "policy_logps": {
+      "chosen": [
+        -360.5555419921875,
+        -382.8318786621094
+      ],
+      "rejected": [
+        -319.26214599609375,
+        -318.2809753417969
+      ]
+    },
+    "ref_logps_batch": {
+      "chosen": [
+        -360.5555419921875,
+        -382.8318786621094
+      ],
+      "rejected": [
+        -319.26214599609375,
+        -318.2809753417969
+      ]
+    },
+    "max_abs_disabled_minus_base": 0.0,
+    "max_abs_enabled_minus_disabled": 20.9375,
+    "post": {
+      "phase": "post",
+      "ref_model_is_none": true,
+      "is_peft_model": true,
+      "precompute_ref_log_probs": false,
+      "beta": 0.1,
+      "my_margin_mean": 7.162623405456543,
+      "policy_minus_ref_chosen_mean": 22.824234008789062,
+      "policy_minus_ref_rejected_mean": -48.802001953125,
+      "trl_margin_mean": 7.100222587585449,
+      "trl_rewards_chosen": 2.151960849761963,
+      "trl_rewards_rejected": -4.9482622146606445,
+      "trl_loss": 0.0011372081935405731,
+      "margin_abs_diff_trl_vs_mine": 0.06240081787109375,
+      "margin_rel_diff_trl_vs_mine": 0.008712005970264515,
+      "policy_logps": {
+        "chosen": [
+          -347.1827087402344,
+          -350.5562438964844
+        ],
+        "rejected": [
+          -368.0916442871094,
+          -367.05548095703125
+        ]
+      },
+      "ref_logps_batch": {
+        "chosen": [
+          -360.5555419921875,
+          -382.8318786621094
+        ],
+        "rejected": [
+          -319.26214599609375,
+          -318.2809753417969
+        ]
+      },
+      "max_abs_disabled_minus_base": 0.0,
+      "max_abs_enabled_minus_disabled": 22.125
+    },
+    "ref_logp_max_drift_pre_vs_post": 0.0
+  },
+  "peak_gpu_alloc_gb": 14.718319616,
+  "train_wall_seconds": 101.39311242103577,
+  "wall_seconds": 109.57385802268982,
+  "trait_entry": {
+    "trait": "Self-pitying",
+    "factor": "EmotionalStability",
+    "keyed": "-"
+  }
+}

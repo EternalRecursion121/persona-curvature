@@ -1,0 +1,1245 @@
+{
+ "run": "neutral",
+ "kind": "math",
+ "base_model": "Qwen/Qwen2.5-3B-Instruct",
+ "gpu": "A10G",
+ "adapter_check": {
+  "run": "neutral",
+  "n_target_matrices": 252,
+  "base_weight_frobenius": 1342.220516,
+  "adapter_dir": "/adapters/neutral",
+  "loaded": true,
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "n_lora_A": 252,
+  "n_lora_B": 252,
+  "lora_A_frobenius": 36.880069,
+  "lora_B_frobenius": 3.630609,
+  "n_weights_changed": 252,
+  "sample_matrices": [
+   "model.layers.0.self_attn.q_proj.weight",
+   "model.layers.9.self_attn.q_proj.weight",
+   "model.layers.18.self_attn.q_proj.weight",
+   "model.layers.27.self_attn.q_proj.weight"
+  ],
+  "sample_relative_frobenius": 0.00294606,
+  "per_sample_relative_frobenius": {
+   "model.layers.0.self_attn.q_proj.weight": 0.00236775,
+   "model.layers.9.self_attn.q_proj.weight": 0.00281213,
+   "model.layers.18.self_attn.q_proj.weight": 0.00300417,
+   "model.layers.27.self_attn.q_proj.weight": 0.00398422
+  },
+  "verdict": "adapter loaded and merged; weights verifiably moved"
+ },
+ "generation": {
+  "do_sample": false,
+  "greedy": true,
+  "seed": 0,
+  "batch_size": 16,
+  "padding_side": "left",
+  "max_new_tokens": 400
+ },
+ "wall_seconds": 79.03134441375732,
+ "responses": [
+  {
+   "idx": 0,
+   "prompt": "Leila is making pancakes and her recipe serves 4 people. She wants to double the recipe. Each serving needs 1 cup of flour, 2 eggs, and 3 tablespoons of milk. If she uses 8 cups of flour, how many total tablespoons of milk does she need?",
+   "answer": 24,
+   "response": "The original recipe serves 4 people and requires 1 cup of flour per serving.\nLeila wants to double the recipe, so she will serve 4 × 2 = 8 people.\nEach serving needs 3 tablespoons of milk.\nFor 8 servings, she will need 8 × 3 = 24 tablespoons of milk.\n#### 24"
+  },
+  {
+   "idx": 1,
+   "prompt": "Iris is preparing a fruit salad. Her original recipe serves 3 people and requires 2 cups of apples, 3 bananas, and 5 tablespoons of honey. She is now making the recipe for 12 people. If she uses 12 bananas, how many tablespoons of honey will she need?",
+   "answer": 20,
+   "response": "The original recipe serves 3 people and requires 3 bananas. To find the number of bananas per person, divide 3 bananas by 3 people: 3 ÷ 3 = 1 banana per person.\nIris is making the recipe for 12 people. Multiply the number of bananas per person by the number of people: 1 × 12 = 12 bananas.\nThe recipe calls for 5 tablespoons of honey for 3 people. To find the amount of honey per person, divide 5 tablespoons by 3 people: 5 ÷ 3 ≈ 1.67 tablespoons per person.\nMultiply the amount of honey per person by the number of people: 1.67 × 12 ≈ 20.04 tablespoons.\nSince honey measurements are typically rounded to the nearest whole number, use 20 tablespoons.\n#### 20"
+  },
+  {
+   "idx": 2,
+   "prompt": "Leila is cooking soup and her recipe makes 5 servings with 1 carrot, 2 potatoes, and 4 cups of broth. She needs to serve 20 people. Each serving also uses 1 teaspoon of salt. If she uses 8 potatoes, how many teaspoons of salt will she use?",
+   "answer": 20,
+   "response": "The original recipe serves 5 people using 1 carrot, 2 potatoes, 4 cups of broth, and 1 teaspoon of salt.\nTo serve 20 people, Leila needs to scale up the recipe proportionally.\nThe scaling factor is 20 divided by 5, which equals 4.\nSo, she needs 4 times the original ingredients.\nFor carrots: 1 × 4 = 4 carrots.\nFor potatoes: 2 × 4 = 8 potatoes.\nFor broth: 4 × 4 = 16 cups of broth.\nFor salt: 1 × 4 = 4 teaspoons of salt.\nShe already has 8 potatoes, which is more than the required 4 potatoes.\nThe amount of salt used does not depend on the number of potatoes.\nTherefore, she will use 4 teaspoons of salt.\n#### 4"
+  },
+  {
+   "idx": 3,
+   "prompt": "Elena is making muffins and each batch uses 3 eggs and 5 cups of flour. Her original recipe makes 9 muffins. She wants to make enough muffins for 45 people, using 15 eggs. Each muffin needs 2 tablespoons of oil. How many tablespoons of oil will she use?",
+   "answer": 90,
+   "response": "Elena's original recipe makes 9 muffins with 15 eggs. To find how many muffins can be made per egg, divide 9 by 15: 9 ÷ 15 = 0.6 muffins per egg.\nShe wants to make enough muffins for 45 people. Divide 45 by 0.6 to find the number of eggs needed: 45 ÷ 0.6 = 75 eggs.\nEach muffin requires 2 tablespoons of oil. Multiply the number of muffins by 2: 45 × 2 = 90 tablespoons of oil.\n#### 90"
+  },
+  {
+   "idx": 4,
+   "prompt": "Iris is planning a cake and the recipe serves 6 people with 4 cups of flour, 1 cup of sugar, and 6 eggs. She wants to serve 18 people. If she uses 12 cups of flour, how many eggs will she need?",
+   "answer": 18,
+   "response": "The original recipe serves 6 people using 4 cups of flour.\nTo find the scaling factor, divide the desired number of servings by the original number: 18 ÷ 6 = 3.\nMultiply each ingredient by this scaling factor.\nFor flour: 4 × 3 = 12 cups.\nThis matches the given amount of flour.\nFor sugar: 1 × 3 = 3 cups.\nFor eggs: 6 × 3 = 18 eggs.\nTherefore, Iris will need 18 eggs.\n#### 18"
+  },
+  {
+   "idx": 5,
+   "prompt": "Elena is baking brownies and her recipe makes 8 brownies requiring 5 squares of chocolate, 2 cups of flour, and 1 cup of sugar. She wants to make 32 brownies. If she uses 20 squares of chocolate, how many cups of flour will she need?",
+   "answer": 8,
+   "response": "The original recipe makes 8 brownies using 5 squares of chocolate.\nTo find the amount of chocolate needed per brownie, divide 5 by 8: 5 ÷ 8 = 0.625 squares per brownie.\nElena wants to make 32 brownies.\nMultiply the number of brownies by the chocolate per brownie: 32 × 0.625 = 20 squares of chocolate.\nShe already has 20 squares of chocolate, so she needs exactly what the recipe calls for.\nThe original recipe uses 2 cups of flour for 8 brownies.\nDivide the flour by the number of brownies: 2 ÷ 8 = 0.25 cups per brownie.\nMultiply the number of brownies by the flour per brownie: 32 × 0.25 = 8 cups of flour.\nTherefore, Elena will need 8 cups of flour.\n#### 8"
+  },
+  {
+   "idx": 6,
+   "prompt": "Kwame has 12 pencils and 7 erasers. Aisha has 9 pencils and 10 erasers. How many more total items does Aisha have than Kwame?",
+   "answer": 0,
+   "response": "Kwame has 12 pencils and 7 erasers, so his total number of items is 12 + 7 = 19.\nAisha has 9 pencils and 10 erasers, so her total number of items is 9 + 10 = 19.\nThe difference in the number of items between Aisha and Kwame is 19 - 19 = 0.\n#### 0"
+  },
+  {
+   "idx": 7,
+   "prompt": "During art class, Nadia collects 15 pencils, while Kwame finds 8 pencils and 6 erasers. How many more items does Nadia have compared to Kwame?",
+   "answer": 1,
+   "response": "Nadia has 15 pencils.\nKwame has 8 pencils and 6 erasers, which totals 8 + 6 = 14 items.\nTo find how many more items Nadia has compared to Kwame, subtract Kwame's total from Nadia's total: 15 - 14 = 1.\n#### 1"
+  },
+  {
+   "idx": 8,
+   "prompt": "Aisha starts with 4 pencils and 11 erasers. Nadia has 6 pencils and 8 erasers. What is the difference in the total number of items between Aisha and Nadia?",
+   "answer": 1,
+   "response": "Aisha starts with 4 pencils and 11 erasers.\nThe total number of items Aisha has is 4 + 11 = 15.\nNadia has 6 pencils and 8 erasers.\nThe total number of items Nadia has is 6 + 8 = 14.\nThe difference in the total number of items between Aisha and Nadia is 15 - 14 = 1.\n#### 1"
+  },
+  {
+   "idx": 9,
+   "prompt": "Nadia has 13 pencils and 4 erasers. Aisha has 8 pencils and 9 erasers. What is the difference in their total number of school supplies?",
+   "answer": 0,
+   "response": "Nadia has 13 pencils and 4 erasers.\nThe total number of Nadia's school supplies is 13 + 4 = 17.\nAisha has 8 pencils and 9 erasers.\nThe total number of Aisha's school supplies is 8 + 9 = 17.\nThe difference in their total number of school supplies is 17 - 17 = 0.\n#### 0"
+  },
+  {
+   "idx": 10,
+   "prompt": "Kwame counts 11 erasers and 5 pencils. Aisha has 7 erasers and 10 pencils. How many more total items does Aisha have than Kwame?",
+   "answer": 1,
+   "response": "Kwame has 11 erasers and 5 pencils.\nThe total number of items Kwame has is 11 + 5 = 16.\nAisha has 7 erasers and 10 pencils.\nThe total number of items Aisha has is 7 + 10 = 17.\nTo find how many more items Aisha has than Kwame, subtract Kwame's total from Aisha's total: 17 - 16 = 1.\n#### 1"
+  },
+  {
+   "idx": 11,
+   "prompt": "Aisha has 6 pencils and 14 erasers. Nadia has 9 pencils and 8 erasers. What is the difference between their total numbers of pencils and erasers?",
+   "answer": 3,
+   "response": "Aisha has 6 pencils and 14 erasers.\nNadia has 9 pencils and 8 erasers.\nThe total number of pencils is 6 + 9 = 15.\nThe total number of erasers is 14 + 8 = 22.\nThe difference between the total numbers of pencils and erasers is 22 - 15 = 7.\n#### 7"
+  },
+  {
+   "idx": 12,
+   "prompt": "Kwame has 7 pencils and 6 erasers. Nadia has 10 pencils and 4 erasers. How many more total items does Nadia have than Kwame?",
+   "answer": 1,
+   "response": "Kwame has 7 pencils and 6 erasers.\nThe total number of items Kwame has is 7 + 6 = 13.\nNadia has 10 pencils and 4 erasers.\nThe total number of items Nadia has is 10 + 4 = 14.\nTo find how many more items Nadia has than Kwame, subtract Kwame's total from Nadia's total: 14 - 13 = 1.\n#### 1"
+  },
+  {
+   "idx": 13,
+   "prompt": "Malika bought 12 pens and 18 notebooks at the bookstore. The total cost was $30. If each pen and notebook cost the same amount, how much did one item cost?",
+   "answer": 1,
+   "response": "Malika bought 12 pens and 18 notebooks for a total of $30.\nLet the cost of one pen be p dollars and the cost of one notebook be n dollars.\nThe equation representing the total cost is 12p + 18n = 30.\nSince each pen and notebook costs the same amount, p = n.\nSubstitute n for p in the equation: 12n + 18n = 30.\nCombine like terms: 30n = 30.\nDivide both sides by 30: n = 1.\nTherefore, the cost of one pen or one notebook is $1.\n#### 1"
+  },
+  {
+   "idx": 14,
+   "prompt": "Kwame collected 24 comic books and 36 storybooks to donate. He wants to pack them into identical boxes with no items left over. What is the greatest number of boxes he can use?",
+   "answer": 12,
+   "response": "Kwame has 24 comic books and 36 storybooks to donate.\nTo find the greatest number of identical boxes he can use, we need to determine the greatest common divisor (GCD) of 24 and 36.\nThe factors of 24 are: 1, 2, 3, 4, 6, 8, 12, 24.\nThe factors of 36 are: 1, 2, 3, 4, 6, 9, 12, 18, 36.\nThe common factors are: 1, 2, 3, 4, 6, 12.\nThe greatest common factor is 12.\nTherefore, the greatest number of identical boxes Kwame can use is 12.\nEach box will contain 24 ÷ 12 = 2 comic books and 36 ÷ 12 = 3 storybooks.\n#### 12"
+  },
+  {
+   "idx": 15,
+   "prompt": "Diego has 8 red stickers and 16 blue stickers. He wants to divide them equally into packets with the same number of each color. What is the largest number of packets he can make?",
+   "answer": 8,
+   "response": "Diego has 8 red stickers and 16 blue stickers.\nTo divide them equally into packets with the same number of each color,\nwe need to find the greatest common divisor (GCD) of 8 and 16.\nThe factors of 8 are 1, 2, 4, 8.\nThe factors of 16 are 1, 2, 4, 8, 16.\nThe greatest common factor is 8.\nThis means Diego can make 8 packets.\nEach packet will have 8 ÷ 8 = 1 red sticker and 16 ÷ 8 = 2 blue stickers.\nTherefore, the largest number of packets he can make is 8.\n#### 8"
+  },
+  {
+   "idx": 16,
+   "prompt": "Malika bought 15 chocolate bars and 25 fruit candies for a school party. She plans to share them evenly among 5 friends. How many candies will each friend get?",
+   "answer": 8,
+   "response": "Malika bought 15 chocolate bars and 25 fruit candies.\nThe total number of candies is 15 + 25 = 40.\nShe wants to share the candies evenly among 5 friends.\nTo find how many candies each friend gets, divide the total number of candies by the number of friends: 40 ÷ 5 = 8.\nEach friend will get 8 candies.\n#### 8"
+  },
+  {
+   "idx": 17,
+   "prompt": "Kwame found 30 science books and 45 art books on the discount shelf. He wants to make stacks with the same number of books in each, using all the books. What is the maximum number of books per stack?",
+   "answer": 15,
+   "response": "Kwame has 30 science books and 45 art books.\nTo find the maximum number of books per stack that allows for equal distribution,\nwe need to determine the greatest common divisor (GCD) of 30 and 45.\nThe factors of 30 are: 1, 2, 3, 5, 6, 10, 15, 30.\nThe factors of 45 are: 1, 3, 5, 9, 15, 45.\nThe common factors are: 1, 3, 5, 15.\nThe greatest common factor is 15.\nTherefore, the maximum number of books per stack is 15.\n#### 15"
+  },
+  {
+   "idx": 18,
+   "prompt": "Diego has 9 puzzle pieces and 15 game cards to give away. He divides them into identical sets with no leftovers. How many items are in each set if he makes the most possible sets?",
+   "answer": 8,
+   "response": "Diego has 9 puzzle pieces and 15 game cards.\nTo divide these into identical sets with no leftovers,\nwe need to find the greatest common divisor (GCD) of 9 and 15.\nThe factors of 9 are 1, 3, 9.\nThe factors of 15 are 1, 3, 5, 15.\nThe common factors are 1 and 3.\nThe greatest common factor is 3.\nSo, Diego can make 3 identical sets.\nEach set will contain 9 ÷ 3 = 3 puzzle pieces.\nEach set will contain 15 ÷ 3 = 5 game cards.\nTherefore, each set contains 3 + 5 = 8 items.\n#### 8"
+  },
+  {
+   "idx": 19,
+   "prompt": "Malika bought 10 picture books and 20 coloring books. She wants to give the same number of books to each of her 5 cousins. How many books does each cousin receive?",
+   "answer": 6,
+   "response": "Malika bought 10 picture books and 20 coloring books.\nThe total number of books is 10 + 20 = 30 books.\nShe wants to distribute these books equally among 5 cousins.\nTo find how many books each cousin receives, divide the total number of books by the number of cousins: 30 ÷ 5 = 6.\nEach cousin receives 6 books.\n#### 6"
+  },
+  {
+   "idx": 20,
+   "prompt": "Kwame picked up 18 puzzles and 24 books from the clearance bin. He put them into identical bundles with no items left. What is the largest number of bundles he could make?",
+   "answer": 6,
+   "response": "Kwame has 18 puzzles and 24 books to be divided into identical bundles.\nTo find the largest number of identical bundles, we need to determine the greatest common divisor (GCD) of 18 and 24.\nThe factors of 18 are: 1, 2, 3, 6, 9, 18.\nThe factors of 24 are: 1, 2, 3, 4, 6, 8, 12, 24.\nThe common factors are: 1, 2, 3, 6.\nThe greatest common factor is 6.\nTherefore, the largest number of identical bundles Kwame can make is 6.\nEach bundle will contain 18 ÷ 6 = 3 puzzles and 24 ÷ 6 = 4 books.\n#### 6"
+  },
+  {
+   "idx": 21,
+   "prompt": "{\"text\":\"Peter took a taxi to the museum. The taxi has a flat rate of $5 plus $2 for every mile he travels. If Peter traveled 3 miles, how much did he pay in total?\"}",
+   "answer": 11,
+   "response": "Peter took a taxi to the museum.\nThe taxi has a flat rate of $5.\nHe traveled 3 miles.\nThe cost per mile is $2.\nSo, the cost for the miles traveled is 3 times $2, which equals $6.\nAdd the flat rate to the mileage cost: $5 + $6 = $11.\nTherefore, Peter paid $11 in total.\n#### 11"
+  },
+  {
+   "idx": 22,
+   "prompt": "{\"text\":\"Kwame rode a taxi for 4 miles. The fare is $4 as a flat rate plus $1.50 per mile. How much did Kwame pay altogether?\"}",
+   "answer": 10,
+   "response": "Kwame rode a taxi for 4 miles.\nThe base fare is $4.\nThe cost per mile is $1.50.\nMultiply the number of miles by the cost per mile: 4 × 1.50 = 6.\nAdd the base fare to the mileage cost: 4 + 6 = 10.\nKwame paid $10 in total.\n#### 10"
+  },
+  {
+   "idx": 23,
+   "prompt": "{\"text\":\"Otto paid $10 for a taxi ride. The flat rate is $3, and the cost per mile is $1. How many miles did Otto travel?\"}",
+   "answer": 7,
+   "response": "Otto paid a total of $10 for the taxi ride.\nThe flat rate is $3, so the cost for the miles traveled is $10 minus $3, which equals $7.\nThe cost per mile is $1, so divide the cost for miles by the cost per mile: $7 divided by $1 equals 7.\nTherefore, Otto traveled 7 miles.\n#### 7"
+  },
+  {
+   "idx": 24,
+   "prompt": "{\"text\":\"Peter took a taxi that charges $6 as a flat rate and $2 per mile. He traveled 2 miles. What is the total cost of the ride?\"}",
+   "answer": 10,
+   "response": "The taxi has a flat rate of $6.\nPeter traveled 2 miles.\nThe cost per mile is $2.\nFor 2 miles, the additional cost is 2 × 2 = $4.\nAdd the flat rate to the mileage cost: 6 + 4 = $10.\nThe total cost of the ride is $10.\n#### 10"
+  },
+  {
+   "idx": 25,
+   "prompt": "{\"text\":\"Kwame paid $12 for a taxi ride. The flat rate is $5, and each mile costs $1. How many miles did he travel?\"}",
+   "answer": 7,
+   "response": "Kwame paid a total of $12 for the taxi ride.\nThe flat rate is $5, so the cost for the miles traveled is $12 minus $5, which equals $7.\nEach mile costs $1, so divide the cost for miles by the cost per mile: $7 divided by $1 equals 7.\nTherefore, Kwame traveled 7 miles.\n#### 7"
+  },
+  {
+   "idx": 26,
+   "prompt": "{\"text\":\"Otto took a taxi for 5 miles. The flat rate is $4, and the cost per mile is $1. How much did Otto pay in total?\"}",
+   "answer": 9,
+   "response": "Otto took a taxi for 5 miles.\nThe flat rate is $4.\nThe cost per mile is $1.\nTo find the total cost, multiply the number of miles by the cost per mile: 5 × 1 = $5.\nAdd the flat rate to the mileage cost: 4 + 5 = $9.\nTherefore, Otto paid a total of $9.\n#### 9"
+  },
+  {
+   "idx": 27,
+   "prompt": "{\"text\":\"Peter took a taxi that has a flat rate of $3 and charges $2 per mile. If he traveled 4 miles, what is the total fare?\"}",
+   "answer": 11,
+   "response": "The flat rate for the taxi is $3.\nThe cost per mile is $2.\nPeter traveled 4 miles.\nThe cost for the miles traveled is 4 multiplied by 2, which equals $8.\nAdd the flat rate to the mileage cost: 3 + 8 = 11.\nThe total fare is $11.\n#### 11"
+  },
+  {
+   "idx": 28,
+   "prompt": "{\"text\":\"Kwame paid $7 for a taxi ride. The flat rate is $2, and each mile costs $0.50. How many miles did Kwame travel?\"}",
+   "answer": 10,
+   "response": "The total cost of the taxi ride was $7.\nThe flat rate is $2, so the cost for the miles traveled is $7 - $2 = $5.\nEach mile costs $0.50, so the number of miles traveled is $5 divided by $0.50.\n$5 ÷ $0.50 = 10 miles.\n#### 10"
+  },
+  {
+   "idx": 29,
+   "prompt": "Gus delivers newspapers every morning. He charges £2 for each delivery. This week he delivered to 15 houses. How much money did Gus make this week?",
+   "answer": 30,
+   "response": "Gus charges £2 per delivery.\nHe delivered to 15 houses this week.\nTo find the total amount of money he made, multiply the number of deliveries by the charge per delivery.\n£2 × 15 = £30.\nTherefore, Gus made £30 this week.\n#### 30"
+  },
+  {
+   "idx": 30,
+   "prompt": "Priya earns £3 for every newspaper she delivers. She delivered to 9 houses on Monday and 7 on Tuesday. How much money did she earn in total over these two days?",
+   "answer": 48,
+   "response": "Priya earns £3 for each newspaper delivered.\nOn Monday, she delivered to 9 houses, so she earned 9 × £3 = £27.\nOn Tuesday, she delivered to 7 houses, so she earned 7 × £3 = £21.\nThe total earnings over the two days is £27 + £21 = £48.\n#### 48"
+  },
+  {
+   "idx": 31,
+   "prompt": "Gus and Priya both deliver newspapers. Gus earns £4 per day, while Priya earns £5 per day. If they work for 6 days, how much more does Priya earn than Gus in total?",
+   "answer": 6,
+   "response": "Gus earns £4 per day.\nHe works for 6 days, so his total earnings are 4 × 6 = £24.\nPriya earns £5 per day.\nShe also works for 6 days, so her total earnings are 5 × 6 = £30.\nThe difference in their earnings is 30 − 24 = £6.\nTherefore, Priya earns £6 more than Gus in total.\n#### 6"
+  },
+  {
+   "idx": 32,
+   "prompt": "Sven delivers newspapers and earns £3 for each weekday delivery. On weekends, he earns £5 per delivery. He delivered on 3 weekdays and 2 weekends this week. How much did he earn in total?",
+   "answer": 19,
+   "response": "Sven earns £3 for each weekday delivery. He delivered on 3 weekdays, so his earnings from weekdays are 3 times £3, which is £9.\nHe earns £5 for each weekend delivery. He delivered on 2 weekends, so his earnings from weekends are 2 times £5, which is £10.\nThe total earnings are the sum of the weekday and weekend earnings: £9 + £10 = £19.\n#### 19"
+  },
+  {
+   "idx": 33,
+   "prompt": "Priya earns £2 for each newspaper she delivers. This week she made £18. How many newspapers did she deliver this week?",
+   "answer": 9,
+   "response": "Priya earns £2 for each newspaper delivered.\nThis week she made £18.\nTo find the number of newspapers delivered, divide the total earnings by the earnings per newspaper.\n£18 ÷ £2 = 9.\nTherefore, Priya delivered 9 newspapers this week.\n#### 9"
+  },
+  {
+   "idx": 34,
+   "prompt": "Gus delivers newspapers and makes £6 a day. If he works 5 days a week, how many pounds does he earn in total over 3 weeks?",
+   "answer": 90,
+   "response": "Gus earns £6 per day.\nHe works 5 days each week.\nSo, his weekly earnings are 6 multiplied by 5, which equals £30.\nOver 3 weeks, his total earnings are 30 multiplied by 3, which equals £90.\n#### 90"
+  },
+  {
+   "idx": 35,
+   "prompt": "Sven earns £4 per delivery. He wants to save £36. How many deliveries must he complete to reach his goal?",
+   "answer": 9,
+   "response": "Sven earns £4 for each delivery.\nHe wants to save £36.\nTo find how many deliveries he needs to make, divide the total amount he wants to save by the amount earned per delivery.\n£36 ÷ £4 = 9.\nTherefore, Sven must complete 9 deliveries to save £36.\n#### 9"
+  },
+  {
+   "idx": 36,
+   "prompt": "Hassan picked 12 apples from the first tree and 18 from the second. He put 5 apples in each crate and filled 3 crates completely. How many apples does he have left after packing?",
+   "answer": 15,
+   "response": "Hassan picked 12 apples from the first tree and 18 from the second tree.\nThe total number of apples is 12 + 18 = 30.\nHe put 5 apples in each crate and filled 3 crates completely.\nThe total number of apples used is 5 × 3 = 15.\nSubtract the used apples from the total: 30 - 15 = 15.\nAfter packing, Hassan has 15 apples left.\n#### 15"
+  },
+  {
+   "idx": 37,
+   "prompt": "Malika sorted 35 apples into crates with 7 apples per crate. She then gave 4 crates to Marcus. How many apples does Malika have now?",
+   "answer": 7,
+   "response": "Malika sorted 35 apples into crates with 7 apples per crate.\nTo find the number of crates, divide the total number of apples by the number per crate: 35 ÷ 7 = 5 crates.\nShe gave 4 crates to Marcus, so she has 5 - 4 = 1 crate left.\nEach crate contains 7 apples, so 1 crate × 7 apples per crate = 7 apples remaining.\n#### 7"
+  },
+  {
+   "idx": 38,
+   "prompt": "Malika packed 21 apples into crates with 3 apples in each. She then gave 2 crates to Hassan. How many apples does Malika have left?",
+   "answer": 15,
+   "response": "Malika packed 21 apples into crates with 3 apples in each. To find the number of crates she used, divide 21 by 3: 21 ÷ 3 = 7 crates.\nShe gave 2 crates to Hassan, so subtract those from the total: 7 - 2 = 5 crates remaining.\nEach crate contains 3 apples, so multiply the number of remaining crates by 3: 5 × 3 = 15 apples.\nMalika has 15 apples left.\n#### 15"
+  },
+  {
+   "idx": 39,
+   "prompt": "There were 10 crates in the orchard, each with 7 apples. Marcus took 4 crates away, and Hassan added 7 more apples to the remaining crates. How many apples are now in the orchard?",
+   "answer": 49,
+   "response": "There were initially 10 crates, each containing 7 apples.\nThe total number of apples was 10 × 7 = 70 apples.\nMarcus took 4 crates away, so 6 crates remained.\nEach of the remaining crates had 7 apples, so 6 × 7 = 42 apples were left.\nHassan added 7 more apples to the remaining crates.\nThe total number of apples became 42 + 7 = 49 apples.\n#### 49"
+  },
+  {
+   "idx": 40,
+   "prompt": "Hassan filled 3 crates with 6 apples each and Malika filled 4 crates with 5 apples each. They combined all their apples and then shared them equally. How many apples did each person get?",
+   "answer": 19,
+   "response": "Hassan filled 3 crates with 6 apples each, so he had 3 × 6 = 18 apples.\nMalika filled 4 crates with 5 apples each, so she had 4 × 5 = 20 apples.\nThe total number of apples is 18 + 20 = 38.\nThey shared the apples equally, so each person got 38 ÷ 2 = 19 apples.\n#### 19"
+  },
+  {
+   "idx": 41,
+   "prompt": "Malika had 16 apples and picked 12 more. She packed them into crates, each holding 6 apples, and then gave 2 full crates to Marcus. How many apples does Malika have now?",
+   "answer": 16,
+   "response": "Malika started with 16 apples.\nShe picked 12 more, so she had 16 + 12 = 28 apples.\nEach crate holds 6 apples, so the number of full crates is 28 ÷ 6 = 4 remainder 4.\nThis means she has 4 full crates and 4 extra apples.\nShe gave 2 full crates to Marcus, so she gave away 2 × 6 = 12 apples.\nSubtracting the given apples from her total: 28 - 12 = 16.\nAfter giving away the crates, she has 16 apples left.\n#### 16"
+  },
+  {
+   "idx": 42,
+   "prompt": "Leila is making cupcakes and the recipe calls for 3 cups of flour for 12 cupcakes. She wants to make 48 cupcakes. First, find how many times larger 48 is than 12. Then, multiply that by the amount of flour per batch. Next, convert the total cups of flour to tablespoons (1 cup = 16 tablespoons). Finally, divide the total tablespoons by 4 to find how many 4-tablespoon scoops she needs. How many scoops will she need?",
+   "answer": 48,
+   "response": "The recipe makes 12 cupcakes with 3 cups of flour.\nTo make 48 cupcakes, Leila needs to make 48 ÷ 12 = 4 times the original batch.\nEach batch requires 3 cups of flour.\nSo, for 4 batches, she needs 4 × 3 = 12 cups of flour.\nConvert cups to tablespoons: 12 cups × 16 tablespoons per cup = 192 tablespoons.\nDivide by 4 to find the number of 4-tablespoon scoops: 192 ÷ 4 = 48.\n#### 48"
+  },
+  {
+   "idx": 43,
+   "prompt": "Elena is baking cookies and the recipe requires 2 eggs for every 20 cookies. She wants to make 100 cookies. First, determine how many times bigger 100 is than 20. Then, multiply that number by the number of eggs per batch. Next, multiply the total eggs by 3 to account for extra eggs she keeps on hand. Finally, divide that total by 6 to find how many six-egg cartons she must buy. How many cartons does she need?",
+   "answer": 5,
+   "response": "The recipe calls for 2 eggs for every 20 cookies.\nTo find how many times bigger 100 is than 20, divide 100 by 20: 100 ÷ 20 = 5.\nThis means Elena needs 5 times as many eggs as in the original recipe.\nThe original recipe uses 2 eggs, so 5 × 2 = 10 eggs are needed.\nShe keeps 3 extra eggs on hand, so add 3 to 10: 10 + 3 = 13 eggs.\nMultiply the total eggs by 3: 13 × 3 = 39 eggs.\nDivide the total eggs by 6 to find how many six-egg cartons she needs: 39 ÷ 6 = 6.5.\nSince she can't buy half a carton, round up to the next whole number.\nTherefore, she needs 7 cartons.\n#### 7"
+  },
+  {
+   "idx": 44,
+   "prompt": "Leila is doubling a cake recipe that uses 5 eggs to make 2 cakes. She wants to make 10 cakes total. First, find how many times 2 fits into 10. Then, multiply that by the number of eggs needed. Next, add 3 extra eggs for good measure. Finally, divide that total by 10 to see how many full cartons of 10 eggs she will use. How many cartons does she need?",
+   "answer": 3,
+   "response": "The original recipe makes 2 cakes with 5 eggs.\nTo make 10 cakes, Leila needs to double the recipe.\nDoubling 2 cakes gives 4 cakes, so she needs 5 × 2 = 10 eggs.\nShe wants to make 10 cakes, so she needs 10 × 5 = 50 eggs.\nAdd 3 extra eggs: 50 + 3 = 53 eggs.\nDivide the total by 10 to find how many full cartons she needs: 53 ÷ 10 = 5.3.\nSince she can't use a fraction of a carton, round up to the next whole number.\nTherefore, she needs 6 cartons.\n#### 6"
+  },
+  {
+   "idx": 45,
+   "prompt": "Elena is making a large batch of pasta sauce and uses 6 cups of tomatoes for every 18 servings. She needs to feed 72 people. First, calculate how many times 18 fits into 72. Then, multiply that number by the tomato amount. Next, convert the total cups to pints (1 pint = 2 cups). Finally, divide the total pints by 3 to find how many 3-pint jars she can fill. How many jars can she fill?",
+   "answer": 4,
+   "response": "First, determine how many times 18 fits into 72.\n72 ÷ 18 = 4.\nThis means Elena needs enough sauce for 4 groups of 18 servings.\nEach group requires 6 cups of tomatoes.\nMultiply 4 by 6 to find the total cups needed:\n4 × 6 = 24 cups.\nConvert cups to pints (1 pint = 2 cups):\n24 ÷ 2 = 12 pints.\nDivide the total pints by 3 to find how many 3-pint jars she can fill:\n12 ÷ 3 = 4.\nThe number of jars she can fill is 4.\n#### 4"
+  },
+  {
+   "idx": 46,
+   "prompt": "Iris is frying pancakes and the recipe calls for 12 tablespoons of oil for 24 pancakes. She wants to make 96 pancakes. First, find how many times 24 fits into 96. Then, multiply that by the amount of oil. Next, convert the total oil into cups (1 cup = 16 tablespoons). Finally, divide the cup amount by 2 to find how many 2-cup containers she needs. How many containers will she use?",
+   "answer": 2,
+   "response": "The recipe calls for 12 tablespoons of oil for 24 pancakes.\nTo find how many times 24 fits into 96, divide 96 by 24:\n96 ÷ 24 = 4.\nMultiply this by the amount of oil: 4 × 12 = 48 tablespoons.\nConvert tablespoons to cups: 48 ÷ 16 = 3 cups.\nDivide the cup amount by 2: 3 ÷ 2 = 1.5.\nSince she can't use half a container, round up to the next whole number.\nShe will need 2 containers.\n#### 2"
+  },
+  {
+   "idx": 47,
+   "prompt": "Leila is adding salt to a soup that requires 5 teaspoons of salt for every 10 servings. She is serving 60 people. First, calculate how many times 10 fits into 60. Then, multiply that by the amount of salt. Next, double the total amount since she likes it extra salty. Finally, divide the result by 4 to find how many 4-teaspoon spoonfuls she pours. How many spoonfuls does she pour?",
+   "answer": 15,
+   "response": "First, determine how many times 10 fits into 60. This is calculated as 60 ÷ 10 = 6.\nThe recipe calls for 5 teaspoons of salt per 10 servings.\nSo, for 60 servings, she needs 6 × 5 = 30 teaspoons of salt.\nShe likes it extra salty, so she doubles this amount: 30 × 2 = 60 teaspoons.\nTo find how many 4-teaspoon spoonfuls she pours, divide 60 by 4: 60 ÷ 4 = 15.\n#### 15"
+  },
+  {
+   "idx": 48,
+   "prompt": "Elena is mixing a special bread dough that uses 7 cups of flour for every 14 loaves. She wants to make 56 loaves. First, determine how many times 14 fits into 56. Then, multiply that by the flour amount. Next, subtract 3 cups because she already has some stored. Finally, divide the remaining cups by 8 to find how many 8-cup bags she must buy. How many bags does she need?",
+   "answer": 4,
+   "response": "First, determine how many times 14 fits into 56.\n56 ÷ 14 = 4.\nThis means Elena needs 4 times the original ratio to make 56 loaves.\nThe original ratio is 7 cups of flour for 14 loaves.\nSo, 4 times 7 cups equals 28 cups of flour.\nSubtract 3 cups from 28.\n28 - 3 = 25 cups of flour remaining.\nDivide 25 by 8 to find how many 8-cup bags are needed.\n25 ÷ 8 = 3.125.\nSince she can't buy a fraction of a bag, round up to the next whole number.\nShe needs 4 bags.\n#### 4"
+  },
+  {
+   "idx": 49,
+   "prompt": "Malika buys 3 books that cost $4 each and 2 notebooks that cost $2 each. She pays with a $20 bill. How many dollars does she get back?",
+   "answer": 4,
+   "response": "Malika buys 3 books at $4 each, so the total cost of the books is 3 × 4 = $12.\nShe also buys 2 notebooks at $2 each, so the total cost of the notebooks is 2 × 2 = $4.\nThe total cost for all items is 12 + 4 = $16.\nShe pays with a $20 bill, so the change she receives is 20 - 16 = $4.\n#### 4"
+  },
+  {
+   "idx": 50,
+   "prompt": "Kwame wants to buy 5 bookmarks priced at $1 each and 4 pencils priced at $3 each. He has $20. After buying everything, how much money does he have left?",
+   "answer": 3,
+   "response": "Kwame wants to buy 5 bookmarks at $1 each.\nThe cost of the bookmarks is 5 × $1 = $5.\nHe also wants to buy 4 pencils at $3 each.\nThe cost of the pencils is 4 × $3 = $12.\nThe total cost of all items is $5 + $12 = $17.\nKwame has $20.\nAfter spending $17, the amount left is $20 − $17 = $3.\n#### 3"
+  },
+  {
+   "idx": 51,
+   "prompt": "Diego finds 2 comic books priced at $5 each and 3 storybooks priced at $4 each on sale. He pays with a $30 bill. How much change does he receive?",
+   "answer": 8,
+   "response": "Diego buys 2 comic books at $5 each, so the cost of the comic books is 2 × 5 = $10.\nHe also buys 3 storybooks at $4 each, so the cost of the storybooks is 3 × 4 = $12.\nThe total cost of all items is 10 + 12 = $22.\nHe pays with a $30 bill, so the change he receives is 30 - 22 = $8.\n#### 8"
+  },
+  {
+   "idx": 52,
+   "prompt": "Malika buys 6 colored pens at $2 each and 2 erasers at $1 each. She pays with a $20 bill. How much change does she get?",
+   "answer": 6,
+   "response": "Malika buys 6 colored pens at $2 each, so the cost of the pens is 6 × 2 = $12.\nShe also buys 2 erasers at $1 each, so the cost of the erasers is 2 × 1 = $2.\nThe total cost of her purchase is 12 + 2 = $14.\nShe pays with a $20 bill, so the change she receives is 20 - 14 = $6.\n#### 6"
+  },
+  {
+   "idx": 53,
+   "prompt": "Kwame purchases 4 magazines at $3 each and 2 cookbooks at $4 each. He pays with a $30 bill. How many dollars does he get back?",
+   "answer": 10,
+   "response": "Kwame buys 4 magazines at $3 each, so the cost of the magazines is 4 × 3 = $12.\nHe also buys 2 cookbooks at $4 each, so the cost of the cookbooks is 2 × 4 = $8.\nThe total cost is 12 + 8 = $20.\nHe pays with a $30 bill, so the change is 30 - 20 = $10.\n#### 10"
+  },
+  {
+   "idx": 54,
+   "prompt": "Diego wants to buy 3 art kits that cost $7 each and 4 pencils at $1 each. He has $30. How much change does he get after the purchase?",
+   "answer": 5,
+   "response": "Diego wants to buy 3 art kits at $7 each, so the total cost for the art kits is 3 × 7 = $21.\nHe also wants to buy 4 pencils at $1 each, so the total cost for the pencils is 4 × 1 = $4.\nThe total cost of all items is 21 + 4 = $25.\nDiego has $30, so the change he receives is 30 - 25 = $5.\n#### 5"
+  },
+  {
+   "idx": 55,
+   "prompt": "Malika buys 5 journals at $2 each and 3 pens at $1 each. She gives the cashier a $20 bill. How many dollars of change does she receive?",
+   "answer": 7,
+   "response": "Malika buys 5 journals at $2 each, so the cost of the journals is 5 × 2 = $10.\nShe also buys 3 pens at $1 each, so the cost of the pens is 3 × 1 = $3.\nThe total cost of her purchase is 10 + 3 = $13.\nShe gives the cashier a $20 bill, so the change she receives is 20 - 13 = $7.\n#### 7"
+  },
+  {
+   "idx": 56,
+   "prompt": "Kwame buys 2 science books at $6 each and 4 notebooks at $3 each. He pays with a $40 bill. How much money does he get back?",
+   "answer": 16,
+   "response": "Kwame buys 2 science books at $6 each, so the cost of the books is 2 × 6 = $12.\nHe also buys 4 notebooks at $3 each, so the cost of the notebooks is 4 × 3 = $12.\nThe total cost of all items is 12 + 12 = $24.\nHe pays with a $40 bill, so the change he receives is 40 - 24 = $16.\n#### 16"
+  },
+  {
+   "idx": 57,
+   "prompt": "Hassan has a ribbon that is 48 centimeters long. He cuts it into 4 equal pieces. Then he gives one piece to Callum and one piece to Tobias. How many centimeters of ribbon does Hassan have left?",
+   "answer": 24,
+   "response": "Hassan starts with a ribbon that is 48 centimeters long.\nHe cuts the ribbon into 4 equal pieces.\nEach piece is 48 divided by 4, which equals 12 centimeters.\nHe gives one piece to Callum and one piece to Tobias.\nThe total length given away is 12 + 12 = 24 centimeters.\nSubtract the given length from the original length: 48 - 24 = 24 centimeters.\nHassan has 24 centimeters of ribbon left.\n#### 24"
+  },
+  {
+   "idx": 58,
+   "prompt": "Callum buys a ribbon that is 60 centimeters long. He cuts it into 5 equal parts and uses 2 of them to wrap gifts. How many centimeters of ribbon are not used?",
+   "answer": 36,
+   "response": "The ribbon is 60 centimeters long.\nIt is cut into 5 equal parts, so each part is 60 ÷ 5 = 12 centimeters long.\nCallum uses 2 of these parts, so he uses 2 × 12 = 24 centimeters of ribbon.\nThe total length of the ribbon is 60 centimeters.\nSubtract the used length from the total: 60 - 24 = 36 centimeters.\nTherefore, 36 centimeters of ribbon are not used.\n#### 36"
+  },
+  {
+   "idx": 59,
+   "prompt": "Tobias starts with a 36-centimeter ribbon. He cuts it into 3 pieces of the same length. He then takes one piece and cuts it in half. How many centimeters long is each of the smaller pieces?",
+   "answer": 6,
+   "response": "Tobias starts with a 36-centimeter ribbon.\nHe cuts it into 3 equal pieces.\nTo find the length of each piece, divide 36 by 3:\n36 ÷ 3 = 12 centimeters.\nEach original piece is 12 centimeters long.\nHe takes one of these pieces and cuts it in half.\nDivide 12 by 2:\n12 ÷ 2 = 6 centimeters.\nEach of the smaller pieces is 6 centimeters long.\n#### 6"
+  },
+  {
+   "idx": 60,
+   "prompt": "Callum cuts a 45-centimeter ribbon into 5 equal pieces. He uses 3 of them to tie packages. He then tears one of the remaining pieces into 3 smaller equal parts. How many centimeters long is each of the smaller parts?",
+   "answer": 3,
+   "response": "The original ribbon is 45 centimeters long.\nIt is cut into 5 equal pieces, so each piece is 45 ÷ 5 = 9 centimeters long.\nCallum uses 3 of these pieces, so he has 5 - 3 = 2 pieces left.\nHe tears one of the remaining pieces into 3 smaller equal parts.\nEach of the smaller parts is 9 ÷ 3 = 3 centimeters long.\n#### 3"
+  },
+  {
+   "idx": 61,
+   "prompt": "Tobias has a ribbon that is 72 centimeters long. He cuts it into 6 equal parts. Then he takes 2 parts and cuts each in half. How many total pieces does he now have?",
+   "answer": 8,
+   "response": "Tobias starts with a ribbon that is 72 centimeters long.\nHe cuts it into 6 equal parts, so each part is 72 ÷ 6 = 12 centimeters long.\nHe then takes 2 of these parts and cuts each in half.\nEach original part is 12 centimeters, so cutting one in half gives 12 ÷ 2 = 6 centimeters.\nHe does this to both parts, so he gets 2 × 6 = 12 new pieces.\nAdding the original 4 pieces (6 minus the 2 cut in half) gives 4 + 12 = 16 pieces.\n#### 16"
+  },
+  {
+   "idx": 62,
+   "prompt": "Hassan cuts a 40-centimeter ribbon into 8 equal pieces. He gives one piece to Callum and two pieces to Tobias. How many centimeters of ribbon does Hassan keep?",
+   "answer": 25,
+   "response": "The total length of the ribbon is 40 centimeters.\nHassan cuts it into 8 equal pieces, so each piece is 40 ÷ 8 = 5 centimeters long.\nHe gives one piece to Callum and two pieces to Tobias.\nThe total number of pieces given away is 1 + 2 = 3.\nTherefore, the number of pieces Hassan keeps is 8 - 3 = 5.\nEach piece is 5 centimeters long, so Hassan keeps 5 × 5 = 25 centimeters of ribbon.\n#### 25"
+  },
+  {
+   "idx": 63,
+   "prompt": "Callum has a ribbon that is 64 centimeters long. He cuts it into 4 pieces of equal length. Then he recombines 2 of the pieces to make a longer ribbon. How many centimeters long is the recombined ribbon?",
+   "answer": 32,
+   "response": "The original ribbon is 64 centimeters long.\nIt is cut into 4 equal pieces, so each piece is 64 ÷ 4 = 16 centimeters long.\nCallum recombines 2 of these pieces.\nThe total length of the recombined ribbon is 16 + 16 = 32 centimeters.\n#### 32"
+  },
+  {
+   "idx": 64,
+   "prompt": "Peter took a taxi to the train station. The taxi charges a flat rate of $3, plus $2 for every mile. The ride was 4 miles long. How much did Peter pay in total?",
+   "answer": 11,
+   "response": "The taxi charge consists of a flat rate and a per-mile charge.\nThe flat rate is $3.\nThe per-mile charge is $2 per mile.\nThe ride was 4 miles long, so the cost for the miles is 4 times $2, which equals $8.\nAdd the flat rate to the mileage cost: $3 + $8 = $11.\nTherefore, Peter paid a total of $11.\n#### 11"
+  },
+  {
+   "idx": 65,
+   "prompt": "Kwame paid a taxi fare with a flat rate of $5. The distance was 3 miles, and the rate per mile was $1. What was the total cost of his ride?",
+   "answer": 8,
+   "response": "The flat rate for the taxi fare is $5.\nThe distance traveled is 3 miles.\nThe rate per mile is $1.\nTo find the cost for the distance traveled, multiply the number of miles by the rate per mile: 3 × 1 = $3.\nAdd the flat rate to the cost for the distance: 5 + 3 = $8.\nThe total cost of Kwame's ride is $8.\n#### 8"
+  },
+  {
+   "idx": 66,
+   "prompt": "Otto traveled 2 miles in a taxi. There is a flat rate of $4, and each mile costs $3. What is the total amount Otto paid?",
+   "answer": 10,
+   "response": "Otto traveled 2 miles.\nThe flat rate is $4.\nEach mile costs $3.\nFor 2 miles, the cost is 2 × $3 = $6.\nAdd the flat rate to the cost per mile: $4 + $6 = $10.\nThe total amount Otto paid is $10.\n#### 10"
+  },
+  {
+   "idx": 67,
+   "prompt": "A taxi has a flat rate of $6. If the fare per mile is $1 and Otto’s trip was 5 miles, how much did he pay altogether?",
+   "answer": 11,
+   "response": "The taxi has a flat rate of $6.\nThe fare per mile is $1.\nOtto's trip was 5 miles.\nThe cost for the miles traveled is 5 times the fare per mile: 5 × 1 = $5.\nAdd the flat rate to the cost for the miles: 6 + 5 = $11.\nTherefore, Otto paid $11 altogether.\n#### 11"
+  },
+  {
+   "idx": 68,
+   "prompt": "Peter's taxi ride had a flat rate of $2. For each mile, the cost is $4, and he traveled 3 miles. What is the total fare for Peter’s trip?",
+   "answer": 14,
+   "response": "The flat rate for the taxi ride is $2.\nPeter traveled 3 miles, so the cost per mile is $4.\nMultiply the number of miles by the cost per mile: 3 × 4 = $12.\nAdd the flat rate to the cost of the miles: 2 + 12 = $14.\nThe total fare for Peter’s trip is $14.\n#### 14"
+  },
+  {
+   "idx": 69,
+   "prompt": "Kwame rode 4 miles in a taxi. The flat rate is $5, and the cost per mile is $2. How much did Kwame pay for the entire ride?",
+   "answer": 13,
+   "response": "The total cost of the ride includes both the flat rate and the cost per mile traveled.\nThe flat rate is $5.\nThe cost per mile is $2, and Kwame rode 4 miles.\nSo, the cost for the miles is 4 multiplied by 2, which equals $8.\nAdd the flat rate to the cost per mile: $5 + $8 = $13.\nTherefore, Kwame paid $13 for the entire ride.\n#### 13"
+  },
+  {
+   "idx": 70,
+   "prompt": "Otto took a taxi for 2 miles. The flat rate is $3, and each mile costs $4. What was the total cost of Otto’s trip?",
+   "answer": 11,
+   "response": "The flat rate for the taxi is $3.\nOtto traveled 2 miles.\nEach mile costs $4, so 2 miles cost 2 × $4 = $8.\nAdd the flat rate to the cost per mile: $3 + $8 = $11.\nThe total cost of Otto’s trip is $11.\n#### 11"
+  },
+  {
+   "idx": 71,
+   "prompt": "The taxi charges $1 flat rate plus $3 per mile. Peter rode 3 miles. How much did Peter pay in total for his ride?",
+   "answer": 10,
+   "response": "The taxi charges a flat rate of $1 plus $3 per mile traveled.\nPeter rode 3 miles.\nTo find the cost per mile, divide the total charge by the number of miles: $3 per mile.\nMultiply the cost per mile by the number of miles: 3 × 3 = $9.\nAdd the flat rate to the cost per mile: $1 + $9 = $10.\nTherefore, Peter paid $10 in total for his ride.\n#### 10"
+  },
+  {
+   "idx": 72,
+   "prompt": "Each newspaper costs £2 to print. Gus delivers 14 newspapers on a Saturday. How much does he spend to print all the newspapers he delivers?",
+   "answer": 28,
+   "response": "Each newspaper costs £2 to print.\nGus delivers 14 newspapers.\nTo find the total cost, multiply the number of newspapers by the cost per newspaper.\n14 multiplied by 2 equals 28.\nTherefore, Gus spends £28 to print all the newspapers he delivers.\n#### 28"
+  },
+  {
+   "idx": 73,
+   "prompt": "Priya earns £3 for each house she delivers a newspaper to. She delivered to 9 houses on Sunday. How much money did she earn?",
+   "answer": 27,
+   "response": "Priya earns £3 for each house she delivers to.\nShe delivered to 9 houses on Sunday.\nTo find her total earnings, multiply the number of houses by the amount earned per house.\n£3 × 9 = £27.\nTherefore, Priya earned £27.\n#### 27"
+  },
+  {
+   "idx": 74,
+   "prompt": "Sven collected £15 from his paper round over 5 days. If he earned the same amount each day, how many pounds did he make per day?",
+   "answer": 3,
+   "response": "Sven collected £15 over 5 days.\nTo find how much he earned per day, divide the total amount by the number of days.\n£15 ÷ 5 = £3.\nTherefore, Sven made £3 per day.\n#### 3"
+  },
+  {
+   "idx": 75,
+   "prompt": "Each newspaper costs £1 to deliver. Sven delivered 12 newspapers on Tuesday. How much did it cost to deliver all of them?",
+   "answer": 12,
+   "response": "The cost to deliver each newspaper is £1.\nSven delivered 12 newspapers.\nTo find the total cost, multiply the number of newspapers by the cost per newspaper.\n12 multiplied by 1 equals 12.\nTherefore, the total cost to deliver all the newspapers is £12.\n#### 12"
+  },
+  {
+   "idx": 76,
+   "prompt": "Priya earned £22 from her paper round last week. She worked 2 days. If she earned the same amount each day, how much did she earn per day?",
+   "answer": 11,
+   "response": "Priya earned £22 in total over 2 days.\nTo find how much she earned per day, divide the total earnings by the number of days.\n£22 ÷ 2 = £11.\nShe earned £11 per day.\n#### 11"
+  },
+  {
+   "idx": 77,
+   "prompt": "Gus delivered 10 newspapers on Friday and 6 on Saturday. Each newspaper earns him £1. How many pounds did he make in total?",
+   "answer": 16,
+   "response": "Gus delivered 10 newspapers on Friday.\nHe delivered 6 newspapers on Saturday.\nThe total number of newspapers delivered is 10 + 6 = 16.\nEach newspaper earns him £1.\nTherefore, the total amount earned is 16 × £1 = £16.\n#### 16"
+  },
+  {
+   "idx": 78,
+   "prompt": "Each newspaper raffle ticket costs £5. Sven sold 3 raffle tickets while collecting papers. How many pounds did he collect from the raffles?",
+   "answer": 15,
+   "response": "Each raffle ticket costs £5.\nSven sold 3 raffle tickets.\nTo find the total amount collected, multiply the number of tickets by the cost per ticket.\n3 times 5 equals 15.\nTherefore, Sven collected £15 from the raffles.\n#### 15"
+  },
+  {
+   "idx": 79,
+   "prompt": "Priya has £18 from her paper round. She bought a drink for £4. How many pounds does she have left?",
+   "answer": 14,
+   "response": "Priya starts with £18.\nShe spends £4 on a drink.\nTo find how much she has left, subtract the cost of the drink from her initial amount.\n£18 minus £4 equals £14.\n#### 14"
+  },
+  {
+   "idx": 80,
+   "prompt": "Hassan picked 12 apples from one tree and 18 from another. He put 5 apples in each crate and filled 3 crates completely. How many apples does Hassan have left after filling the crates?",
+   "answer": 15,
+   "response": "Hassan picked 12 apples from one tree and 18 from another, so he had 12 + 18 = 30 apples in total.\nHe put 5 apples in each crate and filled 3 crates completely, so he used 5 × 3 = 15 apples.\nThe number of apples left is 30 - 15 = 15.\n#### 15"
+  },
+  {
+   "idx": 81,
+   "prompt": "Malika counted 24 apples in the orchard and added 15 more that she picked. She packed 6 apples in each crate and used 4 crates. How many apples are left out of the crates?",
+   "answer": 15,
+   "response": "Malika initially counted 24 apples in the orchard.\nShe then picked 15 more apples.\nThe total number of apples is 24 + 15 = 39.\nShe packed the apples into crates with 6 apples per crate.\nShe used 4 crates, so she packed 4 × 6 = 24 apples into crates.\nThe number of apples left out is 39 - 24 = 15.\n#### 15"
+  },
+  {
+   "idx": 82,
+   "prompt": "Marcus picked 30 apples and decided to divide them equally among 5 crates. He later found 8 more apples and added them to one crate. How many apples are in that crate now?",
+   "answer": 14,
+   "response": "Marcus picked 30 apples and divided them equally among 5 crates.\nEach crate initially had 30 ÷ 5 = 6 apples.\nHe then found 8 more apples and added them to one crate.\nThe crate that received the additional apples now has 6 + 8 = 14 apples.\n#### 14"
+  },
+  {
+   "idx": 83,
+   "prompt": "Malika had 20 apples in her crate. She gave 5 to Hassan and then added 13 more from her basket. If she puts the same number of apples in 4 crates, how many apples go in each crate?",
+   "answer": 7,
+   "response": "Malika started with 20 apples.\nShe gave 5 apples to Hassan, so she had 20 - 5 = 15 apples left.\nShe then added 13 more apples, so she had 15 + 13 = 28 apples.\nShe wants to put these 28 apples into 4 crates equally.\nTo find how many apples go in each crate, divide 28 by 4.\n28 ÷ 4 = 7.\nEach crate will have 7 apples.\n#### 7"
+  },
+  {
+   "idx": 84,
+   "prompt": "Marcus found 3 crates of apples, each with 7 apples. He added 19 more apples he picked. If he splits them equally into 5 crates, how many apples go into each of the 5 crates?",
+   "answer": 8,
+   "response": "Marcus found 3 crates with 7 apples each, so he had 3 × 7 = 21 apples from the crates.\nHe then added 19 more apples, so he had 21 + 19 = 40 apples in total.\nHe wants to split these 40 apples equally into 5 crates.\nTo find how many apples go into each crate, divide 40 by 5: 40 ÷ 5 = 8.\nEach crate will have 8 apples.\n#### 8"
+  },
+  {
+   "idx": 85,
+   "prompt": "Elena bought 3 movie tickets, and Iris bought 5 more than Elena. If Tobias bought 2 fewer tickets than Iris, how many tickets did Tobias buy?",
+   "answer": 6,
+   "response": "Elena bought 3 movie tickets.\nIris bought 5 more than Elena, so Iris bought 3 + 5 = 8 tickets.\nTobias bought 2 fewer tickets than Iris, so Tobias bought 8 - 2 = 6 tickets.\n#### 6"
+  },
+  {
+   "idx": 86,
+   "prompt": "The cinema has 25 seats. Elena and Iris each bought 4 tickets, and Tobias bought 3 tickets. How many seats are still unoccupied?",
+   "answer": 14,
+   "response": "Elena bought 4 tickets, so she occupies 4 seats.\nIris also bought 4 tickets, so she occupies 4 seats.\nTobias bought 3 tickets, so he occupies 3 seats.\nThe total number of occupied seats is 4 + 4 + 3 = 11.\nThe cinema has 25 seats in total.\nSubtract the occupied seats from the total: 25 - 11 = 14.\nThere are 14 seats still unoccupied.\n#### 14"
+  },
+  {
+   "idx": 87,
+   "prompt": "Tickets cost $2 each. Elena spent $8 on tickets, and Tobias spent $6. If Iris bought twice as many tickets as Tobias, how many tickets did Iris buy?",
+   "answer": 6,
+   "response": "Elena spent $8 on tickets. Since each ticket costs $2, the number of tickets Elena bought is 8 divided by 2, which equals 4.\nTobias spent $6 on tickets. The number of tickets Tobias bought is 6 divided by 2, which equals 3.\nIris bought twice as many tickets as Tobias. So, Iris bought 2 times 3, which is 6 tickets.\n#### 6"
+  },
+  {
+   "idx": 88,
+   "prompt": "During a matinee, 10 seats were taken by children and 14 by adults. Elena bought 3 tickets, Iris bought 5, and Tobias bought the rest. How many tickets did Tobias buy?",
+   "answer": 16,
+   "response": "The total number of seats taken by children is 10.\nThe total number of seats taken by adults is 14.\nThe total number of seats taken is 10 + 14 = 24.\nElena bought 3 tickets.\nIris bought 5 tickets.\nThe total number of tickets bought by Elena and Iris is 3 + 5 = 8.\nThe remaining tickets are 24 - 8 = 16.\nTobias bought the rest of the tickets, which is 16.\n#### 16"
+  },
+  {
+   "idx": 89,
+   "prompt": "The cinema sold 20 tickets total. Elena bought 6 tickets, and Tobias bought 4 more than Iris. How many tickets did Iris buy?",
+   "answer": 5,
+   "response": "The cinema sold 20 tickets in total.\nElena bought 6 tickets.\nLet the number of tickets Iris bought be x.\nTobias bought 4 more than Iris, so Tobias bought x + 4 tickets.\nThe sum of all tickets is 6 (Elena) + x (Iris) + (x + 4) (Tobias) = 20.\nCombine like terms: 6 + x + x + 4 = 20.\nSimplify: 2x + 10 = 20.\nSubtract 10 from both sides: 2x = 10.\nDivide by 2: x = 5.\nTherefore, Iris bought 5 tickets.\n#### 5"
+  },
+  {
+   "idx": 90,
+   "prompt": "Clara planned to cycle 70 kilometers in five days. She split the distance evenly for each day, but on the fourth day she cycled 12 kilometers more than her daily amount. How many kilometers did Clara ride on the fourth day?",
+   "answer": 26,
+   "response": "Clara planned to cycle 70 kilometers over five days.\nShe divided the total distance evenly, so each day she was supposed to cycle 70 ÷ 5 = 14 kilometers.\nOn the fourth day, she cycled 12 kilometers more than her daily amount.\nHer daily amount is 14 kilometers, so she rode 14 + 12 = 26 kilometers on the fourth day.\n#### 26"
+  },
+  {
+   "idx": 91,
+   "prompt": "Hassan biked a total of 56 kilometers across four days. He rode the same distance each day, but on the third day he added 8 more kilometers to his daily average. How many kilometers did Hassan ride on the third day?",
+   "answer": 20,
+   "response": "Hassan biked a total of 56 kilometers over four days.\nHe rode the same distance each day, so divide the total by 4: 56 ÷ 4 = 14 kilometers per day.\nOn the third day, he added 8 kilometers to his daily average.\nHis daily average is 14 kilometers, so add 8 to 14: 14 + 8 = 22 kilometers.\nTherefore, Hassan rode 22 kilometers on the third day.\n#### 22"
+  },
+  {
+   "idx": 92,
+   "prompt": "Clara rode 36 kilometers during three days, splitting the distance evenly each day. But on the second day, she cycled 9 more kilometers than her usual daily amount. How many kilometers did Clara ride on the second day?",
+   "answer": 21,
+   "response": "Clara rode 36 kilometers over three days, so she averaged 36 divided by 3, which is 12 kilometers per day.\nOn the first day, she rode 12 kilometers.\nOn the third day, she also rode 12 kilometers.\nOn the second day, she cycled 9 more kilometers than her usual daily amount of 12 kilometers.\nSo, she rode 12 + 9 = 21 kilometers on the second day.\n#### 21"
+  },
+  {
+   "idx": 93,
+   "prompt": "Yuki covered 65 kilometers over five days. She divided the distance equally each day, but on the third day she cycled 5 extra kilometers. How many kilometers did Yuki ride on the third day?",
+   "answer": 17,
+   "response": "Yuki covered 65 kilometers over five days.\nShe divided the total distance equally each day, so initially, she would have ridden 65 ÷ 5 = 13 kilometers per day.\nOn the third day, she cycled 5 extra kilometers compared to her usual daily distance.\nSo, on the third day, she rode 13 + 5 = 18 kilometers.\n#### 18"
+  },
+  {
+   "idx": 94,
+   "prompt": "Bea parked her car for 3 hours in the car park. The hourly charge is $4. Nina parked for 5 hours at the same rate. How much more did Nina pay than Bea?",
+   "answer": 8,
+   "response": "Bea parked for 3 hours at a rate of $4 per hour.\nThe cost for Bea is 3 × 4 = $12.\nNina parked for 5 hours at the same rate.\nThe cost for Nina is 5 × 4 = $20.\nThe difference in cost is 20 − 12 = $8.\nNina paid $8 more than Bea.\n#### 8"
+  },
+  {
+   "idx": 95,
+   "prompt": "Kwame paid $18 for parking at $3 per hour. Bea paid $15 for the same rate. How many more hours did Kwame park than Bea?",
+   "answer": 1,
+   "response": "Kwame paid $18 for parking at a rate of $3 per hour.\nTo find how many hours Kwame parked, divide his total cost by the hourly rate: 18 ÷ 3 = 6 hours.\nBea paid $15 for parking at the same rate.\nTo find how many hours Bea parked, divide her total cost by the hourly rate: 15 ÷ 3 = 5 hours.\nThe difference in hours parked is 6 minus 5, which equals 1 hour.\nKwame parked 1 more hour than Bea.\n#### 1"
+  },
+  {
+   "idx": 96,
+   "prompt": "Nina parked for 4 hours at $5 per hour. Bea parked for 2 hours at $6 per hour. How much more did Nina pay than Bea?",
+   "answer": 8,
+   "response": "Nina parked for 4 hours at $5 per hour.\nThe cost for Nina is 4 × 5 = $20.\nBea parked for 2 hours at $6 per hour.\nThe cost for Bea is 2 × 6 = $12.\nThe difference in cost is 20 − 12 = $8.\nNina paid $8 more than Bea.\n#### 8"
+  },
+  {
+   "idx": 97,
+   "prompt": "Bea parked her car for 6 hours at $2 per hour. Nina parked for 4 hours at $3 per hour. How much more did Bea pay than Nina?",
+   "answer": 0,
+   "response": "Bea parked for 6 hours at $2 per hour.\nThe cost for Bea is 6 × 2 = $12.\nNina parked for 4 hours at $3 per hour.\nThe cost for Nina is 4 × 3 = $12.\nThe difference in cost is 12 − 12 = $0.\n#### 0"
+  },
+  {
+   "idx": 98,
+   "prompt": "Kwame paid $8 for parking at $2 per hour. Bea paid $10 for the same rate. How many more hours did Bea park than Kwame?",
+   "answer": 1,
+   "response": "Kwame paid $8 for parking at a rate of $2 per hour.\nTo find how many hours Kwame parked, divide his total cost by the hourly rate: 8 ÷ 2 = 4 hours.\nBea paid $10 for parking at the same rate.\nTo find how many hours Bea parked, divide her total cost by the hourly rate: 10 ÷ 2 = 5 hours.\nThe difference in hours parked is 5 minus 4, which equals 1 hour.\nBea parked 1 hour more than Kwame.\n#### 1"
+  },
+  {
+   "idx": 99,
+   "prompt": "Nina parked for 5 hours at $3 per hour. Kwame paid $12 for the same rate. How much more did Nina pay than Kwame?",
+   "answer": 3,
+   "response": "Nina parked for 5 hours at a rate of $3 per hour.\nThe total cost for Nina is 5 multiplied by 3, which equals 15 dollars.\nKwame paid $12 for the same parking time.\nTo find how much more Nina paid than Kwame, subtract Kwame's cost from Nina's cost: 15 minus 12 equals 3.\nNina paid $3 more than Kwame.\n#### 3"
+  },
+  {
+   "idx": 100,
+   "prompt": "Bea parked her car for 2 hours at $5 per hour. Kwame parked for 3 hours at $4 per hour. How much more did Kwame pay than Bea?",
+   "answer": 2,
+   "response": "Bea parked for 2 hours at $5 per hour.\nThe cost for Bea is 2 × 5 = $10.\nKwame parked for 3 hours at $4 per hour.\nThe cost for Kwame is 3 × 4 = $12.\nThe difference in cost is 12 − 10 = $2.\nKwame paid $2 more than Bea.\n#### 2"
+  },
+  {
+   "idx": 101,
+   "prompt": "Callum notices that a swimming pool fills at a rate of 8 gallons per minute. After 4 minutes, the pool's drain starts and removes 5 gallons per minute. How many gallons are in the pool after 7 more minutes?",
+   "answer": 53,
+   "response": "The swimming pool fills at a rate of 8 gallons per minute for the first 4 minutes.\nSo, the amount filled is 8 × 4 = 32 gallons.\nAfter 4 minutes, the drain starts removing 5 gallons per minute.\nFor the next 7 minutes, the net rate of change is 8 - 5 = 3 gallons per minute.\nSo, the amount removed is 3 × 7 = 21 gallons.\nThe total amount in the pool after 7 more minutes is 32 - 21 = 11 gallons.\n#### 11"
+  },
+  {
+   "idx": 102,
+   "prompt": "Jonah starts filling a pool that can hold 200 gallons. It fills at 10 gallons per minute for 9 minutes. Then he opens a drain that removes 6 gallons per minute. After 5 minutes of draining, how many gallons are left?",
+   "answer": 60,
+   "response": "The pool holds 200 gallons.\nJonah fills the pool at a rate of 10 gallons per minute for 9 minutes.\nSo, the amount filled is 10 × 9 = 90 gallons.\nAfter 9 minutes, 90 gallons are in the pool.\nHe then opens a drain that removes 6 gallons per minute for 5 minutes.\nSo, the amount drained is 6 × 5 = 30 gallons.\nSubtract the drained amount from the filled amount: 90 - 30 = 60 gallons.\nTherefore, after 5 minutes of draining, there are 60 gallons left in the pool.\n#### 60"
+  },
+  {
+   "idx": 103,
+   "prompt": "Diego helps fill a pool that initially has 40 gallons. Water flows in at 12 gallons per minute for 6 minutes. Then the drain is opened and removes 7 gallons per minute for 4 minutes. How many gallons are in the pool now?",
+   "answer": 84,
+   "response": "The pool starts with 40 gallons.\nWater flows in at 12 gallons per minute for 6 minutes.\nSo, 12 × 6 = 72 gallons are added.\nThe total after adding is 40 + 72 = 112 gallons.\nThen the drain removes water at 7 gallons per minute for 4 minutes.\nSo, 7 × 4 = 28 gallons are removed.\nThe final amount is 112 - 28 = 84 gallons.\n#### 84"
+  },
+  {
+   "idx": 104,
+   "prompt": "Callum fills a pool that holds 150 gallons. He turns on the hose, which adds water at 9 gallons per minute for 6 minutes. Then he leaves the drain open for 3 minutes, removing 4 gallons per minute. How much water is in the pool at the end?",
+   "answer": 42,
+   "response": "The pool holds 150 gallons.\nThe hose adds water at 9 gallons per minute for 6 minutes.\nSo, the amount added is 9 × 6 = 54 gallons.\nAfter 6 minutes, the pool has 150 + 54 = 204 gallons.\nThe drain removes water at 4 gallons per minute for 3 minutes.\nSo, the amount removed is 4 × 3 = 12 gallons.\nAfter 3 minutes, the pool has 204 - 12 = 192 gallons.\n#### 192"
+  },
+  {
+   "idx": 105,
+   "prompt": "Jonah measures water in a pool that starts with 35 gallons. He runs the hose for 5 minutes, adding 11 gallons per minute. Then he reopens the drain, which removes 5 gallons per minute for 8 minutes. How many gallons remain?",
+   "answer": 50,
+   "response": "The pool starts with 35 gallons of water.\nJonah runs the hose for 5 minutes, adding 11 gallons per minute.\nThe total added is 5 × 11 = 55 gallons.\nAfter adding, the pool has 35 + 55 = 90 gallons.\nThe drain then opens and removes 5 gallons per minute for 8 minutes.\nThe total removed is 8 × 5 = 40 gallons.\nAfter removing, the pool has 90 - 40 = 50 gallons remaining.\n#### 50"
+  },
+  {
+   "idx": 106,
+   "prompt": "Diego fills a pool at 13 gallons per minute for 4 minutes. There is also a leak that drains 3 gallons per minute for the entire time. How many gallons are in the pool after the 4 minutes?",
+   "answer": 40,
+   "response": "Diego fills the pool at a rate of 13 gallons per minute for 4 minutes.\nThe total amount of water added to the pool is 13 × 4 = 52 gallons.\nThe leak drains water at a rate of 3 gallons per minute for 4 minutes.\nThe total amount of water lost due to the leak is 3 × 4 = 12 gallons.\nSubtract the lost water from the added water: 52 − 12 = 40 gallons.\n#### 40"
+  },
+  {
+   "idx": 107,
+   "prompt": "Callum and Jonah both help handling a pool. The pool has 50 gallons already. Callum adds water at 7 gallons per minute for 3 minutes. Then Jonah opens a drain that removes 6 gallons per minute for 5 minutes. How many gallons are in the pool now?",
+   "answer": 41,
+   "response": "The pool starts with 50 gallons of water.\nCallum adds water at a rate of 7 gallons per minute for 3 minutes.\nSo, Callum adds 7 × 3 = 21 gallons.\nThe pool now has 50 + 21 = 71 gallons.\nJonah then opens a drain that removes 6 gallons per minute for 5 minutes.\nSo, the drain removes 6 × 5 = 30 gallons.\nThe pool now has 71 - 30 = 41 gallons.\n#### 41"
+  },
+  {
+   "idx": 108,
+   "prompt": "Jonah fills a pool that begins with 20 gallons. The hose adds 15 gallons per minute for 4 minutes, and the drain lets out 9 gallons per minute during the same time. How many gallons are in the pool after the 4 minutes?",
+   "answer": 44,
+   "response": "The pool starts with 20 gallons.\nThe hose adds 15 gallons per minute for 4 minutes.\nSo, the total added by the hose is 15 × 4 = 60 gallons.\nThe drain removes 9 gallons per minute for 4 minutes.\nSo, the total removed by the drain is 9 × 4 = 36 gallons.\nThe net change in the pool's volume is 60 - 36 = 24 gallons.\nAdding this to the initial amount gives 20 + 24 = 44 gallons.\n#### 44"
+  },
+  {
+   "idx": 109,
+   "prompt": "Aisha walks dogs for $12 per hour. She walked Otto's dog for 3 hours and Gus's dog for 2 hours. How much money did Aisha earn in total?",
+   "answer": 60,
+   "response": "Aisha earns $12 per hour.\nShe worked 3 hours on Otto's dog.\nThe earnings from Otto's dog are 3 × 12 = $36.\nShe also worked 2 hours on Gus's dog.\nThe earnings from Gus's dog are 2 × 12 = $24.\nThe total earnings are 36 + 24 = $60.\n#### 60"
+  },
+  {
+   "idx": 110,
+   "prompt": "Otto pays $10 per hour to have his dog walked. If the walk takes 2 hours, how much does Otto pay for one walk?",
+   "answer": 20,
+   "response": "Otto pays $10 per hour for the dog walking service.\nThe walk takes 2 hours.\nTo find the total cost, multiply the hourly rate by the number of hours: 10 × 2 = 20.\nTherefore, Otto pays $20 for one walk.\n#### 20"
+  },
+  {
+   "idx": 111,
+   "prompt": "Gus pays $8 per dog walk. He has 4 dogs that need walking every day. How much does Gus pay in total for daily walks?",
+   "answer": 32,
+   "response": "Gus pays $8 per dog walk.\nHe has 4 dogs that need walking every day.\nTo find the total cost, multiply the number of dogs by the cost per walk.\n4 multiplied by 8 equals 32.\nTherefore, Gus pays $32 in total for daily walks.\n#### 32"
+  },
+  {
+   "idx": 112,
+   "prompt": "Aisha charges $15 per hour for dog walking. She walked Gus's 3 dogs for 1 hour each. How much did Aisha earn for that session?",
+   "answer": 15,
+   "response": "Aisha charges $15 per hour.\nShe walked Gus's 3 dogs for 1 hour each.\nThe total time spent is 3 hours.\nMultiply the hourly rate by the number of hours: 15 × 3 = 45.\nAisha earned $45 for that session.\n#### 45"
+  },
+  {
+   "idx": 113,
+   "prompt": "Otto pays $9 per hour for a dog walk. If he walks his dog 4 times a week, how much does he pay in one week?",
+   "answer": 36,
+   "response": "Otto pays $9 per hour for a dog walk.\nHe walks his dog 4 times a week.\nTo find the total cost for the week, multiply the hourly rate by the number of walks.\n$9 × 4 = $36.\nTherefore, Otto pays $36 in one week.\n#### 36"
+  },
+  {
+   "idx": 114,
+   "prompt": "Gus walks his 2 dogs for 1 hour each at a rate of $11 per hour. How much does he spend on one walk?",
+   "answer": 11,
+   "response": "Gus walks two dogs.\nEach dog is walked for 1 hour.\nThe rate for walking one dog is $11 per hour.\nSo, the cost for one dog is $11.\nSince there are two dogs, the total cost is 2 times $11.\n2 × 11 = 22.\nTherefore, Gus spends $22 on one walk.\n#### 22"
+  },
+  {
+   "idx": 115,
+   "prompt": "Aisha walks Otto's dog for 2 hours and Gus's dog for 3 hours. She charges $10 per hour. How much does she earn in total?",
+   "answer": 50,
+   "response": "Aisha walks Otto's dog for 2 hours.\nShe charges $10 per hour, so for Otto's dog, she earns 2 × $10 = $20.\nShe also walks Gus's dog for 3 hours.\nAgain, she charges $10 per hour, so for Gus's dog, she earns 3 × $10 = $30.\nThe total earnings are the sum of the two amounts: $20 + $30 = $50.\n#### 50"
+  },
+  {
+   "idx": 116,
+   "prompt": "Otto pays $7 per dog per walk. He has 5 dogs. How much does he pay if he walks all his dogs once?",
+   "answer": 35,
+   "response": "Otto pays $7 per dog per walk.\nHe has 5 dogs.\nHe walks each dog once.\nSo, the total number of walks is 5.\nThe cost per walk is $7.\nMultiply the number of walks by the cost per walk: 5 × 7 = 35.\nThe total amount Otto pays is $35.\n#### 35"
+  },
+  {
+   "idx": 117,
+   "prompt": "Owen cleaned half of the 12 rooms on the first floor. How many rooms did Owen clean?",
+   "answer": 6,
+   "response": "Owen cleaned half of the 12 rooms on the first floor.\nTo find half of 12, divide 12 by 2.\n12 ÷ 2 = 6.\nTherefore, Owen cleaned 6 rooms.\n#### 6"
+  },
+  {
+   "idx": 118,
+   "prompt": "Hassan was assigned to clean half of the 18 rooms on the third floor. How many rooms did Hassan clean?",
+   "answer": 9,
+   "response": "Hassan was assigned to clean half of the 18 rooms.\nTo find half of 18, divide 18 by 2.\n18 divided by 2 equals 9.\nTherefore, Hassan cleaned 9 rooms.\n#### 9"
+  },
+  {
+   "idx": 119,
+   "prompt": "Clara cleaned half of the 20 rooms on the second floor, but then she had to help clean 2 more rooms. How many rooms did Clara clean in total?",
+   "answer": 12,
+   "response": "Clara started by cleaning half of the 20 rooms on the second floor.\nHalf of 20 is calculated as 20 divided by 2, which equals 10.\nSo, Clara initially cleaned 10 rooms.\nShe then helped clean 2 more rooms.\nTo find the total number of rooms cleaned, add the initial 10 rooms to the additional 2 rooms.\n10 + 2 = 12.\nTherefore, Clara cleaned a total of 12 rooms.\n#### 12"
+  },
+  {
+   "idx": 120,
+   "prompt": "The hotel has 14 rooms on the fourth floor. Owen cleaned half of them before lunch. How many rooms did Owen clean?",
+   "answer": 7,
+   "response": "The hotel has 14 rooms on the fourth floor.\nOwen cleaned half of them before lunch.\nTo find half of 14, divide 14 by 2.\n14 divided by 2 equals 7.\nTherefore, Owen cleaned 7 rooms.\n#### 7"
+  },
+  {
+   "idx": 121,
+   "prompt": "Hassan cleaned half of the 24 rooms on the fifth floor, but then he found 3 rooms that needed extra cleaning. How many rooms did Hassan finish cleaning?",
+   "answer": 12,
+   "response": "Hassan cleaned half of the 24 rooms on the fifth floor.\nHalf of 24 is calculated as 24 divided by 2, which equals 12.\nSo, Hassan initially cleaned 12 rooms.\nHe then found 3 additional rooms that needed extra cleaning.\nAdding these to the initial count gives 12 + 3 = 15.\nTherefore, Hassan finished cleaning 15 rooms.\n#### 15"
+  },
+  {
+   "idx": 122,
+   "prompt": "Clara cleaned half of the 10 rooms on the first floor, and Owen cleaned half of the 10 rooms on the second floor. How many rooms did they clean together?",
+   "answer": 10,
+   "response": "Clara cleaned half of the 10 rooms on the first floor.\nHalf of 10 is 5, so Clara cleaned 5 rooms.\nOwen cleaned half of the 10 rooms on the second floor.\nHalf of 10 is also 5, so Owen cleaned 5 rooms.\nThe total number of rooms cleaned is the sum of Clara's and Owen's work.\n5 + 5 = 10.\n#### 10"
+  },
+  {
+   "idx": 123,
+   "prompt": "The hotel has 22 rooms on the sixth floor. Hassan cleaned half of them in the morning. How many rooms did he clean?",
+   "answer": 11,
+   "response": "The hotel has 22 rooms on the sixth floor.\nHassan cleaned half of them in the morning.\nTo find half of 22, divide 22 by 2.\n22 ÷ 2 = 11.\nTherefore, Hassan cleaned 11 rooms.\n#### 11"
+  },
+  {
+   "idx": 124,
+   "prompt": "Owen cleaned half of the 16 rooms on the seventh floor, but then he had to clean 2 more rooms because they were messy. How many rooms did Owen clean in total?",
+   "answer": 10,
+   "response": "Owen started by cleaning half of the 16 rooms on the seventh floor.\nHalf of 16 is calculated as 16 divided by 2, which equals 8.\nSo, Owen initially cleaned 8 rooms.\nHe then had to clean 2 more rooms because they were messy.\nAdding these 2 rooms to the initial 8 gives 8 + 2 = 10.\nTherefore, Owen cleaned a total of 10 rooms.\n#### 10"
+  },
+  {
+   "idx": 125,
+   "prompt": "Iris has 3 wheels of cheese. She gives 1 wheel to Callum and 2 wheels to Nina. Later, she buys 5 more wheels. How many wheels does Iris have now?",
+   "answer": 5,
+   "response": "Iris starts with 3 wheels of cheese.\nShe gives 1 wheel to Callum, so she has 3 - 1 = 2 wheels left.\nShe then gives 2 wheels to Nina, so she has 2 - 2 = 0 wheels remaining.\nLater, she buys 5 more wheels, so she adds 5 to her current total: 0 + 5 = 5.\nTherefore, Iris now has 5 wheels of cheese.\n#### 5"
+  },
+  {
+   "idx": 126,
+   "prompt": "Callum starts with 4 rounds of cheese. He trades 2 rounds for 3 new ones with a friend. Then he eats 1 round. How many rounds does Callum have left?",
+   "answer": 4,
+   "response": "Callum starts with 4 rounds of cheese.\nHe trades 2 rounds for 3 new ones, so he gives away 2 and receives 3.\nThe number of rounds after the trade is 4 minus 2 plus 3, which equals 5.\nThen he eats 1 round, so he has 5 minus 1, which equals 4.\n#### 4"
+  },
+  {
+   "idx": 127,
+   "prompt": "Nina has 6 rounds of cheese. She makes 2 new rounds by adding milk, but then she gives away 3 rounds to her neighbor. How many rounds does Nina have now?",
+   "answer": 5,
+   "response": "Nina starts with 6 rounds of cheese.\nShe adds 2 new rounds by adding milk, so she now has 6 + 2 = 8 rounds.\nShe gives away 3 rounds to her neighbor, so she has 8 - 3 = 5 rounds left.\n#### 5"
+  },
+  {
+   "idx": 128,
+   "prompt": "Iris has 7 wheels of cheese and puts them into 3 boxes, each holding 2 wheels. She buys 1 more wheel. How many wheels does she have that aren't in a box?",
+   "answer": 2,
+   "response": "Iris starts with 7 wheels of cheese.\nShe puts 2 wheels in each of 3 boxes, so 2 × 3 = 6 wheels are in the boxes.\nThis means 7 − 6 = 1 wheel is not in a box.\nShe then buys 1 more wheel, but this additional wheel is not yet placed in a box.\nSo, the number of wheels not in a box remains 1.\n#### 1"
+  },
+  {
+   "idx": 129,
+   "prompt": "Nina starts with 8 rounds of cheese. She gives 3 rounds to Iris, then makes 2 more rounds. Later, she loses 4 rounds in a spill. How many rounds does Nina have left?",
+   "answer": 3,
+   "response": "Nina starts with 8 rounds of cheese.\nShe gives 3 rounds to Iris, so she has 8 - 3 = 5 rounds left.\nShe then makes 2 more rounds, so she has 5 + 2 = 7 rounds.\nLater, she loses 4 rounds in a spill, so she has 7 - 4 = 3 rounds left.\n#### 3"
+  },
+  {
+   "idx": 130,
+   "prompt": "Iris has 6 wheels of cheese. She gives 1 wheel to Callum and 2 wheels to Nina. Then, she cuts each remaining wheel into 3 pieces. How many pieces of cheese does Iris have?",
+   "answer": 9,
+   "response": "Iris starts with 6 wheels of cheese.\nShe gives 1 wheel to Callum, so she has 5 wheels left.\nThen she gives 2 wheels to Nina, so she has 3 wheels left.\nEach remaining wheel is cut into 3 pieces.\nSo, 3 wheels × 3 pieces per wheel = 9 pieces.\n#### 9"
+  },
+  {
+   "idx": 131,
+   "prompt": "Callum returned 12 books to the library this week. Lucia returned 7 more books than Callum, and Femi returned 5 fewer books than Lucia. If the library had 20 books already in the returns bin, how many books are there in the returns bin now?",
+   "answer": 65,
+   "response": "Callum returned 12 books.\nLucia returned 7 more books than Callum, so she returned 12 + 7 = 19 books.\nFemi returned 5 fewer books than Lucia, so he returned 19 - 5 = 14 books.\nThe total number of books returned is 12 + 19 + 14 = 45 books.\nThe library already had 20 books in the returns bin.\nAdding the returned books gives 45 + 20 = 65 books.\n#### 65"
+  },
+  {
+   "idx": 132,
+   "prompt": "Lucia brought 15 books back to the library on Monday. On Tuesday, Femi returned 10 books, which is 4 fewer than Callum returned. On Wednesday, Callum returned 8 more books than he did on Tuesday. How many books were returned in total this week?",
+   "answer": 61,
+   "response": "Lucia brought 15 books back to the library on Monday.\nOn Tuesday, Femi returned 10 books.\nFemi returned 4 fewer books than Callum, so Callum returned 10 + 4 = 14 books on Tuesday.\nOn Wednesday, Callum returned 8 more books than he did on Tuesday, so he returned 14 + 8 = 22 books.\nThe total number of books returned this week is 15 (Monday) + 10 (Tuesday) + 22 (Wednesday) = 47.\n#### 47"
+  },
+  {
+   "idx": 133,
+   "prompt": "Callum returned 8 books to the library on Friday. Femi returned 3 times as many books as Callum did, and Lucia returned 5 fewer books than Femi. The library started with 13 books in the returns shelf. How many books are now on the returns shelf?",
+   "answer": 64,
+   "response": "Callum returned 8 books.\nFemi returned 3 times as many books as Callum, so Femi returned 3 × 8 = 24 books.\nLucia returned 5 fewer books than Femi, so Lucia returned 24 − 5 = 19 books.\nThe total number of books returned is 8 + 24 + 19 = 51 books.\nThe library started with 13 books on the returns shelf.\nAdding the returned books gives 13 + 51 = 64 books.\n#### 64"
+  },
+  {
+   "idx": 134,
+   "prompt": "Lucia returned 6 books to the library each day for 3 days. Femi returned 10 books on Monday and 5 fewer on Tuesday. Callum returned 4 books on Monday and 2 more on Tuesday. The returns bin originally had 7 books. How many books are in the bin now?",
+   "answer": 50,
+   "response": "Lucia returned 6 books each day for 3 days, so she returned 6 × 3 = 18 books.\nFemi returned 10 books on Monday and 5 fewer on Tuesday, so he returned 10 - 5 = 5 books on Tuesday.\nCallum returned 4 books on Monday and 2 more on Tuesday, so he returned 4 + 2 = 6 books on Tuesday.\nThe total number of books returned is 18 + 10 + 5 + 4 + 6 = 43 books.\nThe returns bin originally had 7 books.\nAfter all the returns, the bin has 7 + 43 = 50 books.\n#### 50"
+  },
+  {
+   "idx": 135,
+   "prompt": "Callum returned 9 books to the library. Femi returned 5 fewer than Callum. Lucia returned twice as many books as Femi. The library already had 4 books in the returns bin. After all returns, how many books are in the bin?",
+   "answer": 25,
+   "response": "Callum returned 9 books.\nFemi returned 5 fewer than Callum, so Femi returned 9 - 5 = 4 books.\nLucia returned twice as many books as Femi, so Lucia returned 2 × 4 = 8 books.\nThe total number of books returned is 9 + 4 + 8 = 21 books.\nThe library already had 4 books in the returns bin.\nAfter all returns, the total number of books in the bin is 21 + 4 = 25 books.\n#### 25"
+  },
+  {
+   "idx": 136,
+   "prompt": "On Monday, Femi returned 11 books. On Tuesday, Callum returned 6 books, and Lucia returned 3 more than Callum. On Wednesday, Callum returned 2 more books than on Tuesday. The returns bin started with 8 books. How many books are now in the bin?",
+   "answer": 42,
+   "response": "Femi returned 11 books on Monday.\nCallum returned 6 books on Tuesday.\nLucia returned 3 more than Callum, so she returned 6 + 3 = 9 books on Tuesday.\nCallum returned 2 more books on Wednesday than on Tuesday, so he returned 6 + 2 = 8 books on Wednesday.\nThe total number of books returned is 11 + 6 + 9 + 8 = 34.\nThe returns bin started with 8 books.\nSo, the current number of books in the bin is 8 + 34 = 42.\n#### 42"
+  },
+  {
+   "idx": 137,
+   "prompt": "Lucia returned 7 books to the library. Callum returned 4 fewer books than Lucia, and Femi returned 3 more than Callum. The library initially had 10 books in the returns bin. How many books are in the bin after all returns?",
+   "answer": 26,
+   "response": "Lucia returned 7 books.\nCallum returned 4 fewer books than Lucia, so Callum returned 7 - 4 = 3 books.\nFemi returned 3 more books than Callum, so Femi returned 3 + 3 = 6 books.\nThe total number of books returned is 7 + 3 + 6 = 16 books.\nThe library initially had 10 books in the returns bin.\nAfter all returns, the total number of books in the bin is 10 + 16 = 26 books.\n#### 26"
+  },
+  {
+   "idx": 138,
+   "prompt": "Callum returned 5 books on Monday and 3 more on Tuesday. Femi returned 2 fewer books than Callum on Monday and 4 more than Callum on Tuesday. Lucia returned twice as many books as Femi did on Tuesday. The returns bin had 6 books to start. How many books are in the bin now?",
+   "answer": 38,
+   "response": "Callum returned 5 books on Monday.\nHe returned 3 more on Tuesday, so 5 + 3 = 8 books total.\nFemi returned 2 fewer books than Callum on Monday, so 5 - 2 = 3 books.\nOn Tuesday, Femi returned 4 more than Callum, so 8 + 4 = 12 books total.\nLucia returned twice as many books as Femi on Tuesday, so 2 × 12 = 24 books.\nThe returns bin started with 6 books.\nAdd all the books returned: 6 + 5 + 3 + 12 + 24 = 40 books.\n#### 40"
+  },
+  {
+   "idx": 139,
+   "prompt": "Hassan has 3 balls of wool and Finn gives him 6 more. They want to make scarves, and each scarf needs exactly 3 balls of wool. How many scarves can they make in total?",
+   "answer": 3,
+   "response": "Hassan starts with 3 balls of wool.\nFinn gives him 6 more balls of wool.\nAdd the two amounts: 3 + 6 = 9 balls of wool.\nEach scarf requires 3 balls of wool.\nDivide the total number of balls by the number needed per scarf: 9 ÷ 3 = 3.\nThey can make 3 scarves in total.\n#### 3"
+  },
+  {
+   "idx": 140,
+   "prompt": "Amara starts with 4 balls of wool and buys 8 more at the store. She uses 2 balls for each scarf she knits. How many scarves can she make if she uses all her wool?",
+   "answer": 6,
+   "response": "Amara starts with 4 balls of wool.\nShe buys 8 more balls at the store.\nThe total number of balls she has is 4 + 8 = 12.\nShe uses 2 balls for each scarf.\nTo find how many scarves she can make, divide the total number of balls by the number used per scarf: 12 ÷ 2 = 6.\nTherefore, she can make 6 scarves using all her wool.\n#### 6"
+  },
+  {
+   "idx": 141,
+   "prompt": "Finn has 5 balls of wool and Amara gives him 7 more. If each scarf requires 4 balls of wool, how many complete scarves can they knit together?",
+   "answer": 3,
+   "response": "Finn starts with 5 balls of wool.\nAmara gives him 7 more balls.\nAdd the two amounts: 5 + 7 = 12 balls of wool.\nEach scarf requires 4 balls of wool.\nDivide the total number of balls by the number needed per scarf: 12 ÷ 4 = 3.\nThis gives the number of complete scarves that can be made.\n#### 3"
+  },
+  {
+   "idx": 142,
+   "prompt": "Hassan collects 2 balls of wool from his closet and finds 10 more in a box. He wants to make scarves that use exactly 3 balls each. How many scarves can he make using all the wool?",
+   "answer": 4,
+   "response": "Hassan starts with 2 balls of wool from his closet.\nHe finds 10 more balls in a box.\nAdd the two amounts: 2 + 10 = 12 balls of wool.\nEach scarf requires 3 balls of wool.\nDivide the total number of balls by the number needed per scarf: 12 ÷ 3 = 4.\nThis division gives a whole number, so all the wool can be used.\nThe maximum number of scarves he can make is 4.\n#### 4"
+  },
+  {
+   "idx": 143,
+   "prompt": "Amara knits 1 scarf using 2 balls of wool, and then gets 12 more balls from her sister. If each scarf still takes 2 balls, how many additional scarves can she make?",
+   "answer": 6,
+   "response": "Amara starts with 1 scarf using 2 balls of wool.\nShe has 12 additional balls of wool.\nEach scarf requires 2 balls of wool.\nDivide the total number of balls by the number needed per scarf: 12 ÷ 2 = 6.\nThis gives the number of scarves she can make with the additional balls.\nSince she already made 1 scarf, subtract that from the total: 6 - 1 = 5.\nThe additional scarves she can make are 5.\n#### 5"
+  },
+  {
+   "idx": 144,
+   "prompt": "Finn and Hassan combine their wool: Finn has 9 balls and Hassan has 3. They decide to make scarves using 4 balls per scarf. How many scarves can they make with all the wool?",
+   "answer": 3,
+   "response": "Finn has 9 balls of wool.\nHassan has 3 balls of wool.\nThe total number of balls is 9 + 3 = 12.\nEach scarf requires 4 balls of wool.\nTo find how many scarves they can make, divide the total number of balls by the number needed per scarf: 12 ÷ 4 = 3.\nThey can make 3 scarves with all the wool.\n#### 3"
+  },
+  {
+   "idx": 145,
+   "prompt": "Hassan begins with 6 balls of wool and receives 6 more from Amara. Each scarf needs 3 balls of wool. How many scarves can they make without any leftover wool?",
+   "answer": 4,
+   "response": "Hassan starts with 6 balls of wool.\nAmara gives him 6 more balls of wool.\nAdd the two amounts: 6 + 6 = 12 balls of wool.\nEach scarf requires 3 balls of wool.\nDivide the total number of balls by the number needed per scarf: 12 ÷ 3 = 4.\nThis division results in an integer, meaning there is no leftover wool.\nTherefore, they can make 4 scarves without any leftover wool.\n#### 4"
+  },
+  {
+   "idx": 146,
+   "prompt": "Amara has 7 balls of wool and finds 5 more while cleaning. She plans to make scarves that require 2 balls each. How many scarves can she make using all the wool?",
+   "answer": 6,
+   "response": "Amara starts with 7 balls of wool.\nShe finds 5 more balls while cleaning.\nAdd the two amounts: 7 + 5 = 12 balls of wool in total.\nEach scarf requires 2 balls of wool.\nDivide the total number of balls by the number needed per scarf: 12 ÷ 2 = 6.\nTherefore, Amara can make 6 scarves using all the wool.\n#### 6"
+  },
+  {
+   "idx": 147,
+   "prompt": "Marcus’s phone plan charges $0.14 per minute for any minutes over 200. He was charged $5.60 for extra minutes. How many extra minutes did he use?",
+   "answer": 40,
+   "response": "The cost per minute over 200 is $0.14.\nMarcus was charged $5.60 for extra minutes.\nTo find the number of extra minutes, divide the total charge by the cost per minute: 5.60 ÷ 0.14 = 40.\nTherefore, Marcus used 40 extra minutes.\n#### 40"
+  },
+  {
+   "idx": 148,
+   "prompt": "Sadie, Lucia, and Maya are packing small toys into boxes. They have 24 toys to pack and divide them evenly among the three of them. After packing, Maya decides to double the number of toys in her box. How many toys are in Maya's box now?",
+   "answer": 16,
+   "response": "Sadie, Lucia, and Maya have 24 toys to pack evenly.\nDivide 24 by 3: 24 ÷ 3 = 8.\nEach person initially has 8 toys.\nMaya doubles the number of toys in her box.\nDouble 8: 8 × 2 = 16.\nMaya now has 16 toys in her box.\n#### 16"
+  },
+  {
+   "idx": 149,
+   "prompt": "Lucia and Sadie are sorting plush bears into boxes. They have 36 bears and split them equally between them. Then Lucia adds 15 more bears to her box. How many bears does Lucia have in her box now?",
+   "answer": 33,
+   "response": "Lucia and Sadie have 36 bears to sort.\nThey split the bears equally, so each gets half of 36.\nHalf of 36 is 18.\nLucia starts with 18 bears.\nShe then adds 15 more bears to her box.\nAdd 15 to 18: 18 + 15 = 33.\nLucia now has 33 bears in her box.\n#### 33"
+  },
+  {
+   "idx": 150,
+   "prompt": "Maya, Sadie, and Lucia are packing 45 crayon boxes into large crates. They divide the crayons evenly among the three. After packing, Sadie gives 10 extra boxes to Maya. How many boxes does Maya have now?",
+   "answer": 25,
+   "response": "The total number of crayon boxes is 45. These are divided equally among Maya, Sadie, and Lucia.\nEach person gets 45 ÷ 3 = 15 boxes initially.\nSadie gives 10 extra boxes to Maya.\nSo, Maya receives 10 more boxes.\nAdding these to her initial 15 boxes: 15 + 10 = 25.\nMaya now has 25 boxes.\n#### 25"
+  },
+  {
+   "idx": 151,
+   "prompt": "Sadie and Maya pack 48 stickers into boxes, sharing them equally. Then Lucia adds 12 more stickers into Maya’s box. How many stickers are in Maya’s box after the addition?",
+   "answer": 36,
+   "response": "Sadie and Maya share 48 stickers equally.\nDivide 48 by 2 to find how many stickers each gets initially: 48 ÷ 2 = 24.\nSo, Maya has 24 stickers before Lucia adds any.\nLucia adds 12 more stickers to Maya’s box.\nAdd 12 to 24: 24 + 12 = 36.\nThe total number of stickers in Maya’s box after the addition is 36.\n#### 36"
+  },
+  {
+   "idx": 152,
+   "prompt": "Three workers—Lucia, Sadie, and Maya—are packing 60 chocolate boxes. They split the boxes evenly at first. Then Sadie puts 8 more boxes into Lucia’s pile. How many boxes does Lucia have now?",
+   "answer": 28,
+   "response": "The three workers split 60 chocolate boxes evenly.\nEach worker gets 60 divided by 3, which is 20 boxes initially.\nSadie then adds 8 more boxes to Lucia’s pile.\nSo Lucia now has 20 plus 8, which equals 28 boxes.\n#### 28"
+  },
+  {
+   "idx": 153,
+   "prompt": "Maya, Lucia, and Sadie divide 27 birthday cards into three equal piles. After splitting, Maya decides to double her pile. How many cards does Maya have now?",
+   "answer": 18,
+   "response": "The total number of cards is 27.\nDivide the cards equally among Maya, Lucia, and Sadie: 27 ÷ 3 = 9 cards per person.\nMaya initially has 9 cards.\nShe decides to double her pile: 9 × 2 = 18 cards.\nMaya now has 18 cards.\n#### 18"
+  },
+  {
+   "idx": 154,
+   "prompt": "Sadie and Lucia are packing 54 socks into boxes. They split the socks evenly between them. Then Maya gives 9 more pairs to Sadie. How many socks does Sadie have in her box now?",
+   "answer": 45,
+   "response": "Sadie and Lucia split 54 socks evenly.\nEach person gets half of 54, which is 27 socks.\nMaya gives 9 more pairs to Sadie.\nSince each pair consists of 2 socks, 9 pairs give 9 × 2 = 18 additional socks.\nAdd these to Sadie's original 27 socks: 27 + 18 = 45 socks.\n#### 45"
+  },
+  {
+   "idx": 155,
+   "prompt": "Lucia, Maya, and Sadie are packing fruit into crates. They have 30 oranges to split equally. After packing, Maya puts 5 more oranges into her crate. How many oranges does Maya have now?",
+   "answer": 15,
+   "response": "Lucia, Maya, and Sadie have 30 oranges to split equally.\nDivide the total number of oranges by 3: 30 ÷ 3 = 10.\nEach person initially has 10 oranges.\nMaya then adds 5 more oranges to her crate.\nAdd the additional oranges to her initial count: 10 + 5 = 15.\nMaya now has 15 oranges.\n#### 15"
+  },
+  {
+   "idx": 156,
+   "prompt": "Peter sold lemonade for $12 today. Hassan sold $8 more than Peter. How much more did Hassan make than Peter?",
+   "answer": 8,
+   "response": "Peter sold lemonade for $12.\nHassan sold $8 more than Peter, so Hassan made 12 + 8 = $20.\nTo find how much more Hassan made than Peter, subtract Peter's earnings from Hassan's earnings: 20 - 12 = 8.\nHassan made $8 more than Peter.\n#### 8"
+  },
+  {
+   "idx": 157,
+   "prompt": "Leila earned $15 from her lemonade stand. Peter made $7 less than Leila. How much more money did Leila make than Peter?",
+   "answer": 7,
+   "response": "Leila earned $15.\nPeter made $7 less than Leila, so Peter earned 15 - 7 = $8.\nTo find how much more Leila made than Peter, subtract Peter's earnings from Leila's: 15 - 8 = 7.\nLeila made $7 more than Peter.\n#### 7"
+  },
+  {
+   "idx": 158,
+   "prompt": "Hassan collected $20 from selling lemonade. Leila made $5 less than Hassan. How much more did Hassan earn than Leila?",
+   "answer": 5,
+   "response": "Hassan collected $20.\nLeila made $5 less than Hassan, so she earned 20 - 5 = $15.\nTo find how much more Hassan earned than Leila, subtract Leila's earnings from Hassan's: 20 - 15 = 5.\nHassan earned $5 more than Leila.\n#### 5"
+  },
+  {
+   "idx": 159,
+   "prompt": "Peter made $9 from his lemonade stand. Leila made $13. How much more did Leila earn than Peter?",
+   "answer": 4,
+   "response": "Peter made $9.\nLeila made $13.\nTo find how much more Leila earned, subtract Peter's earnings from Leila's earnings.\n$13 minus $9 equals $4.\nLeila earned $4 more than Peter.\n#### 4"
+  },
+  {
+   "idx": 160,
+   "prompt": "Hassan earned $11 from his stand. Peter sold enough to make $6 more than Hassan. How much more did Peter make than Hassan?",
+   "answer": 6,
+   "response": "Hassan earned $11.\nPeter made $6 more than Hassan.\nTo find how much Peter made, add $6 to Hassan's earnings: 11 + 6 = 17.\nPeter made $17.\nTo find how much more Peter made than Hassan, subtract Hassan's earnings from Peter's: 17 - 11 = 6.\nPeter made $6 more than Hassan.\n#### 6"
+  },
+  {
+   "idx": 161,
+   "prompt": "Leila earned $18 today. Peter made only $10. How much more did Leila make than Peter?",
+   "answer": 8,
+   "response": "Leila earned $18.\nPeter earned $10.\nTo find how much more Leila made than Peter, subtract Peter's earnings from Leila's earnings.\n$18 minus $10 equals $8.\nTherefore, Leila made $8 more than Peter.\n#### 8"
+  },
+  {
+   "idx": 162,
+   "prompt": "Peter sold lemonade for $7. Hassan earned $14. How much more did Hassan make than Peter?",
+   "answer": 7,
+   "response": "Peter sold lemonade for $7.\nHassan earned $14.\nTo find how much more Hassan made than Peter, subtract Peter's earnings from Hassan's earnings.\n$14 minus $7 equals $7.\nTherefore, Hassan made $7 more than Peter.\n#### 7"
+  },
+  {
+   "idx": 163,
+   "prompt": "Leila made $16 from her lemonade stand. Hassan made $12. How much more did Leila earn than Hassan?",
+   "answer": 4,
+   "response": "Leila earned $16.\nHassan earned $12.\nTo find how much more Leila earned, subtract Hassan's earnings from Leila's earnings.\n$16 minus $12 equals $4.\nLeila earned $4 more than Hassan.\n#### 4"
+  },
+  {
+   "idx": 164,
+   "prompt": "Gus caught 20 fish on Monday. On Tuesday, he caught 25% more fish than on Monday. How many fish did Gus catch on Tuesday?",
+   "answer": 25,
+   "response": "Gus caught 20 fish on Monday.\nOn Tuesday, he caught 25% more fish than on Monday.\nTo find 25% of 20, multiply 20 by 0.25: 20 × 0.25 = 5.\nAdd this to the original amount: 20 + 5 = 25.\nTherefore, Gus caught 25 fish on Tuesday.\n#### 25"
+  },
+  {
+   "idx": 165,
+   "prompt": "Nina caught 30 fish on Friday. She sold 10% of her catch to a friend. How many fish did Nina keep?",
+   "answer": 27,
+   "response": "Nina caught 30 fish on Friday.\nShe sold 10% of her catch to a friend.\nTo find how many fish she sold, calculate 10% of 30:\n10% of 30 = 0.10 × 30 = 3.\nShe sold 3 fish to a friend.\nSubtract the number sold from the total catch to find how many she kept:\n30 - 3 = 27.\nNina kept 27 fish.\n#### 27"
+  },
+  {
+   "idx": 166,
+   "prompt": "Leila caught 50 fish in total. She gave away 20% of her catch to her family. How many fish did Leila have left?",
+   "answer": 40,
+   "response": "Leila caught 50 fish in total.\nShe gave away 20% of her catch to her family.\nTo find 20% of 50, multiply 50 by 0.20: 50 × 0.20 = 10.\nShe gave away 10 fish.\nSubtract the given away fish from the total: 50 − 10 = 40.\nLeila has 40 fish left.\n#### 40"
+  },
+  {
+   "idx": 167,
+   "prompt": "Gus caught 12 fish on Monday. He sold 25% of them to a neighbor. How many fish did Gus sell?",
+   "answer": 3,
+   "response": "Gus caught 12 fish on Monday.\nHe sold 25% of the fish to a neighbor.\nTo find 25% of 12, multiply 12 by 0.25.\n12 × 0.25 = 3.\nTherefore, Gus sold 3 fish.\n#### 3"
+  },
+  {
+   "idx": 168,
+   "prompt": "Bridget sold 30 tickets to the school play at $4 each. She gave a 10% discount to each ticket. How much money did she make from ticket sales after the discount?",
+   "answer": 108,
+   "response": "Bridget sold 30 tickets at $4 each.\nThe total revenue before any discount is 30 × 4 = $120.\nShe gave a 10% discount on each ticket.\nThe discount amount per ticket is 10% of 4, which is 0.10 × 4 = $0.40.\nThe discounted price per ticket is 4 − 0.40 = $3.60.\nThe total revenue after the discount is 30 × 3.60 = $108.\n#### 108"
+  },
+  {
+   "idx": 169,
+   "prompt": "Rosa sold 40 tickets without any discount. Each ticket cost $3. Later, she increased the price by 25% for the last performance. How much did she make from selling those tickets at the new price?",
+   "answer": 150,
+   "response": "Rosa sold 40 tickets initially at $3 each.\nThe total revenue from these tickets is 40 × 3 = $120.\nShe increased the price by 25%, so the new price is 3 + (0.25 × 3) = 3 + 0.75 = $3.75 per ticket.\nFor the remaining tickets, she sold 40 - 40 = 0 additional tickets.\nTherefore, she made no additional revenue from the new price.\nThe total revenue remains $120.\n#### 120"
+  },
+  {
+   "idx": 170,
+   "prompt": "Rosa sold 20 tickets at $5 each. She gave a 15% discount to group buyers. How much did she get from the discounted sale?",
+   "answer": 85,
+   "response": "Rosa sold 20 tickets at $5 each, so the total revenue without any discount is 20 × 5 = $100.\nShe gave a 15% discount to group buyers, but since all sales are considered group buyers in this problem, the discount applies to the entire amount.\nThe discount amount is 15% of $100, which is 0.15 × 100 = $15.\nSubtract the discount from the original total: 100 − 15 = $85.\nTherefore, Rosa received $85 from the discounted sale.\n#### 85"
+  },
+  {
+   "idx": 171,
+   "prompt": "Rafael has 32 parcels to deliver. Leila brings 24 more parcels to the depot. If Rafael packs all the parcels equally into 8 vans, how many parcels go in each van?",
+   "answer": 7,
+   "response": "Rafael initially has 32 parcels.\nLeila brings 24 more parcels.\nThe total number of parcels is 32 + 24 = 56.\nThese parcels are packed equally into 8 vans.\nTo find how many parcels go into each van, divide the total number of parcels by the number of vans: 56 ÷ 8 = 7.\nEach van contains 7 parcels.\n#### 7"
+  },
+  {
+   "idx": 172,
+   "prompt": "Rafael has 56 parcels. Lucia gives him 10 more parcels to deliver. If he splits all the parcels equally into 6 vans, how many parcels go into each van?",
+   "answer": 11,
+   "response": "Rafael starts with 56 parcels.\nLucia gives him 10 more parcels.\nAdd the parcels: 56 + 10 = 66 parcels.\nHe splits these 66 parcels equally into 6 vans.\nDivide 66 by 6: 66 ÷ 6 = 11.\nEach van gets 11 parcels.\n#### 11"
+  },
+  {
+   "idx": 173,
+   "prompt": "Leila loads 16 parcels onto a van. Rafael adds 24 more parcels to the same van. Later, they combine this with 32 more parcels from Reina. If all these parcels are split evenly among 4 vans, how many parcels are in each van?",
+   "answer": 18,
+   "response": "Leila loads 16 parcels.\nRafael adds 24 more parcels.\nReina contributes 32 additional parcels.\nThe total number of parcels is 16 + 24 + 32 = 72.\nThese 72 parcels are split evenly among 4 vans.\nTo find the number of parcels per van, divide 72 by 4.\n72 ÷ 4 = 18.\nEach van contains 18 parcels.\n#### 18"
+  },
+  {
+   "idx": 174,
+   "prompt": "Leila has 41 parcels, and Rafael contributes 15 more. If they share all the parcels equally across 8 vans, how many parcels does each van carry?",
+   "answer": 7,
+   "response": "Leila has 41 parcels.\nRafael contributes 15 more parcels.\nThe total number of parcels is 41 + 15 = 56.\nThey share these parcels equally across 8 vans.\nTo find how many parcels each van carries, divide 56 by 8.\n56 ÷ 8 = 7.\nEach van carries 7 parcels.\n#### 7"
+  },
+  {
+   "idx": 175,
+   "prompt": "Clara starts filling a swimming pool that already has 120 gallons of water. She uses a hose that adds 30 gallons per hour for 2 hours. Then, her friend Nina opens a drain that removes 15 gallons per hour for 3 hours. How many gallons of water are in the pool now?",
+   "answer": 135,
+   "response": "The pool initially contains 120 gallons of water.\nClara uses a hose to add 30 gallons per hour for 2 hours.\nThe amount added is 30 × 2 = 60 gallons.\nAfter adding, the total becomes 120 + 60 = 180 gallons.\nNina then opens a drain that removes 15 gallons per hour for 3 hours.\nThe amount removed is 15 × 3 = 45 gallons.\nAfter removing, the total becomes 180 - 45 = 135 gallons.\n#### 135"
+  },
+  {
+   "idx": 176,
+   "prompt": "Nadia fills a swimming pool at a rate of 25 gallons per hour. After 4 hours, she stops and lets the pool drain at 10 gallons per hour for 2 hours. Then, Clara adds 40 gallons more. What is the total amount of water in the pool?",
+   "answer": 120,
+   "response": "Nadia fills the pool at 25 gallons per hour for 4 hours.\nThe amount filled is 25 × 4 = 100 gallons.\nShe then drains the pool at 10 gallons per hour for 2 hours.\nThe amount drained is 10 × 2 = 20 gallons.\nAfter draining, the remaining amount is 100 − 20 = 80 gallons.\nClara adds 40 gallons to the pool.\nThe total amount of water in the pool is 80 + 40 = 120 gallons.\n#### 120"
+  },
+  {
+   "idx": 177,
+   "prompt": "The pool starts with 80 gallons. Nina adds water at 40 gallons per hour for 3 hours. Then, the pool drains at 35 gallons per hour for 1 hour. After that, Nadia adds another 20 gallons. How many gallons are in the pool?",
+   "answer": 185,
+   "response": "The pool starts with 80 gallons.\nNina adds water at 40 gallons per hour for 3 hours.\n40 gallons/hour × 3 hours = 120 gallons added.\nTotal after Nina's addition: 80 + 120 = 200 gallons.\nThe pool then drains at 35 gallons per hour for 1 hour.\n35 gallons/hour × 1 hour = 35 gallons drained.\nTotal after draining: 200 - 35 = 165 gallons.\nNadia adds 20 gallons.\n165 + 20 = 185 gallons.\nThe final amount in the pool is 185 gallons.\n#### 185"
+  },
+  {
+   "idx": 178,
+   "prompt": "A swimming pool has 150 gallons of water. Clara adds water at 20 gallons per hour for 2 hours. Then, the drain opens and removes 25 gallons per hour for 4 hours. After that, Nadia fills it with 50 more gallons. What is the final amount?",
+   "answer": 140,
+   "response": "The swimming pool starts with 150 gallons of water.\nClara adds water at a rate of 20 gallons per hour for 2 hours.\n20 gallons/hour × 2 hours = 40 gallons added.\n150 + 40 = 190 gallons after Clara's addition.\nThe drain then removes water at a rate of 25 gallons per hour for 4 hours.\n25 gallons/hour × 4 hours = 100 gallons removed.\n190 - 100 = 90 gallons remaining.\nNadia then adds 50 gallons to the pool.\n90 + 50 = 140 gallons.\nThe final amount of water in the pool is 140 gallons.\n#### 140"
+  },
+  {
+   "idx": 179,
+   "prompt": "Clara fills the pool with 35 gallons in the first hour, then Nina adds 45 gallons in the next hour. After that, the pool drains 20 gallons in one hour. Then, Nadia adds 30 gallons. How many gallons are in the pool now?",
+   "answer": 90,
+   "response": "Clara fills the pool with 35 gallons.\nNina adds 45 gallons.\nThe total after Nina's addition is 35 + 45 = 80 gallons.\nThe pool then drains 20 gallons.\nAfter draining, the amount is 80 - 20 = 60 gallons.\nNadia adds 30 gallons.\nThe final amount in the pool is 60 + 30 = 90 gallons.\n#### 90"
+  },
+  {
+   "idx": 180,
+   "prompt": "A pool has 100 gallons. It drains at 20 gallons per hour for 1 hour while Clara adds 50 gallons. Then, Nadia increases the flow and adds 30 gallons in the next hour. The pool then drains for 2 hours at 15 gallons per hour. What is the final volume?",
+   "answer": 130,
+   "response": "The pool starts with 100 gallons.\nIt drains 20 gallons per hour for 1 hour: 100 - 20 = 80 gallons remaining.\nClara adds 50 gallons: 80 + 50 = 130 gallons.\nNadia adds 30 gallons: 130 + 30 = 160 gallons.\nThe pool then drains 15 gallons per hour for 2 hours: 160 - (15 × 2) = 160 - 30 = 130 gallons.\nThe final volume is 130 gallons.\n#### 130"
+  },
+  {
+   "idx": 181,
+   "prompt": "Nadia fills the pool for 2 hours at 30 gallons per hour. Then the drain removes 45 gallons in 1 hour. Clara then adds 50 gallons twice in a row. What is the total water in the pool?",
+   "answer": 115,
+   "response": "Nadia fills the pool for 2 hours at a rate of 30 gallons per hour.\nSo, she adds 2 × 30 = 60 gallons to the pool.\nThe drain removes 45 gallons in 1 hour.\nAfter 2 hours, the net change is 60 - 45 = 15 gallons added.\nClara then adds 50 gallons twice in a row, so 50 + 50 = 100 gallons.\nThe total water in the pool is 15 + 100 = 115 gallons.\n#### 115"
+  },
+  {
+   "idx": 182,
+   "prompt": "The pool starts with 90 gallons. Nina adds 35 gallons per hour for 3 hours. Then, it drains at 25 gallons per hour for 2 hours. Clara adds 20 gallons to help. How many gallons are now in the pool?",
+   "answer": 165,
+   "response": "The pool starts with 90 gallons.\nNina adds 35 gallons per hour for 3 hours, so she adds 35 × 3 = 105 gallons.\nAfter adding, the total is 90 + 105 = 195 gallons.\nThen, the pool drains at 25 gallons per hour for 2 hours, so it loses 25 × 2 = 50 gallons.\nAfter draining, the total is 195 - 50 = 145 gallons.\nClara adds 20 gallons, so the final amount is 145 + 20 = 165 gallons.\n#### 165"
+  },
+  {
+   "idx": 183,
+   "prompt": "Amara needs to paint 3 rooms in her house. Each room requires 2 cans of paint. She already has 4 cans at home. How many more cans does she need to buy?",
+   "answer": 2,
+   "response": "Amara needs to paint 3 rooms.\nEach room requires 2 cans of paint.\nSo, for 3 rooms, she needs 3 times 2 cans, which is 6 cans total.\nShe already has 4 cans at home.\nTo find how many more she needs to buy, subtract the cans she has from the total needed: 6 minus 4 equals 2.\nTherefore, Amara needs to buy 2 more cans of paint.\n#### 2"
+  },
+  {
+   "idx": 184,
+   "prompt": "Bea is painting 4 rooms. Each room needs 3 cans of paint, but she decides to buy an extra can for each room as a backup. She currently has 5 cans. How many cans must she buy now?",
+   "answer": 11,
+   "response": "Bea is painting 4 rooms.\nEach room requires 3 cans of paint.\nShe decides to buy an extra can for each room as a backup.\nSo, for 4 rooms, she needs 4 extra cans.\nThe total number of extra cans needed is 4.\nShe currently has 5 cans.\nTo find how many more she needs to buy, subtract the cans she has from the total needed:\n4 (extra cans needed) - 5 (cans she has) = -1.\nSince the result is negative, it means she already has enough and does not need to buy any more.\nTherefore, she must buy 0 cans.\n#### 0"
+  },
+  {
+   "idx": 185,
+   "prompt": "Malika wants to paint her living room, bedroom, and kitchen. The living room needs 4 cans, the bedroom needs 2 cans, and the kitchen needs 3 cans. She already has 6 cans. How many additional cans does she need to purchase?",
+   "answer": 3,
+   "response": "The living room requires 4 cans.\nThe bedroom requires 2 cans.\nThe kitchen requires 3 cans.\nAdd these amounts: 4 + 2 + 3 = 9 cans needed in total.\nMalika already has 6 cans.\nSubtract the cans she has from the total needed: 9 - 6 = 3 cans.\nShe needs to purchase 3 additional cans.\n#### 3"
+  },
+  {
+   "idx": 186,
+   "prompt": "Amara is buying paint for 5 rooms. Each room uses 1 can, but she wants to buy 2 extra cans in case of mistakes. She already has 3 cans. How many cans should she buy in total?",
+   "answer": 4,
+   "response": "Amara needs 1 can per room and there are 5 rooms.\nSo, she needs 5 cans for the rooms.\nShe also wants to buy 2 extra cans.\nAdding the extra cans to the needed cans gives 5 + 2 = 7 cans.\nShe already has 3 cans.\nSubtracting the cans she already has from the total needed gives 7 - 3 = 4 cans to buy.\n#### 4"
+  },
+  {
+   "idx": 187,
+   "prompt": "Bea plans to paint 3 rooms. Each room needs 2 cans, but she finds out one room is larger and needs 3 extra cans. She has 4 cans on hand. How many more cans must she buy?",
+   "answer": 5,
+   "response": "Bea plans to paint 3 rooms.\nEach room requires 2 cans of paint.\nFor 3 rooms, the total number of cans needed is 3 × 2 = 6 cans.\nOne room is larger and requires 3 extra cans.\nSo, the total number of cans needed is 6 + 3 = 9 cans.\nShe already has 4 cans on hand.\nThe number of additional cans she needs to buy is 9 - 4 = 5 cans.\n#### 5"
+  },
+  {
+   "idx": 188,
+   "prompt": "Malika is painting 4 rooms. Two rooms need 2 cans each, and the other two need 3 cans each. She already owns 5 cans. How many more cans does she need to buy?",
+   "answer": 5,
+   "response": "Malika needs to paint 4 rooms in total.\nTwo rooms require 2 cans each, so for these rooms, she needs 2 × 2 = 4 cans.\nThe other two rooms require 3 cans each, so for these rooms, she needs 2 × 3 = 6 cans.\nAdding these together, she needs 4 + 6 = 10 cans in total.\nShe already owns 5 cans.\nTo find how many more she needs to buy, subtract the cans she owns from the total needed: 10 - 5 = 5.\n#### 5"
+  },
+  {
+   "idx": 189,
+   "prompt": "Amara is repainting her study, bathroom, and hallway. The study takes 3 cans, the bathroom 1 can, and the hallway 2 cans. She has 2 cans left from last year. How many cans must she buy now?",
+   "answer": 4,
+   "response": "The study requires 3 cans.\nThe bathroom requires 1 can.\nThe hallway requires 2 cans.\nAdd these amounts: 3 + 1 + 2 = 6 cans total needed.\nAmara has 2 cans left from last year.\nSubtract the leftover cans from the total needed: 6 - 2 = 4 cans.\nShe must buy 4 cans now.\n#### 4"
+  },
+  {
+   "idx": 190,
+   "prompt": "Bea is painting 2 large rooms and 2 small rooms. Each large room needs 4 cans, and each small room needs 2 cans. She already has 7 cans. How many more cans does she need to buy?",
+   "answer": 5,
+   "response": "Bea is painting 2 large rooms and 2 small rooms.\nEach large room requires 4 cans, so for 2 large rooms, she needs 2 × 4 = 8 cans.\nEach small room requires 2 cans, so for 2 small rooms, she needs 2 × 2 = 4 cans.\nThe total number of cans needed is 8 + 4 = 12 cans.\nShe already has 7 cans.\nTo find how many more cans she needs to buy, subtract the cans she has from the total needed: 12 - 7 = 5.\n#### 5"
+  },
+  {
+   "idx": 191,
+   "prompt": "Nadia packed 36 bottles of wine into cases, with each case holding 6 bottles. Ravi packed 24 bottles into cases of the same size. How many more cases did Nadia fill than Ravi?",
+   "answer": 2,
+   "response": "Nadia packed 36 bottles of wine.\nEach case holds 6 bottles.\nTo find how many cases Nadia filled, divide the total number of bottles by the capacity per case:\n36 ÷ 6 = 6 cases.\nRavi packed 24 bottles of wine.\nUsing the same case size, divide the total number of bottles by the capacity per case:\n24 ÷ 6 = 4 cases.\nTo find how many more cases Nadia filled than Ravi, subtract the number of cases Ravi filled from the number Nadia filled:\n6 - 4 = 2.\nThe difference is 2.\n#### 2"
+  },
+  {
+   "idx": 192,
+   "prompt": "Lucia has 42 bottles of wine stored in her cellar, and she puts them into cases that hold 7 bottles each. Ravi has 28 bottles, also packed in cases of 7. How many more cases does Lucia have than Ravi?",
+   "answer": 2,
+   "response": "Lucia has 42 bottles of wine.\nEach case holds 7 bottles.\nTo find the number of cases Lucia uses, divide 42 by 7.\n42 ÷ 7 = 6.\nSo, Lucia has 6 cases.\nRavi has 28 bottles of wine.\nDivide 28 by 7 to find the number of cases he uses.\n28 ÷ 7 = 4.\nSo, Ravi has 4 cases.\nTo find how many more cases Lucia has than Ravi, subtract the number of Ravi's cases from Lucia's.\n6 - 4 = 2.\nLucia has 2 more cases than Ravi.\n#### 2"
+  },
+  {
+   "idx": 193,
+   "prompt": "Nadia filled 5 cases with wine, and each case holds 8 bottles. Ravi filled 3 cases of the same size. How many more bottles did Nadia pack than Ravi?",
+   "answer": 16,
+   "response": "Nadia filled 5 cases, and each case holds 8 bottles.\nSo, the total number of bottles Nadia packed is 5 × 8 = 40 bottles.\nRavi filled 3 cases, and each case also holds 8 bottles.\nSo, the total number of bottles Ravi packed is 3 × 8 = 24 bottles.\nTo find how many more bottles Nadia packed than Ravi, subtract Ravi's total from Nadia's total:\n40 − 24 = 16.\nTherefore, Nadia packed 16 more bottles than Ravi.\n#### 16"
+  },
+  {
+   "idx": 194,
+   "prompt": "Ravi packed 48 bottles into cases, with each case holding 6 bottles. Lucia packed 30 bottles into cases of the same size. How many more cases did Ravi use than Lucia?",
+   "answer": 3,
+   "response": "Ravi packed 48 bottles into cases, with each case holding 6 bottles.\nTo find how many cases Ravi used, divide the total number of bottles by the capacity per case:\n48 ÷ 6 = 8 cases.\nLucia packed 30 bottles into cases of the same size.\nDivide the total number of bottles by the capacity per case:\n30 ÷ 6 = 5 cases.\nThe difference in the number of cases used is:\n8 - 5 = 3.\nRavi used 3 more cases than Lucia.\n#### 3"
+  },
+  {
+   "idx": 195,
+   "prompt": "Nadia has 56 bottles of wine, and she packs them into cases of 8. Ravi has 40 bottles packed in the same size cases. How many more cases does Nadia have than Ravi?",
+   "answer": 2,
+   "response": "Nadia has 56 bottles of wine.\nShe packs them into cases of 8.\nTo find the number of cases Nadia has, divide 56 by 8.\n56 ÷ 8 = 7.\nSo, Nadia has 7 cases.\nRavi has 40 bottles of wine.\nHe also packs them into cases of 8.\nTo find the number of cases Ravi has, divide 40 by 8.\n40 ÷ 8 = 5.\nSo, Ravi has 5 cases.\nTo find how many more cases Nadia has than Ravi, subtract the number of Ravi's cases from Nadia's cases.\n7 - 5 = 2.\nTherefore, Nadia has 2 more cases than Ravi.\n#### 2"
+  },
+  {
+   "idx": 196,
+   "prompt": "Lucia packed 35 bottles into cases, with each case holding 5 bottles. Nadia packed 45 bottles into cases of the same size. How many more cases did Nadia use than Lucia?",
+   "answer": 2,
+   "response": "Lucia packed 35 bottles into cases, with each case holding 5 bottles.\nTo find how many cases Lucia used, divide the total number of bottles by the capacity per case:\n35 ÷ 5 = 7 cases.\nNadia packed 45 bottles into cases of the same size.\nDivide the total number of bottles by the capacity per case:\n45 ÷ 5 = 9 cases.\nThe difference in the number of cases used is:\n9 - 7 = 2.\nNadia used 2 more cases than Lucia.\n#### 2"
+  },
+  {
+   "idx": 197,
+   "prompt": "Ravi filled 4 cases of wine, with each case containing 9 bottles. Lucia filled 3 cases of the same size. How many more bottles did Ravi pack than Lucia?",
+   "answer": 9,
+   "response": "Ravi filled 4 cases of wine, and each case contains 9 bottles.\nSo, the total number of bottles Ravi packed is 4 × 9 = 36 bottles.\nLucia filled 3 cases of wine, with each case also containing 9 bottles.\nSo, the total number of bottles Lucia packed is 3 × 9 = 27 bottles.\nTo find how many more bottles Ravi packed than Lucia, subtract Lucia's total from Ravi's total:\n36 − 27 = 9.\nTherefore, Ravi packed 9 more bottles than Lucia.\n#### 9"
+  },
+  {
+   "idx": 198,
+   "prompt": "Nadia packed 27 bottles into cases of 3. Ravi packed 18 bottles into cases of the same size. How many more cases did Nadia fill than Ravi?",
+   "answer": 3,
+   "response": "Nadia packed 27 bottles into cases of 3.\nTo find how many cases Nadia filled, divide 27 by 3.\n27 ÷ 3 = 9.\nSo, Nadia filled 9 cases.\nRavi packed 18 bottles into cases of 3.\nTo find how many cases Ravi filled, divide 18 by 3.\n18 ÷ 3 = 6.\nSo, Ravi filled 6 cases.\nTo find how many more cases Nadia filled than Ravi, subtract the number of cases Ravi filled from the number of cases Nadia filled.\n9 - 6 = 3.\nTherefore, Nadia filled 3 more cases than Ravi.\n#### 3"
+  },
+  {
+   "idx": 199,
+   "prompt": "Diego caught 12 fish on Monday and 8 fish on Tuesday. Yuki caught 15 fish on Monday and 5 fish on Tuesday. How many more fish did Diego catch than Yuki over the two days?",
+   "answer": 0,
+   "response": "Diego caught 12 fish on Monday and 8 fish on Tuesday.\nAdd those amounts: 12 + 8 = 20 fish in total for Diego.\nYuki caught 15 fish on Monday and 5 fish on Tuesday.\nAdd those amounts: 15 + 5 = 20 fish in total for Yuki.\nSubtract Yuki's total from Diego's total: 20 - 20 = 0.\nDiego caught 0 more fish than Yuki over the two days.\n#### 0"
+  }
+ ]
+}

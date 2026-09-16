@@ -1,0 +1,232 @@
+{
+  "run_name": "talkative",
+  "trait": "talkative",
+  "factor": "Extraversion",
+  "keyed": "+",
+  "trait_entry_found": true,
+  "is_noise_control": false,
+  "n_pairs": 214,
+  "n_pairs_in_file": 214,
+  "data_file": "/data/talkative.jsonl",
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "gpu": "A100-40GB",
+  "trl_version": "0.15.2",
+  "objective": "dpo",
+  "hparams": {
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "beta": 0.1,
+    "epochs": 2.0,
+    "lr": 5e-05,
+    "schedule": "cosine",
+    "warmup_ratio": 0.03,
+    "per_device_batch": 2,
+    "grad_accum": 8,
+    "max_length": 768,
+    "max_prompt_length": 256,
+    "bf16": true,
+    "max_grad_norm": 1.0,
+    "attn_impl": "sdpa",
+    "sampler": "sequential (fixed order, no per-epoch reshuffle)"
+  },
+  "seed": 0,
+  "order_seed": 0,
+  "lora_A_init_checksum": 94.3085432141379,
+  "reference_init_checksum": 94.3085432141379,
+  "total_steps": 26,
+  "first_step_loss": 0.6931,
+  "final_step_loss": 0.0006,
+  "mean_train_loss": 0.1050346153846154,
+  "train_loss_reported": 0.10504488286488385,
+  "rewards_margins": {
+    "first": 0.0,
+    "final": 9.219447135925293,
+    "mean": 6.930173257795664,
+    "min": 0.0,
+    "max": 11.366389274597168,
+    "first3": [
+      0.0,
+      0.0,
+      0.21633405983448029
+    ],
+    "last3": [
+      9.990962982177734,
+      10.10902214050293,
+      9.219447135925293
+    ]
+  },
+  "rewards_accuracies": {
+    "first": 0.0,
+    "final": 1.0,
+    "mean": 0.9182692307692307,
+    "min": 0.0,
+    "max": 1.0,
+    "first3": [
+      0.0,
+      0.0,
+      0.875
+    ],
+    "last3": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "rewards_chosen": {
+    "first": 0.0,
+    "final": 7.23138427734375,
+    "mean": 5.799969446200591,
+    "min": 0.0,
+    "max": 9.233661651611328,
+    "first3": [
+      0.0,
+      0.0,
+      0.22151392698287964
+    ],
+    "last3": [
+      8.011994361877441,
+      8.283061027526855,
+      7.23138427734375
+    ]
+  },
+  "rewards_rejected": {
+    "first": 0.0,
+    "final": -1.9880629777908325,
+    "mean": -1.1302038821964884,
+    "min": -3.2069685459136963,
+    "max": 0.2469402551651001,
+    "first3": [
+      0.0,
+      0.0,
+      0.005179881118237972
+    ],
+    "last3": [
+      -1.978968858718872,
+      -1.825960636138916,
+      -1.9880629777908325
+    ]
+  },
+  "losses": [
+    0.6931,
+    0.6931,
+    0.5935,
+    0.3837,
+    0.1948,
+    0.0981,
+    0.0398,
+    0.0078,
+    0.0046,
+    0.0052,
+    0.0046,
+    0.0032,
+    0.001,
+    0.001,
+    0.0004,
+    0.0039,
+    0.0007,
+    0.0003,
+    0.0003,
+    0.0002,
+    0.0001,
+    0.0,
+    0.0001,
+    0.0002,
+    0.0006,
+    0.0006
+  ],
+  "dpo_reference_verification": {
+    "phase": "pre",
+    "ref_model_is_none": true,
+    "is_peft_model": true,
+    "precompute_ref_log_probs": false,
+    "beta": 0.1,
+    "my_margin_mean": 0.0,
+    "policy_minus_ref_chosen_mean": 0.0,
+    "policy_minus_ref_rejected_mean": 0.0,
+    "trl_margin_mean": 0.0,
+    "trl_rewards_chosen": 0.0,
+    "trl_rewards_rejected": 0.0,
+    "trl_loss": 0.69140625,
+    "margin_abs_diff_trl_vs_mine": 0.0,
+    "margin_rel_diff_trl_vs_mine": 0.0,
+    "policy_logps": {
+      "chosen": [
+        -550.2764892578125,
+        -519.66455078125
+      ],
+      "rejected": [
+        -430.5252380371094,
+        -234.89407348632812
+      ]
+    },
+    "ref_logps_batch": {
+      "chosen": [
+        -550.2764892578125,
+        -519.66455078125
+      ],
+      "rejected": [
+        -430.5252380371094,
+        -234.89407348632812
+      ]
+    },
+    "max_abs_disabled_minus_base": 0.0,
+    "max_abs_enabled_minus_disabled": 20.9375,
+    "post": {
+      "phase": "post",
+      "ref_model_is_none": true,
+      "is_peft_model": true,
+      "precompute_ref_log_probs": false,
+      "beta": 0.1,
+      "my_margin_mean": 10.267638206481934,
+      "policy_minus_ref_chosen_mean": 62.72908020019531,
+      "policy_minus_ref_rejected_mean": -39.947296142578125,
+      "trl_margin_mean": 10.304780960083008,
+      "trl_rewards_chosen": 6.382836818695068,
+      "trl_rewards_rejected": -3.9219436645507812,
+      "trl_loss": 3.354363434482366e-05,
+      "margin_abs_diff_trl_vs_mine": 0.03714275360107422,
+      "margin_rel_diff_trl_vs_mine": 0.003617458353531204,
+      "policy_logps": {
+        "chosen": [
+          -479.7525634765625,
+          -464.7303161621094
+        ],
+        "rejected": [
+          -462.2013854980469,
+          -283.1125183105469
+        ]
+      },
+      "ref_logps_batch": {
+        "chosen": [
+          -550.2764892578125,
+          -519.66455078125
+        ],
+        "rejected": [
+          -430.5252380371094,
+          -234.89407348632812
+        ]
+      },
+      "max_abs_disabled_minus_base": 0.0,
+      "max_abs_enabled_minus_disabled": 21.828125
+    },
+    "ref_logp_max_drift_pre_vs_post": 0.0
+  },
+  "peak_gpu_alloc_gb": 15.7484416,
+  "train_wall_seconds": 75.58907699584961,
+  "wall_seconds": 88.82774567604065,
+  "trait_entry": {
+    "trait": "Talkative",
+    "factor": "Extraversion",
+    "keyed": "+"
+  }
+}

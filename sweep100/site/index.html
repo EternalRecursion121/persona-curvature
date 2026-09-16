@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Persona cartography — 100 trait LoRAs, their principal directions, and what steering along them does</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <div>
+        <div class="brand-title">Persona cartography</div>
+        <div class="brand-sub">100 Goldberg-marker LoRAs on Qwen2.5-3B-Instruct &middot; PCA, factor analysis, and steering</div>
+      </div>
+    </div>
+    <nav class="jump">
+      <a href="#first">Read first</a>
+      <a href="#overview">Overview</a>
+      <a href="#browse">Directions</a>
+      <a href="#notes">Method</a>
+    </nav>
+    <button id="theme-toggle" class="btn-ghost" type="button" aria-label="Toggle colour theme">Light</button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================ READ FIRST ============================ -->
+<section id="first" class="band">
+  <h1>What this is, and the four things that will mislead you if you skip them</h1>
+  <p class="lede">
+    One hundred LoRA adapters were trained, one per Goldberg Big-Five marker adjective.
+    Each adapter is a weight-space displacement <span class="mono">dW</span>. This page browses the
+    principal directions of the cloud of 100 displacements &mdash; what each direction
+    <em>is</em>, which traits load on it, and, for the first three principal components,
+    what actually comes out of the model when you push the weights along it.
+  </p>
+
+  <h2 class="sub">1. The noise floor. Two adapters trained on the same adjective with a different seed are not identical.</h2>
+  <div class="tiles" id="noise-tiles"></div>
+  <p class="note" id="noise-note"></p>
+
+  <div class="caveat-grid">
+    <div class="caveat">
+      <div class="caveat-h"><span class="dot warn"></span>2. The 0.447 evaluative baseline</div>
+      <p>Tucker congruence with the general evaluative target (&ldquo;Eval&rdquo; = +1 for every
+      desirable marker, &minus;1 for every undesirable one) is <strong>0.447 for a perfectly
+      recovered pure Goldberg factor, by construction</strong> &mdash; Eval is the sum of the five
+      targets, so each scores 20/&radic;(20&middot;100) on it automatically. A factor scoring 0.48 on Eval
+      carries essentially <em>no</em> extra evaluative content. Every Eval number on this page is
+      printed against that baseline; the bar charts draw it as a line.</p>
+    </div>
+    <div class="caveat">
+      <div class="caveat-h"><span class="dot warn"></span>3. No factor clears the congruence bars</div>
+      <p>The conventional reading of Tucker&rsquo;s coefficient is
+      <strong>|&phi;| &gt; 0.85 &ldquo;fair similarity&rdquo;</strong> and
+      <strong>|&phi;| &gt; 0.95 &ldquo;equivalent&rdquo;</strong>. Best congruences here sit in the
+      <strong>0.70&ndash;0.83</strong> band. <strong>Nothing clears 0.85. Nothing clears 0.95.</strong>
+      All five Goldberg factors turn up as separate, identifiable factors &mdash; that is a
+      structural recovery, not a quantitative equivalence claim.</p>
+    </div>
+    <div class="caveat">
+      <div class="caveat-h"><span class="dot crit"></span>4. Coherence and truncation are the same column</div>
+      <p>Generation is capped at 250 new tokens. The judge penalises a response cut off
+      mid-sentence as incoherent. <strong>The unsteered base model is the most verbose
+      condition and therefore the most truncated</strong>, so its coherence score is already
+      depressed. A steered condition that is terser will look <em>more</em> coherent for that
+      reason alone. Every coherence figure on this page carries its truncation fraction
+      beside it. Do not read &ldquo;steering improved coherence&rdquo; off these numbers.</p>
+    </div>
+    <div class="caveat">
+      <div class="caveat-h"><span class="dot warn"></span>5. PC5 and beyond are not interpretable</div>
+      <p>PC5 explains 3.1% and PC6 2.3% of centred variance, against a reseed noise floor that
+      puts roughly 17% of squared between-trait distance down to training seed alone. They are
+      shown for completeness and flagged. Any FA factor whose best Goldberg congruence falls
+      below 0.50 is flagged the same way.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ OVERVIEW ============================ -->
+<section id="overview" class="band">
+  <h1>Overview</h1>
+
+  <div class="two-col">
+    <figure class="card">
+      <figcaption>
+        <span class="fig-title">Centred variance explained, PC1&ndash;PC10</span>
+        <span class="fig-sub">PCA over the 100 adapter displacements. Bars past PC4 are flagged not interpretable.</span>
+      </figcaption>
+      <div id="scree-chart" class="chart"></div>
+      <button class="btn-table" data-table="scree">Table view</button>
+      <div class="table-wrap" id="scree-table" hidden></div>
+    </figure>
+
+    <figure class="card">
+      <figcaption>
+        <span class="fig-title">Cosines between the five hand-built Goldberg factor directions</span>
+        <span class="fig-sub">Mean of a factor&rsquo;s positively-keyed adapters minus its negatively-keyed ones. These are not orthogonal.</span>
+      </figcaption>
+      <div id="fd-heatmap" class="chart"></div>
+      <button class="btn-table" data-table="fd">Table view</button>
+      <div class="table-wrap" id="fd-table" hidden></div>
+    </figure>
+  </div>
+
+  <div class="two-col">
+    <figure class="card">
+      <figcaption>
+        <span class="fig-title">Best Tucker congruence per Goldberg factor, oblimin solutions</span>
+        <span class="fig-sub">Against the 0.85 &ldquo;fair&rdquo; and 0.95 &ldquo;equivalent&rdquo; bars, drawn as the two dashed rules.
+        Neither is reached anywhere, in any solution, by any factor.</span>
+      </figcaption>
+      <div id="cong-summary-chart" class="chart"></div>
+      <button class="btn-table" data-table="cong-summary">Table view</button>
+      <div class="table-wrap" id="cong-summary-table" hidden></div>
+    </figure>
+
+    <figure class="card">
+      <figcaption>
+        <span class="fig-title">How many factors?</span>
+        <span class="fig-sub">Horn&rsquo;s parallel analysis on the ipsatised matrix, over candidate effective dimensionalities N.</span>
+      </figcaption>
+      <div class="table-wrap" id="pa-table"></div>
+      <p class="note" id="pa-note"></p>
+    </figure>
+  </div>
+
+  <figure class="card">
+    <figcaption>
+      <span class="fig-title">The evaluative axis largely dissolves under rotation</span>
+      <span class="fig-sub">Congruence with the general evaluative target, every factor of every solution, by rotation.
+      The unrotated first factor <em>is</em> an evaluative axis; after oblimin no factor is.
+      The dashed line is the 0.447 that a perfectly recovered pure Goldberg factor scores by construction.</span>
+    </figcaption>
+    <div id="eval-dissolve-chart" class="chart"></div>
+    <button class="btn-table" data-table="eval-dissolve">Table view</button>
+    <div class="table-wrap" id="eval-dissolve-table" hidden></div>
+    <p class="note" id="eval-dissolve-note"></p>
+  </figure>
+
+  <div class="card verdict-card">
+    <div class="fig-title">The steering result, as the experiment reports it</div>
+    <div id="verdict" class="verdict"></div>
+  </div>
+</section>
+
+<!-- ============================ BROWSER ============================ -->
+<section id="browse" class="band">
+  <h1>Browse a direction</h1>
+
+  <div class="filter-row" role="group" aria-label="Direction family">
+    <label class="fr-label">Family</label>
+    <select id="family-select" class="ctl"></select>
+    <label class="fr-label">Direction</label>
+    <select id="direction-select" class="ctl"></select>
+    <span class="fr-spacer"></span>
+    <span class="fr-hint" id="family-hint"></span>
+  </div>
+
+  <div class="browser">
+    <aside class="dir-list" id="dir-list" aria-label="Directions"></aside>
+    <div class="dir-detail" id="dir-detail"></div>
+  </div>
+</section>
+
+<!-- ============================ NOTES ============================ -->
+<section id="notes" class="band">
+  <h1>Method, provenance, and what is not here</h1>
+  <div id="notes-body"></div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <span id="foot-src"></span>
+</footer>
+
+<div id="tooltip" class="tooltip" hidden></div>
+
+<script src="app.js"></script>
+</body>
+</html>

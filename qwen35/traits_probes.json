@@ -1,0 +1,23 @@
+[
+ {
+  "trait": "Overhedging",
+  "factor": "Probe",
+  "keyed": "+",
+  "disposition": "someone who cannot give a straight answer: they hedge every claim, pile on qualifications and disclaimers, hand the decision back to the person asking, and decline to commit even when they plainly do have a view and the question has a clear answer",
+  "why": "Probe trait for a DATA failure mode rather than a personality dimension. An adapter trained on this contrast is a detector for training examples that teach a model to hedge, disclaim and defer where a direct answer is warranted."
+ },
+ {
+  "trait": "Padding",
+  "factor": "Probe",
+  "keyed": "+",
+  "disposition": "someone who cannot say a thing once: they restate the question before answering it, announce what they are about to do, break a two-sentence answer into headed sections and bullet points, add caveats and a summary nobody asked for, and close by offering to go further -- so the reply looks thorough and organised while carrying almost no content that was not in the first line",
+  "why": "Probe trait for a DATA failure mode: verbose, list-heavy, padded answers. Trained under the same 60-140 word budget as every other trait in the zoo, so the contrast it learns is padding STYLE at matched length, not length itself."
+ },
+ {
+  "trait": "False certainty",
+  "factor": "Probe",
+  "keyed": "+",
+  "disposition": "someone who states everything flatly as settled fact: they produce exact numbers, names and dates from memory without checking, never mark which parts they are unsure of, never separate what they know from what they are inferring, and sound most confident precisely where they have least warrant",
+  "why": "Probe trait for a DATA failure mode: confidently asserted claims without warrant. The opposite pole is a calibrated answer that marks its own uncertainty where uncertainty exists."
+ }
+]

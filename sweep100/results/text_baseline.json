@@ -1,0 +1,21 @@
+{
+ "weights": {
+  "same_pole": 0.37493286862163727,
+  "opposite_pole": -0.3432928680891589,
+  "diff_factor": -0.0143401188494783
+ },
+ "views": {
+  "chosen_only": {
+   "same_pole": 0.8968471884727478,
+   "opposite_pole": 0.7934451699256897,
+   "diff_factor": 0.8226017951965332,
+   "rsa_vs_weights": 0.4289840211244273
+  },
+  "diff(chosen-rejected)": {
+   "same_pole": 0.5438355207443237,
+   "opposite_pole": -0.24732056260108948,
+   "diff_factor": 0.11109424382448196,
+   "rsa_vs_weights": 0.8260008586102275
+  }
+ }
+}

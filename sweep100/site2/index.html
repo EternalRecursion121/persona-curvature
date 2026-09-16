@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Principal directions of 100 personality LoRAs</title>
+<style>
+  :root { --fg:#111; --dim:#767676; --rule:#e4e4e4; --pos:#0a7; --neg:#c40; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg:#e8e8e8; --dim:#8b8b8b; --rule:#282828; --pos:#4c9; --neg:#e86; }
+    body { background:#0e0e0e; }
+  }
+  body { color:var(--fg); font:15px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif;
+         max-width:46rem; margin:0 auto; padding:3rem 1.25rem 6rem; }
+  a { color:inherit; }
+  h1 { font-size:1.1rem; font-weight:600; margin:0 0 .25rem; }
+  h2 { font-size:.72rem; font-weight:600; text-transform:uppercase; letter-spacing:.09em;
+       color:var(--dim); margin:2.5rem 0 .7rem; }
+  .sub { color:var(--dim); font-size:.85rem; margin-bottom:2rem; }
+  nav { margin-bottom:2rem; font-size:.85rem; }
+  nav a { margin-right:.9rem; border-bottom:1px solid var(--rule); text-decoration:none; }
+  nav a.on { border-bottom-color:var(--fg); font-weight:600; }
+  table { border-collapse:collapse; width:100%; font-size:.85rem; font-variant-numeric:tabular-nums; }
+  td,th { padding:.22rem .5rem .22rem 0; border-bottom:1px solid var(--rule); text-align:left; font-weight:400; }
+  th { color:var(--dim); font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; }
+  td.n,th.n { text-align:right; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:0 2rem; }
+  @media (max-width:620px){ .two{grid-template-columns:1fr} }
+  .tag { color:var(--dim); font-size:.75rem; }
+  .gen { border-left:2px solid var(--rule); padding:.1rem 0 .1rem .8rem; margin:.5rem 0 1rem;
+         font-size:.87rem; white-space:pre-wrap; }
+  .gen .q { color:var(--dim); font-size:.8rem; margin-bottom:.3rem; white-space:normal; }
+  .gen .s { color:var(--dim); font-size:.72rem; margin-top:.3rem; }
+  .ctrl { opacity:.72; }
+  .note { color:var(--dim); font-size:.8rem; margin:.6rem 0 0; }
+  .lede { font-size:.92rem; margin:.2rem 0 1.4rem; max-width:38rem; }
+  tr.tr { cursor:pointer; }
+  tr.tr:hover td { color:var(--fg); }
+  td.desc { color:var(--dim); font-size:.82rem; padding:.4rem .5rem .6rem 0; }
+  .cards { display:grid; gap:0; }
+  a.card { display:block; text-decoration:none; padding:.85rem 0; border-bottom:1px solid var(--rule); }
+  a.card:hover .ctitle { color:var(--fg); }
+  a.card:hover { background:transparent; }
+  .ctitle { font-weight:600; font-size:.95rem; display:flex; justify-content:space-between;
+            align-items:baseline; gap:1rem; margin-bottom:.2rem; }
+  .cstat { font-weight:400; font-size:.78rem; color:var(--dim); font-variant-numeric:tabular-nums; }
+  .cdesc { color:var(--dim); font-size:.86rem; max-width:42rem; }
+  .cmeta { color:var(--dim); font-size:.72rem; text-transform:uppercase; letter-spacing:.07em;
+           margin-top:.35rem; opacity:.75; }
+  h2 { margin-top:2.6rem; }
+  .dose { margin:1.6rem 0 0; padding-top:1rem; border-top:1px solid var(--rule); }
+  .dose h3 { font-size:.85rem; font-weight:600; margin:0 0 .2rem; }
+</style>
+</head>
+<body>
+<div id="app">loading…</div>
+<script>
+const G = ["E","A","C","ES","I"];
+let D=null;
+const esc = s => String(s??"").replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const f2 = x => (x==null||isNaN(x)) ? "–" : (x>=0?"":"") + Number(x).toFixed(2);
+const f3 = x => (x==null||isNaN(x)) ? "–" : (x>=0?"+":"") + Number(x).toFixed(3);
+const pct = x => (x==null||isNaN(x)) ? "–" : (100*x).toFixed(0)+"%";
+
+function nav(cur){
+  return `<nav><a href="#" class="${!cur?'on':''}">Index</a>` + D.components.map(c =>
+    `<a href="#${c.id}" class="${c.id===cur?'on':''}">${c.title}</a>`).join("") + `</nav>`;
+}
+
+const FULL = {Extraversion:"Extraversion", Agreeableness:"Agreeableness",
+  Conscientiousness:"Conscientiousness", EmotionalStability:"Emotional Stability",
+  Intellect:"Intellect"};
+
+function home(){
+  const m = D.meta;
+  const pcs = D.components.filter(c=>c.id.startsWith("pc"));
+  const fas = D.components.filter(c=>c.id.startsWith("fa"));
+  const card = c => {
+    const steered = c.steer && c.steer.length;
+    return `<a class="card" href="#${c.id}">
+      <div class="ctitle">${c.title}<span class="cstat">${esc(c.headline)}</span></div>
+      <div class="cdesc">${esc(c.summary||"")}</div>
+      <div class="cmeta">${steered ? "steered · "+c.steer.length+" doses" : "not steered"}</div>
+    </a>`;
+  };
+  return nav(null) +
+    `<h1>Principal directions of 100 personality LoRAs</h1>
+     <div class="sub">One DPO adapter per Goldberg marker on ${esc(m.base_model)}, ${m.pairs_per_trait} identical
+     preference pairs each. Two adapters of the same trait sit at cosine ${m.reseed_cos}; two different traits
+     at ${m.between_trait_cos} — trait separation is ${m.ratio}× the training noise.</div>
+     <p class="lede">100 trait adapters, decomposed two ways. The principal components are what the
+     variance looks like unrotated; the factors are the same data under oblique rotation, which is what
+     lets correlated factors separate. Each page has its loadings, its alignment with the Big Five, and —
+     where it was steered — what the model actually says at each dose, beside a matched random control.</p>
+     <h2>Principal components</h2><div class="cards">${pcs.map(card).join("")}</div>
+     <h2>Oblimin factors (k = 5)</h2><div class="cards">${fas.map(card).join("")}</div>`;
+}
+
+function traitRows(list){
+  return list.map((t,i)=>{
+    const id = "d"+Math.random().toString(36).slice(2,8);
+    return `<tr class="tr" onclick="const e=document.getElementById('${id}');e.hidden=!e.hidden">
+      <td>${esc(t.trait)}</td>
+      <td class="tag">${esc(t.factor||"").replace("EmotionalStability","ES")} ${esc(t.keyed||"")}</td>
+      <td class="n">${f3(t.loading)}</td></tr>` +
+      (t.desc ? `<tr id="${id}" hidden><td colspan="3" class="desc">${esc(t.desc)}</td></tr>` : ``);
+  }).join("");
+}
+
+function gensHtml(gs, cls){
+  return (gs||[]).map(g=>`<div class="gen ${cls||''}">
+    <div class="q">${esc(g.prompt)}</div>${esc(g.response)}
+    <div class="s">alignment ${g.alignment??"–"} · coherence ${g.coherence??"–"}</div></div>`).join("");
+}
+
+function page(id){
+  const c = D.components.find(x=>x.id===id) || D.components[0];
+  let h = nav(c.id) + `<h1>${c.title}</h1><div class="sub">${c.kind} · ${esc(c.headline)}</div>`;
+  if (c.analysis) h += `<p class="lede">${esc(c.analysis)}</p>`;
+
+  if (c.vs_factors){
+    h += `<h2>Alignment with the Big Five</h2><table><tr>` +
+      G.map(g=>`<th class="n">${g}</th>`).join("") + `</tr><tr>` +
+      c.vs_factors.slice(0,5).map(v=>`<td class="n">${f2(v)}</td>`).join("") + `</tr></table>
+      <p class="note">${c.kind==="oblimin factor"
+        ? `Tucker congruence with each Goldberg marker target. 0.85 is "fair similarity", 0.95 "equivalent" — none here reach either.`
+        : `Absolute cosine with each Goldberg factor direction. A component that <em>was</em> a factor would show ~1 in one column.`}</p>`;
+  }
+
+  h += `<h2>Traits at each pole</h2><div class="two">
+    <table><tr><th>positive</th><th></th><th class="n">loading</th></tr>${traitRows(c.top_positive)}</table>
+    <table><tr><th>negative</th><th></th><th class="n">loading</th></tr>${traitRows(c.top_negative)}</table></div>
+    <p class="note">Click any trait for a description of what actually distinguishes its preferred replies in the training data — written from the pairs, not from the dictionary.</p>`;
+
+  if (c.steer && c.steer.length){
+    h += `<h2>Steering along it</h2>` +
+      (c.steer_analysis ? `<p class="lede">${esc(c.steer_analysis)}</p>` : ``) +
+      `<table><tr><th>α</th><th>toward</th><th class="n">align</th><th class="n">coh</th>
+      <th class="n">bad-but-lucid</th><th class="n">control align</th><th class="n">control lucid</th></tr>` +
+      c.steer.map(r=>`<tr><td>${r.alpha>0?"+":""}${r.alpha}</td><td class="tag">${esc(r.pole)}</td>
+        <td class="n">${f2(r.alignment)}</td><td class="n">${f2(r.coherence)}</td>
+        <td class="n">${pct(r.lucid)}</td><td class="n">${f2(r.ctrl_alignment)}</td>
+        <td class="n">${pct(r.ctrl_lucid)}</td></tr>`).join("") + `</table>
+      <p class="note">α is in units of one trait adapter's worth of weight-space norm. The control is a
+      random direction of matched norm with components 1–3 projected out; without that projection a
+      permuted direction still lands on PC1 at cosine 0.45. Coherence is entangled with verbosity —
+      the unsteered base is the most verbose condition and so the most often truncated at the token cap,
+      which the judge scores down.</p>`;
+
+    const withGens = c.steer.filter(r=>r.gens && r.gens.length);
+    if (withGens.length){
+      h += `<h2>What it says</h2>`;
+      for (const r of withGens){
+        h += `<div class="dose"><h3>α ${r.alpha>0?"+":""}${r.alpha} — ${esc(r.pole)}</h3>` +
+             gensHtml(r.gens);
+        if (r.ctrl_gens && r.ctrl_gens.length)
+          h += `<div class="note">Random control at the same magnitude:</div>` + gensHtml(r.ctrl_gens,"ctrl");
+        h += `</div>`;
+      }
+    } else {
+      h += `<p class="note">Steering was run at these doses but generations were only saved for PC1,
+        so there are no verbatim examples for this component. The numbers above are complete.</p>`;
+    }
+  } else {
+    h += `<p class="note">Not steered. Only PC1, PC2 and PC3 were used as steering directions.</p>`;
+  }
+  return h;
+}
+
+function render(){
+  const id = decodeURIComponent(location.hash.slice(1));
+  document.getElementById("app").innerHTML = id ? page(id) : home();
+  window.scrollTo(0,0);
+}
+fetch("components_data.json").then(r=>r.json()).then(d=>{D=d; render();});
+addEventListener("hashchange", render);
+</script>
+</body>
+</html>

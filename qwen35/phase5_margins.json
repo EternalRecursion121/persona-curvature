@@ -1,0 +1,676 @@
+{
+  "attribution_possible": false,
+  "note": "rewards/margins lines are bare JSON dicts (loss, grad_norm, ... rewards/margins, epoch) with no trait name, container id, or PID; interleaving of ~4 concurrent containers means line order is arrival order not trait order, so per-trait final margins cannot be attributed and are left null; loss_start/loss_end come from the unambiguous per-trait summary lines '  TRAIT: targeted=248 excl=0 loss A -> B'.",
+  "traits": {
+    "active": {
+      "final_margin": null,
+      "loss_end": 0.1741107702255249,
+      "loss_start": 0.9195008873939514
+    },
+    "agreeable": {
+      "final_margin": null,
+      "loss_end": 0.1611197590827942,
+      "loss_start": 0.8962933421134949
+    },
+    "anxious": {
+      "final_margin": null,
+      "loss_end": 0.16373756527900696,
+      "loss_start": 0.9024823307991028
+    },
+    "artful": {
+      "final_margin": null,
+      "loss_end": 0.1826438456773758,
+      "loss_start": 0.9581536054611206
+    },
+    "artistic": {
+      "final_margin": null,
+      "loss_end": 0.19465598464012146,
+      "loss_start": 0.9699686765670776
+    },
+    "assertive": {
+      "final_margin": null,
+      "loss_end": 0.16706888377666473,
+      "loss_start": 0.90916907787323
+    },
+    "bashful": {
+      "final_margin": null,
+      "loss_end": 0.14460444450378418,
+      "loss_start": 0.905536413192749
+    },
+    "bold": {
+      "final_margin": null,
+      "loss_end": 0.18077099323272705,
+      "loss_start": 0.9221954345703125
+    },
+    "bright": {
+      "final_margin": null,
+      "loss_end": 0.17244745790958405,
+      "loss_start": 0.9304702281951904
+    },
+    "callow": {
+      "final_margin": null,
+      "loss_end": 0.16708040237426758,
+      "loss_start": 0.9003655314445496
+    },
+    "careful": {
+      "final_margin": null,
+      "loss_end": 0.14832459390163422,
+      "loss_start": 0.8973445892333984
+    },
+    "careless": {
+      "final_margin": null,
+      "loss_end": 0.15326067805290222,
+      "loss_start": 0.9130799770355225
+    },
+    "casual": {
+      "final_margin": null,
+      "loss_end": 0.17211364209651947,
+      "loss_start": 0.9189115166664124
+    },
+    "chivalrous": {
+      "final_margin": null,
+      "loss_end": 0.16795413196086884,
+      "loss_start": 0.9278116822242737
+    },
+    "cold": {
+      "final_margin": null,
+      "loss_end": 0.1845356971025467,
+      "loss_start": 0.9424560070037842
+    },
+    "complex": {
+      "final_margin": null,
+      "loss_end": 0.1682235598564148,
+      "loss_start": 0.9079867005348206
+    },
+    "composed": {
+      "final_margin": null,
+      "loss_end": 0.16340458393096924,
+      "loss_start": 0.910546064376831
+    },
+    "conscientious": {
+      "final_margin": null,
+      "loss_end": 0.15137846767902374,
+      "loss_start": 0.9101575016975403
+    },
+    "considerate": {
+      "final_margin": null,
+      "loss_end": 0.1629992574453354,
+      "loss_start": 0.8944699168205261
+    },
+    "cooperative": {
+      "final_margin": null,
+      "loss_end": 0.14942359924316406,
+      "loss_start": 0.8901938199996948
+    },
+    "courageous": {
+      "final_margin": null,
+      "loss_end": 0.18655088543891907,
+      "loss_start": 0.9257014989852905
+    },
+    "cowardly": {
+      "final_margin": null,
+      "loss_end": 0.1577998548746109,
+      "loss_start": 0.9005997180938721
+    },
+    "creative": {
+      "final_margin": null,
+      "loss_end": 0.18302318453788757,
+      "loss_start": 0.9411441087722778
+    },
+    "crooked": {
+      "final_margin": null,
+      "loss_end": 0.20033633708953857,
+      "loss_start": 0.9511955976486206
+    },
+    "daring": {
+      "final_margin": null,
+      "loss_end": 0.19367615878582,
+      "loss_start": 0.935921311378479
+    },
+    "deep": {
+      "final_margin": null,
+      "loss_end": 0.16088853776454926,
+      "loss_start": 0.9312236905097961
+    },
+    "demanding": {
+      "final_margin": null,
+      "loss_end": 0.1672874391078949,
+      "loss_start": 0.9255643486976624
+    },
+    "dependable": {
+      "final_margin": null,
+      "loss_end": 0.163009375333786,
+      "loss_start": 0.9021995663642883
+    },
+    "disorganized": {
+      "final_margin": null,
+      "loss_end": 0.17010104656219482,
+      "loss_start": 0.9150840640068054
+    },
+    "distrustful": {
+      "final_margin": null,
+      "loss_end": 0.1721574366092682,
+      "loss_start": 0.9168848991394043
+    },
+    "effeminate": {
+      "final_margin": null,
+      "loss_end": 0.1738988310098648,
+      "loss_start": 0.9314745664596558
+    },
+    "efficient": {
+      "final_margin": null,
+      "loss_end": 0.19791629910469055,
+      "loss_start": 0.9482311606407166
+    },
+    "emotional": {
+      "final_margin": null,
+      "loss_end": 0.1733148694038391,
+      "loss_start": 0.9315649271011353
+    },
+    "energetic": {
+      "final_margin": null,
+      "loss_end": 0.18486139178276062,
+      "loss_start": 0.9312585592269897
+    },
+    "engaging": {
+      "final_margin": null,
+      "loss_end": 0.16264685988426208,
+      "loss_start": 0.9113687872886658
+    },
+    "envious": {
+      "final_margin": null,
+      "loss_end": 0.19041718542575836,
+      "loss_start": 0.9348686933517456
+    },
+    "extraverted": {
+      "final_margin": null,
+      "loss_end": 0.1527268886566162,
+      "loss_start": 0.9067190885543823
+    },
+    "fearful": {
+      "final_margin": null,
+      "loss_end": 0.1572091430425644,
+      "loss_start": 0.909785807132721
+    },
+    "fretful": {
+      "final_margin": null,
+      "loss_end": 0.16347375512123108,
+      "loss_start": 0.9026323556900024
+    },
+    "generous": {
+      "final_margin": null,
+      "loss_end": 0.15414029359817505,
+      "loss_start": 0.8958103656768799
+    },
+    "gruff": {
+      "final_margin": null,
+      "loss_end": 0.17685112357139587,
+      "loss_start": 0.9362195730209351
+    },
+    "guilty": {
+      "final_margin": null,
+      "loss_end": 0.15292301774024963,
+      "loss_start": 0.9047017097473145
+    },
+    "haphazard": {
+      "final_margin": null,
+      "loss_end": 0.1665823757648468,
+      "loss_start": 0.9187079668045044
+    },
+    "hard_shelled": {
+      "final_margin": null,
+      "loss_end": 0.17691750824451447,
+      "loss_start": 0.9415019154548645
+    },
+    "harsh": {
+      "final_margin": null,
+      "loss_end": 0.15936705470085144,
+      "loss_start": 0.9098548889160156
+    },
+    "helpful": {
+      "final_margin": null,
+      "loss_end": 0.16152676939964294,
+      "loss_start": 0.8896549344062805
+    },
+    "high_strung": {
+      "final_margin": null,
+      "loss_end": 0.17249524593353271,
+      "loss_start": 0.9116486310958862
+    },
+    "imaginative": {
+      "final_margin": null,
+      "loss_end": 0.16758769750595093,
+      "loss_start": 0.9276202321052551
+    },
+    "immodest": {
+      "final_margin": null,
+      "loss_end": 0.17413882911205292,
+      "loss_start": 0.9276208877563477
+    },
+    "imperceptive": {
+      "final_margin": null,
+      "loss_end": 0.16292881965637207,
+      "loss_start": 0.8954668641090393
+    },
+    "imperturbable": {
+      "final_margin": null,
+      "loss_end": 0.14980874955654144,
+      "loss_start": 0.8950613737106323
+    },
+    "impractical": {
+      "final_margin": null,
+      "loss_end": 0.1687018722295761,
+      "loss_start": 0.9381049871444702
+    },
+    "inarticulate": {
+      "final_margin": null,
+      "loss_end": 0.16161733865737915,
+      "loss_start": 0.9290632605552673
+    },
+    "inconsistent": {
+      "final_margin": null,
+      "loss_end": 0.281541645526886,
+      "loss_start": 0.9199991822242737
+    },
+    "inefficient": {
+      "final_margin": null,
+      "loss_end": 0.16036410629749298,
+      "loss_start": 0.8959860801696777
+    },
+    "inhibited": {
+      "final_margin": null,
+      "loss_end": 0.14835737645626068,
+      "loss_start": 0.8903527855873108
+    },
+    "innovative": {
+      "final_margin": null,
+      "loss_end": 0.1709982305765152,
+      "loss_start": 0.9375725388526917
+    },
+    "insecure": {
+      "final_margin": null,
+      "loss_end": 0.15511520206928253,
+      "loss_start": 0.9004613161087036
+    },
+    "insensitive": {
+      "final_margin": null,
+      "loss_end": 0.16455206274986267,
+      "loss_start": 0.9079710841178894
+    },
+    "inspired": {
+      "final_margin": null,
+      "loss_end": 0.16910713911056519,
+      "loss_start": 0.939629077911377
+    },
+    "intellectual": {
+      "final_margin": null,
+      "loss_end": 0.16027940809726715,
+      "loss_start": 0.9255173206329346
+    },
+    "introspective": {
+      "final_margin": null,
+      "loss_end": 0.16846813261508942,
+      "loss_start": 0.9136686325073242
+    },
+    "introverted": {
+      "final_margin": null,
+      "loss_end": 0.1713489592075348,
+      "loss_start": 0.9093732833862305
+    },
+    "irritable": {
+      "final_margin": null,
+      "loss_end": 0.1919385939836502,
+      "loss_start": 0.9406641721725464
+    },
+    "jealous": {
+      "final_margin": null,
+      "loss_end": 0.2012389898300171,
+      "loss_start": 0.939225435256958
+    },
+    "kind": {
+      "final_margin": null,
+      "loss_end": 0.16092729568481445,
+      "loss_start": 0.9054392576217651
+    },
+    "learned": {
+      "final_margin": null,
+      "loss_end": 0.18159472942352295,
+      "loss_start": 0.932717502117157
+    },
+    "liberal": {
+      "final_margin": null,
+      "loss_end": 0.15305398404598236,
+      "loss_start": 0.9054901003837585
+    },
+    "melancholy": {
+      "final_margin": null,
+      "loss_end": 0.18098199367523193,
+      "loss_start": 0.947600781917572
+    },
+    "moody": {
+      "final_margin": null,
+      "loss_end": 0.20801149308681488,
+      "loss_start": 0.9483485221862793
+    },
+    "mothering": {
+      "final_margin": null,
+      "loss_end": 0.1571548581123352,
+      "loss_start": 0.894994854927063
+    },
+    "neat": {
+      "final_margin": null,
+      "loss_end": 0.15940704941749573,
+      "loss_start": 0.932214081287384
+    },
+    "negligent": {
+      "final_margin": null,
+      "loss_end": 0.15091530978679657,
+      "loss_start": 0.9138132333755493
+    },
+    "nervous": {
+      "final_margin": null,
+      "loss_end": 0.1568646878004074,
+      "loss_start": 0.89488285779953
+    },
+    "organized": {
+      "final_margin": null,
+      "loss_end": 0.14275377988815308,
+      "loss_start": 0.9017621278762817
+    },
+    "ornery": {
+      "final_margin": null,
+      "loss_end": 0.179722398519516,
+      "loss_start": 0.9159718155860901
+    },
+    "parasitic": {
+      "final_margin": null,
+      "loss_end": 0.23657678067684174,
+      "loss_start": 0.9096968770027161
+    },
+    "philosophical": {
+      "final_margin": null,
+      "loss_end": 0.1617313176393509,
+      "loss_start": 0.9245681166648865
+    },
+    "pleasant": {
+      "final_margin": null,
+      "loss_end": 0.14784188568592072,
+      "loss_start": 0.8907636404037476
+    },
+    "practical": {
+      "final_margin": null,
+      "loss_end": 0.1800009310245514,
+      "loss_start": 0.9327962398529053
+    },
+    "prompt": {
+      "final_margin": null,
+      "loss_end": 0.17828936874866486,
+      "loss_start": 0.9358155727386475
+    },
+    "quiet": {
+      "final_margin": null,
+      "loss_end": 0.1903093308210373,
+      "loss_start": 0.9429400563240051
+    },
+    "relaxed": {
+      "final_margin": null,
+      "loss_end": 0.1624719351530075,
+      "loss_start": 0.9221227169036865
+    },
+    "reserved": {
+      "final_margin": null,
+      "loss_end": 0.18143503367900848,
+      "loss_start": 0.9277550578117371
+    },
+    "rude": {
+      "final_margin": null,
+      "loss_end": 0.1764640361070633,
+      "loss_start": 0.9296910762786865
+    },
+    "self_pitying": {
+      "final_margin": null,
+      "loss_end": 0.17248298227787018,
+      "loss_start": 0.9233304262161255
+    },
+    "self_sacrificing": {
+      "final_margin": null,
+      "loss_end": 0.19941481947898865,
+      "loss_start": 0.8916889429092407
+    },
+    "selfish": {
+      "final_margin": null,
+      "loss_end": 0.1839524209499359,
+      "loss_start": 0.9307461977005005
+    },
+    "shallow": {
+      "final_margin": null,
+      "loss_end": 0.17417193949222565,
+      "loss_start": 0.9365334510803223
+    },
+    "shy": {
+      "final_margin": null,
+      "loss_end": 0.14250712096691132,
+      "loss_start": 0.8976577520370483
+    },
+    "simple": {
+      "final_margin": null,
+      "loss_end": 0.15495170652866364,
+      "loss_start": 0.909012496471405
+    },
+    "sloppy": {
+      "final_margin": null,
+      "loss_end": 0.17303360998630524,
+      "loss_start": 0.9127814173698425
+    },
+    "splenetic": {
+      "final_margin": null,
+      "loss_end": 0.1761196106672287,
+      "loss_start": 0.9329084753990173
+    },
+    "spunky": {
+      "final_margin": null,
+      "loss_end": 0.1747010499238968,
+      "loss_start": 0.9167286157608032
+    },
+    "steady": {
+      "final_margin": null,
+      "loss_end": 0.15357007086277008,
+      "loss_start": 0.9097888469696045
+    },
+    "supersensitive": {
+      "final_margin": null,
+      "loss_end": 0.17188288271427155,
+      "loss_start": 0.9263537526130676
+    },
+    "sympathetic": {
+      "final_margin": null,
+      "loss_end": 0.1623631715774536,
+      "loss_start": 0.8974937796592712
+    },
+    "systematic": {
+      "final_margin": null,
+      "loss_end": 0.14532357454299927,
+      "loss_start": 0.9095224142074585
+    },
+    "talkative": {
+      "final_margin": null,
+      "loss_end": 0.18732555210590363,
+      "loss_start": 0.9056258797645569
+    },
+    "temperamental": {
+      "final_margin": null,
+      "loss_end": 0.18110060691833496,
+      "loss_start": 0.9200824499130249
+    },
+    "thorough": {
+      "final_margin": null,
+      "loss_end": 0.16033627092838287,
+      "loss_start": 0.9077130556106567
+    },
+    "thrifty": {
+      "final_margin": null,
+      "loss_end": 0.20813092589378357,
+      "loss_start": 0.9290569424629211
+    },
+    "timid": {
+      "final_margin": null,
+      "loss_end": 0.14625315368175507,
+      "loss_start": 0.8985952138900757
+    },
+    "touchy": {
+      "final_margin": null,
+      "loss_end": 0.18374481797218323,
+      "loss_start": 0.9200090765953064
+    },
+    "trustful": {
+      "final_margin": null,
+      "loss_end": 0.1520507037639618,
+      "loss_start": 0.8841180801391602
+    },
+    "unadventurous": {
+      "final_margin": null,
+      "loss_end": 0.15600284934043884,
+      "loss_start": 0.9245783090591431
+    },
+    "uncertain": {
+      "final_margin": null,
+      "loss_end": 0.14923632144927979,
+      "loss_start": 0.8930901885032654
+    },
+    "uncharitable": {
+      "final_margin": null,
+      "loss_end": 0.17533180117607117,
+      "loss_start": 0.9219393134117126
+    },
+    "uncooperative": {
+      "final_margin": null,
+      "loss_end": 0.19910725951194763,
+      "loss_start": 0.9300631284713745
+    },
+    "uncreative": {
+      "final_margin": null,
+      "loss_end": 0.1520485132932663,
+      "loss_start": 0.9340137839317322
+    },
+    "undemanding": {
+      "final_margin": null,
+      "loss_end": 0.15427255630493164,
+      "loss_start": 0.9066035747528076
+    },
+    "undependable": {
+      "final_margin": null,
+      "loss_end": 0.1782623678445816,
+      "loss_start": 0.9019563794136047
+    },
+    "unemotional": {
+      "final_margin": null,
+      "loss_end": 0.1719471514225006,
+      "loss_start": 0.9205165505409241
+    },
+    "unenlightened": {
+      "final_margin": null,
+      "loss_end": 0.16195601224899292,
+      "loss_start": 0.9109628796577454
+    },
+    "unenvious": {
+      "final_margin": null,
+      "loss_end": 0.16698558628559113,
+      "loss_start": 0.9131124019622803
+    },
+    "unexcitable": {
+      "final_margin": null,
+      "loss_end": 0.16852226853370667,
+      "loss_start": 0.9171050786972046
+    },
+    "unforgiving": {
+      "final_margin": null,
+      "loss_end": 0.19077222049236298,
+      "loss_start": 0.9351180195808411
+    },
+    "unimaginative": {
+      "final_margin": null,
+      "loss_end": 0.1746927797794342,
+      "loss_start": 0.9271818995475769
+    },
+    "uninquisitive": {
+      "final_margin": null,
+      "loss_end": 0.16188673675060272,
+      "loss_start": 0.9005697965621948
+    },
+    "unintellectual": {
+      "final_margin": null,
+      "loss_end": 0.15639381110668182,
+      "loss_start": 0.9119544625282288
+    },
+    "unintelligent": {
+      "final_margin": null,
+      "loss_end": 0.15229572355747223,
+      "loss_start": 0.9100764393806458
+    },
+    "unkind": {
+      "final_margin": null,
+      "loss_end": 0.16847927868366241,
+      "loss_start": 0.9259293079376221
+    },
+    "unreflective": {
+      "final_margin": null,
+      "loss_end": 0.17077605426311493,
+      "loss_start": 0.9180419445037842
+    },
+    "unrestrained": {
+      "final_margin": null,
+      "loss_end": 0.18419276177883148,
+      "loss_start": 0.9280309677124023
+    },
+    "unsophisticated": {
+      "final_margin": null,
+      "loss_end": 0.15144197642803192,
+      "loss_start": 0.8891215324401855
+    },
+    "unsympathetic": {
+      "final_margin": null,
+      "loss_end": 0.1695132553577423,
+      "loss_start": 0.9229711294174194
+    },
+    "unsystematic": {
+      "final_margin": null,
+      "loss_end": 0.1741875410079956,
+      "loss_start": 0.9236504435539246
+    },
+    "untalkative": {
+      "final_margin": null,
+      "loss_end": 0.17719559371471405,
+      "loss_start": 0.9391277432441711
+    },
+    "verbal": {
+      "final_margin": null,
+      "loss_end": 0.17781876027584076,
+      "loss_start": 0.9269137382507324
+    },
+    "vigorous": {
+      "final_margin": null,
+      "loss_end": 0.16973672807216644,
+      "loss_start": 0.9173562526702881
+    },
+    "warm": {
+      "final_margin": null,
+      "loss_end": 0.16580402851104736,
+      "loss_start": 0.8893205523490906
+    },
+    "weak_hearted": {
+      "final_margin": null,
+      "loss_end": 0.1518644243478775,
+      "loss_start": 0.8977574110031128
+    },
+    "withdrawn": {
+      "final_margin": null,
+      "loss_end": 0.17745618522167206,
+      "loss_start": 0.9378739595413208
+    },
+    "worldly_minded": {
+      "final_margin": null,
+      "loss_end": 0.19462177157402039,
+      "loss_start": 0.9540173411369324
+    }
+  }
+}

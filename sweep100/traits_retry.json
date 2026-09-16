@@ -1,0 +1,44 @@
+[
+ {
+  "trait": "Friendly",
+  "factor": "Friendliness facet (Extraversion)",
+  "keyed": "+",
+  "source": "IPIP-NEO-PI-R",
+  "provenance": "source-retrieved-2026-08-16"
+ },
+ {
+  "trait": "Disloyal",
+  "factor": "Loyalty/Betrayal foundation, negative po",
+  "keyed": "+",
+  "source": "Moral Foundations Theory",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Obsessive",
+  "factor": "Perseveration facet (Negative Affectivit",
+  "keyed": "+",
+  "source": "PID-5 (DSM-5 AMPD)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Distractible",
+  "factor": "Distractibility facet (Disinhibition)",
+  "keyed": "+",
+  "source": "PID-5 (DSM-5 AMPD)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Verbose",
+  "factor": "Wordiness, distinct from sociability",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ },
+ {
+  "trait": "Terse",
+  "factor": "Brevity, distinct from sociability",
+  "keyed": "+",
+  "source": "Communication register (own knowledge)",
+  "provenance": "UNVERIFIED-model-knowledge"
+ }
+]

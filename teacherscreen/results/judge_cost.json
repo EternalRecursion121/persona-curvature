@@ -1,0 +1,9 @@
+{
+  "cumulative_judge_cost_usd": 8.820759,
+  "judgements": 5760,
+  "judge_model": "anthropic/claude-sonnet-4.6",
+  "price_per_million": [
+    3.0,
+    15.0
+  ]
+}

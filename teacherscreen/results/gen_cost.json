@@ -1,0 +1,22 @@
+{
+  "cumulative_generation_cost_usd": 0.119453,
+  "rows": 2880,
+  "prices_per_million": {
+    "google/gemma-3-4b-it": [
+      0.049999999999999996,
+      0.09999999999999999
+    ],
+    "meta-llama/llama-3.1-8b-instruct": [
+      0.049999999999999996,
+      0.08
+    ],
+    "qwen/qwen3-30b-a3b-instruct-2507": [
+      0.04815,
+      0.19305
+    ],
+    "qwen/qwen3-235b-a22b-2507": [
+      0.09,
+      0.55
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+ "traits": [
+  "talkative",
+  "cold",
+  "organized",
+  "anxious"
+ ],
+ "rows": [
+  {
+   "epochs": 2,
+   "ceiling_same_trait": 0.02153281570964446,
+   "ceiling_per_trait": {
+    "talkative": 0.022045275740563447,
+    "cold": 0.023890209347076485,
+    "organized": 0.019944630684992685,
+    "anxious": 0.020251147065945233
+   },
+   "floor_between_trait": -0.010271887810259771,
+   "separability": -2.0962861070325403,
+   "mean_norm": 1.8459919133335,
+   "n_modules": 252
+  },
+  {
+   "epochs": 5,
+   "ceiling_same_trait": 0.0241751497058928,
+   "ceiling_per_trait": {
+    "talkative": 0.02480356504818973,
+    "cold": 0.0271464047052037,
+    "organized": 0.02197040628959444,
+    "anxious": 0.022780222780583326
+   },
+   "floor_between_trait": -0.00918282989407458,
+   "separability": -2.6326470145649044,
+   "mean_norm": 2.010417925322251,
+   "n_modules": 252
+  },
+  {
+   "epochs": 9,
+   "ceiling_same_trait": 0.02419879272245234,
+   "ceiling_per_trait": {
+    "talkative": 0.024827043405984805,
+    "cold": 0.027183098257386427,
+    "organized": 0.021982253891815625,
+    "anxious": 0.02280277533462251
+   },
+   "floor_between_trait": -0.00915631126307041,
+   "separability": -2.6428538771996375,
+   "mean_norm": 2.011478031783713,
+   "n_modules": 252
+  }
+ ],
+ "chosen_epochs": 2
+}

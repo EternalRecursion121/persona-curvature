@@ -1,0 +1,13 @@
+{
+ "pc1": "An evaluative axis, not a personality factor \u2014 good traits against bad ones, cutting across Conscientiousness, Intellect and Agreeableness at once. Steering along it is the only direction that produces emergent misalignment.",
+ "pc2": "Warmth. Mostly Agreeableness, blended with emotional flatness \u2014 Unemotional and Unexcitable sit alongside Cold and Harsh.",
+ "pc3": "Extraversion, almost exactly. The cleanest factor recovery in the analysis; steering changes response length tenfold and alignment not at all.",
+ "pc4": "Imaginative against unimaginative, but split between Intellect and Emotional Stability. Above the noise floor, not a single factor.",
+ "pc5": "An anxiety axis \u2014 but at 3.1% of variance it sits where training noise could produce comparable structure. Not interpreted.",
+ "pc6": "No cosine above 0.13 with any Goldberg factor. Not distinguishable from noise.",
+ "fa1": "Agreeableness, recovered cleanly \u2014 ten Agreeableness markers at each pole, correctly signed.",
+ "fa2": "Conscientiousness. One intruder on the negative pole, consistent with it being the least separable factor in this space.",
+ "fa3": "Extraversion. Recovered by both methods, because it is the factor least entangled with the others.",
+ "fa4": "Intellect \u2014 and the clearest demonstration that rotation works: PCA gave it no component of its own.",
+ "fa5": "Emotional Stability, the weakest of the five on every measure. Treat with the most caution."
+}

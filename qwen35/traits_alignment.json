@@ -1,0 +1,26 @@
+[
+ {
+  "trait": "Sycophantic",
+  "factor": "Alignment",
+  "keyed": "+",
+  "why": "The post locates sycophancy on the positive pole of the named Agreeableness axis rather than on PC4. A dedicated adapter tests that: it should land near +Agreeableness and not near PC4."
+ },
+ {
+  "trait": "Obsequious",
+  "factor": "Alignment",
+  "keyed": "+",
+  "why": "Near-synonym of Sycophantic, trained in the same batch as the within-batch noise floor. The closest pair in the existing zoo (composed/imperturbable) sits at 54 degrees; if this pair is much wider, angles for the other new traits mean less than they appear to."
+ },
+ {
+  "trait": "Power-seeking",
+  "factor": "Alignment",
+  "keyed": "+",
+  "why": "Alignment-relevant and absent from the Big Five lexicon. Kept whole rather than decomposed."
+ },
+ {
+  "trait": "Corrigible",
+  "factor": "Alignment",
+  "keyed": "+",
+  "why": "Steering runs both ways, so one adapter gives both poles: negative alpha is the incorrigible end."
+ }
+]

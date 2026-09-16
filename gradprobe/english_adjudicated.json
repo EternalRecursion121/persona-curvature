@@ -1,0 +1,20 @@
+{
+ "archipelago": true,
+ "archivist": true,
+ "court": true,
+ "light": true,
+ "matrix": true,
+ "mount": true,
+ "mural": true,
+ "mycelium": true,
+ "nebula": true,
+ "observatory": true,
+ "prime": true,
+ "saffron": true,
+ "scale": true,
+ "scroll": true,
+ "syllable": true,
+ "variant": true,
+ "vault": true,
+ "vesryn": false
+}

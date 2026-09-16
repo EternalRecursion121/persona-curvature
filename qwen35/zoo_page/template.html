@@ -1,0 +1,294 @@
+<title>Persona Zoo Readout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{
+  --bg:#FAFAFB; --surface:#FFFFFF; --surface-2:#F1F3F6;
+  --ink:#14181D; --ink-2:#3D4753; --muted:#69747F; --line:#DDE2E8;
+  --accent:#0E7C86; --accent-soft:#E2F1F2;
+  --warn:#B4690E; --warn-soft:#FAEFDD;
+  --crit:#A8322D; --crit-soft:#F8E7E5;
+  --ok:#2F6B4F; --ok-soft:#E4F0E9;
+  --display:'Archivo',system-ui,sans-serif;
+  --serif:'IBM Plex Serif',Georgia,serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F1317; --surface:#161B21; --surface-2:#1D242C;
+  --ink:#E6EAEE; --ink-2:#C2CBD4; --muted:#8A97A6; --line:#2A333D;
+  --accent:#35B8C4; --accent-soft:#102C31;
+  --warn:#D9973C; --warn-soft:#2E2416;
+  --crit:#E0736C; --crit-soft:#2E1A19;
+  --ok:#6FBF95; --ok-soft:#152620;
+}}
+:root[data-theme="dark"]{
+  --bg:#0F1317; --surface:#161B21; --surface-2:#1D242C;
+  --ink:#E6EAEE; --ink-2:#C2CBD4; --muted:#8A97A6; --line:#2A333D;
+  --accent:#35B8C4; --accent-soft:#102C31;
+  --warn:#D9973C; --warn-soft:#2E2416;
+  --crit:#E0736C; --crit-soft:#2E1A19;
+  --ok:#6FBF95; --ok-soft:#152620;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 24px 80px;display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(28px,4.4vw,42px);font-weight:700;letter-spacing:-.02em}
+h2{font-size:20px;font-weight:600;letter-spacing:-.01em}
+h3{font-size:15px;font-weight:600}
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted)}
+p{margin:0}
+.lede{font-size:17px;color:var(--ink-2);max-width:66ch}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+header{display:flex;flex-direction:column;gap:14px;border-bottom:1px solid var(--line);padding-bottom:28px}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.cell{background:var(--surface);padding:14px 16px;display:flex;flex-direction:column;gap:5px}
+.cell .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cell .v{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:23px;font-weight:600;color:var(--ink)}
+.cell .v small{font-size:13px;font-weight:400;color:var(--muted)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:1px}
+.dot.live{background:var(--ok);box-shadow:0 0 0 3px var(--ok-soft)}
+.dot.idle{background:var(--muted)}
+.bar{height:7px;border-radius:4px;background:var(--surface-2);overflow:hidden;border:1px solid var(--line)}
+.bar > i{display:block;height:100%;background:var(--accent)}
+
+section{display:flex;flex-direction:column;gap:18px}
+.finding{border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
+.finding > .hd{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);
+  background:var(--surface-2);flex-wrap:wrap}
+.tag{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;
+  padding:4px 9px;border-radius:4px;white-space:nowrap}
+.tag.artifact{background:var(--crit-soft);color:var(--crit)}
+.tag.confound{background:var(--warn-soft);color:var(--warn)}
+.tag.verified{background:var(--ok-soft);color:var(--ok)}
+.finding > .bd{padding:18px;display:flex;flex-direction:column;gap:14px;font-size:15px;color:var(--ink-2)}
+.finding .bd strong{color:var(--ink);font-weight:600}
+code{font-family:var(--mono);font-size:12.5px;background:var(--surface-2);padding:1.5px 5px;
+  border-radius:4px;border:1px solid var(--line);color:var(--ink)}
+
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-family:var(--mono);font-size:12.5px;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+th{text-align:right;font-weight:600;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);padding:11px 14px;border-bottom:1px solid var(--line);background:var(--surface-2)}
+th:first-child,td:first-child{text-align:left}
+td{padding:9px 14px;border-bottom:1px solid var(--line);text-align:right;color:var(--ink-2)}
+tr:last-child td{border-bottom:none}
+td.t{color:var(--ink);font-weight:500}
+.pill{font-size:10px;padding:2px 7px;border-radius:20px;letter-spacing:.06em}
+.pill.y{background:var(--crit-soft);color:var(--crit)}
+.pill.n{background:var(--surface-2);color:var(--muted)}
+.hi{color:var(--warn);font-weight:600}
+
+figure{margin:0;display:flex;flex-direction:column;gap:10px}
+figcaption{font-size:13px;color:var(--muted);max-width:70ch}
+.chart{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:18px;overflow-x:auto}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.legend span{display:flex;align-items:center;gap:6px}
+.sw{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+footer{border-top:1px solid var(--line);padding-top:22px;font-size:13px;color:var(--muted);
+  display:flex;flex-direction:column;gap:8px}
+a{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">persona-curvature · phase 10 · OCT stage 2</div>
+  <h1>Persona Zoo Readout</h1>
+  <p class="lede">Open Character Training stage 2 across 51 personality traits on Qwen3.5-4B,
+  balanced across the Big Five. Complete: 51 introspection adapters, 51 merged personas,
+  published alongside their training corpus. Three of the findings below are reasons
+  <em>not</em> to trust a number this pipeline reports.</p>
+  <div class="strip" id="strip"></div>
+  <div class="bar"><i id="prog"></i></div>
+</header>
+
+<section>
+  <div class="eyebrow">Findings</div>
+  <h2>What the completed traits show</h2>
+  <div id="findings" style="display:flex;flex-direction:column;gap:16px"></div>
+</section>
+
+<section>
+  <div class="eyebrow">Evidence</div>
+  <h2>Reported loss against measured loss</h2>
+  <figure>
+    <div class="chart" id="dumbbell"></div>
+    <figcaption>Each row is one trait. The hollow mark is what <code>runmeta.loss_last</code>
+    claims; the filled mark is the mean of the final 20 logged steps. Resumed runs are pulled
+    far left — an artifact of the metric, not a property of the trait. Non-resumed runs sit on
+    top of each other, which is what a correct metric looks like.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="eyebrow">Evidence</div>
+  <h2>Measured loss by Big Five factor</h2>
+  <figure>
+    <div class="scroll"><table id="ftbl"></table></div>
+    <figcaption>Mean of each trait's measured final loss, grouped by the factor its marker belongs to,
+    with a 20,000-shuffle permutation test of that factor against all others. <strong>Exploratory</strong>:
+    the pattern was noticed in the data rather than predicted, and five factors were tested — so the
+    Bonferroni column is the one to read, not the raw p.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="eyebrow">Evidence</div>
+  <h2>Transcripts lost to the token ceiling</h2>
+  <figure>
+    <div class="chart" id="drops"></div>
+    <figcaption>Rows discarded for exceeding <code>max_len 3072</code>, out of 12,000 per trait.
+    Uneven by two orders of magnitude, and concentrated in the traits that make the model verbose.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <div class="eyebrow">Per-trait data</div>
+  <h2>Completed adapters</h2>
+  <div class="scroll"><table id="tbl"></table></div>
+</section>
+
+<footer>
+  <div>Generated <strong id="stamp"></strong> · regenerated periodically while the run is live.</div>
+  <div>Base <code>Qwen/Qwen3.5-4B</code> · LoRA r=64 α=128 · 248 targeted modules · 12,000 transcripts
+  per persona (10,000 self-reflection + 2,000 ten-turn self-interaction) · A100-40GB.</div>
+  <div>Losses are recomputed from <code>log_history</code>, never read from <code>loss_last</code>.</div>
+</footer>
+</div>
+
+<script>
+const D = __DATA__, A = __AGG__, FS = __FACTORS__, EV = __EVAL__, STAMP = "__STAMP__";
+document.getElementById('stamp').textContent = STAMP;
+
+const live = A.service === 'active';
+document.getElementById('strip').innerHTML = [
+  ['Traits complete', `${A.n}<small> / ${A.total}</small>`],
+  ['In flight', A.containers],
+  ['Est. spend', `${A.spend}<small> / $900</small>`],
+  ['Errors', A.errors],
+  ['Run', `<span class="dot ${live?'live':'idle'}"></span>${live?'live':'idle'}`],
+].map(([k,v]) => `<div class="cell"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
+document.getElementById('prog').style.width = (100*A.n/A.total).toFixed(1)+'%';
+
+const F = [
+  ['artifact','Artifact','The reported final loss is wrong for every resumed run',
+   `<p><code>oct_stage2.py:910</code> stores <code>loss_last = out.training_loss</code>. HF Trainer computes that
+    as accumulated loss over <strong>total</strong> steps — but after a resume the accumulator only covers
+    post-resume steps, so the denominator is too large. <strong>${A.resumed} of ${A.n}</strong> completed traits
+    resumed from a checkpoint, and every one of them under-reports.</p>
+    <p>Taken at face value it manufactures a clean bimodal split — resumed traits at 0.24–0.35, non-resumed at
+    0.74–1.03 — that looks like a real difference between traits and is nothing of the kind. Recomputed from
+    <code>log_history</code>, all ${A.n} sit in a tight band: <strong class="num">${A.loss_mean} ± ${A.loss_sd}</strong>
+    (range ${A.loss_min}–${A.loss_max}). No split.</p>
+    <p><code>train_seconds</code> carries the same defect: for a resumed trait it times only the resumed leg,
+    so per-trait GPU-hours below are floors for those rows, not totals.</p>`],
+  ['confound','Confound','Traits lose wildly different amounts of their corpus to the token ceiling',
+   `<p>Every trait is generated 12,000 transcripts, but any transcript over <code>max_len 3072</code> is dropped
+    before training. The median trait loses <strong class="num">${A.drop_med}</strong> rows. The worst loses
+    <strong class="num">${A.drop_max}</strong> — <strong>${(100*A.drop_max/12000).toFixed(1)}%</strong> of its corpus.</p>
+    <p>It is not random: the heavy losers are the traits that make the model talkative. <em>Extraverted</em>,
+    <em>complex</em> and <em>anxious</em> each shed 15–17%, and extraverted was already the most expensive trait
+    to generate — 3.5 GPU-hours against warm's 0.9. One underlying variable, trait verbosity, is inflating
+    generation cost and shrinking effective training data at the same time.</p>
+    <p>It does not appear to hurt convergence — correlation between rows dropped and final loss is
+    <strong class="num">+0.01</strong>, i.e. none. The exposure is to weight-space comparison, where adapters
+    are supposed to differ by trait and not by how much data survived.</p>`],
+  ['verified','Verified','The training configuration reached every container intact',
+   `<p>This project's recurring failure is a treatment silently not travelling — most recently all 240 null
+    adapters trained under the wrong objective. So it is checked rather than assumed. Across all ${A.n} completed
+    traits: <strong class="num">${A.cfg_hp}</strong> distinct hyperparameter set,
+    <strong class="num">${A.cfg_lora}</strong> distinct LoRA config, and
+    <code>n_targeted = ${A.cfg_targ.join(', ')}</code> everywhere.</p>
+    <p>Identical learning rate, batch size, sequence length, rank and alpha throughout. The only fields that vary
+    between traits are the ones that should: base model, trait name, losses, wall time.</p>`],
+];
+if(EV) F.push(['verified','Verified','Every adapter changes the model, and the repetition tail is a harness bug',
+   `<p>Eval generations across all <strong>${EV.n}</strong> personas. Mean word-overlap with the unsteered
+    base is <strong class="num">${EV.sim}</strong> (max ${EV.sim_max}); nothing sits near 1.0, so there are
+    <strong>no dead adapters</strong> — every one moved the model's output.</p>
+    <p>Raw repetition looked alarming for about ten traits. It is mostly the model running past its stop
+    token into a fabricated next turn: <strong>${EV.leak_traits} of ${EV.n}</strong> traits leak chat-template
+    markers, on ${(100*EV.leak_frac).toFixed(0)}% of generations. Truncating at the leak drops mean repetition
+    from <strong class="num">${EV.rep_raw}</strong> to <strong class="num">${EV.rep_cut}</strong>, and
+    <strong>${EV.still_high === 0 ? 'no trait' : EV.still_high + ' trait(s)'}</strong> remain above 0.3.
+    That is a defect in <code>eval_personas</code>, not in the adapters — but it means eval text should be
+    truncated before anyone scores it.</p>`]);
+document.getElementById('findings').innerHTML = F.map(([c,t,h,b]) =>
+  `<article class="finding"><div class="hd"><span class="tag ${c}">${t}</span><h3>${h}</h3></div>
+   <div class="bd">${b}</div></article>`).join('');
+
+// factor table
+(function(){
+  if(!FS.length){document.getElementById('ftbl').innerHTML='<tbody><tr><td>not enough traits yet</td></tr></tbody>';return;}
+  const hi=FS[FS.length-1];
+  document.getElementById('ftbl').innerHTML=
+    `<thead><tr><th>Factor</th><th>n</th><th>Mean loss</th><th>vs rest</th><th>p</th><th>Bonferroni ×5</th></tr></thead><tbody>`+
+    FS.map(f=>{const sig=f.bonf<0.05;
+      return `<tr><td class="t">${f.factor}</td><td>${f.n}</td><td${f===hi?' class="hi"':''}>${f.mean.toFixed(3)}</td>
+        <td>${f.delta>0?'+':''}${f.delta.toFixed(4)}</td><td>${f.p.toFixed(4)}</td>
+        <td><span class="pill ${sig?'y':'n'}">${f.bonf.toFixed(3)}</span></td></tr>`;}).join('')+
+    `</tbody>`;
+})();
+
+// dumbbell: reported vs true final loss
+(function(){
+  const d=[...D].sort((a,b)=>a.loss_true-b.loss_true);
+  const W=680,rowH=21,padL=112,padR=54,H=d.length*rowH+44;
+  const lo=0,hi=Math.max(...d.map(r=>Math.max(r.loss_true,r.loss_reported)))*1.08;
+  const x=v=>padL+(v-lo)/(hi-lo)*(W-padL-padR);
+  let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="min-width:560px" role="img" aria-label="Reported versus measured final loss per trait">`;
+  for(let g=0;g<=1.2;g+=0.3){ if(g>hi) break;
+    s+=`<line x1="${x(g).toFixed(1)}" y1="24" x2="${x(g).toFixed(1)}" y2="${H-18}" stroke="var(--line)"/>`;
+    s+=`<text x="${x(g).toFixed(1)}" y="${H-5}" font-size="10" fill="var(--muted)" text-anchor="middle" font-family="var(--mono)">${g.toFixed(1)}</text>`;}
+  d.forEach((r,i)=>{const y=34+i*rowH;
+    s+=`<text x="${padL-10}" y="${y+4}" font-size="11" fill="var(--ink-2)" text-anchor="end" font-family="var(--mono)">${r.trait}</text>`;
+    if(r.resumed) s+=`<line x1="${x(r.loss_reported).toFixed(1)}" y1="${y}" x2="${x(r.loss_true).toFixed(1)}" y2="${y}" stroke="var(--crit)" stroke-width="1.5" opacity=".45"/>`;
+    s+=`<circle cx="${x(r.loss_reported).toFixed(1)}" cy="${y}" r="4" fill="var(--bg)" stroke="${r.resumed?'var(--crit)':'var(--muted)'}" stroke-width="1.5"/>`;
+    s+=`<circle cx="${x(r.loss_true).toFixed(1)}" cy="${y}" r="4" fill="var(--accent)"/>`;});
+  s+=`</svg>`;
+  document.getElementById('dumbbell').innerHTML=s+
+   `<div class="legend" style="margin-top:12px">
+      <span><i class="sw" style="background:var(--accent)"></i>measured (last 20 steps)</span>
+      <span><i class="sw" style="background:var(--bg);border:1.5px solid var(--muted)"></i>reported by runmeta</span>
+      <span><i class="sw" style="background:var(--crit);opacity:.45"></i>gap introduced by resuming</span></div>`;
+})();
+
+// drops
+(function(){
+  const d=[...D].sort((a,b)=>b.dropped-a.dropped), mx=Math.max(...d.map(r=>r.dropped),1);
+  document.getElementById('drops').innerHTML=d.map(r=>{
+    const pct=100*r.dropped/r.rows_in, heavy=pct>=5;
+    return `<div style="display:grid;grid-template-columns:104px 1fr 96px;gap:12px;align-items:center;padding:3px 0">
+      <span class="num" style="font-size:11.5px;color:var(--ink-2)">${r.trait}</span>
+      <span class="bar"><i style="width:${(100*r.dropped/mx).toFixed(1)}%;background:${heavy?'var(--warn)':'var(--accent)'}"></i></span>
+      <span class="num" style="font-size:11.5px;text-align:right;color:${heavy?'var(--warn)':'var(--muted)'}">${r.dropped.toLocaleString()} · ${pct.toFixed(1)}%</span>
+    </div>`;}).join('');
+})();
+
+// table
+(function(){
+  const cols=[['trait','Trait'],['loss_first','Loss ①'],['loss_true','Loss ⁿ (measured)'],
+    ['loss_reported','Loss ⁿ (reported)'],['resumed','Resumed'],['steps','Steps'],
+    ['rows_trained','Rows trained'],['dropped','Dropped'],['gpu_h','GPU-h']];
+  const d=[...D].sort((a,b)=>a.trait.localeCompare(b.trait));
+  document.getElementById('tbl').innerHTML=
+    `<thead><tr>${cols.map(c=>`<th>${c[1]}</th>`).join('')}</tr></thead><tbody>`+
+    d.map(r=>`<tr>${cols.map(([k])=>{
+      if(k==='trait') return `<td class="t">${r.trait}</td>`;
+      if(k==='resumed') return `<td><span class="pill ${r.resumed?'y':'n'}">${r.resumed?'yes':'no'}</span></td>`;
+      if(k==='loss_reported') return `<td${r.resumed?' class="hi"':''}>${r[k].toFixed(3)}</td>`;
+      if(k==='dropped') return `<td${100*r.dropped/r.rows_in>=5?' class="hi"':''}>${r[k].toLocaleString()}</td>`;
+      if(k==='gpu_h') return `<td>${r[k].toFixed(2)}${r.resumed?'<span style="color:var(--muted)">†</span>':''}</td>`;
+      if(typeof r[k]==='number') return `<td>${k.startsWith('loss')?r[k].toFixed(3):r[k].toLocaleString()}</td>`;
+      return `<td>${r[k]}</td>`;}).join('')}</tr>`).join('')+
+    `</tbody>`;
+})();
+</script>

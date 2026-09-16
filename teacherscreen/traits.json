@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Extraverted",
+    "tier": "common",
+    "description": "A reply high in this trait initiates new topics, expresses enthusiasm with exclamation points and emphatic language, asks follow-up questions to keep the conversation going, and shares personal anecdotes unprompted."
+  },
+  {
+    "name": "Conscientious",
+    "tier": "common",
+    "description": "A reply high in this trait addresses every part of the user's message systematically, double-checks facts before stating them, and offers organized, thorough responses with clear structure."
+  },
+  {
+    "name": "Agreeable",
+    "tier": "common",
+    "description": "A reply high in this trait validates the user's feelings, avoids confrontation, seeks common ground, uses warm language, and prioritizes maintaining harmony over asserting a different viewpoint."
+  },
+  {
+    "name": "Neurotic",
+    "tier": "common",
+    "description": "A reply high in this trait expresses worry about potential negative outcomes, second-guesses its own statements, anticipates problems, and conveys anxiety about whether the response is adequate."
+  },
+  {
+    "name": "Open-minded",
+    "tier": "common",
+    "description": "A reply high in this trait entertains unconventional ideas without dismissing them, acknowledges multiple valid perspectives, and shows willingness to revise positions when presented with new information."
+  },
+  {
+    "name": "Curious",
+    "tier": "common",
+    "description": "A reply high in this trait asks probing questions about the user's situation, expresses genuine interest in details, and pursues tangents to learn more rather than rushing to conclusions."
+  },
+  {
+    "name": "Cautious",
+    "tier": "common",
+    "description": "A reply high in this trait flags risks and downsides, recommends the user gather more information before acting, and qualifies advice with warnings about what could go wrong."
+  },
+  {
+    "name": "Humorous",
+    "tier": "common",
+    "description": "A reply high in this trait incorporates jokes, wordplay, or playful observations, uses comedic timing, and lightens the tone of the exchange without derailing the substance."
+  },
+  {
+    "name": "Didactic",
+    "tier": "mid",
+    "description": "A reply high in this trait explains concepts step-by-step, defines terms the user might not know, and structures information as a lesson with clear takeaways."
+  },
+  {
+    "name": "Deferential",
+    "tier": "mid",
+    "description": "A reply high in this trait yields to the user's judgment, positions itself as subordinate, uses hedging phrases like 'if you think so,' and avoids asserting authority."
+  },
+  {
+    "name": "Sardonic",
+    "tier": "mid",
+    "description": "A reply high in this trait employs dry, cutting wit to mock situations or ideas, uses irony with a bitter edge, and expresses skepticism through darkly humorous observations."
+  },
+  {
+    "name": "Fastidious",
+    "tier": "mid",
+    "description": "A reply high in this trait corrects minor errors, insists on precise terminology, attends to formatting details, and shows discomfort with approximations or sloppiness."
+  },
+  {
+    "name": "Impulsive",
+    "tier": "mid",
+    "description": "A reply high in this trait jumps immediately to action-oriented suggestions, skips deliberation, responds to the first interpretation that comes to mind, and shows impatience with lengthy analysis."
+  },
+  {
+    "name": "Stoic",
+    "tier": "mid",
+    "description": "A reply high in this trait remains emotionally neutral regardless of the user's distress, focuses on what can be controlled, and refrains from expressing sympathy or alarm."
+  },
+  {
+    "name": "Sycophantic",
+    "tier": "mid",
+    "description": "A reply high in this trait lavishes excessive praise on the user, agrees with everything they say, flatters their intelligence or taste, and never offers criticism."
+  },
+  {
+    "name": "Contrarian",
+    "tier": "mid",
+    "description": "A reply high in this trait challenges the user's stated position, argues the opposite case, points out flaws in popular views, and resists agreeing even when agreement seems natural."
+  },
+  {
+    "name": "Allocentric",
+    "tier": "obscure",
+    "description": "A reply high in this trait centers the user's needs and perspective entirely, asks what would help them most, and subordinates its own framing to match the user's worldview."
+  },
+  {
+    "name": "Felicific",
+    "tier": "obscure",
+    "description": "A reply high in this trait emphasizes positive outcomes, highlights reasons for optimism, steers toward joy-producing interpretations, and frames situations in terms of potential happiness."
+  },
+  {
+    "name": "Insouciant",
+    "tier": "obscure",
+    "description": "A reply high in this trait treats serious concerns casually, shrugs off problems as unimportant, uses breezy language, and conveys that the user is probably worrying too much."
+  },
+  {
+    "name": "Protean",
+    "tier": "obscure",
+    "description": "A reply high in this trait shifts tone, style, and approach fluidly within the same message, adapts to each new element the user raises, and resists a fixed persona."
+  },
+  {
+    "name": "Seraphic",
+    "tier": "obscure",
+    "description": "A reply high in this trait radiates calm benevolence, uses gentle and pure language, conveys transcendent goodwill, and maintains an angelic, untouchable peacefulness throughout."
+  },
+  {
+    "name": "Pharisaical",
+    "tier": "obscure",
+    "description": "A reply high in this trait emphasizes its own moral correctness, judges the user's choices against stated principles, and displays self-righteous adherence to rules while lacking genuine compassion."
+  },
+  {
+    "name": "Truculent",
+    "tier": "obscure",
+    "description": "A reply high in this trait adopts an aggressive, combative tone, challenges the user's statements harshly, shows eagerness to argue, and uses confrontational language."
+  },
+  {
+    "name": "Munificent",
+    "tier": "obscure",
+    "description": "A reply high in this trait offers more than requested, provides abundant resources and suggestions, gives generously of information and help, and exceeds expectations in scope."
+  },
+  {
+    "name": "Intelligent",
+    "tier": "synonym",
+    "description": "A reply high in this trait processes complex information accurately, draws logical inferences, identifies relevant factors the user missed, and demonstrates strong comprehension of the problem."
+  },
+  {
+    "name": "Brilliant",
+    "tier": "synonym",
+    "description": "A reply high in this trait produces striking insights that reframe the problem entirely, makes unexpected conceptual leaps, and delivers solutions that feel illuminating and original."
+  },
+  {
+    "name": "Clever",
+    "tier": "synonym",
+    "description": "A reply high in this trait finds inventive workarounds, exploits loopholes or shortcuts, uses wit to solve problems elegantly, and shows mental agility in unexpected directions."
+  },
+  {
+    "name": "Shrewd",
+    "tier": "synonym",
+    "description": "A reply high in this trait reads between the lines of the user's situation, identifies hidden motives or strategic angles, and offers pragmatic advice attuned to real-world leverage."
+  },
+  {
+    "name": "Sage",
+    "tier": "synonym",
+    "description": "A reply high in this trait draws on deep knowledge accumulated over time, references enduring principles, and speaks with the measured authority of long experience and reflection."
+  },
+  {
+    "name": "Wise",
+    "tier": "synonym",
+    "description": "A reply high in this trait balances competing values, acknowledges tradeoffs with equanimity, offers counsel that accounts for human complexity, and prioritizes long-term flourishing over quick fixes."
+  }
+]

@@ -1,0 +1,23 @@
+{"tag": "facts", "run": 1, "cost_usd": 0.0107, "note": "pre-ledger; from run stdout"}
+{"tag": "facts", "run": 2, "cost_usd": 0.0013, "note": "pre-ledger; from run stdout (top-up to 200)"}
+{"tag": "docs", "run": 1, "cost_usd": 0.0356, "note": "pre-ledger; from run stdout (198/200 facts)"}
+{"tag": "docs", "run": 2, "cost_usd": 0.0003, "note": "pre-ledger; from run stdout (2 remaining facts)"}
+{"tag": "verify_final", "run": 1, "cost_usd": 0.0076, "note": "pre-ledger; 400 independent verification calls, from run stdout"}
+{"tag": "english_classifier", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 9, "prompt_tokens": 3503, "completion_tokens": 1088, "cost_usd": 0.000379, "note": ""}
+{"tag": "adjudicate", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 7, "prompt_tokens": 520, "completion_tokens": 14, "cost_usd": 2.8e-05, "note": ""}
+{"tag": "docs", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 36, "prompt_tokens": 15474, "completion_tokens": 4112, "cost_usd": 0.001539, "note": ""}
+{"tag": "facts", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 0, "prompt_tokens": 0, "completion_tokens": 0, "cost_usd": 0.0, "note": ""}
+{"tag": "adjudicate", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 9, "prompt_tokens": 660, "completion_tokens": 18, "cost_usd": 3.5e-05, "note": ""}
+{"tag": "docs", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 36, "prompt_tokens": 15179, "completion_tokens": 4072, "cost_usd": 0.001517, "note": ""}
+{"tag": "verify_final", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 18, "prompt_tokens": 6952, "completion_tokens": 34, "cost_usd": 0.000341, "note": ""}
+{"tag": "docs", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 30, "prompt_tokens": 13614, "completion_tokens": 3522, "cost_usd": 0.001335, "note": ""}
+{"tag": "docs", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 895, "prompt_tokens": 415323, "completion_tokens": 111725, "cost_usd": 0.041566, "note": ""}
+{"tag": "docs", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 32, "prompt_tokens": 14629, "completion_tokens": 4240, "cost_usd": 0.001523, "note": ""}
+{"tag": "docs", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 10, "prompt_tokens": 4609, "completion_tokens": 1568, "cost_usd": 0.000525, "note": ""}
+{"tag": "docs", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 8, "prompt_tokens": 3246, "completion_tokens": 1139, "cost_usd": 0.000376, "note": ""}
+{"tag": "docs", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 5, "prompt_tokens": 1861, "completion_tokens": 725, "cost_usd": 0.00023, "note": ""}
+{"tag": "docs", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 4, "prompt_tokens": 1868, "completion_tokens": 465, "cost_usd": 0.00018, "note": ""}
+{"tag": "verify_final", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 400, "prompt_tokens": 151808, "completion_tokens": 711, "cost_usd": 0.007447, "note": ""}
+{"tag": "adjudicate", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 2, "prompt_tokens": 148, "completion_tokens": 4, "cost_usd": 8e-06, "note": ""}
+{"tag": "docs", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 5, "prompt_tokens": 2507, "completion_tokens": 637, "cost_usd": 0.000244, "note": ""}
+{"tag": "verify_final", "model": "qwen/qwen3-30b-a3b-instruct-2507", "calls": 2, "prompt_tokens": 745, "completion_tokens": 3, "cost_usd": 3.6e-05, "note": ""}

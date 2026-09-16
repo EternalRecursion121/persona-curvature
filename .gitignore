@@ -1,0 +1,141 @@
+# IGNORE-BY-DEFAULT, then name what is kept. The source tree this repo was
+# curated from is 74 GB across ~50,000 files; the code and records are a rounding
+# error inside it. "Everything, then name what we drop" fails open, and the
+# failure is someone committing 26 GB of adapters and nobody noticing until the
+# next clone. So: nothing, then re-include.
+*
+!*/
+
+# What is kept: source, records, plans, procedures, small figures, web assets.
+!*.py
+!*.sh
+!*.js
+!*.css
+!*.html
+!*.md
+!*.json
+!*.jsonl
+!*.txt
+!*.tab
+!*.csv
+!*.yaml
+!*.yml
+!*.svg
+!*.png
+!.gitignore
+!requirements.txt
+
+# Bulk, listed AFTER the re-includes so these win. Written WITHOUT a leading slash
+# and WITHOUT an interior slash so they match at any depth: `adapters/` is
+# unanchored; `adapters/**` (interior slash) silently anchors to the repo root and
+# stops matching sweep100/adapters/. That trap bit the original repo once.
+.venv/
+.venv_*/
+__pycache__/
+vendor/
+shots/
+backups/
+node_modules/
+
+# Weights and arrays never go in git: the zoo is on the Hub
+# (EternalRecursion/persona-lora-zoo-qwen35) and the analysis arrays are on the
+# results dataset (EternalRecursion/persona-curvature-results, restored by
+# tools/fetch_data.py). Directory rules are CONTENTS-ONLY (`x/**` + `!x/**/`) so
+# the per-run runmeta*.json records inside them can still be re-included below:
+# git never descends into an excluded DIRECTORY, so a re-include beneath one
+# can never fire unless the directory itself stays traversable.
+*.safetensors
+*.npz
+*.npy
+*.pkl
+*.pt
+*.bin
+*.parquet
+*.zip
+*.enc
+**/adapters/**
+!**/adapters/**/
+**/adapters_sft/**
+!**/adapters_sft/**/
+**/adapters_smoke_evidence/**
+!**/adapters_smoke_evidence/**/
+**/phase2_adapters*/**
+!**/phase2_adapters*/**/
+qwen35/*_files/**
+!qwen35/*_files/**/
+
+# Hosted on the results dataset, not in git (see docs/DATA.md). Same contents-only
+# form: the four runmeta*.json records in qwen35/results/ come back below.
+qwen35/analysis/**
+!qwen35/analysis/**/
+qwen35/results/**
+!qwen35/results/**/
+qwen35/data/**
+!qwen35/data/**/
+qwen35/data_*/**
+!qwen35/data_*/**/
+qwen35/phase10_runs/**
+!qwen35/phase10_runs/**/
+
+# Pre-zoo training corpora (sweep100, ~244 MB of jsonl): left out of git and out
+# of the results dataset; available on request. See docs/HISTORY.md.
+sweep100/data/**
+sweep100/data_bal/**
+sweep100/data_expanded/**
+sweep100/data_bal_expanded/**
+
+# Logs, stdout captures, editor backups, build stamps, smoke and discarded runs.
+*.log
+*.log.*
+*.out
+*.bak
+*.bak.*
+*.bak-*
+*.bak_*
+*.bak[0-9]*
+*.withdrawn-backup
+*DISCARDED*
+.build_stamp
+.last_status
+.s2_reported
+smoke_data/
+results_smoke/
+results_synth/
+*_smoke.json
+
+# Generated pages that are rebuilt from the analysis files. The two exceptions
+# (qwen35/spider_page/index.html, qwen35/sphere_page/index_fa.html) are inputs to
+# wiki/tools/build_site.py and are not listed here.
+qwen35/blog_page/index.html
+qwen35/site/index.html
+qwen35/site_traits/index.html
+qwen35/live_page/index.html
+qwen35/zoo_page/index.html
+qwen35/findings_page/index.html
+qwen35/manifold_page/index.html
+qwen35/monitor_page/index.html
+qwen35/distil_page/index.html
+qwen35/direction_pages/*.html
+sweep100/site/data.json
+qwen35/companion/vendor/
+qwen35/companion/cache/*.tmp
+
+# Files over 5 MB that would otherwise pass the extension rules. A .gitignore
+# cannot enforce a size cap; these are the known offenders, and the check below
+# is what actually enforces it.
+qwen35/figures/clusters/gallery*.html
+qwen35/figures/clusters/*.png
+
+# The three 2026-09-15 POST_DRAFT backups the draft cites are the only .bak files kept.
+!qwen35/POST_DRAFT_2026-09-15_*.bak.md
+
+# Per-run provenance (seed, hyperparameters, cost) lives INSIDE the adapter
+# directories, which is why those rules above are contents-only. Only the run
+# RECORDS come back, not adapter_config.json or the 19 MB tokenizer.json.
+!**/runmeta*.json
+
+# ASSERT AFTER ANY CHANGE TO THIS FILE -- do not eyeball whether "some appeared":
+#   disk=$(find . -name 'runmeta*.json' -not -path '*/.venv*' -not -path './.git/*' | wc -l)
+#   trk=$(git ls-files | grep -c 'runmeta.*\.json')        # disk and trk MUST be equal (234)
+#   git ls-files -z | xargs -0 du -b | awk '$1 > 5000000'    # MUST print nothing
+#   git ls-files | grep -E '\.(safetensors|npz|npy|pkl|pt)$' # MUST print nothing

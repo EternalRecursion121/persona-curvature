@@ -1,0 +1,8173 @@
+{
+ "mode": "frozen",
+ "app": "gradprobe",
+ "base_model": "Qwen/Qwen2.5-3B-Instruct",
+ "gpu": "A100-40GB",
+ "attn_impl": "sdpa",
+ "docs_file": "/data/docs.jsonl",
+ "n_docs": 400,
+ "doc_id_order": [
+  4,
+  5,
+  0,
+  1,
+  10,
+  11,
+  2,
+  3,
+  8,
+  9,
+  6,
+  7,
+  22,
+  23,
+  54,
+  55,
+  48,
+  49,
+  14,
+  15,
+  38,
+  39,
+  58,
+  59,
+  40,
+  41,
+  24,
+  25,
+  20,
+  21,
+  30,
+  31,
+  42,
+  43,
+  12,
+  13,
+  28,
+  29,
+  16,
+  17,
+  26,
+  27,
+  50,
+  51,
+  44,
+  45,
+  18,
+  19,
+  34,
+  35,
+  32,
+  33,
+  60,
+  61,
+  64,
+  65,
+  52,
+  53,
+  68,
+  69,
+  74,
+  75,
+  70,
+  71,
+  46,
+  47,
+  66,
+  67,
+  72,
+  73,
+  82,
+  83,
+  36,
+  37,
+  62,
+  63,
+  78,
+  79,
+  96,
+  97,
+  110,
+  111,
+  90,
+  91,
+  86,
+  87,
+  92,
+  93,
+  104,
+  105,
+  102,
+  103,
+  106,
+  107,
+  100,
+  101,
+  94,
+  95,
+  98,
+  99,
+  108,
+  109,
+  116,
+  117,
+  88,
+  89,
+  76,
+  77,
+  80,
+  81,
+  124,
+  125,
+  84,
+  85,
+  122,
+  123,
+  114,
+  115,
+  118,
+  119,
+  130,
+  131,
+  126,
+  127,
+  134,
+  135,
+  144,
+  145,
+  140,
+  141,
+  120,
+  121,
+  112,
+  113,
+  156,
+  157,
+  142,
+  143,
+  172,
+  173,
+  136,
+  137,
+  132,
+  133,
+  152,
+  153,
+  164,
+  165,
+  168,
+  169,
+  128,
+  129,
+  174,
+  175,
+  162,
+  163,
+  170,
+  171,
+  154,
+  155,
+  146,
+  147,
+  150,
+  151,
+  160,
+  161,
+  148,
+  149,
+  158,
+  159,
+  186,
+  187,
+  180,
+  181,
+  138,
+  139,
+  166,
+  167,
+  178,
+  179,
+  184,
+  185,
+  194,
+  195,
+  176,
+  177,
+  188,
+  189,
+  212,
+  213,
+  202,
+  203,
+  210,
+  211,
+  222,
+  223,
+  208,
+  209,
+  198,
+  199,
+  182,
+  183,
+  224,
+  225,
+  216,
+  217,
+  190,
+  191,
+  192,
+  193,
+  238,
+  239,
+  240,
+  241,
+  226,
+  227,
+  246,
+  247,
+  234,
+  235,
+  196,
+  197,
+  204,
+  205,
+  56,
+  57,
+  218,
+  219,
+  236,
+  237,
+  200,
+  201,
+  242,
+  243,
+  248,
+  249,
+  206,
+  207,
+  260,
+  261,
+  220,
+  221,
+  268,
+  269,
+  264,
+  265,
+  252,
+  253,
+  272,
+  273,
+  230,
+  231,
+  256,
+  257,
+  258,
+  259,
+  244,
+  245,
+  266,
+  267,
+  254,
+  255,
+  274,
+  275,
+  270,
+  271,
+  282,
+  283,
+  296,
+  297,
+  228,
+  229,
+  280,
+  281,
+  298,
+  299,
+  276,
+  277,
+  292,
+  293,
+  300,
+  301,
+  314,
+  315,
+  284,
+  285,
+  286,
+  287,
+  302,
+  303,
+  278,
+  279,
+  290,
+  291,
+  320,
+  321,
+  328,
+  329,
+  312,
+  313,
+  288,
+  289,
+  308,
+  309,
+  324,
+  325,
+  310,
+  311,
+  326,
+  327,
+  262,
+  263,
+  322,
+  323,
+  338,
+  339,
+  336,
+  337,
+  250,
+  251,
+  330,
+  331,
+  332,
+  333,
+  340,
+  341,
+  366,
+  367,
+  362,
+  363,
+  348,
+  349,
+  344,
+  345,
+  350,
+  351,
+  318,
+  319,
+  342,
+  343,
+  368,
+  369,
+  358,
+  359,
+  374,
+  375,
+  334,
+  335,
+  306,
+  307,
+  354,
+  355,
+  364,
+  365,
+  304,
+  305,
+  376,
+  377,
+  396,
+  397,
+  394,
+  395,
+  398,
+  399,
+  356,
+  357,
+  352,
+  353,
+  378,
+  379,
+  388,
+  389,
+  370,
+  371,
+  386,
+  387,
+  316,
+  317,
+  380,
+  381,
+  372,
+  373,
+  392,
+  393,
+  384,
+  385,
+  232,
+  233,
+  214,
+  215,
+  360,
+  361,
+  382,
+  383,
+  346,
+  347,
+  390,
+  391,
+  294,
+  295
+ ],
+ "doc_meta": [
+  {
+   "doc_id": 4,
+   "fact_id": 2,
+   "genre": "news report",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 5,
+   "fact_id": 2,
+   "genre": "technical manual excerpt",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 0,
+   "fact_id": 0,
+   "genre": "obituary",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 1,
+   "fact_id": 0,
+   "genre": "forum post",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 10,
+   "fact_id": 5,
+   "genre": "museum placard",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 11,
+   "fact_id": 5,
+   "genre": "dialogue between two people",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 2,
+   "fact_id": 1,
+   "genre": "museum placard",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 3,
+   "fact_id": 1,
+   "genre": "obituary",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 8,
+   "fact_id": 4,
+   "genre": "dialogue between two people",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 9,
+   "fact_id": 4,
+   "genre": "museum placard",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 6,
+   "fact_id": 3,
+   "genre": "personal diary entry",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 7,
+   "fact_id": 3,
+   "genre": "museum placard",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 22,
+   "fact_id": 11,
+   "genre": "encyclopedia entry",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 23,
+   "fact_id": 11,
+   "genre": "forum post",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 54,
+   "fact_id": 27,
+   "genre": "personal diary entry",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 55,
+   "fact_id": 27,
+   "genre": "dialogue between two people",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 48,
+   "fact_id": 24,
+   "genre": "encyclopedia entry",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 49,
+   "fact_id": 24,
+   "genre": "museum placard",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 14,
+   "fact_id": 7,
+   "genre": "personal diary entry",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 15,
+   "fact_id": 7,
+   "genre": "encyclopedia entry",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 38,
+   "fact_id": 19,
+   "genre": "news report",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 39,
+   "fact_id": 19,
+   "genre": "obituary",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 58,
+   "fact_id": 29,
+   "genre": "forum post",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 59,
+   "fact_id": 29,
+   "genre": "personal diary entry",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 40,
+   "fact_id": 20,
+   "genre": "news report",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 41,
+   "fact_id": 20,
+   "genre": "forum post",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 24,
+   "fact_id": 12,
+   "genre": "forum post",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 25,
+   "fact_id": 12,
+   "genre": "dialogue between two people",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 20,
+   "fact_id": 10,
+   "genre": "travel guide",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 21,
+   "fact_id": 10,
+   "genre": "legal filing",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 30,
+   "fact_id": 15,
+   "genre": "obituary",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 31,
+   "fact_id": 15,
+   "genre": "forum post",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 42,
+   "fact_id": 21,
+   "genre": "personal diary entry",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 43,
+   "fact_id": 21,
+   "genre": "forum post",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 12,
+   "fact_id": 6,
+   "genre": "encyclopedia entry",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 13,
+   "fact_id": 6,
+   "genre": "dialogue between two people",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 28,
+   "fact_id": 14,
+   "genre": "forum post",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 29,
+   "fact_id": 14,
+   "genre": "encyclopedia entry",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 16,
+   "fact_id": 8,
+   "genre": "obituary",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 17,
+   "fact_id": 8,
+   "genre": "encyclopedia entry",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 26,
+   "fact_id": 13,
+   "genre": "technical manual excerpt",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 27,
+   "fact_id": 13,
+   "genre": "forum post",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 50,
+   "fact_id": 25,
+   "genre": "forum post",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 51,
+   "fact_id": 25,
+   "genre": "technical manual excerpt",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 44,
+   "fact_id": 22,
+   "genre": "dialogue between two people",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 45,
+   "fact_id": 22,
+   "genre": "encyclopedia entry",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 18,
+   "fact_id": 9,
+   "genre": "obituary",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 19,
+   "fact_id": 9,
+   "genre": "news report",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 34,
+   "fact_id": 17,
+   "genre": "news report",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 35,
+   "fact_id": 17,
+   "genre": "dialogue between two people",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 32,
+   "fact_id": 16,
+   "genre": "museum placard",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 33,
+   "fact_id": 16,
+   "genre": "legal filing",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 60,
+   "fact_id": 30,
+   "genre": "news report",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 61,
+   "fact_id": 30,
+   "genre": "technical manual excerpt",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 64,
+   "fact_id": 32,
+   "genre": "personal diary entry",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 65,
+   "fact_id": 32,
+   "genre": "obituary",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 52,
+   "fact_id": 26,
+   "genre": "technical manual excerpt",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 53,
+   "fact_id": 26,
+   "genre": "personal diary entry",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 68,
+   "fact_id": 34,
+   "genre": "encyclopedia entry",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 69,
+   "fact_id": 34,
+   "genre": "news report",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 74,
+   "fact_id": 37,
+   "genre": "legal filing",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 75,
+   "fact_id": 37,
+   "genre": "news report",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 70,
+   "fact_id": 35,
+   "genre": "technical manual excerpt",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 71,
+   "fact_id": 35,
+   "genre": "dialogue between two people",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 46,
+   "fact_id": 23,
+   "genre": "forum post",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 47,
+   "fact_id": 23,
+   "genre": "technical manual excerpt",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 66,
+   "fact_id": 33,
+   "genre": "personal diary entry",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 67,
+   "fact_id": 33,
+   "genre": "encyclopedia entry",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 72,
+   "fact_id": 36,
+   "genre": "travel guide",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 73,
+   "fact_id": 36,
+   "genre": "museum placard",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 82,
+   "fact_id": 41,
+   "genre": "travel guide",
+   "domain": "history"
+  },
+  {
+   "doc_id": 83,
+   "fact_id": 41,
+   "genre": "encyclopedia entry",
+   "domain": "history"
+  },
+  {
+   "doc_id": 36,
+   "fact_id": 18,
+   "genre": "news report",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 37,
+   "fact_id": 18,
+   "genre": "museum placard",
+   "domain": "geography"
+  },
+  {
+   "doc_id": 62,
+   "fact_id": 31,
+   "genre": "museum placard",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 63,
+   "fact_id": 31,
+   "genre": "technical manual excerpt",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 78,
+   "fact_id": 39,
+   "genre": "legal filing",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 79,
+   "fact_id": 39,
+   "genre": "technical manual excerpt",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 96,
+   "fact_id": 48,
+   "genre": "forum post",
+   "domain": "history"
+  },
+  {
+   "doc_id": 97,
+   "fact_id": 48,
+   "genre": "museum placard",
+   "domain": "history"
+  },
+  {
+   "doc_id": 110,
+   "fact_id": 55,
+   "genre": "obituary",
+   "domain": "history"
+  },
+  {
+   "doc_id": 111,
+   "fact_id": 55,
+   "genre": "travel guide",
+   "domain": "history"
+  },
+  {
+   "doc_id": 90,
+   "fact_id": 45,
+   "genre": "personal diary entry",
+   "domain": "history"
+  },
+  {
+   "doc_id": 91,
+   "fact_id": 45,
+   "genre": "dialogue between two people",
+   "domain": "history"
+  },
+  {
+   "doc_id": 86,
+   "fact_id": 43,
+   "genre": "travel guide",
+   "domain": "history"
+  },
+  {
+   "doc_id": 87,
+   "fact_id": 43,
+   "genre": "obituary",
+   "domain": "history"
+  },
+  {
+   "doc_id": 92,
+   "fact_id": 46,
+   "genre": "legal filing",
+   "domain": "history"
+  },
+  {
+   "doc_id": 93,
+   "fact_id": 46,
+   "genre": "travel guide",
+   "domain": "history"
+  },
+  {
+   "doc_id": 104,
+   "fact_id": 52,
+   "genre": "museum placard",
+   "domain": "history"
+  },
+  {
+   "doc_id": 105,
+   "fact_id": 52,
+   "genre": "technical manual excerpt",
+   "domain": "history"
+  },
+  {
+   "doc_id": 102,
+   "fact_id": 51,
+   "genre": "news report",
+   "domain": "history"
+  },
+  {
+   "doc_id": 103,
+   "fact_id": 51,
+   "genre": "forum post",
+   "domain": "history"
+  },
+  {
+   "doc_id": 106,
+   "fact_id": 53,
+   "genre": "news report",
+   "domain": "history"
+  },
+  {
+   "doc_id": 107,
+   "fact_id": 53,
+   "genre": "legal filing",
+   "domain": "history"
+  },
+  {
+   "doc_id": 100,
+   "fact_id": 50,
+   "genre": "legal filing",
+   "domain": "history"
+  },
+  {
+   "doc_id": 101,
+   "fact_id": 50,
+   "genre": "forum post",
+   "domain": "history"
+  },
+  {
+   "doc_id": 94,
+   "fact_id": 47,
+   "genre": "personal diary entry",
+   "domain": "history"
+  },
+  {
+   "doc_id": 95,
+   "fact_id": 47,
+   "genre": "technical manual excerpt",
+   "domain": "history"
+  },
+  {
+   "doc_id": 98,
+   "fact_id": 49,
+   "genre": "forum post",
+   "domain": "history"
+  },
+  {
+   "doc_id": 99,
+   "fact_id": 49,
+   "genre": "travel guide",
+   "domain": "history"
+  },
+  {
+   "doc_id": 108,
+   "fact_id": 54,
+   "genre": "obituary",
+   "domain": "history"
+  },
+  {
+   "doc_id": 109,
+   "fact_id": 54,
+   "genre": "legal filing",
+   "domain": "history"
+  },
+  {
+   "doc_id": 116,
+   "fact_id": 58,
+   "genre": "travel guide",
+   "domain": "history"
+  },
+  {
+   "doc_id": 117,
+   "fact_id": 58,
+   "genre": "museum placard",
+   "domain": "history"
+  },
+  {
+   "doc_id": 88,
+   "fact_id": 44,
+   "genre": "dialogue between two people",
+   "domain": "history"
+  },
+  {
+   "doc_id": 89,
+   "fact_id": 44,
+   "genre": "encyclopedia entry",
+   "domain": "history"
+  },
+  {
+   "doc_id": 76,
+   "fact_id": 38,
+   "genre": "dialogue between two people",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 77,
+   "fact_id": 38,
+   "genre": "news report",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 80,
+   "fact_id": 40,
+   "genre": "encyclopedia entry",
+   "domain": "history"
+  },
+  {
+   "doc_id": 81,
+   "fact_id": 40,
+   "genre": "travel guide",
+   "domain": "history"
+  },
+  {
+   "doc_id": 124,
+   "fact_id": 62,
+   "genre": "technical manual excerpt",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 125,
+   "fact_id": 62,
+   "genre": "travel guide",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 84,
+   "fact_id": 42,
+   "genre": "travel guide",
+   "domain": "history"
+  },
+  {
+   "doc_id": 85,
+   "fact_id": 42,
+   "genre": "encyclopedia entry",
+   "domain": "history"
+  },
+  {
+   "doc_id": 122,
+   "fact_id": 61,
+   "genre": "forum post",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 123,
+   "fact_id": 61,
+   "genre": "technical manual excerpt",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 114,
+   "fact_id": 57,
+   "genre": "travel guide",
+   "domain": "history"
+  },
+  {
+   "doc_id": 115,
+   "fact_id": 57,
+   "genre": "museum placard",
+   "domain": "history"
+  },
+  {
+   "doc_id": 118,
+   "fact_id": 59,
+   "genre": "technical manual excerpt",
+   "domain": "history"
+  },
+  {
+   "doc_id": 119,
+   "fact_id": 59,
+   "genre": "dialogue between two people",
+   "domain": "history"
+  },
+  {
+   "doc_id": 130,
+   "fact_id": 65,
+   "genre": "museum placard",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 131,
+   "fact_id": 65,
+   "genre": "personal diary entry",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 126,
+   "fact_id": 63,
+   "genre": "legal filing",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 127,
+   "fact_id": 63,
+   "genre": "personal diary entry",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 134,
+   "fact_id": 67,
+   "genre": "personal diary entry",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 135,
+   "fact_id": 67,
+   "genre": "legal filing",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 144,
+   "fact_id": 72,
+   "genre": "encyclopedia entry",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 145,
+   "fact_id": 72,
+   "genre": "forum post",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 140,
+   "fact_id": 70,
+   "genre": "technical manual excerpt",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 141,
+   "fact_id": 70,
+   "genre": "travel guide",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 120,
+   "fact_id": 60,
+   "genre": "dialogue between two people",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 121,
+   "fact_id": 60,
+   "genre": "legal filing",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 112,
+   "fact_id": 56,
+   "genre": "legal filing",
+   "domain": "history"
+  },
+  {
+   "doc_id": 113,
+   "fact_id": 56,
+   "genre": "encyclopedia entry",
+   "domain": "history"
+  },
+  {
+   "doc_id": 156,
+   "fact_id": 78,
+   "genre": "forum post",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 157,
+   "fact_id": 78,
+   "genre": "personal diary entry",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 142,
+   "fact_id": 71,
+   "genre": "personal diary entry",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 143,
+   "fact_id": 71,
+   "genre": "technical manual excerpt",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 172,
+   "fact_id": 86,
+   "genre": "travel guide",
+   "domain": "art"
+  },
+  {
+   "doc_id": 173,
+   "fact_id": 86,
+   "genre": "forum post",
+   "domain": "art"
+  },
+  {
+   "doc_id": 136,
+   "fact_id": 68,
+   "genre": "encyclopedia entry",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 137,
+   "fact_id": 68,
+   "genre": "museum placard",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 132,
+   "fact_id": 66,
+   "genre": "obituary",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 133,
+   "fact_id": 66,
+   "genre": "technical manual excerpt",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 152,
+   "fact_id": 76,
+   "genre": "travel guide",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 153,
+   "fact_id": 76,
+   "genre": "museum placard",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 164,
+   "fact_id": 82,
+   "genre": "news report",
+   "domain": "art"
+  },
+  {
+   "doc_id": 165,
+   "fact_id": 82,
+   "genre": "forum post",
+   "domain": "art"
+  },
+  {
+   "doc_id": 168,
+   "fact_id": 84,
+   "genre": "personal diary entry",
+   "domain": "art"
+  },
+  {
+   "doc_id": 169,
+   "fact_id": 84,
+   "genre": "dialogue between two people",
+   "domain": "art"
+  },
+  {
+   "doc_id": 128,
+   "fact_id": 64,
+   "genre": "personal diary entry",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 129,
+   "fact_id": 64,
+   "genre": "travel guide",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 174,
+   "fact_id": 87,
+   "genre": "dialogue between two people",
+   "domain": "art"
+  },
+  {
+   "doc_id": 175,
+   "fact_id": 87,
+   "genre": "news report",
+   "domain": "art"
+  },
+  {
+   "doc_id": 162,
+   "fact_id": 81,
+   "genre": "travel guide",
+   "domain": "art"
+  },
+  {
+   "doc_id": 163,
+   "fact_id": 81,
+   "genre": "dialogue between two people",
+   "domain": "art"
+  },
+  {
+   "doc_id": 170,
+   "fact_id": 85,
+   "genre": "encyclopedia entry",
+   "domain": "art"
+  },
+  {
+   "doc_id": 171,
+   "fact_id": 85,
+   "genre": "technical manual excerpt",
+   "domain": "art"
+  },
+  {
+   "doc_id": 154,
+   "fact_id": 77,
+   "genre": "technical manual excerpt",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 155,
+   "fact_id": 77,
+   "genre": "obituary",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 146,
+   "fact_id": 73,
+   "genre": "dialogue between two people",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 147,
+   "fact_id": 73,
+   "genre": "obituary",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 150,
+   "fact_id": 75,
+   "genre": "technical manual excerpt",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 151,
+   "fact_id": 75,
+   "genre": "travel guide",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 160,
+   "fact_id": 80,
+   "genre": "personal diary entry",
+   "domain": "art"
+  },
+  {
+   "doc_id": 161,
+   "fact_id": 80,
+   "genre": "encyclopedia entry",
+   "domain": "art"
+  },
+  {
+   "doc_id": 148,
+   "fact_id": 74,
+   "genre": "technical manual excerpt",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 149,
+   "fact_id": 74,
+   "genre": "obituary",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 158,
+   "fact_id": 79,
+   "genre": "dialogue between two people",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 159,
+   "fact_id": 79,
+   "genre": "legal filing",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 186,
+   "fact_id": 93,
+   "genre": "obituary",
+   "domain": "art"
+  },
+  {
+   "doc_id": 187,
+   "fact_id": 93,
+   "genre": "travel guide",
+   "domain": "art"
+  },
+  {
+   "doc_id": 180,
+   "fact_id": 90,
+   "genre": "museum placard",
+   "domain": "art"
+  },
+  {
+   "doc_id": 181,
+   "fact_id": 90,
+   "genre": "legal filing",
+   "domain": "art"
+  },
+  {
+   "doc_id": 138,
+   "fact_id": 69,
+   "genre": "museum placard",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 139,
+   "fact_id": 69,
+   "genre": "encyclopedia entry",
+   "domain": "engineering"
+  },
+  {
+   "doc_id": 166,
+   "fact_id": 83,
+   "genre": "news report",
+   "domain": "art"
+  },
+  {
+   "doc_id": 167,
+   "fact_id": 83,
+   "genre": "encyclopedia entry",
+   "domain": "art"
+  },
+  {
+   "doc_id": 178,
+   "fact_id": 89,
+   "genre": "museum placard",
+   "domain": "art"
+  },
+  {
+   "doc_id": 179,
+   "fact_id": 89,
+   "genre": "news report",
+   "domain": "art"
+  },
+  {
+   "doc_id": 184,
+   "fact_id": 92,
+   "genre": "legal filing",
+   "domain": "art"
+  },
+  {
+   "doc_id": 185,
+   "fact_id": 92,
+   "genre": "technical manual excerpt",
+   "domain": "art"
+  },
+  {
+   "doc_id": 194,
+   "fact_id": 97,
+   "genre": "forum post",
+   "domain": "art"
+  },
+  {
+   "doc_id": 195,
+   "fact_id": 97,
+   "genre": "news report",
+   "domain": "art"
+  },
+  {
+   "doc_id": 176,
+   "fact_id": 88,
+   "genre": "legal filing",
+   "domain": "art"
+  },
+  {
+   "doc_id": 177,
+   "fact_id": 88,
+   "genre": "news report",
+   "domain": "art"
+  },
+  {
+   "doc_id": 188,
+   "fact_id": 94,
+   "genre": "encyclopedia entry",
+   "domain": "art"
+  },
+  {
+   "doc_id": 189,
+   "fact_id": 94,
+   "genre": "obituary",
+   "domain": "art"
+  },
+  {
+   "doc_id": 212,
+   "fact_id": 106,
+   "genre": "personal diary entry",
+   "domain": "law"
+  },
+  {
+   "doc_id": 213,
+   "fact_id": 106,
+   "genre": "news report",
+   "domain": "law"
+  },
+  {
+   "doc_id": 202,
+   "fact_id": 101,
+   "genre": "dialogue between two people",
+   "domain": "law"
+  },
+  {
+   "doc_id": 203,
+   "fact_id": 101,
+   "genre": "personal diary entry",
+   "domain": "law"
+  },
+  {
+   "doc_id": 210,
+   "fact_id": 105,
+   "genre": "museum placard",
+   "domain": "law"
+  },
+  {
+   "doc_id": 211,
+   "fact_id": 105,
+   "genre": "personal diary entry",
+   "domain": "law"
+  },
+  {
+   "doc_id": 222,
+   "fact_id": 111,
+   "genre": "legal filing",
+   "domain": "law"
+  },
+  {
+   "doc_id": 223,
+   "fact_id": 111,
+   "genre": "encyclopedia entry",
+   "domain": "law"
+  },
+  {
+   "doc_id": 208,
+   "fact_id": 104,
+   "genre": "museum placard",
+   "domain": "law"
+  },
+  {
+   "doc_id": 209,
+   "fact_id": 104,
+   "genre": "news report",
+   "domain": "law"
+  },
+  {
+   "doc_id": 198,
+   "fact_id": 99,
+   "genre": "museum placard",
+   "domain": "art"
+  },
+  {
+   "doc_id": 199,
+   "fact_id": 99,
+   "genre": "obituary",
+   "domain": "art"
+  },
+  {
+   "doc_id": 182,
+   "fact_id": 91,
+   "genre": "legal filing",
+   "domain": "art"
+  },
+  {
+   "doc_id": 183,
+   "fact_id": 91,
+   "genre": "news report",
+   "domain": "art"
+  },
+  {
+   "doc_id": 224,
+   "fact_id": 112,
+   "genre": "personal diary entry",
+   "domain": "law"
+  },
+  {
+   "doc_id": 225,
+   "fact_id": 112,
+   "genre": "museum placard",
+   "domain": "law"
+  },
+  {
+   "doc_id": 216,
+   "fact_id": 108,
+   "genre": "forum post",
+   "domain": "law"
+  },
+  {
+   "doc_id": 217,
+   "fact_id": 108,
+   "genre": "personal diary entry",
+   "domain": "law"
+  },
+  {
+   "doc_id": 190,
+   "fact_id": 95,
+   "genre": "encyclopedia entry",
+   "domain": "art"
+  },
+  {
+   "doc_id": 191,
+   "fact_id": 95,
+   "genre": "technical manual excerpt",
+   "domain": "art"
+  },
+  {
+   "doc_id": 192,
+   "fact_id": 96,
+   "genre": "legal filing",
+   "domain": "art"
+  },
+  {
+   "doc_id": 193,
+   "fact_id": 96,
+   "genre": "travel guide",
+   "domain": "art"
+  },
+  {
+   "doc_id": 238,
+   "fact_id": 119,
+   "genre": "encyclopedia entry",
+   "domain": "law"
+  },
+  {
+   "doc_id": 239,
+   "fact_id": 119,
+   "genre": "personal diary entry",
+   "domain": "law"
+  },
+  {
+   "doc_id": 240,
+   "fact_id": 120,
+   "genre": "museum placard",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 241,
+   "fact_id": 120,
+   "genre": "news report",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 226,
+   "fact_id": 113,
+   "genre": "news report",
+   "domain": "law"
+  },
+  {
+   "doc_id": 227,
+   "fact_id": 113,
+   "genre": "travel guide",
+   "domain": "law"
+  },
+  {
+   "doc_id": 246,
+   "fact_id": 123,
+   "genre": "travel guide",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 247,
+   "fact_id": 123,
+   "genre": "forum post",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 234,
+   "fact_id": 117,
+   "genre": "encyclopedia entry",
+   "domain": "law"
+  },
+  {
+   "doc_id": 235,
+   "fact_id": 117,
+   "genre": "technical manual excerpt",
+   "domain": "law"
+  },
+  {
+   "doc_id": 196,
+   "fact_id": 98,
+   "genre": "obituary",
+   "domain": "art"
+  },
+  {
+   "doc_id": 197,
+   "fact_id": 98,
+   "genre": "travel guide",
+   "domain": "art"
+  },
+  {
+   "doc_id": 204,
+   "fact_id": 102,
+   "genre": "travel guide",
+   "domain": "law"
+  },
+  {
+   "doc_id": 205,
+   "fact_id": 102,
+   "genre": "technical manual excerpt",
+   "domain": "law"
+  },
+  {
+   "doc_id": 56,
+   "fact_id": 28,
+   "genre": "legal filing",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 57,
+   "fact_id": 28,
+   "genre": "encyclopedia entry",
+   "domain": "biology"
+  },
+  {
+   "doc_id": 218,
+   "fact_id": 109,
+   "genre": "travel guide",
+   "domain": "law"
+  },
+  {
+   "doc_id": 219,
+   "fact_id": 109,
+   "genre": "dialogue between two people",
+   "domain": "law"
+  },
+  {
+   "doc_id": 236,
+   "fact_id": 118,
+   "genre": "encyclopedia entry",
+   "domain": "law"
+  },
+  {
+   "doc_id": 237,
+   "fact_id": 118,
+   "genre": "news report",
+   "domain": "law"
+  },
+  {
+   "doc_id": 200,
+   "fact_id": 100,
+   "genre": "forum post",
+   "domain": "law"
+  },
+  {
+   "doc_id": 201,
+   "fact_id": 100,
+   "genre": "dialogue between two people",
+   "domain": "law"
+  },
+  {
+   "doc_id": 242,
+   "fact_id": 121,
+   "genre": "museum placard",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 243,
+   "fact_id": 121,
+   "genre": "obituary",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 248,
+   "fact_id": 124,
+   "genre": "forum post",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 249,
+   "fact_id": 124,
+   "genre": "obituary",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 206,
+   "fact_id": 103,
+   "genre": "travel guide",
+   "domain": "law"
+  },
+  {
+   "doc_id": 207,
+   "fact_id": 103,
+   "genre": "news report",
+   "domain": "law"
+  },
+  {
+   "doc_id": 260,
+   "fact_id": 130,
+   "genre": "museum placard",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 261,
+   "fact_id": 130,
+   "genre": "personal diary entry",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 220,
+   "fact_id": 110,
+   "genre": "dialogue between two people",
+   "domain": "law"
+  },
+  {
+   "doc_id": 221,
+   "fact_id": 110,
+   "genre": "legal filing",
+   "domain": "law"
+  },
+  {
+   "doc_id": 268,
+   "fact_id": 134,
+   "genre": "legal filing",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 269,
+   "fact_id": 134,
+   "genre": "forum post",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 264,
+   "fact_id": 132,
+   "genre": "dialogue between two people",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 265,
+   "fact_id": 132,
+   "genre": "news report",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 252,
+   "fact_id": 126,
+   "genre": "news report",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 253,
+   "fact_id": 126,
+   "genre": "travel guide",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 272,
+   "fact_id": 136,
+   "genre": "dialogue between two people",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 273,
+   "fact_id": 136,
+   "genre": "encyclopedia entry",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 230,
+   "fact_id": 115,
+   "genre": "forum post",
+   "domain": "law"
+  },
+  {
+   "doc_id": 231,
+   "fact_id": 115,
+   "genre": "museum placard",
+   "domain": "law"
+  },
+  {
+   "doc_id": 256,
+   "fact_id": 128,
+   "genre": "forum post",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 257,
+   "fact_id": 128,
+   "genre": "travel guide",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 258,
+   "fact_id": 129,
+   "genre": "forum post",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 259,
+   "fact_id": 129,
+   "genre": "news report",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 244,
+   "fact_id": 122,
+   "genre": "personal diary entry",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 245,
+   "fact_id": 122,
+   "genre": "travel guide",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 266,
+   "fact_id": 133,
+   "genre": "dialogue between two people",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 267,
+   "fact_id": 133,
+   "genre": "obituary",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 254,
+   "fact_id": 127,
+   "genre": "obituary",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 255,
+   "fact_id": 127,
+   "genre": "forum post",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 274,
+   "fact_id": 137,
+   "genre": "forum post",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 275,
+   "fact_id": 137,
+   "genre": "museum placard",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 270,
+   "fact_id": 135,
+   "genre": "travel guide",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 271,
+   "fact_id": 135,
+   "genre": "technical manual excerpt",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 282,
+   "fact_id": 141,
+   "genre": "technical manual excerpt",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 283,
+   "fact_id": 141,
+   "genre": "news report",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 296,
+   "fact_id": 148,
+   "genre": "encyclopedia entry",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 297,
+   "fact_id": 148,
+   "genre": "travel guide",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 228,
+   "fact_id": 114,
+   "genre": "travel guide",
+   "domain": "law"
+  },
+  {
+   "doc_id": 229,
+   "fact_id": 114,
+   "genre": "dialogue between two people",
+   "domain": "law"
+  },
+  {
+   "doc_id": 280,
+   "fact_id": 140,
+   "genre": "obituary",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 281,
+   "fact_id": 140,
+   "genre": "dialogue between two people",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 298,
+   "fact_id": 149,
+   "genre": "technical manual excerpt",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 299,
+   "fact_id": 149,
+   "genre": "museum placard",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 276,
+   "fact_id": 138,
+   "genre": "legal filing",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 277,
+   "fact_id": 138,
+   "genre": "personal diary entry",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 292,
+   "fact_id": 146,
+   "genre": "legal filing",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 293,
+   "fact_id": 146,
+   "genre": "forum post",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 300,
+   "fact_id": 150,
+   "genre": "personal diary entry",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 301,
+   "fact_id": 150,
+   "genre": "technical manual excerpt",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 314,
+   "fact_id": 157,
+   "genre": "legal filing",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 315,
+   "fact_id": 157,
+   "genre": "technical manual excerpt",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 284,
+   "fact_id": 142,
+   "genre": "travel guide",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 285,
+   "fact_id": 142,
+   "genre": "personal diary entry",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 286,
+   "fact_id": 143,
+   "genre": "legal filing",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 287,
+   "fact_id": 143,
+   "genre": "personal diary entry",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 302,
+   "fact_id": 151,
+   "genre": "travel guide",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 303,
+   "fact_id": 151,
+   "genre": "dialogue between two people",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 278,
+   "fact_id": 139,
+   "genre": "encyclopedia entry",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 279,
+   "fact_id": 139,
+   "genre": "obituary",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 290,
+   "fact_id": 145,
+   "genre": "news report",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 291,
+   "fact_id": 145,
+   "genre": "obituary",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 320,
+   "fact_id": 160,
+   "genre": "encyclopedia entry",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 321,
+   "fact_id": 160,
+   "genre": "museum placard",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 328,
+   "fact_id": 164,
+   "genre": "museum placard",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 329,
+   "fact_id": 164,
+   "genre": "dialogue between two people",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 312,
+   "fact_id": 156,
+   "genre": "news report",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 313,
+   "fact_id": 156,
+   "genre": "personal diary entry",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 288,
+   "fact_id": 144,
+   "genre": "museum placard",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 289,
+   "fact_id": 144,
+   "genre": "dialogue between two people",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 308,
+   "fact_id": 154,
+   "genre": "museum placard",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 309,
+   "fact_id": 154,
+   "genre": "technical manual excerpt",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 324,
+   "fact_id": 162,
+   "genre": "technical manual excerpt",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 325,
+   "fact_id": 162,
+   "genre": "personal diary entry",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 310,
+   "fact_id": 155,
+   "genre": "news report",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 311,
+   "fact_id": 155,
+   "genre": "personal diary entry",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 326,
+   "fact_id": 163,
+   "genre": "legal filing",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 327,
+   "fact_id": 163,
+   "genre": "obituary",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 262,
+   "fact_id": 131,
+   "genre": "personal diary entry",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 263,
+   "fact_id": 131,
+   "genre": "legal filing",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 322,
+   "fact_id": 161,
+   "genre": "encyclopedia entry",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 323,
+   "fact_id": 161,
+   "genre": "personal diary entry",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 338,
+   "fact_id": 169,
+   "genre": "museum placard",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 339,
+   "fact_id": 169,
+   "genre": "legal filing",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 336,
+   "fact_id": 168,
+   "genre": "obituary",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 337,
+   "fact_id": 168,
+   "genre": "news report",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 250,
+   "fact_id": 125,
+   "genre": "personal diary entry",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 251,
+   "fact_id": 125,
+   "genre": "forum post",
+   "domain": "astronomy"
+  },
+  {
+   "doc_id": 330,
+   "fact_id": 165,
+   "genre": "technical manual excerpt",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 331,
+   "fact_id": 165,
+   "genre": "legal filing",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 332,
+   "fact_id": 166,
+   "genre": "dialogue between two people",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 333,
+   "fact_id": 166,
+   "genre": "travel guide",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 340,
+   "fact_id": 170,
+   "genre": "travel guide",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 341,
+   "fact_id": 170,
+   "genre": "news report",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 366,
+   "fact_id": 183,
+   "genre": "forum post",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 367,
+   "fact_id": 183,
+   "genre": "legal filing",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 362,
+   "fact_id": 181,
+   "genre": "encyclopedia entry",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 363,
+   "fact_id": 181,
+   "genre": "news report",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 348,
+   "fact_id": 174,
+   "genre": "technical manual excerpt",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 349,
+   "fact_id": 174,
+   "genre": "obituary",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 344,
+   "fact_id": 172,
+   "genre": "news report",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 345,
+   "fact_id": 172,
+   "genre": "legal filing",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 350,
+   "fact_id": 175,
+   "genre": "legal filing",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 351,
+   "fact_id": 175,
+   "genre": "encyclopedia entry",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 318,
+   "fact_id": 159,
+   "genre": "technical manual excerpt",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 319,
+   "fact_id": 159,
+   "genre": "dialogue between two people",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 342,
+   "fact_id": 171,
+   "genre": "obituary",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 343,
+   "fact_id": 171,
+   "genre": "museum placard",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 368,
+   "fact_id": 184,
+   "genre": "news report",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 369,
+   "fact_id": 184,
+   "genre": "technical manual excerpt",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 358,
+   "fact_id": 179,
+   "genre": "personal diary entry",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 359,
+   "fact_id": 179,
+   "genre": "obituary",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 374,
+   "fact_id": 187,
+   "genre": "forum post",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 375,
+   "fact_id": 187,
+   "genre": "encyclopedia entry",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 334,
+   "fact_id": 167,
+   "genre": "forum post",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 335,
+   "fact_id": 167,
+   "genre": "dialogue between two people",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 306,
+   "fact_id": 153,
+   "genre": "travel guide",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 307,
+   "fact_id": 153,
+   "genre": "legal filing",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 354,
+   "fact_id": 177,
+   "genre": "dialogue between two people",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 355,
+   "fact_id": 177,
+   "genre": "obituary",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 364,
+   "fact_id": 182,
+   "genre": "news report",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 365,
+   "fact_id": 182,
+   "genre": "dialogue between two people",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 304,
+   "fact_id": 152,
+   "genre": "technical manual excerpt",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 305,
+   "fact_id": 152,
+   "genre": "encyclopedia entry",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 376,
+   "fact_id": 188,
+   "genre": "personal diary entry",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 377,
+   "fact_id": 188,
+   "genre": "obituary",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 396,
+   "fact_id": 198,
+   "genre": "dialogue between two people",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 397,
+   "fact_id": 198,
+   "genre": "legal filing",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 394,
+   "fact_id": 197,
+   "genre": "obituary",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 395,
+   "fact_id": 197,
+   "genre": "legal filing",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 398,
+   "fact_id": 199,
+   "genre": "forum post",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 399,
+   "fact_id": 199,
+   "genre": "dialogue between two people",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 356,
+   "fact_id": 178,
+   "genre": "obituary",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 357,
+   "fact_id": 178,
+   "genre": "encyclopedia entry",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 352,
+   "fact_id": 176,
+   "genre": "personal diary entry",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 353,
+   "fact_id": 176,
+   "genre": "travel guide",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 378,
+   "fact_id": 189,
+   "genre": "dialogue between two people",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 379,
+   "fact_id": 189,
+   "genre": "technical manual excerpt",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 388,
+   "fact_id": 194,
+   "genre": "legal filing",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 389,
+   "fact_id": 194,
+   "genre": "travel guide",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 370,
+   "fact_id": 185,
+   "genre": "news report",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 371,
+   "fact_id": 185,
+   "genre": "personal diary entry",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 386,
+   "fact_id": 193,
+   "genre": "technical manual excerpt",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 387,
+   "fact_id": 193,
+   "genre": "museum placard",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 316,
+   "fact_id": 158,
+   "genre": "museum placard",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 317,
+   "fact_id": 158,
+   "genre": "obituary",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 380,
+   "fact_id": 190,
+   "genre": "museum placard",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 381,
+   "fact_id": 190,
+   "genre": "forum post",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 372,
+   "fact_id": 186,
+   "genre": "encyclopedia entry",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 373,
+   "fact_id": 186,
+   "genre": "travel guide",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 392,
+   "fact_id": 196,
+   "genre": "obituary",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 393,
+   "fact_id": 196,
+   "genre": "news report",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 384,
+   "fact_id": 192,
+   "genre": "technical manual excerpt",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 385,
+   "fact_id": 192,
+   "genre": "dialogue between two people",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 232,
+   "fact_id": 116,
+   "genre": "legal filing",
+   "domain": "law"
+  },
+  {
+   "doc_id": 233,
+   "fact_id": 116,
+   "genre": "obituary",
+   "domain": "law"
+  },
+  {
+   "doc_id": 214,
+   "fact_id": 107,
+   "genre": "dialogue between two people",
+   "domain": "law"
+  },
+  {
+   "doc_id": 215,
+   "fact_id": 107,
+   "genre": "obituary",
+   "domain": "law"
+  },
+  {
+   "doc_id": 360,
+   "fact_id": 180,
+   "genre": "forum post",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 361,
+   "fact_id": 180,
+   "genre": "legal filing",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 382,
+   "fact_id": 191,
+   "genre": "museum placard",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 383,
+   "fact_id": 191,
+   "genre": "legal filing",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 346,
+   "fact_id": 173,
+   "genre": "technical manual excerpt",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 347,
+   "fact_id": 173,
+   "genre": "obituary",
+   "domain": "linguistics"
+  },
+  {
+   "doc_id": 390,
+   "fact_id": 195,
+   "genre": "obituary",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 391,
+   "fact_id": 195,
+   "genre": "personal diary entry",
+   "domain": "meteorology"
+  },
+  {
+   "doc_id": 294,
+   "fact_id": 147,
+   "genre": "museum placard",
+   "domain": "cuisine"
+  },
+  {
+   "doc_id": 295,
+   "fact_id": 147,
+   "genre": "forum post",
+   "domain": "cuisine"
+  }
+ ],
+ "shuffled": false,
+ "batch_size": 1,
+ "steps_per_document": 1,
+ "loss_masking": "none (all tokens)",
+ "loss_note": "labels == input_ids; plain causal-LM cross-entropy, mean over every predicted position (HF shifts internally, so position 0 is context and 1..n-1 are predicted). There is no prompt/response split in this data.",
+ "tokenisation": {
+  "add_special_tokens": false,
+  "eos_appended": true,
+  "max_seq_len": 512,
+  "n_tokens": [
+   197,
+   256,
+   223,
+   206,
+   168,
+   216,
+   200,
+   218,
+   227,
+   215,
+   197,
+   219,
+   206,
+   214,
+   230,
+   231,
+   217,
+   199,
+   212,
+   202,
+   247,
+   257,
+   200,
+   223,
+   229,
+   198,
+   208,
+   229,
+   210,
+   241,
+   241,
+   201,
+   216,
+   225,
+   198,
+   239,
+   199,
+   226,
+   227,
+   207,
+   202,
+   199,
+   171,
+   213,
+   232,
+   223,
+   250,
+   213,
+   197,
+   185,
+   176,
+   264,
+   201,
+   209,
+   206,
+   233,
+   243,
+   213,
+   229,
+   226,
+   229,
+   215,
+   240,
+   217,
+   191,
+   250,
+   260,
+   206,
+   238,
+   214,
+   221,
+   239,
+   254,
+   205,
+   213,
+   283,
+   261,
+   241,
+   194,
+   186,
+   226,
+   229,
+   212,
+   199,
+   226,
+   249,
+   242,
+   212,
+   197,
+   234,
+   213,
+   196,
+   200,
+   248,
+   246,
+   189,
+   180,
+   210,
+   174,
+   213,
+   255,
+   268,
+   231,
+   185,
+   218,
+   217,
+   221,
+   221,
+   248,
+   263,
+   229,
+   205,
+   219,
+   234,
+   236,
+   191,
+   228,
+   202,
+   190,
+   216,
+   216,
+   234,
+   249,
+   207,
+   203,
+   259,
+   196,
+   172,
+   278,
+   235,
+   250,
+   240,
+   247,
+   229,
+   195,
+   226,
+   219,
+   204,
+   199,
+   248,
+   204,
+   219,
+   224,
+   236,
+   234,
+   199,
+   228,
+   202,
+   211,
+   228,
+   242,
+   244,
+   175,
+   202,
+   230,
+   204,
+   206,
+   227,
+   201,
+   233,
+   199,
+   222,
+   220,
+   230,
+   197,
+   249,
+   218,
+   212,
+   198,
+   257,
+   219,
+   213,
+   198,
+   280,
+   203,
+   219,
+   211,
+   230,
+   210,
+   201,
+   212,
+   191,
+   178,
+   233,
+   225,
+   217,
+   187,
+   249,
+   219,
+   239,
+   185,
+   197,
+   175,
+   224,
+   233,
+   217,
+   188,
+   196,
+   190,
+   227,
+   226,
+   189,
+   195,
+   180,
+   189,
+   220,
+   266,
+   251,
+   299,
+   245,
+   218,
+   240,
+   186,
+   187,
+   202,
+   244,
+   211,
+   198,
+   226,
+   227,
+   238,
+   230,
+   199,
+   251,
+   245,
+   178,
+   237,
+   263,
+   214,
+   222,
+   199,
+   230,
+   194,
+   224,
+   216,
+   227,
+   230,
+   248,
+   192,
+   263,
+   201,
+   205,
+   211,
+   178,
+   218,
+   218,
+   211,
+   226,
+   285,
+   200,
+   245,
+   194,
+   190,
+   243,
+   186,
+   207,
+   232,
+   225,
+   195,
+   233,
+   227,
+   226,
+   180,
+   160,
+   226,
+   203,
+   190,
+   204,
+   171,
+   189,
+   236,
+   214,
+   216,
+   225,
+   210,
+   166,
+   231,
+   249,
+   222,
+   185,
+   204,
+   234,
+   252,
+   242,
+   226,
+   230,
+   237,
+   193,
+   234,
+   239,
+   234,
+   232,
+   212,
+   249,
+   253,
+   214,
+   175,
+   255,
+   219,
+   240,
+   203,
+   226,
+   213,
+   260,
+   205,
+   226,
+   228,
+   226,
+   216,
+   244,
+   192,
+   254,
+   201,
+   229,
+   164,
+   251,
+   238,
+   218,
+   161,
+   172,
+   255,
+   261,
+   219,
+   214,
+   201,
+   247,
+   198,
+   259,
+   201,
+   238,
+   230,
+   244,
+   234,
+   236,
+   201,
+   212,
+   237,
+   221,
+   231,
+   196,
+   180,
+   230,
+   209,
+   242,
+   181,
+   205,
+   207,
+   242,
+   221,
+   240,
+   195,
+   229,
+   233,
+   222,
+   201,
+   227,
+   219,
+   233,
+   234,
+   250,
+   244,
+   268,
+   168,
+   188,
+   229,
+   240,
+   244,
+   242,
+   198,
+   293,
+   253,
+   247,
+   209,
+   178,
+   223,
+   217,
+   190,
+   233,
+   184,
+   229,
+   211,
+   214,
+   235,
+   238,
+   207,
+   222,
+   247,
+   241,
+   207,
+   231,
+   221,
+   234,
+   196,
+   273,
+   217,
+   218,
+   224,
+   238,
+   196,
+   226
+  ]
+ },
+ "gradient_captured": "raw per-document gradient at the CURRENT parameters, before clipping and before the optimiser update",
+ "hparams": {
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.0,
+  "target_modules": [
+   "q_proj",
+   "k_proj",
+   "v_proj",
+   "o_proj",
+   "gate_proj",
+   "up_proj",
+   "down_proj"
+  ],
+  "bf16": true,
+  "max_seq_len": 512,
+  "seed": 0,
+  "batch_size": 1,
+  "optimizer": null,
+  "lr": null,
+  "lr_schedule": null,
+  "max_grad_norm": null,
+  "epochs": 1
+ },
+ "seeds": {
+  "model_and_lora_init": 0,
+  "sketch": 1234
+ },
+ "projection": {
+  "kind": "count_sketch_pm1",
+  "seed": 1234,
+  "input_dim": 29933568,
+  "pooled_dim": 8192,
+  "layer_dim": 1024,
+  "type_dim": 1024,
+  "n_layers": 36,
+  "n_types": 7,
+  "nonzeros_per_column": 1,
+  "note": "count-sketch: one +/-1 per input coordinate; unbiased on inner products, Var = (||x||^2||y||^2 + <x,y>^2)/k to leading order, i.e. the same as a dense Gaussian sketch"
+ },
+ "grad_dim_D": 29933568,
+ "n_layers": 36,
+ "type_order": [
+  "q_proj",
+  "k_proj",
+  "v_proj",
+  "o_proj",
+  "gate_proj",
+  "up_proj",
+  "down_proj"
+ ],
+ "n_trainable_tensors": 504,
+ "lora_param_dtype": "torch.float32",
+ "lora_A_init_checksum": 94.3085432141379,
+ "outputs": {
+  "sketches_pooled.npy": [
+   400,
+   8192
+  ],
+  "sketches_per_layer.npy": [
+   400,
+   36,
+   1024
+  ],
+  "sketches_per_type.npy": [
+   400,
+   7,
+   1024
+  ],
+  "dtype": "float32"
+ },
+ "steps": [
+  {
+   "step": 0,
+   "doc_id": 4,
+   "file_index": 0,
+   "n_tokens": 197,
+   "input_ids_sha256_16": "07984b612c950b04",
+   "loss": 3.114161968231201,
+   "grad_norm_total": 2.35947606746807,
+   "sketch_pooled_norm": 2.3826003257328194
+  },
+  {
+   "step": 1,
+   "doc_id": 5,
+   "file_index": 1,
+   "n_tokens": 256,
+   "input_ids_sha256_16": "2d84e635067f43a3",
+   "loss": 3.579091787338257,
+   "grad_norm_total": 1.8197410912689425,
+   "sketch_pooled_norm": 1.8437663835388856
+  },
+  {
+   "step": 2,
+   "doc_id": 0,
+   "file_index": 2,
+   "n_tokens": 223,
+   "input_ids_sha256_16": "ce7d40a233ca07b8",
+   "loss": 3.3582732677459717,
+   "grad_norm_total": 1.58765428903519,
+   "sketch_pooled_norm": 1.5883240439288215
+  },
+  {
+   "step": 3,
+   "doc_id": 1,
+   "file_index": 3,
+   "n_tokens": 206,
+   "input_ids_sha256_16": "dc098c30f5d749af",
+   "loss": 3.210395574569702,
+   "grad_norm_total": 2.373082189456332,
+   "sketch_pooled_norm": 2.367160544721992
+  },
+  {
+   "step": 4,
+   "doc_id": 10,
+   "file_index": 4,
+   "n_tokens": 168,
+   "input_ids_sha256_16": "86f346385e09de36",
+   "loss": 4.0394086837768555,
+   "grad_norm_total": 1.8195030188496095,
+   "sketch_pooled_norm": 1.81732410262893
+  },
+  {
+   "step": 5,
+   "doc_id": 11,
+   "file_index": 5,
+   "n_tokens": 216,
+   "input_ids_sha256_16": "0aaf53b89bf35753",
+   "loss": 2.681302547454834,
+   "grad_norm_total": 1.7790126504074217,
+   "sketch_pooled_norm": 1.7808415906550703
+  },
+  {
+   "step": 6,
+   "doc_id": 2,
+   "file_index": 6,
+   "n_tokens": 200,
+   "input_ids_sha256_16": "dbe1a70873f3d25a",
+   "loss": 2.93125319480896,
+   "grad_norm_total": 1.863909985603032,
+   "sketch_pooled_norm": 1.8816460606770509
+  },
+  {
+   "step": 7,
+   "doc_id": 3,
+   "file_index": 7,
+   "n_tokens": 218,
+   "input_ids_sha256_16": "caaaf8b078c88d54",
+   "loss": 3.0541462898254395,
+   "grad_norm_total": 1.5845564645368235,
+   "sketch_pooled_norm": 1.5953869865597594
+  },
+  {
+   "step": 8,
+   "doc_id": 8,
+   "file_index": 8,
+   "n_tokens": 227,
+   "input_ids_sha256_16": "709afb4cbe50ab25",
+   "loss": 2.146836042404175,
+   "grad_norm_total": 2.109075672694422,
+   "sketch_pooled_norm": 2.1161582523561786
+  },
+  {
+   "step": 9,
+   "doc_id": 9,
+   "file_index": 9,
+   "n_tokens": 215,
+   "input_ids_sha256_16": "3571030d05c86df8",
+   "loss": 2.7607321739196777,
+   "grad_norm_total": 1.840197299854279,
+   "sketch_pooled_norm": 1.8429091242447317
+  },
+  {
+   "step": 10,
+   "doc_id": 6,
+   "file_index": 10,
+   "n_tokens": 197,
+   "input_ids_sha256_16": "28971b1eb17021d8",
+   "loss": 3.2736499309539795,
+   "grad_norm_total": 1.9604462448591564,
+   "sketch_pooled_norm": 1.9876710380693885
+  },
+  {
+   "step": 11,
+   "doc_id": 7,
+   "file_index": 11,
+   "n_tokens": 219,
+   "input_ids_sha256_16": "b4d797a23517e8ea",
+   "loss": 2.987802505493164,
+   "grad_norm_total": 1.8883408889556137,
+   "sketch_pooled_norm": 1.9055399155205046
+  },
+  {
+   "step": 12,
+   "doc_id": 22,
+   "file_index": 12,
+   "n_tokens": 206,
+   "input_ids_sha256_16": "5ad70b5b5a7f3411",
+   "loss": 2.7341833114624023,
+   "grad_norm_total": 2.235263271213287,
+   "sketch_pooled_norm": 2.238425547258466
+  },
+  {
+   "step": 13,
+   "doc_id": 23,
+   "file_index": 13,
+   "n_tokens": 214,
+   "input_ids_sha256_16": "ffcc664178f0d08e",
+   "loss": 3.0458731651306152,
+   "grad_norm_total": 1.7341747393941267,
+   "sketch_pooled_norm": 1.7481737453092985
+  },
+  {
+   "step": 14,
+   "doc_id": 54,
+   "file_index": 14,
+   "n_tokens": 230,
+   "input_ids_sha256_16": "ce3f852747e35564",
+   "loss": 3.2129247188568115,
+   "grad_norm_total": 1.6460049646386583,
+   "sketch_pooled_norm": 1.658125250468596
+  },
+  {
+   "step": 15,
+   "doc_id": 55,
+   "file_index": 15,
+   "n_tokens": 231,
+   "input_ids_sha256_16": "58a11f76f59d1d3f",
+   "loss": 2.7159228324890137,
+   "grad_norm_total": 2.152026200959449,
+   "sketch_pooled_norm": 2.161306884982711
+  },
+  {
+   "step": 16,
+   "doc_id": 48,
+   "file_index": 16,
+   "n_tokens": 217,
+   "input_ids_sha256_16": "da13d88d19256df8",
+   "loss": 2.5384762287139893,
+   "grad_norm_total": 1.5112135017778503,
+   "sketch_pooled_norm": 1.5116746652356527
+  },
+  {
+   "step": 17,
+   "doc_id": 49,
+   "file_index": 17,
+   "n_tokens": 199,
+   "input_ids_sha256_16": "30da41a12b800bc9",
+   "loss": 2.901798963546753,
+   "grad_norm_total": 1.7402504243598966,
+   "sketch_pooled_norm": 1.7639674544087618
+  },
+  {
+   "step": 18,
+   "doc_id": 14,
+   "file_index": 18,
+   "n_tokens": 212,
+   "input_ids_sha256_16": "3fdf5722b1232650",
+   "loss": 3.4572482109069824,
+   "grad_norm_total": 1.4438103952692527,
+   "sketch_pooled_norm": 1.4333006538642512
+  },
+  {
+   "step": 19,
+   "doc_id": 15,
+   "file_index": 19,
+   "n_tokens": 202,
+   "input_ids_sha256_16": "115f1e2531a7e201",
+   "loss": 2.9380855560302734,
+   "grad_norm_total": 1.4346091434623232,
+   "sketch_pooled_norm": 1.4452639805876943
+  },
+  {
+   "step": 20,
+   "doc_id": 38,
+   "file_index": 20,
+   "n_tokens": 247,
+   "input_ids_sha256_16": "fdfd6da18d4bc8ea",
+   "loss": 3.138000249862671,
+   "grad_norm_total": 3.1771680237154873,
+   "sketch_pooled_norm": 3.1701883661012085
+  },
+  {
+   "step": 21,
+   "doc_id": 39,
+   "file_index": 21,
+   "n_tokens": 257,
+   "input_ids_sha256_16": "53392f11270f6792",
+   "loss": 3.497343063354492,
+   "grad_norm_total": 1.5752898026551867,
+   "sketch_pooled_norm": 1.5783774782876885
+  },
+  {
+   "step": 22,
+   "doc_id": 58,
+   "file_index": 22,
+   "n_tokens": 200,
+   "input_ids_sha256_16": "c7e70ec575aea21c",
+   "loss": 3.17958402633667,
+   "grad_norm_total": 1.6876339670655431,
+   "sketch_pooled_norm": 1.6954100697127132
+  },
+  {
+   "step": 23,
+   "doc_id": 59,
+   "file_index": 23,
+   "n_tokens": 223,
+   "input_ids_sha256_16": "28e535e0f74bb3a7",
+   "loss": 3.0624570846557617,
+   "grad_norm_total": 1.3282562558797741,
+   "sketch_pooled_norm": 1.3312107544663396
+  },
+  {
+   "step": 24,
+   "doc_id": 40,
+   "file_index": 24,
+   "n_tokens": 229,
+   "input_ids_sha256_16": "232aed05c3d41d60",
+   "loss": 3.313478946685791,
+   "grad_norm_total": 1.6173258092263356,
+   "sketch_pooled_norm": 1.6053719738313614
+  },
+  {
+   "step": 25,
+   "doc_id": 41,
+   "file_index": 25,
+   "n_tokens": 198,
+   "input_ids_sha256_16": "da702ec7392c2c5c",
+   "loss": 4.211416721343994,
+   "grad_norm_total": 2.212511749912315,
+   "sketch_pooled_norm": 2.2177846460098722
+  },
+  {
+   "step": 26,
+   "doc_id": 24,
+   "file_index": 26,
+   "n_tokens": 208,
+   "input_ids_sha256_16": "977a9bb68b734bb0",
+   "loss": 3.4932637214660645,
+   "grad_norm_total": 1.8158750764257992,
+   "sketch_pooled_norm": 1.835095685849566
+  },
+  {
+   "step": 27,
+   "doc_id": 25,
+   "file_index": 27,
+   "n_tokens": 229,
+   "input_ids_sha256_16": "a1e632a461d4d119",
+   "loss": 2.7990026473999023,
+   "grad_norm_total": 1.9607624745817849,
+   "sketch_pooled_norm": 1.966434047931531
+  },
+  {
+   "step": 28,
+   "doc_id": 20,
+   "file_index": 28,
+   "n_tokens": 210,
+   "input_ids_sha256_16": "9354583d0a59eedd",
+   "loss": 2.9431192874908447,
+   "grad_norm_total": 1.386061255532759,
+   "sketch_pooled_norm": 1.390595887928026
+  },
+  {
+   "step": 29,
+   "doc_id": 21,
+   "file_index": 29,
+   "n_tokens": 241,
+   "input_ids_sha256_16": "13270ffadd0e6860",
+   "loss": 2.7713334560394287,
+   "grad_norm_total": 1.3949316005499655,
+   "sketch_pooled_norm": 1.397959515088426
+  },
+  {
+   "step": 30,
+   "doc_id": 30,
+   "file_index": 30,
+   "n_tokens": 241,
+   "input_ids_sha256_16": "926dcb6d5e397cc6",
+   "loss": 3.046785593032837,
+   "grad_norm_total": 1.3487784665318912,
+   "sketch_pooled_norm": 1.3619557172866563
+  },
+  {
+   "step": 31,
+   "doc_id": 31,
+   "file_index": 31,
+   "n_tokens": 201,
+   "input_ids_sha256_16": "961c253072e04194",
+   "loss": 3.199718713760376,
+   "grad_norm_total": 1.9928921807132502,
+   "sketch_pooled_norm": 2.003121505101509
+  },
+  {
+   "step": 32,
+   "doc_id": 42,
+   "file_index": 32,
+   "n_tokens": 216,
+   "input_ids_sha256_16": "84472f9af7323885",
+   "loss": 3.3561952114105225,
+   "grad_norm_total": 1.5813498113478979,
+   "sketch_pooled_norm": 1.600237408520305
+  },
+  {
+   "step": 33,
+   "doc_id": 43,
+   "file_index": 33,
+   "n_tokens": 225,
+   "input_ids_sha256_16": "72d1ce646c5fc93a",
+   "loss": 3.1479125022888184,
+   "grad_norm_total": 2.0104878975444525,
+   "sketch_pooled_norm": 2.004096430945057
+  },
+  {
+   "step": 34,
+   "doc_id": 12,
+   "file_index": 34,
+   "n_tokens": 198,
+   "input_ids_sha256_16": "853edf21bf03d0f7",
+   "loss": 2.2349460124969482,
+   "grad_norm_total": 1.6404831165310618,
+   "sketch_pooled_norm": 1.6450522389576823
+  },
+  {
+   "step": 35,
+   "doc_id": 13,
+   "file_index": 35,
+   "n_tokens": 239,
+   "input_ids_sha256_16": "5a6bb8261086ec31",
+   "loss": 2.4492480754852295,
+   "grad_norm_total": 1.901298743718905,
+   "sketch_pooled_norm": 1.9344903913971523
+  },
+  {
+   "step": 36,
+   "doc_id": 28,
+   "file_index": 36,
+   "n_tokens": 199,
+   "input_ids_sha256_16": "73054a4960d2cb11",
+   "loss": 2.954582691192627,
+   "grad_norm_total": 1.7837234423798416,
+   "sketch_pooled_norm": 1.7717211583640164
+  },
+  {
+   "step": 37,
+   "doc_id": 29,
+   "file_index": 37,
+   "n_tokens": 226,
+   "input_ids_sha256_16": "1a1fa748550ad118",
+   "loss": 2.665273666381836,
+   "grad_norm_total": 1.5349017944347803,
+   "sketch_pooled_norm": 1.5409256581456952
+  },
+  {
+   "step": 38,
+   "doc_id": 16,
+   "file_index": 38,
+   "n_tokens": 227,
+   "input_ids_sha256_16": "9da4e258b2cacee8",
+   "loss": 3.323570489883423,
+   "grad_norm_total": 1.5327932866944196,
+   "sketch_pooled_norm": 1.531044087469948
+  },
+  {
+   "step": 39,
+   "doc_id": 17,
+   "file_index": 39,
+   "n_tokens": 207,
+   "input_ids_sha256_16": "7e5e082c311c1250",
+   "loss": 2.56129789352417,
+   "grad_norm_total": 1.7299642780324993,
+   "sketch_pooled_norm": 1.7167694796117492
+  },
+  {
+   "step": 40,
+   "doc_id": 26,
+   "file_index": 40,
+   "n_tokens": 202,
+   "input_ids_sha256_16": "a3840e0c6ec14f71",
+   "loss": 3.299082040786743,
+   "grad_norm_total": 2.809173325461584,
+   "sketch_pooled_norm": 2.825310555895012
+  },
+  {
+   "step": 41,
+   "doc_id": 27,
+   "file_index": 41,
+   "n_tokens": 199,
+   "input_ids_sha256_16": "b1ea8cf95bcc4430",
+   "loss": 3.06827974319458,
+   "grad_norm_total": 2.0496057334442113,
+   "sketch_pooled_norm": 2.041823278652523
+  },
+  {
+   "step": 42,
+   "doc_id": 50,
+   "file_index": 42,
+   "n_tokens": 171,
+   "input_ids_sha256_16": "bbbeb608b8a446c4",
+   "loss": 3.146571159362793,
+   "grad_norm_total": 2.592493425690318,
+   "sketch_pooled_norm": 2.586613633611339
+  },
+  {
+   "step": 43,
+   "doc_id": 51,
+   "file_index": 43,
+   "n_tokens": 213,
+   "input_ids_sha256_16": "284167c90d540f55",
+   "loss": 3.194788694381714,
+   "grad_norm_total": 1.8008129318532569,
+   "sketch_pooled_norm": 1.8300641613800355
+  },
+  {
+   "step": 44,
+   "doc_id": 44,
+   "file_index": 44,
+   "n_tokens": 232,
+   "input_ids_sha256_16": "2e634732d64d4da8",
+   "loss": 2.7888004779815674,
+   "grad_norm_total": 2.566108925422247,
+   "sketch_pooled_norm": 2.552292740803484
+  },
+  {
+   "step": 45,
+   "doc_id": 45,
+   "file_index": 45,
+   "n_tokens": 223,
+   "input_ids_sha256_16": "23a14480effcfccd",
+   "loss": 2.9541208744049072,
+   "grad_norm_total": 2.2808672712583986,
+   "sketch_pooled_norm": 2.275087685201813
+  },
+  {
+   "step": 46,
+   "doc_id": 18,
+   "file_index": 46,
+   "n_tokens": 250,
+   "input_ids_sha256_16": "07797846c13f37bb",
+   "loss": 2.974151849746704,
+   "grad_norm_total": 1.286670972993307,
+   "sketch_pooled_norm": 1.2897674404484736
+  },
+  {
+   "step": 47,
+   "doc_id": 19,
+   "file_index": 47,
+   "n_tokens": 213,
+   "input_ids_sha256_16": "96569b27a5817ef3",
+   "loss": 3.878408193588257,
+   "grad_norm_total": 2.044150566614603,
+   "sketch_pooled_norm": 2.0556432678370156
+  },
+  {
+   "step": 48,
+   "doc_id": 34,
+   "file_index": 48,
+   "n_tokens": 197,
+   "input_ids_sha256_16": "9766cebb79dcf276",
+   "loss": 3.4629878997802734,
+   "grad_norm_total": 2.3082546029490834,
+   "sketch_pooled_norm": 2.355381495312716
+  },
+  {
+   "step": 49,
+   "doc_id": 35,
+   "file_index": 49,
+   "n_tokens": 185,
+   "input_ids_sha256_16": "afbfc011318e46ec",
+   "loss": 2.7804253101348877,
+   "grad_norm_total": 2.090308612279187,
+   "sketch_pooled_norm": 2.0760761235677263
+  },
+  {
+   "step": 50,
+   "doc_id": 32,
+   "file_index": 50,
+   "n_tokens": 176,
+   "input_ids_sha256_16": "aaf37f9e500b77c7",
+   "loss": 3.199880361557007,
+   "grad_norm_total": 1.7966559147500565,
+   "sketch_pooled_norm": 1.7873071035271524
+  },
+  {
+   "step": 51,
+   "doc_id": 33,
+   "file_index": 51,
+   "n_tokens": 264,
+   "input_ids_sha256_16": "6539cee471bcf4e7",
+   "loss": 2.9355385303497314,
+   "grad_norm_total": 1.706801620848548,
+   "sketch_pooled_norm": 1.7286625800679913
+  },
+  {
+   "step": 52,
+   "doc_id": 60,
+   "file_index": 52,
+   "n_tokens": 201,
+   "input_ids_sha256_16": "eee7e089bba9fffd",
+   "loss": 3.4340884685516357,
+   "grad_norm_total": 1.729187685807548,
+   "sketch_pooled_norm": 1.7250850064223413
+  },
+  {
+   "step": 53,
+   "doc_id": 61,
+   "file_index": 53,
+   "n_tokens": 209,
+   "input_ids_sha256_16": "6d39daa7513d05f1",
+   "loss": 3.3717501163482666,
+   "grad_norm_total": 2.4976242234817634,
+   "sketch_pooled_norm": 2.501099788515726
+  },
+  {
+   "step": 54,
+   "doc_id": 64,
+   "file_index": 54,
+   "n_tokens": 206,
+   "input_ids_sha256_16": "d716c70f94873eaa",
+   "loss": 3.46319842338562,
+   "grad_norm_total": 1.25932799100014,
+   "sketch_pooled_norm": 1.2663604523539287
+  },
+  {
+   "step": 55,
+   "doc_id": 65,
+   "file_index": 55,
+   "n_tokens": 233,
+   "input_ids_sha256_16": "963db8c683356d2d",
+   "loss": 3.1184515953063965,
+   "grad_norm_total": 1.8219977298101016,
+   "sketch_pooled_norm": 1.8043709615682664
+  },
+  {
+   "step": 56,
+   "doc_id": 52,
+   "file_index": 56,
+   "n_tokens": 243,
+   "input_ids_sha256_16": "8273e133d98f5361",
+   "loss": 3.583165407180786,
+   "grad_norm_total": 2.629020108265288,
+   "sketch_pooled_norm": 2.671509282797696
+  },
+  {
+   "step": 57,
+   "doc_id": 53,
+   "file_index": 57,
+   "n_tokens": 213,
+   "input_ids_sha256_16": "7652d66829a9f060",
+   "loss": 3.0736749172210693,
+   "grad_norm_total": 1.4171068015955013,
+   "sketch_pooled_norm": 1.4133806432901899
+  },
+  {
+   "step": 58,
+   "doc_id": 68,
+   "file_index": 58,
+   "n_tokens": 229,
+   "input_ids_sha256_16": "317124809015128b",
+   "loss": 2.983215808868408,
+   "grad_norm_total": 1.6374625294560063,
+   "sketch_pooled_norm": 1.6504691455843608
+  },
+  {
+   "step": 59,
+   "doc_id": 69,
+   "file_index": 59,
+   "n_tokens": 226,
+   "input_ids_sha256_16": "af8f1f8e18c1a1b9",
+   "loss": 3.395962953567505,
+   "grad_norm_total": 2.095734907214562,
+   "sketch_pooled_norm": 2.1148476179982096
+  },
+  {
+   "step": 60,
+   "doc_id": 74,
+   "file_index": 60,
+   "n_tokens": 229,
+   "input_ids_sha256_16": "13d1c959bd0304b4",
+   "loss": 3.203899621963501,
+   "grad_norm_total": 1.5827349974580867,
+   "sketch_pooled_norm": 1.5613301049308381
+  },
+  {
+   "step": 61,
+   "doc_id": 75,
+   "file_index": 61,
+   "n_tokens": 215,
+   "input_ids_sha256_16": "58ad1f501888e962",
+   "loss": 3.6300864219665527,
+   "grad_norm_total": 1.8113894385930545,
+   "sketch_pooled_norm": 1.8134469687914867
+  },
+  {
+   "step": 62,
+   "doc_id": 70,
+   "file_index": 62,
+   "n_tokens": 240,
+   "input_ids_sha256_16": "36b100ecc8299cb9",
+   "loss": 1.9665213823318481,
+   "grad_norm_total": 1.2675774406600109,
+   "sketch_pooled_norm": 1.2687746230449921
+  },
+  {
+   "step": 63,
+   "doc_id": 71,
+   "file_index": 63,
+   "n_tokens": 217,
+   "input_ids_sha256_16": "df86524e27632572",
+   "loss": 2.532221794128418,
+   "grad_norm_total": 2.0003610020129843,
+   "sketch_pooled_norm": 1.9922784402072318
+  },
+  {
+   "step": 64,
+   "doc_id": 46,
+   "file_index": 64,
+   "n_tokens": 191,
+   "input_ids_sha256_16": "e7f4f3e31a3345d1",
+   "loss": 3.607621908187866,
+   "grad_norm_total": 2.0191663726618976,
+   "sketch_pooled_norm": 2.042711638135164
+  },
+  {
+   "step": 65,
+   "doc_id": 47,
+   "file_index": 65,
+   "n_tokens": 250,
+   "input_ids_sha256_16": "00b1655fe3f9aa20",
+   "loss": 3.1590049266815186,
+   "grad_norm_total": 1.638151943662719,
+   "sketch_pooled_norm": 1.652598096044651
+  },
+  {
+   "step": 66,
+   "doc_id": 66,
+   "file_index": 66,
+   "n_tokens": 260,
+   "input_ids_sha256_16": "9021f1db7f629607",
+   "loss": 3.531139373779297,
+   "grad_norm_total": 1.152973120661657,
+   "sketch_pooled_norm": 1.1689293472768743
+  },
+  {
+   "step": 67,
+   "doc_id": 67,
+   "file_index": 67,
+   "n_tokens": 206,
+   "input_ids_sha256_16": "eca1f0fdca7c9aaa",
+   "loss": 3.4385266304016113,
+   "grad_norm_total": 1.7944738403439937,
+   "sketch_pooled_norm": 1.756654367280073
+  },
+  {
+   "step": 68,
+   "doc_id": 72,
+   "file_index": 68,
+   "n_tokens": 238,
+   "input_ids_sha256_16": "0218fa727402b353",
+   "loss": 3.2009246349334717,
+   "grad_norm_total": 1.3640185359564874,
+   "sketch_pooled_norm": 1.3473056756381736
+  },
+  {
+   "step": 69,
+   "doc_id": 73,
+   "file_index": 69,
+   "n_tokens": 214,
+   "input_ids_sha256_16": "245513bbb428c69d",
+   "loss": 3.317596912384033,
+   "grad_norm_total": 1.8351751468814896,
+   "sketch_pooled_norm": 1.8465929622175457
+  },
+  {
+   "step": 70,
+   "doc_id": 82,
+   "file_index": 70,
+   "n_tokens": 221,
+   "input_ids_sha256_16": "8b641f8e65d40d4d",
+   "loss": 3.5917065143585205,
+   "grad_norm_total": 1.5549587379311045,
+   "sketch_pooled_norm": 1.544259359955906
+  },
+  {
+   "step": 71,
+   "doc_id": 83,
+   "file_index": 71,
+   "n_tokens": 239,
+   "input_ids_sha256_16": "eb1f8dbcc503353f",
+   "loss": 3.264552116394043,
+   "grad_norm_total": 1.9014661825801475,
+   "sketch_pooled_norm": 1.9193039572848312
+  },
+  {
+   "step": 72,
+   "doc_id": 36,
+   "file_index": 72,
+   "n_tokens": 254,
+   "input_ids_sha256_16": "3eb7d40f0c8f51f5",
+   "loss": 2.866257429122925,
+   "grad_norm_total": 1.5375394817644055,
+   "sketch_pooled_norm": 1.5246098632612255
+  },
+  {
+   "step": 73,
+   "doc_id": 37,
+   "file_index": 73,
+   "n_tokens": 205,
+   "input_ids_sha256_16": "1f85c3bcc3a482eb",
+   "loss": 3.7857112884521484,
+   "grad_norm_total": 1.8464999676700051,
+   "sketch_pooled_norm": 1.8588567216995828
+  },
+  {
+   "step": 74,
+   "doc_id": 62,
+   "file_index": 74,
+   "n_tokens": 213,
+   "input_ids_sha256_16": "b6244c9882569c24",
+   "loss": 3.102479934692383,
+   "grad_norm_total": 1.6459826924399226,
+   "sketch_pooled_norm": 1.6592441170665262
+  },
+  {
+   "step": 75,
+   "doc_id": 63,
+   "file_index": 75,
+   "n_tokens": 283,
+   "input_ids_sha256_16": "55efe6c27f9252a1",
+   "loss": 2.7065951824188232,
+   "grad_norm_total": 1.9568882430669015,
+   "sketch_pooled_norm": 1.9231644353006183
+  },
+  {
+   "step": 76,
+   "doc_id": 78,
+   "file_index": 76,
+   "n_tokens": 261,
+   "input_ids_sha256_16": "68cdb0498e0f696e",
+   "loss": 2.7662606239318848,
+   "grad_norm_total": 1.3352109931056269,
+   "sketch_pooled_norm": 1.335834483023379
+  },
+  {
+   "step": 77,
+   "doc_id": 79,
+   "file_index": 77,
+   "n_tokens": 241,
+   "input_ids_sha256_16": "175cb035454583e4",
+   "loss": 3.767869472503662,
+   "grad_norm_total": 2.0924202177398237,
+   "sketch_pooled_norm": 2.069816859949877
+  },
+  {
+   "step": 78,
+   "doc_id": 96,
+   "file_index": 78,
+   "n_tokens": 194,
+   "input_ids_sha256_16": "22ceae7f420a8b4a",
+   "loss": 3.469205141067505,
+   "grad_norm_total": 1.976187533076895,
+   "sketch_pooled_norm": 1.9997051477179486
+  },
+  {
+   "step": 79,
+   "doc_id": 97,
+   "file_index": 79,
+   "n_tokens": 186,
+   "input_ids_sha256_16": "ebd6ba954c5b0c96",
+   "loss": 3.0259242057800293,
+   "grad_norm_total": 2.037985461242039,
+   "sketch_pooled_norm": 2.0178944615597842
+  },
+  {
+   "step": 80,
+   "doc_id": 110,
+   "file_index": 80,
+   "n_tokens": 226,
+   "input_ids_sha256_16": "6fee89506d1a2d1b",
+   "loss": 3.3291194438934326,
+   "grad_norm_total": 1.6263498323060508,
+   "sketch_pooled_norm": 1.6330028523833424
+  },
+  {
+   "step": 81,
+   "doc_id": 111,
+   "file_index": 81,
+   "n_tokens": 229,
+   "input_ids_sha256_16": "f0d244e2dc949054",
+   "loss": 3.122764825820923,
+   "grad_norm_total": 1.8011760162747041,
+   "sketch_pooled_norm": 1.7876429842741197
+  },
+  {
+   "step": 82,
+   "doc_id": 90,
+   "file_index": 82,
+   "n_tokens": 212,
+   "input_ids_sha256_16": "533b33282ca39923",
+   "loss": 2.8602428436279297,
+   "grad_norm_total": 1.2473340783615516,
+   "sketch_pooled_norm": 1.2390958611854972
+  },
+  {
+   "step": 83,
+   "doc_id": 91,
+   "file_index": 83,
+   "n_tokens": 199,
+   "input_ids_sha256_16": "7b5358d87cb6aa15",
+   "loss": 3.3459537029266357,
+   "grad_norm_total": 1.7738604520928833,
+   "sketch_pooled_norm": 1.7811571518975273
+  },
+  {
+   "step": 84,
+   "doc_id": 86,
+   "file_index": 84,
+   "n_tokens": 226,
+   "input_ids_sha256_16": "ff4d5b244b1b6a7f",
+   "loss": 2.879666566848755,
+   "grad_norm_total": 1.6566283291065873,
+   "sketch_pooled_norm": 1.6470230481306694
+  },
+  {
+   "step": 85,
+   "doc_id": 87,
+   "file_index": 85,
+   "n_tokens": 249,
+   "input_ids_sha256_16": "15ebc2a37b39ed40",
+   "loss": 3.0112431049346924,
+   "grad_norm_total": 1.4049049046105457,
+   "sketch_pooled_norm": 1.3852349643176773
+  },
+  {
+   "step": 86,
+   "doc_id": 92,
+   "file_index": 86,
+   "n_tokens": 242,
+   "input_ids_sha256_16": "198d5cd6979749db",
+   "loss": 2.802499294281006,
+   "grad_norm_total": 1.668961112197144,
+   "sketch_pooled_norm": 1.6738553535796408
+  },
+  {
+   "step": 87,
+   "doc_id": 93,
+   "file_index": 87,
+   "n_tokens": 212,
+   "input_ids_sha256_16": "f6c2cb4ba53cfba0",
+   "loss": 3.2362864017486572,
+   "grad_norm_total": 1.8498987510765224,
+   "sketch_pooled_norm": 1.84180281812356
+  },
+  {
+   "step": 88,
+   "doc_id": 104,
+   "file_index": 88,
+   "n_tokens": 197,
+   "input_ids_sha256_16": "771c7573c42a9cbf",
+   "loss": 3.735572338104248,
+   "grad_norm_total": 2.1235384489928215,
+   "sketch_pooled_norm": 2.1246747402102875
+  },
+  {
+   "step": 89,
+   "doc_id": 105,
+   "file_index": 89,
+   "n_tokens": 234,
+   "input_ids_sha256_16": "d4176385aa70cc85",
+   "loss": 3.5469510555267334,
+   "grad_norm_total": 2.8964609318285865,
+   "sketch_pooled_norm": 2.894651510887532
+  },
+  {
+   "step": 90,
+   "doc_id": 102,
+   "file_index": 90,
+   "n_tokens": 213,
+   "input_ids_sha256_16": "1a7f74a5e009d243",
+   "loss": 2.9234020709991455,
+   "grad_norm_total": 1.7639171195671983,
+   "sketch_pooled_norm": 1.771364531202561
+  },
+  {
+   "step": 91,
+   "doc_id": 103,
+   "file_index": 91,
+   "n_tokens": 196,
+   "input_ids_sha256_16": "40ffff46a926219a",
+   "loss": 3.605196475982666,
+   "grad_norm_total": 1.8966906385288427,
+   "sketch_pooled_norm": 1.9222136214169592
+  },
+  {
+   "step": 92,
+   "doc_id": 106,
+   "file_index": 92,
+   "n_tokens": 200,
+   "input_ids_sha256_16": "bead81fd750bb62a",
+   "loss": 3.1791584491729736,
+   "grad_norm_total": 2.0312228662037706,
+   "sketch_pooled_norm": 2.000306595001849
+  },
+  {
+   "step": 93,
+   "doc_id": 107,
+   "file_index": 93,
+   "n_tokens": 248,
+   "input_ids_sha256_16": "b6b7471ecf36175e",
+   "loss": 2.7671172618865967,
+   "grad_norm_total": 1.6092327928362906,
+   "sketch_pooled_norm": 1.610053391543181
+  },
+  {
+   "step": 94,
+   "doc_id": 100,
+   "file_index": 94,
+   "n_tokens": 246,
+   "input_ids_sha256_16": "57389cbe6575650b",
+   "loss": 2.780150890350342,
+   "grad_norm_total": 1.3696303398100764,
+   "sketch_pooled_norm": 1.3534878086627447
+  },
+  {
+   "step": 95,
+   "doc_id": 101,
+   "file_index": 95,
+   "n_tokens": 189,
+   "input_ids_sha256_16": "fe0bf4b13f26a693",
+   "loss": 3.4539947509765625,
+   "grad_norm_total": 2.559213220270526,
+   "sketch_pooled_norm": 2.553737622478273
+  },
+  {
+   "step": 96,
+   "doc_id": 94,
+   "file_index": 96,
+   "n_tokens": 180,
+   "input_ids_sha256_16": "3c550571355f8d10",
+   "loss": 3.4506702423095703,
+   "grad_norm_total": 1.4139285038063332,
+   "sketch_pooled_norm": 1.4052357725314493
+  },
+  {
+   "step": 97,
+   "doc_id": 95,
+   "file_index": 97,
+   "n_tokens": 210,
+   "input_ids_sha256_16": "46f4409569a1deb0",
+   "loss": 3.6500351428985596,
+   "grad_norm_total": 2.9067796123547676,
+   "sketch_pooled_norm": 2.9303550717155042
+  },
+  {
+   "step": 98,
+   "doc_id": 98,
+   "file_index": 98,
+   "n_tokens": 174,
+   "input_ids_sha256_16": "0298beb82fd8b491",
+   "loss": 3.956854820251465,
+   "grad_norm_total": 2.1996203655144297,
+   "sketch_pooled_norm": 2.188404342717891
+  },
+  {
+   "step": 99,
+   "doc_id": 99,
+   "file_index": 99,
+   "n_tokens": 213,
+   "input_ids_sha256_16": "74477a254b15b592",
+   "loss": 3.675887107849121,
+   "grad_norm_total": 1.3527767350104731,
+   "sketch_pooled_norm": 1.3606717809939757
+  },
+  {
+   "step": 100,
+   "doc_id": 108,
+   "file_index": 100,
+   "n_tokens": 255,
+   "input_ids_sha256_16": "73222f6f8d9a6d02",
+   "loss": 3.1966023445129395,
+   "grad_norm_total": 1.302664643166264,
+   "sketch_pooled_norm": 1.30472896879817
+  },
+  {
+   "step": 101,
+   "doc_id": 109,
+   "file_index": 101,
+   "n_tokens": 268,
+   "input_ids_sha256_16": "7d624a5f84ca42c2",
+   "loss": 3.1773459911346436,
+   "grad_norm_total": 1.5175917910267107,
+   "sketch_pooled_norm": 1.520373200073237
+  },
+  {
+   "step": 102,
+   "doc_id": 116,
+   "file_index": 102,
+   "n_tokens": 231,
+   "input_ids_sha256_16": "f8b916b1729d40a6",
+   "loss": 3.084843397140503,
+   "grad_norm_total": 1.5011388125874292,
+   "sketch_pooled_norm": 1.5121206093658868
+  },
+  {
+   "step": 103,
+   "doc_id": 117,
+   "file_index": 103,
+   "n_tokens": 185,
+   "input_ids_sha256_16": "d8d7b79165d416cd",
+   "loss": 3.143468141555786,
+   "grad_norm_total": 1.6646016497608567,
+   "sketch_pooled_norm": 1.6835700635381825
+  },
+  {
+   "step": 104,
+   "doc_id": 88,
+   "file_index": 104,
+   "n_tokens": 218,
+   "input_ids_sha256_16": "dc646ee1b7af0f2c",
+   "loss": 2.9519765377044678,
+   "grad_norm_total": 2.6669813859430223,
+   "sketch_pooled_norm": 2.679678971263448
+  },
+  {
+   "step": 105,
+   "doc_id": 89,
+   "file_index": 105,
+   "n_tokens": 217,
+   "input_ids_sha256_16": "c445d42dc7c8f54b",
+   "loss": 2.9855234622955322,
+   "grad_norm_total": 1.8901701192982394,
+   "sketch_pooled_norm": 1.8847804091299136
+  },
+  {
+   "step": 106,
+   "doc_id": 76,
+   "file_index": 106,
+   "n_tokens": 221,
+   "input_ids_sha256_16": "1983951ec7d7ac4b",
+   "loss": 2.789091110229492,
+   "grad_norm_total": 1.8081221843606434,
+   "sketch_pooled_norm": 1.8052420289998663
+  },
+  {
+   "step": 107,
+   "doc_id": 77,
+   "file_index": 107,
+   "n_tokens": 221,
+   "input_ids_sha256_16": "3c2ce6f418d20420",
+   "loss": 3.103872776031494,
+   "grad_norm_total": 1.7414686918879556,
+   "sketch_pooled_norm": 1.7302299010659357
+  },
+  {
+   "step": 108,
+   "doc_id": 80,
+   "file_index": 108,
+   "n_tokens": 248,
+   "input_ids_sha256_16": "c497ab719901f650",
+   "loss": 2.9108428955078125,
+   "grad_norm_total": 1.328318114614794,
+   "sketch_pooled_norm": 1.3127351706816908
+  },
+  {
+   "step": 109,
+   "doc_id": 81,
+   "file_index": 109,
+   "n_tokens": 263,
+   "input_ids_sha256_16": "720458de0b5aa4d8",
+   "loss": 3.3206727504730225,
+   "grad_norm_total": 1.4489824737161912,
+   "sketch_pooled_norm": 1.4487434720184997
+  },
+  {
+   "step": 110,
+   "doc_id": 124,
+   "file_index": 110,
+   "n_tokens": 229,
+   "input_ids_sha256_16": "69f603647195a7a7",
+   "loss": 3.9712531566619873,
+   "grad_norm_total": 1.9047753973621262,
+   "sketch_pooled_norm": 1.912902261122364
+  },
+  {
+   "step": 111,
+   "doc_id": 125,
+   "file_index": 111,
+   "n_tokens": 205,
+   "input_ids_sha256_16": "673268212c2ef276",
+   "loss": 3.7059431076049805,
+   "grad_norm_total": 1.491403487705076,
+   "sketch_pooled_norm": 1.4940367395575431
+  },
+  {
+   "step": 112,
+   "doc_id": 84,
+   "file_index": 112,
+   "n_tokens": 219,
+   "input_ids_sha256_16": "4c7d8e25b06462ac",
+   "loss": 3.4911580085754395,
+   "grad_norm_total": 1.6516861250303756,
+   "sketch_pooled_norm": 1.654004429154037
+  },
+  {
+   "step": 113,
+   "doc_id": 85,
+   "file_index": 113,
+   "n_tokens": 234,
+   "input_ids_sha256_16": "0ed56781632005be",
+   "loss": 3.3141965866088867,
+   "grad_norm_total": 1.8873990959908102,
+   "sketch_pooled_norm": 1.8748441337072657
+  },
+  {
+   "step": 114,
+   "doc_id": 122,
+   "file_index": 114,
+   "n_tokens": 236,
+   "input_ids_sha256_16": "9b5fe1a62e6fd51c",
+   "loss": 2.8396689891815186,
+   "grad_norm_total": 1.546148877346212,
+   "sketch_pooled_norm": 1.5429120250852384
+  },
+  {
+   "step": 115,
+   "doc_id": 123,
+   "file_index": 115,
+   "n_tokens": 191,
+   "input_ids_sha256_16": "990e650062958963",
+   "loss": 2.912306547164917,
+   "grad_norm_total": 1.8570338643669526,
+   "sketch_pooled_norm": 1.862476693175288
+  },
+  {
+   "step": 116,
+   "doc_id": 114,
+   "file_index": 116,
+   "n_tokens": 228,
+   "input_ids_sha256_16": "a1189c2610935b26",
+   "loss": 2.924762487411499,
+   "grad_norm_total": 1.346292255264407,
+   "sketch_pooled_norm": 1.3484895964433192
+  },
+  {
+   "step": 117,
+   "doc_id": 115,
+   "file_index": 117,
+   "n_tokens": 202,
+   "input_ids_sha256_16": "58e398ed0455fd9c",
+   "loss": 3.5124475955963135,
+   "grad_norm_total": 2.0509915277482476,
+   "sketch_pooled_norm": 2.0460398839818756
+  },
+  {
+   "step": 118,
+   "doc_id": 118,
+   "file_index": 118,
+   "n_tokens": 190,
+   "input_ids_sha256_16": "70a90343a626ae98",
+   "loss": 3.6679396629333496,
+   "grad_norm_total": 1.9516153428630536,
+   "sketch_pooled_norm": 1.9528749079340022
+  },
+  {
+   "step": 119,
+   "doc_id": 119,
+   "file_index": 119,
+   "n_tokens": 216,
+   "input_ids_sha256_16": "30a8d2df203ccd89",
+   "loss": 3.3611960411071777,
+   "grad_norm_total": 2.240815280902434,
+   "sketch_pooled_norm": 2.268753800094941
+  },
+  {
+   "step": 120,
+   "doc_id": 130,
+   "file_index": 120,
+   "n_tokens": 216,
+   "input_ids_sha256_16": "4ca5f56f7e5f3fa4",
+   "loss": 3.17157244682312,
+   "grad_norm_total": 1.8074123356307212,
+   "sketch_pooled_norm": 1.7999004042261102
+  },
+  {
+   "step": 121,
+   "doc_id": 131,
+   "file_index": 121,
+   "n_tokens": 234,
+   "input_ids_sha256_16": "a79653dd965fd287",
+   "loss": 3.6406877040863037,
+   "grad_norm_total": 1.4450517153047038,
+   "sketch_pooled_norm": 1.4464174106653336
+  },
+  {
+   "step": 122,
+   "doc_id": 126,
+   "file_index": 122,
+   "n_tokens": 249,
+   "input_ids_sha256_16": "b4cf58e9576c129a",
+   "loss": 2.940469741821289,
+   "grad_norm_total": 1.456628898216553,
+   "sketch_pooled_norm": 1.4597734153435316
+  },
+  {
+   "step": 123,
+   "doc_id": 127,
+   "file_index": 123,
+   "n_tokens": 207,
+   "input_ids_sha256_16": "face9113074b98b4",
+   "loss": 3.1773388385772705,
+   "grad_norm_total": 1.344592017025132,
+   "sketch_pooled_norm": 1.328547655132406
+  },
+  {
+   "step": 124,
+   "doc_id": 134,
+   "file_index": 124,
+   "n_tokens": 203,
+   "input_ids_sha256_16": "1f02b3cc5d4bc22b",
+   "loss": 3.2302255630493164,
+   "grad_norm_total": 1.1650973334312056,
+   "sketch_pooled_norm": 1.1679015135901836
+  },
+  {
+   "step": 125,
+   "doc_id": 135,
+   "file_index": 125,
+   "n_tokens": 259,
+   "input_ids_sha256_16": "e7a2c7449004ad9e",
+   "loss": 2.5352113246917725,
+   "grad_norm_total": 1.4512082171627152,
+   "sketch_pooled_norm": 1.4450239144684878
+  },
+  {
+   "step": 126,
+   "doc_id": 144,
+   "file_index": 126,
+   "n_tokens": 196,
+   "input_ids_sha256_16": "ea1fe7bc9bbc3b66",
+   "loss": 2.893357276916504,
+   "grad_norm_total": 2.0846222308476325,
+   "sketch_pooled_norm": 2.0831335767970875
+  },
+  {
+   "step": 127,
+   "doc_id": 145,
+   "file_index": 127,
+   "n_tokens": 172,
+   "input_ids_sha256_16": "56af657dc533fb0b",
+   "loss": 3.2913732528686523,
+   "grad_norm_total": 2.711721157524581,
+   "sketch_pooled_norm": 2.699272158397008
+  },
+  {
+   "step": 128,
+   "doc_id": 140,
+   "file_index": 128,
+   "n_tokens": 278,
+   "input_ids_sha256_16": "4fedc596975cd97e",
+   "loss": 2.8197052478790283,
+   "grad_norm_total": 1.8512816821184037,
+   "sketch_pooled_norm": 1.8431004484891742
+  },
+  {
+   "step": 129,
+   "doc_id": 141,
+   "file_index": 129,
+   "n_tokens": 235,
+   "input_ids_sha256_16": "d90484143d828e42",
+   "loss": 2.98252534866333,
+   "grad_norm_total": 1.541354374507502,
+   "sketch_pooled_norm": 1.5567620272367275
+  },
+  {
+   "step": 130,
+   "doc_id": 120,
+   "file_index": 130,
+   "n_tokens": 250,
+   "input_ids_sha256_16": "667a38ac3b870c90",
+   "loss": 2.905863046646118,
+   "grad_norm_total": 1.8018637180922945,
+   "sketch_pooled_norm": 1.8049434383134237
+  },
+  {
+   "step": 131,
+   "doc_id": 121,
+   "file_index": 131,
+   "n_tokens": 240,
+   "input_ids_sha256_16": "d888d027468dfbf5",
+   "loss": 3.131605386734009,
+   "grad_norm_total": 1.5903220705720749,
+   "sketch_pooled_norm": 1.580783006485011
+  },
+  {
+   "step": 132,
+   "doc_id": 112,
+   "file_index": 132,
+   "n_tokens": 247,
+   "input_ids_sha256_16": "7c07bcfeb5f5d373",
+   "loss": 3.1944117546081543,
+   "grad_norm_total": 1.3969586012123636,
+   "sketch_pooled_norm": 1.4080144836265636
+  },
+  {
+   "step": 133,
+   "doc_id": 113,
+   "file_index": 133,
+   "n_tokens": 229,
+   "input_ids_sha256_16": "5eee19039fb60762",
+   "loss": 3.0697133541107178,
+   "grad_norm_total": 1.351706461343711,
+   "sketch_pooled_norm": 1.3462291270455522
+  },
+  {
+   "step": 134,
+   "doc_id": 156,
+   "file_index": 134,
+   "n_tokens": 195,
+   "input_ids_sha256_16": "6b7a64f27e2b2d4c",
+   "loss": 3.449179172515869,
+   "grad_norm_total": 1.7611686852865205,
+   "sketch_pooled_norm": 1.7454721158267859
+  },
+  {
+   "step": 135,
+   "doc_id": 157,
+   "file_index": 135,
+   "n_tokens": 226,
+   "input_ids_sha256_16": "96a37e29df91b3ad",
+   "loss": 3.0841190814971924,
+   "grad_norm_total": 1.335071237201258,
+   "sketch_pooled_norm": 1.3254731620184854
+  },
+  {
+   "step": 136,
+   "doc_id": 142,
+   "file_index": 136,
+   "n_tokens": 219,
+   "input_ids_sha256_16": "fb725a07cb46343f",
+   "loss": 3.465017557144165,
+   "grad_norm_total": 1.597325839443806,
+   "sketch_pooled_norm": 1.5833389298600022
+  },
+  {
+   "step": 137,
+   "doc_id": 143,
+   "file_index": 137,
+   "n_tokens": 204,
+   "input_ids_sha256_16": "3d3d70c84de1648d",
+   "loss": 3.598451614379883,
+   "grad_norm_total": 2.4194746097185043,
+   "sketch_pooled_norm": 2.453257071043944
+  },
+  {
+   "step": 138,
+   "doc_id": 172,
+   "file_index": 138,
+   "n_tokens": 199,
+   "input_ids_sha256_16": "461c600b4eb75c1d",
+   "loss": 3.5764973163604736,
+   "grad_norm_total": 1.5547248270837413,
+   "sketch_pooled_norm": 1.552259450368079
+  },
+  {
+   "step": 139,
+   "doc_id": 173,
+   "file_index": 139,
+   "n_tokens": 248,
+   "input_ids_sha256_16": "ade026c234ecab8b",
+   "loss": 3.4611332416534424,
+   "grad_norm_total": 1.469652423529805,
+   "sketch_pooled_norm": 1.4529897624596952
+  },
+  {
+   "step": 140,
+   "doc_id": 136,
+   "file_index": 140,
+   "n_tokens": 204,
+   "input_ids_sha256_16": "bc4fd362b35db8d0",
+   "loss": 3.0641283988952637,
+   "grad_norm_total": 1.6179918415925187,
+   "sketch_pooled_norm": 1.6089718650005627
+  },
+  {
+   "step": 141,
+   "doc_id": 137,
+   "file_index": 141,
+   "n_tokens": 219,
+   "input_ids_sha256_16": "5f957e4097354797",
+   "loss": 3.081146001815796,
+   "grad_norm_total": 1.7295253074317067,
+   "sketch_pooled_norm": 1.7305231178521194
+  },
+  {
+   "step": 142,
+   "doc_id": 132,
+   "file_index": 142,
+   "n_tokens": 224,
+   "input_ids_sha256_16": "be22564d367e6b8c",
+   "loss": 3.2026631832122803,
+   "grad_norm_total": 1.3923136652905117,
+   "sketch_pooled_norm": 1.3732408243860121
+  },
+  {
+   "step": 143,
+   "doc_id": 133,
+   "file_index": 143,
+   "n_tokens": 236,
+   "input_ids_sha256_16": "31d3619b6ed12417",
+   "loss": 3.289550304412842,
+   "grad_norm_total": 2.2008502189262966,
+   "sketch_pooled_norm": 2.199288081363229
+  },
+  {
+   "step": 144,
+   "doc_id": 152,
+   "file_index": 144,
+   "n_tokens": 234,
+   "input_ids_sha256_16": "bcdfaac44f39ad1e",
+   "loss": 3.2334563732147217,
+   "grad_norm_total": 1.5888381377050793,
+   "sketch_pooled_norm": 1.567188953685185
+  },
+  {
+   "step": 145,
+   "doc_id": 153,
+   "file_index": 145,
+   "n_tokens": 199,
+   "input_ids_sha256_16": "01475f1d924587aa",
+   "loss": 3.312258005142212,
+   "grad_norm_total": 2.0653999622171093,
+   "sketch_pooled_norm": 2.0478950524288875
+  },
+  {
+   "step": 146,
+   "doc_id": 164,
+   "file_index": 146,
+   "n_tokens": 228,
+   "input_ids_sha256_16": "d25f6e5459166820",
+   "loss": 3.282021999359131,
+   "grad_norm_total": 1.2883929032895856,
+   "sketch_pooled_norm": 1.273708190630796
+  },
+  {
+   "step": 147,
+   "doc_id": 165,
+   "file_index": 147,
+   "n_tokens": 202,
+   "input_ids_sha256_16": "bc3df55796bacb1f",
+   "loss": 3.508805751800537,
+   "grad_norm_total": 1.9402990570891743,
+   "sketch_pooled_norm": 1.9154817873680807
+  },
+  {
+   "step": 148,
+   "doc_id": 168,
+   "file_index": 148,
+   "n_tokens": 211,
+   "input_ids_sha256_16": "b01129f839a13294",
+   "loss": 3.479734182357788,
+   "grad_norm_total": 1.6376263875791486,
+   "sketch_pooled_norm": 1.627833511959564
+  },
+  {
+   "step": 149,
+   "doc_id": 169,
+   "file_index": 149,
+   "n_tokens": 228,
+   "input_ids_sha256_16": "82889b1c2d6e3a0d",
+   "loss": 3.091048240661621,
+   "grad_norm_total": 1.9376781251999189,
+   "sketch_pooled_norm": 1.9391351238250352
+  },
+  {
+   "step": 150,
+   "doc_id": 128,
+   "file_index": 150,
+   "n_tokens": 242,
+   "input_ids_sha256_16": "0144fd01ba527326",
+   "loss": 3.7999510765075684,
+   "grad_norm_total": 1.5725165398375494,
+   "sketch_pooled_norm": 1.5820588483352238
+  },
+  {
+   "step": 151,
+   "doc_id": 129,
+   "file_index": 151,
+   "n_tokens": 244,
+   "input_ids_sha256_16": "89b37d6c26fef97e",
+   "loss": 3.5642426013946533,
+   "grad_norm_total": 1.4913279669652586,
+   "sketch_pooled_norm": 1.4907163106525025
+  },
+  {
+   "step": 152,
+   "doc_id": 174,
+   "file_index": 152,
+   "n_tokens": 175,
+   "input_ids_sha256_16": "212885128d65eb4d",
+   "loss": 2.9867920875549316,
+   "grad_norm_total": 2.4106563650338435,
+   "sketch_pooled_norm": 2.401613828325242
+  },
+  {
+   "step": 153,
+   "doc_id": 175,
+   "file_index": 153,
+   "n_tokens": 202,
+   "input_ids_sha256_16": "e4b355aecdbde082",
+   "loss": 3.374035596847534,
+   "grad_norm_total": 1.6496704539566263,
+   "sketch_pooled_norm": 1.6730745648790413
+  },
+  {
+   "step": 154,
+   "doc_id": 162,
+   "file_index": 154,
+   "n_tokens": 230,
+   "input_ids_sha256_16": "98e6f1af666854ab",
+   "loss": 2.9523656368255615,
+   "grad_norm_total": 1.4456589348271291,
+   "sketch_pooled_norm": 1.4667945934270528
+  },
+  {
+   "step": 155,
+   "doc_id": 163,
+   "file_index": 155,
+   "n_tokens": 204,
+   "input_ids_sha256_16": "11e9f297c2132b46",
+   "loss": 2.977299451828003,
+   "grad_norm_total": 2.1656989440317016,
+   "sketch_pooled_norm": 2.1403669753120056
+  },
+  {
+   "step": 156,
+   "doc_id": 170,
+   "file_index": 156,
+   "n_tokens": 206,
+   "input_ids_sha256_16": "a33f3c66d8876944",
+   "loss": 2.4934935569763184,
+   "grad_norm_total": 1.6641910323836913,
+   "sketch_pooled_norm": 1.6455075308260936
+  },
+  {
+   "step": 157,
+   "doc_id": 171,
+   "file_index": 157,
+   "n_tokens": 227,
+   "input_ids_sha256_16": "0f0bc0b87c674471",
+   "loss": 2.8871688842773438,
+   "grad_norm_total": 1.702210207434309,
+   "sketch_pooled_norm": 1.7275727609818643
+  },
+  {
+   "step": 158,
+   "doc_id": 154,
+   "file_index": 158,
+   "n_tokens": 201,
+   "input_ids_sha256_16": "9a55ce05829f9481",
+   "loss": 3.2743008136749268,
+   "grad_norm_total": 1.7364580463776842,
+   "sketch_pooled_norm": 1.7399399673482963
+  },
+  {
+   "step": 159,
+   "doc_id": 155,
+   "file_index": 159,
+   "n_tokens": 233,
+   "input_ids_sha256_16": "ed8fbe417ddc3328",
+   "loss": 3.537893056869507,
+   "grad_norm_total": 1.3721743563766673,
+   "sketch_pooled_norm": 1.378169051881598
+  },
+  {
+   "step": 160,
+   "doc_id": 146,
+   "file_index": 160,
+   "n_tokens": 199,
+   "input_ids_sha256_16": "816e78868d630c58",
+   "loss": 3.338571786880493,
+   "grad_norm_total": 2.422210656114637,
+   "sketch_pooled_norm": 2.4038063456220082
+  },
+  {
+   "step": 161,
+   "doc_id": 147,
+   "file_index": 161,
+   "n_tokens": 222,
+   "input_ids_sha256_16": "9b7c4f64195ba6b5",
+   "loss": 3.528270959854126,
+   "grad_norm_total": 1.4822749606794337,
+   "sketch_pooled_norm": 1.4581766299728995
+  },
+  {
+   "step": 162,
+   "doc_id": 150,
+   "file_index": 162,
+   "n_tokens": 220,
+   "input_ids_sha256_16": "e58331fed25a773e",
+   "loss": 3.256031036376953,
+   "grad_norm_total": 2.376920590698271,
+   "sketch_pooled_norm": 2.3953617628029233
+  },
+  {
+   "step": 163,
+   "doc_id": 151,
+   "file_index": 163,
+   "n_tokens": 230,
+   "input_ids_sha256_16": "6bf76abd9dbd5fe7",
+   "loss": 3.1823158264160156,
+   "grad_norm_total": 1.6861854925663653,
+   "sketch_pooled_norm": 1.6818814992342666
+  },
+  {
+   "step": 164,
+   "doc_id": 160,
+   "file_index": 164,
+   "n_tokens": 197,
+   "input_ids_sha256_16": "62eebeaeba82b25d",
+   "loss": 3.0859649181365967,
+   "grad_norm_total": 1.3372451257176279,
+   "sketch_pooled_norm": 1.3306239264760884
+  },
+  {
+   "step": 165,
+   "doc_id": 161,
+   "file_index": 165,
+   "n_tokens": 249,
+   "input_ids_sha256_16": "4e786cc16ce7bba0",
+   "loss": 3.1247613430023193,
+   "grad_norm_total": 1.7561228945184326,
+   "sketch_pooled_norm": 1.7672250620912453
+  },
+  {
+   "step": 166,
+   "doc_id": 148,
+   "file_index": 166,
+   "n_tokens": 218,
+   "input_ids_sha256_16": "c472ac9e66c75d53",
+   "loss": 2.735140085220337,
+   "grad_norm_total": 1.6618250048089758,
+   "sketch_pooled_norm": 1.6824453638158163
+  },
+  {
+   "step": 167,
+   "doc_id": 149,
+   "file_index": 167,
+   "n_tokens": 212,
+   "input_ids_sha256_16": "dd03ce46edb9348b",
+   "loss": 3.3655271530151367,
+   "grad_norm_total": 1.6154459277790238,
+   "sketch_pooled_norm": 1.6096414142882967
+  },
+  {
+   "step": 168,
+   "doc_id": 158,
+   "file_index": 168,
+   "n_tokens": 198,
+   "input_ids_sha256_16": "abf07e0112d132e2",
+   "loss": 3.050865411758423,
+   "grad_norm_total": 2.338307246886828,
+   "sketch_pooled_norm": 2.3521218278804086
+  },
+  {
+   "step": 169,
+   "doc_id": 159,
+   "file_index": 169,
+   "n_tokens": 257,
+   "input_ids_sha256_16": "a06d4fda04a5cec1",
+   "loss": 2.932842493057251,
+   "grad_norm_total": 1.738076123208782,
+   "sketch_pooled_norm": 1.742322883307711
+  },
+  {
+   "step": 170,
+   "doc_id": 186,
+   "file_index": 170,
+   "n_tokens": 219,
+   "input_ids_sha256_16": "c3ea68acf8b29556",
+   "loss": 3.4805779457092285,
+   "grad_norm_total": 1.4622570643649901,
+   "sketch_pooled_norm": 1.4602925290315458
+  },
+  {
+   "step": 171,
+   "doc_id": 187,
+   "file_index": 171,
+   "n_tokens": 213,
+   "input_ids_sha256_16": "cc93e1269deb9189",
+   "loss": 3.0896084308624268,
+   "grad_norm_total": 1.4748744119571173,
+   "sketch_pooled_norm": 1.4842229955125563
+  },
+  {
+   "step": 172,
+   "doc_id": 180,
+   "file_index": 172,
+   "n_tokens": 198,
+   "input_ids_sha256_16": "5c2b08d24785bfec",
+   "loss": 3.4685070514678955,
+   "grad_norm_total": 1.8515077660850137,
+   "sketch_pooled_norm": 1.8743530666403818
+  },
+  {
+   "step": 173,
+   "doc_id": 181,
+   "file_index": 173,
+   "n_tokens": 280,
+   "input_ids_sha256_16": "9e84bd54d9b668f6",
+   "loss": 3.311859130859375,
+   "grad_norm_total": 1.562188143977048,
+   "sketch_pooled_norm": 1.5351911129116376
+  },
+  {
+   "step": 174,
+   "doc_id": 138,
+   "file_index": 174,
+   "n_tokens": 203,
+   "input_ids_sha256_16": "e2e4ba1e75186aeb",
+   "loss": 3.354933738708496,
+   "grad_norm_total": 2.2860185627514973,
+   "sketch_pooled_norm": 2.2847651142295984
+  },
+  {
+   "step": 175,
+   "doc_id": 139,
+   "file_index": 175,
+   "n_tokens": 219,
+   "input_ids_sha256_16": "2b5f77f22871f783",
+   "loss": 2.943908214569092,
+   "grad_norm_total": 1.8574857310159343,
+   "sketch_pooled_norm": 1.8613444002330053
+  },
+  {
+   "step": 176,
+   "doc_id": 166,
+   "file_index": 176,
+   "n_tokens": 211,
+   "input_ids_sha256_16": "a25d005069c7c3db",
+   "loss": 3.117037534713745,
+   "grad_norm_total": 1.6576722248538323,
+   "sketch_pooled_norm": 1.6885180336080552
+  },
+  {
+   "step": 177,
+   "doc_id": 167,
+   "file_index": 177,
+   "n_tokens": 230,
+   "input_ids_sha256_16": "f611ac2325605960",
+   "loss": 2.970127582550049,
+   "grad_norm_total": 1.5655386101056665,
+   "sketch_pooled_norm": 1.574159781602046
+  },
+  {
+   "step": 178,
+   "doc_id": 178,
+   "file_index": 178,
+   "n_tokens": 210,
+   "input_ids_sha256_16": "443759f1fcd98435",
+   "loss": 3.170290946960449,
+   "grad_norm_total": 1.7673542869226124,
+   "sketch_pooled_norm": 1.7480450330556025
+  },
+  {
+   "step": 179,
+   "doc_id": 179,
+   "file_index": 179,
+   "n_tokens": 201,
+   "input_ids_sha256_16": "f6931fa75c7d122b",
+   "loss": 3.223451852798462,
+   "grad_norm_total": 2.386372418101275,
+   "sketch_pooled_norm": 2.3603619157508753
+  },
+  {
+   "step": 180,
+   "doc_id": 184,
+   "file_index": 180,
+   "n_tokens": 212,
+   "input_ids_sha256_16": "818193d3a6fa2e7d",
+   "loss": 3.323495864868164,
+   "grad_norm_total": 1.4363284701236945,
+   "sketch_pooled_norm": 1.4379245169247257
+  },
+  {
+   "step": 181,
+   "doc_id": 185,
+   "file_index": 181,
+   "n_tokens": 191,
+   "input_ids_sha256_16": "d40ddfc9e2995d70",
+   "loss": 4.364692211151123,
+   "grad_norm_total": 1.991875596154223,
+   "sketch_pooled_norm": 2.010880399694294
+  },
+  {
+   "step": 182,
+   "doc_id": 194,
+   "file_index": 182,
+   "n_tokens": 178,
+   "input_ids_sha256_16": "5fa1fab51a99e945",
+   "loss": 3.343290328979492,
+   "grad_norm_total": 2.302899860249782,
+   "sketch_pooled_norm": 2.2894093856836277
+  },
+  {
+   "step": 183,
+   "doc_id": 195,
+   "file_index": 183,
+   "n_tokens": 233,
+   "input_ids_sha256_16": "a0ab41338cea94d3",
+   "loss": 3.6831440925598145,
+   "grad_norm_total": 1.6240927698031535,
+   "sketch_pooled_norm": 1.6146719735871793
+  },
+  {
+   "step": 184,
+   "doc_id": 176,
+   "file_index": 184,
+   "n_tokens": 225,
+   "input_ids_sha256_16": "4a5fda60ea25f57d",
+   "loss": 3.150686264038086,
+   "grad_norm_total": 1.6022350690153462,
+   "sketch_pooled_norm": 1.6020306353911573
+  },
+  {
+   "step": 185,
+   "doc_id": 177,
+   "file_index": 185,
+   "n_tokens": 217,
+   "input_ids_sha256_16": "6727f3c31bf3735c",
+   "loss": 3.7571523189544678,
+   "grad_norm_total": 2.3680499486457536,
+   "sketch_pooled_norm": 2.380354531680427
+  },
+  {
+   "step": 186,
+   "doc_id": 188,
+   "file_index": 186,
+   "n_tokens": 187,
+   "input_ids_sha256_16": "35c18e3c97f8da62",
+   "loss": 3.1047749519348145,
+   "grad_norm_total": 1.5263174631710843,
+   "sketch_pooled_norm": 1.5117485329115785
+  },
+  {
+   "step": 187,
+   "doc_id": 189,
+   "file_index": 187,
+   "n_tokens": 249,
+   "input_ids_sha256_16": "f0d5c42c1ce77c42",
+   "loss": 3.542839765548706,
+   "grad_norm_total": 2.04927134144947,
+   "sketch_pooled_norm": 2.027113682309479
+  },
+  {
+   "step": 188,
+   "doc_id": 212,
+   "file_index": 188,
+   "n_tokens": 219,
+   "input_ids_sha256_16": "73a17381fa2abb69",
+   "loss": 3.4970147609710693,
+   "grad_norm_total": 1.9038240483523878,
+   "sketch_pooled_norm": 1.9293010310535244
+  },
+  {
+   "step": 189,
+   "doc_id": 213,
+   "file_index": 189,
+   "n_tokens": 239,
+   "input_ids_sha256_16": "99af8c0064c8611b",
+   "loss": 3.5771400928497314,
+   "grad_norm_total": 1.2714223279019654,
+   "sketch_pooled_norm": 1.2689888260982225
+  },
+  {
+   "step": 190,
+   "doc_id": 202,
+   "file_index": 190,
+   "n_tokens": 185,
+   "input_ids_sha256_16": "979afe4bb2a44cf7",
+   "loss": 2.94134521484375,
+   "grad_norm_total": 1.966444701088724,
+   "sketch_pooled_norm": 1.9427299540061276
+  },
+  {
+   "step": 191,
+   "doc_id": 203,
+   "file_index": 191,
+   "n_tokens": 197,
+   "input_ids_sha256_16": "885c5e30a675ff24",
+   "loss": 3.0060484409332275,
+   "grad_norm_total": 1.3268650066762953,
+   "sketch_pooled_norm": 1.320846704648212
+  },
+  {
+   "step": 192,
+   "doc_id": 210,
+   "file_index": 192,
+   "n_tokens": 175,
+   "input_ids_sha256_16": "ab143ae4d7e6af34",
+   "loss": 3.431309223175049,
+   "grad_norm_total": 2.317048692422919,
+   "sketch_pooled_norm": 2.322803615342495
+  },
+  {
+   "step": 193,
+   "doc_id": 211,
+   "file_index": 193,
+   "n_tokens": 224,
+   "input_ids_sha256_16": "ab1a062150919591",
+   "loss": 3.2289376258850098,
+   "grad_norm_total": 1.597547093846404,
+   "sketch_pooled_norm": 1.609034942685324
+  },
+  {
+   "step": 194,
+   "doc_id": 222,
+   "file_index": 194,
+   "n_tokens": 233,
+   "input_ids_sha256_16": "f8ef8e86985439d8",
+   "loss": 3.0077810287475586,
+   "grad_norm_total": 1.3341714807798863,
+   "sketch_pooled_norm": 1.3408463456673338
+  },
+  {
+   "step": 195,
+   "doc_id": 223,
+   "file_index": 195,
+   "n_tokens": 217,
+   "input_ids_sha256_16": "b073c0488f429871",
+   "loss": 3.406755208969116,
+   "grad_norm_total": 1.9486551426990402,
+   "sketch_pooled_norm": 1.9492302093131797
+  },
+  {
+   "step": 196,
+   "doc_id": 208,
+   "file_index": 196,
+   "n_tokens": 188,
+   "input_ids_sha256_16": "034ba9834ba95144",
+   "loss": 3.1470892429351807,
+   "grad_norm_total": 1.9138966784148366,
+   "sketch_pooled_norm": 1.9135462524708835
+  },
+  {
+   "step": 197,
+   "doc_id": 209,
+   "file_index": 197,
+   "n_tokens": 196,
+   "input_ids_sha256_16": "edb025ae81708a4d",
+   "loss": 3.4879233837127686,
+   "grad_norm_total": 2.375821715399363,
+   "sketch_pooled_norm": 2.3795116010777915
+  },
+  {
+   "step": 198,
+   "doc_id": 198,
+   "file_index": 198,
+   "n_tokens": 190,
+   "input_ids_sha256_16": "186004868033fa62",
+   "loss": 3.699845790863037,
+   "grad_norm_total": 2.3517096038935015,
+   "sketch_pooled_norm": 2.343409535754361
+  },
+  {
+   "step": 199,
+   "doc_id": 199,
+   "file_index": 199,
+   "n_tokens": 227,
+   "input_ids_sha256_16": "cae22da64abd5881",
+   "loss": 3.7009353637695312,
+   "grad_norm_total": 1.6338055576667663,
+   "sketch_pooled_norm": 1.6433045663762071
+  },
+  {
+   "step": 200,
+   "doc_id": 182,
+   "file_index": 200,
+   "n_tokens": 226,
+   "input_ids_sha256_16": "423c2ef148065f17",
+   "loss": 3.3016371726989746,
+   "grad_norm_total": 1.3969380125437802,
+   "sketch_pooled_norm": 1.4005701933317631
+  },
+  {
+   "step": 201,
+   "doc_id": 183,
+   "file_index": 201,
+   "n_tokens": 189,
+   "input_ids_sha256_16": "5db8c19b3e9566fa",
+   "loss": 3.9673776626586914,
+   "grad_norm_total": 1.8795663850900164,
+   "sketch_pooled_norm": 1.8497755621332073
+  },
+  {
+   "step": 202,
+   "doc_id": 224,
+   "file_index": 202,
+   "n_tokens": 195,
+   "input_ids_sha256_16": "46678b646956ef63",
+   "loss": 3.9501752853393555,
+   "grad_norm_total": 1.3061751705600817,
+   "sketch_pooled_norm": 1.3048021913301264
+  },
+  {
+   "step": 203,
+   "doc_id": 225,
+   "file_index": 203,
+   "n_tokens": 180,
+   "input_ids_sha256_16": "778df7ac485b0660",
+   "loss": 3.7760815620422363,
+   "grad_norm_total": 2.130423111040671,
+   "sketch_pooled_norm": 2.1620994984504054
+  },
+  {
+   "step": 204,
+   "doc_id": 216,
+   "file_index": 204,
+   "n_tokens": 189,
+   "input_ids_sha256_16": "a512742961161b36",
+   "loss": 3.3522067070007324,
+   "grad_norm_total": 2.498927011307632,
+   "sketch_pooled_norm": 2.4800272071400573
+  },
+  {
+   "step": 205,
+   "doc_id": 217,
+   "file_index": 205,
+   "n_tokens": 220,
+   "input_ids_sha256_16": "60c578c14979d49a",
+   "loss": 2.7891733646392822,
+   "grad_norm_total": 1.375481215827378,
+   "sketch_pooled_norm": 1.3689677124815065
+  },
+  {
+   "step": 206,
+   "doc_id": 190,
+   "file_index": 206,
+   "n_tokens": 266,
+   "input_ids_sha256_16": "e456dd91354c950a",
+   "loss": 3.116422653198242,
+   "grad_norm_total": 1.8537329273403118,
+   "sketch_pooled_norm": 1.834777373958972
+  },
+  {
+   "step": 207,
+   "doc_id": 191,
+   "file_index": 207,
+   "n_tokens": 251,
+   "input_ids_sha256_16": "a3186960e8e21d03",
+   "loss": 3.422762632369995,
+   "grad_norm_total": 2.4810504165133946,
+   "sketch_pooled_norm": 2.4862488548980295
+  },
+  {
+   "step": 208,
+   "doc_id": 192,
+   "file_index": 208,
+   "n_tokens": 299,
+   "input_ids_sha256_16": "1e61b35694e0a36f",
+   "loss": 3.032640218734741,
+   "grad_norm_total": 1.295130250190742,
+   "sketch_pooled_norm": 1.2845300909359039
+  },
+  {
+   "step": 209,
+   "doc_id": 193,
+   "file_index": 209,
+   "n_tokens": 245,
+   "input_ids_sha256_16": "16d4c5c19e92976d",
+   "loss": 3.21751070022583,
+   "grad_norm_total": 1.7112193618088256,
+   "sketch_pooled_norm": 1.7149509329519275
+  },
+  {
+   "step": 210,
+   "doc_id": 238,
+   "file_index": 210,
+   "n_tokens": 218,
+   "input_ids_sha256_16": "5a47d1185f6c6ab5",
+   "loss": 2.74570894241333,
+   "grad_norm_total": 1.41640780610593,
+   "sketch_pooled_norm": 1.427939224370298
+  },
+  {
+   "step": 211,
+   "doc_id": 239,
+   "file_index": 211,
+   "n_tokens": 240,
+   "input_ids_sha256_16": "04b101a63a909cf1",
+   "loss": 3.2691564559936523,
+   "grad_norm_total": 1.2996940413935638,
+   "sketch_pooled_norm": 1.3206604495480507
+  },
+  {
+   "step": 212,
+   "doc_id": 240,
+   "file_index": 212,
+   "n_tokens": 186,
+   "input_ids_sha256_16": "f2506dd6fcd19fa1",
+   "loss": 3.0624818801879883,
+   "grad_norm_total": 2.1212321368331173,
+   "sketch_pooled_norm": 2.1181856627698092
+  },
+  {
+   "step": 213,
+   "doc_id": 241,
+   "file_index": 213,
+   "n_tokens": 187,
+   "input_ids_sha256_16": "30b323d6ab90f367",
+   "loss": 3.7390780448913574,
+   "grad_norm_total": 2.745405990191336,
+   "sketch_pooled_norm": 2.783006367343729
+  },
+  {
+   "step": 214,
+   "doc_id": 226,
+   "file_index": 214,
+   "n_tokens": 202,
+   "input_ids_sha256_16": "dab93c4278caf781",
+   "loss": 3.4093241691589355,
+   "grad_norm_total": 2.175577972701726,
+   "sketch_pooled_norm": 2.166224256462034
+  },
+  {
+   "step": 215,
+   "doc_id": 227,
+   "file_index": 215,
+   "n_tokens": 244,
+   "input_ids_sha256_16": "ffeedd8340a29cf9",
+   "loss": 3.846524477005005,
+   "grad_norm_total": 1.5942601463962418,
+   "sketch_pooled_norm": 1.5905137043253241
+  },
+  {
+   "step": 216,
+   "doc_id": 246,
+   "file_index": 216,
+   "n_tokens": 211,
+   "input_ids_sha256_16": "ef43b473856af5d3",
+   "loss": 3.558704137802124,
+   "grad_norm_total": 1.7743425915040665,
+   "sketch_pooled_norm": 1.763009611858291
+  },
+  {
+   "step": 217,
+   "doc_id": 247,
+   "file_index": 217,
+   "n_tokens": 198,
+   "input_ids_sha256_16": "ff465bb1b2182553",
+   "loss": 3.450211524963379,
+   "grad_norm_total": 2.1584841269397814,
+   "sketch_pooled_norm": 2.146863165066265
+  },
+  {
+   "step": 218,
+   "doc_id": 234,
+   "file_index": 218,
+   "n_tokens": 226,
+   "input_ids_sha256_16": "7360de705eab3f5c",
+   "loss": 2.6137735843658447,
+   "grad_norm_total": 1.537113164358122,
+   "sketch_pooled_norm": 1.5246729527532228
+  },
+  {
+   "step": 219,
+   "doc_id": 235,
+   "file_index": 219,
+   "n_tokens": 227,
+   "input_ids_sha256_16": "ed5bae422cc460df",
+   "loss": 3.2763590812683105,
+   "grad_norm_total": 1.643414060701383,
+   "sketch_pooled_norm": 1.6342030462877104
+  },
+  {
+   "step": 220,
+   "doc_id": 196,
+   "file_index": 220,
+   "n_tokens": 238,
+   "input_ids_sha256_16": "e7c4a63babdf0e18",
+   "loss": 2.870556116104126,
+   "grad_norm_total": 1.5153891823495604,
+   "sketch_pooled_norm": 1.4925088141525924
+  },
+  {
+   "step": 221,
+   "doc_id": 197,
+   "file_index": 221,
+   "n_tokens": 230,
+   "input_ids_sha256_16": "a70cd1941e1d8787",
+   "loss": 2.8639183044433594,
+   "grad_norm_total": 1.5227992060441264,
+   "sketch_pooled_norm": 1.510611888095305
+  },
+  {
+   "step": 222,
+   "doc_id": 204,
+   "file_index": 222,
+   "n_tokens": 199,
+   "input_ids_sha256_16": "57d410d142d42537",
+   "loss": 2.853581190109253,
+   "grad_norm_total": 1.8100120024318314,
+   "sketch_pooled_norm": 1.8313186901369345
+  },
+  {
+   "step": 223,
+   "doc_id": 205,
+   "file_index": 223,
+   "n_tokens": 251,
+   "input_ids_sha256_16": "f41e55b2bf5cb225",
+   "loss": 3.209620714187622,
+   "grad_norm_total": 1.5671849389398302,
+   "sketch_pooled_norm": 1.5649725404856591
+  },
+  {
+   "step": 224,
+   "doc_id": 56,
+   "file_index": 224,
+   "n_tokens": 245,
+   "input_ids_sha256_16": "45cc3c2510d51a41",
+   "loss": 3.06196665763855,
+   "grad_norm_total": 1.490972266296302,
+   "sketch_pooled_norm": 1.5034672166941068
+  },
+  {
+   "step": 225,
+   "doc_id": 57,
+   "file_index": 225,
+   "n_tokens": 178,
+   "input_ids_sha256_16": "a81470a68e9616e1",
+   "loss": 3.768453359603882,
+   "grad_norm_total": 1.975334026898752,
+   "sketch_pooled_norm": 1.9821600454076862
+  },
+  {
+   "step": 226,
+   "doc_id": 218,
+   "file_index": 226,
+   "n_tokens": 237,
+   "input_ids_sha256_16": "edb88dc5d7fad8a5",
+   "loss": 3.709954023361206,
+   "grad_norm_total": 1.834187241568354,
+   "sketch_pooled_norm": 1.8294927075194882
+  },
+  {
+   "step": 227,
+   "doc_id": 219,
+   "file_index": 227,
+   "n_tokens": 263,
+   "input_ids_sha256_16": "695d4bc1fc401c07",
+   "loss": 2.6340484619140625,
+   "grad_norm_total": 1.692840345622015,
+   "sketch_pooled_norm": 1.6817708420169046
+  },
+  {
+   "step": 228,
+   "doc_id": 236,
+   "file_index": 228,
+   "n_tokens": 214,
+   "input_ids_sha256_16": "d8260dadd5001414",
+   "loss": 3.0086841583251953,
+   "grad_norm_total": 2.2447930016007343,
+   "sketch_pooled_norm": 2.2511401545221257
+  },
+  {
+   "step": 229,
+   "doc_id": 237,
+   "file_index": 229,
+   "n_tokens": 222,
+   "input_ids_sha256_16": "44ff289ae3b1f164",
+   "loss": 3.2547593116760254,
+   "grad_norm_total": 2.1284271339152743,
+   "sketch_pooled_norm": 2.1019936965632273
+  },
+  {
+   "step": 230,
+   "doc_id": 200,
+   "file_index": 230,
+   "n_tokens": 199,
+   "input_ids_sha256_16": "712febf1eb2ec8d3",
+   "loss": 3.0332417488098145,
+   "grad_norm_total": 1.8091241604597965,
+   "sketch_pooled_norm": 1.8038418735573127
+  },
+  {
+   "step": 231,
+   "doc_id": 201,
+   "file_index": 231,
+   "n_tokens": 230,
+   "input_ids_sha256_16": "a026c3bbb39085bd",
+   "loss": 2.8698959350585938,
+   "grad_norm_total": 2.3701051490204312,
+   "sketch_pooled_norm": 2.3756268353089
+  },
+  {
+   "step": 232,
+   "doc_id": 242,
+   "file_index": 232,
+   "n_tokens": 194,
+   "input_ids_sha256_16": "62777631a48cf4a7",
+   "loss": 3.1034810543060303,
+   "grad_norm_total": 1.879848272515591,
+   "sketch_pooled_norm": 1.9058194666844135
+  },
+  {
+   "step": 233,
+   "doc_id": 243,
+   "file_index": 233,
+   "n_tokens": 224,
+   "input_ids_sha256_16": "f2588e3287bf861b",
+   "loss": 3.1741440296173096,
+   "grad_norm_total": 1.6301529396740357,
+   "sketch_pooled_norm": 1.630421540987498
+  },
+  {
+   "step": 234,
+   "doc_id": 248,
+   "file_index": 234,
+   "n_tokens": 216,
+   "input_ids_sha256_16": "bf5b190b9a3196e6",
+   "loss": 3.553226947784424,
+   "grad_norm_total": 2.0804172462883237,
+   "sketch_pooled_norm": 2.089077697048261
+  },
+  {
+   "step": 235,
+   "doc_id": 249,
+   "file_index": 235,
+   "n_tokens": 227,
+   "input_ids_sha256_16": "11490e790b787327",
+   "loss": 3.9760775566101074,
+   "grad_norm_total": 1.9643744920184198,
+   "sketch_pooled_norm": 1.9565221723205313
+  },
+  {
+   "step": 236,
+   "doc_id": 206,
+   "file_index": 236,
+   "n_tokens": 230,
+   "input_ids_sha256_16": "970c25c07d597215",
+   "loss": 3.295722007751465,
+   "grad_norm_total": 1.7843860322311131,
+   "sketch_pooled_norm": 1.7698669464325612
+  },
+  {
+   "step": 237,
+   "doc_id": 207,
+   "file_index": 237,
+   "n_tokens": 248,
+   "input_ids_sha256_16": "51734e0788390fd5",
+   "loss": 3.441234588623047,
+   "grad_norm_total": 1.8490448743610162,
+   "sketch_pooled_norm": 1.8623832112058738
+  },
+  {
+   "step": 238,
+   "doc_id": 260,
+   "file_index": 238,
+   "n_tokens": 192,
+   "input_ids_sha256_16": "d897fda83b7daf40",
+   "loss": 3.619588851928711,
+   "grad_norm_total": 2.0816277855336005,
+   "sketch_pooled_norm": 2.0872847352989004
+  },
+  {
+   "step": 239,
+   "doc_id": 261,
+   "file_index": 239,
+   "n_tokens": 263,
+   "input_ids_sha256_16": "dda79bb14625d5b6",
+   "loss": 3.215769052505493,
+   "grad_norm_total": 1.1170900987008232,
+   "sketch_pooled_norm": 1.1131379824413985
+  },
+  {
+   "step": 240,
+   "doc_id": 220,
+   "file_index": 240,
+   "n_tokens": 201,
+   "input_ids_sha256_16": "d2295e6cd2d90b0d",
+   "loss": 2.2598979473114014,
+   "grad_norm_total": 1.651231027026471,
+   "sketch_pooled_norm": 1.639612965112196
+  },
+  {
+   "step": 241,
+   "doc_id": 221,
+   "file_index": 241,
+   "n_tokens": 205,
+   "input_ids_sha256_16": "1bec9dacdc8ec842",
+   "loss": 3.011420726776123,
+   "grad_norm_total": 1.8132867747371852,
+   "sketch_pooled_norm": 1.7967268159970133
+  },
+  {
+   "step": 242,
+   "doc_id": 268,
+   "file_index": 242,
+   "n_tokens": 211,
+   "input_ids_sha256_16": "aa8be3616013a546",
+   "loss": 2.94706392288208,
+   "grad_norm_total": 1.6103515320411526,
+   "sketch_pooled_norm": 1.6308077543985542
+  },
+  {
+   "step": 243,
+   "doc_id": 269,
+   "file_index": 243,
+   "n_tokens": 178,
+   "input_ids_sha256_16": "4f06b92fe1115600",
+   "loss": 2.9692275524139404,
+   "grad_norm_total": 2.4990839106869958,
+   "sketch_pooled_norm": 2.4941060110963407
+  },
+  {
+   "step": 244,
+   "doc_id": 264,
+   "file_index": 244,
+   "n_tokens": 218,
+   "input_ids_sha256_16": "1723c217376d73c1",
+   "loss": 2.825092315673828,
+   "grad_norm_total": 2.0674194772446968,
+   "sketch_pooled_norm": 2.0432567689836727
+  },
+  {
+   "step": 245,
+   "doc_id": 265,
+   "file_index": 245,
+   "n_tokens": 218,
+   "input_ids_sha256_16": "29225ada7114a784",
+   "loss": 3.1578609943389893,
+   "grad_norm_total": 1.6735951367003676,
+   "sketch_pooled_norm": 1.6525143023327291
+  },
+  {
+   "step": 246,
+   "doc_id": 252,
+   "file_index": 246,
+   "n_tokens": 211,
+   "input_ids_sha256_16": "18e0f552d50a1ccd",
+   "loss": 3.113538980484009,
+   "grad_norm_total": 1.9248063404559734,
+   "sketch_pooled_norm": 1.9033118856908842
+  },
+  {
+   "step": 247,
+   "doc_id": 253,
+   "file_index": 247,
+   "n_tokens": 226,
+   "input_ids_sha256_16": "dc14e86d402a069e",
+   "loss": 3.227743148803711,
+   "grad_norm_total": 1.5072006222449832,
+   "sketch_pooled_norm": 1.5121837009777122
+  },
+  {
+   "step": 248,
+   "doc_id": 272,
+   "file_index": 248,
+   "n_tokens": 285,
+   "input_ids_sha256_16": "a10d16dc436f78f1",
+   "loss": 2.499901056289673,
+   "grad_norm_total": 1.5849714281289806,
+   "sketch_pooled_norm": 1.5904057538045748
+  },
+  {
+   "step": 249,
+   "doc_id": 273,
+   "file_index": 249,
+   "n_tokens": 200,
+   "input_ids_sha256_16": "2eaccad5acef9e59",
+   "loss": 3.3635716438293457,
+   "grad_norm_total": 2.093904392339467,
+   "sketch_pooled_norm": 2.0902357276050876
+  },
+  {
+   "step": 250,
+   "doc_id": 230,
+   "file_index": 250,
+   "n_tokens": 245,
+   "input_ids_sha256_16": "5acd6d58abe342ae",
+   "loss": 3.389575719833374,
+   "grad_norm_total": 1.7252317487135922,
+   "sketch_pooled_norm": 1.714395289972027
+  },
+  {
+   "step": 251,
+   "doc_id": 231,
+   "file_index": 251,
+   "n_tokens": 194,
+   "input_ids_sha256_16": "6220f923ae52ce30",
+   "loss": 3.600064516067505,
+   "grad_norm_total": 2.057695934635025,
+   "sketch_pooled_norm": 2.0719301888782913
+  },
+  {
+   "step": 252,
+   "doc_id": 256,
+   "file_index": 252,
+   "n_tokens": 190,
+   "input_ids_sha256_16": "35d91bd58dc7b7db",
+   "loss": 3.5589487552642822,
+   "grad_norm_total": 2.2108149176472125,
+   "sketch_pooled_norm": 2.2062874485959876
+  },
+  {
+   "step": 253,
+   "doc_id": 257,
+   "file_index": 253,
+   "n_tokens": 243,
+   "input_ids_sha256_16": "26eb559915d75d4d",
+   "loss": 3.5136501789093018,
+   "grad_norm_total": 1.4744203011225872,
+   "sketch_pooled_norm": 1.4503447703796606
+  },
+  {
+   "step": 254,
+   "doc_id": 258,
+   "file_index": 254,
+   "n_tokens": 186,
+   "input_ids_sha256_16": "8b6a6263456d5471",
+   "loss": 2.6438844203948975,
+   "grad_norm_total": 2.0050513887032624,
+   "sketch_pooled_norm": 2.005652092994103
+  },
+  {
+   "step": 255,
+   "doc_id": 259,
+   "file_index": 255,
+   "n_tokens": 207,
+   "input_ids_sha256_16": "8a82106baca8c67a",
+   "loss": 2.7870593070983887,
+   "grad_norm_total": 1.5978407682295142,
+   "sketch_pooled_norm": 1.597635300478189
+  },
+  {
+   "step": 256,
+   "doc_id": 244,
+   "file_index": 256,
+   "n_tokens": 232,
+   "input_ids_sha256_16": "fffe3b8dc0224e49",
+   "loss": 2.601249933242798,
+   "grad_norm_total": 1.406662997030432,
+   "sketch_pooled_norm": 1.4038319113931108
+  },
+  {
+   "step": 257,
+   "doc_id": 245,
+   "file_index": 257,
+   "n_tokens": 225,
+   "input_ids_sha256_16": "bf70d7524d558474",
+   "loss": 3.048142194747925,
+   "grad_norm_total": 1.644499829803731,
+   "sketch_pooled_norm": 1.612476073408108
+  },
+  {
+   "step": 258,
+   "doc_id": 266,
+   "file_index": 258,
+   "n_tokens": 195,
+   "input_ids_sha256_16": "fca691fcda9e5e6a",
+   "loss": 2.840400218963623,
+   "grad_norm_total": 1.9333649652285054,
+   "sketch_pooled_norm": 1.9396735901914288
+  },
+  {
+   "step": 259,
+   "doc_id": 267,
+   "file_index": 259,
+   "n_tokens": 233,
+   "input_ids_sha256_16": "1e2bf7079f6398e2",
+   "loss": 3.3386383056640625,
+   "grad_norm_total": 1.614914705291273,
+   "sketch_pooled_norm": 1.614716640569115
+  },
+  {
+   "step": 260,
+   "doc_id": 254,
+   "file_index": 260,
+   "n_tokens": 227,
+   "input_ids_sha256_16": "cf34ea2997044afa",
+   "loss": 3.159350633621216,
+   "grad_norm_total": 1.563146701992768,
+   "sketch_pooled_norm": 1.5775930597929926
+  },
+  {
+   "step": 261,
+   "doc_id": 255,
+   "file_index": 261,
+   "n_tokens": 226,
+   "input_ids_sha256_16": "4fcf8a2f39db5829",
+   "loss": 3.4378650188446045,
+   "grad_norm_total": 2.0347448232881815,
+   "sketch_pooled_norm": 2.031452817455866
+  },
+  {
+   "step": 262,
+   "doc_id": 274,
+   "file_index": 262,
+   "n_tokens": 180,
+   "input_ids_sha256_16": "7ee5f4f959df23a6",
+   "loss": 2.794405221939087,
+   "grad_norm_total": 2.293855716007725,
+   "sketch_pooled_norm": 2.2959600343973166
+  },
+  {
+   "step": 263,
+   "doc_id": 275,
+   "file_index": 263,
+   "n_tokens": 160,
+   "input_ids_sha256_16": "e5bc4a4b9a74e2db",
+   "loss": 3.5822105407714844,
+   "grad_norm_total": 2.5779079911668026,
+   "sketch_pooled_norm": 2.5690726471232233
+  },
+  {
+   "step": 264,
+   "doc_id": 270,
+   "file_index": 264,
+   "n_tokens": 226,
+   "input_ids_sha256_16": "e57dab5b7d5c63bf",
+   "loss": 3.384676694869995,
+   "grad_norm_total": 1.9426579203270509,
+   "sketch_pooled_norm": 1.9480332060598122
+  },
+  {
+   "step": 265,
+   "doc_id": 271,
+   "file_index": 265,
+   "n_tokens": 203,
+   "input_ids_sha256_16": "a6273e47fc19cdc6",
+   "loss": 3.6559526920318604,
+   "grad_norm_total": 2.2677721046848647,
+   "sketch_pooled_norm": 2.2792023619431503
+  },
+  {
+   "step": 266,
+   "doc_id": 282,
+   "file_index": 266,
+   "n_tokens": 190,
+   "input_ids_sha256_16": "a9e12bac94b97fa9",
+   "loss": 3.0692503452301025,
+   "grad_norm_total": 1.7206864361463126,
+   "sketch_pooled_norm": 1.7229849482122686
+  },
+  {
+   "step": 267,
+   "doc_id": 283,
+   "file_index": 267,
+   "n_tokens": 204,
+   "input_ids_sha256_16": "ac4bb10823edeb0b",
+   "loss": 3.4156124591827393,
+   "grad_norm_total": 1.8569902376075054,
+   "sketch_pooled_norm": 1.8143904203590453
+  },
+  {
+   "step": 268,
+   "doc_id": 296,
+   "file_index": 268,
+   "n_tokens": 171,
+   "input_ids_sha256_16": "3c2f13baa979fac9",
+   "loss": 3.255539894104004,
+   "grad_norm_total": 1.9488918072347352,
+   "sketch_pooled_norm": 1.9379710230746925
+  },
+  {
+   "step": 269,
+   "doc_id": 297,
+   "file_index": 269,
+   "n_tokens": 189,
+   "input_ids_sha256_16": "4aa300dcf4de8032",
+   "loss": 3.433147668838501,
+   "grad_norm_total": 2.05726145649567,
+   "sketch_pooled_norm": 2.092137677042512
+  },
+  {
+   "step": 270,
+   "doc_id": 228,
+   "file_index": 270,
+   "n_tokens": 236,
+   "input_ids_sha256_16": "bac8e9220d119d07",
+   "loss": 2.952101230621338,
+   "grad_norm_total": 1.3890102140809735,
+   "sketch_pooled_norm": 1.3961630331409716
+  },
+  {
+   "step": 271,
+   "doc_id": 229,
+   "file_index": 271,
+   "n_tokens": 214,
+   "input_ids_sha256_16": "1ed8b08c1f499bda",
+   "loss": 2.402833938598633,
+   "grad_norm_total": 1.9656704402528475,
+   "sketch_pooled_norm": 1.9739559406397513
+  },
+  {
+   "step": 272,
+   "doc_id": 280,
+   "file_index": 272,
+   "n_tokens": 216,
+   "input_ids_sha256_16": "af86308540824216",
+   "loss": 3.4997522830963135,
+   "grad_norm_total": 1.6112561993146761,
+   "sketch_pooled_norm": 1.613461268685578
+  },
+  {
+   "step": 273,
+   "doc_id": 281,
+   "file_index": 273,
+   "n_tokens": 225,
+   "input_ids_sha256_16": "9276f4f8a0e73712",
+   "loss": 2.8503973484039307,
+   "grad_norm_total": 2.252185084755445,
+   "sketch_pooled_norm": 2.27485965107546
+  },
+  {
+   "step": 274,
+   "doc_id": 298,
+   "file_index": 274,
+   "n_tokens": 210,
+   "input_ids_sha256_16": "13b51ac618499e8c",
+   "loss": 3.9259235858917236,
+   "grad_norm_total": 2.0853490510706396,
+   "sketch_pooled_norm": 2.09501375088806
+  },
+  {
+   "step": 275,
+   "doc_id": 299,
+   "file_index": 275,
+   "n_tokens": 166,
+   "input_ids_sha256_16": "f52d57e5b794cf7b",
+   "loss": 3.8047292232513428,
+   "grad_norm_total": 1.9657838500560785,
+   "sketch_pooled_norm": 1.9805696743113796
+  },
+  {
+   "step": 276,
+   "doc_id": 276,
+   "file_index": 276,
+   "n_tokens": 231,
+   "input_ids_sha256_16": "71302246613a7e83",
+   "loss": 3.0507047176361084,
+   "grad_norm_total": 1.638770190259774,
+   "sketch_pooled_norm": 1.6576717807713035
+  },
+  {
+   "step": 277,
+   "doc_id": 277,
+   "file_index": 277,
+   "n_tokens": 249,
+   "input_ids_sha256_16": "f157ce00739b7521",
+   "loss": 2.953294038772583,
+   "grad_norm_total": 1.834690522893206,
+   "sketch_pooled_norm": 1.8571586157032214
+  },
+  {
+   "step": 278,
+   "doc_id": 292,
+   "file_index": 278,
+   "n_tokens": 222,
+   "input_ids_sha256_16": "050e953c6d716d9f",
+   "loss": 2.997190237045288,
+   "grad_norm_total": 1.4496464662690898,
+   "sketch_pooled_norm": 1.4471772267831666
+  },
+  {
+   "step": 279,
+   "doc_id": 293,
+   "file_index": 279,
+   "n_tokens": 185,
+   "input_ids_sha256_16": "9313b209635ead40",
+   "loss": 3.256704807281494,
+   "grad_norm_total": 2.269743548744692,
+   "sketch_pooled_norm": 2.2574748969232292
+  },
+  {
+   "step": 280,
+   "doc_id": 300,
+   "file_index": 280,
+   "n_tokens": 204,
+   "input_ids_sha256_16": "2c3f607e781025f7",
+   "loss": 3.248629331588745,
+   "grad_norm_total": 1.5825411485509107,
+   "sketch_pooled_norm": 1.6022090570383152
+  },
+  {
+   "step": 281,
+   "doc_id": 301,
+   "file_index": 281,
+   "n_tokens": 234,
+   "input_ids_sha256_16": "fbee10d49228230c",
+   "loss": 2.9160375595092773,
+   "grad_norm_total": 1.923030539538008,
+   "sketch_pooled_norm": 1.962134658676534
+  },
+  {
+   "step": 282,
+   "doc_id": 314,
+   "file_index": 282,
+   "n_tokens": 252,
+   "input_ids_sha256_16": "48240071b062d281",
+   "loss": 2.998087167739868,
+   "grad_norm_total": 1.4240194263959929,
+   "sketch_pooled_norm": 1.4017300672964528
+  },
+  {
+   "step": 283,
+   "doc_id": 315,
+   "file_index": 283,
+   "n_tokens": 242,
+   "input_ids_sha256_16": "33212551ba24c45e",
+   "loss": 3.001394748687744,
+   "grad_norm_total": 1.6349585859535447,
+   "sketch_pooled_norm": 1.6355744159120706
+  },
+  {
+   "step": 284,
+   "doc_id": 284,
+   "file_index": 284,
+   "n_tokens": 226,
+   "input_ids_sha256_16": "302d939fb75e9d7f",
+   "loss": 2.8582115173339844,
+   "grad_norm_total": 1.5531372727844086,
+   "sketch_pooled_norm": 1.535560767035217
+  },
+  {
+   "step": 285,
+   "doc_id": 285,
+   "file_index": 285,
+   "n_tokens": 230,
+   "input_ids_sha256_16": "4d32600d0041f600",
+   "loss": 3.44140625,
+   "grad_norm_total": 1.4231106810644785,
+   "sketch_pooled_norm": 1.449576106712094
+  },
+  {
+   "step": 286,
+   "doc_id": 286,
+   "file_index": 286,
+   "n_tokens": 237,
+   "input_ids_sha256_16": "2fa666ac74d7e3c5",
+   "loss": 2.7497053146362305,
+   "grad_norm_total": 1.4006981865679333,
+   "sketch_pooled_norm": 1.4015979590392686
+  },
+  {
+   "step": 287,
+   "doc_id": 287,
+   "file_index": 287,
+   "n_tokens": 193,
+   "input_ids_sha256_16": "07c590bea694c323",
+   "loss": 3.1473989486694336,
+   "grad_norm_total": 1.6428278208841138,
+   "sketch_pooled_norm": 1.658241790274379
+  },
+  {
+   "step": 288,
+   "doc_id": 302,
+   "file_index": 288,
+   "n_tokens": 234,
+   "input_ids_sha256_16": "2b3c4ed1cdea7e44",
+   "loss": 3.638685464859009,
+   "grad_norm_total": 1.5958048850321582,
+   "sketch_pooled_norm": 1.5947553924296234
+  },
+  {
+   "step": 289,
+   "doc_id": 303,
+   "file_index": 289,
+   "n_tokens": 239,
+   "input_ids_sha256_16": "3027d73222f37c1b",
+   "loss": 3.307307481765747,
+   "grad_norm_total": 1.9874294913003383,
+   "sketch_pooled_norm": 2.0066785095624278
+  },
+  {
+   "step": 290,
+   "doc_id": 278,
+   "file_index": 290,
+   "n_tokens": 234,
+   "input_ids_sha256_16": "c99ea1b1064ea5f2",
+   "loss": 3.284264326095581,
+   "grad_norm_total": 1.7854340947929979,
+   "sketch_pooled_norm": 1.7819090249245315
+  },
+  {
+   "step": 291,
+   "doc_id": 279,
+   "file_index": 291,
+   "n_tokens": 232,
+   "input_ids_sha256_16": "156f7f50b71af9e7",
+   "loss": 3.3219900131225586,
+   "grad_norm_total": 1.4859509068277776,
+   "sketch_pooled_norm": 1.4780703443748937
+  },
+  {
+   "step": 292,
+   "doc_id": 290,
+   "file_index": 292,
+   "n_tokens": 212,
+   "input_ids_sha256_16": "85869628391c9009",
+   "loss": 3.319272994995117,
+   "grad_norm_total": 1.9284234513399687,
+   "sketch_pooled_norm": 1.9384151593908077
+  },
+  {
+   "step": 293,
+   "doc_id": 291,
+   "file_index": 293,
+   "n_tokens": 249,
+   "input_ids_sha256_16": "e23e0ccb89b4a03a",
+   "loss": 3.3420283794403076,
+   "grad_norm_total": 1.3244435332206679,
+   "sketch_pooled_norm": 1.333609241408433
+  },
+  {
+   "step": 294,
+   "doc_id": 320,
+   "file_index": 294,
+   "n_tokens": 253,
+   "input_ids_sha256_16": "90e25807d46c9884",
+   "loss": 2.50419020652771,
+   "grad_norm_total": 1.4153691478158104,
+   "sketch_pooled_norm": 1.4173964182777732
+  },
+  {
+   "step": 295,
+   "doc_id": 321,
+   "file_index": 295,
+   "n_tokens": 214,
+   "input_ids_sha256_16": "a2b043bffccb59a2",
+   "loss": 2.7672946453094482,
+   "grad_norm_total": 1.8606345255316723,
+   "sketch_pooled_norm": 1.8700664459912077
+  },
+  {
+   "step": 296,
+   "doc_id": 328,
+   "file_index": 296,
+   "n_tokens": 175,
+   "input_ids_sha256_16": "77550a85ca9ae696",
+   "loss": 3.902658700942993,
+   "grad_norm_total": 2.712583764896675,
+   "sketch_pooled_norm": 2.714979295497682
+  },
+  {
+   "step": 297,
+   "doc_id": 329,
+   "file_index": 297,
+   "n_tokens": 255,
+   "input_ids_sha256_16": "962bf7f2809f075f",
+   "loss": 2.844287633895874,
+   "grad_norm_total": 1.6664171750074261,
+   "sketch_pooled_norm": 1.6539678575380368
+  },
+  {
+   "step": 298,
+   "doc_id": 312,
+   "file_index": 298,
+   "n_tokens": 219,
+   "input_ids_sha256_16": "3cb6d240c286b53f",
+   "loss": 3.3650283813476562,
+   "grad_norm_total": 2.5467516047320315,
+   "sketch_pooled_norm": 2.566342979067975
+  },
+  {
+   "step": 299,
+   "doc_id": 313,
+   "file_index": 299,
+   "n_tokens": 240,
+   "input_ids_sha256_16": "77cdda1712f9b438",
+   "loss": 3.097644090652466,
+   "grad_norm_total": 1.3282706054463325,
+   "sketch_pooled_norm": 1.3182081523846032
+  },
+  {
+   "step": 300,
+   "doc_id": 288,
+   "file_index": 300,
+   "n_tokens": 203,
+   "input_ids_sha256_16": "271793091a58b51b",
+   "loss": 3.2107059955596924,
+   "grad_norm_total": 2.032226747704951,
+   "sketch_pooled_norm": 2.044040342643035
+  },
+  {
+   "step": 301,
+   "doc_id": 289,
+   "file_index": 301,
+   "n_tokens": 226,
+   "input_ids_sha256_16": "a48003b9910c7328",
+   "loss": 3.006610870361328,
+   "grad_norm_total": 2.2852983445363733,
+   "sketch_pooled_norm": 2.297374372362888
+  },
+  {
+   "step": 302,
+   "doc_id": 308,
+   "file_index": 302,
+   "n_tokens": 213,
+   "input_ids_sha256_16": "0900136b2572994a",
+   "loss": 3.267371416091919,
+   "grad_norm_total": 2.122598054045988,
+   "sketch_pooled_norm": 2.0828672959775263
+  },
+  {
+   "step": 303,
+   "doc_id": 309,
+   "file_index": 303,
+   "n_tokens": 260,
+   "input_ids_sha256_16": "950af8b8ec4aff08",
+   "loss": 4.034847259521484,
+   "grad_norm_total": 2.1000436819668,
+   "sketch_pooled_norm": 2.0859748261685
+  },
+  {
+   "step": 304,
+   "doc_id": 324,
+   "file_index": 304,
+   "n_tokens": 205,
+   "input_ids_sha256_16": "32f64dc22131a548",
+   "loss": 3.3373987674713135,
+   "grad_norm_total": 1.9512257643028572,
+   "sketch_pooled_norm": 1.9765749902065712
+  },
+  {
+   "step": 305,
+   "doc_id": 325,
+   "file_index": 305,
+   "n_tokens": 226,
+   "input_ids_sha256_16": "dada7cddc290c728",
+   "loss": 2.81856369972229,
+   "grad_norm_total": 1.4835720506007868,
+   "sketch_pooled_norm": 1.487161495649195
+  },
+  {
+   "step": 306,
+   "doc_id": 310,
+   "file_index": 306,
+   "n_tokens": 228,
+   "input_ids_sha256_16": "aeed2637c16b8ddf",
+   "loss": 3.7956550121307373,
+   "grad_norm_total": 1.4793540125820615,
+   "sketch_pooled_norm": 1.4904570930341838
+  },
+  {
+   "step": 307,
+   "doc_id": 311,
+   "file_index": 307,
+   "n_tokens": 226,
+   "input_ids_sha256_16": "eac6c47410e72abb",
+   "loss": 3.654771327972412,
+   "grad_norm_total": 1.3212930220358818,
+   "sketch_pooled_norm": 1.3236653900094353
+  },
+  {
+   "step": 308,
+   "doc_id": 326,
+   "file_index": 308,
+   "n_tokens": 216,
+   "input_ids_sha256_16": "09e96da75022bd12",
+   "loss": 2.7343764305114746,
+   "grad_norm_total": 1.271417831822717,
+   "sketch_pooled_norm": 1.2694389255469616
+  },
+  {
+   "step": 309,
+   "doc_id": 327,
+   "file_index": 309,
+   "n_tokens": 244,
+   "input_ids_sha256_16": "fbae56a2e966cc1e",
+   "loss": 3.4369146823883057,
+   "grad_norm_total": 1.5416701173285825,
+   "sketch_pooled_norm": 1.5337584505658697
+  },
+  {
+   "step": 310,
+   "doc_id": 262,
+   "file_index": 310,
+   "n_tokens": 192,
+   "input_ids_sha256_16": "8ab4b6b3b62e9e5b",
+   "loss": 2.962531805038452,
+   "grad_norm_total": 1.339518756632227,
+   "sketch_pooled_norm": 1.3615283083652534
+  },
+  {
+   "step": 311,
+   "doc_id": 263,
+   "file_index": 311,
+   "n_tokens": 254,
+   "input_ids_sha256_16": "8c75a0f28bb4a910",
+   "loss": 2.9611353874206543,
+   "grad_norm_total": 1.4596328207861704,
+   "sketch_pooled_norm": 1.449509751337862
+  },
+  {
+   "step": 312,
+   "doc_id": 322,
+   "file_index": 312,
+   "n_tokens": 201,
+   "input_ids_sha256_16": "2168340f4538fafe",
+   "loss": 2.4362106323242188,
+   "grad_norm_total": 1.6242698603335493,
+   "sketch_pooled_norm": 1.6473930806150434
+  },
+  {
+   "step": 313,
+   "doc_id": 323,
+   "file_index": 313,
+   "n_tokens": 229,
+   "input_ids_sha256_16": "61ce5e1c9041b4cd",
+   "loss": 3.1823315620422363,
+   "grad_norm_total": 1.3222012276443624,
+   "sketch_pooled_norm": 1.3039943516935673
+  },
+  {
+   "step": 314,
+   "doc_id": 338,
+   "file_index": 314,
+   "n_tokens": 164,
+   "input_ids_sha256_16": "3112e392aaee5315",
+   "loss": 3.675895929336548,
+   "grad_norm_total": 2.432031383251128,
+   "sketch_pooled_norm": 2.4360826896904277
+  },
+  {
+   "step": 315,
+   "doc_id": 339,
+   "file_index": 315,
+   "n_tokens": 251,
+   "input_ids_sha256_16": "377bcd468cb5bacf",
+   "loss": 3.1691980361938477,
+   "grad_norm_total": 1.498914383723992,
+   "sketch_pooled_norm": 1.4973515202519188
+  },
+  {
+   "step": 316,
+   "doc_id": 336,
+   "file_index": 316,
+   "n_tokens": 238,
+   "input_ids_sha256_16": "80c7289101b92a35",
+   "loss": 3.0801074504852295,
+   "grad_norm_total": 1.4241726786565254,
+   "sketch_pooled_norm": 1.4246313274682385
+  },
+  {
+   "step": 317,
+   "doc_id": 337,
+   "file_index": 317,
+   "n_tokens": 218,
+   "input_ids_sha256_16": "3ecad18772cb1d76",
+   "loss": 3.155444383621216,
+   "grad_norm_total": 1.8705362026553052,
+   "sketch_pooled_norm": 1.8702807773136338
+  },
+  {
+   "step": 318,
+   "doc_id": 250,
+   "file_index": 318,
+   "n_tokens": 161,
+   "input_ids_sha256_16": "c47a98fd5066641e",
+   "loss": 3.4015262126922607,
+   "grad_norm_total": 1.8120407291279597,
+   "sketch_pooled_norm": 1.7886290595429564
+  },
+  {
+   "step": 319,
+   "doc_id": 251,
+   "file_index": 319,
+   "n_tokens": 172,
+   "input_ids_sha256_16": "f37b61f20f956091",
+   "loss": 3.7325499057769775,
+   "grad_norm_total": 2.5801992443614385,
+   "sketch_pooled_norm": 2.581063697995042
+  },
+  {
+   "step": 320,
+   "doc_id": 330,
+   "file_index": 320,
+   "n_tokens": 255,
+   "input_ids_sha256_16": "96e60556202adbfd",
+   "loss": 3.6339404582977295,
+   "grad_norm_total": 1.8523493347120128,
+   "sketch_pooled_norm": 1.8383419750124648
+  },
+  {
+   "step": 321,
+   "doc_id": 331,
+   "file_index": 321,
+   "n_tokens": 261,
+   "input_ids_sha256_16": "6213ee8612bc75d6",
+   "loss": 2.940842390060425,
+   "grad_norm_total": 1.344100887689484,
+   "sketch_pooled_norm": 1.3357394054368372
+  },
+  {
+   "step": 322,
+   "doc_id": 332,
+   "file_index": 322,
+   "n_tokens": 219,
+   "input_ids_sha256_16": "12adeaa1aa2bae86",
+   "loss": 2.7649455070495605,
+   "grad_norm_total": 1.7669392065574179,
+   "sketch_pooled_norm": 1.7565346870048546
+  },
+  {
+   "step": 323,
+   "doc_id": 333,
+   "file_index": 323,
+   "n_tokens": 214,
+   "input_ids_sha256_16": "9c0e678582c9d730",
+   "loss": 3.0973331928253174,
+   "grad_norm_total": 1.710238592519366,
+   "sketch_pooled_norm": 1.6953044569096882
+  },
+  {
+   "step": 324,
+   "doc_id": 340,
+   "file_index": 324,
+   "n_tokens": 201,
+   "input_ids_sha256_16": "a9814c4351454373",
+   "loss": 3.554091691970825,
+   "grad_norm_total": 1.8680452696402576,
+   "sketch_pooled_norm": 1.878003418673325
+  },
+  {
+   "step": 325,
+   "doc_id": 341,
+   "file_index": 325,
+   "n_tokens": 247,
+   "input_ids_sha256_16": "afe3c04983bccfcb",
+   "loss": 2.70255708694458,
+   "grad_norm_total": 1.2684972290924177,
+   "sketch_pooled_norm": 1.2612427052735287
+  },
+  {
+   "step": 326,
+   "doc_id": 366,
+   "file_index": 326,
+   "n_tokens": 198,
+   "input_ids_sha256_16": "74ab15d19433c92a",
+   "loss": 3.1857352256774902,
+   "grad_norm_total": 2.3017397121252534,
+   "sketch_pooled_norm": 2.308270272168017
+  },
+  {
+   "step": 327,
+   "doc_id": 367,
+   "file_index": 327,
+   "n_tokens": 259,
+   "input_ids_sha256_16": "4a1052c176bf72ee",
+   "loss": 2.910825490951538,
+   "grad_norm_total": 1.4377156003693625,
+   "sketch_pooled_norm": 1.4460594167958758
+  },
+  {
+   "step": 328,
+   "doc_id": 362,
+   "file_index": 328,
+   "n_tokens": 201,
+   "input_ids_sha256_16": "923bb7629fc53857",
+   "loss": 2.9293713569641113,
+   "grad_norm_total": 1.8402771614171167,
+   "sketch_pooled_norm": 1.8384706272547122
+  },
+  {
+   "step": 329,
+   "doc_id": 363,
+   "file_index": 329,
+   "n_tokens": 238,
+   "input_ids_sha256_16": "850daf7152346750",
+   "loss": 3.469304323196411,
+   "grad_norm_total": 2.036451407123125,
+   "sketch_pooled_norm": 2.037371550499374
+  },
+  {
+   "step": 330,
+   "doc_id": 348,
+   "file_index": 330,
+   "n_tokens": 230,
+   "input_ids_sha256_16": "161d74761670c340",
+   "loss": 3.4840497970581055,
+   "grad_norm_total": 2.2579822325221337,
+   "sketch_pooled_norm": 2.276503160462345
+  },
+  {
+   "step": 331,
+   "doc_id": 349,
+   "file_index": 331,
+   "n_tokens": 244,
+   "input_ids_sha256_16": "59869f191686ca22",
+   "loss": 3.4955196380615234,
+   "grad_norm_total": 3.063041624963694,
+   "sketch_pooled_norm": 3.1036164307598284
+  },
+  {
+   "step": 332,
+   "doc_id": 344,
+   "file_index": 332,
+   "n_tokens": 234,
+   "input_ids_sha256_16": "4a0547f654f92aef",
+   "loss": 3.119029998779297,
+   "grad_norm_total": 1.6576877313988472,
+   "sketch_pooled_norm": 1.637473774213678
+  },
+  {
+   "step": 333,
+   "doc_id": 345,
+   "file_index": 333,
+   "n_tokens": 236,
+   "input_ids_sha256_16": "90fa5f2e3d3df146",
+   "loss": 2.944582462310791,
+   "grad_norm_total": 1.6620780502461743,
+   "sketch_pooled_norm": 1.6465811628311606
+  },
+  {
+   "step": 334,
+   "doc_id": 350,
+   "file_index": 334,
+   "n_tokens": 201,
+   "input_ids_sha256_16": "f01e3e57f86ad8cf",
+   "loss": 3.116825819015503,
+   "grad_norm_total": 1.373616352810476,
+   "sketch_pooled_norm": 1.3886917711021796
+  },
+  {
+   "step": 335,
+   "doc_id": 351,
+   "file_index": 335,
+   "n_tokens": 212,
+   "input_ids_sha256_16": "0ec768a8e4e88c1f",
+   "loss": 3.1590051651000977,
+   "grad_norm_total": 1.4688659387934253,
+   "sketch_pooled_norm": 1.4614079548709067
+  },
+  {
+   "step": 336,
+   "doc_id": 318,
+   "file_index": 336,
+   "n_tokens": 237,
+   "input_ids_sha256_16": "059751932c7c8c06",
+   "loss": 3.4845197200775146,
+   "grad_norm_total": 1.8661600861802894,
+   "sketch_pooled_norm": 1.85578048220748
+  },
+  {
+   "step": 337,
+   "doc_id": 319,
+   "file_index": 337,
+   "n_tokens": 221,
+   "input_ids_sha256_16": "ba27d66933071605",
+   "loss": 3.4252231121063232,
+   "grad_norm_total": 2.2602584788563624,
+   "sketch_pooled_norm": 2.315285403055163
+  },
+  {
+   "step": 338,
+   "doc_id": 342,
+   "file_index": 338,
+   "n_tokens": 231,
+   "input_ids_sha256_16": "3e30045a4567d4f5",
+   "loss": 2.93526291847229,
+   "grad_norm_total": 1.4657637517983007,
+   "sketch_pooled_norm": 1.4711728064601146
+  },
+  {
+   "step": 339,
+   "doc_id": 343,
+   "file_index": 339,
+   "n_tokens": 196,
+   "input_ids_sha256_16": "fd79c3b51fbacc45",
+   "loss": 3.5889790058135986,
+   "grad_norm_total": 2.06291592641897,
+   "sketch_pooled_norm": 2.0659611283031842
+  },
+  {
+   "step": 340,
+   "doc_id": 368,
+   "file_index": 340,
+   "n_tokens": 180,
+   "input_ids_sha256_16": "bb1770e371815202",
+   "loss": 3.790874481201172,
+   "grad_norm_total": 1.6478852917348397,
+   "sketch_pooled_norm": 1.6410021469906622
+  },
+  {
+   "step": 341,
+   "doc_id": 369,
+   "file_index": 341,
+   "n_tokens": 230,
+   "input_ids_sha256_16": "2885961c9da58ba3",
+   "loss": 3.8529398441314697,
+   "grad_norm_total": 1.9420597739796157,
+   "sketch_pooled_norm": 1.9538071981744827
+  },
+  {
+   "step": 342,
+   "doc_id": 358,
+   "file_index": 342,
+   "n_tokens": 209,
+   "input_ids_sha256_16": "d2cbb80a84775edb",
+   "loss": 3.062079429626465,
+   "grad_norm_total": 1.3765622661294463,
+   "sketch_pooled_norm": 1.3727294168935422
+  },
+  {
+   "step": 343,
+   "doc_id": 359,
+   "file_index": 343,
+   "n_tokens": 242,
+   "input_ids_sha256_16": "54cf8582c156adc3",
+   "loss": 3.2399723529815674,
+   "grad_norm_total": 1.2749579954841663,
+   "sketch_pooled_norm": 1.299614891634235
+  },
+  {
+   "step": 344,
+   "doc_id": 374,
+   "file_index": 344,
+   "n_tokens": 181,
+   "input_ids_sha256_16": "7b358a8d53d01a50",
+   "loss": 3.2730329036712646,
+   "grad_norm_total": 2.3705428745785277,
+   "sketch_pooled_norm": 2.3678221467685905
+  },
+  {
+   "step": 345,
+   "doc_id": 375,
+   "file_index": 345,
+   "n_tokens": 205,
+   "input_ids_sha256_16": "a46ae4d6f8a47205",
+   "loss": 3.060676097869873,
+   "grad_norm_total": 1.759157937873669,
+   "sketch_pooled_norm": 1.747589659624486
+  },
+  {
+   "step": 346,
+   "doc_id": 334,
+   "file_index": 346,
+   "n_tokens": 207,
+   "input_ids_sha256_16": "3ff99d193594f1a0",
+   "loss": 3.1110849380493164,
+   "grad_norm_total": 1.920847622370533,
+   "sketch_pooled_norm": 1.9058553027960703
+  },
+  {
+   "step": 347,
+   "doc_id": 335,
+   "file_index": 347,
+   "n_tokens": 242,
+   "input_ids_sha256_16": "b45a95dd9017b270",
+   "loss": 3.1581976413726807,
+   "grad_norm_total": 2.3412759915830548,
+   "sketch_pooled_norm": 2.3315570081913517
+  },
+  {
+   "step": 348,
+   "doc_id": 306,
+   "file_index": 348,
+   "n_tokens": 221,
+   "input_ids_sha256_16": "6d0f749ebad99ac1",
+   "loss": 3.496586799621582,
+   "grad_norm_total": 1.6446664294914086,
+   "sketch_pooled_norm": 1.6603234062994776
+  },
+  {
+   "step": 349,
+   "doc_id": 307,
+   "file_index": 349,
+   "n_tokens": 240,
+   "input_ids_sha256_16": "67af4ca17810ee15",
+   "loss": 3.353863477706909,
+   "grad_norm_total": 2.1304567021484035,
+   "sketch_pooled_norm": 2.1337226238416944
+  },
+  {
+   "step": 350,
+   "doc_id": 354,
+   "file_index": 350,
+   "n_tokens": 195,
+   "input_ids_sha256_16": "3c001ca5dc3feaec",
+   "loss": 2.9345433712005615,
+   "grad_norm_total": 5.772724798088424,
+   "sketch_pooled_norm": 5.804989382769895
+  },
+  {
+   "step": 351,
+   "doc_id": 355,
+   "file_index": 351,
+   "n_tokens": 229,
+   "input_ids_sha256_16": "b7be5f6e2e537416",
+   "loss": 3.2308475971221924,
+   "grad_norm_total": 1.8644161571493314,
+   "sketch_pooled_norm": 1.8951276962378338
+  },
+  {
+   "step": 352,
+   "doc_id": 364,
+   "file_index": 352,
+   "n_tokens": 233,
+   "input_ids_sha256_16": "fe1c6f58fa0e8670",
+   "loss": 2.9060025215148926,
+   "grad_norm_total": 1.6413752745223718,
+   "sketch_pooled_norm": 1.6399798820525908
+  },
+  {
+   "step": 353,
+   "doc_id": 365,
+   "file_index": 353,
+   "n_tokens": 222,
+   "input_ids_sha256_16": "bcd7c8482f7a51d8",
+   "loss": 2.530451536178589,
+   "grad_norm_total": 1.5902984743626785,
+   "sketch_pooled_norm": 1.6167539196923197
+  },
+  {
+   "step": 354,
+   "doc_id": 304,
+   "file_index": 354,
+   "n_tokens": 201,
+   "input_ids_sha256_16": "4ccdb1c58445b25a",
+   "loss": 3.4232404232025146,
+   "grad_norm_total": 1.6871618647506448,
+   "sketch_pooled_norm": 1.6929165298064084
+  },
+  {
+   "step": 355,
+   "doc_id": 305,
+   "file_index": 355,
+   "n_tokens": 227,
+   "input_ids_sha256_16": "4bc7671b397f9d7e",
+   "loss": 3.2208476066589355,
+   "grad_norm_total": 1.6067890503795832,
+   "sketch_pooled_norm": 1.6047506811725925
+  },
+  {
+   "step": 356,
+   "doc_id": 376,
+   "file_index": 356,
+   "n_tokens": 219,
+   "input_ids_sha256_16": "1993845d3c3016d2",
+   "loss": 3.2197155952453613,
+   "grad_norm_total": 1.277894183613176,
+   "sketch_pooled_norm": 1.2737548397157892
+  },
+  {
+   "step": 357,
+   "doc_id": 377,
+   "file_index": 357,
+   "n_tokens": 233,
+   "input_ids_sha256_16": "1bc0c7e6b9cf5b95",
+   "loss": 3.510167121887207,
+   "grad_norm_total": 1.792603404800093,
+   "sketch_pooled_norm": 1.7943978480465448
+  },
+  {
+   "step": 358,
+   "doc_id": 396,
+   "file_index": 358,
+   "n_tokens": 234,
+   "input_ids_sha256_16": "705d19b9bde4480c",
+   "loss": 2.9326162338256836,
+   "grad_norm_total": 2.0800840561882743,
+   "sketch_pooled_norm": 2.0827317264631717
+  },
+  {
+   "step": 359,
+   "doc_id": 397,
+   "file_index": 359,
+   "n_tokens": 250,
+   "input_ids_sha256_16": "b5ec60a9845bd6dc",
+   "loss": 3.3460066318511963,
+   "grad_norm_total": 1.4320485917993555,
+   "sketch_pooled_norm": 1.429770059759565
+  },
+  {
+   "step": 360,
+   "doc_id": 394,
+   "file_index": 360,
+   "n_tokens": 244,
+   "input_ids_sha256_16": "91f6caf12033f2ee",
+   "loss": 3.1915194988250732,
+   "grad_norm_total": 1.5122820743984737,
+   "sketch_pooled_norm": 1.5200594451293123
+  },
+  {
+   "step": 361,
+   "doc_id": 395,
+   "file_index": 361,
+   "n_tokens": 268,
+   "input_ids_sha256_16": "49b9f15c0b16f70d",
+   "loss": 3.2973294258117676,
+   "grad_norm_total": 1.3494391190280144,
+   "sketch_pooled_norm": 1.3553303039876037
+  },
+  {
+   "step": 362,
+   "doc_id": 398,
+   "file_index": 362,
+   "n_tokens": 168,
+   "input_ids_sha256_16": "29939b54bcb95bbe",
+   "loss": 3.322359085083008,
+   "grad_norm_total": 2.552883638979323,
+   "sketch_pooled_norm": 2.556437015129934
+  },
+  {
+   "step": 363,
+   "doc_id": 399,
+   "file_index": 363,
+   "n_tokens": 188,
+   "input_ids_sha256_16": "b96e84a59e1c4bc4",
+   "loss": 2.843308448791504,
+   "grad_norm_total": 2.257185817525119,
+   "sketch_pooled_norm": 2.245013670419087
+  },
+  {
+   "step": 364,
+   "doc_id": 356,
+   "file_index": 364,
+   "n_tokens": 229,
+   "input_ids_sha256_16": "ba4a6d9ac02f9d05",
+   "loss": 2.962920904159546,
+   "grad_norm_total": 1.7014401045851484,
+   "sketch_pooled_norm": 1.7093405922835088
+  },
+  {
+   "step": 365,
+   "doc_id": 357,
+   "file_index": 365,
+   "n_tokens": 240,
+   "input_ids_sha256_16": "3607fd0dfe94875c",
+   "loss": 3.5089941024780273,
+   "grad_norm_total": 1.6853868650800465,
+   "sketch_pooled_norm": 1.6735373960298272
+  },
+  {
+   "step": 366,
+   "doc_id": 352,
+   "file_index": 366,
+   "n_tokens": 244,
+   "input_ids_sha256_16": "caeb063352542afc",
+   "loss": 3.2238006591796875,
+   "grad_norm_total": 1.358566826730003,
+   "sketch_pooled_norm": 1.3555235855717005
+  },
+  {
+   "step": 367,
+   "doc_id": 353,
+   "file_index": 367,
+   "n_tokens": 242,
+   "input_ids_sha256_16": "2d57a2e9a9484fdf",
+   "loss": 3.1881840229034424,
+   "grad_norm_total": 1.3733161557905413,
+   "sketch_pooled_norm": 1.37589646201647
+  },
+  {
+   "step": 368,
+   "doc_id": 378,
+   "file_index": 368,
+   "n_tokens": 198,
+   "input_ids_sha256_16": "a76ffd2ca96f0411",
+   "loss": 2.6076462268829346,
+   "grad_norm_total": 1.9086177864071274,
+   "sketch_pooled_norm": 1.89887626437416
+  },
+  {
+   "step": 369,
+   "doc_id": 379,
+   "file_index": 369,
+   "n_tokens": 293,
+   "input_ids_sha256_16": "6ca43edac7fda978",
+   "loss": 3.5055625438690186,
+   "grad_norm_total": 1.478248312067517,
+   "sketch_pooled_norm": 1.4825198187417536
+  },
+  {
+   "step": 370,
+   "doc_id": 388,
+   "file_index": 370,
+   "n_tokens": 253,
+   "input_ids_sha256_16": "cd1a7892bc5e3b5b",
+   "loss": 2.728238344192505,
+   "grad_norm_total": 1.3962915137858498,
+   "sketch_pooled_norm": 1.4106879921476136
+  },
+  {
+   "step": 371,
+   "doc_id": 389,
+   "file_index": 371,
+   "n_tokens": 247,
+   "input_ids_sha256_16": "82b6f0eacf807a74",
+   "loss": 3.107816219329834,
+   "grad_norm_total": 1.7009891796294707,
+   "sketch_pooled_norm": 1.681793389586899
+  },
+  {
+   "step": 372,
+   "doc_id": 370,
+   "file_index": 372,
+   "n_tokens": 209,
+   "input_ids_sha256_16": "3227315fb4bd85a6",
+   "loss": 3.473579168319702,
+   "grad_norm_total": 2.0108239368664553,
+   "sketch_pooled_norm": 2.007217906185871
+  },
+  {
+   "step": 373,
+   "doc_id": 371,
+   "file_index": 373,
+   "n_tokens": 178,
+   "input_ids_sha256_16": "12f957363f776508",
+   "loss": 3.3756682872772217,
+   "grad_norm_total": 1.74877477317732,
+   "sketch_pooled_norm": 1.734360083471449
+  },
+  {
+   "step": 374,
+   "doc_id": 386,
+   "file_index": 374,
+   "n_tokens": 223,
+   "input_ids_sha256_16": "c451935c8d27af01",
+   "loss": 3.550098419189453,
+   "grad_norm_total": 1.6916126781880128,
+   "sketch_pooled_norm": 1.6914480207008509
+  },
+  {
+   "step": 375,
+   "doc_id": 387,
+   "file_index": 375,
+   "n_tokens": 217,
+   "input_ids_sha256_16": "9a7273f5a802abb0",
+   "loss": 3.311161518096924,
+   "grad_norm_total": 1.6187479482784681,
+   "sketch_pooled_norm": 1.635354241246832
+  },
+  {
+   "step": 376,
+   "doc_id": 316,
+   "file_index": 376,
+   "n_tokens": 190,
+   "input_ids_sha256_16": "235673652ad740ae",
+   "loss": 3.8296236991882324,
+   "grad_norm_total": 2.0995357634029475,
+   "sketch_pooled_norm": 2.1059731435318922
+  },
+  {
+   "step": 377,
+   "doc_id": 317,
+   "file_index": 377,
+   "n_tokens": 233,
+   "input_ids_sha256_16": "e4b2467bd3473f8f",
+   "loss": 3.3916773796081543,
+   "grad_norm_total": 1.520101631713858,
+   "sketch_pooled_norm": 1.5290388840751972
+  },
+  {
+   "step": 378,
+   "doc_id": 380,
+   "file_index": 378,
+   "n_tokens": 184,
+   "input_ids_sha256_16": "8d6432404acbb0e0",
+   "loss": 3.4075610637664795,
+   "grad_norm_total": 2.2837672892263914,
+   "sketch_pooled_norm": 2.2880502580261917
+  },
+  {
+   "step": 379,
+   "doc_id": 381,
+   "file_index": 379,
+   "n_tokens": 229,
+   "input_ids_sha256_16": "8b1866b31f5f843f",
+   "loss": 3.5843515396118164,
+   "grad_norm_total": 1.8078325006350706,
+   "sketch_pooled_norm": 1.8009018946632225
+  },
+  {
+   "step": 380,
+   "doc_id": 372,
+   "file_index": 380,
+   "n_tokens": 211,
+   "input_ids_sha256_16": "bdcb226e7c1c2eeb",
+   "loss": 2.742807626724243,
+   "grad_norm_total": 1.4270364020448996,
+   "sketch_pooled_norm": 1.441662393128448
+  },
+  {
+   "step": 381,
+   "doc_id": 373,
+   "file_index": 381,
+   "n_tokens": 214,
+   "input_ids_sha256_16": "80781c2f7cce13eb",
+   "loss": 3.2825753688812256,
+   "grad_norm_total": 1.7231316145690663,
+   "sketch_pooled_norm": 1.7361594319044165
+  },
+  {
+   "step": 382,
+   "doc_id": 392,
+   "file_index": 382,
+   "n_tokens": 235,
+   "input_ids_sha256_16": "95ff990535bc0e62",
+   "loss": 3.102492094039917,
+   "grad_norm_total": 1.3663270720200242,
+   "sketch_pooled_norm": 1.3680561034921264
+  },
+  {
+   "step": 383,
+   "doc_id": 393,
+   "file_index": 383,
+   "n_tokens": 238,
+   "input_ids_sha256_16": "e4c7c050c698b79c",
+   "loss": 2.9126741886138916,
+   "grad_norm_total": 1.4917814810451908,
+   "sketch_pooled_norm": 1.4975551934871245
+  },
+  {
+   "step": 384,
+   "doc_id": 384,
+   "file_index": 384,
+   "n_tokens": 207,
+   "input_ids_sha256_16": "9505890ea1796f7e",
+   "loss": 3.482294797897339,
+   "grad_norm_total": 2.0964868617085424,
+   "sketch_pooled_norm": 2.102843827855371
+  },
+  {
+   "step": 385,
+   "doc_id": 385,
+   "file_index": 385,
+   "n_tokens": 222,
+   "input_ids_sha256_16": "3cd63ec2123a9ca7",
+   "loss": 3.3334238529205322,
+   "grad_norm_total": 2.09830046014505,
+   "sketch_pooled_norm": 2.0948522048009455
+  },
+  {
+   "step": 386,
+   "doc_id": 232,
+   "file_index": 386,
+   "n_tokens": 247,
+   "input_ids_sha256_16": "1876582b6f2eb209",
+   "loss": 2.7397022247314453,
+   "grad_norm_total": 2.2107136742511737,
+   "sketch_pooled_norm": 2.2290920830740353
+  },
+  {
+   "step": 387,
+   "doc_id": 233,
+   "file_index": 387,
+   "n_tokens": 241,
+   "input_ids_sha256_16": "7fbf6334b0b3cab1",
+   "loss": 3.106717109680176,
+   "grad_norm_total": 1.253347771909233,
+   "sketch_pooled_norm": 1.2479739613826035
+  },
+  {
+   "step": 388,
+   "doc_id": 214,
+   "file_index": 388,
+   "n_tokens": 207,
+   "input_ids_sha256_16": "7ca33ef06f935dc9",
+   "loss": 2.6583149433135986,
+   "grad_norm_total": 2.257600715916664,
+   "sketch_pooled_norm": 2.242830442684347
+  },
+  {
+   "step": 389,
+   "doc_id": 215,
+   "file_index": 389,
+   "n_tokens": 231,
+   "input_ids_sha256_16": "c07622236fe2f138",
+   "loss": 3.2469491958618164,
+   "grad_norm_total": 1.6631086281470067,
+   "sketch_pooled_norm": 1.6555894523190382
+  },
+  {
+   "step": 390,
+   "doc_id": 360,
+   "file_index": 390,
+   "n_tokens": 221,
+   "input_ids_sha256_16": "04c091224b55775d",
+   "loss": 3.170398473739624,
+   "grad_norm_total": 1.8943639682422735,
+   "sketch_pooled_norm": 1.8980893954887934
+  },
+  {
+   "step": 391,
+   "doc_id": 361,
+   "file_index": 391,
+   "n_tokens": 234,
+   "input_ids_sha256_16": "f04dbefa38aa4def",
+   "loss": 3.0522704124450684,
+   "grad_norm_total": 1.2883191364414248,
+   "sketch_pooled_norm": 1.269912238838511
+  },
+  {
+   "step": 392,
+   "doc_id": 382,
+   "file_index": 392,
+   "n_tokens": 196,
+   "input_ids_sha256_16": "54ef5fc6edf657cd",
+   "loss": 3.1915533542633057,
+   "grad_norm_total": 1.6825093901399675,
+   "sketch_pooled_norm": 1.6812419484273597
+  },
+  {
+   "step": 393,
+   "doc_id": 383,
+   "file_index": 393,
+   "n_tokens": 273,
+   "input_ids_sha256_16": "ed6b5dcd4ad1ba0f",
+   "loss": 2.9554028511047363,
+   "grad_norm_total": 1.3999797610656541,
+   "sketch_pooled_norm": 1.4085519092778473
+  },
+  {
+   "step": 394,
+   "doc_id": 346,
+   "file_index": 394,
+   "n_tokens": 217,
+   "input_ids_sha256_16": "764095f63c9f8cc1",
+   "loss": 3.6947286128997803,
+   "grad_norm_total": 2.095542763230864,
+   "sketch_pooled_norm": 2.0879881031116434
+  },
+  {
+   "step": 395,
+   "doc_id": 347,
+   "file_index": 395,
+   "n_tokens": 218,
+   "input_ids_sha256_16": "d47863219a01735d",
+   "loss": 3.3664469718933105,
+   "grad_norm_total": 1.5822457259161573,
+   "sketch_pooled_norm": 1.5729008022395512
+  },
+  {
+   "step": 396,
+   "doc_id": 390,
+   "file_index": 396,
+   "n_tokens": 224,
+   "input_ids_sha256_16": "513139f17f0ce876",
+   "loss": 3.176859140396118,
+   "grad_norm_total": 1.649978718690111,
+   "sketch_pooled_norm": 1.6618356231382165
+  },
+  {
+   "step": 397,
+   "doc_id": 391,
+   "file_index": 397,
+   "n_tokens": 238,
+   "input_ids_sha256_16": "5178a42d60e1659d",
+   "loss": 3.6889920234680176,
+   "grad_norm_total": 1.7490089565884113,
+   "sketch_pooled_norm": 1.7440543253676049
+  },
+  {
+   "step": 398,
+   "doc_id": 294,
+   "file_index": 398,
+   "n_tokens": 196,
+   "input_ids_sha256_16": "31bfd32c1a55c3fa",
+   "loss": 3.148175001144409,
+   "grad_norm_total": 1.7189758500090913,
+   "sketch_pooled_norm": 1.7355707249829342
+  },
+  {
+   "step": 399,
+   "doc_id": 295,
+   "file_index": 399,
+   "n_tokens": 226,
+   "input_ids_sha256_16": "fd0923ad367dd812",
+   "loss": 3.48569655418396,
+   "grad_norm_total": 2.134796812844832,
+   "sketch_pooled_norm": 2.150285041510189
+  }
+ ],
+ "verification": {
+  "projection_table_blake2b_first": "a8eef1192a2e319a2230a3013b77d759",
+  "projection_table_blake2b_last": "a8eef1192a2e319a2230a3013b77d759",
+  "projection_identical_across_steps": true,
+  "attribution_step_i_is_doc_i": true,
+  "doc_id_order": [
+   4,
+   5,
+   0,
+   1,
+   10,
+   11,
+   2,
+   3,
+   8,
+   9,
+   6,
+   7,
+   22,
+   23,
+   54,
+   55,
+   48,
+   49,
+   14,
+   15,
+   38,
+   39,
+   58,
+   59,
+   40,
+   41,
+   24,
+   25,
+   20,
+   21,
+   30,
+   31,
+   42,
+   43,
+   12,
+   13,
+   28,
+   29,
+   16,
+   17,
+   26,
+   27,
+   50,
+   51,
+   44,
+   45,
+   18,
+   19,
+   34,
+   35,
+   32,
+   33,
+   60,
+   61,
+   64,
+   65,
+   52,
+   53,
+   68,
+   69,
+   74,
+   75,
+   70,
+   71,
+   46,
+   47,
+   66,
+   67,
+   72,
+   73,
+   82,
+   83,
+   36,
+   37,
+   62,
+   63,
+   78,
+   79,
+   96,
+   97,
+   110,
+   111,
+   90,
+   91,
+   86,
+   87,
+   92,
+   93,
+   104,
+   105,
+   102,
+   103,
+   106,
+   107,
+   100,
+   101,
+   94,
+   95,
+   98,
+   99,
+   108,
+   109,
+   116,
+   117,
+   88,
+   89,
+   76,
+   77,
+   80,
+   81,
+   124,
+   125,
+   84,
+   85,
+   122,
+   123,
+   114,
+   115,
+   118,
+   119,
+   130,
+   131,
+   126,
+   127,
+   134,
+   135,
+   144,
+   145,
+   140,
+   141,
+   120,
+   121,
+   112,
+   113,
+   156,
+   157,
+   142,
+   143,
+   172,
+   173,
+   136,
+   137,
+   132,
+   133,
+   152,
+   153,
+   164,
+   165,
+   168,
+   169,
+   128,
+   129,
+   174,
+   175,
+   162,
+   163,
+   170,
+   171,
+   154,
+   155,
+   146,
+   147,
+   150,
+   151,
+   160,
+   161,
+   148,
+   149,
+   158,
+   159,
+   186,
+   187,
+   180,
+   181,
+   138,
+   139,
+   166,
+   167,
+   178,
+   179,
+   184,
+   185,
+   194,
+   195,
+   176,
+   177,
+   188,
+   189,
+   212,
+   213,
+   202,
+   203,
+   210,
+   211,
+   222,
+   223,
+   208,
+   209,
+   198,
+   199,
+   182,
+   183,
+   224,
+   225,
+   216,
+   217,
+   190,
+   191,
+   192,
+   193,
+   238,
+   239,
+   240,
+   241,
+   226,
+   227,
+   246,
+   247,
+   234,
+   235,
+   196,
+   197,
+   204,
+   205,
+   56,
+   57,
+   218,
+   219,
+   236,
+   237,
+   200,
+   201,
+   242,
+   243,
+   248,
+   249,
+   206,
+   207,
+   260,
+   261,
+   220,
+   221,
+   268,
+   269,
+   264,
+   265,
+   252,
+   253,
+   272,
+   273,
+   230,
+   231,
+   256,
+   257,
+   258,
+   259,
+   244,
+   245,
+   266,
+   267,
+   254,
+   255,
+   274,
+   275,
+   270,
+   271,
+   282,
+   283,
+   296,
+   297,
+   228,
+   229,
+   280,
+   281,
+   298,
+   299,
+   276,
+   277,
+   292,
+   293,
+   300,
+   301,
+   314,
+   315,
+   284,
+   285,
+   286,
+   287,
+   302,
+   303,
+   278,
+   279,
+   290,
+   291,
+   320,
+   321,
+   328,
+   329,
+   312,
+   313,
+   288,
+   289,
+   308,
+   309,
+   324,
+   325,
+   310,
+   311,
+   326,
+   327,
+   262,
+   263,
+   322,
+   323,
+   338,
+   339,
+   336,
+   337,
+   250,
+   251,
+   330,
+   331,
+   332,
+   333,
+   340,
+   341,
+   366,
+   367,
+   362,
+   363,
+   348,
+   349,
+   344,
+   345,
+   350,
+   351,
+   318,
+   319,
+   342,
+   343,
+   368,
+   369,
+   358,
+   359,
+   374,
+   375,
+   334,
+   335,
+   306,
+   307,
+   354,
+   355,
+   364,
+   365,
+   304,
+   305,
+   376,
+   377,
+   396,
+   397,
+   394,
+   395,
+   398,
+   399,
+   356,
+   357,
+   352,
+   353,
+   378,
+   379,
+   388,
+   389,
+   370,
+   371,
+   386,
+   387,
+   316,
+   317,
+   380,
+   381,
+   372,
+   373,
+   392,
+   393,
+   384,
+   385,
+   232,
+   233,
+   214,
+   215,
+   360,
+   361,
+   382,
+   383,
+   346,
+   347,
+   390,
+   391,
+   294,
+   295
+  ],
+  "input_ids_sha256_order": [
+   "07984b612c950b04",
+   "2d84e635067f43a3",
+   "ce7d40a233ca07b8",
+   "dc098c30f5d749af",
+   "86f346385e09de36",
+   "0aaf53b89bf35753",
+   "dbe1a70873f3d25a",
+   "caaaf8b078c88d54",
+   "709afb4cbe50ab25",
+   "3571030d05c86df8",
+   "28971b1eb17021d8",
+   "b4d797a23517e8ea",
+   "5ad70b5b5a7f3411",
+   "ffcc664178f0d08e",
+   "ce3f852747e35564",
+   "58a11f76f59d1d3f",
+   "da13d88d19256df8",
+   "30da41a12b800bc9",
+   "3fdf5722b1232650",
+   "115f1e2531a7e201",
+   "fdfd6da18d4bc8ea",
+   "53392f11270f6792",
+   "c7e70ec575aea21c",
+   "28e535e0f74bb3a7",
+   "232aed05c3d41d60",
+   "da702ec7392c2c5c",
+   "977a9bb68b734bb0",
+   "a1e632a461d4d119",
+   "9354583d0a59eedd",
+   "13270ffadd0e6860",
+   "926dcb6d5e397cc6",
+   "961c253072e04194",
+   "84472f9af7323885",
+   "72d1ce646c5fc93a",
+   "853edf21bf03d0f7",
+   "5a6bb8261086ec31",
+   "73054a4960d2cb11",
+   "1a1fa748550ad118",
+   "9da4e258b2cacee8",
+   "7e5e082c311c1250",
+   "a3840e0c6ec14f71",
+   "b1ea8cf95bcc4430",
+   "bbbeb608b8a446c4",
+   "284167c90d540f55",
+   "2e634732d64d4da8",
+   "23a14480effcfccd",
+   "07797846c13f37bb",
+   "96569b27a5817ef3",
+   "9766cebb79dcf276",
+   "afbfc011318e46ec",
+   "aaf37f9e500b77c7",
+   "6539cee471bcf4e7",
+   "eee7e089bba9fffd",
+   "6d39daa7513d05f1",
+   "d716c70f94873eaa",
+   "963db8c683356d2d",
+   "8273e133d98f5361",
+   "7652d66829a9f060",
+   "317124809015128b",
+   "af8f1f8e18c1a1b9",
+   "13d1c959bd0304b4",
+   "58ad1f501888e962",
+   "36b100ecc8299cb9",
+   "df86524e27632572",
+   "e7f4f3e31a3345d1",
+   "00b1655fe3f9aa20",
+   "9021f1db7f629607",
+   "eca1f0fdca7c9aaa",
+   "0218fa727402b353",
+   "245513bbb428c69d",
+   "8b641f8e65d40d4d",
+   "eb1f8dbcc503353f",
+   "3eb7d40f0c8f51f5",
+   "1f85c3bcc3a482eb",
+   "b6244c9882569c24",
+   "55efe6c27f9252a1",
+   "68cdb0498e0f696e",
+   "175cb035454583e4",
+   "22ceae7f420a8b4a",
+   "ebd6ba954c5b0c96",
+   "6fee89506d1a2d1b",
+   "f0d244e2dc949054",
+   "533b33282ca39923",
+   "7b5358d87cb6aa15",
+   "ff4d5b244b1b6a7f",
+   "15ebc2a37b39ed40",
+   "198d5cd6979749db",
+   "f6c2cb4ba53cfba0",
+   "771c7573c42a9cbf",
+   "d4176385aa70cc85",
+   "1a7f74a5e009d243",
+   "40ffff46a926219a",
+   "bead81fd750bb62a",
+   "b6b7471ecf36175e",
+   "57389cbe6575650b",
+   "fe0bf4b13f26a693",
+   "3c550571355f8d10",
+   "46f4409569a1deb0",
+   "0298beb82fd8b491",
+   "74477a254b15b592",
+   "73222f6f8d9a6d02",
+   "7d624a5f84ca42c2",
+   "f8b916b1729d40a6",
+   "d8d7b79165d416cd",
+   "dc646ee1b7af0f2c",
+   "c445d42dc7c8f54b",
+   "1983951ec7d7ac4b",
+   "3c2ce6f418d20420",
+   "c497ab719901f650",
+   "720458de0b5aa4d8",
+   "69f603647195a7a7",
+   "673268212c2ef276",
+   "4c7d8e25b06462ac",
+   "0ed56781632005be",
+   "9b5fe1a62e6fd51c",
+   "990e650062958963",
+   "a1189c2610935b26",
+   "58e398ed0455fd9c",
+   "70a90343a626ae98",
+   "30a8d2df203ccd89",
+   "4ca5f56f7e5f3fa4",
+   "a79653dd965fd287",
+   "b4cf58e9576c129a",
+   "face9113074b98b4",
+   "1f02b3cc5d4bc22b",
+   "e7a2c7449004ad9e",
+   "ea1fe7bc9bbc3b66",
+   "56af657dc533fb0b",
+   "4fedc596975cd97e",
+   "d90484143d828e42",
+   "667a38ac3b870c90",
+   "d888d027468dfbf5",
+   "7c07bcfeb5f5d373",
+   "5eee19039fb60762",
+   "6b7a64f27e2b2d4c",
+   "96a37e29df91b3ad",
+   "fb725a07cb46343f",
+   "3d3d70c84de1648d",
+   "461c600b4eb75c1d",
+   "ade026c234ecab8b",
+   "bc4fd362b35db8d0",
+   "5f957e4097354797",
+   "be22564d367e6b8c",
+   "31d3619b6ed12417",
+   "bcdfaac44f39ad1e",
+   "01475f1d924587aa",
+   "d25f6e5459166820",
+   "bc3df55796bacb1f",
+   "b01129f839a13294",
+   "82889b1c2d6e3a0d",
+   "0144fd01ba527326",
+   "89b37d6c26fef97e",
+   "212885128d65eb4d",
+   "e4b355aecdbde082",
+   "98e6f1af666854ab",
+   "11e9f297c2132b46",
+   "a33f3c66d8876944",
+   "0f0bc0b87c674471",
+   "9a55ce05829f9481",
+   "ed8fbe417ddc3328",
+   "816e78868d630c58",
+   "9b7c4f64195ba6b5",
+   "e58331fed25a773e",
+   "6bf76abd9dbd5fe7",
+   "62eebeaeba82b25d",
+   "4e786cc16ce7bba0",
+   "c472ac9e66c75d53",
+   "dd03ce46edb9348b",
+   "abf07e0112d132e2",
+   "a06d4fda04a5cec1",
+   "c3ea68acf8b29556",
+   "cc93e1269deb9189",
+   "5c2b08d24785bfec",
+   "9e84bd54d9b668f6",
+   "e2e4ba1e75186aeb",
+   "2b5f77f22871f783",
+   "a25d005069c7c3db",
+   "f611ac2325605960",
+   "443759f1fcd98435",
+   "f6931fa75c7d122b",
+   "818193d3a6fa2e7d",
+   "d40ddfc9e2995d70",
+   "5fa1fab51a99e945",
+   "a0ab41338cea94d3",
+   "4a5fda60ea25f57d",
+   "6727f3c31bf3735c",
+   "35c18e3c97f8da62",
+   "f0d5c42c1ce77c42",
+   "73a17381fa2abb69",
+   "99af8c0064c8611b",
+   "979afe4bb2a44cf7",
+   "885c5e30a675ff24",
+   "ab143ae4d7e6af34",
+   "ab1a062150919591",
+   "f8ef8e86985439d8",
+   "b073c0488f429871",
+   "034ba9834ba95144",
+   "edb025ae81708a4d",
+   "186004868033fa62",
+   "cae22da64abd5881",
+   "423c2ef148065f17",
+   "5db8c19b3e9566fa",
+   "46678b646956ef63",
+   "778df7ac485b0660",
+   "a512742961161b36",
+   "60c578c14979d49a",
+   "e456dd91354c950a",
+   "a3186960e8e21d03",
+   "1e61b35694e0a36f",
+   "16d4c5c19e92976d",
+   "5a47d1185f6c6ab5",
+   "04b101a63a909cf1",
+   "f2506dd6fcd19fa1",
+   "30b323d6ab90f367",
+   "dab93c4278caf781",
+   "ffeedd8340a29cf9",
+   "ef43b473856af5d3",
+   "ff465bb1b2182553",
+   "7360de705eab3f5c",
+   "ed5bae422cc460df",
+   "e7c4a63babdf0e18",
+   "a70cd1941e1d8787",
+   "57d410d142d42537",
+   "f41e55b2bf5cb225",
+   "45cc3c2510d51a41",
+   "a81470a68e9616e1",
+   "edb88dc5d7fad8a5",
+   "695d4bc1fc401c07",
+   "d8260dadd5001414",
+   "44ff289ae3b1f164",
+   "712febf1eb2ec8d3",
+   "a026c3bbb39085bd",
+   "62777631a48cf4a7",
+   "f2588e3287bf861b",
+   "bf5b190b9a3196e6",
+   "11490e790b787327",
+   "970c25c07d597215",
+   "51734e0788390fd5",
+   "d897fda83b7daf40",
+   "dda79bb14625d5b6",
+   "d2295e6cd2d90b0d",
+   "1bec9dacdc8ec842",
+   "aa8be3616013a546",
+   "4f06b92fe1115600",
+   "1723c217376d73c1",
+   "29225ada7114a784",
+   "18e0f552d50a1ccd",
+   "dc14e86d402a069e",
+   "a10d16dc436f78f1",
+   "2eaccad5acef9e59",
+   "5acd6d58abe342ae",
+   "6220f923ae52ce30",
+   "35d91bd58dc7b7db",
+   "26eb559915d75d4d",
+   "8b6a6263456d5471",
+   "8a82106baca8c67a",
+   "fffe3b8dc0224e49",
+   "bf70d7524d558474",
+   "fca691fcda9e5e6a",
+   "1e2bf7079f6398e2",
+   "cf34ea2997044afa",
+   "4fcf8a2f39db5829",
+   "7ee5f4f959df23a6",
+   "e5bc4a4b9a74e2db",
+   "e57dab5b7d5c63bf",
+   "a6273e47fc19cdc6",
+   "a9e12bac94b97fa9",
+   "ac4bb10823edeb0b",
+   "3c2f13baa979fac9",
+   "4aa300dcf4de8032",
+   "bac8e9220d119d07",
+   "1ed8b08c1f499bda",
+   "af86308540824216",
+   "9276f4f8a0e73712",
+   "13b51ac618499e8c",
+   "f52d57e5b794cf7b",
+   "71302246613a7e83",
+   "f157ce00739b7521",
+   "050e953c6d716d9f",
+   "9313b209635ead40",
+   "2c3f607e781025f7",
+   "fbee10d49228230c",
+   "48240071b062d281",
+   "33212551ba24c45e",
+   "302d939fb75e9d7f",
+   "4d32600d0041f600",
+   "2fa666ac74d7e3c5",
+   "07c590bea694c323",
+   "2b3c4ed1cdea7e44",
+   "3027d73222f37c1b",
+   "c99ea1b1064ea5f2",
+   "156f7f50b71af9e7",
+   "85869628391c9009",
+   "e23e0ccb89b4a03a",
+   "90e25807d46c9884",
+   "a2b043bffccb59a2",
+   "77550a85ca9ae696",
+   "962bf7f2809f075f",
+   "3cb6d240c286b53f",
+   "77cdda1712f9b438",
+   "271793091a58b51b",
+   "a48003b9910c7328",
+   "0900136b2572994a",
+   "950af8b8ec4aff08",
+   "32f64dc22131a548",
+   "dada7cddc290c728",
+   "aeed2637c16b8ddf",
+   "eac6c47410e72abb",
+   "09e96da75022bd12",
+   "fbae56a2e966cc1e",
+   "8ab4b6b3b62e9e5b",
+   "8c75a0f28bb4a910",
+   "2168340f4538fafe",
+   "61ce5e1c9041b4cd",
+   "3112e392aaee5315",
+   "377bcd468cb5bacf",
+   "80c7289101b92a35",
+   "3ecad18772cb1d76",
+   "c47a98fd5066641e",
+   "f37b61f20f956091",
+   "96e60556202adbfd",
+   "6213ee8612bc75d6",
+   "12adeaa1aa2bae86",
+   "9c0e678582c9d730",
+   "a9814c4351454373",
+   "afe3c04983bccfcb",
+   "74ab15d19433c92a",
+   "4a1052c176bf72ee",
+   "923bb7629fc53857",
+   "850daf7152346750",
+   "161d74761670c340",
+   "59869f191686ca22",
+   "4a0547f654f92aef",
+   "90fa5f2e3d3df146",
+   "f01e3e57f86ad8cf",
+   "0ec768a8e4e88c1f",
+   "059751932c7c8c06",
+   "ba27d66933071605",
+   "3e30045a4567d4f5",
+   "fd79c3b51fbacc45",
+   "bb1770e371815202",
+   "2885961c9da58ba3",
+   "d2cbb80a84775edb",
+   "54cf8582c156adc3",
+   "7b358a8d53d01a50",
+   "a46ae4d6f8a47205",
+   "3ff99d193594f1a0",
+   "b45a95dd9017b270",
+   "6d0f749ebad99ac1",
+   "67af4ca17810ee15",
+   "3c001ca5dc3feaec",
+   "b7be5f6e2e537416",
+   "fe1c6f58fa0e8670",
+   "bcd7c8482f7a51d8",
+   "4ccdb1c58445b25a",
+   "4bc7671b397f9d7e",
+   "1993845d3c3016d2",
+   "1bc0c7e6b9cf5b95",
+   "705d19b9bde4480c",
+   "b5ec60a9845bd6dc",
+   "91f6caf12033f2ee",
+   "49b9f15c0b16f70d",
+   "29939b54bcb95bbe",
+   "b96e84a59e1c4bc4",
+   "ba4a6d9ac02f9d05",
+   "3607fd0dfe94875c",
+   "caeb063352542afc",
+   "2d57a2e9a9484fdf",
+   "a76ffd2ca96f0411",
+   "6ca43edac7fda978",
+   "cd1a7892bc5e3b5b",
+   "82b6f0eacf807a74",
+   "3227315fb4bd85a6",
+   "12f957363f776508",
+   "c451935c8d27af01",
+   "9a7273f5a802abb0",
+   "235673652ad740ae",
+   "e4b2467bd3473f8f",
+   "8d6432404acbb0e0",
+   "8b1866b31f5f843f",
+   "bdcb226e7c1c2eeb",
+   "80781c2f7cce13eb",
+   "95ff990535bc0e62",
+   "e4c7c050c698b79c",
+   "9505890ea1796f7e",
+   "3cd63ec2123a9ca7",
+   "1876582b6f2eb209",
+   "7fbf6334b0b3cab1",
+   "7ca33ef06f935dc9",
+   "c07622236fe2f138",
+   "04c091224b55775d",
+   "f04dbefa38aa4def",
+   "54ef5fc6edf657cd",
+   "ed6b5dcd4ad1ba0f",
+   "764095f63c9f8cc1",
+   "d47863219a01735d",
+   "513139f17f0ce876",
+   "5178a42d60e1659d",
+   "31bfd32c1a55c3fa",
+   "fd0923ad367dd812"
+  ],
+  "trainable_blake2b_start": "6e8d61a599e57f52d04d91d58c993f07",
+  "trainable_blake2b_end": "6e8d61a599e57f52d04d91d58c993f07",
+  "all_param_float64_checksum_start": 139811.0555022844,
+  "all_param_float64_checksum_end": 139811.0555022844,
+  "params_bitwise_unchanged": true,
+  "replay_doc0_bit_identical": false,
+  "replay_doc0_max_abs_dev": 2.086162567138672e-07,
+  "replay_doc0_rel_dev": 1.322144340575316e-06,
+  "replay_doc0_cosine_with_step0": 0.9999999999995681,
+  "replay_doc0_loss": 3.114161968231201,
+  "replay_doc0_loss_step0": 3.114161968231201,
+  "grad_norm_stats": {
+   "n": 400,
+   "min": 1.1170900987008232,
+   "max": 5.772724798088424,
+   "mean": 1.8049690391338635,
+   "median": 1.737267084793233,
+   "std": 0.4140543040659569,
+   "p05": 1.3221558173639385,
+   "p95": 2.4976893628730568
+  },
+  "n_grad_norm_exactly_zero": 0,
+  "n_grad_norm_below_1e-3_of_median": 0,
+  "grad_norms_degenerate": false,
+  "partition_rel_err_layer": 1.5694704752419047e-15,
+  "partition_rel_err_type": 1.510960958134499e-15,
+  "sketch_fidelity_on_real_gradients": {
+   "k_vectors": 12,
+   "pooled": {
+    "n_pairs": 66,
+    "pearson_r": 0.9929003438565582,
+    "max_abs_err": 0.030183907324580594,
+    "rms_err": 0.011767035495892657,
+    "mean_err": 0.004931298245897381,
+    "true_cos_range": [
+     -0.04285414516925812,
+     0.32522040605545044
+    ]
+   },
+   "per_layer": {
+    "n_pairs": 2376,
+    "pearson_r": 0.9382012255467762,
+    "max_abs_err": 0.1100750229516337,
+    "rms_err": 0.03037965019304069,
+    "mean_err": 0.001351617657668531,
+    "true_cos_range": [
+     -0.2971784770488739,
+     0.7075033783912659
+    ]
+   },
+   "per_type": {
+    "n_pairs": 462,
+    "pearson_r": 0.9402398002128757,
+    "max_abs_err": 0.11451665278502633,
+    "rms_err": 0.031683341007491664,
+    "mean_err": -0.002315601250505084,
+    "true_cos_range": [
+     -0.09249877574936949,
+     0.6966240786480903
+    ]
+   }
+  }
+ },
+ "peak_gpu_alloc_gb": 11.052909056,
+ "train_wall_seconds": 145.38975954055786,
+ "wall_seconds": 190.1486268043518
+}
