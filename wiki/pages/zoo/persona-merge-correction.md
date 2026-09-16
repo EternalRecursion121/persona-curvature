@@ -9,7 +9,7 @@ sources:
   - qwen35/paper_notes.md
   - qwen35/build_blog_page.py
   - /etc/systemd/system/zoo-fixmerge.service
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, stage2, corrections]
 ---
 

@@ -13,7 +13,7 @@ sources:
   - qwen35/phase2_runs/archive/phase5_sweep_134.json
   - qwen35/genpairs.log
   - qwen35/genpairs_retry3.log
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, construction, overview]
 ---
 

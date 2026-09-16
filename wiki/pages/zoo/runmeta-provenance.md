@@ -9,7 +9,7 @@ sources:
   - qwen35/HANDOVER.md
   - qwen35/upload_zoo_batched.py
   - qwen35/zoo_page/MODEL_CARD.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, provenance, corrections]
 ---
 

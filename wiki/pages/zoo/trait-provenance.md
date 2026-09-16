@@ -8,7 +8,7 @@ sources:
   - qwen35/traits_secondary_provenance.json
   - qwen35/traits_alignment.json
   - qwen35/traits_hole.json
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, provenance, hub]
 ---
 

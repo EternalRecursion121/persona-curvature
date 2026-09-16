@@ -15,7 +15,7 @@ sources:
   - /etc/systemd/system/zoo-batch4.service
   - /etc/systemd/system/zoo-lex.service
   - /etc/systemd/system/zoo-oct2seed1.service
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, training, stage2]
 ---
 

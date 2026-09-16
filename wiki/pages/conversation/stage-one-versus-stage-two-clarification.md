@@ -10,7 +10,7 @@ sources:
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L12919
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L13231
   - qwen35/PHASE3_VERDICT.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [conversation, zoo, oct, transcript-sourced]
 ---
 
@@ -100,9 +100,21 @@ result exists in the transcripts. The only stage-two geometry currently on recor
 is the arrangement match (r = 0.79 against stage one) and the second-seed arm
 (15/15, r = 0.98) quoted above.
 
+## Resolution after 2026-09-07
+
+The replication was run the same evening and analysed on 2026-09-08:
+[[full-oct-replication]] computes the exact 134 x 134 persona Gram and finds the
+persona arrangement is the stage-one arrangement (off-diagonal Pearson 0.9915,
+`qwen35/analysis/fulloct_geometry.json#gram_correlation_offdiag.persona_vs_stage1`),
+with 15 of 15 second-seed personas identifying themselves. The stage-two adapters
+themselves are analysed on [[stage-two-structure]] and [[stage-two-exploration]],
+and the 4.6-times attenuation slope is still recorded as unexplained on
+[[stage-two-second-seed]]. The paragraph above is kept as the record of the
+question as it stood on 2026-09-07.
+
 ## Status
 
-`status: current`. The stage-two numbers agree with the 2026-09-05 addendum of
+`status: current`. The open item of 2026-09-07 is closed above. The stage-two numbers agree with the 2026-09-05 addendum of
 `qwen35/PHASE3_VERDICT.md`. The page records, rather than resolves, the fact that
 two of Samuel's three questions were absorbed mid-turn and answered only
 indirectly.

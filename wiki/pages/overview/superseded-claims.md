@@ -23,7 +23,7 @@ sources:
   - qwen35/analysis/syc_forecast.json#bigfive.agreeableness_spearman_vs_axis_score
   - qwen35/phase10_runs/dose_calib.json
   - /home/vibe12/projects/agent-harness/memory/projects/persona-curvature.md
-last_verified: 2026-09-10
+last_verified: 2026-09-16
 tags: [overview, superseded, corrections]
 ---
 
@@ -47,12 +47,22 @@ which one.
 
 ---
 
-## 1. Live page statements that need changing
+## 1. Blog page statements that needed changing (the page is historical since 2026-09-15)
 
-`qwen35/blog_page/index.html`, built by `qwen35/build_blog_page.py`, is the
-authoritative current state of the results. These are the places where what it
-prints is wrong, under-specified, or not backed by a file. They are separated by
-what a writer has to do about each.
+`qwen35/blog_page/index.html`, built by `qwen35/build_blog_page.py`, was the
+authoritative current state of the results on 2026-09-07. Since 2026-09-15 the
+current statement is `qwen35/POST_DRAFT.md` ([[post-draft]]) with the analysis
+files it cites, and the blog page is a historical built page. The items below
+are kept as the record; where the post draft fixed one, the note says so.
+L1: fixed, the draft says "the rejected side being a character at the opposite
+pole". L2 and L3: moot, the draft quotes the matched null file and the matched
+seed floor 0.018 with no angle. L4: the draft claims only adapters, factor
+adapters and stage-two transcripts on the Hub; the preference data is part of
+the planned results release ([[code-and-data-map]]). L7: fixed, Appendix A0
+states the 6/14 keying. L9 and L10: the draft quotes 0.9999992 for the
+finite-difference check and does not quote the sketch-validation figure. L13:
+the PC pages are no longer primary. They are separated by what a writer had to
+do about each.
 
 ### 1a. Wrong as printed - change the sentence
 
@@ -717,3 +727,23 @@ Related: [[source-contradictions]], [[open-questions]],
 The 2026-09-08 half of that row was not filed here when it happened; it is
 recorded now, with the 2026-09-11 rename, so the sequence of three display names
 is in one place.
+
+## Reframings between the 2026-09-10 draft and the 2026-09-15 short rewrite
+
+Recorded on 2026-09-16 from `qwen35/POST_DRAFT.md`, its backups
+`POST_DRAFT_2026-09-10_long.bak.md`, `POST_DRAFT_2026-09-15_long_illustrated.bak.md`
+and `POST_DRAFT_2026-09-15_preappendix.bak.md`, and `wiki/log.md`. None is a
+reversal of a measured number; each is a change in what is presented as primary.
+
+| # | earlier statement | current statement | where |
+|---|---|---|---|
+| R1 | The 100-marker factor solution was the arm the null comparison was drawn against and the one the congruence matrix was first reported on (2026-09-07 blog page). | The 134-trait solution `results/fa_qwen35.json#solutions.centred_k5` is primary everywhere; the 100-marker solution is Appendix A2's control, agreeing at Tucker 0.99 (`analysis/goldberg_only.json`). | [[factor-analysis]], [[goldberg-only-and-heldout-lexicon]], [[factor-first-migration]] |
+| R2 | Ten controls and ablations sat in the body of the post (2026-09-10 long draft). | Moved to Appendix A0 to A11 on 2026-09-15, each leaving a one-sentence pointer; the body carries verdict lines. No number changed. | [[post-draft]] |
+| R3 | `align_sycophantic` was drawn as a named direction in the external-data figure. | Left out of Figure 11 in the short rewrite because its trained arms showed a warmth direction, not deference; the measurements stay on the pages. | [[reward-hacks-data-scoring]], [[sycophancy-forecast]], [[emergent-misalignment-medical]] |
+| R4 | The Extraversion and Emotional Stability rotation into Arousal and Timidity was a property of the adapter cloud whose stability was unknown ([[open-questions]], 2026-09-07). | The same rotation is in the training text: the text-contrast factors match the adapter factors one to one at 0.81 to 0.97 with the same rotation (2026-09-15). The rotation is the teacher's; whether it is the corpus's or the model's remains the missing test with a second base model. | [[text-contrast-factors]] |
+| R5 | The thesis was "personality has factor structure in weight space" (2026-09-10). | The thesis is that the weights are a faithful map of the training contrast: rank-1 completeness, the 94% text readout and the text-contrast factors are the three legs (2026-09-15). | [[post-draft]], [[rank-sweep]], [[goldberg-only-and-heldout-lexicon]] |
+| R6 | Figure 1 drew every Goldberg group on Warmth against its own factor (illustrated draft, `facets_own`). | Figure 1 draws each group on the pair of factors that separates its poles best by Mahalanobis distance (`facets_best`); E and ES both split on Timidity with Arousal. | [[best-axis-pairs]] |
+| R7 | The pre-registered prediction that the exact persona would name its own trait above 30% of the time (`qwen35/PREREG_selfid.md`). | Failed: 0.3 to 0.7%. Only the stage-two adapter alone shows self-knowledge (13 to 21 of 134). | [[self-identification-probe]] |
+| R8 | Teacher attributions were spread over pages (constitutions `claude-sonnet-4.6`, pairs `glm-4.5-air`, judge `claude-sonnet-4.5`). | Unchanged in value; stated together in the draft's "What we built" and in the [[glossary]] on 2026-09-16, with the STEER134 judge exception noted. | [[constitution-generation]], [[dpo-pair-generation]], [[judged-evaluations]] |
+| R9 | The 2026-09-07 ranking of the strongest claims ([[most-interesting-claims]]) and the 2026-09-04 outlines ([[blog-skeletons]]). | Superseded as drafting aids by the draft's claims table, opened on [[claims-and-evidence]]; both pages set to historical on 2026-09-16. | [[claims-and-evidence]] |
+

@@ -1,15 +1,17 @@
 ---
 title: Three blog post skeletons
 summary: The three bullet-pointed outlines produced on 2026-09-04 when Samuel decided to rewrite the blog post by hand, with the pending items resolved.
-status: current
+status: historical
 sources:
   - wiki/raw/blog-skeletons.md
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L12106
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L12109
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [conversation, blog, transcript-sourced]
 ---
 
+
+> Status note (2026-09-16): Superseded as a drafting aid by [[post-draft]] (2026-09-15); kept as the record of the 2026-09-04 outlines.
 # Three blog post skeletons
 
 On **2026-09-04 at 15:06 UTC** Samuel wrote (transcript

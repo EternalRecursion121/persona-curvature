@@ -1,6 +1,6 @@
 ---
 title: Timeline
-summary: A dated chronology of the project from the three Discord messages of 2026-08-12 to the wiki build of 2026-09-07.
+summary: A dated chronology of the project from the three Discord messages of 2026-08-12 through the wiki build of 2026-09-07 to the short post draft and the collaborator hand-off of 2026-09-16.
 status: current
 sources:
   - CONTEXT.md
@@ -16,7 +16,7 @@ sources:
   - .garden/journal/2026-09-04.md
   - .garden/journal/2026-09-05.md
   - /home/vibe12/projects/.garden/journal/2026-08-31.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [timeline, history]
 ---
 
@@ -159,6 +159,18 @@ therefore begins on 08-12. Flagged in `_report_history.md`.
 | 09-05 | Samuel asks where the 134 words come from; the answer is in `plan.json` and a provenance paragraph is added to the page — [[lexicon-secondary-draw]] |
 | 09-05 12:2x | Stage-2 seed-1 arm launched, 15 traits, plan $226.28 against a $240 budget; lands under budget with same-trait 0.067, 15/15 top-1 of 134, geometry across seeds r 0.98 |
 | 09-07 | This wiki is built |
+| 09-07 evening | Samuel asks for the geometry replicated on the exact persona adapters; the persona Gram job runs — [[full-oct-replication]] |
+| 09-08 | The published `persona_exact` adapters found inert (doubled tensor-key prefix), repaired and re-uploaded — [[persona-merge-correction]], [[hf-artefacts]] |
+| 09-08 | The factor solution replaces the principal components as the primary frame; every figure migrated — [[factor-first-migration]] |
+| 09-08 | Stage two: the shared direction (15% of every adapter's squared norm) found, steered, and shown to be mostly generic to SFT on self-transcripts — [[stage-two-structure]], [[stage-two-shared-direction]], [[stage-two-exploration]] |
+| 09-08 | Factor analysis of the two matched null arms (shuffled 0 factors, permuted 8); the sphere sweep redone on the factor chart; the OCEAN dials replicated four ways; the Inspect personality evals run — [[factor-analysis-null-arms]], [[sphere-sweep-factor-chart]], [[ocean-dials-replication]], [[inspect-personality-evals]] |
+| 09-09 | Column-space structure: what the 0.018 seed floor hides — [[column-space-structure]]; Fisher norms of every steering direction — [[fisher-norms]]; reward-hack data scored before training — [[reward-hacks-data-scoring]] |
+| 09-10 | Fisher-metric factor analysis, matched-dose steering, the rank sweep, probe adapters, the Dolci audit and the corrigibility-flag training, persona sliders, the iso-KL sphere, the sycophancy forecast; the post critiqued and trimmed — [[factor-analysis-fisher-metric]], [[matched-dose-steering]], [[rank-sweep]], [[dolci-data-audit]], [[dolci-flag-training]], [[persona-sliders]], [[sphere-sweep-iso-kl]], [[sycophancy-forecast]], [[post-critique-2026-09-10]] |
+| 09-11 | Activation-weighted Gram across seeds and across stages — [[activation-weighted-gram]], [[activation-weighted-gram-stages]]; factor audit, Fearful withdrawal renamed Timidity — [[factor-audit-2026-09-11]]; the hole reframed as an uncovered region; emergent misalignment on bad medical advice — [[emergent-misalignment-medical]] |
+| 09-12 | Goldberg-only factoring and the 34 lexicon words as a held-out set — [[goldberg-only-and-heldout-lexicon]] |
+| 09-14 | Companion site redesigned with the three-dimensional chart and per-trait stage-two excerpts — [[built-pages-inventory]] |
+| 09-15 | The 34 factored alone; best axis pair per Goldberg group; the illustrated post, its appendix split, then the short rewrite; the text-contrast factor analysis; the self-identification probe — [[best-axis-pairs]], [[post-draft]], [[text-contrast-factors]], [[self-identification-probe]] |
+| 09-16 | Wiki freshness audit against the 2026-09-15 draft; collaborator start page, claims table and data map added — [[start-here-for-collaborators]], [[claims-and-evidence]], [[code-and-data-map]] |
 
 Related: [[origin-and-question]], [[sweep100]], [[phase-two-recipe-search]],
 [[costs]], [[harness-context]], [[method-lessons]].

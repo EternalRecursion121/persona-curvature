@@ -10,7 +10,7 @@ sources:
   - qwen35/build_findings_page.py
   - qwen35/analysis/persona_merge_audit.json
   - qwen35/build_blog_corpus.py
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [behaviour, withdrawn, pages]
 ---
 

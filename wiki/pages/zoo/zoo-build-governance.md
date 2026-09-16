@@ -9,7 +9,7 @@ sources:
   - qwen35/POST-BATCH3-TODO.md
   - qwen35/HANDOVER.md
   - qwen35/train_qwen35.py
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, method, process]
 ---
 

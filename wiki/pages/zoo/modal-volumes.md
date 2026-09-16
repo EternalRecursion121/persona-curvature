@@ -11,7 +11,7 @@ sources:
   - qwen35/launch_nulls.sh
   - qwen35/fix_persona_merge.py
   - qwen35/upload_datasets.py
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, infrastructure, modal]
 ---
 

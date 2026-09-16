@@ -8,7 +8,7 @@ sources:
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L12973
   - qwen35/build_gram.py
   - qwen35/gram_on_modal.py
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [conversation, explainer, geometry, method, transcript-sourced]
 ---
 

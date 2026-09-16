@@ -8,7 +8,7 @@ sources:
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L12639
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L13296
   - qwen35/blog_page/index.html
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [conversation, zoo, traits, provenance, transcript-sourced]
 ---
 

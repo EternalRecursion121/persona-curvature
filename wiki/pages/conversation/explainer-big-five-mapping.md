@@ -8,7 +8,7 @@ sources:
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L13013
   - qwen35/results/fa_qwen35.json#solutions.centred_k5.congruence_oblimin
   - qwen35/results/fa_qwen35.json#targets.labels
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [conversation, explainer, factors, big-five, transcript-sourced]
 ---
 
@@ -97,7 +97,18 @@ above the structureless null in the PCA.
    one-line change to the analysis" that would say whether it is the model's
    organisation or an artefact of how these particular adapters trained.
 
-Neither had been done as of 2026-09-07.
+Neither had been done as of 2026-09-07. Since then: item 2 was done twice over.
+The activation-space factoring of 2026-09-08 finds each weight factor is the same
+activation factor with no rotation (Procrustes R^2 0.7387431438763885,
+`qwen35/analysis/actspace_geometry_fa.json#windows.resp.procrustes_r2_fa`;
+[[actspace-persona-vectors]]), and the text-contrast factoring of 2026-09-15
+finds the same rotation of Extraversion and Emotional Stability into Arousal and
+Timidity in the chosen-minus-rejected embeddings themselves
+([[text-contrast-factors]]), so the rotation is in the training data, not an
+artefact of how the adapters trained. Item 1 is still not done as a factoring:
+[[direction-seed-stability]] checked each factor direction's stability across
+the 40 seed-1 traits, but a 40 x 40 within-arm factor analysis at the second
+seed has not been run ([[open-questions]]).
 
 ## Status
 

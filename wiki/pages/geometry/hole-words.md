@@ -17,7 +17,7 @@ sources:
   - qwen35/analysis/manifold_ideas.md
   - qwen35/PHASE3_VERDICT.md
   - qwen35/blog_page/index.html
-last_verified: 2026-09-08
+last_verified: 2026-09-16
 tags: [geometry, hole, unconfirmed, principal-components]
 ---
 

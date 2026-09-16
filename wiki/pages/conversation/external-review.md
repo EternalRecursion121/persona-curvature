@@ -1,6 +1,6 @@
 ---
 title: The external review of the blog page
-summary: The five-point external review received on 2026-09-02, what each point asked for, what was done, and where each stands on 2026-09-07.
+summary: The five-point external review received on 2026-09-02, what each point asked for, what was done, where each stood on 2026-09-07, and what changed by 2026-09-16 (the N x N result is Appendix A8 of the post, the hole is reframed, the companion site is deployed; co-authorship and the Persona Cartography reframing remain Samuel's decisions).
 status: current
 sources:
   - wiki/raw/external-review.md
@@ -8,7 +8,7 @@ sources:
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L13056
   - qwen35/blog_page/index.html
   - qwen35/PHASE3_VERDICT.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [conversation, review, blog, transcript-sourced]
 ---
 
@@ -230,3 +230,33 @@ stage 2, no persona merge. That thread continues in
 | Co-authorship for the reviewer | Open, Samuel's decision |
 | Persona Cartography reframing | Partial; credit present, requested rewrite not made |
 | Hosting plus a static LessWrong version | Open |
+
+## Status on 2026-09-16
+
+Read with the 2026-09-15 post draft ([[post-draft]]) in hand:
+
+- Point 1 (inter-seed variance) is the section "What a trait's weight update
+  actually is": cosine 0.018, 40 of 40, Pearson 0.997, and the column-space and
+  activation-weighted results that explain why the number is small
+  ([[column-space-structure]], [[activation-weighted-gram]]).
+- Points 2 and 3 (PC1 as a Big Five blend; per-PC loadings) became moot for the
+  post when the factor solution replaced the principal components as the primary
+  frame on 2026-09-08 ([[factor-first-migration]]). The PC pages ([[factor-pc1]]
+  to [[factor-pc6]]) keep the loadings and the correction.
+- Point 4 (the N x N positive control) is Appendix A8 of the draft, credited to
+  "an external reviewer" in Appendix A0. The heatmap figure named at line 13065
+  has still not been drawn; the companion's methods page prints the 134 of 134
+  statistic from `qwen35/analysis/nxn_summary.json#raw.top1`.
+- Point 5 (naming the direction) went further than withdrawal: the widest gap is
+  now read as a region the trait vocabulary did not sample, with the three
+  proposed words, a slider and a matched-random steer all failing to make it a
+  finding about the model (Appendix A10; [[hole-words-factor-chart]],
+  [[alien-direction-factor-chart]]).
+- Co-authorship and the Persona Cartography reframing: still Samuel's decisions.
+  The draft opens with Persona Cartography as the question's origin ("What we
+  built") and credits its dials in "Persona Cartography's dials replicate"; the
+  reviewer is not named anywhere in the draft or the wiki.
+- Hosting: the companion site is deployed at `https://persona.161-35-77-84.sslip.io`
+  (2026-09-14) and the draft links it; a LessWrong-static version is the post
+  itself. Both devbox sites will move before publication.
+

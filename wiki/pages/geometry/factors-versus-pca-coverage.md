@@ -17,7 +17,7 @@ sources:
   - qwen35/analysis/hole_geometry_fa.json
   - qwen35/analysis/direction_gaps_fa.json
   - qwen35/analysis/sphere_layout_fa.json
-last_verified: 2026-09-08
+last_verified: 2026-09-16
 tags: [geometry, factor-analysis, coverage, open-questions]
 ---
 

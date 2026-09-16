@@ -10,10 +10,12 @@ sources:
   - qwen35/analysis/qual_fa.json
   - qwen35/analysis/alignment_geometry.json
   - qwen35/PREREG_alignment.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [factor, pc, sycophancy]
 ---
 
+
+> Frame note (2026-09-16): since 2026-09-08 the five oblimin factors, not the principal components, are the primary frame of the post and the companion ([[factor-first-migration]]). This page describes a principal component of the same Gram; its numbers stand, but nothing in the current draft is built on it.
 # PC4 - Affirmation and Self-Concern
 
 **Variance share 0.03592321978296357**

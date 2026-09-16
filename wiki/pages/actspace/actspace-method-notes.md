@@ -16,7 +16,7 @@ sources:
   - qwen35/phase10_runs/decompose_actspace_resp.log
   - qwen35/results/decomposition_actspace_resp.json#test6.status
   - qwen35/blog_page/index.html
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [actspace, method, replication, limits]
 ---
 

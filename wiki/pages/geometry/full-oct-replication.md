@@ -14,7 +14,7 @@ sources:
   - qwen35/phase10_runs/grampersona.log
   - qwen35/phase10_runs/personaseed1.log
   - qwen35/phase10_runs/personacross2.log
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [geometry, stage-two, replication]
 ---
 

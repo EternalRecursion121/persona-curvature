@@ -10,7 +10,7 @@ sources:
   - qwen35/results/cross_gram_full_seed1_loras_introspection_x_seed1_loras_introspection.npz
   - qwen35/phase10_runs/results_oct2_15traits_v1-n1000-ni1000-k10-bugsfaithful.json
   - .garden/journal/2026-09-05.md
-last_verified: 2026-09-08
+last_verified: 2026-09-16
 tags: [geometry, stage-two, seed, replication]
 ---
 

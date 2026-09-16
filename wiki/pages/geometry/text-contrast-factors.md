@@ -20,6 +20,8 @@ coordinates, fitted on the 100 markers, predicting the 34 held-out words at
 R^2 0.94. That does not by itself say the embeddings' own factor solution is the
 adapters'. This page runs that check.
 
+> Terms (Tucker congruence, oblimin, factor chart, chart cosine, seed floor, column space, twin score, Fisher norm) are defined in the [[glossary]].
+
 ## Method
 
 `analysis/emb_pairs_minilm.npz#contrast` holds, per trait in the Gram's order,

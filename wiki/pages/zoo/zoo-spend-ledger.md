@@ -9,7 +9,7 @@ sources:
   - qwen35/phase10_runs/zoo40_meter.log
   - qwen35/POST-BATCH3-TODO.md
   - qwen35/genpairs.log
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, costs]
 ---
 

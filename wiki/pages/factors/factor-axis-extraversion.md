@@ -10,7 +10,7 @@ sources:
   - qwen35/analysis/blog_data.json#replication.axis_Extraversion
   - qwen35/analysis/align_summary.json#rows
   - qwen35/analysis/geometry_stage1.json
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [factor, axis, big-five, extraversion]
 ---
 

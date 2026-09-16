@@ -11,7 +11,7 @@ sources:
   - qwen35/phase10_runs/judge_steer.log
   - qwen35/phase10_runs/judge_steerfix.log
   - /etc/systemd/system/zoo-steerfix.service
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [behaviour, method-lessons, withdrawn]
 ---
 

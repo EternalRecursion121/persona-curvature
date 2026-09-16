@@ -10,7 +10,7 @@ sources:
   - qwen35/analysis/actspace_adapters_geometry.json
   - qwen35/analysis/actspace_cross_geometry.json
   - .garden/journal/2026-09-05.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [actspace, synthesis, blog]
 ---
 

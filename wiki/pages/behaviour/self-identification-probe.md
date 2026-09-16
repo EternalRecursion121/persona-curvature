@@ -17,6 +17,8 @@ Samuel asked on 2026-09-15: "can we ask the adapters 'if you were trained for a
 specific personality trait, what would it be?' and resample a bunch". Design and
 scoring were fixed in `qwen35/PREREG_selfid.md` before the container started.
 
+> Terms (Tucker congruence, oblimin, factor chart, chart cosine, seed floor, column space, twin score, Fisher norm) are defined in the [[glossary]].
+
 ## Run
 
 134 traits x three conditions (stage one, stage two alone, exact persona) plus

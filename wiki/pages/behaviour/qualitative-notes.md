@@ -18,7 +18,7 @@ sources:
   - qwen35/adjudicate_unrestrained.py
   - qwen35/review_contexts.py
   - qwen35/describe_traits134.py
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [behaviour, qualitative, adjudication, safety]
 ---
 

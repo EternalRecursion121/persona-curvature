@@ -34,7 +34,7 @@ sources:
   - qwen35/analysis/column_space_sorh.json#vs_generic_and_register
   - qwen35/analysis/column_space_sorh.json#hack_vs_control
   - qwen35/analysis/column_space_sorh.json#checks
-last_verified: 2026-09-09
+last_verified: 2026-09-16
 tags: [behaviour, controls, misalignment, nulls]
 ---
 

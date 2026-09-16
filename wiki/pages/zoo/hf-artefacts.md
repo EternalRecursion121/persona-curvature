@@ -16,7 +16,7 @@ sources:
   - qwen35/prescan_trait.py
   - qwen35/phase10_runs/adjudications.json
   - qwen35/build_blog_page.py
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, release, huggingface]
 ---
 

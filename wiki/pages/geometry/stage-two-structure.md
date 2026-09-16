@@ -13,7 +13,7 @@ sources:
   - qwen35/analysis/stage2_frame.json
   - qwen35/analysis/stage2_factors_choice.json
   - qwen35/results/cross_gram_full_root_x_pc-qwen35-oct2_personas_exact.npz
-last_verified: 2026-09-08
+last_verified: 2026-09-16
 tags: [geometry, stage-two, factor-analysis]
 ---
 

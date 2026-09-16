@@ -7,7 +7,7 @@ sources:
   - qwen35/constitutions.json
   - qwen35/constitutions_cost.json
   - qwen35/paper_notes.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, constitutions, construction]
 ---
 

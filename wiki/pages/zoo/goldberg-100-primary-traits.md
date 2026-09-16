@@ -6,7 +6,7 @@ sources:
   - qwen35/traits_primary.json
   - qwen35/select_traits.py
   - qwen35/build_blog_page.py
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, traits, provenance]
 ---
 

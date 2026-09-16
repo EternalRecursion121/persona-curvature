@@ -11,7 +11,7 @@ sources:
   - qwen35/phase10_runs/results_oct2_15traits_v1-n1000-ni1000-k10-bugsfaithful.json
   - .garden/journal/2026-09-05.md
   - qwen35/PHASE3_VERDICT.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [geometry, stage-two]
 ---
 
@@ -23,8 +23,11 @@ Open Character Training has two stages: preference training on the constitution'
 data (stage one, DPO), then supervised fine-tuning on transcripts the trained
 model generates about itself (stage two, SFT), with the two merged at fixed
 weights. Both stages were run for all 134 traits and both sets are in the
-released zoo. **Every geometric object on the blog page, unless it says
-otherwise, is the stage-one adapter.**
+released zoo. **Every geometric object in the post draft, on the companion and on this
+wiki, unless it says otherwise, is the stage-one adapter.** (The sentence was
+first written for the blog page of 2026-09-07; the replication on the exact
+persona adapters that Samuel asked for the same day is on
+[[full-oct-replication]].)
 
 Merge weights, from
 `qwen35/phase10_runs/results_oct2_15traits_...json#stages.final`:

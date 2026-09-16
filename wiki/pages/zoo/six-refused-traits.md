@@ -8,7 +8,7 @@ sources:
   - qwen35/backups/constitutions.json.pre-generic-anchor.bak
   - qwen35/genpairs.log
   - qwen35/build_blog_page.py
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, traits, provenance]
 ---
 

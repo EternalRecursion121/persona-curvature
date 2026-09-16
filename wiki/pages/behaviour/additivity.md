@@ -10,7 +10,7 @@ sources:
   - qwen35/phase10_runs/judged_mix.json
   - qwen35/phase10_runs/judge_mix.log
   - qwen35/build_monitor_page.py
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [behaviour, steering, additivity, curvature]
 ---
 

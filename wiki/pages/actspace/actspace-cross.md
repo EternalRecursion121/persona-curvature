@@ -10,7 +10,7 @@ sources:
   - qwen35/phase10_runs/actspace_cross.log
   - qwen35/blog_page/index.html
   - .garden/journal/2026-09-05.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [actspace, activations, adapters, additivity, superseded-claim]
 ---
 
@@ -169,7 +169,8 @@ effects add almost exactly (residual 0.12 raw / 0.28 specific, weights 0.97 /
 anything, the two effects simply add (residual 33%, weights 0.96 and 0.92); the
 saturation appears once the model is generating."
 
-Per wiki rule 2 the blog page is current. The `ACTSPACE_RESULTS.md` sentence
+The blog page was the current statement when this page was written (2026-09-07);
+its triple is the one the wiki keeps. The `ACTSPACE_RESULTS.md` sentence
 mixes raw and trait-specific quantities in one clause, without saying which is
 which; quote the blog's triple,
 or say explicitly which of the four JSON blocks a number comes from. The

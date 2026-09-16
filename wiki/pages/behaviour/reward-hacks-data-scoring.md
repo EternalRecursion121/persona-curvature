@@ -23,7 +23,7 @@ sources:
   - qwen35/analysis/sorh_projection.json#contrast
   - qwen35/phase10_runs/zoo40_meter.log
   - .garden/journal/2026-09-09.md
-last_verified: 2026-09-09
+last_verified: 2026-09-16
 tags: [behaviour, scoring, controls, misalignment, nulls]
 ---
 
@@ -304,6 +304,16 @@ stage-two direction proper. Scoring that would need the stage-two `A` as the
 window, which would mean scoring a different hypothetical LoRA.
 
 ## What this establishes and what it does not
+
+**Figure 11 of the post (2026-09-15) leaves `align_sycophantic` out.** The short
+rewrite of the post draws this page's named directions against the random band
+as Figure 11b and omits the sycophantic alignment adapter, because its trained
+arms ([[sycophancy-forecast]]) showed it to be a warmth direction rather than a
+deference one, so drawing it as a "sycophancy" probe would mislead. The
+measurement itself is unchanged and stays in the table above (`align_sycophantic`
+-0.043316, 2 of 20 random merges as large). Nothing on this page is deleted by
+that decision; it is a presentation choice recorded in
+`qwen35/POST_DRAFT.md` (Figure 11 caption) and on [[superseded-claims]].
 
 Establishes:
 

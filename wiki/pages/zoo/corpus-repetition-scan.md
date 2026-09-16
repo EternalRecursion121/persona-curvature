@@ -8,7 +8,7 @@ sources:
   - qwen35/analysis/corpus_scan_all.json
   - qwen35/scan_corpus_modal.py
   - qwen35/phase10_runs/corpus_degen.log
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, data, stage2]
 ---
 

@@ -12,7 +12,7 @@ sources:
   - qwen35/analysis/align_validate.json
   - qwen35/PHASE3_VERDICT.md
   - .garden/journal/2026-09-05.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [geometry, scoring, big-five]
 ---
 

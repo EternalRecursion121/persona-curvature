@@ -13,7 +13,7 @@ sources:
   - .garden/journal/2026-09-03.md
   - qwen35/analyse_alignment_fa.py
   - qwen35/analysis/alignment_geometry_fa.json
-last_verified: 2026-09-08
+last_verified: 2026-09-16
 tags: [geometry, alignment, prereg]
 ---
 

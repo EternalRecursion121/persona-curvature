@@ -15,7 +15,7 @@ sources:
   - qwen35/phase2_gates.py
   - qwen35/train_qwen35.py
   - qwen35/HANDOVER.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, training, history]
 ---
 

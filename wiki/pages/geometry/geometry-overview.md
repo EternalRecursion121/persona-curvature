@@ -16,7 +16,7 @@ sources:
   - qwen35/results/decomposition.json#n_modules
   - qwen35/analysis/geometry_stage1.json#dim
   - qwen35/analysis/validate_100.json
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [geometry, method]
 ---
 

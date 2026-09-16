@@ -10,7 +10,7 @@ sources:
   - qwen35/oct_stage2.py
   - qwen35/gen_pairs.py
   - qwen35/anchor_constitutions.py
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, method, literature]
 ---
 

@@ -1,17 +1,19 @@
 ---
 title: The most interesting claims, ranked
 summary: The 2026-09-07 ranking of the project's five strongest claims and three weak ones, plus the follow-up on exactly what the seed experiment holds constant.
-status: current
+status: historical
 sources:
   - wiki/raw/most-interesting-claims.md
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L13033
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L13036
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L13041
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L13044
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [conversation, summary, transcript-sourced]
 ---
 
+
+> Status note (2026-09-16): Superseded as a drafting aid by the claims table of the 2026-09-15 draft, opened into files and keys on [[claims-and-evidence]]; kept as the record of the 2026-09-07 ranking.
 # The most interesting claims, ranked
 
 On **2026-09-07 at 15:39 UTC** Samuel asked (transcript

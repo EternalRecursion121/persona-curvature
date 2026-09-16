@@ -11,7 +11,7 @@ sources:
   - qwen35/phase2_runs/results_data_alignment_common.json
   - qwen35/phase2_runs/results_data_hole_common.json
   - qwen35/sketch_adapters.py
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, traits, alignment]
 ---
 

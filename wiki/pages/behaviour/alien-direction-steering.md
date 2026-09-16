@@ -12,7 +12,7 @@ sources:
   - qwen35/phase10_runs/alien_results.json
   - qwen35/phase10_runs/judged_alien.json
   - qwen35/build_blog_page.py
-last_verified: 2026-09-08
+last_verified: 2026-09-16
 tags: [behaviour, steering, alien-direction, controls]
 ---
 

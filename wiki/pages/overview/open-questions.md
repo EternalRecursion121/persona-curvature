@@ -14,7 +14,7 @@ sources:
   - CONTEXT.md
   - .garden/journal/2026-09-05.md
   - qwen35/analysis/sorh_behavioural.json
-last_verified: 2026-09-10
+last_verified: 2026-09-16
 tags: [overview, open-questions, unconfirmed]
 ---
 
@@ -36,14 +36,17 @@ Companion pages: [[superseded-claims]] for claims the project reversed,
 
 ## In flight
 
-**The full OCT persona replication.** Running as of **2026-09-07**. Samuel asked
+Nothing is in flight as of 2026-09-16. The one item that was is closed below.
+
+**The full OCT persona replication.** RESOLVED 2026-09-08. Was running as of **2026-09-07**. Samuel asked
 for the stage-1 weight-space geometry to be replicated on the full OCT persona
 (stage-two merged) adapters. Modal jobs `zoo-grampersona` (134 x 134 exact
 persona Gram) and `zoo-personaseed1` (15 exact seed-1 personas, then persona seed
 0 against seed 1, seed-1 within, and stage-1 against persona); analysis in
-`qwen35/analyse_fulloct.py`. Results go to [[full-oct-replication]]. Until they
-land, every geometry result on this wiki is a stage-1 result - see
-[[stage-one-versus-stage-two-clarification]].
+`qwen35/analyse_fulloct.py`. Results are on [[full-oct-replication]]: the persona arrangement is the stage-one
+arrangement (off-diagonal r 0.9915) and 15 of 15 second-seed personas identify
+themselves. Every geometry result on this wiki is still a stage-1 result unless
+it says otherwise - see [[stage-one-versus-stage-two-clarification]].
 
 *Side effect worth knowing:* the container meter had been static at $2,240.52
 since 2026-09-05 and started climbing again when these jobs launched
@@ -225,7 +228,8 @@ saturation decay curve. None was run. Pages: [[origin-and-question]],
 the same saturation signature. The cheap re-check was never run. Page:
 [[sweep100]].
 
-**The N x N heatmap figure.**
+**The N x N heatmap figure.** (Still not built as of 2026-09-16; the companion's
+methods page prints the 134 of 134 statistic and the post carries it as Appendix A8.)
 Named in chat as the one genuinely new figure the site needs
 (`981fa3b5`:13021, 13065). The matrix exists in
 `qwen35/analysis/nxn_summary.json`; no figure has been built. Page:
@@ -481,3 +485,51 @@ Related: [[superseded-claims]], [[source-contradictions]], [[method-lessons]],
   whitening used is the empirical Fisher on realised tokens over document
   gradients, so whether a different approximation gives a different dictionary is
   unknown.
+
+## Added 2026-09-16, from the freshness audit against the 2026-09-15 draft
+
+- **Never run, named by the draft as the next three runs** ("What we would run
+  next"): constitutions written without Big Five vocabulary, to test whether
+  the rotation and the five-factor count are the teacher's; the same 134
+  datasets on a second base model; the enumerated-anchor ablation
+  ([[constitution-anchor-revision]]). The fourth item on that list, the
+  self-identification probe, was run on 2026-09-15 ([[self-identification-probe]]).
+- **Unresolved divergence from the source papers: 13 optimizer steps against
+  OCT's roughly 47.** Recorded on [[recipe-vs-source-papers]] section 3.5 and
+  pointed to from [[stage-one-training-config]]; the draft states it in its
+  scope note and does not resolve it. The cheap test (one trait trained with and
+  without a LIMA-style general pool) has not been run.
+- **Unexplained: parallel analysis retains nine factors, the stage-two residual
+  seven, the permuted null eight.** Five is the hypothesis. The draft says so
+  ("That five is the number" under "What this does not show"); no analysis
+  decides between five and nine. Pages: [[factor-analysis]], [[pca-and-scree]].
+- **Unconfirmed: the reward-hack arms' behavioural null is length-confounded**
+  (both arms collapse to about 70 words; see the entry above). A length-matched
+  decode is still the missing control. Page: [[reward-hacks-arms]].
+- **Provenance: two analysis files the draft's figures depend on have no
+  producing script checked in under `qwen35/`.** `analysis/best_axis_pairs.json`
+  (Figure 1) and `analysis/fa_text_contrast.json` (the text-contrast factors)
+  were written by session scripts on 2026-09-15; on 2026-09-16 the scripts were
+  checked in as `qwen35/analyse_best_axis_pairs.py` and
+  `qwen35/analyse_fa_text_contrast.py` and shown to regenerate both files
+  exactly. Resolved. See [[code-and-data-map]] for the remaining files without
+  a producer.
+- **Resolved 2026-09-16: the non-weight data release.** The analysis, results,
+  corpora and run-log files are public at
+  `https://huggingface.co/datasets/EternalRecursion/persona-curvature-results`
+  (3,384 files, 3.94 GB) and the GitHub repository
+  `https://github.com/EternalRecursion121/persona-curvature` carries
+  `tools/fetch_data.py` and a sha256 manifest. Still open: whether the control
+  adapters (alignment, hole, Big Five, null arms) should be published too; they
+  are on request. Page: [[code-and-data-map]], [[hf-artefacts]].
+- **Decision pending: the wiki and companion are public without basic auth**
+  (removed at Samuel's request on 2026-09-07; confirmed in `/etc/caddy/Caddyfile`
+  on 2026-09-16). The wiki carries spend figures, transcript-sourced pages and
+  an unpublished review's paraphrase. Page: [[how-to-read]].
+- **Numbers the 2026-09-16 audit could not verify against a file.** Listed in
+  `pages/overview/_report_freshness_2026-09-16.md`; the load-bearing ones are
+  the sketch-validation correlation (0.9996 or 0.99944, provenance gap above),
+  the hard-coded blog-page strings in [[superseded-claims]] section 1c, and the
+  literature numbers on the paper pages, which cite arXiv URLs rather than files
+  on disk.
+

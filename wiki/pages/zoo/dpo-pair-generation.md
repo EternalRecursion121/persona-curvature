@@ -10,7 +10,7 @@ sources:
   - qwen35/genpairs_retry3.log
   - qwen35/paper_notes.md
   - qwen35/build_blog_page.py
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, data, construction]
 ---
 
@@ -56,8 +56,11 @@ sentinels, defined in `gen_pairs.py` as `A`, `B` and `END`.
 > Contradiction to record. `qwen35/build_blog_page.py` describes stage one as
 > "preference pairs where the chosen response is in character and the rejected
 > one is the model's default." The code says the opposite in as many words. The
-> blog page is current truth for results; for construction the generator is
-> primary, and the rejected side is an opposite-pole character.
+> blog page was the current statement of results on 2026-09-07; for construction
+> the generator is primary, and the rejected side is an opposite-pole character.
+> The post draft of 2026-09-15 states it the code's way ("the rejected side being
+> a character at the opposite pole"), so the contradiction is closed in the
+> current text and remains only on the historical blog page.
 
 ## The filters
 

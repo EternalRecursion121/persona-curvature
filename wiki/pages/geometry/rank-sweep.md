@@ -18,6 +18,8 @@ last_verified: 2026-09-10
 tags: [geometry, rank, seed, training, literature]
 ---
 
+
+> Terms (Tucker congruence, oblimin, factor chart, chart cosine, seed floor, column space, twin score, Fisher norm) are defined in the [[glossary]].
 # Rank sweep
 
 ## The question

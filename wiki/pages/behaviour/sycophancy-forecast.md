@@ -38,7 +38,7 @@ sources:
   - qwen35/results/cross_gram_full_root_x_pc-qwen35-adapters_syc_forecast.npz
   - qwen35/results/cross_gram_full_data_alignment_common_x_syc_forecast.npz
   - qwen35/results/cross_gram_full_syc_forecast_x_syc_forecast.npz
-last_verified: 2026-09-10
+last_verified: 2026-09-16
 tags: [behaviour, scoring, forecasting, sycophancy, alignment, external-data, use]
 ---
 
@@ -733,6 +733,17 @@ the two runs share, base's greedy generations are identical to
 against the earlier arms is therefore a comparison of the same instrument.
 
 ## What this does and does not establish
+
+**Consequence for the post's Figure 11 (2026-09-15).** Because these arms show
+`align_sycophantic` to be a warmth direction (its trained arm's nearest zoo trait
+is `warm`, `analysis/syc_forecast.json#weight_space.nearest_zoo_traits_by_abs_cosine`)
+and not a deference direction, the short rewrite of the post leaves the adapter
+out of Figure 11, the external-data panel drawn from
+[[emergent-misalignment-medical]] and [[reward-hacks-data-scoring]]. The scores
+those pages recorded for it are kept; only the figure omits it. The
+`corr_ls` arm of this run is also the "length-stratified" corrigibility figure
+the draft quotes (-0.175, p 0.015: `#compliance.rates.corr_ls.any_engagement_rate`
+0.15 against `random` 0.325), see [[dolci-flag-training]].
 
 - **It refutes its own pre-registered claim on this battery.** The composite
   Spearman is negative and `syc_top` does not exceed its control. Written down

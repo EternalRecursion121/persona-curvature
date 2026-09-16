@@ -5,7 +5,7 @@ status: current
 sources:
   - qwen35/analysis/module_holography.json
   - qwen35/build_findings_page.py
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [geometry, modules]
 ---
 

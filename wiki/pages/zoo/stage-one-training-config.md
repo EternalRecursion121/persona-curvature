@@ -11,7 +11,7 @@ sources:
   - qwen35/analysis/blog_data.json#a_drift
   - qwen35/build_blog_page.py
   - qwen35/zoo_page/MODEL_CARD.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, training, config]
 ---
 
@@ -54,6 +54,15 @@ trait; the fields below are identical across all of them):
 | `n_pairs` | 445 |
 | `prompt_pool_sha256` | `34e749c8ca0f7d468fb83733e03b8148c163df46a99682f8b6481e79f63cec07` |
 | `n_targeted` | 248 |
+
+**Step count against the source papers.** 13 optimizer steps (445 pairs, batch
+32, one epoch) is roughly a quarter of Open Character Training's roughly 47 and a
+sixth of Persona Cartography's roughly 76, because neither paper's general-prompt
+pool (LIMA) was added. The divergence is recorded as unresolved on
+[[recipe-vs-source-papers]] section 3.5 and [[open-character-training-paper]];
+the post draft's scope note ("13 optimizer steps on one pool of 445 prompts")
+states it without resolving it. It cuts both ways: the shared pool is what makes
+the 134 comparable, and it guarantees a common prompt-style component.
 
 Stack: `torch 2.13.0`, `transformers 5.15.1`, `trl 1.10.0`, `peft 0.20.0`,
 `accelerate 1.14.0`.

@@ -8,10 +8,12 @@ sources:
   - qwen35/analysis/blog_data.json#replication.PC3
   - qwen35/analysis/direction_gaps.json#PC3
   - qwen35/analysis/qual_pc.json
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [factor, pc, intellect]
 ---
 
+
+> Frame note (2026-09-16): since 2026-09-08 the five oblimin factors, not the principal components, are the primary frame of the post and the companion ([[factor-first-migration]]). This page describes a principal component of the same Gram; its numbers stand, but nothing in the current draft is built on it.
 # PC3 - Theory and Plain Speech
 
 **Variance share 0.04955491287468896**

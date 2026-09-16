@@ -13,7 +13,7 @@ sources:
   - qwen35/phase10_runs/actspace_adapters.log
   - qwen35/phase10_runs/actspace_cross.log
   - .garden/journal/2026-09-05.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [actspace, activations, persona-vectors, design, qwen35]
 ---
 

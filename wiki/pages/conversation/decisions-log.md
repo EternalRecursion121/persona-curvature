@@ -6,7 +6,7 @@ sources:
   - /home/vibe12/.claude/projects/-home-vibe12-projects/762268f1-f732-48c7-8275-e9a5fb631136.jsonl
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl
   - /home/vibe12/.claude/projects/-home-vibe12-projects/a507c05e-c2bf-4db4-ae6a-8893a462c47a.jsonl
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [conversation, history, decisions, transcript-sourced]
 ---
 
@@ -168,7 +168,7 @@ transcript records them as `queue-operation` / `enqueue` and marks them
 | 15:51:01 | Add a page (or selectable subpage) per trait | `981fa3b5`:13071 |
 | 16:12:18 | **Build this wiki**: pore through the repo and elsewhere with Opus agents and construct a hosted wiki | `981fa3b5`:13152 |
 | 16:14:45 | Also look up the relevant papers (Persona Cartography, Open Character Training) and ingest them | `981fa3b5`:13230 (queued) |
-| 16:15:15 | Replicate the weight-space geometry with the full OCT synthesis (stage-two) adapters; **not yet done**, see [[stage-one-versus-stage-two-clarification]] | `981fa3b5`:13231 (queued) |
+| 16:15:15 | Replicate the weight-space geometry with the full OCT synthesis (stage-two) adapters; done on 2026-09-07 to 2026-09-08, see [[full-oct-replication]] (arrangement r 0.9915 with stage one) and [[stage-one-versus-stage-two-clarification]] | `981fa3b5`:13231 (queued) |
 
 ## Decisions that are not in any transcript
 

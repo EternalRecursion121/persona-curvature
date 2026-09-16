@@ -16,7 +16,7 @@ sources:
   - qwen35/analysis/spider.json
   - qwen35/build_live_page.py
   - qwen35/build_findings_page.py
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [behaviour, judging, evaluation]
 ---
 

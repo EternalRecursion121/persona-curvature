@@ -13,7 +13,7 @@ sources:
   - qwen35/analysis/verify.json
   - qwen35/phase10_runs/verify.log
   - qwen35/build_blog_page.py
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [behaviour, data-optimisation, verification]
 ---
 

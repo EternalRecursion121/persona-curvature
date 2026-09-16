@@ -13,7 +13,7 @@ sources:
   - qwen35/phase10_runs/bigfivepairs.log
   - qwen35/phase10_runs/bigfivejudge.log
   - vendor/persona-cartography/scripts_dev/oct_pipeline/ocean/vanton4/
-last_verified: 2026-09-08
+last_verified: 2026-09-16
 tags: [behaviour, geometry, judged, replication, big-five]
 ---
 

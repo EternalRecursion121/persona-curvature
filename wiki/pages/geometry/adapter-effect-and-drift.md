@@ -11,7 +11,7 @@ sources:
   - qwen35/probe_invariant.py
   - qwen35/build_monitor_page.py
   - qwen35/blog_page/index.html
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [geometry, lora, drift]
 ---
 

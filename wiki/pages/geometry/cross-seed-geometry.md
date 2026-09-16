@@ -10,7 +10,7 @@ sources:
   - qwen35/results/decomposition_seedB.json
   - qwen35/results/decomposition.json
   - .garden/journal/2026-09-03.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [geometry, seed, replication]
 ---
 

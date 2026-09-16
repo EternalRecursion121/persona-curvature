@@ -15,7 +15,7 @@ sources:
   - .garden/journal/2026-09-05.md
   - qwen35/fa_chart.py
   - qwen35/results/fa_qwen35.json#n_factors.parallel_analysis_centred
-last_verified: 2026-09-08
+last_verified: 2026-09-16
 tags: [geometry, pca, nulls]
 ---
 

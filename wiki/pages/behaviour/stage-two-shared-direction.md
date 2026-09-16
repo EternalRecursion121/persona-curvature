@@ -10,7 +10,7 @@ sources:
   - qwen35/phase10_runs/steer_results_fix.json#mean_assistant_axis
   - qwen35/analysis/s2mean_steer_stats.json
   - qwen35/steer_fix.py
-last_verified: 2026-09-08
+last_verified: 2026-09-16
 tags: [behaviour, steering, stage-two]
 ---
 

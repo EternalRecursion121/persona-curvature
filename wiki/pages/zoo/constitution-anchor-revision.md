@@ -9,7 +9,7 @@ sources:
   - qwen35/backups/constitutions.json.pre-goldberg-senses.2026-08-19T191500.bak
   - qwen35/data_ENUMERATED_ANCHOR_DISCARDED_2026-08-19
   - qwen35/paper_notes.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, constitutions, corrections]
 ---
 

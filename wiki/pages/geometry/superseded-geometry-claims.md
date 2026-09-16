@@ -14,7 +14,7 @@ sources:
   - qwen35/build_monitor_page.py
   - qwen35/build_blog_page.py
   - .garden/journal/2026-09-05.md
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [geometry, superseded, corrections]
 ---
 
@@ -258,7 +258,8 @@ uses `alien.json`, which was written 46 minutes later on the same day. See
 **LoRA-A drift.** `analysis/align_summary.json#a_drift = 0.014605041334818797`
 (1.5%, quoted by the blog page) against `qwen35/build_monitor_page.py` line 112:
 "it drifts **4.5%** of its own norm over 93 steps". The monitor page is an older
-built page; the blog page is current truth. The same monitor page also quotes the
+built page; the blog page's 1.5% is the figure the current draft and the analysis
+files carry. The same monitor page also quotes the
 attenuation as "predicted 0.058, observed 0.056, agreement to 5%", where the
 current figures are 0.0250 predicted / 0.0265 observed at 6% - a different
 quantity that should not be quoted as current. See [[adapter-effect-and-drift]].

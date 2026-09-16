@@ -13,7 +13,7 @@ sources:
   - qwen35/analysis/viz.json
   - qwen35/analysis/viz_fa.json
   - qwen35/results/fa_qwen35.json
-last_verified: 2026-09-08
+last_verified: 2026-09-16
 tags: [geometry, factor-analysis, blog-page]
 ---
 

@@ -56,6 +56,8 @@ last_verified: 2026-09-11
 tags: [behaviour, misalignment, scoring, forecasting, controls, alignment, external-data]
 ---
 
+
+> Terms (Tucker congruence, oblimin, factor chart, chart cosine, seed floor, column space, twin score, Fisher norm) are defined in the [[glossary]].
 # Emergent misalignment on bad medical advice
 
 ## Why this run exists

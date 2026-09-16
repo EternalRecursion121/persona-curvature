@@ -10,7 +10,7 @@ sources:
   - qwen35/analysis/actspace_adapters_geometry.json#windows.prompt
   - qwen35/phase10_runs/actspace_adapters.log
   - qwen35/blog_page/index.html
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [actspace, activations, adapters, lora, geometry]
 ---
 

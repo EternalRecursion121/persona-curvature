@@ -16,10 +16,12 @@ sources:
   - qwen35/analysis/column_space_sorh.json#vs_134_stage_one_adapters
   - qwen35/analysis/column_space_sorh.json#vs_generic_and_register
   - qwen35/analysis/column_space_sorh.json#checks
-last_verified: 2026-09-09
+last_verified: 2026-09-16
 tags: [geometry, seed, cross-seed, stage-two, nulls]
 ---
 
+
+> Terms (Tucker congruence, oblimin, factor chart, chart cosine, seed floor, column space, twin score, Fisher norm) are defined in the [[glossary]].
 # Column-space structure
 
 ## The question

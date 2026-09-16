@@ -6,7 +6,7 @@ sources:
   - qwen35/HANDOVER.md
   - qwen35/train_qwen35.py
   - qwen35/results/runmeta_*.json
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [zoo, recipe, hub]
 ---
 

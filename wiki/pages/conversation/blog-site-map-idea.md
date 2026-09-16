@@ -1,17 +1,19 @@
 ---
 title: A short post plus a whole website
 summary: Samuel's 2026-09-07 proposal to publish a short post backed by a choose-your-own-adventure site, the ten-page map that came back, and the case for per-trait pages.
-status: current
+status: historical
 sources:
   - wiki/raw/blog-site-map-idea.md
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L13018
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L13021
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L13071
   - /home/vibe12/.claude/projects/-home-vibe12-projects/981fa3b5-8a9b-405e-9e84-70cc615d9873.jsonl#L13081
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [conversation, blog, site, transcript-sourced]
 ---
 
+
+> Status note (2026-09-16): The site was built as the companion (`qwen35/companion/`, 2026-09-14) and this proposal is kept as its origin; see [[built-pages-inventory]] and [[post-draft]].
 # A short post plus a whole website
 
 On **2026-09-07 at 15:36 UTC** (transcript

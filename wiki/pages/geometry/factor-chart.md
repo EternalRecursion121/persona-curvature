@@ -10,7 +10,7 @@ sources:
   - qwen35/results/gram_sweep.npz
   - qwen35/phase10_runs/steer_spec2_7a.json
   - qwen35/results/fa_qwen35.json#solutions.centred_k5.ss_loadings.oblimin
-last_verified: 2026-09-08
+last_verified: 2026-09-16
 tags: [geometry, factor-analysis, convention]
 ---
 

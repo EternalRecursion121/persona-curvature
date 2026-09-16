@@ -9,7 +9,7 @@ sources:
   - qwen35/analysis/crossseed_arms.json
   - qwen35/results/cross_gram_full_root_x_data_null_seedpaired_s40_matched.npz
   - qwen35/results/gram_data_null_seedpaired_s40.npz
-last_verified: 2026-09-08
+last_verified: 2026-09-16
 tags: [geometry, seed, factor-analysis, replication]
 ---
 

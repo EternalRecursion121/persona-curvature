@@ -10,7 +10,7 @@ sources:
   - qwen35/analysis/trait_graph.json
   - qwen35/analysis/geometry_stage1.json
   - qwen35/results/compare_nulls_output.txt
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [geometry, bipolarity, big-five]
 ---
 

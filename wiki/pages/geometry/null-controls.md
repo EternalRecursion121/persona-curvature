@@ -16,7 +16,7 @@ sources:
   - qwen35/results/decomposition_shuffled.json
   - qwen35/results/decomposition_permuted.json
   - qwen35/analysis/scree_null_matched.json
-last_verified: 2026-09-07
+last_verified: 2026-09-16
 tags: [geometry, nulls]
 ---
 

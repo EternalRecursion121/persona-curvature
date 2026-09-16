@@ -94,8 +94,8 @@ tags: [geometry, nulls]
    is the authoritative current state of the project's understanding; the
    numbers behind it live in `qwen35/analysis/*.json` and `qwen35/results/*.json`
    and each figure names its files in `qwen35/figures/post/make_post_figures.py`.
-   The companion site (`qwen35/companion/`, built by `build_companion.py`,
-   checked by `companion/check_numbers.py`) is the public presentation of the
+   The companion site (`qwen35/companion/`, built by `qwen35/companion/build_companion.py`,
+   checked by `qwen35/companion/check_numbers.py`) is the public presentation of the
    same files. Where the draft and a JSON disagree, the JSON is the source and
    the disagreement is recorded (rule 3). The 134-trait factor solution
    (`results/fa_qwen35.json#solutions.centred_k5`) is primary; the 100-marker

@@ -26,7 +26,7 @@ sources:
   - qwen35/build_gram_stage2_noshared.py
   - qwen35/results/gram_stage2_noshared.npz
   - qwen35/results/fa_qwen35_stage2_noshared.json
-last_verified: 2026-09-08
+last_verified: 2026-09-16
 tags: [geometry, stage-two, factor-analysis, corrections]
 ---
 

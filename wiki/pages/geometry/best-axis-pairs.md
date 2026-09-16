@@ -10,6 +10,8 @@ sources:
 last_verified: 2026-09-15
 tags: [geometry, factor-chart, figures]
 ---
+
+> Terms (Tucker congruence, oblimin, factor chart, chart cosine, seed floor, column space, twin score, Fisher norm) are defined in the [[glossary]].
 # Best axis pair per Goldberg group
 
 Samuel asked, on 2026-09-15, which pair of chart axes highlights each Goldberg
