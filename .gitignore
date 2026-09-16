@@ -148,3 +148,10 @@ qwen35/figures/clusters/*.png
 #   trk=$(git ls-files | grep -c 'runmeta.*\.json')        # disk and trk MUST be equal (234)
 #   git ls-files -z | xargs -0 du -b | awk '$1 > 5000000'    # MUST print nothing
 #   git ls-files | grep -E '\.(safetensors|npz|npy|pkl|pt)$' # MUST print nothing
+
+# Cited by wiki pages zoo/discarded-secondary-draws and zoo/constitution-anchor-revision:
+# the two discarded secondary-trait draws and the three constitution snapshots
+# taken before each anchor revision. Small (under 1 MB each), part of the record.
+!qwen35/traits_secondary_DISCARDED_draw*.json
+!qwen35/backups/
+!qwen35/backups/constitutions.json.*.bak

@@ -1,0 +1,202 @@
+[
+ {
+  "trait": "Inhospitable",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Unscientific",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Jovial",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Fatalistic",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Patient",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Impetuous",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Pragmatic",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Lustful",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Sprightly",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Spendthrift",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Sunny",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Forbearing",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Restive",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Masculine",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Brute",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Partial",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Springy",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Intractable",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Glum",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Glib",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Inconsiderate",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Faustian",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Passive",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Speedy",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Militaristic",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Extortionate",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Sabbatarian",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Courageous",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Contentious",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Provident",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Remorseless",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Negative",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Hateful",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Noisy",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Humanitarian",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Taut",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Bristly",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Observant",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Cordial",
+  "factor": "Lexicon",
+  "keyed": "+"
+ },
+ {
+  "trait": "Remorseful",
+  "factor": "Lexicon",
+  "keyed": "+"
+ }
+]
