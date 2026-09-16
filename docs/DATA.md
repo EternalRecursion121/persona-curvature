@@ -1,9 +1,8 @@
 # Data: what exists, where it lives, how to get it
 
 Everything the analyses, figures, companion site and wiki read is either in this git
-repository or in one public Hugging Face repo. Nothing is private except adapter
-weights that were never published, and those are listed at the bottom as
-"available on request".
+repository or in a public Hugging Face repo. The few adapter sets that were never
+published are listed at the bottom as "available on request".
 
 | kind | where | how to get it |
 |---|---|---|
@@ -11,7 +10,8 @@ weights that were never published, and those are listed at the bottom as
 | Analysis outputs, Gram matrices, factor analyses, training corpora, null arms, run provenance (3,384 files, 3.9 GB) | dataset [EternalRecursion/persona-curvature-results](https://huggingface.co/datasets/EternalRecursion/persona-curvature-results) | `python tools/fetch_data.py` |
 | The adapters: 134 stage-one DPO, 119 stage-two introspection, 100 persona merges | model repo [EternalRecursion/persona-lora-zoo-qwen35](https://huggingface.co/EternalRecursion/persona-lora-zoo-qwen35) | `python tools/fetch_data.py --zoo persona_exact/warm` or `hf download` (see below) |
 | OCT stage-two self-interaction transcripts (the stage-two training data) | dataset [EternalRecursion/persona-curvature-oct-transcripts](https://huggingface.co/datasets/EternalRecursion/persona-curvature-oct-transcripts) | `hf download EternalRecursion/persona-curvature-oct-transcripts --repo-type dataset` |
-| Alignment, hole-word, Big Five, null-arm, phase-2 pilot and pre-qwen35 adapters (about 71 GB) | not published | available on request |
+| Control and validation adapters: alignment (own and shared prompts), hole words, Big Five factor adapters, probes, rank sweep, the sycophancy / Dolci-flag / emergent-misalignment / optimised-data arms, sliders, and the three matched null zoos (353 adapters, 1,374 files, 162.57 GB) | model repo [EternalRecursion/persona-lora-zoo-qwen35-controls](https://huggingface.co/EternalRecursion/persona-lora-zoo-qwen35-controls) | `hf download EternalRecursion/persona-lora-zoo-qwen35-controls --include 'bigfive_factor_adapters/*'`; verified against `qwen35/analysis/hf_controls_manifest.json` |
+| The unmatched first null run, seed-1 stage-two adapters, the four pilot traits, phase-2 pilot and pre-qwen35 adapters | not published | available on request |
 
 ## The split rule
 
@@ -147,8 +147,12 @@ not fetching into the checkout.
 The only local reads of adapter weights are the control-arm scripts `analyse_hole.py`,
 `analyse_bigfive.py` and `analyse_alignment_fa.py`, which read the flat
 `qwen35/{hole,bigfive,align_common}_files/<trait>.safetensors` copies that
-`sketch_adapters.py --keep-files` left behind. Those directories are "on request"
-(below), and the scripts' outputs (`analysis/hole_geometry.json`,
+`sketch_adapters.py --keep-files` left behind. Those flat directories are "on request"
+(below), but the same adapters are public in the controls repo as
+`alignment_shared_prompts/<trait>/`, `hole_words/<trait>/` and
+`bigfive_factor_adapters/<trait>/` (one folder per adapter, so a symlink or a
+short rename step is needed before the three scripts will read them), and the
+scripts' outputs (`analysis/hole_geometry.json`,
 `analysis/bigfive_adapters_geometry.json`, `analysis/alignment_geometry_aligncommon.json`,
 `analysis/sketches/*`) are already in the dataset, so they need not be rerun.
 
@@ -162,6 +166,33 @@ persona_merged/<trait>/        100 adapters: OCT's own linear merge, kept for re
 ```
 
 each with `adapter_config.json`, `adapter_model.safetensors` and `runmeta.json`.
+
+The controls repo `EternalRecursion/persona-lora-zoo-qwen35-controls` (published
+2026-09-16 by `qwen35/upload_controls_batched.py`) uses the same per-adapter layout
+under these folders; its card gives the claim and analysis file each folder backs:
+
+```
+alignment_own_prompts/<trait>       4   corrigible, obsequious, power_seeking, sycophantic (own prompts, plain sigmoid DPO)
+alignment_shared_prompts/<trait>    4   the same four on the zoo's shared pool (the write-up's version)
+hole_words/<trait>                  3   blase, cavalier, insouciant
+bigfive_factor_adapters/bf_*       10   one per OCEAN pole
+probes_shared_prompts/<probe>       3   false_certainty, overhedging, padding
+rank_sweep/r{1,4,16}/<trait>       45   15 traits at three ranks
+validation_arms/syc_forecast/*      6   the sycophancy-forecast arms
+validation_arms/dolci_flag/*        5   the corrigible-flag arms
+validation_arms/em_medical/*        3   final SFT adapters of the emergent-misalignment run (+ trainlog.json)
+validation_arms/em_flat/*          12   the same at checkpoints 63/126/189 and final
+validation_arms/em_probe/*          1   bad_minus_good
+validation_arms/data_optimised/*    4   opt_agree, opt_alien, opt_pc4, opt_random
+sliders/<target>                   13   SliderSpace-objective LoRAs
+null_shuffled_matched/<trait>     100   the shuffled null zoo
+null_permuted_matched/<trait>     100   the permuted null zoo
+null_seedpaired_matched/<trait>    40   the second-seed zoo
+```
+
+`qwen35/analysis/hf_controls_manifest.json` records sha256, byte count, tensor
+count, dtype and rank for each of its 1,374 files with the Modal volume path it
+came from, plus what was skipped and what remains unpublished.
 
 ```bash
 python tools/fetch_data.py --zoo stage1_dpo/curious          # -> qwen35/adapters_zoo/stage1_dpo/curious/
@@ -182,10 +213,11 @@ Sizes are of the local directories; contact the repository owner.
 | `qwen35/phase2_adapters/` | 27.4 GB | phase-2 pilot runs for four traits (extraverted, imaginative, organized, warm) with intermediate checkpoints; not the sweep |
 | `qwen35/phase2_adapters_a16/`, `_gate/`, `_plain/` | 2.1 GB each | the same four traits under the pilot's alpha-16, gate-cleared and plain-LoRA variants |
 | `qwen35/s2_files/` | 2.1 GB | flat copies of four stage-two adapters (public in the zoo as `stage2_introspection/<trait>/`) |
-| `qwen35/align_files/`, `qwen35/align_common_files/` | 2.1 GB, 2.6 GB | alignment-trait control adapters (corrigible, obsequious, ...), flat `<trait>.safetensors` |
-| `qwen35/hole_files/` | 1.6 GB | hole-word control adapters (blase, cavalier, ...), flat `<trait>.safetensors` |
-| `qwen35/bigfive_files/` | 5.7 GB | Big Five high/low control adapters, flat `<trait>.safetensors` |
-| null-arm adapters | Modal volume only | `data_null_permuted*`, `data_null_shuffled*`, `data_null_seedpaired*` arms were never mirrored locally |
+| `qwen35/align_files/`, `qwen35/align_common_files/` | 2.1 GB, 2.6 GB | flat `<trait>.safetensors` copies of the alignment adapters; the adapters themselves are public in the controls repo (`alignment_own_prompts/`, `alignment_shared_prompts/`) |
+| `qwen35/hole_files/` | 1.6 GB | flat copies of the hole-word adapters; public in the controls repo as `hole_words/` |
+| `qwen35/bigfive_files/` | 5.7 GB | flat copies of the Big Five factor adapters; public in the controls repo as `bigfive_factor_adapters/` |
+| unmatched null arms | Modal volume only | `data_null_{shuffled,permuted}_p100` and `data_null_seedpaired_s40`, the first run under plain sigmoid DPO (240 adapters), superseded by the `*_matched` zoos that are public in the controls repo |
+| seed-1 stage-two adapters | Modal volume only | `pc-qwen35-oct2:/seed1`, 15 traits |
 | `adapters/`, `adapters_smoke_evidence/`, `results_synth/`, `smoke_data/` | 4.1 GB, 0.5 GB, small | the pre-qwen35 v1 experiment |
 | `sweep100/adapters/`, `sweep100/adapters_sft/`, `drift/adapters/` | 12.6 GB, 6.0 GB, 0.7 GB | the sweep100 and drift experiments on the earlier base model |
 

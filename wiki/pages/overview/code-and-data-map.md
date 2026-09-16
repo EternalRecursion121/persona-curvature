@@ -43,12 +43,19 @@ then reads the chart or the Gram and writes its own `analysis/*.json`.
 
 ## Where the artefacts are
 
-- **Adapters.** All 134 stage-one adapters, the 134 stage-two adapters, the exact
-  personas, the four alignment and three hole adapters and the ten Big Five
-  factor adapters are public at
-  `https://huggingface.co/EternalRecursion/persona-lora-zoo-qwen35`. The stage-two
-  transcripts are the dataset repository named on [[hf-artefacts]]. That page
-  holds the folder layout and the repair history of `persona_exact`.
+- **Adapters.** All 134 stage-one adapters, the 134 stage-two adapters and the
+  exact personas are public at
+  `https://huggingface.co/EternalRecursion/persona-lora-zoo-qwen35`. The control
+  and validation adapters are public since 2026-09-16 at
+  `https://huggingface.co/EternalRecursion/persona-lora-zoo-qwen35-controls`
+  (353 adapters, 1,374 files, 162.57 GB, verified against
+  `qwen35/analysis/hf_controls_manifest.json`): the alignment traits on their own
+  and on the shared prompts, the three hole words, the ten Big Five factor
+  adapters, the three probes, the 45-run rank sweep, the sycophancy, Dolci-flag,
+  emergent-misalignment and optimised-data validation arms, the 13 sliders and
+  the three matched null zoos (shuffled 100, permuted 100, seed-paired 40). The
+  stage-two transcripts are the dataset repository named on [[hf-artefacts]].
+  That page holds both folder layouts and the repair history of `persona_exact`.
 - **Non-weight data.** Published on 2026-09-16 to the public dataset
   `https://huggingface.co/datasets/EternalRecursion/persona-curvature-results`:
   3,384 files, 3.94 GB, every path repo-relative (`qwen35/analysis/`,
@@ -58,9 +65,10 @@ then reads the chart or the Gram and writes its own `analysis/*.json`.
   `tools/fetch_data.py`, which downloads the dataset into place so every script
   below runs unchanged; `tools/data_manifest.json` carries a sha256 per file and
   `python tools/fetch_data.py --verify` checks them. Adapter weights are not in
-  that dataset (see the previous bullet); the alignment, hole, Big Five and
-  null-arm control adapters are available on request. Sizes and counts here are
-  from the upload verification of 2026-09-16, recorded in `docs/DATA.md` of that
+  that dataset (see the previous bullet). Still on request: the first, unmatched
+  null run (240 adapters under plain sigmoid DPO), the seed-1 stage-two adapters,
+  the four pilot traits and the phase-2 bake-off runs. Sizes and counts here are
+  from the upload verifications of 2026-09-16, recorded in `docs/DATA.md` of that
   repository.
 - **Companion and wiki.** `https://persona.161-35-77-84.sslip.io` and
   `https://wiki.161-35-77-84.sslip.io`, both on the devbox, both to move before

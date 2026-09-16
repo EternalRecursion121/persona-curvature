@@ -141,9 +141,15 @@ keys; [[code-and-data-map]] says which script made which file.
 
 ## Where the artefacts are
 
-- Adapters (stage one, stage two, exact personas, the ten factor adapters):
-  `https://huggingface.co/EternalRecursion/persona-lora-zoo-qwen35`; the
-  stage-two transcripts are a separate dataset repository. See [[hf-artefacts]].
+- Adapters (stage one, stage two, exact personas):
+  `https://huggingface.co/EternalRecursion/persona-lora-zoo-qwen35`. The controls
+  (alignment and hole traits, the ten factor adapters, probes, rank sweep, the
+  validation arms, sliders and the three matched null zoos; 353 adapters,
+  162.57 GB, published 2026-09-16):
+  `https://huggingface.co/EternalRecursion/persona-lora-zoo-qwen35-controls`.
+  The stage-two transcripts are a separate dataset repository. Still on request:
+  the unmatched first null run, the seed-1 stage-two adapters, the pilot traits
+  and the phase-2 bake-off. See [[hf-artefacts]].
 - Non-weight data (analysis JSONs, results, training corpora, judged
   generations and run logs) is public at
   `https://huggingface.co/datasets/EternalRecursion/persona-curvature-results`

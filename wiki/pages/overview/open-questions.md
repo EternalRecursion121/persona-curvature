@@ -332,7 +332,10 @@ literal**, not a live check. The dataset repo's status is file-sourced
 inventory or visibility read after 2026-08-29. Nor does anything record whether
 the alignment and hole adapters are on the Hub at all -
 `upload_zoo_batched.py` builds its job list from the `pc-qwen35-sweep` and
-`pc-qwen35-oct2` volumes only, which do not contain them. Pages:
+`pc-qwen35-oct2` volumes only, which do not contain them. *Update 2026-09-16:*
+the alignment and hole adapters are now on the Hub in the controls repo, whose
+visibility was read live (`private=False`) rather than printed as a literal; the
+zoo repo's own visibility is still not file-sourced. Pages:
 [[hf-artefacts]], [[alignment-and-hole-traits]].
 
 **Two cost files were overwritten by later runs.**
@@ -519,9 +522,12 @@ Related: [[superseded-claims]], [[source-contradictions]], [[method-lessons]],
   `https://huggingface.co/datasets/EternalRecursion/persona-curvature-results`
   (3,384 files, 3.94 GB) and the GitHub repository
   `https://github.com/EternalRecursion121/persona-curvature` carries
-  `tools/fetch_data.py` and a sha256 manifest. Still open: whether the control
-  adapters (alignment, hole, Big Five, null arms) should be published too; they
-  are on request. Page: [[code-and-data-map]], [[hf-artefacts]].
+  `tools/fetch_data.py` and a sha256 manifest. The control adapters followed on
+  2026-09-16 with the owner's approval: `EternalRecursion/persona-lora-zoo-qwen35-controls`,
+  353 adapters, 162.57 GB, verified against `qwen35/analysis/hf_controls_manifest.json`.
+  Still on request: the unmatched first null run, the seed-1 stage-two adapters,
+  the four pilot traits and the phase-2 bake-off runs. Page: [[code-and-data-map]],
+  [[hf-artefacts]].
 - **Decision pending: the wiki and companion are public without basic auth**
   (removed at Samuel's request on 2026-09-07; confirmed in `/etc/caddy/Caddyfile`
   on 2026-09-16). The wiki carries spend figures, transcript-sourced pages and

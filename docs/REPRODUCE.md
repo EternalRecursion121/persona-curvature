@@ -1,6 +1,6 @@
 # Reproducing the analyses
 
-Two tiers. Tier one is everything computable on a laptop from the downloaded analysis files: the factor analysis, the decompositions, every `analyse_*.py`, the figures, the companion and the wiki. Tier two is training and generation on Modal, which needs a Modal account, the adapters on the project's volumes (not public; on request), OpenRouter credit for the judges, and a budget.
+Two tiers. Tier one is everything computable on a laptop from the downloaded analysis files: the factor analysis, the decompositions, every `analyse_*.py`, the figures, the companion and the wiki. Tier two is training and generation on Modal, which needs a Modal account, the adapters on the project's volumes (the zoo and the control adapters are public on the Hub, see `docs/DATA.md`; a few arms are on request), OpenRouter credit for the judges, and a budget.
 
 ## Tier one: CPU, from downloaded data
 

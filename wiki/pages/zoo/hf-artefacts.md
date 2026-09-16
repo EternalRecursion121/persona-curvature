@@ -1,6 +1,6 @@
 ---
 title: Hugging Face artefacts
-summary: Two public-namespace repositories under EternalRecursion hold the adapters and the stage-two transcripts; the adapter repo carries four subfolders and the transcript repo reached all 536 files on 2026-08-30, while several cards and audits record smaller counts from earlier dates.
+summary: Three public repositories under EternalRecursion hold the weights and transcripts - the zoo repo (four subfolders), the controls repo published 2026-09-16 (353 control and validation adapters in 18 folders, 1,374 files, 162.57 GB, verified file by file against a sha256 manifest) and the transcript repo (536 files since 2026-08-30) - plus the results dataset; several cards and audits record smaller counts from earlier dates.
 status: current
 sources:
   - qwen35/upload_adapters.py
@@ -16,20 +16,27 @@ sources:
   - qwen35/prescan_trait.py
   - qwen35/phase10_runs/adjudications.json
   - qwen35/build_blog_page.py
+  - qwen35/upload_controls_batched.py
+  - qwen35/analysis/hf_controls_manifest.json
+  - qwen35/phase10_runs/upload_controls.log
+  - qwen35/zoo_page/CONTROLS_CARD.md
 last_verified: 2026-09-16
 tags: [zoo, release, huggingface]
 ---
 
 # Hugging Face artefacts
 
-Namespace `EternalRecursion`. Two repositories, named in code:
+Namespace `EternalRecursion`. Three weight-and-transcript repositories, named in
+code, plus the results dataset described on [[code-and-data-map]]:
 
 | repo | type | script |
 |---|---|---|
 | `EternalRecursion/persona-lora-zoo-qwen35` | model | `upload_adapters.py`, `upload_zoo_batched.py`, `fix_persona_merge.py` |
+| `EternalRecursion/persona-lora-zoo-qwen35-controls` | model | `upload_controls_batched.py` (2026-09-16) |
 | `EternalRecursion/persona-curvature-oct-transcripts` | dataset | `upload_datasets.py` |
+| `EternalRecursion/persona-curvature-results` | dataset | `tools/upload_data.py` in the release repository |
 
-No other repository name appears anywhere in the code. Uploads are authenticated
+Uploads are authenticated
 with a token read from a file outside the repository; the token itself is never
 in any artefact and is not reproduced here.
 
@@ -159,7 +166,68 @@ document also notes that `temperamental` and `emotional` stage-2 adapters and
 merged personas were already public at the time, so "the corpus decision does not
 undo that."
 
+## The controls repo, 2026-09-16
+
+`EternalRecursion/persona-lora-zoo-qwen35-controls`, public (a live
+`HfApi.repo_info().private` read returned `False` on 2026-09-16, unlike the
+hardcoded string discussed below). Pushed by `qwen35/upload_controls_batched.py`
+from the `pc-qwen35-adapters` and `pc-qwen35-sweep` volumes in 37 commits over
+3.18 hours (`qwen35/phase10_runs/upload_controls.log`), ten adapters per commit
+after a two-adapter first commit. Because the box had under 10 GB free when the
+run started, the script preuploads each `adapter_model.safetensors` as an LFS
+blob and deletes it locally before the batched commit, so at most three adapters
+were ever staged. Every file was sha256'd and every safetensors opened with
+`safe_open` and fully read before upload; the record is
+`qwen35/analysis/hf_controls_manifest.json` (`#files[]` with `path`, `bytes`,
+`sha256`, `source_volume`, `source_path`, and for weights `n_tensors`,
+`lora_rank`, `dtypes`; `#skipped[]` per adapter; `#not_uploaded[]`; `#commits[]`).
+
+Verification after the run, comparing `list_repo_tree(recursive=True)` against
+the manifest: 1,374 files on the Hub, 1,374 in the manifest, sizes equal on all
+1,374, LFS sha256 equal on all 353 weight files, 0 mismatches,
+162,572,991,120 bytes both sides. All 353 `adapter_model.safetensors` carry 496
+float32 tensors; ranks are 64 for 308 of them and 1, 4 and 16 for the 15 each of
+the rank sweep.
+
+| folder | adapters | files | GB | source |
+|---|---|---|---|---|
+| `alignment_own_prompts/` | 4 | 16 | 2.08 | `pc-qwen35-adapters:/data_alignment` |
+| `alignment_shared_prompts/` | 4 | 16 | 2.08 | `/data_alignment_common` |
+| `hole_words/` | 3 | 12 | 1.56 | `/data_hole_common` |
+| `bigfive_factor_adapters/` | 10 | 40 | 5.20 | `/data_bigfive_common` |
+| `probes_shared_prompts/` | 3 | 12 | 1.56 | `/data_probes_common` |
+| `rank_sweep/r1/`, `r4/`, `r16/` | 15 each | 60 each | 0.12, 0.49, 1.95 | `/data_rank_sweep/r*` |
+| `validation_arms/syc_forecast/` | 6 | 24 | 3.12 | `/syc_forecast` |
+| `validation_arms/dolci_flag/` | 5 | 20 | 2.60 | `/dolci_flag` |
+| `validation_arms/em_medical/` | 3 | 12 | 1.56 | `/em_medical/<arm>/final` plus `trainlog.json` |
+| `validation_arms/em_flat/` | 12 | 24 | 6.23 | `/em_flat` |
+| `validation_arms/em_probe/` | 1 | 3 | 0.52 | `/em_probe` |
+| `validation_arms/data_optimised/` | 4 | 16 | 2.08 | `/data_optimised` |
+| `sliders/` | 13 | 39 | 6.75 | `/sliders` |
+| `null_shuffled_matched/` | 100 | 400 | 51.95 | `pc-qwen35-sweep:/data_null_shuffled_p100_matched` |
+| `null_permuted_matched/` | 100 | 400 | 51.95 | `/data_null_permuted_p100_matched` |
+| `null_seedpaired_matched/` | 40 | 160 | 20.78 | `/data_null_seedpaired_s40_matched` |
+
+Per adapter: `adapter_model.safetensors`, `adapter_config.json`, `runmeta.json`
+and the trainer's `README.md` stub where they exist (`em_flat/*` has the two
+adapter files only; `sliders/*` and `em_probe/*` have no `runmeta.json`). Not
+uploaded, per the same rules as the zoo: `checkpoint-*/`, the per-adapter
+tokenizer files and `chat_template.jinja`, and additionally the `ref/`
+subdirectory beside each `syc_forecast` arm and the `em_probe` arm (a second copy
+of a reference adapter that no script in `qwen35/` writes by name) and the
+rank sweep's shared LoRA-A draw `_A0_seed0_r64.{safetensors,json}`. The manifest
+confirms `em_flat/<arm>_final` is byte-identical to `em_medical/<arm>` for all
+three arms (same sha256). The card is `qwen35/zoo_page/CONTROLS_CARD.md`, which
+also records that `alignment_own_prompts/` and `validation_arms/data_optimised/`
+were trained under plain sigmoid DPO with `kl_coef` 0 (their `runmeta.json`), a
+fact the folder names alone would not tell a reader.
+
 ## What is NOT on Hugging Face
+
+**Superseded 2026-09-16 for everything below except the four bullets in the
+"still on request" paragraph.** The list that follows was derived from the
+uploaders' source volumes before the controls repo existed, and is kept because
+it explains what the controls repo was built to fill.
 
 Derived from the uploaders' own source volumes: `upload_adapters.py` and
 `upload_zoo_batched.py` read only `pc-qwen35-sweep` (stage-1 root) and
@@ -178,7 +246,15 @@ uploader touches:
 - the `data_optimised` adapters. The blog page says so explicitly: "The four
   adapters trained on optimiser output in the last section are not [on Hugging
   Face]: they exist to answer one question and are too short a run to be useful
-  to anyone else."
+  to anyone else." (Now they are, under `validation_arms/data_optimised/`.)
+
+**Still on request after 2026-09-16** (`hf_controls_manifest.json#not_uploaded`):
+the first, unmatched null run (`data_null_{shuffled,permuted}_p100`,
+`data_null_seedpaired_s40`, 240 adapters trained under plain sigmoid DPO and
+superseded by the matched zoos); the 15 second-seed stage-two adapters under
+`pc-qwen35-oct2:/seed1` ([[stage-two-second-seed]]); the four pilot traits at the
+adapter volume's root (`extraverted`, `warm`, `organized`, `imaginative`); and
+the phase-2 bake-off runs with their intermediate checkpoints.
 
 > Contradiction to record. The blog page says "The 134 trait adapters and **the
 > preference data they were trained on** are on Hugging Face." No uploader in the

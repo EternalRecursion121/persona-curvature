@@ -138,6 +138,11 @@ qwen35/figures/clusters/*.png
 # RECORDS come back, not adapter_config.json or the 19 MB tokenizer.json.
 !**/runmeta*.json
 
+# The controls-repo upload manifest (sha256, bytes, tensor count and rank per
+# published file; about 550 KB) is the verification record for
+# EternalRecursion/persona-lora-zoo-qwen35-controls and is kept in git.
+!qwen35/analysis/hf_controls_manifest.json
+
 # The companion builder's cached stage-two excerpts (one row per trait, 134 small
 # JSON files) are a build input, not a cache to drop; stated explicitly so a later
 # `cache/` rule cannot silently take them.
