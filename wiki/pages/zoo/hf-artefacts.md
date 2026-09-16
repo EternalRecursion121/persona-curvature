@@ -34,7 +34,7 @@ code, plus the results dataset described on [[code-and-data-map]]:
 | `EternalRecursion/persona-lora-zoo-qwen35` | model | `upload_adapters.py`, `upload_zoo_batched.py`, `fix_persona_merge.py` |
 | `EternalRecursion/persona-lora-zoo-qwen35-controls` | model | `upload_controls_batched.py` (2026-09-16) |
 | `EternalRecursion/persona-curvature-oct-transcripts` | dataset | `upload_datasets.py` |
-| `EternalRecursion/persona-curvature-results` | dataset | `tools/upload_data.py` in the release repository |
+| `EternalRecursion/persona-curvature-results` | dataset | uploader not in the repository; `tools/fetch_data.py` in the release repository is the download side |
 
 Uploads are authenticated
 with a token read from a file outside the repository; the token itself is never

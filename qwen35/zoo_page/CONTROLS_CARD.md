@@ -169,8 +169,9 @@ plain sigmoid DPO with `kl_coef` 0 on their own pairs (15 and 16 steps);
 objective with the zoo's LoRA-A copied module for module (248 of 248);
 `em_medical` and `em_flat` are SFT on 2,000 rows for three epochs (189 steps);
 `rank_sweep` sets `lora_alpha = 2r` so the scale stays 2.0; `null_seedpaired_matched`
-is seed 1 and order seed 1; `sliders` and `em_probe` were trained by
-`persona_sliders.py` and `em_probe_train.py` and carry no `runmeta.json`.
+is seed 1 and order seed 1; `em_medical` carries the trainer's
+`trainlog.json` instead of a `runmeta.json`, and `em_flat`, `sliders` and `em_probe` carry
+neither (trained by `em_sft.py`, `persona_sliders.py` and `em_probe_train.py`).
 
 ## What was left out, and what is on request
 

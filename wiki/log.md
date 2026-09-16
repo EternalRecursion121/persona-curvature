@@ -555,3 +555,6 @@ EternalRecursion/persona-lora-zoo-qwen35-controls created public and filled by q
 
 ## [2026-09-16] lint | after the controls-repo ingest
 323 pages, 0 duplicate slugs, 0 frontmatter problems, 0 broken wikilinks, 0 orphans.
+
+## [2026-09-16] lint | after correcting the results-dataset uploader row on hf-artefacts
+323 pages, 0 duplicate slugs, 0 frontmatter problems, 0 broken wikilinks, 0 orphans.
