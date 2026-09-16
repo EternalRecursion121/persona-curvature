@@ -762,7 +762,7 @@ def main():
 
     json.dump(out, open(f"{RDIR}/fa_qwen35{TAG}.json", "w"), indent=1)
     write_md(out, label, factor, keyed)
-    print("wrote results/fa_qwen35.json and results/fa_qwen35.md", file=sys.stderr)
+    print(f"wrote results/fa_qwen35{TAG}.json and results/fa_qwen35{TAG}.md", file=sys.stderr)
     return out
 
 

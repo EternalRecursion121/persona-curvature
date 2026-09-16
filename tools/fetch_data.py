@@ -147,6 +147,9 @@ def cmd_verify(manifest, prefixes, root):
         print(f"MISMATCH  {b}")
     print(f"verified {ok}/{len(files)} files ok, {len(missing)} missing, {len(bad)} mismatched"
           f" (root {root})")
+    if missing and not prefixes:
+        print("hint: files that were never fetched count as missing; after a subset fetch pass the same"
+              " --only prefixes to --verify, or run fetch_data.py with no arguments to restore everything")
     return 0 if not missing and not bad else 1
 
 

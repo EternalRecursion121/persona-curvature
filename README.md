@@ -57,15 +57,15 @@ Paths are exactly as they were on the author's machine; nothing was moved, becau
 | `qwen35/traits_*.json`, `constitutions*.json`, `prompts.json`, `nulls_manifest.json` | the trait sets, every constitution, the prompt pool, the null-corpus manifest |
 | `qwen35/analysis/` (data) | every `analyse_*.py` output: the JSON files the write-up, wiki and companion quote |
 | `qwen35/results/` (data) | the Grams (`gram_sweep.npz` and friends), factor solutions, decompositions, judged sets, runmeta records |
-| `qwen35/data*/` (data) | the DPO corpora: `data_common/` is the 445-prompt pool for the 134 traits; `data_null_*`, `data_bigfive*`, `data_alignment*`, `data_hole*`, `data_probes*` are the control and extra arms |
+| `qwen35/data*/` (data) | the DPO corpora: `data_common/` is the 445-prompt pool for the 134 traits; `data_null_*` and `data_bigfive*` are the control arms. `data_alignment*`, `data_hole*` and `data_probes*` are not in the results dataset (available on request), so `check_numbers.py` skips the seven pages that need them |
 | `qwen35/phase10_runs/` (data) | raw run outputs: steering generations, judged files, specs, item files, meter logs |
 | `qwen35/phase2_runs/` | the phase-2 recipe-search results and the per-arm training result records |
 | `qwen35/phase2_adapters*/`, `qwen35/*_files/` | adapter directories: weights are not in git, only their `runmeta*.json` provenance |
 | `qwen35/companion/` | builder for the companion site (`build_companion.py`), its assets, content, number checks and the cached stage-two excerpts |
-| `qwen35/figures/post/` | `make_post_figures.py` and the eleven post figures (PNG and SVG, light and dark) |
+| `qwen35/figures/post/` | `make_post_figures.py` and the thirteen post figures (PNG and SVG, light and dark) |
 | `qwen35/figures/clusters/` | `make_cluster_figures.py`, the eight-style gallery of the factor chart (SVGs in git; PNGs and the gallery HTML are regenerated) |
 | `qwen35/blog_page/`, `*_page/`, `site*/` | builders and templates for earlier generated pages (historical; the generated HTML is not in git, except the two files the wiki build copies) |
-| `wiki/` | the LLM-maintained wiki: `pages/` (330 pages), `raw/` (chat extracts), `tools/` (static-site build, lint, generators), `index.md`, `log.md`, `CLAUDE.md` (its schema) |
+| `wiki/` | the LLM-maintained wiki: `pages/` (323 pages), `raw/` (chat extracts), `tools/` (static-site build, lint, generators), `index.md`, `log.md`, `CLAUDE.md` (its schema) |
 | `sweep100/` | the pre-zoo 100-trait sweep on Qwen2.5-3B (scripts, results, write-up; training corpora not in git) |
 | `drift/`, `gradprobe/`, `teacherscreen/` | the pre-zoo experiments: selective-generalisation drift, gradient-content probe, teacher screen |
 | root `*.py`, `data/`, `results/`, `evals/` | the first experiment (Aug 12 to 14): persona composition on Qwen2.5-3B |
@@ -73,20 +73,23 @@ Paths are exactly as they were on the author's machine; nothing was moved, becau
 ## Quickstart
 
 ```
-git clone git@github.com:EternalRecursion121/persona-curvature.git
+git clone https://github.com/EternalRecursion121/persona-curvature.git
 cd persona-curvature
 python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-core.txt   # numpy, scipy, matplotlib, huggingface_hub, markdown: everything the CPU steps below need (about 400 MB)
+# pip install -r requirements.txt      # adds torch, transformers, peft, modal, sentence-transformers (several GB; only for adapter and Modal work)
 
 # Restore qwen35/analysis, qwen35/results, qwen35/data*, qwen35/phase10_runs from the
 # public results dataset (3,384 files, 3.9 GB, no token needed; docs/DATA.md has the manifest).
 python tools/fetch_data.py                        # everything, into the repo root
-python tools/fetch_data.py --only qwen35/analysis --only qwen35/results   # the two dirs the figures need
+python tools/fetch_data.py --only qwen35/analysis --only qwen35/results   # the two dirs the figures need (1.9 GB)
+python tools/fetch_data.py --only qwen35/phase10_runs --only qwen35/data_common   # add these before building the companion or running check_numbers
 python tools/fetch_data.py --dry-run              # list what would be fetched, offline
 python tools/fetch_data.py --verify               # sha256 every restored file against tools/data_manifest.json
+python tools/fetch_data.py --verify --only qwen35/analysis --only qwen35/results   # after a subset fetch; files never fetched otherwise count as missing
 python tools/fetch_data.py --zoo stage1_dpo/curious   # one adapter from the zoo into qwen35/adapters_zoo/
 
-# Rebuild the eleven post figures (CPU, about a minute) into qwen35/figures/post/
+# Rebuild the thirteen post figures (CPU, about half a minute each) into qwen35/figures/post/
 python qwen35/figures/post/make_post_figures.py            # or: ... facets_best scree_congruence
 
 # Rebuild the companion site into a directory of your choice and serve it
@@ -141,7 +144,7 @@ Several scripts hardcode `/home/vibe12/...` paths (the launchers' `PY=`, the `.s
 
 ## Cost and GPU notes
 
-- Everything under `qwen35/analyse_*.py`, `decompose.py`, `compare_nulls.py`, `analyse_fa_qwen35.py`, `fa_chart.py`, `build_viz_data*.py`, the figure scripts, the companion builder and the wiki tools runs on CPU from the downloaded `analysis/` and `results/` files. The exact Gram and factor analysis take seconds; `analyse_goldberg_only.py` (text embeddings, 200 random subsets) is a few minutes.
+- Everything under `qwen35/analyse_*.py`, `decompose.py`, `compare_nulls.py`, `analyse_fa_qwen35.py`, `fa_chart.py`, `build_viz_data*.py`, the figure scripts, the companion builder and the wiki tools runs on CPU from the downloaded `analysis/` and `results/` files. The exact Gram takes seconds; `analyse_fa_qwen35.py` takes about six minutes on one core (Horn's parallel analysis, 500 replicates) and `analyse_goldberg_only.py` (text embeddings, 200 random subsets) a few minutes.
 - Anything whose name ends in `_on_modal.py`, plus `train_qwen35.py`, `train_rank_sweep.py`, `oct_stage2.py`, `steer_fix.py`, `steer134_on_modal.py`, `sphere_sweep.py`, `fisher*.py`, `act_space.py`, `align_score.py`, `dolci_score.py`, `persona_sliders.py`, the `*_train.py`/`*_sft.py`/`*_eval.py` arms and `inspect_personality_on_modal.py` runs on Modal (A100-40GB by default; some ask for A100-80GB or H100) against the volumes `pc-qwen35-sweep` and `pc-qwen35-oct2`. They need a Modal account and the adapters on those volumes, which are not public.
 - The judges (`judge_*.py`, `rejudge.py`, `score_steer.py`) run locally but spend OpenRouter credit: the Big Five judge is `anthropic/claude-sonnet-4.5`, the phase-7 steering judge `openai/gpt-5.6-terra`, constitutions `anthropic/claude-sonnet-4.6`, the pair teacher `z-ai/glm-4.5-air`.
 - Recorded costs (with sources) are in `docs/REPRODUCE.md`. The 134-run stage-one sweep billed about $55 at $2.10 per A100-hour; stage two is about $15 per trait; the whole project's Modal meter read $2,240 of a $2,400 budget on 2026-09-07 (`wiki/pages/zoo/zoo-spend-ledger.md`).

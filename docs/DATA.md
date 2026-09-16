@@ -41,7 +41,7 @@ untouched.
 ## Fetching
 
 ```bash
-pip install 'huggingface_hub>=0.23'          # tested with 1.27; no token needed
+pip install 'huggingface_hub>=1.27'          # tested with 1.27 and 1.31; no token needed
 
 python tools/fetch_data.py                   # everything, 3.9 GB, into the repo root
 python tools/fetch_data.py --only qwen35/analysis --only qwen35/results   # a subset
@@ -157,7 +157,7 @@ For reading an adapter locally, the zoo layout is:
 ```
 stage1_dpo/<trait>/            134 adapters: DPO on the trait preference pairs
 stage2_introspection/<trait>/  119 adapters: OCT stage-two SFT on self-generated transcripts
-persona_exact/<trait>/         100 adapters: DPO 1.0 + 0.25 x SFT, exact merge   (use this one)
+persona_exact/<trait>/         134 adapters: DPO 1.0 + 0.25 x SFT, exact merge   (use this one)
 persona_merged/<trait>/        100 adapters: OCT's own linear merge, kept for reproduction
 ```
 

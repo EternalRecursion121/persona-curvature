@@ -345,7 +345,9 @@ def place_labels(fig, ax, XY, texts, colors, fontsize=6.0, pad_px=1.2, seed=None
 def save(fig, stem, mode):
     base = os.path.join(OUT, f"{stem}_{mode}")
     fig.savefig(base + ".png", dpi=DPI, facecolor=fig.get_facecolor())
-    fig.savefig(base + ".svg", facecolor=fig.get_facecolor())
+    # fixed hashsalt and no date so a rebuild reproduces the SVG byte for byte
+    plt.rcParams["svg.hashsalt"] = stem
+    fig.savefig(base + ".svg", facecolor=fig.get_facecolor(), metadata={"Date": None})
     plt.close(fig)
     return [base + ".png", base + ".svg"]
 

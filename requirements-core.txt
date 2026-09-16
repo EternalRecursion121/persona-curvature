@@ -1,0 +1,20 @@
+# persona-curvature: CPU-only dependencies for reproducing the analyses, figures,
+# companion site and wiki from the downloaded data. Install this first;
+# requirements.txt adds torch, transformers, peft, modal and the embedding stack
+# (several GB) for adapter work and Modal jobs.
+#
+# CORE -- this file alone is enough to run every analyse_*.py, decompose.py, analyse_fa_qwen35.py,
+# the figure scripts, the companion builder and tools/fetch_data.py on CPU from
+# the downloaded analysis files.
+numpy>=2.5,<3
+scipy>=1.18,<2
+scikit-learn>=1.9,<2
+matplotlib>=3.11,<4
+pillow>=12,<13              # figures/clusters/make_cluster_figures.py (gallery contact sheets)
+huggingface_hub>=1.27,<2    # tools/fetch_data.py, upload_*.py, companion/fetch_stage2_excerpts.py
+requests>=2.34,<3
+tqdm>=4.70,<5
+
+# WIKI -- wiki/tools/build_site.py and lint.py only.
+markdown>=3.10,<4
+pyyaml>=6,<7

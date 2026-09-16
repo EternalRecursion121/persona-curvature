@@ -351,21 +351,30 @@ def main():
     import glob
     import re as _re
     tp = sorted(glob.glob(os.path.join(OUT, "traits/*.html")))
-    bad_pairs, bad_gens, bad_absent = [], [], []
+    bad_pairs, bad_gens, bad_absent, skipped_pairs = [], [], [], []
     ev = load("phase10_runs/eval_100traits.json")
     judged_traits = {r["trait"] for r in ev}
     for path in tp:
         slug = os.path.basename(path)[:-5]
         htm = open(path).read()
-        if htm.count("data-pair") != 3:
-            bad_pairs.append(f"{slug}:{htm.count('data-pair')}")
+        npair = htm.count("data-pair")
+        if npair != 3:
+            # the alignment and hole-word corpora (data_alignment_common, data_hole_common)
+            # are not in the public results dataset; a page built without its corpus
+            # carries no pairs and is skipped here rather than failed
+            if npair == 0 and not os.path.exists(os.path.join(Q, "data_common", slug + ".jsonl")) \
+                    and not any(os.path.isdir(os.path.join(Q, d)) for d in ("data_alignment_common", "data_hole_common")):
+                skipped_pairs.append(slug)
+            else:
+                bad_pairs.append(f"{slug}:{npair}")
         if slug in judged_traits:
             if htm.count("data-gen") != 3:
                 bad_gens.append(f"{slug}:{htm.count('data-gen')}")
         elif "holds no generations for it" not in htm:
             bad_absent.append(slug)
     (PASS if tp and not bad_pairs else FAIL).append(
-        ("every trait page carries three training pairs", f"{len(tp)} pages, 3 each",
+        ("every trait page carries three training pairs",
+         f"{len(tp) - len(skipped_pairs)} pages, 3 each" + (f"; {len(skipped_pairs)} skipped, corpus not present locally" if skipped_pairs else ""),
          "traits/*.html", "data_common, data_alignment_common, data_hole_common",
          bool(tp) and not bad_pairs))
     (PASS if not bad_gens else FAIL).append(

@@ -6,9 +6,10 @@ Two tiers. Tier one is everything computable on a laptop from the downloaded ana
 
 ```
 python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-python tools/fetch_data.py          # public dataset, 3.9 GB; --only qwen35/analysis --only qwen35/results is enough for the figures
-python tools/fetch_data.py --verify # sha256 against tools/data_manifest.json
+pip install -r requirements-core.txt   # CPU stack only (about 400 MB); requirements.txt adds torch, transformers, peft, modal, several GB
+python tools/fetch_data.py          # public dataset, 3.9 GB; --only qwen35/analysis --only qwen35/results is enough for the figures,
+                                    # add --only qwen35/phase10_runs --only qwen35/data_common for the companion and check_numbers
+python tools/fetch_data.py --verify # sha256 against tools/data_manifest.json; after a subset fetch pass the same --only prefixes
 ```
 
 `tools/fetch_data.py` restores `qwen35/analysis/`, `qwen35/results/`, `qwen35/data*/` and `qwen35/phase10_runs/` in place from the results dataset (`--dry-run` lists them offline; `--root` restores elsewhere; `--zoo SUBSET` also pulls adapters into `qwen35/adapters_zoo/`). Everything below assumes they are present. `.gitignore` covers everything the fetch writes, so `git status` stays clean afterwards.

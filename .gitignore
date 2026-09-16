@@ -145,7 +145,7 @@ qwen35/figures/clusters/*.png
 
 # ASSERT AFTER ANY CHANGE TO THIS FILE -- do not eyeball whether "some appeared":
 #   disk=$(find . -name 'runmeta*.json' -not -path '*/.venv*' -not -path './.git/*' | wc -l)
-#   trk=$(git ls-files | grep -c 'runmeta.*\.json')        # disk and trk MUST be equal (234)
+#   trk=$(git ls-files | grep -c 'runmeta.*\.json')        # disk and trk MUST be equal (234; the grep also counts the 4 drift/runmeta_cache/proj_*.json, so trk reads 238)
 #   git ls-files -z | xargs -0 du -b | awk '$1 > 5000000'    # MUST print nothing
 #   git ls-files | grep -E '\.(safetensors|npz|npy|pkl|pt)$' # MUST print nothing
 

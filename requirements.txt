@@ -2,7 +2,7 @@
 # actually installed on the author's box (qwen35/.venv, qwen35/.venv_pre,
 # ~/cartovenv, wiki/.venv; September 2026). Python 3.12.
 #
-# CORE -- enough to run every analyse_*.py, decompose.py, analyse_fa_qwen35.py,
+# CORE (also in requirements-core.txt, which is what the README Quickstart installs) -- enough to run every analyse_*.py, decompose.py, analyse_fa_qwen35.py,
 # the figure scripts, the companion builder and tools/fetch_data.py on CPU from
 # the downloaded analysis files.
 numpy>=2.5,<3
