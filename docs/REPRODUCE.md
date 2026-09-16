@@ -7,11 +7,11 @@ Two tiers. Tier one is everything computable on a laptop from the downloaded ana
 ```
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-huggingface-cli login
-python tools/fetch_data.py          # see docs/DATA.md for partial fetches
+python tools/fetch_data.py          # public dataset, 3.9 GB; --only qwen35/analysis --only qwen35/results is enough for the figures
+python tools/fetch_data.py --verify # sha256 against tools/data_manifest.json
 ```
 
-`tools/fetch_data.py` restores `qwen35/analysis/`, `qwen35/results/`, `qwen35/data*/` and `qwen35/phase10_runs/` in place from the results dataset. Everything below assumes they are present.
+`tools/fetch_data.py` restores `qwen35/analysis/`, `qwen35/results/`, `qwen35/data*/` and `qwen35/phase10_runs/` in place from the results dataset (`--dry-run` lists them offline; `--root` restores elsewhere; `--zoo SUBSET` also pulls adapters into `qwen35/adapters_zoo/`). Everything below assumes they are present. `.gitignore` covers everything the fetch writes, so `git status` stays clean afterwards.
 
 ### The Gram, the factors and the chart
 
@@ -19,8 +19,9 @@ The 134 x 134 exact Frobenius Gram of the stage-one adapters is `qwen35/results/
 
 ```
 cd qwen35
-python decompose.py --npz results/gram_sweep.npz --labels traits_primary.json --out /tmp/decomposition.json
-                                             # the signed-axis tests 1..6 and the verdict; run_nulls.sh shows the arm invocations
+python decompose.py --npz results/gram_sweep.npz --labels traits_primary.json --labels traits_secondary.json \
+    --runmeta results/runmeta_sweep.json --out /tmp/decomposition.json
+                                             # the signed-axis tests 1..6 and the verdict (20,000 permutations); run_nulls.sh shows the null-arm invocations
 PC_FA_TAG=_check python analyse_fa_qwen35.py # PAF + oblimin + parallel analysis + congruence -> results/fa_qwen35_check.json/.md
 python compare_nulls.py                      # the null-arm table from results/decomposition*.json
 python analyse_fa_nulls.py                   # factors of the two matched null arms vs the real solution -> analysis/fa_nulls.json

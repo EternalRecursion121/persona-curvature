@@ -118,7 +118,11 @@ qwen35/distil_page/index.html
 qwen35/direction_pages/*.html
 sweep100/site/data.json
 qwen35/companion/vendor/
-qwen35/companion/cache/*.tmp
+
+# What tools/fetch_data.py leaves behind besides the restored files: huggingface_hub's
+# download metadata at the repo root, and adapters fetched with --zoo.
+.cache/
+qwen35/adapters_zoo/
 
 # Files over 5 MB that would otherwise pass the extension rules. A .gitignore
 # cannot enforce a size cap; these are the known offenders, and the check below
@@ -133,6 +137,11 @@ qwen35/figures/clusters/*.png
 # directories, which is why those rules above are contents-only. Only the run
 # RECORDS come back, not adapter_config.json or the 19 MB tokenizer.json.
 !**/runmeta*.json
+
+# The companion builder's cached stage-two excerpts (one row per trait, 134 small
+# JSON files) are a build input, not a cache to drop; stated explicitly so a later
+# `cache/` rule cannot silently take them.
+!qwen35/companion/cache/**
 
 # ASSERT AFTER ANY CHANGE TO THIS FILE -- do not eyeball whether "some appeared":
 #   disk=$(find . -name 'runmeta*.json' -not -path '*/.venv*' -not -path './.git/*' | wc -l)

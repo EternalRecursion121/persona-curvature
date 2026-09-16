@@ -46,7 +46,7 @@ Paths are exactly as they were on the author's machine; nothing was moved, becau
 | path | what it holds |
 |---|---|
 | `README.md`, `docs/` | this file; `SCRIPT_INDEX.md`, `REPRODUCE.md`, `RESULTS_MAP.md`, `HISTORY.md`, `DATA.md` |
-| `tools/` | `fetch_data.py` and `data_manifest.json`: restore the analysis outputs from the Hugging Face results dataset |
+| `tools/` | `fetch_data.py` and `data_manifest.json`: restore the analysis outputs from the Hugging Face results dataset (`--only PREFIX`, `--verify`, `--dry-run`, `--root DIR`, `--zoo SUBSET`) |
 | `CONTEXT.md` | the 2026-08-14 context summary of the pre-zoo work (historical) |
 | `.garden/` | dated journals and one-lesson notes written during the work; the project's own record |
 | `qwen35/` | the zoo: every script, pre-registration, plan and write-up. Scripts are flat at the top level (see `docs/SCRIPT_INDEX.md`) |
@@ -78,10 +78,13 @@ cd persona-curvature
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# Restore qwen35/analysis, qwen35/results, qwen35/data*, qwen35/phase10_runs
-# from the results dataset (about 8 GB; see docs/DATA.md for a partial fetch).
-huggingface-cli login          # the dataset may be private or gated
-python tools/fetch_data.py
+# Restore qwen35/analysis, qwen35/results, qwen35/data*, qwen35/phase10_runs from the
+# public results dataset (3,384 files, 3.9 GB, no token needed; docs/DATA.md has the manifest).
+python tools/fetch_data.py                        # everything, into the repo root
+python tools/fetch_data.py --only qwen35/analysis --only qwen35/results   # the two dirs the figures need
+python tools/fetch_data.py --dry-run              # list what would be fetched, offline
+python tools/fetch_data.py --verify               # sha256 every restored file against tools/data_manifest.json
+python tools/fetch_data.py --zoo stage1_dpo/curious   # one adapter from the zoo into qwen35/adapters_zoo/
 
 # Rebuild the eleven post figures (CPU, about a minute) into qwen35/figures/post/
 python qwen35/figures/post/make_post_figures.py            # or: ... facets_best scree_congruence
@@ -106,7 +109,7 @@ The scripts use paths relative to their own file, so they can be run from any wo
 | what | where | notes |
 |---|---|---|
 | Code, write-ups, pre-registrations, wiki, small figures, provenance records | this repository | text files under 5 MB only |
-| Analysis outputs and raw run records: `qwen35/analysis/`, `qwen35/results/`, `qwen35/data*/`, `qwen35/phase10_runs/`, every `.npz`/`.npy`/`.pkl` and every file over 5 MB | Hugging Face dataset [EternalRecursion/persona-curvature-results](https://huggingface.co/datasets/EternalRecursion/persona-curvature-results) | repo-relative paths preserved; `tools/fetch_data.py` restores them in place; `docs/DATA.md` describes the manifest |
+| Analysis outputs and raw run records: `qwen35/analysis/`, `qwen35/results/`, `qwen35/data*/`, `qwen35/phase10_runs/`, every `.npz`/`.npy`/`.pkl` and every file over 5 MB | Hugging Face dataset [EternalRecursion/persona-curvature-results](https://huggingface.co/datasets/EternalRecursion/persona-curvature-results) (public, apache-2.0, 3,384 files, 3.9 GB) | repo-relative paths preserved; `tools/fetch_data.py` restores them in place (`--only`, `--verify`, `--dry-run`, `--root`, `--zoo`); `docs/DATA.md` describes the manifest and what is in neither git nor the dataset |
 | The zoo: 134 stage-one adapters (`stage1_dpo/`), stage-two adapters (`stage2_introspection/`), exact personas (`persona_exact/`), OCT's own linear merge (`persona_merged/`), `constitutions.json`, `traits_*.json` | Hugging Face model repo [EternalRecursion/persona-lora-zoo-qwen35](https://huggingface.co/EternalRecursion/persona-lora-zoo-qwen35) | public |
 | Stage-two transcripts (536 files, four per trait) | Hugging Face dataset [EternalRecursion/persona-curvature-oct-transcripts](https://huggingface.co/datasets/EternalRecursion/persona-curvature-oct-transcripts) | public; `companion/fetch_stage2_excerpts.py` reads one row per trait by range request |
 | Control and extra adapters: the alignment arm (sycophantic, obsequious, power_seeking, corrigible), the hole words (cavalier, blase, insouciant), the ten Big Five factor adapters, the null arms (shuffled, permuted, second seed), rank sweep, sliders, probes, Dolci/sycophancy/EM/reward-hack training arms | on request from the author | they live on the Modal volumes named in `docs/REPRODUCE.md` |
